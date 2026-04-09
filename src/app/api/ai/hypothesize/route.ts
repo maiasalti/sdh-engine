@@ -49,9 +49,13 @@ Slugs: hif-pseudohypoxia, epigenetic-dysregulation, vegf-signaling, mtor-pi3k-ak
     }
 
     let jsonStr = textBlock.text.trim();
-    const jsonMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (jsonMatch) {
-      jsonStr = jsonMatch[1].trim();
+    // Strip markdown code fences if present
+    jsonStr = jsonStr.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
+    // Find the first { and last } to extract JSON
+    const firstBrace = jsonStr.indexOf("{");
+    const lastBrace = jsonStr.lastIndexOf("}");
+    if (firstBrace !== -1 && lastBrace !== -1) {
+      jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
     }
 
     const result = JSON.parse(jsonStr);

@@ -65,11 +65,12 @@ Respond ONLY with valid JSON in this exact format:
       );
     }
 
-    // Extract JSON from response (handle potential markdown wrapping)
     let jsonStr = textBlock.text.trim();
-    const jsonMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (jsonMatch) {
-      jsonStr = jsonMatch[1].trim();
+    jsonStr = jsonStr.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
+    const firstBrace = jsonStr.indexOf("{");
+    const lastBrace = jsonStr.lastIndexOf("}");
+    if (firstBrace !== -1 && lastBrace !== -1) {
+      jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
     }
 
     const score = JSON.parse(jsonStr);

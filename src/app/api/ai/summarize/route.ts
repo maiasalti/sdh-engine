@@ -55,9 +55,11 @@ Respond ONLY with valid JSON:
     }
 
     let jsonStr = textBlock.text.trim();
-    const jsonMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (jsonMatch) {
-      jsonStr = jsonMatch[1].trim();
+    jsonStr = jsonStr.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
+    const firstBrace = jsonStr.indexOf("{");
+    const lastBrace = jsonStr.lastIndexOf("}");
+    if (firstBrace !== -1 && lastBrace !== -1) {
+      jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
     }
 
     const summary = JSON.parse(jsonStr);
