@@ -9,6 +9,7 @@ import {
   BookOpen,
   FlaskConical,
   Network,
+  Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +19,7 @@ const navItems = [
   { href: "/hypotheses", label: "AI Hypotheses", icon: Lightbulb },
   { href: "/research", label: "Research Feed", icon: BookOpen },
   { href: "/trials", label: "Clinical Trials", icon: FlaskConical },
+  { href: "/about", label: "About / Methods", icon: Info },
 ];
 
 export function SidebarNav() {
