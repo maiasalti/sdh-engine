@@ -30,7 +30,8 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <head>
+      <body className="min-h-full flex flex-col">
+        <TooltipProvider>{children}</TooltipProvider>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-3K9H5Q4KKM"
           strategy="afterInteractive"
@@ -43,9 +44,6 @@ export default function RootLayout({
             gtag('config', 'G-3K9H5Q4KKM');
           `}
         </Script>
-      </head>
-      <body className="min-h-full flex flex-col">
-        <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>
   );
