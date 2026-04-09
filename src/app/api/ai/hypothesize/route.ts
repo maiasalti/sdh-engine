@@ -3,6 +3,8 @@ import { SDH_BIOLOGY_CONTEXT } from "@/data/seed/sdh-biology";
 import { SEED_DRUGS } from "@/data/seed/drugs";
 import { SEED_PATHWAYS } from "@/data/seed/pathways";
 
+export const maxDuration = 60;
+
 export async function POST(request: Request) {
   try {
     const { pathwaySlug, context } = await request.json();
@@ -94,8 +96,10 @@ Use these pathway slugs: hif-pseudohypoxia, epigenetic-dysregulation, vegf-signa
     return Response.json(result);
   } catch (error) {
     console.error("AI Hypothesize error:", error);
+    const message =
+      error instanceof Error ? error.message : "Unknown error";
     return Response.json(
-      { error: "Failed to generate hypotheses" },
+      { error: `Failed to generate hypotheses: ${message}` },
       { status: 500 }
     );
   }

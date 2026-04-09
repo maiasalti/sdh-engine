@@ -1,6 +1,8 @@
 import { getClaudeClient } from "@/lib/claude";
 import { SDH_BIOLOGY_CONTEXT } from "@/data/seed/sdh-biology";
 
+export const maxDuration = 30;
+
 export async function POST(request: Request) {
   try {
     const { title, abstract, type } = await request.json();

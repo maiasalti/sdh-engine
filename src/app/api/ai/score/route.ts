@@ -2,6 +2,8 @@ import { getClaudeClient } from "@/lib/claude";
 import { SDH_BIOLOGY_CONTEXT } from "@/data/seed/sdh-biology";
 import { SCORING_WEIGHTS } from "@/lib/scoring/constants";
 
+export const maxDuration = 30;
+
 export async function POST(request: Request) {
   try {
     const { drug } = await request.json();
@@ -75,8 +77,10 @@ Respond ONLY with valid JSON in this exact format:
     return Response.json(score);
   } catch (error) {
     console.error("AI Score error:", error);
+    const message =
+      error instanceof Error ? error.message : "Unknown error";
     return Response.json(
-      { error: "Failed to generate AI score" },
+      { error: `Failed to generate AI score: ${message}` },
       { status: 500 }
     );
   }
