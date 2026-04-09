@@ -11,72 +11,38 @@ export async function POST(request: Request) {
 
     const client = getClaudeClient();
 
-    const currentDrugs = SEED_DRUGS.map(
-      (d) =>
-        `- ${d.name} (${d.drug_class}) — targets: ${d.pathway_slugs.join(", ")} — status: ${d.status}`
-    ).join("\n");
+    const drugNames = SEED_DRUGS.map((d) => d.name).join(", ");
 
     const pathwayFocus = pathwaySlug
       ? SEED_PATHWAYS.find((p) => p.slug === pathwaySlug)
       : null;
 
-    const focusInstruction = pathwayFocus
-      ? `\n\nFOCUS: Generate hypotheses specifically targeting the "${pathwayFocus.name}" pathway. ${pathwayFocus.description}`
-      : "\n\nGenerate hypotheses across any relevant pathway.";
-
-    const contextInstruction = context
-      ? `\n\nADDITIONAL CONTEXT FROM USER: ${context}`
+    const focusLine = pathwayFocus
+      ? `Focus on the "${pathwayFocus.name}" pathway.`
       : "";
 
-    const stream = client.messages.stream({
+    const contextLine = context ? `User constraint: ${context}` : "";
+
+    const response = await client.messages.create({
       model: "claude-sonnet-4-6",
-      max_tokens: 8000,
+      max_tokens: 4000,
       system: SDH_BIOLOGY_CONTEXT,
       messages: [
         {
           role: "user",
-          content: `You are generating novel drug repurposing hypotheses for SDH-deficient diseases.
+          content: `Propose 3 NEW drug repurposing candidates for SDH-deficient tumors NOT in this list: ${drugNames}.
 
-CURRENT DRUG CANDIDATES ALREADY IN OUR DATABASE:
-${currentDrugs}
+${focusLine} ${contextLine}
 
-YOUR TASK: Propose 3-5 NEW drug repurposing candidates that are NOT already in our database. For each, provide a novel mechanistic rationale connecting the drug to SDH deficiency biology.
+Respond ONLY with valid JSON:
+{"hypotheses":[{"drug_name":"<name>","drug_class":"<class>","fda_approved":true/false,"approved_for":"<indication>","pathway_connections":["<slug>"],"title":"<title>","rationale":"<3 sentence rationale>","confidence":"high|medium|low|speculative","suggested_next_steps":["<step>"],"key_references":["<evidence>"]}]}
 
-Think creatively about:
-- Drugs targeting synthetic lethal interactions with SDH loss
-- Drugs from other oncometabolite-driven cancers (IDH-mutant, FH-deficient)
-- Metabolic vulnerabilities unique to SDH-deficient cells
-- Immune checkpoint interactions with the pseudohypoxic microenvironment
-- Drugs targeting the epigenetic consequences of succinate accumulation
-- Combination strategies that could work synergistically
-${focusInstruction}${contextInstruction}
-
-Respond ONLY with valid JSON in this exact format:
-{
-  "hypotheses": [
-    {
-      "drug_name": "<generic drug name>",
-      "drug_class": "<drug class>",
-      "fda_approved": <true/false>,
-      "approved_for": "<current approved indication or 'Not approved'>",
-      "pathway_connections": ["<pathway slug 1>", "<pathway slug 2>"],
-      "title": "<concise hypothesis title>",
-      "rationale": "<detailed 3-5 sentence mechanistic rationale explaining WHY this drug could work in SDH-deficient tumors>",
-      "confidence": "<high|medium|low|speculative>",
-      "suggested_next_steps": ["<step 1>", "<step 2>"],
-      "key_references": ["<brief description of supporting evidence if any>"]
-    }
-  ]
-}
-
-Use these pathway slugs: hif-pseudohypoxia, epigenetic-dysregulation, vegf-signaling, mtor-pi3k-akt, glutamine-dependency, oxidative-stress-ros, autophagy-survival`,
+Pathway slugs: hif-pseudohypoxia, epigenetic-dysregulation, vegf-signaling, mtor-pi3k-akt, glutamine-dependency, oxidative-stress-ros, autophagy-survival`,
         },
       ],
     });
 
-    const finalMessage = await stream.finalMessage();
-
-    const textBlock = finalMessage.content.find((b) => b.type === "text");
+    const textBlock = response.content.find((b) => b.type === "text");
     if (!textBlock || textBlock.type !== "text") {
       return Response.json(
         { error: "No text response from AI" },
