@@ -4,7 +4,7 @@ import { SEED_PATHWAYS } from "@/data/seed/pathways";
 
 export const maxDuration = 60;
 
-const COMPACT_CONTEXT = `You are a molecular oncology expert on SDH-deficient tumors. SDH loss causes succinate accumulation, which inhibits PHDs (stabilizing HIF-1a/2a, causing pseudohypoxia) and TETs (causing DNA hypermethylation). Downstream druggable pathways: HIF/pseudohypoxia, epigenetic dysregulation, VEGF signaling, mTOR/PI3K/AKT, glutamine dependency, oxidative stress/ROS, autophagy. SDH-deficient tumors include GIST, paraganglioma, pheochromocytoma, RCC, and pituitary adenoma. SDH-deficient GIST is resistant to imatinib. The pseudohypoxic phenotype is shared with VHL-deficient tumors. The oncometabolite mechanism parallels IDH-mutant tumors.`;
+const COMPACT_CONTEXT = `You are a molecular oncology expert on SDH-deficient tumors. SDH loss causes succinate accumulation, inhibiting PHDs (stabilizing HIF-1a/2a) and TETs (causing DNA hypermethylation). Druggable pathways: HIF/pseudohypoxia, epigenetic dysregulation, VEGF, mTOR/PI3K/AKT, glutamine dependency, ROS, autophagy. Tumor types: GIST, paraganglioma, pheochromocytoma, RCC, pituitary adenoma.`;
 
 export async function POST(request: Request) {
   try {
@@ -26,16 +26,19 @@ export async function POST(request: Request) {
 
     const response = await client.messages.create({
       model: "claude-sonnet-4-6",
-      max_tokens: 3000,
+      max_tokens: 4096,
       system: COMPACT_CONTEXT,
       messages: [
         {
           role: "user",
           content: `Propose 3 NEW drug repurposing candidates for SDH-deficient tumors NOT in: ${drugNames}. ${focusLine} ${contextLine}
 
-JSON only: {"hypotheses":[{"drug_name":"","drug_class":"","fda_approved":true,"approved_for":"","pathway_connections":[""],"title":"","rationale":"","confidence":"high|medium|low|speculative","suggested_next_steps":[""],"key_references":[""]}]}
+Be concise. For each drug give: name, class, whether FDA approved, what it's approved for, which pathway slugs it connects to, a 2-sentence rationale, confidence level, one next step, and one reference.
 
-Slugs: hif-pseudohypoxia, epigenetic-dysregulation, vegf-signaling, mtor-pi3k-akt, glutamine-dependency, oxidative-stress-ros, autophagy-survival`,
+Respond with ONLY a JSON object, no markdown, no code fences:
+{"hypotheses":[{"drug_name":"","drug_class":"","fda_approved":true,"approved_for":"","pathway_connections":[""],"title":"","rationale":"","confidence":"","suggested_next_steps":[""],"key_references":[""]}]}
+
+Pathway slugs: hif-pseudohypoxia, epigenetic-dysregulation, vegf-signaling, mtor-pi3k-akt, glutamine-dependency, oxidative-stress-ros, autophagy-survival`,
         },
       ],
     });
@@ -49,16 +52,45 @@ Slugs: hif-pseudohypoxia, epigenetic-dysregulation, vegf-signaling, mtor-pi3k-ak
     }
 
     let jsonStr = textBlock.text.trim();
-    // Strip markdown code fences if present
-    jsonStr = jsonStr.replace(/^```(?:json)?\s*\n?/, "").replace(/\n?```\s*$/, "");
-    // Find the first { and last } to extract JSON
+    // Strip any markdown fences
+    jsonStr = jsonStr
+      .replace(/^```(?:json)?\s*\n?/, "")
+      .replace(/\n?```\s*$/, "");
+
+    // Extract from first { to last }
     const firstBrace = jsonStr.indexOf("{");
     const lastBrace = jsonStr.lastIndexOf("}");
     if (firstBrace !== -1 && lastBrace !== -1) {
       jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
     }
 
-    const result = JSON.parse(jsonStr);
+    // If JSON was truncated (missing closing brackets), try to fix it
+    let result;
+    try {
+      result = JSON.parse(jsonStr);
+    } catch {
+      // Try to repair truncated JSON by closing open arrays/objects
+      let repaired = jsonStr;
+      // Count open brackets
+      const openBraces =
+        (repaired.match(/{/g) || []).length -
+        (repaired.match(/}/g) || []).length;
+      const openBrackets =
+        (repaired.match(/\[/g) || []).length -
+        (repaired.match(/]/g) || []).length;
+
+      // Remove any trailing partial entry (incomplete object)
+      const lastCompleteObj = repaired.lastIndexOf("}");
+      if (lastCompleteObj > 0) {
+        repaired = repaired.slice(0, lastCompleteObj + 1);
+      }
+
+      // Close remaining brackets
+      for (let i = 0; i < openBrackets; i++) repaired += "]";
+      for (let i = 0; i < openBraces; i++) repaired += "}";
+
+      result = JSON.parse(repaired);
+    }
 
     return Response.json(result);
   } catch (error) {
