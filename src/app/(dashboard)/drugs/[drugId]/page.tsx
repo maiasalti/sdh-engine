@@ -20,6 +20,7 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
+import { AiAnalysis } from "@/components/drugs/ai-analysis";
 
 function getDrugById(drugId: string) {
   return SEED_DRUGS.find(
@@ -292,24 +293,8 @@ export default async function DrugDetailPage({
             </CardContent>
           </Card>
 
-          {/* AI Analysis placeholder */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">AI Analysis</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Click below to have Claude analyze this drug&apos;s repurposing
-                potential for SDH-deficient diseases.
-              </p>
-              <button
-                disabled
-                className="mt-3 w-full rounded-md bg-primary/20 px-4 py-2 text-sm font-medium text-primary/50 cursor-not-allowed"
-              >
-                Analyze with AI (Phase 2)
-              </button>
-            </CardContent>
-          </Card>
+          {/* AI Analysis */}
+          <AiAnalysis drug={drug} />
         </div>
       </div>
     </div>
