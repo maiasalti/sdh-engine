@@ -153,6 +153,9 @@ function PaperCard({ article }: { article: Article }) {
             <p className="text-[10px] text-muted-foreground italic">
               {summary.key_takeaway}
             </p>
+            <p className="text-[10px] text-amber-500/60 mt-1">
+              AI-generated summary — not a substitute for reading the full paper or consulting your medical team.
+            </p>
           </div>
         )}
       </CardContent>

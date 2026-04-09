@@ -7,6 +7,7 @@ import { Lightbulb, Sparkles, Loader2 } from "lucide-react";
 import { SEED_PATHWAYS } from "@/data/seed/pathways";
 import { PATHWAY_COLORS } from "@/lib/scoring/constants";
 import { cn } from "@/lib/utils";
+import { MedicalDisclaimer } from "@/components/medical-disclaimer";
 
 type Hypothesis = {
   drug_name: string;
@@ -161,6 +162,7 @@ export default function HypothesesPage() {
 
       {hypotheses.length > 0 && (
         <div className="space-y-4">
+          <MedicalDisclaimer variant="inline" />
           <h3 className="text-lg font-semibold">
             Generated Hypotheses ({hypotheses.length})
           </h3>

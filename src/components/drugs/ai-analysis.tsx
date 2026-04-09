@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SeedDrug } from "@/data/seed/drugs";
+import { MedicalDisclaimer } from "@/components/medical-disclaimer";
 
 type ScoreResult = {
   overall_score: number;
@@ -204,6 +205,8 @@ export function AiAnalysis({ drug }: { drug: SeedDrug }) {
                 </ul>
               </div>
             )}
+
+            <MedicalDisclaimer variant="inline" />
 
             {/* Re-run */}
             <button

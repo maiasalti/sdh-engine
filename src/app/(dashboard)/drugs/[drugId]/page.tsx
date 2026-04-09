@@ -21,6 +21,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { AiAnalysis } from "@/components/drugs/ai-analysis";
+import { MedicalDisclaimer } from "@/components/medical-disclaimer";
 
 function getDrugById(drugId: string) {
   return SEED_DRUGS.find(
@@ -294,6 +295,7 @@ export default async function DrugDetailPage({
           </Card>
 
           {/* AI Analysis */}
+          <MedicalDisclaimer variant="compact" className="mb-2" />
           <AiAnalysis drug={drug} />
         </div>
       </div>
