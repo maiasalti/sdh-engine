@@ -32,4 +32,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "glutamine-dependency": "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
   "oxidative-stress-ros": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
   "autophagy-survival": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
+  "nad-metabolism": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
 };

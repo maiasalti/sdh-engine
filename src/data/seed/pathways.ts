@@ -113,4 +113,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 7,
   },
+  {
+    name: "NAD⁺ Metabolism / NAMPT Axis",
+    slug: "nad-metabolism",
+    description:
+      "SDH loss impairs Complex II of the electron transport chain, causing NADH accumulation and increased mitochondrial ROS. Sustained ROS drives DNA damage that chronically activates PARP1, consuming NAD⁺. Cells compensate by upregulating the NAMPT-mediated NAD⁺ salvage pathway, creating a targetable dependency.",
+    upstream_event:
+      "Complex II dysfunction → NADH/NAD⁺ imbalance + ROS-driven DNA damage → PARP1 hyperactivation",
+    downstream_effects: [
+      "Chronic NAD⁺ depletion",
+      "PARP-mediated parthanatos vulnerability",
+      "Glycolytic NAD⁺ regeneration dependency",
+      "NAMPT upregulation as adaptive response",
+      "Selective lethality to NAD⁺ biosynthesis inhibition",
+    ],
+    druggable: true,
+    display_order: 8,
+  },
 ];

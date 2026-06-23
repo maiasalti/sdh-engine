@@ -153,4 +153,31 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "DNA repair enzyme activated by ROS-induced damage. PARP inhibition in ROS-elevated cells may cause synthetic lethality.",
   },
+  {
+    gene_symbol: "EZH2",
+    name: "Enhancer of zeste homolog 2 (PRC2 catalytic subunit)",
+    uniprot_id: "Q15910",
+    pathway_slug: "epigenetic-dysregulation",
+    target_type: "synthetic_lethal",
+    description:
+      "Histone H3K27 methyltransferase and catalytic subunit of PRC2. Succinate inhibits KDM6A (UTX) and KDM6B (JMJD3), the H3K27me3-erasing demethylases, causing H3K27me3 accumulation in SDH-deficient tumors. EZH2 inhibition prevents further H3K27me3 deposition, potentially reactivating silenced differentiation and tumor suppressor programs. Target of tazemetostat.",
+  },
+  {
+    gene_symbol: "BECN1",
+    name: "Beclin-1",
+    uniprot_id: "Q14457",
+    pathway_slug: "autophagy-survival",
+    target_type: "downstream",
+    description:
+      "Core autophagy initiation protein; part of the PIK3C3/VPS34 complex that nucleates autophagosomes. In SDH-deficient tumors, chronic metabolic stress from TCA disruption upregulates autophagy via BECN1. Lysosomal inhibitors (chloroquine, hydroxychloroquine) block the terminal step of autophagic flux, depriving tumor cells of this survival mechanism.",
+  },
+  {
+    gene_symbol: "NAMPT",
+    name: "Nicotinamide phosphoribosyltransferase",
+    uniprot_id: "P43490",
+    pathway_slug: "nad-metabolism",
+    target_type: "metabolic",
+    description:
+      "Rate-limiting enzyme in the NAD⁺ salvage pathway; converts nicotinamide to NMN, the immediate NAD⁺ precursor. SDH-deficient cells with elevated PARP1 activity and impaired ETC-mediated NAD⁺ regeneration upregulate NAMPT as an adaptive survival response, creating a dependency exploitable by NAMPT inhibitors such as daporinad (FK866).",
+  },
 ];
