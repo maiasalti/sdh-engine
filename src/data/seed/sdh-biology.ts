@@ -62,6 +62,11 @@ Complex II dysfunction causes mitochondrial ROS, which drives chronic PARP1 acti
 ### 9. EZH2 / PRC2 Histone Methylation Vulnerability
 Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UTX) and KDM6B (JMJD3), which erase the repressive H3K27me3 histone mark. The resulting H3K27me3 accumulation silences tumor suppressor and differentiation programs — a distinct epigenetic layer from the DNA hypermethylation driven by TET inhibition. EZH2 (the PRC2 methyltransferase that writes H3K27me3) becomes a synthetic-lethal target: inhibiting EZH2 blocks further H3K27me3 deposition without the KDM6 erasure function to compensate. Tazemetostat (Tazverik) is FDA-approved for SMARCB1-null epithelioid sarcoma via the same PRC2-dependency mechanism and has demonstrated H3K27me3 reactivation of silenced genes in SDH-deficient paraganglioma models.
 
+### 10. Ferroptosis / Lipid Peroxidation Vulnerability
+Complex II dysfunction generates superoxide via electron leak, which drives lipid radical chain reactions in polyunsaturated membrane phospholipids. Simultaneously, HIF-1α pseudohypoxic stabilization transcriptionally upregulates transferrin receptor 1 (TFRC), expanding the intracellular labile iron pool. Elevated Fe²⁺ catalyzes Fenton chemistry, amplifying lipid peroxidation. GPX4 (glutathione peroxidase 4) is the primary cellular defense against this — it converts lipid hydroperoxides to harmless lipid alcohols using reduced glutathione (GSH). When GSH is depleted (e.g., by blocking its cystine precursor via xCT/SLC7A11 inhibition) or GPX4 is directly inhibited, lipid peroxides accumulate to lethal levels, triggering ferroptotic cell death.
+
+SDH-deficient tumors face a two-hit priming for ferroptosis: (1) chronically elevated superoxide lowers the lipid peroxidation threshold, and (2) HIF-driven TFRC upregulation enlarges the iron pool that amplifies Fenton-chemistry lipid radical generation. Three FDA-approved drugs exploit this vulnerability by distinct mechanisms: sulfasalazine (blocks xCT/SLC7A11, depleting cystine → GSH → GPX4 substrate), artesunate (endoperoxide activated by Fe²⁺ → lipid radicals, amplified by HIF-iron axis), and auranofin (inhibits TXNRD1 thioredoxin reductase, removing the parallel antioxidant redundancy that can rescue cells when GPX4 is overwhelmed).
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -77,6 +82,7 @@ Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UT
 | EZH2 / PRC2 (Histone H3K27me3) | EZH2, KDM6A, KDM6B | Succinate blocks H3K27me3 demethylases; EZH2 inhibitors (tazemetostat) reverse silencing |
 | Autophagy | BECN1, ULK1, ATG5 | Metabolic stress drives BECN1-mediated autophagy survival; lysosomal inhibitors (HCQ) block flux |
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
+| Ferroptosis / Lipid Peroxidation | GPX4, SLC7A11 (xCT), TXNRD1 | Elevated ROS + HIF-driven TFRC/iron expansion primes cells; sulfasalazine (xCT), artesunate (iron-Fenton), auranofin (TXNRD1) exploit this |
 
 ## Important Context for Drug Repurposing
 

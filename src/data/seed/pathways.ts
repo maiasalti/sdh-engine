@@ -130,4 +130,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "Ferroptosis / Lipid Peroxidation",
+    slug: "ferroptosis-lipid-peroxidation",
+    description:
+      "Complex II dysfunction generates superoxide that drives lipid radical chain reactions in membrane phospholipids. Concurrently, HIF-1α activation upregulates transferrin receptor (TFRC), expanding the labile iron pool. Elevated iron catalyzes Fenton-chemistry amplification of lipid peroxidation. GPX4-mediated reduction of lipid hydroperoxides is the primary cellular defense; when glutathione supply is depleted (via xCT/SLC7A11 inhibition) or GPX4 is directly inhibited, overwhelming lipid peroxidation triggers ferroptotic cell death. SDH-deficient tumors are uniquely primed: elevated basal ROS plus an iron-enriched microenvironment lower the threshold at which ferroptosis is triggered.",
+    upstream_event:
+      "Complex II dysfunction → superoxide + HIF-1α-driven TFRC upregulation → enlarged labile iron pool + Fenton-catalyzed lipid peroxidation cascade",
+    downstream_effects: [
+      "Phospholipid hydroperoxide accumulation",
+      "GPX4 demand exceeds glutathione supply",
+      "Iron-catalyzed lipid radical amplification (Fenton chemistry)",
+      "Sensitivity to xCT/SLC7A11 inhibition (cystine depletion → glutathione loss)",
+      "Ferroptotic cell death when GPX4 defense is overwhelmed",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
 ];

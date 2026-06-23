@@ -180,4 +180,31 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Rate-limiting enzyme in the NAD⁺ salvage pathway; converts nicotinamide to NMN, the immediate NAD⁺ precursor. SDH-deficient cells with elevated PARP1 activity and impaired ETC-mediated NAD⁺ regeneration upregulate NAMPT as an adaptive survival response, creating a dependency exploitable by NAMPT inhibitors such as daporinad (FK866).",
   },
+  {
+    gene_symbol: "GPX4",
+    name: "Glutathione peroxidase 4 (phospholipid hydroperoxide GPx)",
+    uniprot_id: "P36969",
+    pathway_slug: "ferroptosis-lipid-peroxidation",
+    target_type: "synthetic_lethal",
+    description:
+      "Central ferroptosis checkpoint enzyme that reduces phospholipid hydroperoxides to harmless lipid alcohols using reduced glutathione (GSH) as electron donor. Loss or inhibition of GPX4 allows lipid peroxides to accumulate, triggering ferroptotic cell death. In SDH-deficient cells with chronically elevated Complex-II-derived ROS, GPX4 is under continuous demand — making its depletion or its substrate supply (glutathione via xCT) a synthetic-lethal vulnerability.",
+  },
+  {
+    gene_symbol: "SLC7A11",
+    name: "Cystine/glutamate transporter (system xc⁻, xCT subunit)",
+    uniprot_id: "Q9UPY5",
+    pathway_slug: "ferroptosis-lipid-peroxidation",
+    target_type: "metabolic",
+    description:
+      "System xc⁻ antiporter that imports extracellular cystine in exchange for glutamate. Cystine is reduced intracellularly to cysteine, the rate-limiting precursor for glutathione synthesis. Without cystine import, cells cannot maintain sufficient GSH to sustain GPX4 activity. Often upregulated in ROS-stressed cancer cells as an antioxidant adaptation — creating a selective dependency exploitable by inhibitors such as sulfasalazine (FDA-approved) and erastin.",
+  },
+  {
+    gene_symbol: "TXNRD1",
+    name: "Thioredoxin reductase 1",
+    uniprot_id: "Q16881",
+    pathway_slug: "ferroptosis-lipid-peroxidation",
+    target_type: "synthetic_lethal",
+    description:
+      "Cytoplasmic selenoprotein that reduces oxidized thioredoxin (TXN1) using NADPH. Thioredoxin participates in the parallel antioxidant network and can partially compensate for GSH/GPX4 loss. TXNRD1 inhibition by auranofin (gold phosphine compound, FDA-approved for RA) depletes reduced thioredoxin, removes this GPX4-redundant defense, and sensitizes SDH-deficient cells to ferroptosis. The selenocysteine active site makes TXNRD1 exquisitely sensitive to gold compounds.",
+  },
 ];
