@@ -62,6 +62,12 @@ Complex II dysfunction causes mitochondrial ROS, which drives chronic PARP1 acti
 ### 9. EZH2 / PRC2 Histone Methylation Vulnerability
 Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UTX) and KDM6B (JMJD3), which erase the repressive H3K27me3 histone mark. The resulting H3K27me3 accumulation silences tumor suppressor and differentiation programs — a distinct epigenetic layer from the DNA hypermethylation driven by TET inhibition. EZH2 (the PRC2 methyltransferase that writes H3K27me3) becomes a synthetic-lethal target: inhibiting EZH2 blocks further H3K27me3 deposition without the KDM6 erasure function to compensate. Tazemetostat (Tazverik) is FDA-approved for SMARCB1-null epithelioid sarcoma via the same PRC2-dependency mechanism and has demonstrated H3K27me3 reactivation of silenced genes in SDH-deficient paraganglioma models.
 
+### 10. FGFR Signaling / FGF Ligand Upregulation (SDH-deficient GIST-specific)
+In SDH-deficient GIST specifically, genome-wide CIMP hypermethylates CTCF-binding genomic insulator sequences, collapsing topologically associating domain (TAD) boundaries and allowing normally insulated enhancers to drive aberrant co-expression of the FGF3 and FGF4 oncogenic ligands. These ligands activate FGFR1 in an autocrine loop, a mechanism absent in normal tissue and KIT/PDGFRA-mutant GIST. A prospective Phase 2 clinical trial of rogaratinib (pan-FGFR inhibitor, NCT04595747) in 24 patients with advanced SDH-deficient GIST achieved a 41.7% objective response rate and a median PFS of 31.0 months — the strongest single-agent clinical activity reported for this tumor type (Merriam et al., Nat Med 2026, PMID: 42191879). This makes FGFR inhibition one of the highest-evidenced pharmacological interventions currently available for SDH-deficient GIST.
+
+### 11. Neddylation / Protein Quality Control Dependency
+Metabolic reprogramming from SDH loss increases proteotoxic burden — misfolded or oxidized proteins accumulate under chronic ROS and energy stress. SDH-deficient cells appear to upregulate neddylation-dependent Cullin-RING E3 ubiquitin ligase (CRL) activity to manage this load. An unbiased CRISPR-Cas9 genetic screen in Sdhb-deficient mouse chromaffin cells (modeling paraganglioma) identified neddylation pathway components UBE2F and UBE2M as differentially essential. Loss of UBE2F selectively suppressed SDH-deficient cell growth, while the neddylation inhibitors pevonedistat (MLN4924) and HA-9104 selectively inhibited SDH-deficient proliferation in vitro (Al Khazal et al., iScience 2026, PMID: 42181244). Pevonedistat has clinical Phase 1/2 safety data from AML/MDS trials, though validation in SDH-deficient GIST models is still needed.
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -77,6 +83,8 @@ Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UT
 | EZH2 / PRC2 (Histone H3K27me3) | EZH2, KDM6A, KDM6B | Succinate blocks H3K27me3 demethylases; EZH2 inhibitors (tazemetostat) reverse silencing |
 | Autophagy | BECN1, ULK1, ATG5 | Metabolic stress drives BECN1-mediated autophagy survival; lysosomal inhibitors (HCQ) block flux |
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
+| FGFR / FGF Ligand (GIST-specific) | FGFR1, FGF3, FGF4 | CIMP insulator hypermethylation → FGF3/FGF4 overexpression → FGFR1 autocrine loop; rogaratinib Phase 2 ORR 41.7% |
+| Neddylation / CRL E3 Ligases | UBE2F, NAE1, CUL5 | CRISPR screen found neddylation dependency in SDH-deficient cells; pevonedistat selectively inhibits SDH-deficient growth |
 
 ## Important Context for Drug Repurposing
 

@@ -180,4 +180,22 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Rate-limiting enzyme in the NAD⁺ salvage pathway; converts nicotinamide to NMN, the immediate NAD⁺ precursor. SDH-deficient cells with elevated PARP1 activity and impaired ETC-mediated NAD⁺ regeneration upregulate NAMPT as an adaptive survival response, creating a dependency exploitable by NAMPT inhibitors such as daporinad (FK866).",
   },
+  {
+    gene_symbol: "FGFR1",
+    name: "Fibroblast growth factor receptor 1",
+    uniprot_id: "P11362",
+    pathway_slug: "fgfr-signaling",
+    target_type: "downstream",
+    description:
+      "Receptor tyrosine kinase activated by FGF ligands. In SDH-deficient GIST, CIMP-driven hypermethylation of genomic insulators aberrantly releases the FGF3/FGF4 locus from its normal chromatin domain, driving autocrine FGFR1 activation. Phase 2 trial of rogaratinib (pan-FGFR inhibitor) achieved 41.7% ORR in 24 patients with advanced SDH-deficient GIST (Merriam et al., Nat Med 2026, PMID: 42191879; NCT04595747).",
+  },
+  {
+    gene_symbol: "UBE2F",
+    name: "Ubiquitin-conjugating enzyme E2 F (neddylation E2)",
+    uniprot_id: "Q969M7",
+    pathway_slug: "neddylation-protein-homeostasis",
+    target_type: "synthetic_lethal",
+    description:
+      "NEDD8-conjugating E2 enzyme that, together with RBX2/SAG, neddylates Cullin-5 to activate CRL5 E3 ubiquitin ligase complexes. An unbiased CRISPR-Cas9 screen in Sdhb-deficient mouse chromaffin cells showed that UBE2F loss selectively suppresses SDH-deficient cell growth, whereas UBE2M loss promotes it, defining a neddylation branch dependency (Al Khazal et al., iScience 2026, PMID: 42181244).",
+  },
 ];

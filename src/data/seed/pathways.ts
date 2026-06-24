@@ -130,4 +130,36 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR / FGF Ligand Upregulation",
+    slug: "fgfr-signaling",
+    description:
+      "In SDH-deficient GIST, genome-wide CIMP hypermethylates CTCF-binding genomic insulators, collapsing topologically associating domains and allowing previously insulated enhancers to drive aberrant expression of FGF3 and FGF4. These ligands signal through FGFR1 in an autocrine loop, fueling tumor proliferation. A Phase 2 trial of the pan-FGFR inhibitor rogaratinib achieved a 41.7% objective response rate in advanced SDH-deficient GIST (Merriam et al., Nat Med 2026, PMID: 42191879).",
+    upstream_event:
+      "SDH loss → CIMP → insulator hypermethylation → FGF3/FGF4 aberrant expression → FGFR1 autocrine activation",
+    downstream_effects: [
+      "FGFR1 kinase autophosphorylation",
+      "RAS/MAPK and PI3K/AKT/mTOR co-activation",
+      "Cell proliferation and survival signaling",
+      "Tumor angiogenesis (secondary)",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
+  {
+    name: "Neddylation / Protein Quality Control",
+    slug: "neddylation-protein-homeostasis",
+    description:
+      "Metabolic reprogramming and elevated ROS from SDH loss increase proteotoxic burden, making SDH-deficient cells more dependent on neddylation-mediated Cullin-RING E3 ubiquitin ligase (CRL) activity for selective protein turnover. An unbiased CRISPR screen in Sdhb-deficient mouse chromaffin cells identified UBE2F (a neddylation E2 enzyme) loss as selectively lethal, and the neddylation inhibitor pevonedistat (MLN4924) suppressed SDH-deficient cell growth in vitro (Al Khazal et al., iScience 2026, PMID: 42181244).",
+    upstream_event:
+      "SDH loss → metabolic / oxidative stress → elevated proteotoxic burden → neddylation-CRL dependency for protein homeostasis",
+    downstream_effects: [
+      "CRL E3 ligase hyperactivation for protein degradation",
+      "Cell cycle regulator turnover (CDT1, p27, p21)",
+      "DNA damage response protein degradation",
+      "Selective lethality to neddylation blockade in SDH-deficient cells",
+    ],
+    druggable: true,
+    display_order: 10,
+  },
 ];
