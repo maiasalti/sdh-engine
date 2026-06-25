@@ -306,6 +306,38 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Rogaratinib",
+    brand_names: ["BAY1163877"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Pan-FGFR kinase inhibitor",
+    mechanism_of_action:
+      "Selective inhibitor of FGFR1-4 kinases. In SDH-deficient GIST, DNA hypermethylation (CIMP) caused by succinate-driven TET inhibition disrupts CTCF-bound genomic insulator elements, allowing long-range enhancers to aberrantly activate FGF3 and FGF4 — two closely co-located FGF ligands. FGF3/FGF4 secretion drives constitutive FGFR1 autocrine signaling → MEK/ERK and PI3K/AKT activation → proliferation and survival, independently of KIT. Rogaratinib blocks this ligand-dependent FGFR1 loop at the receptor level. Phase 2 trial (NCT04595747) in advanced SDH-deficient GIST reported: ORR 41.7% (10/24 confirmed partial responses), median PFS 31.0 months, 1-year PFS 77.4%. Pharmacodynamic biomarkers confirmed FGFR engagement (hyperphosphatemia). Whole-exome sequencing confirmed SDHx alterations as expected. Toxicities: hyperphosphatemia, fatigue, diarrhea — manageable. Published in Nature Medicine (Merriam et al., 2026; DOI: 10.1038/s41591-026-04376-9; PMID: 42191879).",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["fgfr-signaling", "epigenetic-dysregulation"],
+    target_gene_symbols: ["FGFR1"],
+    evidence_score: 72,
+    status: "clinical_trial",
+  },
+  {
+    name: "Erdafitinib",
+    brand_names: ["Balversa"],
+    chembl_id: "CHEMBL3989762",
+    pubchem_cid: "67462427",
+    drug_class: "Pan-FGFR kinase inhibitor",
+    mechanism_of_action:
+      "FDA-approved pan-FGFR inhibitor (FGFR1-4) indicated for FGFR-altered urothelial carcinoma. In SDH-deficient GIST, the mechanistic rationale mirrors rogaratinib: blocking FGFR1 kinase activity downstream of the CIMP-driven FGF3/FGF4 autocrine loop. Erdafitinib is the most accessible pan-FGFR inhibitor currently available in the US, making it the logical bridging option while rogaratinib remains investigational. Key differences from rogaratinib: erdafitinib is FDA-approved for FGFR-mutant (not FGFR-overexpressed) disease; cross-activity at FGFR1 is well-documented at approved doses. Note that the positive rogaratinib trial (NCT04595747, PMID: 42191879) used a pan-FGFR inhibitor with a similar FGFR1 binding profile, providing indirect support for erdafitinib in SDH-deficient GIST. A prospective trial or compassionate-use protocol is warranted before clinical application.",
+    fda_approved: true,
+    approved_indications: [
+      "FGFR2- or FGFR3-altered locally advanced or metastatic urothelial carcinoma",
+    ],
+    pathway_slugs: ["fgfr-signaling"],
+    target_gene_symbols: ["FGFR1"],
+    evidence_score: 48,
+    status: "preclinical",
+  },
+  {
     name: "Daporinad (FK866)",
     brand_names: ["APO866"],
     chembl_id: "CHEMBL267023",

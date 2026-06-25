@@ -180,4 +180,22 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Rate-limiting enzyme in the NAD⁺ salvage pathway; converts nicotinamide to NMN, the immediate NAD⁺ precursor. SDH-deficient cells with elevated PARP1 activity and impaired ETC-mediated NAD⁺ regeneration upregulate NAMPT as an adaptive survival response, creating a dependency exploitable by NAMPT inhibitors such as daporinad (FK866).",
   },
+  {
+    gene_symbol: "FGFR1",
+    name: "Fibroblast growth factor receptor 1",
+    uniprot_id: "P11362",
+    pathway_slug: "fgfr-signaling",
+    target_type: "downstream",
+    description:
+      "Receptor tyrosine kinase constitutively activated in SDH-deficient GIST via an autocrine FGF3/FGF4 loop unleashed by CIMP-driven insulator disruption. Unlike KIT-mutant GIST, the FGFR1 activation here is ligand-driven (not mutational), making ligand-receptor co-targeting or pan-FGFR inhibition the relevant therapeutic strategy. Target of rogaratinib and erdafitinib.",
+  },
+  {
+    gene_symbol: "FGF3",
+    name: "Fibroblast growth factor 3",
+    uniprot_id: "P11487",
+    pathway_slug: "fgfr-signaling",
+    target_type: "downstream",
+    description:
+      "FGF3 and its co-located paralog FGF4 are co-overexpressed in SDH-deficient GIST as a direct result of CTCF insulator element loss caused by genome-wide DNA hypermethylation. Their autocrine secretion sustains FGFR1 signaling and tumor growth. Elevated FGF3/FGF4 serum or tissue levels are candidate pharmacodynamic biomarkers for FGFR-targeted therapy (Merriam et al., Nat Med 2026, PMID: 42191879).",
+  },
 ];

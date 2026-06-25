@@ -130,4 +130,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR Signaling (Epigenetic Oncogene Activation)",
+    slug: "fgfr-signaling",
+    description:
+      "In SDH-deficient tumors, genome-wide DNA hypermethylation (CIMP) disrupts CTCF-bound insulator elements across the genome, causing aberrant long-range enhancer–gene contacts. At the FGF3/FGF4 locus, insulator loss induces coordinated overexpression of both ligands, which act in an autocrine loop through FGFR1 to drive proliferation and survival. This epigenetic mechanism of oncogene activation — downstream of succinate accumulation → TET inhibition → CIMP — is distinct from direct receptor mutation and is specifically observed in SDH-deficient (not KIT/PDGFRA-mutant) GIST.",
+    upstream_event:
+      "Succinate → TET inhibition → DNA hypermethylation (CIMP) → insulator element disruption → FGF3/FGF4 overexpression",
+    downstream_effects: [
+      "FGF3/FGF4 autocrine secretion",
+      "FGFR1 constitutive activation",
+      "MEK/ERK and PI3K/AKT proliferative signaling",
+      "Resistance to imatinib / KIT-directed therapy",
+      "Therapeutic vulnerability to pan-FGFR inhibition",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
 ];

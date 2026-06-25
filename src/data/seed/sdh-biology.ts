@@ -59,7 +59,10 @@ Metabolic stress from SDH loss triggers autophagy as a survival mechanism. Cells
 ### 8. NAD⁺ Metabolism Vulnerability
 Complex II dysfunction causes mitochondrial ROS, which drives chronic PARP1 activation for DNA repair. PARP1 is the dominant intracellular NAD⁺ consumer under sustained genotoxic stress. Simultaneously, the truncated TCA cycle makes cells dependent on cytoplasmic NAD⁺ regeneration via glycolysis. Together, these create a selective dependency on the NAMPT-mediated NAD⁺ salvage pathway. NAMPT inhibitors (daporinad/FK866) deplete NAD⁺, simultaneously collapsing DNA repair and bioenergetics in SDH-deficient cells.
 
-### 9. EZH2 / PRC2 Histone Methylation Vulnerability
+### 9. FGFR Signaling via Epigenetic Oncogene Activation
+Genome-wide DNA hypermethylation (CIMP) in SDH-deficient tumors extends beyond silencing tumor suppressors: it also disrupts CTCF-bound insulator elements that normally prevent long-range enhancers from activating inappropriate genes. In SDH-deficient GIST, insulator loss at the FGF3/FGF4 locus causes co-overexpression of both FGF ligands, which signal in an autocrine loop through FGFR1 to sustain proliferation independently of KIT. This mechanism explains imatinib resistance and defines pan-FGFR inhibition as a rational targeted strategy. Phase 2 trial NCT04595747 of rogaratinib in SDH-deficient GIST achieved 41.7% ORR and 31-month median PFS (Merriam et al., Nat Med 2026, PMID: 42191879). Erdafitinib (Balversa, FDA-approved for FGFR-altered urothelial cancer) provides an accessible pan-FGFR inhibitor that targets the same receptor at approved doses.
+
+### 10. EZH2 / PRC2 Histone Methylation Vulnerability
 Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UTX) and KDM6B (JMJD3), which erase the repressive H3K27me3 histone mark. The resulting H3K27me3 accumulation silences tumor suppressor and differentiation programs — a distinct epigenetic layer from the DNA hypermethylation driven by TET inhibition. EZH2 (the PRC2 methyltransferase that writes H3K27me3) becomes a synthetic-lethal target: inhibiting EZH2 blocks further H3K27me3 deposition without the KDM6 erasure function to compensate. Tazemetostat (Tazverik) is FDA-approved for SMARCB1-null epithelioid sarcoma via the same PRC2-dependency mechanism and has demonstrated H3K27me3 reactivation of silenced genes in SDH-deficient paraganglioma models.
 
 ## Key Druggable Targets and Pathways
@@ -77,6 +80,7 @@ Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UT
 | EZH2 / PRC2 (Histone H3K27me3) | EZH2, KDM6A, KDM6B | Succinate blocks H3K27me3 demethylases; EZH2 inhibitors (tazemetostat) reverse silencing |
 | Autophagy | BECN1, ULK1, ATG5 | Metabolic stress drives BECN1-mediated autophagy survival; lysosomal inhibitors (HCQ) block flux |
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
+| FGFR Signaling | FGFR1, FGF3, FGF4 | CIMP insulator disruption causes FGF3/FGF4 overexpression → FGFR1 autocrine loop; pan-FGFR inhibition (rogaratinib) showed 41.7% ORR in Phase 2 |
 
 ## Important Context for Drug Repurposing
 
