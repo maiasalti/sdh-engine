@@ -130,4 +130,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR / FGF Signaling",
+    slug: "fgfr-fgf-signaling",
+    description:
+      "In SDH-deficient tumors, succinate-driven global DNA hypermethylation disrupts CTCF genomic insulator binding, releasing oncogenic FGF3 and FGF4 loci from their topological boundary constraints. The resulting ectopic FGF3/FGF4 ligand expression drives an autocrine FGFR1 signaling loop that sustains tumor proliferation — a mechanism directly downstream of SDH loss through its epigenetic arm, validated by a Phase 2 trial of rogaratinib in SDH-deficient GIST (Merriam et al., Nat Med 2026, PMID: 42191879; NCT04595747).",
+    upstream_event:
+      "SDH loss → succinate accumulation → TET inhibition → DNA hypermethylation → CTCF insulator disruption → aberrant FGF3/FGF4 oncogene activation",
+    downstream_effects: [
+      "FGFR1 autocrine activation",
+      "RAS/MAPK/ERK proliferative signaling",
+      "PI3K/AKT survival signaling",
+      "Cell cycle progression",
+      "Resistance to KIT/PDGFRA TKIs",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
 ];

@@ -62,6 +62,9 @@ Complex II dysfunction causes mitochondrial ROS, which drives chronic PARP1 acti
 ### 9. EZH2 / PRC2 Histone Methylation Vulnerability
 Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UTX) and KDM6B (JMJD3), which erase the repressive H3K27me3 histone mark. The resulting H3K27me3 accumulation silences tumor suppressor and differentiation programs — a distinct epigenetic layer from the DNA hypermethylation driven by TET inhibition. EZH2 (the PRC2 methyltransferase that writes H3K27me3) becomes a synthetic-lethal target: inhibiting EZH2 blocks further H3K27me3 deposition without the KDM6 erasure function to compensate. Tazemetostat (Tazverik) is FDA-approved for SMARCB1-null epithelioid sarcoma via the same PRC2-dependency mechanism and has demonstrated H3K27me3 reactivation of silenced genes in SDH-deficient paraganglioma models.
 
+### 10. FGFR / FGF Signaling Vulnerability (SDH-deficient GIST–specific)
+The DNA hypermethylation characteristic of SDH-deficient tumors has a second, distinct oncogenic consequence beyond silencing tumor suppressors: it disrupts CTCF-mediated topological insulator elements that normally confine oncogenic FGF3 and FGF4 expression to their normal tissue contexts. In SDH-deficient GIST, loss of these insulators drives ectopic transcription of FGF3 and FGF4, whose secreted ligands then activate FGFR1 in an autocrine signaling loop. This cancer-specific epigenetic oncogene activation mechanism is directly downstream of SDH loss and wholly absent in KIT/PDGFRA-mutant GIST. Pan-FGFR inhibitor rogaratinib achieved a 41.7% objective response rate and 31-month median PFS in a Phase 2 trial of 24 advanced SDH-deficient GIST patients (NCT04595747; Merriam et al., Nat Med 2026, PMID: 42191879) — the highest response rate of any targeted agent reported specifically in this subtype. This finding establishes FGFR inhibition as the highest-evidence new therapeutic strategy in SDH-deficient GIST.
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -77,6 +80,7 @@ Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UT
 | EZH2 / PRC2 (Histone H3K27me3) | EZH2, KDM6A, KDM6B | Succinate blocks H3K27me3 demethylases; EZH2 inhibitors (tazemetostat) reverse silencing |
 | Autophagy | BECN1, ULK1, ATG5 | Metabolic stress drives BECN1-mediated autophagy survival; lysosomal inhibitors (HCQ) block flux |
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
+| FGFR / FGF Signaling | FGFR1, FGF3, FGF4 | DNA hypermethylation disrupts CTCF insulators → ectopic FGF3/FGF4 → autocrine FGFR1 loop; rogaratinib Phase 2 shows 41.7% ORR (PMID: 42191879) |
 
 ## Important Context for Drug Repurposing
 

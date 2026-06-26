@@ -320,4 +320,19 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 48,
     status: "preclinical",
   },
+  {
+    name: "Rogaratinib",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Pan-FGFR inhibitor",
+    mechanism_of_action:
+      "Orally bioavailable pan-FGFR (1/2/3/4) inhibitor developed by Bayer (BAY 1163877). In SDH-deficient GIST, succinate accumulation causes global DNA hypermethylation (via TET enzyme inhibition) that disrupts CTCF-mediated topological insulator elements, releasing the oncogenic FGF3 and FGF4 loci and driving their ectopic transcription. The secreted FGF3/FGF4 ligands engage FGFR1 in an autocrine signaling loop that sustains tumor proliferation despite the absence of KIT/PDGFRA mutations. Rogaratinib blockades all four FGFR paralogs, cutting off this epigenetically-activated signaling axis. This mechanism — epigenetic oncogene activation downstream of SDH loss — is specific to SDH-deficient biology and was validated in a Phase 2 trial (NCT04595747, n=24 advanced SDH-deficient GIST) achieving a 41.7% objective response rate and 31-month median PFS (1-year PFS 77.4%). Toxicities were manageable (hyperphosphatemia, fatigue, diarrhea) with no grade 4 events. (Merriam et al., Nat Med 2026, PMID: 42191879; DOI: 10.1038/s41591-026-04376-9).",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["fgfr-fgf-signaling", "epigenetic-dysregulation"],
+    target_gene_symbols: ["FGFR1"],
+    evidence_score: 72,
+    status: "clinical_trial",
+  },
 ];
