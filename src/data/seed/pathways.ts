@@ -130,4 +130,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR / Epigenetic Oncogene Activation",
+    slug: "fgfr-epigenetic",
+    description:
+      "SDH-loss-driven DNA hypermethylation disrupts CTCF-dependent genomic insulators flanking the FGF3/FGF4 locus, de-repressing these ligands and establishing an autocrine FGFR1 signaling loop. This epigenetic mechanism of oncogene activation is unique to SDH-deficient GIST and was therapeutically validated in a Phase 2 trial of pan-FGFR inhibition with 41.7% ORR and 31-month median PFS (Merriam et al., Nat Med 2026, PMID: 42191879; NCT04595747).",
+    upstream_event:
+      "Succinate → TET inhibition → DNA hypermethylation → CTCF insulator disruption → FGF3/FGF4 overexpression → FGFR1 autocrine activation",
+    downstream_effects: [
+      "FGF3 and FGF4 ligand overexpression",
+      "FGFR1 receptor autophosphorylation",
+      "MAPK/ERK and PI3K downstream signaling",
+      "Cell proliferation and survival",
+      "Pan-FGFR inhibitor sensitivity",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
 ];

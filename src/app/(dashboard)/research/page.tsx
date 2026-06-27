@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { SDH_QUERIES } from "@/lib/apis/pubmed";
 import { cn } from "@/lib/utils";
+import { PAPERS, type CuratedPaper } from "@/data/papers";
 
 type Article = {
   pmid: string;
@@ -36,6 +37,72 @@ const RELEVANCE_COLORS: Record<string, string> = {
   low: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
   none: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
 };
+
+const TOPIC_COLORS: Record<CuratedPaper["topic"], string> = {
+  "Treatment & Trials":
+    "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "Tumor Biology":
+    "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200",
+  "Review / Overview":
+    "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  "Genetics & Syndromes":
+    "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+  "Diagnosis & Pathology":
+    "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
+  "Case Reports":
+    "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
+};
+
+function CuratedPaperCard({
+  paper,
+  isRecent,
+}: {
+  paper: CuratedPaper;
+  isRecent?: boolean;
+}) {
+  return (
+    <Card>
+      <CardContent className="pt-5 space-y-2">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1 space-y-1">
+            <a
+              href={`https://doi.org/${paper.doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold hover:underline inline-flex items-center gap-1"
+            >
+              {paper.title}
+              <ExternalLink className="h-3 w-3 flex-shrink-0" />
+            </a>
+            <p className="text-xs text-muted-foreground">{paper.authors}</p>
+            <p className="text-xs text-muted-foreground">
+              {paper.journal} {paper.year}
+              {paper.pmid && (
+                <span className="ml-2 font-mono">PMID: {paper.pmid}</span>
+              )}
+            </p>
+          </div>
+          <div className="flex flex-col items-end gap-1 shrink-0">
+            <Badge
+              variant="secondary"
+              className={cn("text-[10px]", TOPIC_COLORS[paper.topic])}
+            >
+              {paper.topic}
+            </Badge>
+            {isRecent && (
+              <Badge variant="secondary" className="text-[10px] bg-primary/10 text-primary">
+                Recent
+              </Badge>
+            )}
+          </div>
+        </div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {paper.description}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
 
 function PaperCard({ article }: { article: Article }) {
   const [summary, setSummary] = useState<AiSummary | null>(null);
@@ -163,11 +230,21 @@ function PaperCard({ article }: { article: Article }) {
   );
 }
 
+function getRecentCutoff(): string {
+  const d = new Date();
+  d.setMonth(d.getMonth() - 3);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+}
+
 export default function ResearchPage() {
   const [query, setQuery] = useState("");
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
+
+  const cutoff = getRecentCutoff();
+  const recentPapers = PAPERS.filter((p) => p.date && p.date >= cutoff);
+  const olderPapers = PAPERS.filter((p) => !p.date || p.date < cutoff);
 
   async function search(searchQuery?: string) {
     const q = searchQuery || query;
@@ -189,113 +266,150 @@ export default function ResearchPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight">Research Feed</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Research</h2>
         <p className="text-muted-foreground">
-          Search PubMed for SDH-deficient disease research with AI-powered
-          summaries
+          Curated SDH-deficient disease papers and live PubMed search with
+          AI-powered summaries
         </p>
       </div>
 
-      {/* Search */}
-      <Card>
-        <CardContent className="pt-6 space-y-4">
-          <div className="flex gap-2">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && search()}
-                placeholder="Search PubMed (e.g., SDH-deficient GIST belzutifan)..."
-                className="pl-10"
-              />
-            </div>
-            <button
-              onClick={() => search()}
-              disabled={loading}
-              className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-            >
-              {loading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                "Search"
-              )}
-            </button>
+      {/* Most recent curated papers */}
+      {recentPapers.length > 0 && (
+        <section className="space-y-3">
+          <div className="flex items-center gap-2">
+            <h3 className="text-base font-semibold">Most recent papers</h3>
+            <Badge variant="secondary" className="text-[10px] bg-primary/10 text-primary">
+              Last 3 months
+            </Badge>
           </div>
-
-          <div>
-            <p className="text-xs text-muted-foreground mb-2">
-              Quick searches:
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {SDH_QUERIES.map((q) => (
-                <button
-                  key={q}
-                  onClick={() => {
-                    setQuery(q);
-                    search(q);
-                  }}
-                  className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground hover:bg-muted/80 transition-colors"
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
+          <div className="space-y-3">
+            {recentPapers.map((p) => (
+              <CuratedPaperCard key={p.doi} paper={p} isRecent />
+            ))}
           </div>
-        </CardContent>
-      </Card>
-
-      {/* Results */}
-      {loading && (
-        <div className="flex items-center justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
-          <span className="ml-2 text-sm text-muted-foreground">
-            Searching PubMed...
-          </span>
-        </div>
+        </section>
       )}
 
-      {!loading && articles.length > 0 && (
-        <div className="space-y-3">
-          <p className="text-sm text-muted-foreground">
-            {articles.length} results
+      {/* Older curated papers */}
+      {olderPapers.length > 0 && (
+        <section className="space-y-3">
+          <h3 className="text-base font-semibold">Curated papers</h3>
+          <div className="space-y-3">
+            {olderPapers.map((p) => (
+              <CuratedPaperCard key={p.doi} paper={p} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* PubMed live search */}
+      <section className="space-y-4">
+        <div>
+          <h3 className="text-base font-semibold">PubMed search</h3>
+          <p className="text-xs text-muted-foreground mt-0.5">
+            Search PubMed for SDH-deficient disease research with AI-powered summaries
           </p>
-          {articles.map((article) => (
-            <PaperCard key={article.pmid} article={article} />
-          ))}
         </div>
-      )}
 
-      {!loading && searched && articles.length === 0 && (
         <Card>
-          <CardContent className="py-12 text-center">
-            <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/30" />
-            <h3 className="mt-4 text-lg font-semibold">No results found</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Try a different search query or use one of the quick searches
-              above.
-            </p>
+          <CardContent className="pt-6 space-y-4">
+            <div className="flex gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && search()}
+                  placeholder="Search PubMed (e.g., SDH-deficient GIST belzutifan)..."
+                  className="pl-10"
+                />
+              </div>
+              <button
+                onClick={() => search()}
+                disabled={loading}
+                className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              >
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  "Search"
+                )}
+              </button>
+            </div>
+
+            <div>
+              <p className="text-xs text-muted-foreground mb-2">
+                Quick searches:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {SDH_QUERIES.map((q) => (
+                  <button
+                    key={q}
+                    onClick={() => {
+                      setQuery(q);
+                      search(q);
+                    }}
+                    className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground hover:bg-muted/80 transition-colors"
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+            </div>
           </CardContent>
         </Card>
-      )}
 
-      {!searched && (
-        <Card>
-          <CardContent className="py-12 text-center">
-            <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/30" />
-            <h3 className="mt-4 text-lg font-semibold">
-              Search PubMed for SDH research
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Enter a search query or click a quick search to find relevant
-              papers. Use the AI summarize button on any paper to get a
-              plain-language summary focused on drug repurposing.
+        {loading && (
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+            <span className="ml-2 text-sm text-muted-foreground">
+              Searching PubMed...
+            </span>
+          </div>
+        )}
+
+        {!loading && articles.length > 0 && (
+          <div className="space-y-3">
+            <p className="text-sm text-muted-foreground">
+              {articles.length} results
             </p>
-          </CardContent>
-        </Card>
-      )}
+            {articles.map((article) => (
+              <PaperCard key={article.pmid} article={article} />
+            ))}
+          </div>
+        )}
+
+        {!loading && searched && articles.length === 0 && (
+          <Card>
+            <CardContent className="py-12 text-center">
+              <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/30" />
+              <h3 className="mt-4 text-lg font-semibold">No results found</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Try a different search query or use one of the quick searches
+                above.
+              </p>
+            </CardContent>
+          </Card>
+        )}
+
+        {!searched && (
+          <Card>
+            <CardContent className="py-12 text-center">
+              <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/30" />
+              <h3 className="mt-4 text-lg font-semibold">
+                Search PubMed for SDH research
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Enter a search query or click a quick search to find relevant
+                papers. Use the AI summarize button on any paper to get a
+                plain-language summary focused on drug repurposing.
+              </p>
+            </CardContent>
+          </Card>
+        )}
+      </section>
     </div>
   );
 }
