@@ -33,4 +33,6 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "oxidative-stress-ros": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
   "autophagy-survival": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
   "nad-metabolism": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
+  "fgfr-autocrine": "bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-200",
+  "neddylation": "bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-200",
 };

@@ -62,6 +62,12 @@ Complex II dysfunction causes mitochondrial ROS, which drives chronic PARP1 acti
 ### 9. EZH2 / PRC2 Histone Methylation Vulnerability
 Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UTX) and KDM6B (JMJD3), which erase the repressive H3K27me3 histone mark. The resulting H3K27me3 accumulation silences tumor suppressor and differentiation programs — a distinct epigenetic layer from the DNA hypermethylation driven by TET inhibition. EZH2 (the PRC2 methyltransferase that writes H3K27me3) becomes a synthetic-lethal target: inhibiting EZH2 blocks further H3K27me3 deposition without the KDM6 erasure function to compensate. Tazemetostat (Tazverik) is FDA-approved for SMARCB1-null epithelioid sarcoma via the same PRC2-dependency mechanism and has demonstrated H3K27me3 reactivation of silenced genes in SDH-deficient paraganglioma models.
 
+### 10. FGFR Autocrine Signaling via Epigenetic Insulator Disruption
+A 2026 Phase 2 trial published in Nature Medicine (Merriam et al., PMID: 42191879) established the FGFR autocrine axis as the most clinically-validated new therapeutic target in SDH-deficient GIST. The mechanism is epigenetically driven: SDH-loss-induced CIMP disrupts CTCF insulators at the 11q13 chromosomal locus, derepressing the normally silenced FGF3 and FGF4 oncogenes. These ligands signal through FGFR1 in an autocrine/paracrine loop. Pan-FGFR inhibitor rogaratinib (NCT04595747) achieved 41.7% ORR in 24 advanced SDH-deficient GIST patients, with a median PFS of 31.0 months. This is the first trial demonstrating that exploiting an epigenetic consequence of SDH loss can achieve meaningful clinical responses in this tumor type.
+
+### 11. Neddylation / Cullin-RING Ligase Dependency
+An unbiased CRISPR-Cas9 synthetic lethality screen in SDHB-deficient chromaffin cells (Al Khazal et al., iScience 2026, PMID: 42181244) identified the neddylation pathway as a selective vulnerability in SDH-deficient neuroendocrine tumors. Neddylation — the conjugation of NEDD8 to Cullin proteins — is required for activation of Cullin-RING E3 ubiquitin ligases (CRLs), which control the ubiquitin-mediated degradation of key proliferation and survival regulators. The neddylation E2 enzyme UBE2F emerged as a growth suppressor specifically in SDH-deficient cells; its loss promoted growth, while loss of UBE2M (the competing neddylation enzyme) suppressed growth of SDH-deficient but not wild-type cells. Pevonedistat (MLN4924), a clinical-stage NAE1 inhibitor, selectively inhibited growth and induced apoptosis in SDH-deficient imCCs.
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -77,6 +83,8 @@ Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UT
 | EZH2 / PRC2 (Histone H3K27me3) | EZH2, KDM6A, KDM6B | Succinate blocks H3K27me3 demethylases; EZH2 inhibitors (tazemetostat) reverse silencing |
 | Autophagy | BECN1, ULK1, ATG5 | Metabolic stress drives BECN1-mediated autophagy survival; lysosomal inhibitors (HCQ) block flux |
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
+| FGFR Autocrine (FGF3/FGF4) | FGFR1, FGF3, FGF4 | CIMP-driven insulator disruption at 11q13 derepress FGF3/FGF4 → FGFR1 autocrine loop; 41.7% ORR in Phase 2 |
+| Neddylation / CRL | NAE1, UBE2F, Cullins | CRISPR screen shows selective neddylation dependency in SDH-deficient neuroendocrine tumors |
 
 ## Important Context for Drug Repurposing
 

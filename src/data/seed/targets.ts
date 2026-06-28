@@ -180,4 +180,22 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Rate-limiting enzyme in the NAD⁺ salvage pathway; converts nicotinamide to NMN, the immediate NAD⁺ precursor. SDH-deficient cells with elevated PARP1 activity and impaired ETC-mediated NAD⁺ regeneration upregulate NAMPT as an adaptive survival response, creating a dependency exploitable by NAMPT inhibitors such as daporinad (FK866).",
   },
+  {
+    gene_symbol: "FGFR1",
+    name: "Fibroblast growth factor receptor 1",
+    uniprot_id: "P11362",
+    pathway_slug: "fgfr-autocrine",
+    target_type: "downstream",
+    description:
+      "Receptor tyrosine kinase activated by FGF3 and FGF4 ligands in an autocrine loop in SDH-deficient GISTs. SDH-loss-driven CIMP disrupts CTCF insulators at 11q13, derepressing FGF3/FGF4, which then signal through FGFR1. Phase 2 trial of pan-FGFR inhibitor rogaratinib showed 41.7% ORR (10/24 partial responses) and median PFS of 31 months in advanced SDH-deficient GIST; hyperphosphatemia and FGF phosphorous biomarker changes confirmed FGFR1 target engagement (Merriam et al., Nat Med 2026, PMID: 42191879; NCT04595747).",
+  },
+  {
+    gene_symbol: "NAE1",
+    name: "NEDD8-activating enzyme E1 regulatory subunit",
+    uniprot_id: "Q13564",
+    pathway_slug: "neddylation",
+    target_type: "synthetic_lethal",
+    description:
+      "Regulatory subunit of the NEDD8-activating enzyme (NAE), the E1 enzyme that initiates neddylation — the conjugation of NEDD8 to Cullin proteins required for Cullin-RING ligase (CRL) activation. In an unbiased CRISPR-Cas9 screen in SDHB-deficient chromaffin cells, loss of neddylation regulator UBE2F selectively suppressed growth of SDH-deficient cells. The NAE inhibitor pevonedistat (MLN4924) and HA-9104 phenocopied this selective lethality in SDH-deficient but not wild-type cells, establishing NAE1 as a synthetic lethal target in SDH-deficient PPGL (Al Khazal et al., iScience 2026, PMID: 42181244).",
+  },
 ];

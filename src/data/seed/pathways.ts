@@ -130,4 +130,36 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR Autocrine Signaling (FGF3/FGF4)",
+    slug: "fgfr-autocrine",
+    description:
+      "SDH-loss-driven DNA hypermethylation (CIMP) disrupts CTCF insulators at the 11q13 chromosomal locus, derepressing the normally silenced FGF3 and FGF4 oncogenes. These ligands activate FGFR1 in an autocrine/paracrine loop, driving tumor cell proliferation. Pan-FGFR inhibitor rogaratinib achieved 41.7% ORR and 31-month median PFS in a Phase 2 trial specifically in SDH-deficient GIST (Merriam et al., Nat Med 2026, PMID: 42191879).",
+    upstream_event:
+      "SDH loss → CIMP → CTCF insulator disruption at 11q13 → FGF3/FGF4 derepression → autocrine FGFR1 activation",
+    downstream_effects: [
+      "FGF3/FGF4 oncogene derepression",
+      "Autocrine FGFR1 activation",
+      "MAPK/ERK and PI3K/AKT downstream signaling",
+      "Tumor cell proliferation and survival",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
+  {
+    name: "Neddylation / CRL Ubiquitin Pathway",
+    slug: "neddylation",
+    description:
+      "An unbiased CRISPR-Cas9 synthetic lethality screen in SDH-deficient chromaffin cells identified the neddylation pathway as a selective vulnerability. Neddylation (NEDD8 conjugation) activates Cullin-RING E3 ubiquitin ligases (CRLs), which control ubiquitin-mediated degradation of cell cycle regulators and survival proteins. Loss of neddylation regulator UBE2F selectively suppressed growth of SDH-deficient cells; neddylation inhibitor pevonedistat (MLN4924) recapitulated this effect (Al Khazal et al., iScience 2026, PMID: 42181244).",
+    upstream_event:
+      "SDH loss → altered protein homeostasis → selective dependency on neddylation-activated CRL complex activity",
+    downstream_effects: [
+      "Cullin-RING ligase (CRL) neddylation and activation",
+      "Ubiquitin-mediated degradation of tumor suppressors",
+      "Cell cycle progression",
+      "Apoptosis suppression",
+    ],
+    druggable: true,
+    display_order: 10,
+  },
 ];
