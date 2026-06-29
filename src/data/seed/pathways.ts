@@ -130,4 +130,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR Signaling / Epigenetic Oncogene Activation",
+    slug: "fgfr-signaling",
+    description:
+      "DNA hypermethylation from SDH loss disrupts CTCF-bound chromatin insulators at the FGF3/FGF4 oncogene locus on chromosome 11q13, releasing transcriptional silencing and driving aberrant ligand expression. The resulting autocrine FGF3/FGF4 → FGFR1 signaling loop fuels proliferation and is directly targetable by pan-FGFR inhibitors.",
+    upstream_event:
+      "Succinate → TET1/2/3 inhibition → CTCF insulator hypermethylation → FGF3/FGF4 locus de-repression",
+    downstream_effects: [
+      "FGF3 and FGF4 autocrine ligand overexpression",
+      "FGFR1 phosphorylation and kinase activation",
+      "MAPK/ERK proliferative signaling",
+      "PI3K/AKT survival signaling",
+      "Cell proliferation and tumor growth",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
 ];

@@ -180,4 +180,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Rate-limiting enzyme in the NAD⁺ salvage pathway; converts nicotinamide to NMN, the immediate NAD⁺ precursor. SDH-deficient cells with elevated PARP1 activity and impaired ETC-mediated NAD⁺ regeneration upregulate NAMPT as an adaptive survival response, creating a dependency exploitable by NAMPT inhibitors such as daporinad (FK866).",
   },
+  {
+    gene_symbol: "FGFR1",
+    name: "Fibroblast growth factor receptor 1",
+    uniprot_id: "P11362",
+    pathway_slug: "fgfr-signaling",
+    target_type: "downstream",
+    description:
+      "Receptor tyrosine kinase that mediates the aberrant FGF3/FGF4 autocrine loop in SDH-deficient GIST. Epigenetic disruption of CTCF insulators by succinate-driven hypermethylation de-represses the FGF3/FGF4 locus, overactivating FGFR1. Pan-FGFR inhibitor rogaratinib achieved 41.7% ORR and 31-month median PFS in a Phase 2 trial in SDH-deficient GIST (PMID: 42191879).",
+  },
 ];

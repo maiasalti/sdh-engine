@@ -10,8 +10,10 @@ import {
   Loader2,
   Sparkles,
   ExternalLink,
+  Pin,
 } from "lucide-react";
 import { SDH_QUERIES } from "@/lib/apis/pubmed";
+import { PAPERS, type PaperEntry } from "@/data/papers";
 import { cn } from "@/lib/utils";
 
 type Article = {
@@ -29,6 +31,71 @@ type AiSummary = {
   relevance: string;
   key_takeaway: string;
 };
+
+const TOPIC_COLORS: Record<string, string> = {
+  "Treatment & Trials":
+    "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "Tumor Biology":
+    "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  "Genetics & Syndromes":
+    "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200",
+  "Diagnosis & Pathology":
+    "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+  "Review / Overview":
+    "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200",
+  "Case Reports":
+    "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
+};
+
+function isRecentPaper(date: string | undefined): boolean {
+  if (!date) return false;
+  const [y, m] = date.split("-").map(Number);
+  const paperDate = new Date(y, m - 1);
+  const cutoff = new Date();
+  cutoff.setMonth(cutoff.getMonth() - 3);
+  return paperDate >= cutoff;
+}
+
+function CuratedPaperCard({ paper }: { paper: PaperEntry }) {
+  return (
+    <Card>
+      <CardContent className="pt-4 space-y-2">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 space-y-1">
+            <a
+              href={`https://doi.org/${paper.doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold hover:underline inline-flex items-center gap-1"
+            >
+              {paper.title}
+              <ExternalLink className="h-3 w-3 flex-shrink-0" />
+            </a>
+            <p className="text-xs text-muted-foreground">
+              {paper.authors} &middot; <em>{paper.journal}</em> {paper.year}
+            </p>
+          </div>
+          <div className="flex flex-col items-end gap-1 shrink-0">
+            <Badge
+              variant="secondary"
+              className={cn("text-[10px]", TOPIC_COLORS[paper.topic])}
+            >
+              {paper.topic}
+            </Badge>
+            {paper.pmid && (
+              <span className="text-[10px] text-muted-foreground font-mono">
+                PMID {paper.pmid}
+              </span>
+            )}
+          </div>
+        </div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {paper.description}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
 
 const RELEVANCE_COLORS: Record<string, string> = {
   high: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
@@ -169,6 +236,8 @@ export default function ResearchPage() {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
 
+  const recentPapers = PAPERS.filter((p) => isRecentPaper(p.date));
+
   async function search(searchQuery?: string) {
     const q = searchQuery || query;
     setLoading(true);
@@ -197,6 +266,22 @@ export default function ResearchPage() {
           summaries
         </p>
       </div>
+
+      {/* Curated recent papers */}
+      {recentPapers.length > 0 && (
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <Pin className="h-4 w-4 text-primary" />
+            <h3 className="text-sm font-semibold">Most Recent Papers</h3>
+            <Badge variant="secondary" className="text-[10px]">
+              Last 3 months
+            </Badge>
+          </div>
+          {recentPapers.map((paper) => (
+            <CuratedPaperCard key={paper.doi} paper={paper} />
+          ))}
+        </div>
+      )}
 
       {/* Search */}
       <Card>
