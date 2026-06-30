@@ -306,6 +306,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Rogaratinib",
+    brand_names: ["BAY 1163877"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Pan-FGFR inhibitor (FGFR1/2/3/4)",
+    mechanism_of_action:
+      "Oral pan-fibroblast growth factor receptor (FGFR1/2/3/4) kinase inhibitor. In SDH-deficient GIST, genome-wide DNA hypermethylation from succinate accumulation disrupts CTCF-mediated chromatin insulators at the FGF3/FGF4 locus, causing constitutive overexpression of these oncogenic ligands and establishing an autocrine FGFR1 signalling loop. Rogaratinib blocks FGFR1 kinase activity, cutting off this epigenetically-unleashed proliferative circuit at the receptor level. Phase 2 trial (NCT04595747) in advanced SDH-deficient GIST (n = 24) reported an objective response rate of 41.7% and median PFS of 31.0 months (1-year PFS 77.4%) — the highest efficacy ever reported for a systemic agent in this disease (Merriam et al., Nat Med 2026, PMID 42191879, DOI 10.1038/s41591-026-04376-9). Pharmacodynamic confirmation: serial phosphate elevations across the cohort indicated consistent FGFR1 target engagement. Toxicities were manageable (hyperphosphatemia, fatigue, diarrhoea). Key mechanistic point: activity is specifically predicted by DNA hypermethylation driving FGF3/FGF4 overexpression — the same epigenetic event that defines SDH-deficient tumours — making this the most mechanistically direct systemic therapy option yet identified for this cancer.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["fgfr1-autocrine", "epigenetic-dysregulation"],
+    target_gene_symbols: ["FGFR1"],
+    evidence_score: 80,
+    status: "clinical_trial",
+  },
+  {
     name: "Daporinad (FK866)",
     brand_names: ["APO866"],
     chembl_id: "CHEMBL267023",

@@ -130,4 +130,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR1 / FGF3-FGF4 Autocrine Loop",
+    slug: "fgfr1-autocrine",
+    description:
+      "SDH loss drives genome-wide DNA hypermethylation that disrupts CTCF-mediated chromatin insulators at the FGF3/FGF4 locus, releasing transcriptional repression and causing constitutive overexpression of these oncogenic ligands. FGF3 and FGF4 signal back through FGFR1 in an autocrine loop, driving proliferation via MAPK/ERK and PI3K/AKT. A Phase 2 trial of the pan-FGFR inhibitor rogaratinib in SDH-deficient GIST demonstrated 41.7% objective response rate and 31-month median PFS (Merriam et al., Nat Med 2026, PMID 42191879).",
+    upstream_event:
+      "SDH loss → DNA hypermethylation → CTCF insulator disruption → FGF3/FGF4 oncogene overexpression",
+    downstream_effects: [
+      "Constitutive FGFR1 phosphorylation",
+      "MAPK/ERK activation → proliferation",
+      "PI3K/AKT activation → survival",
+      "Autocrine growth-factor independence",
+      "Sensitivity to pan-FGFR inhibitors",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
 ];
