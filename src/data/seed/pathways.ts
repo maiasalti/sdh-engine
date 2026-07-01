@@ -130,4 +130,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR Signaling / FGF Insulator Loss",
+    slug: "fgfr-signaling",
+    description:
+      "DNA hypermethylation in SDH-deficient tumors silences CTCF insulator elements at the FGF3/FGF4 locus, enabling aberrant oncogene de-repression. The resulting FGF3/FGF4 → FGFR1 autocrine signaling loop drives proliferation and is directly targetable by pan-FGFR inhibitors. A Phase 2 trial (NCT04595747) demonstrated 41.7% ORR with rogaratinib in SDH-deficient GIST.",
+    upstream_event:
+      "Succinate → TET inhibition → CpG hypermethylation → CTCF insulator silencing → FGF3/FGF4 oncogene de-repression",
+    downstream_effects: [
+      "FGF3/FGF4 oncogene overexpression",
+      "FGFR1 autocrine signaling loop",
+      "MAPK/ERK activation",
+      "Cell proliferation and survival",
+      "Ligand-driven receptor tyrosine kinase dependency",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
 ];

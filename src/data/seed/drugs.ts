@@ -306,6 +306,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Rogaratinib",
+    brand_names: [],
+    chembl_id: "CHEMBL3989553",
+    pubchem_cid: "25111581",
+    drug_class: "Pan-FGFR inhibitor (FGFR1/2/3/4)",
+    mechanism_of_action:
+      "Orally bioavailable pan-FGFR kinase inhibitor that blocks FGF3/FGF4-driven FGFR1 autocrine signaling. In SDH-deficient GIST, succinate accumulation causes genome-wide CpG hypermethylation that silences CTCF insulator elements flanking the FGF3/FGF4 oncogene locus. Loss of these insulators permits adjacent enhancers to drive high-level FGF3/FGF4 transcription, creating an autocrine ligand-receptor loop through FGFR1 that supports tumor proliferation. Rogaratinib blocks FGFR1/2/3/4 kinase activity, breaking this loop. Phase 2 trial (NCT04595747) in 24 patients with advanced SDH-deficient GIST: 41.7% objective response rate, median PFS 31.0 months (95% CI 20.2–NR), 1-year PFS 77.4% — results published in Nature Medicine (Merriam et al. 2026, PMID 42191879). Toxicities included manageable hyperphosphatemia (off-target FGFR1 inhibition in kidney), fatigue, and diarrhoea.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["fgfr-signaling", "epigenetic-dysregulation"],
+    target_gene_symbols: ["FGFR1"],
+    evidence_score: 72,
+    status: "clinical_trial",
+  },
+  {
     name: "Daporinad (FK866)",
     brand_names: ["APO866"],
     chembl_id: "CHEMBL267023",
