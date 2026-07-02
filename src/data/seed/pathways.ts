@@ -130,4 +130,36 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR Signaling",
+    slug: "fgfr-signaling",
+    description:
+      "SDH loss causes genome-wide DNA hypermethylation that silences CTCF chromatin insulator elements. When these insulators are methylated, normally-repressed proto-oncogenic loci become derepressed — including FGF3 and FGF4, which activate FGFR1 in an autocrine loop. A Phase 2 trial of the pan-FGFR inhibitor rogaratinib in SDH-deficient GIST achieved 41.7% ORR and 31-month median PFS, directly validating this pathway (Merriam et al., Nat Med 2026, PMID 42191879).",
+    upstream_event:
+      "SDH loss → DNA hypermethylation → CTCF insulator silencing → FGF3/FGF4 derepression → FGFR1 autocrine activation",
+    downstream_effects: [
+      "FGFR1 receptor tyrosine kinase activation",
+      "RAS/MAPK proliferation signaling",
+      "PI3K/AKT survival signaling",
+      "Tumor cell proliferation and survival",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
+  {
+    name: "Neddylation / Cullin-RING Ligase Pathway",
+    slug: "neddylation-ubiquitin",
+    description:
+      "An unbiased CRISPR screen in SDH-deficient mouse chromaffin cells identified the neddylation pathway — NEDD8 conjugation to cullin scaffolds that activates CRL E3 ubiquitin ligases — as a selective dependency in SDH-loss cells. Loss of the neddylation E2 enzyme UBE2F suppresses growth of SDH-deficient cells, while the NAE1 inhibitor pevonedistat selectively inhibits their proliferation (Al Khazal et al., iScience 2026, PMID 42181244).",
+    upstream_event:
+      "Metabolic stress from SDH loss rewires ubiquitin-proteasome homeostasis → dependency on CRL E3 ligase activity",
+    downstream_effects: [
+      "CRL-mediated degradation of cell cycle regulators (p27, CDT1, WEE1)",
+      "DNA re-replication stress in neddylation-inhibited cells",
+      "Proteotoxic stress accumulation",
+      "Selective lethality in SDH-deficient cells",
+    ],
+    druggable: true,
+    display_order: 10,
+  },
 ];
