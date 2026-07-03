@@ -130,4 +130,37 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 8,
   },
+  {
+    name: "FGFR Signaling (Epigenetic Insulator Disruption)",
+    slug: "fgfr-signaling",
+    description:
+      "SDH-loss-driven genome-wide DNA hypermethylation disrupts CTCF-binding insulator elements flanking the FGF3/FGF4 gene locus, causing aberrant, high-level transcription of these oncogenic FGF ligands. The ligands activate an autocrine/paracrine FGFR1 signaling loop that promotes SDH-deficient tumor growth. This mechanism was established in GIST by a 2026 Phase 2 trial of rogaratinib (Nat Med 2026, PMID 42191879).",
+    upstream_event:
+      "Succinate-driven TET inhibition → genome-wide DNA hypermethylation → CTCF insulator disruption → aberrant FGF3/FGF4 activation",
+    downstream_effects: [
+      "Autocrine FGFR1 signaling",
+      "Tumor cell proliferation and survival",
+      "FGF3/FGF4 as pharmacodynamic biomarkers",
+      "Hyperphosphatemia as on-target FGFR1 engagement marker",
+      "Selective vulnerability in SDH-deficient vs. SDH-intact tumors",
+    ],
+    druggable: true,
+    display_order: 9,
+  },
+  {
+    name: "Neddylation / Ubiquitin-Proteasome Axis",
+    slug: "neddylation",
+    description:
+      "An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in SDHB-deficient chromaffin cells identified the neddylation pathway as selectively essential for SDH-deficient tumor survival. Neddylation — attachment of the ubiquitin-like modifier NEDD8 to cullin-RING E3 ligases by NAE1/UBA3 and specific E2 enzymes — controls ubiquitin-mediated proteolysis. Loss of UBE2F suppressed growth of SDHB-deficient cells specifically, while neddylation inhibitors (pevonedistat, HA-9104) preferentially blocked proliferation in the SDH-deficient context (PMID 42181244).",
+    upstream_event:
+      "SDH loss → metabolic and proteotoxic stress → upregulated dependency on cullin-RING ligase-mediated protein degradation via neddylation",
+    downstream_effects: [
+      "Selective UBE2F dependency in SDHB-deficient cells",
+      "Cullin-RING ligase inactivation upon NAE inhibition",
+      "Proteotoxic stress accumulation",
+      "Selective growth suppression in SDH-deficient tumor cells",
+    ],
+    druggable: true,
+    display_order: 10,
+  },
 ];

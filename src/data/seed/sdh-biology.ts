@@ -62,6 +62,22 @@ Complex II dysfunction causes mitochondrial ROS, which drives chronic PARP1 acti
 ### 9. EZH2 / PRC2 Histone Methylation Vulnerability
 Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UTX) and KDM6B (JMJD3), which erase the repressive H3K27me3 histone mark. The resulting H3K27me3 accumulation silences tumor suppressor and differentiation programs — a distinct epigenetic layer from the DNA hypermethylation driven by TET inhibition. EZH2 (the PRC2 methyltransferase that writes H3K27me3) becomes a synthetic-lethal target: inhibiting EZH2 blocks further H3K27me3 deposition without the KDM6 erasure function to compensate. Tazemetostat (Tazverik) is FDA-approved for SMARCB1-null epithelioid sarcoma via the same PRC2-dependency mechanism and has demonstrated H3K27me3 reactivation of silenced genes in SDH-deficient paraganglioma models.
 
+### 10. FGFR Signaling via Epigenetic Insulator Disruption
+A 2026 Phase 2 trial in Nature Medicine (Merriam et al., Nat Med 2026, PMID: 42191879) established a novel mechanism linking SDH-loss-driven DNA hypermethylation to oncogenic FGFR signaling specifically in SDH-deficient GIST. The pathway:
+- Succinate inhibits TET1/2/3 → global DNA hypermethylation (CIMP phenotype)
+- Hypermethylation silences CTCF-binding sites at genomic insulator elements flanking the FGF3/FGF4 gene locus
+- Loss of insulator function derepresses FGF3 and FGF4 — oncogenic FGF ligands that are normally silenced
+- Aberrantly overexpressed FGF3/FGF4 activate FGFR1 on tumor cells in an autocrine/paracrine loop
+- FGFR1-mediated signaling drives SDH-deficient tumor proliferation and survival
+This mechanism is selectively active in SDH-deficient tumors (where the insulator disruption arises from the CIMP phenotype) and is absent in KIT/PDGFRA-mutant GIST. The Phase 2 trial of rogaratinib (pan-FGFR1/2/3/4 inhibitor) achieved a 41.7% objective response rate and 31-month median PFS in 24 patients with advanced SDH-deficient GIST. Serum phosphorus elevation serves as a pharmacodynamic marker of FGFR1 target engagement.
+
+### 11. Neddylation Pathway Synthetic Lethality
+An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in immortalized SDHB-deficient chromaffin cells (Al Khazal et al., iScience 2026, PMID: 42181244) identified the neddylation pathway as a selective vulnerability. Neddylation — the covalent attachment of the ubiquitin-like molecule NEDD8 to cullin proteins — activates cullin-RING E3 ubiquitin ligases, the dominant family of ubiquitin E3s controlling targeted protein degradation. The screen found:
+- Loss of UBE2F (the neddylation E2 enzyme for cullin-5 complexes) selectively suppressed growth of SDHB-deficient cells
+- Conversely, loss of UBE2M (the E2 for CRL1/2/3/4) promoted growth of SDHB-deficient cells, acting as a tumor suppressor
+- Neddylation inhibitors pevonedistat (MLN4924) and HA-9104 preferentially blocked proliferation of SDHB-deficient cells
+The mechanism by which SDH loss creates neddylation dependency is not yet fully established but likely involves proteotoxic stress from chronic metabolic and oxidative stress causing dependence on UBE2F-dependent protein quality control. This is an early-stage, unbiased mechanistic finding with potential to expand druggable targets in SDH-deficient tumors.
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -77,6 +93,8 @@ Succinate also inhibits Jumonji-domain histone demethylases, including KDM6A (UT
 | EZH2 / PRC2 (Histone H3K27me3) | EZH2, KDM6A, KDM6B | Succinate blocks H3K27me3 demethylases; EZH2 inhibitors (tazemetostat) reverse silencing |
 | Autophagy | BECN1, ULK1, ATG5 | Metabolic stress drives BECN1-mediated autophagy survival; lysosomal inhibitors (HCQ) block flux |
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
+| FGFR Signaling | FGFR1, FGFR2, FGF3, FGF4 | Hypermethylation disrupts FGF3/FGF4 insulators → aberrant FGFR1 autocrine loop; rogaratinib 41.7% ORR in Phase 2 (Nat Med 2026) |
+| Neddylation / Cullin-RING E3 | UBE2F, NAE1 | CRISPR screen identified neddylation as synthetic lethal in SDHB-deficient cells; pevonedistat inhibits upstream NAE1 |
 
 ## Important Context for Drug Repurposing
 
