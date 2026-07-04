@@ -180,4 +180,31 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Rate-limiting enzyme in the NAD⁺ salvage pathway; converts nicotinamide to NMN, the immediate NAD⁺ precursor. SDH-deficient cells with elevated PARP1 activity and impaired ETC-mediated NAD⁺ regeneration upregulate NAMPT as an adaptive survival response, creating a dependency exploitable by NAMPT inhibitors such as daporinad (FK866).",
   },
+  {
+    gene_symbol: "FGFR1",
+    name: "Fibroblast growth factor receptor 1",
+    uniprot_id: "P11362",
+    pathway_slug: "fgfr-signaling",
+    target_type: "downstream",
+    description:
+      "Receptor tyrosine kinase that mediates FGF3/FGF4 signaling. In SDH-deficient GIST, aberrant FGF3/FGF4 overexpression driven by DNA-hypermethylation-induced insulator disruption activates FGFR1 in an autocrine loop. Target of rogaratinib (pan-FGFR inhibitor) in the Phase 2 trial showing 41.7% ORR (Nat Med 2026, PMID 42191879).",
+  },
+  {
+    gene_symbol: "FGFR2",
+    name: "Fibroblast growth factor receptor 2",
+    uniprot_id: "P21802",
+    pathway_slug: "fgfr-signaling",
+    target_type: "downstream",
+    description:
+      "Second FGFR subtype co-expressed in SDH-deficient tumors; pan-FGFR inhibitors including rogaratinib and erdafitinib target FGFR1-4. Inhibited by rogaratinib in the SDH-deficient GIST Phase 2 trial and by erdafitinib (FDA-approved pan-FGFR, urothelial carcinoma).",
+  },
+  {
+    gene_symbol: "UBE2F",
+    name: "Ubiquitin-conjugating enzyme E2 F (neddylation E2)",
+    uniprot_id: "Q969M7",
+    pathway_slug: "neddylation",
+    target_type: "synthetic_lethal",
+    description:
+      "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
+  },
 ];

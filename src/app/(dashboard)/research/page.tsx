@@ -10,8 +10,10 @@ import {
   Loader2,
   Sparkles,
   ExternalLink,
+  Star,
 } from "lucide-react";
 import { SDH_QUERIES } from "@/lib/apis/pubmed";
+import { PAPERS, type CuratedPaper } from "@/data/papers";
 import { cn } from "@/lib/utils";
 
 type Article = {
@@ -36,6 +38,69 @@ const RELEVANCE_COLORS: Record<string, string> = {
   low: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
   none: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
 };
+
+const TOPIC_COLORS: Record<string, string> = {
+  "Review / Overview": "bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200",
+  "Diagnosis & Pathology": "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+  "Genetics & Syndromes": "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200",
+  "Tumor Biology": "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
+  "Treatment & Trials": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "Case Reports": "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+};
+
+function isRecent(dateStr: string | undefined): boolean {
+  if (!dateStr) return false;
+  const [year, month] = dateStr.split("-").map(Number);
+  const paperDate = new Date(year, (month ?? 1) - 1, 1);
+  const cutoff = new Date();
+  cutoff.setMonth(cutoff.getMonth() - 3);
+  return paperDate >= cutoff;
+}
+
+function CuratedPaperCard({ paper }: { paper: CuratedPaper }) {
+  return (
+    <Card>
+      <CardContent className="pt-5 space-y-2">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 space-y-1">
+            <a
+              href={`https://doi.org/${paper.doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold hover:underline inline-flex items-center gap-1"
+            >
+              {paper.title}
+              <ExternalLink className="h-3 w-3 flex-shrink-0" />
+            </a>
+            <p className="text-xs text-muted-foreground">{paper.authors}</p>
+            <p className="text-xs text-muted-foreground">
+              {paper.journal} · {paper.year}
+              {paper.pmid && (
+                <a
+                  href={`https://pubmed.ncbi.nlm.nih.gov/${paper.pmid}/`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 font-mono hover:underline"
+                >
+                  PMID: {paper.pmid}
+                </a>
+              )}
+            </p>
+          </div>
+          <Badge
+            variant="secondary"
+            className={cn("text-[10px] shrink-0", TOPIC_COLORS[paper.topic])}
+          >
+            {paper.topic}
+          </Badge>
+        </div>
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          {paper.description}
+        </p>
+      </CardContent>
+    </Card>
+  );
+}
 
 function PaperCard({ article }: { article: Article }) {
   const [summary, setSummary] = useState<AiSummary | null>(null);
@@ -169,6 +234,9 @@ export default function ResearchPage() {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
 
+  const recentPapers = PAPERS.filter((p) => isRecent(p.date));
+  const olderPapers = PAPERS.filter((p) => !isRecent(p.date));
+
   async function search(searchQuery?: string) {
     const q = searchQuery || query;
     setLoading(true);
@@ -191,11 +259,39 @@ export default function ResearchPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight">Research Feed</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Research Papers</h2>
         <p className="text-muted-foreground">
-          Search PubMed for SDH-deficient disease research with AI-powered
-          summaries
+          Curated SDH-deficient disease literature and live PubMed search with AI-powered summaries
         </p>
+      </div>
+
+      {/* Recent curated papers */}
+      {recentPapers.length > 0 && (
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <Star className="h-4 w-4 text-amber-500" />
+            <h3 className="text-sm font-semibold">Most recent papers</h3>
+            <span className="text-xs text-muted-foreground">(last 3 months)</span>
+          </div>
+          {recentPapers.map((paper) => (
+            <CuratedPaperCard key={paper.doi} paper={paper} />
+          ))}
+        </div>
+      )}
+
+      {/* Older curated papers */}
+      {olderPapers.length > 0 && (
+        <div className="space-y-3">
+          <h3 className="text-sm font-semibold text-muted-foreground">Curated reference papers</h3>
+          {olderPapers.map((paper) => (
+            <CuratedPaperCard key={paper.doi} paper={paper} />
+          ))}
+        </div>
+      )}
+
+      {/* Divider */}
+      <div className="border-t pt-4">
+        <h3 className="text-sm font-semibold mb-4">Search PubMed live</h3>
       </div>
 
       {/* Search */}
