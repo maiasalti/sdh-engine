@@ -353,6 +353,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "DENSPM (N1,N11-diethylnorspermine)",
+    brand_names: ["SL-11093"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Polyamine analog / SAT1 (SSAT) inducer",
+    mechanism_of_action:
+      "Synthetic polyamine analog that potently induces spermidine/spermine N1-acetyltransferase 1 (SAT1/SSAT), the rate-limiting enzyme of polyamine catabolism. SAT1 oxidizes intracellular spermidine and spermine, generating acetylpolyamine back-conversion products and stoichiometric H2O2 as a byproduct via polyamine oxidase (PAOX). In SDH-deficient cells, Complex II dysfunction already elevates mitochondrial ROS baseline; the additional H2O2 from DENSPM-induced SAT1 activity amplifies oxidative burden past the apoptotic threshold — a ROS-overload synthetic lethality strategy. Targeted lipidomics in SDHB-knockdown pheochromocytoma cells (hPheo1 model) demonstrated that DENSPM induced significantly greater caspase-3-dependent apoptosis and broader ether-phospholipid/sphingomyelin remodeling in SDHB-deficient versus wild-type cells, confirming SDH-selective cytotoxicity (Alli et al., Physiol Rep 2026, PMID: 42249664). DENSPM has been evaluated in Phase 1 clinical trials in patients with advanced solid tumors and hematologic malignancies, establishing an initial safety profile, though it did not advance to Phase 2 for solid tumors (Hahm et al., Clin Cancer Res 2002, PMID: 11948118). Key limitation: clinical development in solid tumors stalled after Phase 1; however, the SDH-specific preclinical rationale provides a precision-oncology rationale for renewed investigation in this molecularly defined subpopulation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["polyamine-metabolism", "oxidative-stress-ros"],
+    target_gene_symbols: ["SAT1"],
+    evidence_score: 36,
+    status: "preclinical",
+  },
+  {
     name: "Pevonedistat",
     brand_names: ["TAK-924"],
     chembl_id: "CHEMBL3188428",

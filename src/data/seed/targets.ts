@@ -207,4 +207,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
   },
+  {
+    gene_symbol: "SAT1",
+    name: "Spermidine/spermine N1-acetyltransferase 1 (SSAT)",
+    uniprot_id: "P21673",
+    pathway_slug: "polyamine-metabolism",
+    target_type: "metabolic",
+    description:
+      "Rate-limiting catabolic enzyme of the polyamine pathway. SAT1 (SSAT) acetylates spermidine and spermine, producing back-conversion intermediates that are subsequently oxidized by polyamine oxidase (PAOX), generating H2O2 as a stoichiometric byproduct. In SDH-deficient cells, elevated baseline ROS from dysfunctional Complex II means that additional H2O2 from SAT1 induction by polyamine analogs (e.g., DENSPM) amplifies oxidative stress beyond the cellular antioxidant threshold, triggering selective apoptosis. SDHB-knockdown pheochromocytoma cells showed markedly greater SAT1-driven apoptosis and lipid remodeling versus wild-type cells upon DENSPM treatment (Alli et al., PMID 42249664).",
+  },
 ];

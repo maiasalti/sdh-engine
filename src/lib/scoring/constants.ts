@@ -35,4 +35,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "nad-metabolism": "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
   "fgfr-signaling": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
   "neddylation": "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
+  "polyamine-metabolism": "bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-200",
 };

@@ -71,6 +71,14 @@ A 2026 Phase 2 trial in Nature Medicine (Merriam et al., Nat Med 2026, PMID: 421
 - FGFR1-mediated signaling drives SDH-deficient tumor proliferation and survival
 This mechanism is selectively active in SDH-deficient tumors (where the insulator disruption arises from the CIMP phenotype) and is absent in KIT/PDGFRA-mutant GIST. The Phase 2 trial of rogaratinib (pan-FGFR1/2/3/4 inhibitor) achieved a 41.7% objective response rate and 31-month median PFS in 24 patients with advanced SDH-deficient GIST. Serum phosphorus elevation serves as a pharmacodynamic marker of FGFR1 target engagement.
 
+### 12. Polyamine Metabolism / SAT1-Mediated ROS Amplification
+Polyamines (putrescine, spermidine, spermine) are essential polycationic molecules that support cell growth, DNA stabilization, and translation. Their catabolism is governed by spermidine/spermine N1-acetyltransferase 1 (SAT1/SSAT), which acetylates spermidine and spermine; the acetylated products are then oxidized by polyamine oxidase (PAOX), stoichiometrically generating H2O2. In SDH-deficient cells:
+- Complex II dysfunction already elevates mitochondrial ROS as a baseline metabolic consequence
+- DENSPM (N1,N11-diethylnorspermine), a synthetic polyamine analog, potently induces SAT1, triggering polyamine catabolism and H2O2 generation
+- The additional H2O2 amplifies the pre-existing oxidative burden in SDHB-deficient cells, pushing them past the apoptotic threshold in a ROS-overload synthetic lethal strategy
+- Wild-type cells with intact Complex II and greater antioxidant reserve tolerate the additional H2O2 better, creating selectivity
+Targeted lipidomics in the hPheo1 SDHB-knockdown pheochromocytoma model (Alli et al., Physiol Rep 2026, PMID 42249664) demonstrated that DENSPM triggered markedly greater caspase-3-dependent apoptosis, broader ether-phospholipid remodeling, and PKC pathway changes in SDHB-deficient versus wild-type cells — directly linking polyamine catabolism to SDH-loss biology. Phase 1 clinical data for DENSPM in advanced malignancies have been reported (Hahm et al., Clin Cancer Res 2002, PMID 11948118), though solid tumor development stalled; the SDH-specific selectivity provides a precision-oncology rationale for renewed investigation.
+
 ### 11. Neddylation Pathway Synthetic Lethality
 An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in immortalized SDHB-deficient chromaffin cells (Al Khazal et al., iScience 2026, PMID: 42181244) identified the neddylation pathway as a selective vulnerability. Neddylation — the covalent attachment of the ubiquitin-like molecule NEDD8 to cullin proteins — activates cullin-RING E3 ubiquitin ligases, the dominant family of ubiquitin E3s controlling targeted protein degradation. The screen found:
 - Loss of UBE2F (the neddylation E2 enzyme for cullin-5 complexes) selectively suppressed growth of SDHB-deficient cells
@@ -95,6 +103,7 @@ The mechanism by which SDH loss creates neddylation dependency is not yet fully 
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
 | FGFR Signaling | FGFR1, FGFR2, FGF3, FGF4 | Hypermethylation disrupts FGF3/FGF4 insulators → aberrant FGFR1 autocrine loop; rogaratinib 41.7% ORR in Phase 2 (Nat Med 2026) |
 | Neddylation / Cullin-RING E3 | UBE2F, NAE1 | CRISPR screen identified neddylation as synthetic lethal in SDHB-deficient cells; pevonedistat inhibits upstream NAE1 |
+| Polyamine Metabolism / SAT1 | SAT1 (SSAT), PAOX | Complex II ROS elevation sensitizes SDH-deficient cells to H2O2 from polyamine catabolism; DENSPM selectively kills SDHB-deficient cells (PMID 42249664) |
 
 ## Important Context for Drug Repurposing
 
