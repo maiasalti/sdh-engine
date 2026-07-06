@@ -207,4 +207,22 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
   },
+  {
+    gene_symbol: "ODC1",
+    name: "Ornithine decarboxylase 1",
+    uniprot_id: "P11926",
+    pathway_slug: "polyamine-metabolism",
+    target_type: "metabolic",
+    description:
+      "Rate-limiting enzyme for polyamine biosynthesis, converting ornithine to putrescine — the first committed step feeding spermidine and spermine synthesis. SDHB-deficient pheochromocytoma cells have a validated overactive polyamine pathway (untargeted metabolomics, human tumor samples); blocking ODC1 reduces flux through the entire pathway. Target of eflornithine (DFMO), FDA-approved for maintenance of high-risk neuroblastoma — a neural crest tumor sharing lineage with pheochromocytoma (PMID 39337514).",
+  },
+  {
+    gene_symbol: "SAT1",
+    name: "Spermidine/spermine N1-acetyltransferase 1",
+    uniprot_id: "P21673",
+    pathway_slug: "polyamine-metabolism",
+    target_type: "metabolic",
+    description:
+      "Rate-limiting catabolic enzyme for higher polyamines; acetylates spermidine and spermine, tagging them for export or degradation by PAOX. Potently induced by the polyamine analog DENSPM in SDHB-deficient pheochromocytoma cells, creating a futile polyamine cycle that depletes cytoprotective spermidine and spermine and collapses the broader lipid metabolic program those polyamines support (PMID 39337514, PMID 42249664).",
+  },
 ];

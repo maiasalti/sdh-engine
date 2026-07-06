@@ -163,4 +163,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 10,
   },
+  {
+    name: "Polyamine Metabolism",
+    slug: "polyamine-metabolism",
+    description:
+      "SDHB-deficient pheochromocytoma and paraganglioma cells have an overactive polyamine pathway, discovered by untargeted metabolomics and validated across a large set of human SDHB-mutant PPGL tumor samples. Elevated higher polyamines (spermidine, spermine) support tumor survival and lipid homeostasis — including plasmanyl ether lipids that protect cancer cells from ferroptosis. SDHB-deficient cells are selectively sensitive to polyamine depletion: the polyamine analog DENSPM preferentially induces caspase-3-dependent apoptosis and suppresses xenograft growth compared with wild-type cells (Ghayee et al., Int J Mol Sci 2024, PMID 39337514; Alli et al., Physiol Rep 2026, PMID 42249664).",
+    upstream_event:
+      "SDH loss → metabolic reprogramming → overactivation of polyamine biosynthesis (ODC1 → putrescine → spermidine → spermine)",
+    downstream_effects: [
+      "Elevated spermidine and spermine in SDHB-deficient cells and tumors",
+      "Enhanced plasmanyl ether lipid synthesis (ferroptosis protection)",
+      "Broad lipid metabolism upregulation",
+      "Selective caspase-3-dependent apoptosis upon polyamine depletion",
+      "Xenograft growth suppression by DENSPM in SDHB-deficient tumors",
+    ],
+    druggable: true,
+    display_order: 11,
+  },
 ];

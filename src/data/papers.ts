@@ -102,4 +102,30 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42230482",
     date: "2026-06",
   },
+  {
+    title:
+      "Expression Patterns of Succinate Dehydrogenase B: An Immunohistochemical Study of 57 Tumors With Known Germline Pathogenic Alterations",
+    authors: "Ornstead MJ, Sirohi D, Albertson DJ, et al.",
+    journal: "Int J Surg Pathol",
+    year: 2026,
+    doi: "10.1177/10668969261439732",
+    topic: "Diagnosis & Pathology",
+    description:
+      "IHC study of 57 SDH-related tumors — PPGL, GIST, RCC, and seminoma — with confirmed germline pathogenic SDH variants found that 49% showed aberrant retained SDHB staining, categorized into four patterns: fine granular blush, focal retention, weak diffuse staining, and staining equal to the internal control. The findings underscore that any level of atypical SDHB staining should prompt confirmatory germline genetic testing, and that binary \"loss vs. retained\" interpretation substantially underestimates SDH deficiency.",
+    pmid: "41985045",
+    date: "2026-04",
+  },
+  {
+    title:
+      "Beyond clear cell: Rare histologic and molecular variants of renal cell carcinoma",
+    authors: "Moradi A, Fann J, Zhang G, Pal SK, Sadimin E.",
+    journal: "Urol Oncol",
+    year: 2026,
+    doi: "10.1016/j.urolonc.2026.111066",
+    topic: "Review / Overview",
+    description:
+      "Oncology-focused review of rare non-clear-cell RCC subtypes under the 2022 WHO classification, with dedicated coverage of SDH-deficient RCC alongside FH-deficient, ALK-rearranged, and SMARCB1-deficient entities. The review outlines SDH-deficient RCC's characteristic pathological features, variable aggressiveness, and emerging therapeutic vulnerabilities, and calls for subtype-specific clinical trials given the inadequacy of ccRCC treatment extrapolation.",
+    pmid: "41904096",
+    date: "2026-03",
+  },
 ];
