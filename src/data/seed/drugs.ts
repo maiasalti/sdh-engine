@@ -353,6 +353,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "Linsitinib",
+    brand_names: ["OSI-906"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Dual IGF1R / IR kinase inhibitor",
+    mechanism_of_action:
+      "Orally bioavailable, selective small-molecule inhibitor that potently blocks IGF1R (IC50 ~35 nM) and the insulin receptor (IR, IC50 ~75 nM). In SDH-deficient GISTs, which lack activating KIT or PDGFRA mutations, HIF-2α — stabilised by succinate-mediated PHD inhibition — transcriptionally activates IGF2. Secreted IGF2 feeds back onto IGF1R in an autocrine/paracrine loop, driving tumour cell proliferation and survival through IRS-1 → PI3K/AKT/mTOR and Ras/MEK/ERK pathways. SDH-deficient GISTs express the highest IGF1R levels among all wild-type GIST subtypes (Beadling et al., Cancer Med 2013, PMID: 24133624). A SARC-sponsored multicenter Phase 2 trial (NCT01560260; von Mehren et al., Clin Cancer Res 2020, PMID: 31792037) enrolled 20 patients with wild-type GIST, of whom 88% had confirmed SDHB protein loss by IHC — effectively an SDH-deficient GIST cohort. Linsitinib achieved a 40% clinical benefit rate (complete or partial response, or stable disease ≥9 months) and a 52% progression-free survival rate at 9 months, with no objective responses (0% ORR) and an acceptable safety profile (grade 3–4 toxicities 8.5%). The absence of objective responses likely reflects partial signalling redundancy (HIF-driven VEGF, mTOR, FGFR pathways remain active), suggesting linsitinib may be most effective as part of combination regimens — for example, with belzutifan (HIF-2α inhibition to suppress IGF2 production upstream) or everolimus (mTOR blockade downstream of IGF1R).",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["igf1r-signaling", "mtor-pi3k-akt"],
+    target_gene_symbols: ["IGF1R"],
+    evidence_score: 46,
+    status: "clinical_trial",
+  },
+  {
     name: "Pevonedistat",
     brand_names: ["TAK-924"],
     chembl_id: "CHEMBL3188428",

@@ -207,4 +207,22 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
   },
+  {
+    gene_symbol: "IGF1R",
+    name: "Insulin-like growth factor 1 receptor",
+    uniprot_id: "P08069",
+    pathway_slug: "igf1r-signaling",
+    target_type: "downstream",
+    description:
+      "Receptor tyrosine kinase activated by IGF2 (and IGF1) in an autocrine/paracrine loop in SDH-deficient tumours. SDH-deficient GISTs consistently express the highest IGF1R levels among KIT/PDGFRA wild-type GIST subtypes; IGF1R over-expression is driven by HIF-2α-mediated IGF2 transcription downstream of succinate-induced PHD inhibition. Target of linsitinib (dual IGF1R/IR inhibitor) in a Phase 2 SARC trial showing 40% CBR in an SDH-deficient-enriched GIST cohort (PMID: 31792037; PMID: 24133624).",
+  },
+  {
+    gene_symbol: "IGF2",
+    name: "Insulin-like growth factor 2",
+    uniprot_id: "P01344",
+    pathway_slug: "igf1r-signaling",
+    target_type: "downstream",
+    description:
+      "Growth factor ligand transcriptionally activated by HIF-2α in SDH-deficient cells. IGF2 secreted by tumour cells feeds back onto IGF1R in an autocrine loop, sustaining proliferative signalling in the absence of KIT/PDGFRA oncogenic drivers. Elevated IGF2 expression is a hallmark of SDH-deficient GIST and distinguishes this subtype from other wild-type GISTs (Beadling et al., Cancer Med 2013, PMID: 24133624).",
+  },
 ];

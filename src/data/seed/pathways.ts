@@ -163,4 +163,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 10,
   },
+  {
+    name: "IGF1R / IGF2 Autocrine Axis",
+    slug: "igf1r-signaling",
+    description:
+      "In the absence of KIT/PDGFRA driver mutations, SDH-deficient GISTs up-regulate the IGF1R signalling axis as their primary growth-factor-receptor pathway. HIF-2α — stabilised by succinate-mediated PHD inhibition — transcriptionally activates IGF2, establishing an autocrine IGF2 → IGF1R signalling loop. SDH-deficient GISTs express the highest IGF1R levels among all wild-type GIST subtypes (Beadling et al., Cancer Med 2013, PMID: 24133624). A SARC Phase 2 trial of linsitinib (oral dual IGF1R/IR inhibitor) in 20 patients with wild-type GIST — 88% of whom had SDHB protein loss by IHC — demonstrated a 40% clinical benefit rate and 52% PFS at 9 months, supporting IGF1R as a clinically active target in this population (von Mehren et al., Clin Cancer Res 2020, PMID: 31792037).",
+    upstream_event:
+      "Succinate inhibits PHD1/2/3 → HIF-2α stabilisation → transcriptional activation of IGF2 → autocrine IGF2 → IGF1R signalling in SDH-deficient tumour cells lacking KIT/PDGFRA drivers",
+    downstream_effects: [
+      "IGF1R autophosphorylation and IRS-1 engagement",
+      "PI3K / AKT / mTOR pathway activation",
+      "Ras / MEK / ERK proliferation signalling",
+      "Tumour cell survival and growth independent of KIT/PDGFRA",
+      "High IGF1R expression as a diagnostic/predictive biomarker for SDH-deficient GIST",
+    ],
+    druggable: true,
+    display_order: 11,
+  },
 ];

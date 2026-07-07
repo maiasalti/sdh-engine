@@ -72,11 +72,20 @@ A 2026 Phase 2 trial in Nature Medicine (Merriam et al., Nat Med 2026, PMID: 421
 This mechanism is selectively active in SDH-deficient tumors (where the insulator disruption arises from the CIMP phenotype) and is absent in KIT/PDGFRA-mutant GIST. The Phase 2 trial of rogaratinib (pan-FGFR1/2/3/4 inhibitor) achieved a 41.7% objective response rate and 31-month median PFS in 24 patients with advanced SDH-deficient GIST. Serum phosphorus elevation serves as a pharmacodynamic marker of FGFR1 target engagement.
 
 ### 11. Neddylation Pathway Synthetic Lethality
+
 An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in immortalized SDHB-deficient chromaffin cells (Al Khazal et al., iScience 2026, PMID: 42181244) identified the neddylation pathway as a selective vulnerability. Neddylation — the covalent attachment of the ubiquitin-like molecule NEDD8 to cullin proteins — activates cullin-RING E3 ubiquitin ligases, the dominant family of ubiquitin E3s controlling targeted protein degradation. The screen found:
 - Loss of UBE2F (the neddylation E2 enzyme for cullin-5 complexes) selectively suppressed growth of SDHB-deficient cells
 - Conversely, loss of UBE2M (the E2 for CRL1/2/3/4) promoted growth of SDHB-deficient cells, acting as a tumor suppressor
 - Neddylation inhibitors pevonedistat (MLN4924) and HA-9104 preferentially blocked proliferation of SDHB-deficient cells
 The mechanism by which SDH loss creates neddylation dependency is not yet fully established but likely involves proteotoxic stress from chronic metabolic and oxidative stress causing dependence on UBE2F-dependent protein quality control. This is an early-stage, unbiased mechanistic finding with potential to expand druggable targets in SDH-deficient tumors.
+
+### 12. IGF1R / IGF2 Autocrine Axis
+SDH-deficient GISTs typically lack activating mutations in KIT or PDGFRA — the canonical GIST oncogenes — and instead rely on the IGF1R/IGF2 signalling axis as a primary growth driver. The mechanism connects directly to the HIF pseudohypoxia programme:
+- Succinate inhibits PHD1/2/3 → HIF-2α is stabilised regardless of oxygen
+- HIF-2α (EPAS1) transcriptionally activates IGF2, which contains HIF-responsive elements in its promoter
+- Secreted IGF2 binds IGF1R on the tumour cell surface in an autocrine/paracrine loop
+- IGF1R signals through IRS-1 → PI3K/AKT/mTOR and Ras/MEK/ERK pathways, driving proliferation and survival
+SDH-deficient GISTs express the highest IGF1R levels among all wild-type GIST subtypes (Beadling et al., Cancer Med 2013, PMID: 24133624). This IGF1R-high signature is not uniformly present in KIT/PDGFRA wild-type GISTs that retain intact SDH — underscoring that the IGF1R dependency arises specifically from the HIF-2α programme that SDH loss activates. A SARC-sponsored multicenter Phase 2 trial (NCT01560260) of linsitinib (oral dual IGF1R/IR inhibitor) in 20 patients with wild-type GIST — 88% of whom had confirmed SDHB protein loss by IHC — demonstrated a 40% clinical benefit rate and 52% PFS at 9 months with acceptable tolerability (von Mehren et al., Clin Cancer Res 2020, PMID: 31792037). The absence of objective responses suggests IGF1R blockade alone is insufficient, likely because multiple HIF-downstream pathways remain active; combinations with upstream HIF-2α inhibition (belzutifan) or downstream mTOR inhibition (everolimus) are plausible synergistic strategies.
 
 ## Key Druggable Targets and Pathways
 
@@ -95,6 +104,7 @@ The mechanism by which SDH loss creates neddylation dependency is not yet fully 
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
 | FGFR Signaling | FGFR1, FGFR2, FGF3, FGF4 | Hypermethylation disrupts FGF3/FGF4 insulators → aberrant FGFR1 autocrine loop; rogaratinib 41.7% ORR in Phase 2 (Nat Med 2026) |
 | Neddylation / Cullin-RING E3 | UBE2F, NAE1 | CRISPR screen identified neddylation as synthetic lethal in SDHB-deficient cells; pevonedistat inhibits upstream NAE1 |
+| IGF1R / IGF2 Autocrine Axis | IGF1R, IGF2 | HIF-2α-driven IGF2 creates autocrine IGF1R loop in KIT/PDGFRA-null SDH-deficient GIST; linsitinib Phase 2 CBR 40% (PMID: 31792037) |
 
 ## Important Context for Drug Repurposing
 
