@@ -102,4 +102,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42230482",
     date: "2026-06",
   },
+  {
+    title:
+      "Expression Patterns of Succinate Dehydrogenase B: An Immunohistochemical Study of 57 Tumors With Known Germline Pathogenic Alterations",
+    authors: "Ornstead MJ, Sirohi D, Albertson DJ, et al.",
+    journal: "Int J Surg Pathol",
+    year: 2026,
+    doi: "10.1177/10668969261439732",
+    topic: "Diagnosis & Pathology",
+    description:
+      "IHC study of 57 SDH-related tumors (paraganglioma, pheochromocytoma, RCC, GIST, seminoma) from patients with confirmed germline SDH pathogenic variants found that 49% showed aberrant retained SDHB staining — divided into four atypical patterns including fine granular blush and focal retention — underscoring that SDHB IHC loss alone cannot exclude SDH deficiency and that any amount of abnormal staining should prompt genetic testing.",
+    pmid: "41985045",
+    date: "2026-04",
+  },
 ];

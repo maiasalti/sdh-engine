@@ -199,6 +199,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Second FGFR subtype co-expressed in SDH-deficient tumors; pan-FGFR inhibitors including rogaratinib and erdafitinib target FGFR1-4. Inhibited by rogaratinib in the SDH-deficient GIST Phase 2 trial and by erdafitinib (FDA-approved pan-FGFR, urothelial carcinoma).",
   },
   {
+    gene_symbol: "SAT1",
+    name: "Spermidine/spermine N1-acetyltransferase 1",
+    uniprot_id: "P21673",
+    pathway_slug: "polyamine-metabolism",
+    target_type: "metabolic",
+    description:
+      "Rate-limiting enzyme of polyamine catabolism and the principal intracellular target induced by polyamine analogues including DENSPM. SAT1 acetylates spermidine and spermine, targeting them for export or oxidation by polyamine oxidase (PAOX), thereby depleting intracellular polyamine pools. Elevated SSAT/SAT1 activity in response to DENSPM treatment drives further ROS generation via SMOX, creating a toxic cycle in SDH-deficient cells already under oxidative stress.",
+  },
+  {
     gene_symbol: "UBE2F",
     name: "Ubiquitin-conjugating enzyme E2 F (neddylation E2)",
     uniprot_id: "Q969M7",

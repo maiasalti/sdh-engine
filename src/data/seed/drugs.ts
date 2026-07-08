@@ -353,6 +353,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "DENSPM (N1,N11-Diethylnorspermine)",
+    brand_names: [],
+    chembl_id: "CHEMBL285565",
+    pubchem_cid: "107751",
+    drug_class: "Polyamine analogue / SSAT inducer",
+    mechanism_of_action:
+      "Synthetic polyamine analogue that mimics endogenous spermine/spermidine to potently upregulate spermidine/spermine N1-acetyltransferase (SSAT/SAT1), the rate-limiting catabolic enzyme of the polyamine pathway. SSAT induction depletes intracellular spermidine and spermine pools, while concurrent activation of spermine oxidase (SMOX) generates H2O2 as a stoichiometric byproduct. In SDH-deficient cells, spermidine and spermine are specifically elevated in SDHx-mutated pheochromocytoma/paraganglioma tissues versus wild-type counterparts (Rai et al., Metabolism 2020, PMID: 32562798; confirmed in SDHB KD hPheo1 cells). DENSPM treatment caused significantly greater caspase-3-dependent apoptosis and lipid remodeling in SDHB-deficient cells than in wild-type cells (Alli et al., Physiol Rep 2026, PMID: 42249664). The selectivity mechanism is synergistic ROS toxicity: SDH-deficient cells already generate excess mitochondrial ROS from impaired Complex II electron flow; SMOX-derived H2O2 from DENSPM catabolism pushes them past the apoptotic threshold that wild-type cells tolerate. DENSPM suppressed growth of hPheo1 cells in vitro and in mouse xenografts (PMID: 32562798). Phase 1 safety data established in lymphoma/solid tumors; key limitation is lack of Phase 2 data in any neuroendocrine tumor.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["polyamine-metabolism", "oxidative-stress-ros"],
+    target_gene_symbols: ["SAT1"],
+    evidence_score: 38,
+    status: "preclinical",
+  },
+  {
     name: "Pevonedistat",
     brand_names: ["TAK-924"],
     chembl_id: "CHEMBL3188428",

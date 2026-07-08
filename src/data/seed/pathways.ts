@@ -148,6 +148,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 9,
   },
   {
+    name: "Polyamine Metabolism",
+    slug: "polyamine-metabolism",
+    description:
+      "Spermidine and spermine are significantly elevated in SDHx-mutated pheochromocytoma/paraganglioma tissues and in SDHB-knockdown cells compared with wild-type controls, implying that SDH loss drives upregulation of the polyamine biosynthesis pathway. Polyamines support rapid cell proliferation and mitochondrial function; in SDH-deficient cells already under chronic oxidative stress, this pathway represents a synthetic vulnerability. Polyamine analogues such as DENSPM deplete natural polyamines by inducing SSAT-mediated catabolism and generate additional ROS via spermine oxidase, pushing these cells past their apoptotic threshold.",
+    upstream_event:
+      "SDH loss → altered mitochondrial metabolism → upregulation of polyamine biosynthesis (elevated spermidine, spermine in SDHx-mutated tumors)",
+    downstream_effects: [
+      "Elevated spermidine and spermine in SDHx-mutated tumor tissue",
+      "SSAT upregulation as compensatory catabolism",
+      "ROS generation via spermine oxidase (SMOX) during catabolism",
+      "Dependency on polyamine turnover for mitochondrial and proliferative support",
+      "Selective sensitivity to polyamine depletion in SDHB-deficient cells",
+    ],
+    druggable: true,
+    display_order: 11,
+  },
+  {
     name: "Neddylation / Ubiquitin-Proteasome Axis",
     slug: "neddylation",
     description:
