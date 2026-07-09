@@ -216,4 +216,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
   },
+  {
+    gene_symbol: "KDM4A",
+    name: "Lysine demethylase 4A (JMJD2A / KDM4A)",
+    uniprot_id: "O75164",
+    pathway_slug: "kdm4-dna-repair",
+    target_type: "direct",
+    description:
+      "α-KG-dependent Jumonji-domain demethylase for H3K9me3 and H3K36me3. Directly inhibited by succinate (competitive inhibitor of α-KG binding site) in SDH-deficient cells. KDM4A is required for DNA double-strand break (DSB) repair: it removes H3K9me3 at DSB sites to allow RAD51 loading and productive homologous recombination. SDH loss → KDM4A inhibition → DSB repair defect → synthetic lethality with DNA-damaging agents such as Ym155. Validated experimentally in SDHB-deficient cells; pharmacological SDH inhibition with atpenin A5 recapitulated KDM4 inhibition and Ym155 sensitisation (Guo et al., PMID 41711310).",
+  },
 ];

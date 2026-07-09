@@ -180,4 +180,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 10,
   },
+  {
+    name: "KDM4 / DNA Repair Vulnerability",
+    slug: "kdm4-dna-repair",
+    description:
+      "Succinate accumulated in SDH-deficient cells competitively inhibits KDM4 (KDM4A/B/C; JMJD2 family) — α-KG-dependent Jumonji-domain demethylases that erase H3K9me3 and H3K36me3. Beyond its epigenetic roles, KDM4 is required for timely DNA double-strand break (DSB) repair: it removes H3K9me3 at DSB sites to enable RAD51 loading and productive homologous recombination. SDH-deficient cells therefore carry an intrinsic DSB repair deficit, creating synthetic lethality with agents that induce ROS or DNA damage. Validated in SDHB-deficient UOK269 RCC cells, primary human pheochromocytoma cells, and MPC mouse pheochromocytoma cells by Guo et al. (Endocr Relat Cancer 2026, PMID 41711310).",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive inhibition of KDM4 (α-KG-dependent H3K9me3/H3K36me3 demethylase) → impaired DNA DSB repair",
+    downstream_effects: [
+      "H3K9me3/H3K36me3 accumulation at DNA break sites",
+      "Impaired RAD51 loading and homologous recombination",
+      "Selective sensitisation to DNA-damaging agents and ROS inducers",
+      "Synthetic lethality with Ym155 (sepantronium) and mitochondrial ionophores in SDHB-deficient cells",
+      "Mechanistic overlap with KDM6A/B inhibition — both are downstream of succinate-mediated α-KG dioxygenase inhibition",
+    ],
+    druggable: true,
+    display_order: 12,
+  },
 ];

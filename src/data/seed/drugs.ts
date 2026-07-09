@@ -368,6 +368,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Ym155 (Sepantronium Bromide)",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Survivin inhibitor / ROS-inducing agent",
+    mechanism_of_action:
+      "Ym155 (sepantronium bromide, YM155) is synthetically lethal with SDHB deficiency across multiple SDH-deficient cell models via a KDM4/DNA repair mechanism. SDH loss causes succinate accumulation that competitively inhibits KDM4A/B/C — α-KG-dependent Jumonji-domain demethylases for H3K9me3/H3K36me3. KDM4 is required at DNA double-strand break (DSB) sites: it removes H3K9me3 to enable RAD51 loading and homologous recombination. SDH-deficient cells therefore enter Ym155 treatment with an intrinsic DSB repair deficit; Ym155-induced ROS and DNA damage are selectively lethal in this context. Guo et al. (Endocr Relat Cancer 2026, PMID 41711310) validated this in SDHB-deficient UOK269 RCC cells (and SDHB-reconstituted isogenic controls), primary human pheochromocytoma cells, MPC mouse pheochromocytoma cells, and primary SDHB-deficient mouse kidney cells. Pharmacological SDH inhibition (atpenin A5, 3-nitropropionate) reproduced the Ym155 sensitisation, confirming SDH enzymatic loss drives the effect. Note: Ym155 was originally described as a survivin (BIRC5) promoter inhibitor, but subsequent studies identified more pleiotropic ROS/DNA damage-inducing activity; the SDH-dependent mechanism is through the KDM4 arm. Phase 1 clinical safety data are available from early-phase trials in hematologic malignancies and solid tumors (NCT00514267). No SDH-deficient-specific clinical trial has been initiated.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["kdm4-dna-repair", "oxidative-stress-ros"],
+    target_gene_symbols: ["KDM4A"],
+    evidence_score: 38,
+    status: "preclinical",
+  },
+  {
     name: "Pevonedistat",
     brand_names: ["TAK-924"],
     chembl_id: "CHEMBL3188428",

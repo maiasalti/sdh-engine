@@ -115,4 +115,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "41985045",
     date: "2026-04",
   },
+  {
+    title:
+      "Succinate dehydrogenase-deficient cancer cells have increased susceptibility to Ym155-induced DNA damage",
+    authors: "Guo Q, Lee S, Armstrong N, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-25-0397",
+    topic: "Tumor Biology",
+    description:
+      "Using isogenic SDHB-knockout and SDHB-reconstituted human RCC cells (UOK269), the Stanford Annes lab identifies Ym155 (sepantronium bromide) as synthetically lethal with SDHB deficiency across multiple SDH-deficient models — including primary human pheochromocytoma cells. The mechanism: accumulated succinate inhibits KDM4 (Jumonji H3K9/K36 demethylases), impairing DNA double-strand break repair; Ym155-induced ROS and DNA damage are therefore selectively lethal in SDH-deficient cells unable to mount a full repair response.",
+    pmid: "41711310",
+    date: "2026-03",
+  },
 ];
