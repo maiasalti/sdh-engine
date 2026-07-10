@@ -226,6 +226,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Rate-limiting enzyme in tryptophan catabolism via the kynurenine pathway. IDO1 degrades tryptophan to N-formylkynurenine → kynurenine, depleting this essential amino acid from the TME and producing immunosuppressive kynurenine metabolites that exhaust effector T cells and expand FoxP3+ regulatory T cells. In SDH-deficient tumors, the pseudohypoxic HIF-1α program (driven by succinate-mediated PHD inhibition) is known to upregulate IDO1 expression; aberrant kynurenine pathway activity has been confirmed in metastatic SDHB-driven PPGL by multi-omics analysis (PMID 42230482). Target of IDO1 inhibitors including epacadostat.",
   },
   {
+    gene_symbol: "SSTR2",
+    name: "Somatostatin receptor subtype 2",
+    uniprot_id: "P30874",
+    pathway_slug: "sstr2-somatostatin-receptor",
+    target_type: "direct",
+    description:
+      "G-protein-coupled receptor that mediates somatostatin signaling. SSTR2 is selectively upregulated at the membrane of SDHB-deficient pheochromocytoma/paraganglioma cells versus wild-type; SDHB knockdown drives enhanced SSTR2 surface expression and receptor internalization upon agonist stimulation, making SDHB-deficient cells specifically responsive to SSTR2-agonist-induced anti-proliferative and apoptotic signaling (Garcia-Vioque et al., Mol Biomed 2026, PMID 41928014). SSTR2 is the primary receptor exploited by PRRT — DOTATATE conjugates bind SSTR2 and internalize with the receptor, delivering targeted beta-radiation. Target of lutetium-177 DOTATATE (Lutathera).",
+  },
+  {
     gene_symbol: "UBE2F",
     name: "Ubiquitin-conjugating enzyme E2 F (neddylation E2)",
     uniprot_id: "Q969M7",

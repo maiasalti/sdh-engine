@@ -80,7 +80,17 @@ SDH loss creates a profoundly immunosuppressive tumor microenvironment (TME) thr
 
 These two mechanisms are additive and stem from the same upstream event (succinate accumulation), making immune restoration a compelling but underexplored therapeutic angle in SDH-deficient tumors. MCT1 inhibitors (AZD3965, Phase 1: NCT01791595) could block succinate-mediated T-cell suppression, while IDO1 inhibitors (epacadostat, Phase 1/2 data) could reverse the kynurenine pathway immune evasion, either alone or as a rationale for combination with immune checkpoint inhibitors.
 
-### 12. Neddylation Pathway Synthetic Lethality
+### 12. SSTR2 Selective Dependency and PRRT
+A 2026 study (Garcia-Vioque et al., Mol Biomed 2026, PMID 41928014) systematically profiled somatostatin receptor (SSTR) expression and function across wild-type and SDHB-knockdown pheochromocytoma/paraganglioma cell lines. Key findings:
+- PPGL tumors express predominantly SSTR2 and SSTR1 regardless of molecular cluster
+- Standard cold somatostatin analogues (octreotide, pasireotide) did NOT exert anti-tumor effects on model cell lines
+- However, the selective SSTR2 agonist BIM-23120 significantly reduced proliferation and induced apoptosis EXCLUSIVELY in SDHB-knockdown cells — not in wild-type cells
+- Only SDHB-KD cells showed stronger SSTR2 membrane enrichment and clear receptor internalization upon BIM-23120 stimulation
+- Molecular analysis revealed generalized dephosphorylation of proliferative and survival pathways (AKT, ERK, and others) in SDHB-KD cells in response to BIM-23120
+
+This identifies SSTR2 as a selective therapeutic vulnerability downstream of SDHB loss, distinct from the generic SST receptor expression shared by neuroendocrine tumors broadly. The selective SSTR2 upregulation and internalization in SDHB-deficient cells has direct implications for PRRT (peptide receptor radionuclide therapy): lutetium-177 DOTATATE (Lutathera), an FDA-approved radiolabeled SSTR2-targeting somatostatin analogue, could deliver targeted radiation more selectively to SDHB-deficient tumor cells due to their enhanced SSTR2 internalization efficiency. SDH-deficient tumors express SSTR2 and are detectable by 68Ga-DOTATATE PET/CT. The NCI is running a Phase 2 trial (NCT03206060) of Lutathera specifically in inoperable PGL/PCC (130 patients, primary completion 2030).
+
+### 13. Neddylation Pathway Synthetic Lethality
 An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in immortalized SDHB-deficient chromaffin cells (Al Khazal et al., iScience 2026, PMID: 42181244) identified the neddylation pathway as a selective vulnerability. Neddylation — the covalent attachment of the ubiquitin-like molecule NEDD8 to cullin proteins — activates cullin-RING E3 ubiquitin ligases, the dominant family of ubiquitin E3s controlling targeted protein degradation. The screen found:
 - Loss of UBE2F (the neddylation E2 enzyme for cullin-5 complexes) selectively suppressed growth of SDHB-deficient cells
 - Conversely, loss of UBE2M (the E2 for CRL1/2/3/4) promoted growth of SDHB-deficient cells, acting as a tumor suppressor
@@ -105,6 +115,7 @@ The mechanism by which SDH loss creates neddylation dependency is not yet fully 
 | FGFR Signaling | FGFR1, FGFR2, FGF3, FGF4 | Hypermethylation disrupts FGF3/FGF4 insulators → aberrant FGFR1 autocrine loop; rogaratinib 41.7% ORR in Phase 2 (Nat Med 2026) |
 | Neddylation / Cullin-RING E3 | UBE2F, NAE1 | CRISPR screen identified neddylation as synthetic lethal in SDHB-deficient cells; pevonedistat inhibits upstream NAE1 |
 | Succinate-Driven Immune Evasion | SLC16A1 (MCT1), IDO1 | Tumor succinate suppresses T-cell IFN-γ via MCT1 uptake (PMID 35977513); HIF-driven IDO1 upregulation activates kynurenine pathway (PMID 42230482); AZD3965 (MCT1 inhibitor) and epacadostat (IDO1 inhibitor) as candidates |
+| SSTR2 Selective Dependency | SSTR2 | SDHB loss drives selective SSTR2 membrane upregulation and enhanced internalization in PPGL cells (PMID 41928014); lutetium-177 DOTATATE (Lutathera, FDA-approved in GEP-NETs) exploits SSTR2 internalization for targeted PRRT; NCI Phase 2 in PGL/PCC (NCT03206060) |
 
 ## Important Context for Drug Repurposing
 

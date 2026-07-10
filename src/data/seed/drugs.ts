@@ -398,6 +398,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "Lutetium-177 DOTATATE",
+    brand_names: ["Lutathera"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Peptide receptor radionuclide therapy (PRRT) / SSTR2-targeted radiopharmaceutical",
+    mechanism_of_action:
+      "Lutetium-177 DOTATATE (Lutathera) is a somatostatin analogue (DOTATATE) conjugated to the beta-emitting radioisotope lutetium-177. DOTATATE binds SSTR2 with high affinity on tumor cell surfaces; receptor binding triggers endocytosis of the radioconjugate, delivering targeted ionizing radiation to SSTR2-expressing tumor cells from the inside. In SDHB-deficient pheochromocytoma/paraganglioma, functional profiling revealed that SDHB loss selectively drives enhanced SSTR2 membrane expression and receptor internalization versus wild-type counterparts — making SDHB-deficient cells specifically sensitive to both the SSTR2-mediated anti-proliferative signaling cascade (dephosphorylation of AKT, ERK, and survival kinases) and the selective internalization of radiolabeled SSTR2 ligands (Garcia-Vioque et al., Mol Biomed 2026, PMID 41928014). Additionally, SDH-deficient cells accumulate elevated ROS from Complex II dysfunction; radiation-induced DNA double-strand breaks may synergize with this pre-existing oxidative stress and the impaired DNA repair capacity of these cells. SDH-deficient PPGL and GIST tumors express SSTR2 and are detectable by 68Ga-DOTATATE PET/CT. Lutathera is FDA-approved for somatostatin receptor-positive gastroenteropancreatic NETs (NETTER-1 trial; Strosberg J et al., NEJM 2017, PMID 28823578). An NCI-sponsored Phase 2 trial (NCT03206060) is actively enrolling patients with inoperable pheochromocytoma/paraganglioma (including SDHB-deficient; 130 patients; primary completion 2030). A Phase 1/2 pediatric trial (NCT06607692, LuPARPed) is combining Lutathera with olaparib in SSTR-positive solid tumors including PGL/PCC, directly exploiting the potential synergy of PRRT-induced DNA damage with SDH-deficient cells' impaired repair and elevated ROS.",
+    fda_approved: true,
+    approved_indications: [
+      "Somatostatin receptor-positive, progressive, well-differentiated gastroenteropancreatic neuroendocrine tumors (GEP-NETs)",
+    ],
+    pathway_slugs: ["sstr2-somatostatin-receptor", "oxidative-stress-ros"],
+    target_gene_symbols: ["SSTR2"],
+    evidence_score: 52,
+    status: "clinical_trial",
+  },
+  {
     name: "Pevonedistat",
     brand_names: ["TAK-924"],
     chembl_id: "CHEMBL3188428",

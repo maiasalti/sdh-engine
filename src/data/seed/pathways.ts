@@ -182,6 +182,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 12,
   },
   {
+    name: "Somatostatin Receptor 2 (SSTR2) Selective Dependency",
+    slug: "sstr2-somatostatin-receptor",
+    description:
+      "SDHB loss drives selective upregulation of somatostatin receptor subtype 2 (SSTR2) membrane expression in pheochromocytoma and paraganglioma cells. Functional profiling revealed that SDHB-knockdown PPGL cells display enhanced SSTR2 membrane enrichment and receptor internalization upon agonist stimulation — making them specifically sensitive to SSTR2-mediated anti-proliferative and pro-apoptotic signaling, while wild-type cells are unresponsive (Garcia-Vioque et al., Mol Biomed 2026, PMID 41928014). Clinically, SSTR2-expressing tumors are targeted by peptide receptor radionuclide therapy (PRRT) using radiolabeled somatostatin analogues such as lutetium-177 DOTATATE (Lutathera), which exploits SSTR2-mediated internalization to deliver targeted radiation. SDH-deficient tumors are known to express SSTR2 and are detectable by 68Ga-DOTATATE PET/CT.",
+    upstream_event:
+      "SDHB loss → altered membrane receptor trafficking → selective SSTR2 upregulation and enhanced internalization in SDHB-deficient versus wild-type cells",
+    downstream_effects: [
+      "Selective SSTR2 membrane upregulation in SDHB-deficient cells",
+      "Enhanced receptor internalization upon SSTR2 agonist stimulation",
+      "Broad dephosphorylation of AKT, ERK, and survival kinase pathways",
+      "Selective apoptosis induction in SDHB-deficient but not wild-type cells",
+      "Efficient internalization of radiolabeled SSTR2 ligands for PRRT-mediated tumor irradiation",
+    ],
+    druggable: true,
+    display_order: 13,
+  },
+  {
     name: "Neddylation / Ubiquitin-Proteasome Axis",
     slug: "neddylation",
     description:

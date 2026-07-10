@@ -115,4 +115,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "41985045",
     date: "2026-04",
   },
+  {
+    title:
+      "Functional profiling of somatostatin receptors identifies somatostatin receptor subtype 2 as a vulnerability in Succinate Dehydrogenase SDHB-deficient pheochromocytomas and paragangliomas",
+    authors: "Garcia-Vioque V, Pedraza-Arevalo S, Moreno-Montilla MT, et al.",
+    journal: "Mol Biomed",
+    year: 2026,
+    doi: "10.1186/s43556-026-00440-5",
+    topic: "Tumor Biology",
+    description:
+      "Systematic functional profiling of somatostatin receptors across wild-type and SDHB-knockdown pheochromocytoma/paraganglioma cell lines showed that SDHB-deficient cells display selectively enhanced SSTR2 membrane expression and receptor internalization. The SSTR2-selective agonist BIM-23120 significantly reduced proliferation and induced apoptosis exclusively in SDHB-knockdown cells — not wild-type — by driving broad dephosphorylation of growth and survival kinase pathways, establishing SSTR2 as a selective, SDHB-loss-dependent therapeutic vulnerability with direct implications for PRRT strategies.",
+    pmid: "41928014",
+    date: "2026-04",
+  },
 ];
