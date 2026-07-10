@@ -208,6 +208,24 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Rate-limiting enzyme of polyamine catabolism and the principal intracellular target induced by polyamine analogues including DENSPM. SAT1 acetylates spermidine and spermine, targeting them for export or oxidation by polyamine oxidase (PAOX), thereby depleting intracellular polyamine pools. Elevated SSAT/SAT1 activity in response to DENSPM treatment drives further ROS generation via SMOX, creating a toxic cycle in SDH-deficient cells already under oxidative stress.",
   },
   {
+    gene_symbol: "SLC16A1",
+    name: "Monocarboxylate transporter 1 (MCT1)",
+    uniprot_id: "P53985",
+    pathway_slug: "succinate-immune-evasion",
+    target_type: "downstream",
+    description:
+      "Bidirectional plasma-membrane transporter for small monocarboxylates including lactate, pyruvate, and succinate. In the SDH-deficient tumor microenvironment, high extracellular succinate is transported into tumor-infiltrating CD4+ and CD8+ T cells via MCT1, inhibiting succinyl-CoA synthetase and impairing TCA-cycle glucose oxidation; the net effect is suppressed IFN-γ secretion and degranulation — demonstrated in human T cells at physiological tumor-associated succinate concentrations (PMID 35977513). MCT1 inhibition would block this immunosuppressive succinate uptake in T cells while also disrupting metabolic symbiosis between glycolytic and oxidative tumor cells (lactate recycling). Target of AZD3965.",
+  },
+  {
+    gene_symbol: "IDO1",
+    name: "Indoleamine 2,3-dioxygenase 1",
+    uniprot_id: "P14902",
+    pathway_slug: "succinate-immune-evasion",
+    target_type: "downstream",
+    description:
+      "Rate-limiting enzyme in tryptophan catabolism via the kynurenine pathway. IDO1 degrades tryptophan to N-formylkynurenine → kynurenine, depleting this essential amino acid from the TME and producing immunosuppressive kynurenine metabolites that exhaust effector T cells and expand FoxP3+ regulatory T cells. In SDH-deficient tumors, the pseudohypoxic HIF-1α program (driven by succinate-mediated PHD inhibition) is known to upregulate IDO1 expression; aberrant kynurenine pathway activity has been confirmed in metastatic SDHB-driven PPGL by multi-omics analysis (PMID 42230482). Target of IDO1 inhibitors including epacadostat.",
+  },
+  {
     gene_symbol: "UBE2F",
     name: "Ubiquitin-conjugating enzyme E2 F (neddylation E2)",
     uniprot_id: "Q969M7",

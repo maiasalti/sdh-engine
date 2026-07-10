@@ -165,6 +165,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 11,
   },
   {
+    name: "Succinate-Driven Immune Evasion",
+    slug: "succinate-immune-evasion",
+    description:
+      "SDH loss creates an immunosuppressive tumor microenvironment through two distinct succinate-dependent mechanisms: (1) extracellular succinate is directly taken up by tumor-infiltrating T cells via MCT1 (SLC16A1), impairing TCA-cycle glucose oxidation in T cells and suppressing IFN-γ secretion and degranulation — demonstrated in human CD4+/CD8+ T cells at tumor-associated succinate concentrations (Gudgeon et al., Cell Rep 2022, PMID 35977513), with RNA-seq of SDH-deficient pheochromocytoma/paraganglioma confirming profound in-vivo IFN-γ signaling suppression; and (2) the pseudohypoxic HIF-1α program drives upregulation of IDO1 (indoleamine 2,3-dioxygenase 1), the rate-limiting enzyme in the tryptophan→kynurenine degradation pathway, with aberrant kynurenine pathway activity confirmed in metastatic SDHB-driven PPGL by multi-omics (PMID 42230482). Together these mechanisms create a profoundly T-cell-hostile TME in SDH-deficient tumors.",
+    upstream_event:
+      "SDH loss → intracellular and extracellular succinate accumulation; HIF-1α stabilization (pseudohypoxia)",
+    downstream_effects: [
+      "MCT1-mediated succinate uptake by CD4+/CD8+ T cells in TME",
+      "Suppressed T-cell IFN-γ secretion and degranulation",
+      "HIF-1α-driven IDO1 upregulation",
+      "Kynurenine accumulation → Treg expansion and T-cell anergy",
+      "Broad IFN-γ signaling suppression in SDH-deficient tumor tissue",
+    ],
+    druggable: true,
+    display_order: 12,
+  },
+  {
     name: "Neddylation / Ubiquitin-Proteasome Axis",
     slug: "neddylation",
     description:

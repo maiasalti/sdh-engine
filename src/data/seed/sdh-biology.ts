@@ -71,7 +71,16 @@ A 2026 Phase 2 trial in Nature Medicine (Merriam et al., Nat Med 2026, PMID: 421
 - FGFR1-mediated signaling drives SDH-deficient tumor proliferation and survival
 This mechanism is selectively active in SDH-deficient tumors (where the insulator disruption arises from the CIMP phenotype) and is absent in KIT/PDGFRA-mutant GIST. The Phase 2 trial of rogaratinib (pan-FGFR1/2/3/4 inhibitor) achieved a 41.7% objective response rate and 31-month median PFS in 24 patients with advanced SDH-deficient GIST. Serum phosphorus elevation serves as a pharmacodynamic marker of FGFR1 target engagement.
 
-### 11. Neddylation Pathway Synthetic Lethality
+### 11. Succinate-Driven Immune Evasion
+SDH loss creates a profoundly immunosuppressive tumor microenvironment (TME) through two mechanistically distinct succinate-dependent routes:
+
+**MCT1-mediated T-cell suppression (direct):** Tumor-associated succinate concentrations — as found in SDH-deficient pheochromocytoma and paraganglioma — are directly transported into CD4+ and CD8+ T cells via the monocarboxylate transporter MCT1 (SLC16A1). Inside T cells, succinate inhibits succinyl-CoA synthetase activity and impairs TCA-cycle-dependent glucose oxidation, collapsing mitochondrial metabolic fitness. The functional consequence is suppressed T-cell degranulation and IFN-γ secretion — both the cytotoxic and helper anti-tumor arms of adaptive immunity. This was demonstrated in human T cells exposed to physiological tumor-associated succinate concentrations and validated in vivo by RNA-sequencing of SDH-deficient versus SDH-intact PC/PG tumors, which showed profound, selective suppression of IFN-γ-induced gene expression specifically in SDH-deficient tumors (Gudgeon et al., Cell Rep 2022, PMID: 35977513). Restoring mitochondrial glucose oxidation pharmacologically rescued T-cell effector function.
+
+**HIF-driven kynurenine pathway immune evasion (indirect):** The pseudohypoxic HIF-1α program — constitutively active in SDH-deficient tumors via succinate-mediated PHD inhibition — drives upregulation of IDO1 (indoleamine 2,3-dioxygenase 1), the rate-limiting tryptophan-catabolizing enzyme. IDO1 degrades tryptophan to kynurenine and downstream immunosuppressive metabolites, depleting this essential amino acid from the TME (starving T cells) and activating the aryl hydrocarbon receptor (AhR) in T cells to drive exhaustion and FoxP3+ Treg expansion. Aberrant kynurenine pathway activity was confirmed in metastatic SDHB-driven PPGL by multi-omics profiling (Zhou et al., Hormones Athens 2026, PMID: 42230482).
+
+These two mechanisms are additive and stem from the same upstream event (succinate accumulation), making immune restoration a compelling but underexplored therapeutic angle in SDH-deficient tumors. MCT1 inhibitors (AZD3965, Phase 1: NCT01791595) could block succinate-mediated T-cell suppression, while IDO1 inhibitors (epacadostat, Phase 1/2 data) could reverse the kynurenine pathway immune evasion, either alone or as a rationale for combination with immune checkpoint inhibitors.
+
+### 12. Neddylation Pathway Synthetic Lethality
 An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in immortalized SDHB-deficient chromaffin cells (Al Khazal et al., iScience 2026, PMID: 42181244) identified the neddylation pathway as a selective vulnerability. Neddylation — the covalent attachment of the ubiquitin-like molecule NEDD8 to cullin proteins — activates cullin-RING E3 ubiquitin ligases, the dominant family of ubiquitin E3s controlling targeted protein degradation. The screen found:
 - Loss of UBE2F (the neddylation E2 enzyme for cullin-5 complexes) selectively suppressed growth of SDHB-deficient cells
 - Conversely, loss of UBE2M (the E2 for CRL1/2/3/4) promoted growth of SDHB-deficient cells, acting as a tumor suppressor
@@ -95,6 +104,7 @@ The mechanism by which SDH loss creates neddylation dependency is not yet fully 
 | NAD⁺ Salvage (NAMPT) | NAMPT, PARP1 | ROS-driven PARP1 hyperactivation + ETC-impaired NAD⁺ regen creates NAMPT dependency |
 | FGFR Signaling | FGFR1, FGFR2, FGF3, FGF4 | Hypermethylation disrupts FGF3/FGF4 insulators → aberrant FGFR1 autocrine loop; rogaratinib 41.7% ORR in Phase 2 (Nat Med 2026) |
 | Neddylation / Cullin-RING E3 | UBE2F, NAE1 | CRISPR screen identified neddylation as synthetic lethal in SDHB-deficient cells; pevonedistat inhibits upstream NAE1 |
+| Succinate-Driven Immune Evasion | SLC16A1 (MCT1), IDO1 | Tumor succinate suppresses T-cell IFN-γ via MCT1 uptake (PMID 35977513); HIF-driven IDO1 upregulation activates kynurenine pathway (PMID 42230482); AZD3965 (MCT1 inhibitor) and epacadostat (IDO1 inhibitor) as candidates |
 
 ## Important Context for Drug Repurposing
 
