@@ -234,4 +234,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
   },
+  {
+    gene_symbol: "ACLY",
+    name: "ATP citrate lyase",
+    uniprot_id: "P53396",
+    pathway_slug: "reductive-carboxylation",
+    target_type: "metabolic",
+    description:
+      "Cytoplasmic enzyme that cleaves citrate into acetyl-CoA and oxaloacetate, coupled to ATP hydrolysis. In normal cells, ACLY converts glucose-derived mitochondrial citrate (from the forward TCA cycle) to acetyl-CoA for lipid synthesis. In SDH-deficient cells, which cannot run the forward TCA cycle past succinate, ACLY instead processes reductively generated citrate (from glutamine via reverse IDH flux) — making it the critical bottleneck enzyme for all cytosolic acetyl-CoA production. ACLY is overexpressed and phosphorylated/activated by AKT in multiple human cancers, correlating with tumour grade and poorer prognosis (Migita et al., Cancer Res 2008, PMID 18922930, DOI 10.1158/0008-5472.CAN-08-1235). Target of the FDA-approved lipid-lowering drug bempedoic acid.",
+  },
 ];

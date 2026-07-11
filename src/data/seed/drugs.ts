@@ -398,6 +398,24 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "Bempedoic Acid",
+    brand_names: ["Nexletol", "Nilemdo"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "ACLY inhibitor (ATP-citrate lyase inhibitor)",
+    mechanism_of_action:
+      "Bempedoic acid (ETC-1002) is an orally bioavailable prodrug converted to its active CoA thioester (ETC-1002-CoA) by very-long-chain acyl-CoA synthetase 1 (ACSL1), expressed in liver and in many tumour cell types. The active metabolite competitively inhibits ACLY (ATP-citrate lyase), the cytoplasmic enzyme that cleaves citrate to acetyl-CoA and oxaloacetate. The SDH-specific rationale rests on the metabolic rewiring imposed by Complex II loss. When SDH is inactivated, the forward TCA cycle is interrupted at succinate → fumarate, making citrate synthesis from glucose-derived acetyl-CoA impossible through the canonical route. SDH-deficient cells compensate by running IDH enzymes in reverse — reductive carboxylation — using glutamine-derived α-ketoglutarate to generate isocitrate and then citrate. This reductively generated citrate is the principal source of cytosolic acetyl-CoA in ETC-defective tumour cells, as established by 13C isotopic tracing in cells harbouring Complex I, Complex III, or fumarate hydratase mutations (the enzyme immediately downstream of SDH in the TCA cycle) — Mullen et al., Nature 2012, PMID 22101431, DOI 10.1038/nature10642. ACLY is therefore the obligate bottleneck enzyme converting the products of SDH-deficient cells' altered metabolism into biosynthetic substrates (fatty acids, histone acetyl groups). Blocking ACLY with bempedoic acid severs this route specifically in SDH-deficient cells. Normal cells, which can generate citrate via functional forward TCA, are comparatively buffered. ACLY is overexpressed and AKT-phosphorylated (activated) in multiple human cancers, correlating with tumour grade (Migita et al., Cancer Res 2008, PMID 18922930). Bempedoic acid additionally activates AMPK as a secondary effect (AMP accumulation), opposing mTOR-driven growth — complementary to the mTOR activation that occurs in SDH-deficient tumours. FDA-approved in 2020 for heterozygous familial hypercholesterolaemia; extensive Phase 3 cardiovascular safety data (CLEAR Outcomes trial, ~14,000 patients) establishes a well-characterised tolerability profile. Key limitations: (1) ACSL1-dependent prodrug activation may be less efficient in tumour cells outside hepatic and adipose tissue — direct ACLY inhibitors without this activation step would be preferable; (2) no SDH-deficient cellular or animal model data yet; (3) no oncology clinical trial data. Dedicated preclinical validation in SDH-deficient cell lines is the critical next step before clinical consideration.",
+    fda_approved: true,
+    approved_indications: [
+      "Heterozygous familial hypercholesterolaemia (in combination with maximally tolerated statin therapy)",
+      "Primary hyperlipidaemia or mixed dyslipidaemia (as an adjunct to diet)",
+    ],
+    pathway_slugs: ["reductive-carboxylation", "glutamine-dependency"],
+    target_gene_symbols: ["ACLY"],
+    evidence_score: 35,
+    status: "theoretical",
+  },
+  {
     name: "Pevonedistat",
     brand_names: ["TAK-924"],
     chembl_id: "CHEMBL3188428",

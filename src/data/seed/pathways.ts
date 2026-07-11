@@ -197,4 +197,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 10,
   },
+  {
+    name: "Reductive Carboxylation / De Novo Lipogenesis",
+    slug: "reductive-carboxylation",
+    description:
+      "With SDH (Complex II) inactivated, SDH-deficient cells cannot synthesise citrate via the forward TCA cycle (the succinate → fumarate step is broken). Instead, they run isocitrate dehydrogenase (IDH) reactions in reverse — reductive carboxylation — using glutamine-derived α-ketoglutarate to generate isocitrate and then citrate. This reductively generated citrate is exported to the cytoplasm and cleaved by ATP-citrate lyase (ACLY) into acetyl-CoA and oxaloacetate. Acetyl-CoA produced by ACLY is the universal cytoplasmic carbon currency for de novo fatty acid synthesis (via ACC/FASN) and histone acetylation. ACLY therefore acts as the obligate bottleneck enzyme converting the products of reductive carboxylation into biosynthetic outputs required for proliferation. This was established in tumour cells with ETC defects (Complex I, Complex III mutations) and fumarate hydratase mutations — the TCA enzyme immediately downstream of SDH — by 13C isotopic tracing (Mullen et al., Nature 2012, PMID 22101431, DOI 10.1038/nature10642). Because SDH is Complex II of the ETC, the same metabolic rewiring is expected in SDH-deficient tumour cells.",
+    upstream_event:
+      "SDH loss (Complex II inactivation) → forward TCA citrate synthesis blocked → glutamine-dependent reductive carboxylation via IDH → cytosolic citrate accumulation → ACLY-mediated conversion to acetyl-CoA",
+    downstream_effects: [
+      "Cytosolic acetyl-CoA production for de novo fatty acid synthesis (FASN/ACC)",
+      "Histone acetylation at growth-promoting loci via histone acetyltransferases",
+      "OAA generation for aspartate and gluconeogenic intermediate synthesis",
+      "Selective dependency on ACLY as the bottleneck of the alternative biosynthetic route",
+      "Disproportionate vulnerability of SDH-deficient cells to ACLY inhibition vs. normal cells with intact forward TCA",
+    ],
+    druggable: true,
+    display_order: 13,
+  },
 ];

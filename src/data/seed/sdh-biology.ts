@@ -87,6 +87,15 @@ An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in immortalized S
 - Neddylation inhibitors pevonedistat (MLN4924) and HA-9104 preferentially blocked proliferation of SDHB-deficient cells
 The mechanism by which SDH loss creates neddylation dependency is not yet fully established but likely involves proteotoxic stress from chronic metabolic and oxidative stress causing dependence on UBE2F-dependent protein quality control. This is an early-stage, unbiased mechanistic finding with potential to expand druggable targets in SDH-deficient tumors.
 
+### 13. Reductive Carboxylation and ACLY Dependency
+When SDH (Complex II) is inactivated, the forward TCA cycle is interrupted at the succinate → fumarate step. Cells cannot generate citrate through the canonical oxidative route (acetyl-CoA + OAA → citrate via citrate synthase requires a functioning TCA cycle). Instead, SDH-deficient cells run IDH enzymes in reverse — reductive carboxylation — converting glutamine-derived α-ketoglutarate to isocitrate and then to citrate. This process was definitively established in tumour cells with Complex I mutations, Complex III mutations, and fumarate hydratase (FH) mutations — FH-deficient cells are the closest published model to SDH-deficient tumours, both having TCA enzyme loss causing oncometabolite accumulation — by 13C isotopic tracing demonstrating that reductive carboxylation is the dominant citrate-synthesis pathway in ETC-defective cells (Mullen et al., Nature 2012, PMID: 22101431, DOI: 10.1038/nature10642).
+
+The reductively generated citrate is exported from the mitochondria to the cytoplasm, where ATP-citrate lyase (ACLY) cleaves it to:
+- **Acetyl-CoA**: substrate for de novo fatty acid synthesis (via ACC1/FASN) and histone acetyltransferases
+- **Oxaloacetate (OAA)**: for aspartate synthesis and gluconeogenic intermediates
+
+ACLY is therefore the obligate bottleneck enzyme converting the products of reductive carboxylation into the biosynthetic outputs that SDH-deficient cells need for proliferation. Because normal cells can generate citrate through the forward TCA cycle, blocking ACLY with an inhibitor disproportionately impairs SDH-deficient tumour cells. ACLY is overexpressed and activated (by AKT phosphorylation at Ser454) across multiple human cancers, correlating with tumour grade and poorer prognosis (Migita et al., Cancer Res 2008, PMID: 18922930, DOI: 10.1158/0008-5472.CAN-08-1235). Bempedoic acid (Nexletol/ETC-1002), an FDA-approved ACLY inhibitor developed for LDL cholesterol lowering, offers a repurposing opportunity with an established safety profile from large cardiovascular trials. A secondary pharmacological effect — AMPK activation (via AMP accumulation from blocked ATP hydrolysis) — also opposes mTOR-driven growth, which is constitutively active in SDH-deficient tumours. Key limitation: bempedoic acid is a prodrug requiring ACSL1 for activation, which may be less efficient outside hepatic and adipose tissue; preclinical validation in SDH-deficient cellular models is the essential next step.
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -105,6 +114,7 @@ The mechanism by which SDH loss creates neddylation dependency is not yet fully 
 | FGFR Signaling | FGFR1, FGFR2, FGF3, FGF4 | Hypermethylation disrupts FGF3/FGF4 insulators → aberrant FGFR1 autocrine loop; rogaratinib 41.7% ORR in Phase 2 (Nat Med 2026) |
 | Neddylation / Cullin-RING E3 | UBE2F, NAE1 | CRISPR screen identified neddylation as synthetic lethal in SDHB-deficient cells; pevonedistat inhibits upstream NAE1 |
 | Succinate-Driven Immune Evasion | SLC16A1 (MCT1), IDO1 | Tumor succinate suppresses T-cell IFN-γ via MCT1 uptake (PMID 35977513); HIF-driven IDO1 upregulation activates kynurenine pathway (PMID 42230482); AZD3965 (MCT1 inhibitor) and epacadostat (IDO1 inhibitor) as candidates |
+| Reductive Carboxylation / De Novo Lipogenesis | ACLY | SDH loss blocks forward TCA → cells use glutamine reductive carboxylation → ACLY is the bottleneck for cytosolic acetyl-CoA; bempedoic acid (FDA-approved ACLY inhibitor) as candidate (Mullen et al., Nature 2012, PMID 22101431) |
 
 ## Important Context for Drug Repurposing
 
