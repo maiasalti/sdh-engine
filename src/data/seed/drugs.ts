@@ -412,4 +412,19 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 30,
     status: "preclinical",
   },
+  {
+    name: "Ceralasertib",
+    brand_names: ["AZD6738"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "ATR kinase inhibitor",
+    mechanism_of_action:
+      "Selective, orally bioavailable inhibitor of ATR (ataxia telangiectasia and Rad3-related) serine/threonine kinase. The mechanistic rationale is synthetic lethality with ATRX loss: in SDHB-driven metastatic pheochromocytoma and paraganglioma, ATRX co-mutations occur in ~30–40% of cases (confirmed by multi-omics analysis, PMID 42230482) and are the strongest genomic predictor of malignancy in this subtype. ATRX loss triggers the Alternative Lengthening of Telomeres (ALT) pathway, creating constitutive telomeric replication stress — G-quadruplex accumulation, R-loops, fragile telomeres — that generates an absolute dependency on ATR kinase for stalled-fork resolution and survival. Flynn et al. (Science 2015, PMID 25614623) established that ATRX-loss/ALT-positive cells are 10–30× more sensitive to ATR inhibition than ALT-negative controls across multiple cancer types, a synthetic lethality that is absent from ATRX-wild-type cells. Ceralasertib is in Phase 1/2 clinical development; the OLAPCO Phase 2 trial (NCT03787680) tests ceralasertib + olaparib in DNA-damage-response-deficient tumors including ATRX-loss contexts. Key limitation: no dedicated PPGL or SDH-deficient-specific trial data exists; the ~30–40% ATRX co-mutation prevalence means this strategy applies only to the ATRX-loss subgroup, requiring prospective ATRX genotyping to identify eligible patients.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["atrx-alt-replication-stress"],
+    target_gene_symbols: ["ATR"],
+    evidence_score: 33,
+    status: "preclinical",
+  },
 ];

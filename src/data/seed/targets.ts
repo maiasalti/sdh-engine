@@ -234,4 +234,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
   },
+  {
+    gene_symbol: "ATR",
+    name: "Ataxia telangiectasia and Rad3-related protein kinase",
+    uniprot_id: "Q13535",
+    pathway_slug: "atrx-alt-replication-stress",
+    target_type: "synthetic_lethal",
+    description:
+      "The primary replication stress checkpoint kinase. Phosphorylates and activates CHK1, stabilizes stalled replication forks, and coordinates origin firing suppression under genotoxic stress. In ATRX-loss/ALT cells, constitutive telomeric G-quadruplex formation and R-loop accumulation generate persistent stalled replication forks that require ATR signaling for resolution; ALT cells are therefore dependent on ATR for survival. Flynn et al. (Science 2015, PMID 25614623) established that ATR inhibition is synthetically lethal with ALT in multiple cancer types with ATRX or DAXX loss, showing 10–30× greater sensitivity in ALT-positive versus ALT-negative cells.",
+  },
 ];
