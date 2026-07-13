@@ -197,4 +197,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 10,
   },
+  {
+    name: "ATRX Loss / ALT Replication Stress",
+    slug: "atrx-alt-replication-stress",
+    description:
+      "In SDHB-driven metastatic pheochromocytoma and paraganglioma, ATRX co-mutations occur in ~30–40% of cases and are among the strongest genomic predictors of malignancy (confirmed by multi-omics profiling: PMID 42230482). ATRX loss activates the Alternative Lengthening of Telomeres (ALT) pathway — a recombination-based telomere maintenance mechanism — which creates constitutive replication stress at telomeric sequences through G-quadruplex DNA accumulation, R-loop formation, and fragile telomeres. ALT-positive cells are rendered hypersensitive to ATR kinase inhibition: Flynn et al. (Science 2015, PMID 25614623) demonstrated that ATRX-loss/ALT-positive cancer cells are 10–30× more sensitive to ATR inhibitors than ALT-negative cells across multiple cancer types, establishing a synthetic lethality that is absent in ATRX-wild-type tumors.",
+    upstream_event:
+      "SDH loss (particularly SDHB mutation) → epigenetic instability → ATRX co-mutation → ALT pathway activation → constitutive telomeric replication stress → ATR dependency",
+    downstream_effects: [
+      "G-quadruplex DNA accumulation at telomeres",
+      "R-loop formation and replication fork stalling",
+      "Constitutive ATR kinase activation at stalled forks",
+      "Synthetic lethality with ATR inhibition (10–30× sensitization vs. ALT-negative cells)",
+      "C-circles as an extrachromosomal DNA biomarker of ALT activity",
+      "High metastatic potential in SDHB-driven PPGL",
+    ],
+    druggable: true,
+    display_order: 13,
+  },
 ];
