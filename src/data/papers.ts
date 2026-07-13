@@ -115,4 +115,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "41985045",
     date: "2026-04",
   },
+  {
+    title:
+      "Radiological differentiation of succinate dehydrogenase-deficient renal cell carcinoma from renal oncocytoma and chromophobe renal cell carcinoma",
+    authors: "Wang G, Yu Y, Han Y, et al.",
+    journal: "BMC Cancer",
+    year: 2026,
+    doi: "10.1186/s12885-026-16112-0",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Two-centre retrospective CT/MRI study of 9 SDH-deficient RCC, 18 renal oncocytoma, and 18 chromophobe RCC cases found that SDH-RCC is typically small (mean 3.4 cm) and solitary; ill-defined margins (22% vs. near-zero in other groups) and hemorrhagic features on MRI distinguished SDH-RCC from the morphologically similar lookalikes, while enhancement ratios differed across tumor types. The findings provide practical imaging clues for radiologists to raise suspicion for this rare entity and prompt genetic evaluation.",
+    pmid: "42067868",
+    date: "2026-05",
+  },
 ];

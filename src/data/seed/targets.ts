@@ -243,4 +243,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "The primary replication stress checkpoint kinase. Phosphorylates and activates CHK1, stabilizes stalled replication forks, and coordinates origin firing suppression under genotoxic stress. In ATRX-loss/ALT cells, constitutive telomeric G-quadruplex formation and R-loop accumulation generate persistent stalled replication forks that require ATR signaling for resolution; ALT cells are therefore dependent on ATR for survival. Flynn et al. (Science 2015, PMID 25614623) established that ATR inhibition is synthetically lethal with ALT in multiple cancer types with ATRX or DAXX loss, showing 10–30× greater sensitivity in ALT-positive versus ALT-negative cells.",
   },
+  {
+    gene_symbol: "ODC1",
+    name: "Ornithine decarboxylase 1",
+    uniprot_id: "P11926",
+    pathway_slug: "polyamine-metabolism",
+    target_type: "metabolic",
+    description:
+      "The rate-limiting enzyme catalyzing the first committed step of polyamine biosynthesis: irreversible decarboxylation of ornithine to putrescine. Putrescine is then converted to spermidine (by spermidine synthase/SRM) and spermine (by spermine synthase/SMS). ODC1 activity is tightly regulated by antizyme proteins (OAZ1/2) and stabilized by antizyme inhibitor (AZIN1). Spermidine and spermine are significantly elevated in SDHx-mutated pheochromocytoma/paraganglioma tissues compared with non-mutated counterparts, and in SDHB-knockdown hPheo1 cells (Rai et al., Metabolism 2020, PMID 32562798), establishing that polyamine biosynthesis is pathologically overactive in SDH-deficient neuroendocrine tumors. Target of eflornithine (DFMO), which forms an irreversible covalent adduct with the pyridoxal phosphate cofactor of ODC1.",
+  },
 ];

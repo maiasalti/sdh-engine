@@ -413,6 +413,25 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Eflornithine (DFMO)",
+    brand_names: ["Iwilfin", "Ornidyl", "Vaniqa"],
+    chembl_id: "CHEMBL696",
+    pubchem_cid: "3009",
+    drug_class: "ODC1 inhibitor (ornithine decarboxylase inhibitor)",
+    mechanism_of_action:
+      "Eflornithine (α-difluoromethylornithine, DFMO) irreversibly inhibits ODC1 (ornithine decarboxylase 1) by forming a covalent adduct with its pyridoxal phosphate cofactor, blocking the rate-limiting first step of polyamine biosynthesis (ornithine → putrescine → spermidine → spermine). The rationale in SDH-deficient tumors derives from metabolomic evidence that spermidine and spermine are significantly elevated in SDHx-mutated pheochromocytoma/paraganglioma tissues and SDHB-knockdown chromaffin cells compared with wild-type controls (Rai et al., Metabolism 2020, PMID 32562798). The same study showed that polyamine pathway inhibition (DENSPM, a catabolism-inducing analogue) suppressed SDHB-deficient cell growth in vitro and in xenografts. Eflornithine targets the same pathway from the opposite end — blocking biosynthesis rather than inducing catabolism — which may offer complementary or synergistic inhibition of polyamine pools. Eflornithine does not generate the H2O2 byproduct that DENSPM produces via spermine oxidase (SMOX), giving it a potentially more favorable oxidative-stress profile in combination. Key mechanistic distinction from DENSPM: DENSPM depletes polyamines by inducing SSAT-mediated catabolism while simultaneously generating ROS; eflornithine reduces new polyamine synthesis at the committed biosynthesis step, providing a second mechanistic lever to deplete elevated spermidine/spermine in SDH-deficient tumors. Clinical precedent in neural-crest-derived neuroendocrine cancer: eflornithine (oral DFMO) was FDA-approved in November 2023 (brand name Iwilfin) as maintenance therapy after immunotherapy in high-risk neuroblastoma, a neural-crest-derived neuroendocrine tumor sharing embryological origin with pheochromocytoma and paraganglioma. Propensity-score-matched externally controlled analysis (Oesterheld et al., J Clin Oncol 2023, PMID 37883734, NCT02395666) demonstrated DFMO improved event-free survival (HR 0.50, p=0.008) and overall survival (HR 0.38, p=0.007) in high-risk neuroblastoma postimmunotherapy. Key limitation: no direct measurement of ODC1 activity or expression in SDH-deficient cells (Rai et al. documented elevated polyamine metabolites but did not specifically map the enzymatic driver to ODC1 vs. reduced catabolism); dedicated SDH-deficient preclinical validation of eflornithine is absent.",
+    fda_approved: true,
+    approved_indications: [
+      "High-risk neuroblastoma (maintenance after immunotherapy, FDA Nov 2023)",
+      "African trypanosomiasis (sleeping sickness, IV formulation)",
+      "Facial hirsutism (topical cream, 13.9%)",
+    ],
+    pathway_slugs: ["polyamine-metabolism"],
+    target_gene_symbols: ["ODC1"],
+    evidence_score: 30,
+    status: "theoretical",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,
