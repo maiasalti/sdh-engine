@@ -117,6 +117,31 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
+      "Functional profiling of somatostatin receptors identifies somatostatin receptor subtype 2 as a vulnerability in Succinate Dehydrogenase SDHB-deficient pheochromocytomas and paragangliomas",
+    authors: "García-Vioque V, Pedraza-Arevalo S, Moreno-Montilla MT, et al.",
+    journal: "Mol Biomed",
+    year: 2026,
+    doi: "10.1186/s43556-026-00440-5",
+    topic: "Tumor Biology",
+    description:
+      "Systematic functional screening of somatostatin receptor agonists in SDHB-knockdown versus wild-type pheochromocytoma/paraganglioma cell lines found that SDHB-deficient cells exhibit stronger membrane SSTR2 expression and receptor internalization, and that the selective SSTR2-full agonist BIM-23120 — but not octreotide or pasireotide — selectively reduced proliferation and induced apoptosis in SDHB-deficient cells by dephosphorylating pro-survival kinase cascades. Providing a mechanistic explanation for why cold somatostatin analogs have historically failed in PPGL clinical trials while PRRT (which relies on SSTR2 binding) succeeds: SDHB deficiency specifically sensitizes tumor cells to SSTR2 full agonism, identifying this receptor subtype as a selective pharmacological vulnerability in the SDHB-deficient subset.",
+    pmid: "41928014",
+    date: "2026-04",
+  },
+  {
+    title: "Epigenetics and disease progression in neuroendocrine neoplasms",
+    authors: "Lobato EC, Lafranchi AF, Freitas-Castro F, et al.",
+    journal: "Endocr Rev",
+    year: 2026,
+    doi: "10.1210/endrev/bnag005",
+    topic: "Review / Overview",
+    description:
+      "Comprehensive Endocrine Reviews synthesis of epigenetic regulation across all major neuroendocrine neoplasm types — including detailed coverage of pheochromocytomas and paragangliomas — cataloguing SDHx-driven CIMP hypermethylation, ATRX/TERT alterations governing metastatic risk, histone modification patterns, and non-coding RNA dysregulation as both prognostic markers and therapeutic targets. Reviews methylation-based classifiers and circulating epigenetic biomarkers as emerging precision tools, and covers DNA methyltransferase inhibitors, HDAC inhibitors, and RNA-modifying enzyme modulators under active investigation in neuroendocrine malignancies.",
+    pmid: "41693399",
+    date: "2026-07",
+  },
+  {
+    title:
       "Approach to the Patient with Metastatic Pheochromocytoma and Paraganglioma: Advances in Systemic Therapy",
     authors: "Glover M, Waguespack SG, Campbell MT, et al.",
     journal: "J Clin Endocrinol Metab",

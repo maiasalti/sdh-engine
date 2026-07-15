@@ -235,6 +235,24 @@ export const SEED_TARGETS: SeedTarget[] = [
       "NEDD8-specific E2 conjugating enzyme that cooperates with RBX2 to neddylate cullin-5-based RING E3 ligases. Identified in an unbiased CRISPR screen as a selective synthetic lethal dependency in SDHB-deficient chromaffin cells: loss of UBE2F suppressed growth specifically in SDH-deficient cells, while loss of its related enzyme UBE2M promoted growth. Upstream NAE1/UBA3 inhibitors (e.g., pevonedistat) block the entire neddylation cascade (PMID 42181244).",
   },
   {
+    gene_symbol: "KDM4A",
+    name: "Lysine demethylase 4A (JMJD2A)",
+    uniprot_id: "O75164",
+    pathway_slug: "sdh-driven-hrd",
+    target_type: "direct",
+    description:
+      "α-KG-dependent Jumonji-domain histone demethylase that erases the repressive H3K9me3 mark. Competitively inhibited by succinate, which binds the catalytic iron-binding site shared with α-KG. At DNA double-strand break sites, KDM4A/B-mediated H3K9me3 removal is required for TIP60 acetyltransferase recruitment and subsequent ATM activation and DNA end-resection; succinate-driven inhibition causes H3K9me3 hypermethylation at breaks, impairing HR initiation (Sulkowski et al., Nature 2020, PMID: 32494005).",
+  },
+  {
+    gene_symbol: "KDM4B",
+    name: "Lysine demethylase 4B (JMJD2B)",
+    uniprot_id: "O94953",
+    pathway_slug: "sdh-driven-hrd",
+    target_type: "direct",
+    description:
+      "Primary α-KG-dependent H3K9me3 demethylase at DNA break sites. KDM4B is the demethylase whose oncometabolite-mediated inhibition was identified as the mechanistic basis for HR deficiency in succinate-accumulating (SDH-deficient) and fumarate-accumulating (FH-deficient) tumors. Sulkowski et al. (Nature 2020, PMID: 32494005) showed that 2-HG, succinate, and fumarate all inhibit KDM4B, causing H3K9me3-masked DNA breaks that cannot recruit the HR machinery; restoration of KDM4B activity rescued HR competence. Together with KDM4A, KDM4B constitutes the α-KG-dependent chromatin checkpoint for DNA end-resection.",
+  },
+  {
     gene_symbol: "ATR",
     name: "Ataxia telangiectasia and Rad3-related protein kinase",
     uniprot_id: "Q13535",

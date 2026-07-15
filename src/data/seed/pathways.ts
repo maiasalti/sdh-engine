@@ -198,6 +198,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 10,
   },
   {
+    name: "Succinate-Driven Homologous Recombination Deficiency",
+    slug: "sdh-driven-hrd",
+    description:
+      "Succinate accumulation competitively inhibits the α-KG-dependent histone demethylases KDM4A and KDM4B (JMJD2A/B), which normally erase repressive H3K9me3 marks at sites of DNA double-strand breaks. When KDM4B is inhibited, H3K9me3 hypermethylation persists at break sites, blocking recruitment of TIP60 acetyltransferase and ATM kinase — both required for DNA end-resection and initiation of homology-directed repair (HDR/HR). The result is a 'BRCAness' phenotype: SDH-deficient tumor cells have impaired HR capacity despite wild-type BRCA1/2. Sulkowski et al. (Nat Genet 2018, PMID: 30013182) directly demonstrated HR deficiency and olaparib hypersensitivity in cells and tumors from SDH-deficient hereditary paraganglioma/PPGL patients; Sulkowski et al. (Nature 2020, PMID: 32494005) dissected the KDM4B/H3K9me3 chromatin mechanism.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive inhibition of KDM4A/KDM4B (α-KG-dependent H3K9me3 demethylases) → H3K9me3 persistence at DNA double-strand break sites → impaired TIP60/ATM recruitment → defective DNA end-resection → HR deficiency",
+    downstream_effects: [
+      "H3K9me3 hypermethylation at DNA double-strand break sites",
+      "Impaired TIP60 acetyltransferase and ATM kinase recruitment",
+      "Defective homologous recombination (BRCAness phenotype in BRCA1/2-wild-type cells)",
+      "PARP inhibitor synthetic lethality (trapping unrepaired single-strand breaks in HR-deficient background)",
+      "Selective sensitivity to olaparib and other PARP inhibitors in SDH-deficient versus SDH-intact cells",
+    ],
+    druggable: true,
+    display_order: 14,
+  },
+  {
     name: "ATRX Loss / ALT Replication Stress",
     slug: "atrx-alt-replication-stress",
     description:
