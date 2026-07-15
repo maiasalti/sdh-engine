@@ -413,6 +413,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Birabresib",
+    brand_names: ["OTX015", "MK-8628"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "BET bromodomain inhibitor (pan-BRD2/3/4)",
+    mechanism_of_action:
+      "Pan-BET bromodomain inhibitor that competes with acetylated histones for binding to the BRD2, BRD3, and BRD4 bromodomains. The mechanistic rationale in SDH-deficient tumors builds directly on two converging lines of evidence. First, succinate-mediated inhibition of KDM6A (UTX) and KDM6B (JMJD3) causes global H3K27me3 accumulation (Mechanism 9), which compresses residual active chromatin (H3K27ac-marked enhancers) into spatially denser, more concentrated super-enhancer hubs — a structural reorganization that makes those hubs disproportionately dependent on BRD4 for transcription. Second, the 2026 Nature Medicine Phase 2 trial (Merriam et al., Nat Med 2026, PMID: 42191879) provided direct empirical evidence of pathological super-enhancer formation in SDH-deficient GIST: SDH-loss-driven DNA hypermethylation disrupts CTCF insulator elements at the FGF3/FGF4 locus, converting these silenced oncogenes into an ectopic super-enhancer that drives autocrine FGFR1 signaling. BRD4 is required for the transcriptional output of precisely this type of ectopic super-enhancer. Loven et al. (Cell 2013, PMID: 23582323) established that BET inhibitors preferentially displace BRD4 from super-enhancers over typical enhancers, a selectivity that arises because super-enhancers are densely acetylated and more sensitive to BRD4 dosage. Birabresib would therefore act 'upstream' of rogaratinib — disrupting super-enhancer maintenance itself rather than only the downstream FGFR signaling output, and potentially suppressing other ectopically activated super-enhancers beyond the FGF3/FGF4 locus that arise from the same CIMP epigenomic remodeling. Birabresib Phase 1b/2 trial in haematological malignancies and NUT carcinoma (NCT01713582) established pharmacokinetics and early efficacy signals in super-enhancer-addicted tumors. Key limitation: no published SDH-deficient-specific preclinical validation for BRD4 inhibition exists; the evidence chain is mechanistic inference from (a) established BRD4/super-enhancer biology, (b) confirmed ectopic super-enhancer pathology in SDH-GIST (PMID 42191879), and (c) the analogous BET-inhibitor sensitivity observed in other H3K27me3-overloaded cancer contexts. Dedicated SDH-deficient preclinical experiments are the critical next step.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["epigenetic-dysregulation"],
+    target_gene_symbols: ["BRD4"],
+    evidence_score: 33,
+    status: "theoretical",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,

@@ -243,4 +243,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "The primary replication stress checkpoint kinase. Phosphorylates and activates CHK1, stabilizes stalled replication forks, and coordinates origin firing suppression under genotoxic stress. In ATRX-loss/ALT cells, constitutive telomeric G-quadruplex formation and R-loop accumulation generate persistent stalled replication forks that require ATR signaling for resolution; ALT cells are therefore dependent on ATR for survival. Flynn et al. (Science 2015, PMID 25614623) established that ATR inhibition is synthetically lethal with ALT in multiple cancer types with ATRX or DAXX loss, showing 10–30× greater sensitivity in ALT-positive versus ALT-negative cells.",
   },
+  {
+    gene_symbol: "BRD4",
+    name: "Bromodomain-containing protein 4",
+    uniprot_id: "O60885",
+    pathway_slug: "epigenetic-dysregulation",
+    target_type: "synthetic_lethal",
+    description:
+      "BET (Bromodomain and Extra-Terminal) family protein that binds acetylated histones — particularly H3K27ac at active enhancers and super-enhancers — and recruits Mediator and P-TEFb to drive RNA Pol II pause-release and transcriptional elongation. In SDH-deficient tumors, succinate-mediated inhibition of KDM6A/B causes global H3K27me3 accumulation that compresses residual active chromatin into denser, fewer super-enhancer hubs; the Nat Med 2026 Phase 2 trial (PMID 42191879) provided direct evidence of such ectopic super-enhancer formation in SDH-deficient GIST (at the FGF3/FGF4 locus). BRD4-dependent transcription at these compressed, ectopic super-enhancers becomes disproportionately sensitive to BET inhibitors, which preferentially displace BRD4 from super-enhancers over typical enhancers (Loven et al., Cell 2013, PMID 23582323). Target of birabresib (OTX015) and molibresib (GSK525762).",
+  },
 ];

@@ -115,4 +115,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "41985045",
     date: "2026-04",
   },
+  {
+    title:
+      "Approach to the Patient with Metastatic Pheochromocytoma and Paraganglioma: Advances in Systemic Therapy",
+    authors: "Glover M, Waguespack SG, Campbell MT, et al.",
+    journal: "J Clin Endocrinol Metab",
+    year: 2026,
+    doi: "10.1210/clinem/dgag182",
+    topic: "Treatment & Trials",
+    description:
+      "Contemporary MD Anderson clinical review providing a genotype-directed treatment algorithm for metastatic pheochromocytoma and paraganglioma (MPPGL), integrating belzutifan (recently FDA-approved for MPPGL), sunitinib, cabozantinib, radiopharmaceuticals (131I-MIBG, 177Lu-DOTATATE), and chemotherapy into a clinical decision framework based on SDHx and other genotypes, catecholamine phenotype, and tumor burden. The most current comprehensive guidance for matching systemic therapy to individual patient genotype in advanced PPGL.",
+    pmid: "42025325",
+    date: "2026-04",
+  },
 ];
