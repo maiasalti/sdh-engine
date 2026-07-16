@@ -447,6 +447,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "Denifanstat",
+    brand_names: ["TVB-2640"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "FASN inhibitor (fatty acid synthase inhibitor)",
+    mechanism_of_action:
+      "Orally bioavailable, selective inhibitor of fatty acid synthase (FASN), targeting the β-ketoacyl reductase (KR) domain. The mechanistic rationale in SDH-deficient tumors rests on a directly demonstrated FASN-SDHB synthetic lethal interaction: Rodríguez-Flores et al. (Pharmacol Res 2026, PMID 41520938) showed that the FASN inhibitor G28UCM impairs both cytoplasmic FASN activity and mitochondrial fatty acid synthesis (mtFAS) selectively in SDHB-knockout cell lines versus WT controls, establishing class-level synthetic lethality. The metabolic logic is two-layered. First, SDH loss truncates the TCA cycle at the succinate → fumarate step, forcing cells to rely on reductive carboxylation of glutamine (reverse IDH1/2: glutamate → α-KG → isocitrate → citrate; then ACLY cleavage to acetyl-CoA) as their primary cytoplasmic acetyl-CoA and lipid precursor route. FASN is the terminal enzyme of this route, producing palmitate and longer fatty acids for membrane biogenesis and lipid-dependent signalling. Second, FASN products supply octanoyl-ACP to the mitochondrial fatty acid synthesis (mtFAS) pathway, which generates lipoic acid — an essential cofactor for pyruvate dehydrogenase (PDH) and α-ketoglutarate dehydrogenase (α-KG-DH). In SDH-deficient cells already impaired at Complex II, FASN inhibition therefore compounds mitochondrial insufficiency through two routes: withdrawing membrane lipids and blocking mtFAS-derived lipoylation of key enzyme complexes. Denifanstat (TVB-2640) is the most clinically advanced FASN inhibitor, with Phase 1 safety data established in multiple solid tumor types (NCT02980029) and Phase 2 activity signals in HER2+ breast cancer (FASN overexpression cohort) and malignant astrocytoma (NCT04341337). No dedicated SDH-deficient-specific trial exists; the class effect demonstrated with G28UCM (PMID 41520938) provides the SDH-specific mechanistic anchor; denifanstat's superior oral bioavailability and selectivity profile make it the preferred clinical candidate over the experimental G28UCM compound. Key limitation: the precise contribution of mtFAS impairment versus cytoplasmic de novo lipogenesis blockade to the SDHB-synthetic lethality remains to be dissected, and no in-vivo SDH-deficient xenograft data for FASN inhibition has been published.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["de-novo-lipogenesis", "glutamine-dependency"],
+    target_gene_symbols: ["FASN"],
+    evidence_score: 35,
+    status: "preclinical",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,

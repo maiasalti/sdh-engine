@@ -270,4 +270,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "BET (Bromodomain and Extra-Terminal) family protein that binds acetylated histones — particularly H3K27ac at active enhancers and super-enhancers — and recruits Mediator and P-TEFb to drive RNA Pol II pause-release and transcriptional elongation. In SDH-deficient tumors, succinate-mediated inhibition of KDM6A/B causes global H3K27me3 accumulation that compresses residual active chromatin into denser, fewer super-enhancer hubs; the Nat Med 2026 Phase 2 trial (PMID 42191879) provided direct evidence of such ectopic super-enhancer formation in SDH-deficient GIST (at the FGF3/FGF4 locus). BRD4-dependent transcription at these compressed, ectopic super-enhancers becomes disproportionately sensitive to BET inhibitors, which preferentially displace BRD4 from super-enhancers over typical enhancers (Loven et al., Cell 2013, PMID 23582323). Target of birabresib (OTX015) and molibresib (GSK525762).",
   },
+  {
+    gene_symbol: "FASN",
+    name: "Fatty acid synthase",
+    uniprot_id: "P49327",
+    pathway_slug: "de-novo-lipogenesis",
+    target_type: "metabolic",
+    description:
+      "Multifunctional cytoplasmic enzyme catalyzing de novo synthesis of long-chain fatty acids from acetyl-CoA and malonyl-CoA. In SDH-deficient cells, the truncated TCA cycle forces acetyl-CoA generation via reductive carboxylation of glutamine (reverse IDH1/2 reaction: α-KG → isocitrate → citrate; ACLY cleavage: citrate → acetyl-CoA), making FASN the terminal effector of a glutamine-dependent lipid supply route. FASN products also feed mitochondrial fatty acid synthesis (mtFAS), which produces the lipoic acid cofactor required by pyruvate dehydrogenase and α-ketoglutarate dehydrogenase complexes; in cells already compromised at Complex II, additional impairment of mtFAS via FASN inhibition compounds mitochondrial dysfunction. A direct FASN-SDHB synthetic lethal interaction was demonstrated using G28UCM (a FASN KS-domain inhibitor) in SDHB-knockout cell lines: G28UCM impaired FASN activity and mitochondrial fatty acid synthesis more profoundly in SDHB-deficient cells than in WT controls (Rodríguez-Flores et al., Pharmacol Res 2026, PMID 41520938). Primary clinical candidate: denifanstat (TVB-2640).",
+  },
 ];

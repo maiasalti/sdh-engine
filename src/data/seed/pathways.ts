@@ -232,4 +232,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 13,
   },
+  {
+    name: "De Novo Lipogenesis / FASN Dependency",
+    slug: "de-novo-lipogenesis",
+    description:
+      "SDH loss truncates the TCA cycle at the succinate → fumarate step, forcing cells to generate lipid precursors via reductive carboxylation of glutamine: glutamate → α-KG → isocitrate → citrate (reverse TCA via IDH1/IDH2), which is exported to the cytoplasm and cleaved by ATP-citrate lyase (ACLY) to yield acetyl-CoA. Fatty acid synthase (FASN) then converts acetyl-CoA and malonyl-CoA into palmitate and longer-chain fatty acids required for membrane biogenesis, lipid signalling, and mitochondrial lipid supply. Independently, FASN products are required for mitochondrial fatty acid synthesis (mtFAS), which produces the lipoic acid moiety needed by key mitochondrial enzyme complexes. A FASN-SDHB synthetic interaction was directly demonstrated using the FASN inhibitor G28UCM in SDHB-knockout cell lines: G28UCM impaired FASN activity and mitochondrial fatty acid synthesis more profoundly in SDHB-deficient cells than in WT controls, establishing selective synthetic lethality (Rodríguez-Flores et al., Pharmacol Res 2026, PMID 41520938).",
+    upstream_event:
+      "SDH loss → TCA cycle truncation at Complex II → reductive glutamine carboxylation as primary citrate-generation route → ACLY-mediated cytoplasmic acetyl-CoA production → upregulated FASN-mediated de novo fatty acid synthesis; concurrent dependence on FASN products for mitochondrial lipid supply and mtFAS",
+    downstream_effects: [
+      "Reductive carboxylation of glutamine as primary lipid precursor route (replaces pyruvate-derived acetyl-CoA)",
+      "Elevated FASN-mediated palmitate and long-chain fatty acid synthesis",
+      "Dependency on FASN products for mitochondrial membrane lipids and lipoic acid (via mtFAS)",
+      "FASN inhibition (G28UCM) selectively impairs mitochondrial fatty acid synthesis and induces lethality in SDHB-deficient vs. WT cells (PMID 41520938)",
+      "Dual cytoplasmic + mitochondrial lipid impairment under FASN inhibition exceeds the threshold tolerated by SDH-compromised cells",
+    ],
+    druggable: true,
+    display_order: 15,
+  },
 ];
