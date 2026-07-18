@@ -99,6 +99,13 @@ Sulkowski et al. (Nat Genet 2018, PMID: 30013182) established that hereditary ca
 
 This mechanism is distinct from the ATRX-loss/ALT replication stress pathway: ATRX-loss creates telomeric replication stress in a subset (~30–40%) of SDHB-metastatic tumors and requires ATR inhibition; the KDM4B/HRD mechanism creates an HR-deficient state at all DSBs in all SDH-deficient cells (succinate-driven, not ATRX-dependent) and creates sensitivity to PARP trapping. The two mechanisms may coexist in ATRX-co-mutant tumors. FDA-approved PARP inhibitors olaparib (Lynparza) and niraparib (Zejula) are the lead candidates; niraparib's approval in HRD-positive non-BRCA ovarian cancer (PRIMA trial, González-Martín et al., NEJM 2019, PMID: 31562799) provides a biomarker-selection framework (genomic scar assay) applicable if SDH-deficient tumors generate a comparable HRD signature.
 
+### 15. De Novo Lipogenesis / Reductive Carboxylation Dependency (FASN Synthetic Lethality)
+SDH loss truncates the TCA cycle at Complex II and forces cells to use glutamine as their primary anaplerotic carbon source (Mechanism 5). In the constitutive pseudohypoxic environment created by HIF-1α stabilisation (Mechanism 2), glutamine-derived α-KG undergoes **reductive carboxylation** — the thermodynamically reversed IDH1 reaction (α-KG + CO₂ → isocitrate → citrate) — rather than the conventional forward TCA direction. This citrate is exported to the cytoplasm, where ATP-citrate lyase (ACLY) cleaves it to acetyl-CoA for de novo fatty acid synthesis. FASN (fatty acid synthase) then catalyses the committed multi-step condensation of acetyl-CoA and malonyl-CoA to palmitate, supplying the cell with fatty acids for membrane biogenesis, lipid-raft assembly, and AKT membrane anchoring (oncogenic signalling).
+
+Moran et al. (Pharmacol Res 2026, PMID 41520938) established a direct **FASN–SDHB synthetic lethality**: G28UCM, which targets the FASN thioesterase (TE) domain, impaired mitochondrial fatty acid synthesis and caused preferential growth suppression in SDHB-null cell lines compared with SDHB-intact controls. This is the first published evidence directly linking FASN inhibition to SDH status, positioning FASN as a metabolic synthetic-lethal target in the de novo lipogenesis arm of the SDH-deficient metabolic rewiring.
+
+TVB-2640 (denifanstat) is the most clinically advanced FASN inhibitor (β-KR domain target), with Phase 2 safety and PK data in NSCLC, AML, and TNBC. No SDH-specific clinical data exist; validation in patient-derived or in-vivo SDH-deficient models is the critical next step.
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -119,6 +126,7 @@ This mechanism is distinct from the ATRX-loss/ALT replication stress pathway: AT
 | Succinate-Driven Immune Evasion | SLC16A1 (MCT1), IDO1 | Tumor succinate suppresses T-cell IFN-γ via MCT1 uptake (PMID 35977513); HIF-driven IDO1 upregulation activates kynurenine pathway (PMID 42230482); AZD3965 (MCT1 inhibitor) and epacadostat (IDO1 inhibitor) as candidates |
 | BRD4 / Super-Enhancer (BET Bromodomain) | BRD4 | H3K27me3 expansion compresses active chromatin into denser super-enhancer hubs that become BRD4-dependent; SDH-deficient GIST shows confirmed ectopic super-enhancer at FGF3/FGF4 locus (PMID 42191879); BET inhibitor birabresib (OTX015) as upstream complement to FGFR inhibition |
 | Succinate-Driven HR Deficiency (BRCAness) | KDM4A, KDM4B | Succinate inhibits KDM4A/B demethylases at DSB sites → H3K9me3 blocks TIP60/ATM recruitment → HR deficiency; shown in SDH-deficient hereditary PPGL cells (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005); olaparib and niraparib as PARP inhibitor candidates |
+| De Novo Lipogenesis (Reductive Carboxylation) | FASN | TCA truncation → glutamine reductive carboxylation → cytoplasmic acetyl-CoA → FASN-mediated fatty acid synthesis; direct FASN–SDHB synthetic lethality established (G28UCM, Moran et al. Pharmacol Res 2026, PMID 41520938); TVB-2640 (denifanstat) as clinical-stage FASN inhibitor candidate |
 
 ## Important Context for Drug Repurposing
 

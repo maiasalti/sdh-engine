@@ -447,6 +447,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "TVB-2640 (Denifanstat)",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "FASN inhibitor (β-ketoacyl reductase domain, type II FAS inhibitor)",
+    mechanism_of_action:
+      "Selective, orally bioavailable inhibitor of human fatty acid synthase (FASN), targeting the β-ketoacyl reductase (KR) domain to block de novo fatty acid synthesis. The SDH-specific rationale is a direct synthetic lethal interaction established by Moran et al. (Pharmacol Res 2026, PMID 41520938): inhibition of the FASN thioesterase (TE) domain with G28UCM impairs mitochondrial fatty acid synthesis and preferentially suppresses growth in SDHB-null cell lines versus SDHB-intact controls, identifying FASN as a selective vulnerability downstream of SDH loss. The mechanistic basis is the reductive carboxylation dependency created when the TCA cycle is truncated at Complex II: SDH-deficient cells generate cytoplasmic acetyl-CoA from glutamine via the reverse IDH1 reaction (glutamine → α-KG → isocitrate → citrate → acetyl-CoA), making FASN-mediated de novo lipogenesis critical for membrane biogenesis and lipid-dependent oncogenic signalling (AKT membrane localisation, lipid-raft assembly). This flux is amplified by the pseudohypoxic HIF-1α programme, which suppresses fatty acid β-oxidation and reinforces the glycolytic/reductive-carboxylation phenotype. TVB-2640 is the most clinically advanced FASN inhibitor; Phase 2 safety and pharmacokinetic data are established in NSCLC (NCT03808558), AML (NCT04048499), and triple-negative breast cancer (NCT04300569), with a manageable profile (on-target dry eye and diarrhoea; no dose-limiting hepatotoxicity). No SDH-deficient-specific clinical data exist; the key next step is validation of the FASN–SDHB synthetic lethality in patient-derived or in-vivo SDH-deficient tumour models and measurement of reductive-carboxylation flux as a predictive biomarker.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["de-novo-lipogenesis", "glutamine-dependency"],
+    target_gene_symbols: ["FASN"],
+    evidence_score: 38,
+    status: "preclinical",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,

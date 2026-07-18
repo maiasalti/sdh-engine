@@ -215,6 +215,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 14,
   },
   {
+    name: "De Novo Lipogenesis (Reductive Carboxylation Dependency)",
+    slug: "de-novo-lipogenesis",
+    description:
+      "SDH loss truncates the TCA cycle at Complex II, eliminating the succinate → fumarate step and forcing reliance on glutamine as the primary anaplerotic carbon source. In the constitutive pseudohypoxic environment created by HIF stabilisation, glutamine-derived α-KG undergoes reductive carboxylation — the reverse IDH1 reaction (α-KG + CO₂ → isocitrate → citrate) — to generate cytoplasmic acetyl-CoA for de novo fatty acid synthesis. FASN (fatty acid synthase) catalyses the committed step of this lipogenic programme, converting acetyl-CoA + malonyl-CoA to palmitate. A direct FASN–SDHB synthetic lethality was established by Moran et al. (Pharmacol Res 2026, PMID 41520938): G28UCM, which targets the FASN thioesterase domain, preferentially suppressed growth in SDHB-null cell lines compared with SDHB-intact controls.",
+    upstream_event:
+      "SDH loss → TCA cycle truncation → glutamine-driven reductive carboxylation (reverse IDH1) → citrate export → cytoplasmic acetyl-CoA → FASN-dependent de novo lipogenesis",
+    downstream_effects: [
+      "Palmitate and membrane-lipid synthesis from glutamine-derived carbon via reductive carboxylation",
+      "FASN–SDHB direct synthetic lethality (G28UCM in SDHB-null cells, PMID 41520938)",
+      "Dependency on fatty acid synthesis for membrane biogenesis under metabolic stress",
+      "Lipid-raft assembly and AKT membrane anchoring driven by de novo lipogenesis",
+      "Selective sensitivity to FASN inhibition in SDH-deficient vs. SDH-intact cells",
+    ],
+    druggable: true,
+    display_order: 15,
+  },
+  {
     name: "ATRX Loss / ALT Replication Stress",
     slug: "atrx-alt-replication-stress",
     description:

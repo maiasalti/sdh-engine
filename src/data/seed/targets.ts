@@ -253,6 +253,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Primary α-KG-dependent H3K9me3 demethylase at DNA break sites. KDM4B is the demethylase whose oncometabolite-mediated inhibition was identified as the mechanistic basis for HR deficiency in succinate-accumulating (SDH-deficient) and fumarate-accumulating (FH-deficient) tumors. Sulkowski et al. (Nature 2020, PMID: 32494005) showed that 2-HG, succinate, and fumarate all inhibit KDM4B, causing H3K9me3-masked DNA breaks that cannot recruit the HR machinery; restoration of KDM4B activity rescued HR competence. Together with KDM4A, KDM4B constitutes the α-KG-dependent chromatin checkpoint for DNA end-resection.",
   },
   {
+    gene_symbol: "FASN",
+    name: "Fatty acid synthase",
+    uniprot_id: "P49327",
+    pathway_slug: "de-novo-lipogenesis",
+    target_type: "metabolic",
+    description:
+      "Multifunctional enzyme that catalyses all seven steps of de novo fatty acid synthesis, converting acetyl-CoA and malonyl-CoA to palmitate. In SDH-deficient cells, TCA cycle truncation forces reliance on glutamine-driven reductive carboxylation for cytoplasmic acetyl-CoA generation (via reverse IDH1 reaction), increasing dependence on FASN for lipid production. Moran et al. (Pharmacol Res 2026, PMID 41520938) demonstrated that G28UCM — targeting the FASN thioesterase (TE) domain — impairs mitochondrial fatty acid synthesis and causes selective synthetic lethality in SDHB-null versus SDHB-intact cells, directly establishing FASN as a druggable vulnerability in the SDH-deficient context.",
+  },
+  {
     gene_symbol: "ATR",
     name: "Ataxia telangiectasia and Rad3-related protein kinase",
     uniprot_id: "Q13535",
