@@ -447,6 +447,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "TVB-2640 (Denifanstat)",
+    brand_names: ["TVB-2640"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "FASN inhibitor (fatty acid synthase inhibitor)",
+    mechanism_of_action:
+      "Orally bioavailable, potent and selective inhibitor of the β-ketoacyl reductase (KR) domain of fatty acid synthase (FASN). The mechanistic rationale in SDH-deficient tumors is a direct, published synthetic lethal interaction with SDHB loss: Navarro-Marchena et al. (Pharmacol Res 2026, PMID: 41520938) demonstrated that G28UCM — targeting both cytoplasmic FASN and the mitochondrial FASN (mtFASN) pathway including lipoylation — causes selective growth inhibition in SDHB-deficient cancer cell lines versus SDHB-wild-type controls. The upstream vulnerability arises from two consequences of SDH loss: (1) truncation of the TCA cycle at succinate forces cells into compensatory reductive carboxylation of glutamine via reverse IDH1 activity, generating cytoplasmic citrate that is cleaved by ACLY to acetyl-CoA — the substrate that feeds FASN-dependent de novo lipogenesis at elevated rates in SDH-deficient cells; and (2) SDH loss impairs the mitochondrial FASN pathway and lipoylation of TCA enzyme complexes (pyruvate dehydrogenase, α-ketoglutarate dehydrogenase), creating a concurrent vulnerability. FASN inhibition starves SDH-deficient cells of palmitate needed for membrane phospholipid biogenesis and lipid signaling while disrupting the compensatory reductive lipogenic flux, producing a more pronounced growth-suppressive effect than in SDH-intact cells. TVB-2640/denifanstat is the most clinically advanced selective FASN inhibitor: Phase 2 trials are ongoing in advanced solid tumors (NCT03808558), brain tumors, and HER2+ breast cancer, establishing pharmacokinetics, tolerability, and initial efficacy signals in solid tumor settings. No SDH-deficient-specific clinical trial has been conducted; TVB-2640's selectivity profile (KR domain inhibition only) is also structurally distinct from G28UCM's dual FASN/mtFASN mechanism — it is currently unknown whether TVB-2640 recapitulates the mtFASN/lipoylation component that may contribute to the SDHB-specific effect observed with G28UCM. Dedicated TVB-2640 experiments in SDHB-deficient cell lines and SDH-deficient xenograft models are the critical next step before clinical exploration.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["fatty-acid-synthesis"],
+    target_gene_symbols: ["FASN"],
+    evidence_score: 38,
+    status: "preclinical",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,

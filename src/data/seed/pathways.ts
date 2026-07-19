@@ -215,6 +215,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 14,
   },
   {
+    name: "De Novo Lipogenesis / FASN Dependency",
+    slug: "fatty-acid-synthesis",
+    description:
+      "SDH loss truncates the TCA cycle at succinate, forcing cells to rely on reductive carboxylation of glutamine (via reverse IDH1) to supply citrate for cytoplasmic acetyl-CoA production and de novo fatty acid synthesis. FASN (fatty acid synthase) catalyzes the committed step converting acetyl-CoA and malonyl-CoA to palmitate. SDH-deficient cells also have impaired mitochondrial fatty acid synthesis (mtFASN) and lipoylation, creating a dual vulnerability to FASN inhibition. Navarro-Marchena et al. (Pharmacol Res 2026, PMID 41520938) directly demonstrated that G28UCM — a compound targeting both FASN and the mtFASN/lipoylation pathway — reveals a synthetic lethal interaction with SDHB loss: SDHB-deficient cells showed significantly greater growth inhibition than SDHB-wild-type controls.",
+    upstream_event:
+      "SDH loss → TCA truncation → compensatory reductive carboxylation of glutamine → elevated cytoplasmic citrate and acetyl-CoA → upregulated de novo lipogenesis; concurrent mtFASN/lipoylation impairment",
+    downstream_effects: [
+      "Elevated FASN-dependent palmitate synthesis for membrane phospholipids and signaling lipids",
+      "Dependency on de novo lipogenesis as oxidative TCA anaplerosis is disrupted",
+      "Impaired lipoylation of mitochondrial enzyme complexes (PDH, α-KGDH)",
+      "Selective FASN inhibitor hypersensitivity in SDHB-deficient vs. wild-type cells",
+      "Synthetic lethality between FASN inhibition and SDHB loss in cell line models",
+    ],
+    druggable: true,
+    display_order: 15,
+  },
+  {
     name: "ATRX Loss / ALT Replication Stress",
     slug: "atrx-alt-replication-stress",
     description:

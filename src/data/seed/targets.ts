@@ -262,6 +262,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "The primary replication stress checkpoint kinase. Phosphorylates and activates CHK1, stabilizes stalled replication forks, and coordinates origin firing suppression under genotoxic stress. In ATRX-loss/ALT cells, constitutive telomeric G-quadruplex formation and R-loop accumulation generate persistent stalled replication forks that require ATR signaling for resolution; ALT cells are therefore dependent on ATR for survival. Flynn et al. (Science 2015, PMID 25614623) established that ATR inhibition is synthetically lethal with ALT in multiple cancer types with ATRX or DAXX loss, showing 10–30× greater sensitivity in ALT-positive versus ALT-negative cells.",
   },
   {
+    gene_symbol: "FASN",
+    name: "Fatty acid synthase",
+    uniprot_id: "P49327",
+    pathway_slug: "fatty-acid-synthesis",
+    target_type: "metabolic",
+    description:
+      "Multifunctional cytoplasmic enzyme catalyzing all steps in palmitate synthesis from acetyl-CoA and malonyl-CoA. In SDH-deficient cells, reductive carboxylation of glutamine supplies citrate that is exported to the cytoplasm and cleaved by ACLY to acetyl-CoA, which feeds FASN-dependent lipogenesis. Navarro-Marchena et al. (Pharmacol Res 2026, PMID 41520938) showed that G28UCM — a FASN inhibitor with additional mtFASN/lipoylation activity — exhibits synthetic lethality with SDHB loss: SDHB-deficient cells were significantly more sensitive to G28UCM-induced growth inhibition than wild-type counterparts. TVB-2640/denifanstat is the most clinically advanced selective FASN inhibitor (oral, Phase 2).",
+  },
+  {
     gene_symbol: "BRD4",
     name: "Bromodomain-containing protein 4",
     uniprot_id: "O60885",
