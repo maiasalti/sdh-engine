@@ -245,13 +245,13 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "54670067",
     drug_class: "TET enzyme cofactor / α-KG-dependent dioxygenase activator",
     mechanism_of_action:
-      "Ascorbate is an essential cofactor for TET enzymes and other α-KG-dependent dioxygenases. High-dose supplementation may partially overcome succinate-mediated inhibition of TETs, restoring some DNA demethylation activity. Also generates ROS at pharmacological doses.",
+      "Ascorbate is an essential cofactor for TET enzymes and other α-KG-dependent dioxygenases. High-dose supplementation has been proposed to partially overcome succinate-mediated TET inhibition, restoring some DNA demethylation activity, and to generate ROS at pharmacological doses with potential anti-tumor activity. HOWEVER — CRITICAL SAFETY SIGNAL: Rapizzi et al. (Endocr Relat Cancer 2026, PMID 41404848) demonstrated that vitamin C supplementation PROMOTED tumor growth in a SDHB-deficient pheochromocytoma/paraganglioma zebrafish model rather than suppressing it. This is directly opposite to the hypothesized TET-rescue benefit. Plausible mechanisms for the pro-tumorigenic effect include: (1) in the pseudohypoxic, HIF-1α-stabilized SDH-deficient context, restored TET activity from ascorbate supplementation may reactivate pro-survival and pro-proliferative gene programs that are normally silenced by CIMP hypermethylation; (2) ascorbate-driven ROS generation may paradoxically activate HIF-1α-dependent survival pathways; (3) ascorbate may support anaplerotic aspartate or one-carbon metabolism pathways that sustain cell growth. This finding is clinically critical for SDH-deficient patients: high-dose vitamin C supplementation (whether oral or IV) should be considered potentially counterproductive until dedicated in-vivo data from SDHA-deficient GIST models or prospective clinical studies are available. The evidence score has been downgraded accordingly; this drug entry is retained for reference and to flag the safety concern.",
     fda_approved: false,
     approved_indications: [],
     pathway_slugs: ["epigenetic-dysregulation", "oxidative-stress-ros"],
     target_gene_symbols: ["TET2"],
-    evidence_score: 38,
-    status: "preclinical",
+    evidence_score: 18,
+    status: "theoretical",
   },
   {
     name: "Enasidenib",
@@ -459,6 +459,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     pathway_slugs: ["de-novo-lipogenesis", "glutamine-dependency"],
     target_gene_symbols: ["FASN"],
     evidence_score: 35,
+    status: "preclinical",
+  },
+  {
+    name: "Ym155 (Sepantronium Bromide)",
+    brand_names: ["YM155", "Sepantronium"],
+    chembl_id: "CHEMBL1213296",
+    pubchem_cid: "9908089",
+    drug_class: "Survivin (BIRC5) transcription inhibitor / IAP inhibitor",
+    mechanism_of_action:
+      "Ym155 (sepantronium bromide) suppresses transcription of BIRC5 (survivin) by displacing the transcription factor Sp1 from the CDE/CHR elements in the BIRC5 promoter, reducing survivin mRNA and protein levels. The mechanistic rationale for selectivity in SDH-deficient tumors rests on two converging lines. First, SDH loss drives pseudohypoxic HIF-1α stabilization (via succinate-mediated PHD inhibition), and the BIRC5 promoter contains canonical HRE elements through which HIF-1α transcriptionally upregulates survivin above the already-elevated baseline found in most cancers. Second, SDH-deficient cells accumulate unrepaired DNA double-strand breaks via the KDM4B/H3K9me3 BRCAness mechanism (Mechanism 14). In wild-type cells, such DNA damage triggers caspase-mediated apoptosis; in SDH-deficient cells, HIF-1α-driven survivin elevation suppresses caspase-3/7 and forms a ternary anti-apoptotic complex with XIAP and caspase-9, allowing cells to tolerate an otherwise lethal DNA damage load. Ym155 targets both functions simultaneously: depleting survivin removes both the apoptosis block and the CPC/spindle checkpoint support on which genomically unstable SDH-deficient cells depend for mitotic fidelity. Direct SDH-deficient evidence: PMID 41711310 (Endocr Relat Cancer 2026) demonstrated that SDH-deficient cancer cells show significantly increased susceptibility to Ym155-induced DNA damage versus SDH-intact controls — a selectivity that is consistent with the dual BRCAness/Survivin-dependency model. Clinical data: Phase 2 data in relapsed/refractory non-Hodgkin lymphoma (NCT00390117) showed partial responses with survivin suppression confirmed pharmacodynamically; dose-limiting toxicity includes renal impairment at higher doses, manageable with adequate hydration. Key limitations: (1) no dedicated SDH-deficient tumor trial exists; (2) the specific degree of HIF-1α-driven BIRC5 upregulation in SDH-deficient GIST versus PPGL models has not been measured; (3) Ym155 showed limited single-agent activity in Phase 2 solid tumor studies (NCT00437957), suggesting combination strategies or patient selection by BIRC5 expression/HIF-1α level may be required.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["hif-driven-survivin-apoptosis", "sdh-driven-hrd"],
+    target_gene_symbols: ["BIRC5"],
+    evidence_score: 31,
     status: "preclinical",
   },
   {

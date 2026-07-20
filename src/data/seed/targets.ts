@@ -271,6 +271,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "BET (Bromodomain and Extra-Terminal) family protein that binds acetylated histones — particularly H3K27ac at active enhancers and super-enhancers — and recruits Mediator and P-TEFb to drive RNA Pol II pause-release and transcriptional elongation. In SDH-deficient tumors, succinate-mediated inhibition of KDM6A/B causes global H3K27me3 accumulation that compresses residual active chromatin into denser, fewer super-enhancer hubs; the Nat Med 2026 Phase 2 trial (PMID 42191879) provided direct evidence of such ectopic super-enhancer formation in SDH-deficient GIST (at the FGF3/FGF4 locus). BRD4-dependent transcription at these compressed, ectopic super-enhancers becomes disproportionately sensitive to BET inhibitors, which preferentially displace BRD4 from super-enhancers over typical enhancers (Loven et al., Cell 2013, PMID 23582323). Target of birabresib (OTX015) and molibresib (GSK525762).",
   },
   {
+    gene_symbol: "BIRC5",
+    name: "Baculoviral IAP repeat-containing protein 5 (Survivin)",
+    uniprot_id: "O15392",
+    pathway_slug: "hif-driven-survivin-apoptosis",
+    target_type: "synthetic_lethal",
+    description:
+      "IAP (inhibitor of apoptosis) family protein encoded by BIRC5. Survivin inhibits caspase-3/7-mediated apoptotic execution and serves as a core subunit of the Chromosomal Passenger Complex (CPC) governing mitotic fidelity. Its promoter contains canonical hypoxia-response elements (HREs) directly activated by HIF-1α, making BIRC5 a transcriptional target of the pseudohypoxic program that is constitutively active in all SDH-deficient tumors. SDH-deficient cells with elevated Survivin depend on BIRC5 to evade apoptosis despite accumulated DNA damage from BRCAness; BIRC5 knockdown or inhibition with Ym155 shows selective susceptibility in SDH-deficient cancer cell lines (PMID 41711310).",
+  },
+  {
     gene_symbol: "FASN",
     name: "Fatty acid synthase",
     uniprot_id: "P49327",

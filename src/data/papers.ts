@@ -129,6 +129,32 @@ export const PAPERS: CuratedPaper[] = [
     date: "2026-04",
   },
   {
+    title:
+      "The clinical landscape of HIF2α inhibitors in oncology",
+    authors: "Saad E, Machaalani M, McDermott DF, Choueiri TK.",
+    journal: "Nat Rev Clin Oncol",
+    year: 2026,
+    doi: "10.1038/s41571-026-01145-y",
+    topic: "Review / Overview",
+    description:
+      "Comprehensive Nat Rev Clin Oncol review of HIF-2α biology and the clinical milestones of belzutifan from VHL disease through sporadic clear-cell RCC to pheochromocytoma and paraganglioma, directly validating the pseudohypoxic mechanism as a cross-tumor therapeutic target. Covers the structural basis for HIF-2α druggability, resistance mechanisms, and the rationale for extending HIF-2α inhibition to SDH-deficient and other pseudohypoxic tumor types.",
+    pmid: "42050152",
+    date: "2026-04",
+  },
+  {
+    title:
+      "Succinate dehydrogenase loss suppresses pyrimidine biosynthesis via succinate-mediated inhibition of aspartate transcarbamylase",
+    authors: "Hart ML, Sokolov D, Danquah S, Zheng E, Doan AD, Davidsen K, et al.",
+    journal: "Nat Metab",
+    year: 2026,
+    doi: "10.1038/s42255-026-01524-w",
+    topic: "Tumor Biology",
+    description:
+      "In cells with SDH inhibition, pyrimidine biosynthesis is suppressed through a dual mechanism: aspartate depletion (as oxidative aspartate synthesis via the TCA cycle is lost) and direct succinate-mediated inhibition of aspartate transcarbamylase (ATCase), the enzyme committing aspartate to the pyrimidine de novo synthesis pathway. Unlike other models of aspartate limitation, SDH inhibition produces an unexpected aspartate rebound that still fails to rescue proliferation, suggesting the succinate-ATCase block is the dominant anti-proliferative mechanism — a new metabolic vulnerability with potential implications for nucleotide-synthesis-targeted therapy in SDH-deficient cancers.",
+    pmid: "42082831",
+    date: "2026-05",
+  },
+  {
     title: "Epigenetics and disease progression in neuroendocrine neoplasms",
     authors: "Lobato EC, Lafranchi AF, Freitas-Castro F, et al.",
     journal: "Endocr Rev",
@@ -138,6 +164,19 @@ export const PAPERS: CuratedPaper[] = [
     description:
       "Comprehensive Endocrine Reviews synthesis of epigenetic regulation across all major neuroendocrine neoplasm types — including detailed coverage of pheochromocytomas and paragangliomas — cataloguing SDHx-driven CIMP hypermethylation, ATRX/TERT alterations governing metastatic risk, histone modification patterns, and non-coding RNA dysregulation as both prognostic markers and therapeutic targets. Reviews methylation-based classifiers and circulating epigenetic biomarkers as emerging precision tools, and covers DNA methyltransferase inhibitors, HDAC inhibitors, and RNA-modifying enzyme modulators under active investigation in neuroendocrine malignancies.",
     pmid: "41693399",
+    date: "2026-07",
+  },
+  {
+    title:
+      "Molecular Imaging and Radioligand Therapies in Pheochromocytomas and Paragangliomas",
+    authors: "Hernandez-Felix JH, Golagha M, Jha A, Varghese D, Grozinsky-Glasberg S, Riechelmann R, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0036",
+    topic: "Treatment & Trials",
+    description:
+      "Authoritative review of molecular imaging and radioligand therapy in PPGL, explaining how germline genotype (SDHx, VHL, RET, NF1, TMEM127/MAX) shapes selection among 68Ga/64Cu-DOTATATE, 18F-FDOPA, 18F-FDG, and 123I/131I-MIBG and governs eligibility for PRRT (Lu-177-DOTATATE) versus MIBG therapy. SDH-deficient PPGLs are profiled as typically high SSTR2-expressing (supporting DOTATATE imaging and PRRT) and FDG-avid (reflecting pseudohypoxic glucose upregulation), providing a practical guide to radioligand selection based on SDH-specific tumor biology.",
+    pmid: "42454478",
     date: "2026-07",
   },
   {

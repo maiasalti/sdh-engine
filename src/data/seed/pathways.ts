@@ -233,6 +233,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 13,
   },
   {
+    name: "HIF-1α-Driven Apoptosis Evasion (Survivin / BIRC5)",
+    slug: "hif-driven-survivin-apoptosis",
+    description:
+      "Pseudohypoxic HIF-1α stabilization — a universal consequence of SDH loss — transcriptionally activates BIRC5 (survivin), an inhibitor of apoptosis (IAP) family protein. The survivin promoter contains canonical hypoxia-response elements (HREs) directly bound by HIF-1α. Elevated survivin in SDH-deficient cells enables two pro-tumor functions: (1) apoptosis evasion by inhibiting caspase-3/7 and forming a ternary anti-apoptotic complex with XIAP and caspase-9, protecting cells from executing the apoptosis that would normally follow accumulated DNA damage; and (2) mitotic survival as a core subunit of the Chromosomal Passenger Complex (CPC), which governs spindle assembly checkpoint and chromosomal segregation in genomically unstable cells. SDH-deficient cells accumulate DNA damage via BRCAness (Mechanism 14) but evade apoptosis through elevated Survivin — creating a synthetic lethal dependency on BIRC5 that can be exploited by Survivin inhibitors. Direct evidence: PMID 41711310 demonstrated selective susceptibility of SDH-deficient cancer cells to the Survivin inhibitor Ym155 (Endocr Relat Cancer 2026).",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → HIF-1α stabilization → HRE-driven BIRC5/Survivin transcriptional upregulation",
+    downstream_effects: [
+      "Elevated BIRC5/Survivin protein in SDH-deficient tumor cells",
+      "Caspase-3/7 inhibition — apoptosis evasion despite DNA damage accumulation",
+      "XIAP-Survivin-caspase-9 ternary complex preventing apoptotic cascade initiation",
+      "CPC-mediated mitotic survival in genomically unstable cells",
+      "Synthetic lethality with Survivin inhibitors (Ym155) in SDH-deficient cells",
+    ],
+    druggable: true,
+    display_order: 16,
+  },
+  {
     name: "De Novo Lipogenesis / FASN Dependency",
     slug: "de-novo-lipogenesis",
     description:
