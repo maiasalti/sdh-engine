@@ -106,6 +106,18 @@ Sulkowski et al. (Nat Genet 2018, PMID: 30013182) established that hereditary ca
 
 This mechanism is distinct from the ATRX-loss/ALT replication stress pathway: ATRX-loss creates telomeric replication stress in a subset (~30–40%) of SDHB-metastatic tumors and requires ATR inhibition; the KDM4B/HRD mechanism creates an HR-deficient state at all DSBs in all SDH-deficient cells (succinate-driven, not ATRX-dependent) and creates sensitivity to PARP trapping. The two mechanisms may coexist in ATRX-co-mutant tumors. FDA-approved PARP inhibitors olaparib (Lynparza) and niraparib (Zejula) are the lead candidates; niraparib's approval in HRD-positive non-BRCA ovarian cancer (PRIMA trial, González-Martín et al., NEJM 2019, PMID: 31562799) provides a biomarker-selection framework (genomic scar assay) applicable if SDH-deficient tumors generate a comparable HRD signature.
 
+### 16. Ym155 / KDM4-Impaired ROS Synthetic Lethality
+A second, mechanistically distinct vulnerability arising from KDM4A/KDM4B inhibition was identified by Guo et al. (Endocr Relat Cancer 2026, PMID: 41711310): SDH-deficient cells are selectively sensitized to the cytotoxic compound Ym155 (sepantronium bromide) via the same KDM4-impaired DNA repair context that underlies the PARP-inhibitor BRCAness sensitivity.
+
+Critically, although Ym155 is pharmacologically classified as a survivin/BIRC5 inhibitor, Guo et al. demonstrated that its SDH-specific cytotoxicity is **survivin-independent**. The actual mechanism is convergent exploitation of succinate-driven KDM4 inhibition:
+- Accumulated succinate inhibits KDM4A/KDM4B → impaired H3K9me3 erasure at DNA damage sites → reduced DNA repair capacity in all SDH-deficient cells
+- Ym155 generates reactive oxygen species and induces DNA strand breaks through mitochondria-directed mechanisms
+- In cells with KDM4-impaired DNA repair, Ym155-generated ROS and DNA damage exceed the residual repair capacity → selective cytotoxicity (5-fold preference for SDHB-KO vs. isogenic WT controls)
+
+Mechanistic evidence chain: (1) SDHB-KO UOK269 RCC cells showed 5-fold Ym155 preferential cytotoxicity; (2) validated in primary human pheochromocytoma cells, mouse MPC cells, and primary SDHB-deficient mouse kidney cells; (3) chemical SDH inhibition (3-nitropropionic acid, 3-NPA) phenocopied SDHB-KO for Ym155 sensitivity across multiple additional lineages, excluding cell-line artefact; (4) pharmacological KDM4 inhibition alone recapitulated enhanced Ym155 sensitivity — directly proving KDM4 as the functional molecular bridge between SDH loss and Ym155 vulnerability.
+
+This pathway is mechanistically convergent with but distinct from the PARP-inhibitor direction (Mechanism 14): both exploit KDM4-impaired DNA repair, but via different genotoxic inputs (PARP trapping → DSBs at stalled forks in Mechanism 14; Ym155-induced ROS → direct DNA damage in Mechanism 16). The two approaches may be additive or partially redundant depending on the dominant DNA damage modality; dedicated combination experiments in SDH-deficient models have not been reported. Ym155 is the lead candidate; Phase I clinical data exist in solid tumors (NCT00457054, MTD 4.8 mg/m²/day × 7 days).
+
 ## Key Druggable Targets and Pathways
 
 | Pathway | Key Targets | Rationale |
@@ -127,6 +139,7 @@ This mechanism is distinct from the ATRX-loss/ALT replication stress pathway: AT
 | BRD4 / Super-Enhancer (BET Bromodomain) | BRD4 | H3K27me3 expansion compresses active chromatin into denser super-enhancer hubs that become BRD4-dependent; SDH-deficient GIST shows confirmed ectopic super-enhancer at FGF3/FGF4 locus (PMID 42191879); BET inhibitor birabresib (OTX015) as upstream complement to FGFR inhibition |
 | Succinate-Driven HR Deficiency (BRCAness) | KDM4A, KDM4B | Succinate inhibits KDM4A/B demethylases at DSB sites → H3K9me3 blocks TIP60/ATM recruitment → HR deficiency; shown in SDH-deficient hereditary PPGL cells (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005); olaparib and niraparib as PARP inhibitor candidates |
 | De Novo Lipogenesis / FASN | FASN | SDH loss → reductive glutamine carboxylation → FASN-dependent fatty acid supply for membranes and mtFAS; FASN-SDHB synthetic lethality demonstrated with G28UCM in SDHB-KO cells (PMID 41520938); denifanstat (TVB-2640) as clinical candidate |
+| KDM4-Impaired ROS Synthetic Lethality (Ym155) | KDM4A, KDM4B | Succinate inhibits KDM4A/KDM4B → impaired H3K9me3 erasure at DNA damage sites → reduced DNA repair capacity; Ym155 generates ROS/DNA damage that exceeds repair capacity of KDM4-impaired SDH-deficient cells; 5-fold preferential cytotoxicity in SDHB-KO vs. WT cells, validated in multiple models including primary human PPGL cells (Guo et al., Endocr Relat Cancer 2026, PMID 41711310); mechanism is survivin-independent |
 
 ## Important Context for Drug Repurposing
 
