@@ -280,6 +280,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "IAP (inhibitor of apoptosis) family protein encoded by BIRC5. Survivin inhibits caspase-3/7-mediated apoptotic execution and serves as a core subunit of the Chromosomal Passenger Complex (CPC) governing mitotic fidelity. Its promoter contains canonical hypoxia-response elements (HREs) directly activated by HIF-1α, making BIRC5 a transcriptional target of the pseudohypoxic program that is constitutively active in all SDH-deficient tumors. SDH-deficient cells with elevated Survivin depend on BIRC5 to evade apoptosis despite accumulated DNA damage from BRCAness; BIRC5 knockdown or inhibition with Ym155 shows selective susceptibility in SDH-deficient cancer cell lines (PMID 41711310).",
   },
   {
+    gene_symbol: "DHODH",
+    name: "Dihydroorotate dehydrogenase (mitochondrial)",
+    uniprot_id: "Q02127",
+    pathway_slug: "pyrimidine-synthesis-vulnerability",
+    target_type: "synthetic_lethal",
+    description:
+      "Mitochondrial inner-membrane flavoenzyme catalyzing the fourth step of de novo pyrimidine synthesis: dihydroorotate → orotate (coupled to the reduction of ubiquinone). DHODH is the only step in pyrimidine biosynthesis that is mitochondrially located and strictly dependent on a functional electron transport chain to re-oxidize FMNH2. In SDH-deficient cells, de novo pyrimidine synthesis is already suppressed by the succinate-mediated block at ATCase (step 2), leaving residual pathway flux dependent on DHODH at step 4. Inhibiting DHODH compounds this pre-existing block, selectively depleting SDH-deficient cells of UMP and downstream pyrimidines. Normal cells, with intact ATCase and adequate aspartate supply, have substantially more reserve to tolerate DHODH inhibition. Targeted by brequinar (DUP-785) and by leflunomide/teriflunomide (FDA-approved for rheumatoid arthritis / relapsing MS). Primary anchor reference: Hart et al., Nat Metab 2026, PMID 42082831.",
+  },
+  {
     gene_symbol: "FASN",
     name: "Fatty acid synthase",
     uniprot_id: "P49327",

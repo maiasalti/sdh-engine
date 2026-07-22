@@ -250,6 +250,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 16,
   },
   {
+    name: "Pyrimidine Synthesis Vulnerability",
+    slug: "pyrimidine-synthesis-vulnerability",
+    description:
+      "SDH loss creates a dual block in de novo pyrimidine synthesis: (1) TCA cycle truncation depletes the aspartate pool (aspartate is a required nitrogen and carbon donor for the pyrimidine ring), and (2) accumulated succinate directly and competitively inhibits aspartate transcarbamylase (ATCase/CAD), the enzyme that commits aspartate to carbamoyl aspartate — the second step of pyrimidine synthesis (Hart et al., Nat Metab 2026, PMID 42082831). This dual impairment leaves SDH-deficient cells near a pyrimidine synthesis floor, with far less buffer to absorb additional de novo pathway blockade compared with normal cells. DHODH inhibitors (blocking dihydroorotate → orotate, step 4 of the same de novo pathway) selectively tip SDH-deficient cells into pyrimidine starvation while normal cells — with intact ATCase and adequate aspartate — sustain sufficient UMP production.",
+    upstream_event:
+      "SDH loss → succinate accumulation → (1) OAA/aspartate pool depletion via TCA truncation + (2) direct succinate-mediated inhibition of ATCase (CAD) → de novo pyrimidine synthesis suppression",
+    downstream_effects: [
+      "Reduced UMP/CTP/TTP biosynthesis in SDH-deficient cells",
+      "Aspartate rebound that fails to rescue pyrimidine synthesis (succinate-ATCase block is the dominant constraint)",
+      "Increased dependency on pyrimidine salvage (which may not fully compensate under proliferative demand)",
+      "Selective synthetic vulnerability to DHODH inhibition in SDH-deficient vs. SDH-intact cells",
+      "Potential synthetic lethal interaction with the concurrent aspartate and nucleotide deficiency imposed by the BRCAness pathway (Mechanism 14)",
+    ],
+    druggable: true,
+    display_order: 17,
+  },
+  {
     name: "De Novo Lipogenesis / FASN Dependency",
     slug: "de-novo-lipogenesis",
     description:
