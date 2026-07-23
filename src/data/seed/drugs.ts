@@ -462,6 +462,38 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Brequinar",
+    brand_names: ["DUP-785", "NSC 368390"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "DHODH inhibitor (dihydroorotate dehydrogenase inhibitor)",
+    mechanism_of_action:
+      "Selective, non-competitive inhibitor of DHODH (dihydroorotate dehydrogenase), the mitochondrial flavoenzyme catalyzing the fourth step of de novo pyrimidine synthesis (dihydroorotate → orotate). The mechanistic rationale in SDH-deficient tumors rests on a two-hit synthetic vulnerability established by Hart et al. (Nat Metab 2026, PMID 42082831): SDH loss creates a dual block in the same de novo pyrimidine pathway — (1) TCA cycle truncation depletes aspartate (a required substrate and nitrogen donor), and (2) accumulated succinate directly and competitively inhibits aspartate transcarbamylase (ATCase, step 2), the enzyme that commits aspartate to carbamoyl aspartate. Together, these impairments leave SDH-deficient cells with suppressed de novo pyrimidine synthesis and minimal reserve. Brequinar-mediated DHODH inhibition compounds this pre-existing block at step 4 of the same pathway, driving pyrimidine starvation specifically in SDH-deficient cells. Normal cells, with intact ATCase activity and adequate aspartate, have substantially larger flux through steps 1–3 and can therefore tolerate DHODH inhibition without reaching the pyrimidine synthesis floor that SDH-deficient cells approach. This mechanism is conceptually analogous to the BRCAness direction (Mechanism 14): in both cases, a first hit (succinate-mediated enzyme inhibition) creates a partial deficiency, and drug treatment applies a second hit that tips the pathway into failure selectively in SDH-deficient cells. DHODH is also strictly dependent on a functional ETC ubiquinone pool (CoQ) as the electron acceptor for re-oxidizing FMNH2; in SDH-deficient cells already exhibiting altered CoQ loading from Complex II dysfunction, the CoQ dependency of DHODH may further restrict its activity, amplifying brequinar's effect. Phase 1 clinical data in solid tumors establish the safety profile (Urba et al., J Natl Cancer Inst 1991, PMID 1984293; multiple Phase 2 studies in colorectal cancer; Phase 1/2 in AML, NCT01888484). Key limitations: (1) no SDH-deficient-specific preclinical data for brequinar; (2) brequinar's clinical development was largely discontinued in the 1990s after Phase 3 failures in CRC, but renewed interest in the DHODH target in immune contexts and in OXPHOS-stressed cancers has led to several active Phase 1/2 programs; (3) prospective confirmation of the SDH-specific pyrimidine synthesis synthetic vulnerability in cell-line and PDX models is required before clinical translation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["pyrimidine-synthesis-vulnerability"],
+    target_gene_symbols: ["DHODH"],
+    evidence_score: 28,
+    status: "theoretical",
+  },
+  {
+    name: "Teriflunomide",
+    brand_names: ["Aubagio"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "DHODH inhibitor (active metabolite of leflunomide; FDA-approved)",
+    mechanism_of_action:
+      "Teriflunomide is the pharmacologically active metabolite of leflunomide (Arava, FDA-approved for rheumatoid arthritis and psoriatic arthritis since 1998) and is itself FDA-approved for relapsing forms of multiple sclerosis (Aubagio, approved 2012). Both drugs inhibit DHODH (dihydroorotate dehydrogenase), the mitochondrial enzyme at step 4 of de novo pyrimidine synthesis. The mechanistic rationale for SDH-deficient tumors is identical to brequinar: SDH loss suppresses upstream pyrimidine synthesis at the ATCase step (succinate-mediated; Hart et al., Nat Metab 2026, PMID 42082831), and teriflunomide's DHODH inhibition compounds this partial block, selectively starving SDH-deficient cells of pyrimidines while normal cells tolerate the additional burden via intact upstream pathway flux. The principal advantage of teriflunomide over brequinar is clinical accessibility: it is an FDA-approved, orally available medication with a well-characterized long-term safety profile from MS and RA use, enabling rapid off-label evaluation. Teriflunomide also showed anti-tumor activity in a Phase 2 study in glioblastoma (NCT02799498), demonstrating broad oncologic penetration and providing proof-of-concept for the DHODH-inhibition cancer strategy outside its approved indications. Teriflunomide has a half-life of ~18 days and undergoes enterohepatic circulation, which complicates dose titration but enables once-daily oral dosing. Key limitations: (1) no SDH-deficient-specific data for teriflunomide; (2) teriflunomide's anti-proliferative efficacy in cancer may be confounded by its immunosuppressive activity (T-lymphocyte pyrimidine dependency), making tumor versus immune effects difficult to separate in vivo; (3) the glioblastoma Phase 2 was exploratory; (4) direct comparison with brequinar's potency against DHODH shows teriflunomide has lower enzyme affinity (IC50 ~600 nM vs. brequinar ~3 nM), suggesting brequinar may be the preferred candidate for SDH-deficient cancer testing once SDH-specific preclinical experiments validate the direction.",
+    fda_approved: true,
+    approved_indications: [
+      "Relapsing forms of multiple sclerosis (including clinically isolated syndrome, relapsing-remitting MS, and active secondary progressive MS)",
+    ],
+    pathway_slugs: ["pyrimidine-synthesis-vulnerability"],
+    target_gene_symbols: ["DHODH"],
+    evidence_score: 22,
+    status: "theoretical",
+  },
+  {
     name: "Ym155 (Sepantronium Bromide)",
     brand_names: ["YM155", "Sepantronium"],
     chembl_id: "CHEMBL1213296",
