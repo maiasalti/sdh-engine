@@ -267,6 +267,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 17,
   },
   {
+    name: "Pol θ-Mediated End-Joining (TMEJ) Backup Repair",
+    slug: "polq-tmej-backup-repair",
+    description:
+      "SDH loss drives succinate accumulation, which competitively inhibits KDM4A/KDM4B (α-KG-dependent H3K9me3 demethylases) at DNA double-strand break sites. H3K9me3 persistence blocks TIP60/ATM recruitment and DNA end-resection, producing a global homologous recombination (HR) deficiency — the 'BRCAness' phenotype described by Sulkowski et al. (Nat Genet 2018; Nature 2020). HR-deficient cells cannot repair DSBs via the high-fidelity HR route and instead upregulate Pol θ-mediated end-joining (TMEJ, also called MMEJ), the backup DSB repair pathway executed by DNA polymerase theta (POLQ). TMEJ is error-prone (generating short deletions and microhomology footprints) but essential for survival when HR is unavailable. Ceccaldi et al. (Nature 2015, PMID 25642963) demonstrated that HR-deficient cancer cells are synthetically lethal with POLQ inhibition or depletion: when both HR and TMEJ are unavailable, unrepaired DSBs cause cell death. ART558, a first-in-class selective POLQ inhibitor (Artios Pharma), exploits this dependency and is in Phase 1 clinical development. The POLQ/TMEJ direction is mechanistically complementary to PARP inhibition in the same BRCAness context: PARP inhibitors trap SSBs that collapse into DSBs, which HR-deficient cells cannot resolve; POLQ inhibition blocks the backup TMEJ pathway those same cells depend on to survive accumulated DSBs.",
+    upstream_event:
+      "SDH loss → succinate accumulation → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → HR deficiency (BRCAness) → compensatory TMEJ/POLQ upregulation",
+    downstream_effects: [
+      "Homologous recombination (HR) deficiency in SDH-deficient cells",
+      "Upregulation of POLQ-mediated end-joining (TMEJ/MMEJ) as backup DSB repair",
+      "Increased dependency on POLQ for survival",
+      "Synthetic lethality with POLQ inhibition (ART558) — confirmed in HR-deficient cancer models",
+      "Error-prone TMEJ generates genomic instability (short deletions, microhomology junctions) contributing to tumor evolution",
+    ],
+    druggable: true,
+    display_order: 18,
+  },
+  {
     name: "De Novo Lipogenesis / FASN Dependency",
     slug: "de-novo-lipogenesis",
     description:

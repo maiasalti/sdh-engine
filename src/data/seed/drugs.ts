@@ -509,6 +509,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "ART558",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "POLQ inhibitor (DNA polymerase theta inhibitor)",
+    mechanism_of_action:
+      "ART558 is a first-in-class, selective, orally bioavailable inhibitor of DNA polymerase theta (POLQ), the effector enzyme of Pol θ-mediated end-joining (TMEJ, also called microhomology-mediated end-joining / MMEJ) — the major backup DSB repair pathway in homologous recombination (HR)-deficient cells. The mechanistic rationale in SDH-deficient tumors is a second-order synthetic lethality built on the established BRCAness mechanism (Mechanism 14). SDH loss drives succinate accumulation, which competitively inhibits the α-KG-dependent histone demethylases KDM4A and KDM4B at DNA double-strand break (DSB) sites. H3K9me3 persistence at DSBs blocks TIP60 acetyltransferase and ATM kinase recruitment, impairing DNA end-resection and creating an HR-deficient state in all SDH-deficient cells — regardless of BRCA1/2 mutation status (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). HR-deficient cells upregulate POLQ/TMEJ as a compensatory backup: Ceccaldi et al. (Nature 2015, PMID 25642963) demonstrated that POLQ expression is elevated in HR-deficient tumors, and that POLQ depletion is synthetically lethal with HR deficiency in ovarian cancer cell lines and xenografts, while having minimal effect on HR-proficient cells. ART558 blocks POLQ's polymerase activity, preventing TMEJ-mediated DSB resolution. When both HR and TMEJ are unavailable — as in SDH-deficient cells treated with ART558 — unrepaired DSBs accumulate and drive cell death. The POLQ/TMEJ direction is mechanistically distinct from and complementary to PARP inhibition in the same BRCAness context: PARP inhibitors (olaparib, niraparib) trap SSBs that collapse into DSBs during replication, which HR-deficient cells cannot resolve via HR; POLQ inhibition (ART558) blocks the backup TMEJ pathway that those same HR-deficient cells depend on to survive their accumulated DSB burden. Combining ART558 with PARP inhibitors may yield additive or synergistic lethality in SDH-deficient tumors by simultaneously generating unresolvable DSBs and blocking both remaining DSB repair routes. ART558 is being developed by Artios Pharma and is in Phase 1 clinical investigation in solid tumors harboring DNA-damage-response defects. Key limitation: no published data exist directly testing POLQ inhibition in SDH-deficient cell lines or xenografts; the mechanistic case rests on the Ceccaldi synthetic lethality framework in HR-deficient cancer (PMID 25642963) combined with the Sulkowski SDH-BRCAness papers (PMID 30013182, PMID 32494005). SDH-specific preclinical validation is the critical next step.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["polq-tmej-backup-repair", "sdh-driven-hrd"],
+    target_gene_symbols: ["POLQ"],
+    evidence_score: 27,
+    status: "theoretical",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,
