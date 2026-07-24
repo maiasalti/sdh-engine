@@ -289,6 +289,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Mitochondrial inner-membrane flavoenzyme catalyzing the fourth step of de novo pyrimidine synthesis: dihydroorotate → orotate (coupled to the reduction of ubiquinone). DHODH is the only step in pyrimidine biosynthesis that is mitochondrially located and strictly dependent on a functional electron transport chain to re-oxidize FMNH2. In SDH-deficient cells, de novo pyrimidine synthesis is already suppressed by the succinate-mediated block at ATCase (step 2), leaving residual pathway flux dependent on DHODH at step 4. Inhibiting DHODH compounds this pre-existing block, selectively depleting SDH-deficient cells of UMP and downstream pyrimidines. Normal cells, with intact ATCase and adequate aspartate supply, have substantially more reserve to tolerate DHODH inhibition. Targeted by brequinar (DUP-785) and by leflunomide/teriflunomide (FDA-approved for rheumatoid arthritis / relapsing MS). Primary anchor reference: Hart et al., Nat Metab 2026, PMID 42082831.",
   },
   {
+    gene_symbol: "POLQ",
+    name: "DNA polymerase theta",
+    uniprot_id: "O75417",
+    pathway_slug: "polq-tmej-backup-repair",
+    target_type: "synthetic_lethal",
+    description:
+      "DNA polymerase theta (POLQ) is the effector enzyme of Pol θ-mediated end-joining (TMEJ, also called MMEJ), the major backup pathway for DNA double-strand break repair in homologous recombination (HR)-deficient cells. POLQ extends from short microhomology sequences exposed after resection, bridging and ligating the break ends in an error-prone manner. Ceccaldi et al. (Nature 2015, PMID 25642963) established the synthetic lethal relationship between HR deficiency and POLQ in ovarian cancer: POLQ expression is elevated in HR-deficient tumors, POLQ depletion selectively kills HR-deficient cells, and the combination of HR deficiency + POLQ loss is non-viable. In SDH-deficient tumors, succinate-mediated inhibition of KDM4A/KDM4B creates a universal (all-DSB, all-SDH-deficient-cell) HR deficiency (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005); this should drive compensatory POLQ/TMEJ upregulation, creating synthetic lethality with POLQ inhibitors. ART558 (Artios Pharma) is the first-in-class selective, oral POLQ inhibitor; it is in Phase 1 clinical development in solid tumors with DNA-damage-response defects.",
+  },
+  {
     gene_symbol: "FASN",
     name: "Fatty acid synthase",
     uniprot_id: "P49327",
