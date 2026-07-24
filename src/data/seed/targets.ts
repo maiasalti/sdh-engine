@@ -298,6 +298,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "DNA polymerase theta (POLQ) is the effector enzyme of Pol θ-mediated end-joining (TMEJ, also called MMEJ), the major backup pathway for DNA double-strand break repair in homologous recombination (HR)-deficient cells. POLQ extends from short microhomology sequences exposed after resection, bridging and ligating the break ends in an error-prone manner. Ceccaldi et al. (Nature 2015, PMID 25642963) established the synthetic lethal relationship between HR deficiency and POLQ in ovarian cancer: POLQ expression is elevated in HR-deficient tumors, POLQ depletion selectively kills HR-deficient cells, and the combination of HR deficiency + POLQ loss is non-viable. In SDH-deficient tumors, succinate-mediated inhibition of KDM4A/KDM4B creates a universal (all-DSB, all-SDH-deficient-cell) HR deficiency (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005); this should drive compensatory POLQ/TMEJ upregulation, creating synthetic lethality with POLQ inhibitors. ART558 (Artios Pharma) is the first-in-class selective, oral POLQ inhibitor; it is in Phase 1 clinical development in solid tumors with DNA-damage-response defects.",
   },
   {
+    gene_symbol: "SSTR2",
+    name: "Somatostatin receptor type 2",
+    uniprot_id: "P30874",
+    pathway_slug: "sstr2-neuroendocrine-vulnerability",
+    target_type: "synthetic_lethal",
+    description:
+      "Gi-coupled GPCR for somatostatin and its analogues. In SDHB-deficient pheochromocytoma and paraganglioma, SSTR2 is selectively overexpressed at the cell membrane and shows enhanced receptor internalization dynamics vs. wild-type cells. Full SSTR2 agonism (BIM-23120) dephosphorylates pro-survival MAPK/PI3K cascades and induces apoptosis specifically in SDHB-deficient cells; partial agonists (octreotide, pasireotide) are ineffective, explaining historical failure of cold somatostatin analogs in PPGL (García-Vioque et al., Mol Biomed 2026, PMID 41928014). High SSTR2 membrane density additionally enables efficient uptake of 177Lu-DOTATATE radioligand for PRRT.",
+  },
+  {
     gene_symbol: "FASN",
     name: "Fatty acid synthase",
     uniprot_id: "P49327",

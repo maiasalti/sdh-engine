@@ -267,6 +267,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 17,
   },
   {
+    name: "SSTR2 Neuroendocrine Vulnerability",
+    slug: "sstr2-neuroendocrine-vulnerability",
+    description:
+      "SDHB deficiency (and other SDH subunit losses in PCC/PGL) selectively upregulates somatostatin receptor subtype 2 (SSTR2) beyond baseline neuroendocrine expression. SDHB-deficient cells display stronger SSTR2 membrane density, receptor clustering, and internalization dynamics versus wild-type cells. Selective SSTR2 full agonism (BIM-23120) specifically dephosphorylates pro-survival kinase cascades and induces apoptosis in SDHB-deficient — but not wild-type — chromaffin cells, while partial agonists (octreotide, pasireotide) are ineffective. The elevated SSTR2 expression also makes SDH-deficient PPGLs ideal targets for peptide receptor radionuclide therapy (PRRT) with 177Lu-DOTATATE, delivering β-radiation to cells that simultaneously harbour SDH-driven HR deficiency (BRCAness), creating a radiobiological double-hit.",
+    upstream_event:
+      "SDH loss → HIF-2α pseudohypoxia → upregulation of neuroendocrine differentiation markers including SSTR2; SDHB-specific enhancement of SSTR2 membrane density and receptor internalization dynamics",
+    downstream_effects: [
+      "Elevated SSTR2 surface density on SDHB-deficient PCC/PGL tumor cells",
+      "Full SSTR2 agonism (BIM-23120) → Gi signalling → inhibition of adenylyl cyclase/cAMP → dephosphorylation of MAPK/PI3K pro-survival kinase cascades",
+      "Selective apoptosis in SDHB-deficient cells with BIM-23120; absent in wild-type cells",
+      "Cold somatostatin analogue partial agonists (octreotide, pasireotide) are ineffective — full agonism required",
+      "High SSTR2 density enables efficient 177Lu-DOTATATE internalization, delivering β-radiation; compounded by SDH-driven BRCAness (Mechanism 14) impairing DSB repair",
+    ],
+    druggable: true,
+    display_order: 19,
+  },
+  {
     name: "Pol θ-Mediated End-Joining (TMEJ) Backup Repair",
     slug: "polq-tmej-backup-repair",
     description:

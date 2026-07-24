@@ -524,6 +524,38 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "BIM-23120",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Selective SSTR2 full agonist (somatostatin analogue)",
+    mechanism_of_action:
+      "BIM-23120 is a synthetic somatostatin analogue with high selectivity for somatostatin receptor subtype 2 (SSTR2) and full agonist efficacy — producing maximal receptor activation, Gi coupling, and receptor internalization — as opposed to the partial agonism of clinically approved analogues (octreotide, lanreotide, pasireotide). In SDHB-deficient pheochromocytoma and paraganglioma cells, SDHB loss leads to greater SSTR2 membrane expression and enhanced receptor internalization capacity versus wild-type controls. BIM-23120 exploits this by fully activating SSTR2 Gi signalling, causing sustained inhibition of adenylyl cyclase and cAMP, and dephosphorylation of downstream pro-survival MAPK and PI3K/AKT kinase cascades. García-Vioque et al. (Mol Biomed 2026, PMID 41928014) performed systematic functional screening of SSTR2 agonists in SDHB-knockdown versus wild-type chromaffin cell lines and found that BIM-23120 (but not octreotide or pasireotide) selectively reduced proliferation and induced apoptosis in SDHB-deficient cells while sparing wild-type cells. This mechanistically explains a long-standing clinical observation: cold somatostatin analogues (partial agonists) repeatedly fail to produce responses in PPGL clinical trials, while PRRT (which delivers 177Lu-DOTATATE to SSTR2-expressing cells via the same receptor binding — exploiting SSTR2 density, not receptor activation per se) succeeds. Full receptor agonism is the pharmacologically relevant endpoint for the anti-proliferative SSTR2 signal in SDHB-deficient tumors; partial agonism is insufficient. Key limitation: BIM-23120 is a research tool compound used to establish pharmacological proof-of-concept; it has not entered Phase 1 clinical trials. Development of a drug-like, full-agonist SSTR2 compound with better oral bioavailability and pharmacokinetics is needed before clinical translation. In SDHA-deficient GIST, SSTR2 expression is not specifically documented (this direction is strongest for SDHB/SDHD-driven PPGL).",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["sstr2-neuroendocrine-vulnerability"],
+    target_gene_symbols: ["SSTR2"],
+    evidence_score: 35,
+    status: "preclinical",
+  },
+  {
+    name: "Lutetium-177 DOTATATE (177Lu-DOTATATE)",
+    brand_names: ["Lutathera"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Peptide receptor radionuclide therapy (PRRT) / radioligand therapy",
+    mechanism_of_action:
+      "177Lu-DOTATATE is DOTATATE (DOTA-Tyr3-octreotate) labelled with the β-emitting radionuclide lutetium-177. DOTATATE binds somatostatin receptors (primarily SSTR2) with high affinity, driving receptor-mediated endocytosis and intracellular retention of 177Lu. The β particles emitted by 177Lu (mean range ~0.67 mm in tissue, max energy 497 keV) cause double-strand DNA breaks and cell death within the tumour volume, with a bystander effect that extends to SSTR2-negative cells adjacent to SSTR2-positive absorbers. FDA-approved for unresectable or metastatic, progressive, well-differentiated SSTR-positive GEP-NETs (NETTER-1 Phase 3 trial, NCT01578239; Strosberg et al., NEJM 2017, PMID 28076709). The mechanistic rationale for SDH-deficient PPGL specifically rests on two converging observations: (1) SDHB-deficient PPGL cells exhibit elevated SSTR2 membrane expression and enhanced receptor dynamics (PMID 41928014), increasing 177Lu-DOTATATE uptake per cell and therefore delivered radiation dose versus low-SSTR2 tumours; (2) SDH-deficient tumours harbour a BRCAness phenotype — succinate-mediated KDM4A/KDM4B inhibition → H3K9me3 persistence at DSB sites → impaired homologous recombination (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) — meaning the DNA double-strand breaks induced by PRRT β-radiation cannot be repaired by the high-fidelity HR pathway. This creates a radiobiological double-hit: higher delivered dose (SSTR2 overexpression) plus impaired repair of induced damage (SDH-driven BRCAness). Clinical evidence in PPGL: multiple retrospective series and compassionate-use programmes document objective responses; the Phase 3 ELIPSS trial (NCT03206060) evaluated 177Lu-DOTATATE in patients with progressive pheochromocytoma or paraganglioma. The genotype-directed imaging and therapy review (Hernandez-Felix et al., Endocr Relat Cancer 2026, PMID 42454478) documents the SSTR2-high/FDG-avid metabolic profile of SDH-deficient PPGL as guideline for imaging and treatment selection. Clinical use: SSTR2 expression confirmed by 68Ga-DOTATATE PET/CT is required before treatment. Key limitations: (1) no randomised trial specifically in SDH-deficient PPGL; (2) the BRCAness-PRRT synergy rationale has not been prospectively tested; (3) cumulative 177Lu dose is limited by haematological and renal toxicity; (4) SSTR2 expression in SDHA-deficient GIST is not systematically documented — this direction is most applicable to SDH-deficient PCC/PGL.",
+    fda_approved: true,
+    approved_indications: [
+      "Unresectable or metastatic, progressive, well-differentiated (G1/G2) SSTR-positive GEP-NETs",
+    ],
+    pathway_slugs: ["sstr2-neuroendocrine-vulnerability", "sdh-driven-hrd"],
+    target_gene_symbols: ["SSTR2", "KDM4B"],
+    evidence_score: 68,
+    status: "clinical_trial",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,
