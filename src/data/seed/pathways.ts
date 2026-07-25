@@ -284,6 +284,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 18,
   },
   {
+    name: "SSTR2 / Somatostatin Receptor Vulnerability",
+    slug: "sstr2-somatostatin-vulnerability",
+    description:
+      "SDH-deficient pheochromocytomas and paragangliomas (PCC/PGL) maintain high-level somatostatin receptor subtype 2 (SSTR2) expression. Full agonist activation of SSTR2 selectively suppresses proliferation and induces apoptosis in SDHB-deficient cells versus wild-type controls, identifying SSTR2 as a direct pharmacological vulnerability (Ballard et al., Mol Biomed 2026, PMID 41928014). Cold somatostatin analogues (partial agonists: octreotide, lanreotide) do not recapitulate the selective cytotoxicity — full receptor activation is required. The clinical corollary is that SSTR2 high expression in SDH-deficient PPGL confers eligibility for peptide receptor radionuclide therapy (PRRT) with 177Lu-DOTATATE, which simultaneously delivers full SSTR2 agonism and targeted β-radiation. The concurrent BRCAness phenotype (Mechanism 14) may synergize with PRRT-induced DSBs, since SDH-deficient cells have impaired HR capacity to resolve radiation damage. This mechanism is relevant to SDH-deficient PPGL (neuroendocrine lineage, SSTR2-high); SDH-deficient GIST and RCC are not typically SSTR2-expressing.",
+    upstream_event:
+      "SDH loss (SDHB mutation predominantly) → maintained neuroendocrine differentiation state with high SSTR2 expression; full SSTR2 agonism is selectively cytotoxic in SDHB-deficient versus SDH-intact PCC/PGL cells",
+    downstream_effects: [
+      "Gi-GPCR coupling: SSTR2 full activation → adenylyl cyclase inhibition → cAMP suppression → anti-proliferative downstream signaling",
+      "Selective apoptosis in SDHB-deficient cells upon SSTR2 full agonism (BIM-23120; PMID 41928014)",
+      "High 177Lu-DOTATATE uptake in SSTR2-high SDH-deficient PPGL → targeted intratumoural β-radiation causing dense DSBs",
+      "PRRT eligibility for SSTR2-positive SDH-deficient PPGL (confirmed SSTR2-high by DOTATATE-PET; PMID 42454478)",
+      "Potential synergy of PRRT-induced DSBs with BRCAness (Mechanism 14): SDH-deficient cells cannot efficiently repair radiation-induced DSBs via HR",
+    ],
+    druggable: true,
+    display_order: 19,
+  },
+  {
     name: "De Novo Lipogenesis / FASN Dependency",
     slug: "de-novo-lipogenesis",
     description:
