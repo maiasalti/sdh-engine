@@ -315,4 +315,22 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Multifunctional cytoplasmic enzyme catalyzing de novo synthesis of long-chain fatty acids from acetyl-CoA and malonyl-CoA. In SDH-deficient cells, the truncated TCA cycle forces acetyl-CoA generation via reductive carboxylation of glutamine (reverse IDH1/2 reaction: α-KG → isocitrate → citrate; ACLY cleavage: citrate → acetyl-CoA), making FASN the terminal effector of a glutamine-dependent lipid supply route. FASN products also feed mitochondrial fatty acid synthesis (mtFAS), which produces the lipoic acid cofactor required by pyruvate dehydrogenase and α-ketoglutarate dehydrogenase complexes; in cells already compromised at Complex II, additional impairment of mtFAS via FASN inhibition compounds mitochondrial dysfunction. A direct FASN-SDHB synthetic lethal interaction was demonstrated using G28UCM (a FASN KS-domain inhibitor) in SDHB-knockout cell lines: G28UCM impaired FASN activity and mitochondrial fatty acid synthesis more profoundly in SDHB-deficient cells than in WT controls (Rodríguez-Flores et al., Pharmacol Res 2026, PMID 41520938). Primary clinical candidate: denifanstat (TVB-2640).",
   },
+  {
+    gene_symbol: "MET",
+    name: "MET proto-oncogene (hepatocyte growth factor receptor, HGFR)",
+    uniprot_id: "P08581",
+    pathway_slug: "hif-met-axl-signaling",
+    target_type: "downstream",
+    description:
+      "Receptor tyrosine kinase for hepatocyte growth factor (HGF). MET transcription is directly activated by HIF-1α via canonical hypoxia-response elements (HREs) in the MET promoter — established by Pennacchietti et al. (Cancer Cell 2003, PMID 12726861) as the mechanism by which hypoxia promotes invasive growth. In SDH-deficient tumors, constitutive pseudohypoxic HIF-1α stabilization drives MET overexpression independent of oxygen tension. MET activation by HGF initiates a PI3K/AKT/mTOR → HIF-1α positive-feedback loop that amplifies pseudohypoxic signaling. MET is a primary target of cabozantinib (IC50 ~1.3 nM), which provided ORR 25% and median PFS 16.6 months in metastatic SDH-deficient PPGL (Natalie trial, Lancet Oncol 2024, PMID 38608693; SDHB-enriched cohort up to 50%).",
+  },
+  {
+    gene_symbol: "AXL",
+    name: "AXL receptor tyrosine kinase",
+    uniprot_id: "P30530",
+    pathway_slug: "hif-met-axl-signaling",
+    target_type: "downstream",
+    description:
+      "TAM (TYRO3/AXL/MERTK) family receptor tyrosine kinase activated by the ligand GAS6. AXL is upregulated in pseudohypoxic and immunosuppressive tumor microenvironments downstream of HIF-1α stabilization. AXL signaling promotes tumor cell survival, epithelial-to-mesenchymal transition (EMT), metastasis, and innate immune evasion. In SDH-deficient tumors, constitutive pseudohypoxia creates conditions that elevate AXL expression. AXL is co-inhibited by cabozantinib alongside VEGFR2 and MET, contributing to the drug's multi-pronged activity against the HIF-driven receptor tyrosine kinase landscape in these tumors.",
+  },
 ];

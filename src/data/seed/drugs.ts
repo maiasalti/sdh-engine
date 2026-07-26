@@ -542,6 +542,25 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
   },
   {
+    name: "Cabozantinib",
+    brand_names: ["Cabometyx", "Cometriq"],
+    chembl_id: "CHEMBL2105735",
+    pubchem_cid: "25126720",
+    drug_class: "Multi-kinase inhibitor (VEGFR2/MET/AXL/RET/KIT)",
+    mechanism_of_action:
+      "Cabozantinib is a potent, orally bioavailable multi-kinase inhibitor with activity against VEGFR2 (KDR), MET (hepatocyte growth factor receptor), AXL, RET, and KIT. The mechanistic rationale in SDH-deficient tumors rests on the HIF-driven receptor tyrosine kinase upregulation cascade: SDH loss → succinate → PHD inhibition → constitutive HIF-1α/2α stabilization → transcriptional activation of MET via direct HIF-1α binding to hypoxia-response elements (HREs) in the MET promoter (Pennacchietti et al., Cancer Cell 2003, PMID 12726861). MET overexpression drives invasive growth and a PI3K/AKT/mTOR → HIF-1α positive-feedback loop. AXL, another HIF-regulated receptor, is co-upregulated in the pseudohypoxic TME and contributes to survival, EMT, and immune evasion. Cabozantinib simultaneously inhibits VEGFR2 (anti-angiogenic), MET (anti-invasive, breaks HIF feedback), and AXL (anti-survival, anti-immune evasion) — a profile that addresses the multi-receptor tyrosine kinase landscape created by pseudohypoxia in SDH-deficient tumors.\n\nClinical evidence in SDH-deficient PPGL: The Phase 2 Natalie trial (NCT02302833; Jimenez et al., Lancet Oncol 2024, PMID 38608693) enrolled n=17 patients with metastatic pheochromocytoma/paraganglioma, including up to 50% SDHB-mutant. Cabozantinib achieved an objective response rate (ORR) of 25% (4/16 evaluable patients), a median PFS of 16.6 months, and a median OS of 24.9 months — a clinically meaningful signal in a disease for which systemic options remain limited. The MD Anderson genotype-directed treatment algorithm for metastatic PPGL (J Clin Endocrinol Metab 2026, PMID 42025325, already in the engine) lists cabozantinib as a systemic therapy option in this setting. The CABATEN basket trial (NCT04400474; n=93) evaluated cabozantinib + atezolizumab in endocrine/neuroendocrine tumors including PPGL.\n\nDistinction from sunitinib and regorafenib: Cabozantinib's MET inhibition (IC50 ~1.3 nM) and AXL inhibition are pharmacologically meaningful and not present in sunitinib or regorafenib at clinically relevant doses, making it mechanistically non-redundant in the SDH-deficient pseudohypoxic context. Sunitinib and regorafenib inhibit VEGFR/KIT/PDGFR but not MET/AXL. The evidence_score reflects the Phase 2 clinical data in PPGL (ORR 25%, PFS 16.6 months) combined with the HIF-MET mechanistic grounding in SDH-deficient biology. Key limitation: the Natalie trial was not SDH-deficient-specific and did not stratify efficacy by SDH mutational subtype; dedicated SDH-deficient-specific clinical data would further strengthen the rationale.",
+    fda_approved: true,
+    approved_indications: [
+      "Advanced renal cell carcinoma (RCC)",
+      "Hepatocellular carcinoma (HCC, second line after sorafenib)",
+      "Progressive, metastatic medullary thyroid carcinoma",
+    ],
+    pathway_slugs: ["hif-met-axl-signaling", "vegf-signaling"],
+    target_gene_symbols: ["MET", "KDR", "AXL"],
+    evidence_score: 62,
+    status: "established",
+  },
+  {
     name: "Ceralasertib",
     brand_names: ["AZD6738"],
     chembl_id: null,
