@@ -509,6 +509,24 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
   },
   {
+    name: "Lutetium-177 DOTATATE",
+    brand_names: ["Lutathera"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class:
+      "Peptide receptor radionuclide therapy (PRRT) / SSTR2-targeted radioligand therapy",
+    mechanism_of_action:
+      "177Lu-DOTATATE (lutetium-177 oxodotreotide) is a radioligand comprising DOTA-Tyr3-octreotate (DOTATATE) — a somatostatin analogue with very high SSTR2 selectivity — conjugated to the β/γ-emitting radionuclide lutetium-177. In SSTR2-expressing tumors, DOTATATE binds SSTR2 at the cell surface, is internalized with the receptor, and delivers β-particle radiation (mean tissue range ~670 μm; maximum energy 497 keV) that causes dense, cytotoxic DNA double-strand breaks within the tumor cell and, via the crossfire effect, in adjacent SSTR2-negative cells. In SDH-deficient pheochromocytoma and paraganglioma (PCC/PGL), two mechanistic lines converge. First, SDH-deficient PPGL are confirmed SSTR2-high by functional DOTATATE-PET/CT imaging and IHC (PMID 42454478), conferring high peptide uptake and high absorbed radioligand dose per tumor cell. Second, SSTR2 is a direct pharmacological vulnerability in SDHB-deficient cells: the selective SSTR2 full agonist BIM-23120 significantly reduces proliferation and induces apoptosis in SDHB-deficient PCC/PGL cells versus wild-type counterparts (Ballard et al., Mol Biomed 2026, PMID 41928014) — an effect not reproduced by cold partial-agonist SSAs (octreotide, lanreotide). 177Lu-DOTATATE effectively provides full SSTR2 agonism (DOTATATE as high-affinity SSTR2 ligand) combined with targeted intratumoural radiotoxicity — a dual-mechanism attack aligned with the SSTR2 vulnerability established in vitro. An additional synergy is plausible: the BRCAness phenotype in all SDH-deficient cells (Mechanism 14 — succinate-mediated KDM4B inhibition → H3K9me3 persistence at DSB sites → HR deficiency; Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) means SDH-deficient PPGL cells cannot efficiently resolve radiation-induced DSBs via homologous recombination — potentially conferring higher radiosensitivity to 177Lu-DOTATATE than matched SSTR2+ SDH-intact NETs. 177Lu-DOTATATE (Lutathera) is FDA-approved for SSTR2-positive, well-differentiated, progressive gastroenteropancreatic NETs (NETTER-1 Phase 3: Strosberg et al., NEJM 2017, PMID 28273561; NCT01578239); off-label PRRT for SSTR2-positive PCC/PGL is established practice at specialized radioligand therapy centers. Key limitations: (1) not formally FDA-approved for PPGL; off-label regulatory landscape varies by country; (2) requires SSTR2-positive disease (DOTATATE-PET/CT uptake) — most SDH-deficient PPGL qualify; (3) available only at accredited PRRT/radioligand therapy centres with nuclear medicine infrastructure; (4) the SSTR2 vulnerability applies to SDH-deficient PPGL (neuroendocrine lineage); SDH-deficient GIST (mesenchymal) and RCC do not typically express SSTR2 at therapeutic levels; (5) cumulative renal dose and bone marrow reserve must be monitored across treatment cycles.",
+    fda_approved: true,
+    approved_indications: [
+      "SSTR2-positive, well-differentiated, progressive, unresectable or metastatic gastroenteropancreatic neuroendocrine tumors (midgut NETs and pancreatic NETs)",
+    ],
+    pathway_slugs: ["sstr2-somatostatin-vulnerability", "sdh-driven-hrd"],
+    target_gene_symbols: ["SSTR2"],
+    evidence_score: 35,
+    status: "established",
+  },
+  {
     name: "ART558",
     brand_names: [],
     chembl_id: null,

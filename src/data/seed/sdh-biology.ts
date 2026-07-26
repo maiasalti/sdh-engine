@@ -157,6 +157,7 @@ ART558 (Artios Pharma) is the first-in-class selective, oral POLQ inhibitor in P
 | De Novo Lipogenesis / FASN | FASN | SDH loss → reductive glutamine carboxylation → FASN-dependent fatty acid supply for membranes and mtFAS; FASN-SDHB synthetic lethality demonstrated with G28UCM in SDHB-KO cells (PMID 41520938); denifanstat (TVB-2640) as clinical candidate |
 | Pyrimidine Synthesis Vulnerability (DHODH) | DHODH | SDH loss → dual ATCase block (aspartate depletion + succinate-mediated inhibition) → suppressed pyrimidine synthesis (PMID 42082831); DHODH inhibition at step 4 of same pathway compounds the pre-existing block selectively in SDH-deficient cells; brequinar (potent experimental; NCT01888484) and teriflunomide (FDA-approved, accessible; Phase 2 in GBM) as candidates |
 | POLQ / TMEJ Backup Repair | POLQ | SDH-driven BRCAness (Mechanism 14) forces upregulation of TMEJ/POLQ as backup DSB repair; synthetic lethality between HR deficiency and POLQ established by Ceccaldi et al. (Nature 2015, PMID 25642963); ART558 (Artios Pharma) first-in-class POLQ inhibitor in Phase 1 development; complementary to PARP inhibition (targets same HR-deficient state via orthogonal mechanism) |
+| SSTR2 / Somatostatin Receptor | SSTR2 | SDH-deficient PPGL are SSTR2-high (confirmed DOTATATE-PET; PMID 42454478); SSTR2 full agonism (BIM-23120) selectively toxic in SDHB-deficient PCC/PGL cells (PMID 41928014); 177Lu-DOTATATE (Lutathera, FDA-approved for SSTR2+ GEP-NETs) exploits SSTR2 overexpression for targeted PRRT; BRCAness (Mechanism 14) may synergize with radiation-induced DSBs; PRRT-specific to PPGL subtype, not GIST/RCC |
 
 ### 17. Pyrimidine Synthesis Vulnerability (DHODH Inhibition)
 A 2026 Nature Metabolism study (Hart et al., PMID 42082831, already validated and in the papers database) established a mechanistically novel vulnerability downstream of SDH loss: succinate accumulation suppresses de novo pyrimidine synthesis through a dual block that positions DHODH inhibitors as a synthetic-lethality strategy in SDH-deficient cells.
@@ -175,6 +176,25 @@ DHODH catalysis is obligatorily coupled to the mitochondrial ETC: it reduces CoQ
 - **Teriflunomide** (Aubagio): FDA-approved DHODH inhibitor (relapsing MS; 2012); active metabolite of leflunomide (FDA-approved for RA since 1998). Orally available, well-characterized long-term safety profile, immediately accessible for off-label study. Phase 2 anti-tumor activity data in glioblastoma (NCT02799498). Lower DHODH potency (IC50 ~600 nM) than brequinar, but immediate clinical availability enables rapid human proof-of-concept evaluation.
 
 **Key limitation:** No direct experimental data exists for DHODH inhibitor selectivity in SDH-deficient versus SDH-intact cell lines or xenografts. The rationale is mechanistic inference: the succinate-ATCase block (PMID 42082831) reduces pyrimidine synthesis reserve, and DHODH inhibition at step 4 compounds this. Validation in SDHA-null GIST and SDHB-deficient PPGL cell models is the critical next step before clinical evaluation.
+
+### 19. SSTR2 / Somatostatin Receptor Vulnerability in SDH-Deficient PPGL
+
+SDH-deficient pheochromocytomas and paragangliomas (PCC/PGL) maintain a neuroendocrine differentiation state characterised by high-level somatostatin receptor subtype 2 (SSTR2) expression. Two mechanistically converging lines establish SSTR2 as both a direct pharmacological vulnerability and a radioligand therapy target in this subgroup.
+
+**Direct SSTR2 full-agonist vulnerability (Ballard et al., Mol Biomed 2026, PMID 41928014):**
+Functional profiling of somatostatin receptor subtypes in SDHB-deficient PCC/PGL cells identified SSTR2 as a selective vulnerability. The selective SSTR2 full agonist BIM-23120 significantly reduced proliferation and induced apoptosis in SDHB-deficient cells compared to wild-type counterparts — a selective cytotoxicity that was not reproduced by cold somatostatin analogues (partial agonists such as octreotide or lanreotide). Full SSTR2 receptor activation, not mere SSTR2 binding, is the key pharmacological event. The mechanism by which full SSTR2 agonism is selectively intolerable in SDHB-deficient cells likely involves their already-compromised metabolic and mitochondrial homeostasis: Gi/cAMP suppression and downstream MAPK/phospholipase signalling from full SSTR2 engagement push these metabolically stressed cells past apoptotic thresholds that SDH-intact cells tolerate. This finding provides a mechanistic explanation for the clinical observation that PRRT (peptide receptor radionuclide therapy) is effective in SDH-deficient PPGL while cold SSAs are not: PRRT delivers a DOTATATE peptide that functions as a high-affinity SSTR2 full-agonism ligand, combined with targeted radioligand cytotoxicity.
+
+**SSTR2-high expression confers PRRT eligibility:**
+SDH-deficient PPGL are consistently SSTR2-high and FDG-avid by functional imaging, including DOTATATE-PET/CT (PMID 42454478). High SSTR2 expression confers substantial DOTATATE peptide uptake per tumor cell, enabling PRRT with 177Lu-DOTATATE (Lutathera). The radioligand is internalized via SSTR2, delivering β-radiation intracellularly and to adjacent cells (crossfire), causing dense cytotoxic DNA double-strand breaks.
+
+**Potential BRCAness synergy with PRRT:**
+All SDH-deficient cells harbour the BRCAness phenotype (Mechanism 14: succinate-driven KDM4B inhibition → H3K9me3 persistence at DSBs → impaired HR). Radiation-induced DSBs delivered by 177Lu-DOTATATE are poorly repaired by HR in this context, potentially conferring enhanced radiosensitivity to PRRT in SDH-deficient PPGL versus matched SSTR2+ SDH-intact NETs. This BRCAness/PRRT synergy awaits direct experimental confirmation.
+
+**Clinical translation:**
+177Lu-DOTATATE (Lutathera) is FDA-approved for SSTR2+ GEP-NETs (NETTER-1 Phase 3, PMID 28273561). Off-label PRRT for SSTR2+ PPGL is established at specialized radioligand therapy centers, with growing evidence of clinical efficacy. The SSTR2 vulnerability and SSTR2-high expression in SDH-deficient PPGL provide a more mechanistically specific rationale for PRRT in this subgroup than in generic SSTR2+ NETs.
+
+**Critical scope limitation:**
+The SSTR2 vulnerability and PRRT eligibility are specific to SDH-deficient PPGL (neuroendocrine lineage). SDH-deficient GIST (mesenchymal/gastrointestinal stromal tumour) and SDH-deficient RCC do not typically express SSTR2 at levels sufficient for PRRT targeting.
 
 ## Important Context for Drug Repurposing
 
