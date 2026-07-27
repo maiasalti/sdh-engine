@@ -317,4 +317,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 15,
   },
+  {
+    name: "HIF-Driven MET and AXL Signaling",
+    slug: "hif-met-axl-signaling",
+    description:
+      "SDH loss → succinate accumulation → PHD inhibition → pseudohypoxic HIF-1α/2α stabilization. HIF-1α transcriptionally activates the MET proto-oncogene (hepatocyte growth factor receptor) via direct binding to hypoxia-response elements (HREs) in the MET promoter (Pennacchietti et al., Cancer Cell 2003, PMID 12726861). MET upregulation drives invasive growth, PI3K/AKT/mTOR activation, and a positive-feedback HIF loop (MET → PI3K → HIF-1α). AXL (a TAM receptor tyrosine kinase) is co-upregulated in the pseudohypoxic tumor microenvironment and promotes tumor cell survival, EMT, and immune evasion. Multi-kinase inhibitors targeting VEGFR2/MET/AXL (cabozantinib) exploit this HIF-driven receptor tyrosine kinase upregulation.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → HIF-1α/2α stabilization → HRE-driven MET and AXL transcriptional upregulation",
+    downstream_effects: [
+      "MET overexpression → HGF-driven invasive growth and PI3K/AKT/mTOR activation",
+      "MET → PI3K/AKT/mTOR → HIF-1α positive-feedback loop amplifying pseudohypoxic signaling",
+      "AXL upregulation → tumor cell survival, EMT, and immunosuppressive TME contribution",
+      "Multi-kinase vulnerability co-targeting VEGFR2/MET/AXL via cabozantinib",
+      "SDH-deficient PPGL clinical activity: ORR 25%, median PFS 16.6 months (Natalie trial, Lancet Oncol 2024, PMID 38608693)",
+    ],
+    druggable: true,
+    display_order: 20,
+  },
 ];
