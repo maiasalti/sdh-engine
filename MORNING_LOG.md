@@ -122,3 +122,22 @@ Added: (1) new `hif-met-axl-signaling` pathway (display_order 20); (2) MET and A
 
 Key limitation noted: Natalie trial was not SDH-deficient-specific; SDH-subtype-stratified efficacy data are not yet available. Candidate directions still unexplored: (1) DFMO/eflornithine (ODC inhibitor, upstream polyamine axis — flagged across seven consecutive entries, still no SDH-specific data), (2) IACS-010759 / mitochondrial Complex I dependency, (3) MTHFD2 / one-carbon metabolism.
 **PR:** morning/2026-07-26-hif-met-axl-cabozantinib
+
+## 2026-07-27
+
+**Direction:** drug-pool
+**Angle:** Polyamine synthesis — ODC1 inhibition with eflornithine (DFMO) as synthesis-side complement to DENSPM in SDH-deficient tumors
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all PubMed results across full SDH-deficient tumor search sweep already present in tracker.md; identical result as 2026-07-26 scan)
+**Summary:** PubMed scan across all standard SDH-deficient tumor search strategies returned 0 new papers; every PMID encountered was already logged in tracker.md. Nothing added to papers.ts.
+
+DFMO/eflornithine had been flagged as the top unexplored candidate across eight consecutive log entries (2026-07-04 through 2026-07-26). Implemented it as the synthesis-side complement to DENSPM, completing the two-arm polyamine depletion strategy for SDH-deficient tumors.
+
+The mechanistic foundation: SDH loss drives upregulation of polyamine biosynthesis — spermidine and spermine are significantly elevated in SDHx-mutated PCC/PGL tissue and SDHB-knockdown chromaffin cells (Rai et al., Metabolism 2020, PMID 32562798). DENSPM (already in engine since 2026-07-04; evidence_score 38, preclinical) exploits this by inducing SAT1/SSAT to force catabolism of elevated spermidine/spermine pools, generating cytotoxic H₂O₂ via SMOX (Huynh et al. 2026, PMID 42249664). The gap: SAT1-driven catabolism depletes existing pools, but ODC1-driven de novo synthesis can partially replenish them. Eflornithine (DFMO) blocks this replenishment irreversibly: it is a mechanism-based suicide inhibitor of ODC1 that mimics ornithine, is decarboxylated as a substrate, and generates a reactive electrophile that permanently modifies active-site Cys360. DENSPM (catabolism-driver) + DFMO (synthesis-blocker) together impose a coordinated dual depletion pressure on the same elevated polyamine pools created by SDH loss.
+
+FDA context: Eflornithine is FDA-approved as Iwilfin for high-risk neuroblastoma maintenance therapy (November 2023, COG ANBL1232/SIOPEN trials), establishing excellent long-term tolerability for systemic ODC1 inhibition in a cancer maintenance setting — the same therapeutic modality needed for GIST/PPGL.
+
+Added: (1) ODC1 as a new metabolic target in `targets.ts` (pathway_slug `polyamine-metabolism`, with full mechanistic description referencing PMID 32562798 and DENSPM complement rationale); (2) eflornithine/DFMO drug entry in `drugs.ts` (evidence_score 23, theoretical — no SDH-specific data; mechanistic rationale based on DENSPM-established polyamine elevation + ODC1 synthesis-blockade logic); (3) Mechanism 21 in sdh-biology.ts (polyamine pathway architecture, DENSPM-gap analysis, eflornithine as synthesis-side complement, key limitation); (4) Polyamine Metabolism row added to the druggable targets table in sdh-biology.ts (was missing despite the pathway being added on 2026-07-04).
+
+Key limitation: No SDH-specific eflornithine experimental data exists. Evidence_score 23 reflects the strong mechanistic rationale combined with the absence of direct SDH-deficient preclinical validation. Required next step: test eflornithine in SDHB-KO or SDHA-null cell lines, alone and in combination with DENSPM. Candidate directions still unexplored: (1) IACS-010759 / mitochondrial Complex I dependency (uncertain whether SDH-deficient tumors are sufficiently OXPHOS-dependent), (2) MTHFD2 / one-carbon folate-cycle / serine dependency (no SDH-specific data).
+**PR:** morning/2026-07-27-dfmo-polyamine-synthesis
