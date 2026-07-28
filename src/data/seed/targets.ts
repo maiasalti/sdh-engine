@@ -342,4 +342,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "TAM (TYRO3/AXL/MERTK) family receptor tyrosine kinase activated by the ligand GAS6. AXL is upregulated in pseudohypoxic and immunosuppressive tumor microenvironments downstream of HIF-1α stabilization. AXL signaling promotes tumor cell survival, epithelial-to-mesenchymal transition (EMT), metastasis, and innate immune evasion. In SDH-deficient tumors, constitutive pseudohypoxia creates conditions that elevate AXL expression. AXL is co-inhibited by cabozantinib alongside VEGFR2 and MET, contributing to the drug's multi-pronged activity against the HIF-driven receptor tyrosine kinase landscape in these tumors.",
   },
+  {
+    gene_symbol: "MT-ND1",
+    name: "NADH:Ubiquinone Oxidoreductase Chain 1 (Complex I, mitochondrial ETC)",
+    uniprot_id: "P03886",
+    pathway_slug: "complex-i-oxphos-bottleneck",
+    target_type: "metabolic",
+    description:
+      "MT-ND1 encodes a core transmembrane subunit of NADH:ubiquinone oxidoreductase (Complex I), the largest enzyme of the mitochondrial electron transport chain. Complex I catalyzes the oxidation of NADH and the reduction of CoQ (ubiquinone), coupling the reaction to translocation of four protons across the inner mitochondrial membrane — the largest single contribution to the mitochondrial membrane potential (ΔΨm). MT-ND1 constitutes part of the membrane-embedded proton-translocating arm where rotenone-class inhibitors (including IACS-010759) bind, blocking NADH:CoQ electron transfer. In SDH-deficient cells, Complex II (SDH) is absent; the HIF-pseudohypoxic programme further suppresses fatty acid β-oxidation (CPT1A). This leaves Complex I as the predominant — and in pseudohypoxic conditions the sole significant — electron donor to the CoQ pool. Selective Complex I inhibition with IACS-010759 therefore eliminates all major electron supply to CoQ in SDH-deficient cells, causing complete ETC shutdown and ΔΨm collapse — a far more severe effect than the same inhibition in SDH-intact cells where Complex II electrons can maintain partial CoQ reduction and OXPHOS. The resulting NAD⁺ depletion impairs glycolysis and aspartate synthesis, compounding the pre-existing metabolic vulnerabilities of SDH loss.",
+  },
 ];

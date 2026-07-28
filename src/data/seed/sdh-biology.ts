@@ -160,6 +160,7 @@ ART558 (Artios Pharma) is the first-in-class selective, oral POLQ inhibitor in P
 | POLQ / TMEJ Backup Repair | POLQ | SDH-driven BRCAness (Mechanism 14) forces upregulation of TMEJ/POLQ as backup DSB repair; synthetic lethality between HR deficiency and POLQ established by Ceccaldi et al. (Nature 2015, PMID 25642963); ART558 (Artios Pharma) first-in-class POLQ inhibitor in Phase 1 development; complementary to PARP inhibition (targets same HR-deficient state via orthogonal mechanism) |
 | SSTR2 / Somatostatin Receptor | SSTR2 | SDH-deficient PPGL are SSTR2-high (confirmed DOTATATE-PET; PMID 42454478); SSTR2 full agonism (BIM-23120) selectively toxic in SDHB-deficient PCC/PGL cells (PMID 41928014); 177Lu-DOTATATE (Lutathera, FDA-approved for SSTR2+ GEP-NETs) exploits SSTR2 overexpression for targeted PRRT; BRCAness (Mechanism 14) may synergize with radiation-induced DSBs; PRRT-specific to PPGL subtype, not GIST/RCC |
 | HIF-Driven MET and AXL Signaling | MET, AXL | SDH loss → HIF-1α stabilization → HRE-driven transcriptional activation of MET (HGFR) and AXL; HIF-1α→MET mechanism established by Pennacchietti et al. (Cancer Cell 2003, PMID 12726861); MET → PI3K/AKT/mTOR → HIF-1α positive-feedback amplifies pseudohypoxia; cabozantinib (VEGFR2/MET/AXL/RET/KIT inhibitor, FDA-approved for RCC/HCC/thyroid) demonstrated ORR 25%, PFS 16.6 months in metastatic PPGL (Natalie trial, Lancet Oncol 2024, PMID 38608693); pharmacologically distinct from sunitinib/regorafenib by virtue of MET and AXL co-inhibition |
+| Complex I OXPHOS Bottleneck | MT-ND1 (NADH:UQ oxidoreductase chain 1) | SDH loss (Complex II absent) + HIF-driven FAO suppression leaves Complex I as the sole electron donor to CoQ; Complex I inhibition in SDH-deficient cells causes total ETC shutdown and ΔΨm collapse (vs. partial disruption in SDH-intact cells where Complex II compensates); NAD⁺ depletion impairs glycolysis and aspartate synthesis; cascading DHODH failure compounds the pre-existing pyrimidine synthesis vulnerability (Mechanism 17); IACS-010759 (Molina et al., Nat Med 2018, PMID 29892061; NCT03291938) as selective Complex I inhibitor candidate |
 
 ### 17. Pyrimidine Synthesis Vulnerability (DHODH Inhibition)
 A 2026 Nature Metabolism study (Hart et al., PMID 42082831, already validated and in the papers database) established a mechanistically novel vulnerability downstream of SDH loss: succinate accumulation suppresses de novo pyrimidine synthesis through a dual block that positions DHODH inhibitors as a synthetic-lethality strategy in SDH-deficient cells.
@@ -230,6 +231,54 @@ DENSPM (N1,N11-diethylnorspermine) selectively kills SDHB-deficient cells by mas
 Eflornithine (α-difluoromethylornithine) is a mechanism-based irreversible suicide inhibitor of ODC1: it is decarboxylated as a substrate mimic and generates a reactive electrophile that permanently modifies the active-site Cys360, irreversibly inactivating ODC1. FDA-approved as Iwilfin for maintenance therapy of high-risk neuroblastoma (November 2023, based on COG ANBL1232/SIOPEN trials) — validating the tolerability of long-term systemic ODC1 inhibition in a cancer maintenance setting. No SDH-specific eflornithine experimental data has been published; this remains a mechanistically motivated theoretical candidate requiring validation in SDHB-KO or SDHA-null cell lines, ideally alongside DENSPM combination experiments.
 
 **Key limitation:** The mechanism by which SDH loss elevates polyamine levels is not yet fully resolved. The DENSPM-SDH connection (PMID 42249664) is direct experimental evidence; the eflornithine-SDH connection is a mechanistic extension from the same biology. No published data tests eflornithine in any SDH-deficient model.
+
+### 22. Complex I OXPHOS Bottleneck — Selective ETC Shutdown in SDH-Deficient Cells; IACS-010759
+
+The preceding mechanisms establish that SDH-deficient cells operate under a profoundly altered electron transport chain (ETC) topology. Mechanism 1 established pseudohypoxia from succinate-driven PHD inhibition. Mechanism 17 established that succinate-mediated ATCase inhibition suppresses pyrimidine synthesis at the committed step. Mechanism 22 identifies a third, complementary consequence: the absence of Complex II fundamentally changes how the mitochondrial CoQ pool is populated — and creates a unique vulnerability to Complex I inhibition that is not present in SDH-intact cells.
+
+**The ETC topology in SDH-deficient cells:**
+The mitochondrial CoQ (ubiquinone) pool receives electrons from three main sources in normal cells:
+- **Complex I** (NADH:ubiquinone oxidoreductase): oxidizes NADH to NAD⁺, reducing CoQ to CoQH₂ — the largest contributor (~40% of total proton pumping and a major CoQ electron source)
+- **Complex II** (succinate dehydrogenase, SDH): oxidizes succinate to fumarate, reducing CoQ to CoQH₂ — **absent in all SDH-deficient tumours**
+- **Electron transfer flavoprotein (ETF/ETFDH)**: accepts electrons from fatty acid β-oxidation and amino acid catabolism, reducing CoQ to CoQH₂ — suppressed in pseudohypoxic SDH-deficient tumours (see below)
+
+CoQH₂ is re-oxidised by Complex III (cytochrome bc₁ complex), which pumps protons and passes electrons to cytochrome c → Complex IV → oxygen, sustaining the mitochondrial membrane potential (ΔΨm) and ATP synthesis.
+
+In SDH-deficient tumours:
+1. Complex II is absent — no succinate-driven CoQ reduction
+2. HIF-1α/2α stabilisation (via succinate-mediated PHD inhibition, Mechanism 1) drives PDHK1 (pyruvate dehydrogenase kinase 1) induction, suppressing pyruvate entry into the TCA cycle; simultaneously, HIF-1α suppresses CPT1A (carnitine palmitoyltransferase 1A, the rate-limiting transporter for long-chain fatty acid mitochondrial import), profoundly reducing fatty acid β-oxidation flux (Papandreou et al., Cell Metab 2006, PMID 16740476). This minimises ETF electron supply to CoQ
+3. The net result: **Complex I is the sole remaining significant electron donor to CoQ**
+
+**Why Complex I inhibition is selectively more lethal in SDH-deficient cells:**
+In **SDH-intact cells** treated with a Complex I inhibitor (e.g. IACS-010759, rotenone, metformin):
+- Complex II still provides electrons to CoQ (succinate → CoQH₂)
+- CoQH₂ → Complex III proton pumping → ΔΨm maintenance
+- OXPHOS is reduced but partially preserved
+- Cells compensate via glycolysis
+
+In **SDH-deficient cells** treated with IACS-010759:
+- Complex I blocked → no NADH → CoQ reduction
+- Complex II absent → no succinate → CoQ reduction
+- ETF suppressed by HIF → no FAO electrons to CoQ
+- **Zero electrons reach CoQ**: CoQ pool cannot be reduced; no substrate for Complex III
+- Complex III, IV stop → **complete ΔΨm collapse**
+- ATP synthesis (Complex V) fails completely
+- NADH accumulates, NAD⁺ is depleted → **glycolysis impaired** (GAPDH requires NAD⁺) and aspartate synthesis fails (Birsoy et al., Cell 2015, PMID 26232224: ETC-impaired cells have absolute NAD⁺ dependency for aspartate and proliferation)
+
+This "bottleneck amplification" means the same drug produces total ETC collapse in SDH-deficient cells but only partial disruption in SDH-intact cells — a selectivity window analogous in principle to the BRCAness direction (Mechanism 14) but operating through OXPHOS geometry rather than DNA repair.
+
+**Cascading effect on pyrimidine synthesis (compounding Mechanism 17):**
+SDH loss already partially suppresses de novo pyrimidine synthesis via two mechanisms (Mechanism 17): (1) aspartate depletion from TCA truncation; (2) direct succinate inhibition of ATCase (step 2). IACS-010759 adds a third impairment via the ETC. DHODH (dihydroorotate dehydrogenase, step 4) is a mitochondrial inner-membrane enzyme that oxidises dihydroorotate using oxidised CoQ as the electron acceptor (dihydroorotate + CoQ → orotate + CoQH₂). CoQH₂ must be re-oxidised by Complex III for DHODH to continue working. When Complex I is blocked and ΔΨm collapses, Complex III activity slows → CoQH₂ accumulates → the oxidised CoQ substrate for DHODH becomes limiting → DHODH activity falls → pyrimidine synthesis step 4 fails.
+
+The resulting effect in SDH-deficient cells treated with IACS-010759: ATCase block (succinate inhibition, Mechanism 17) + NAD⁺ depletion (Complex I block) + DHODH failure (ΔΨm collapse) = triple-hit pyrimidine synthesis collapse, achieved via a single Complex I inhibitor. This is mechanistically distinct from and non-overlapping with the direct DHODH inhibitors (brequinar, teriflunomide) already in the engine: those agents act on the DHODH enzyme directly; IACS-010759 removes DHODH's CoQ electron-acceptor substrate indirectly via ETC topology.
+
+**IACS-010759 — Clinical Candidate:**
+IACS-010759 (developed at the Institute for Applied Cancer Science, MD Anderson Cancer Center) is a potent, selective, orally bioavailable Complex I inhibitor (Ki ~1.2 nM against the enzyme's proton-translocating arm; rotenone-class binding site at ND1/ND6 transmembrane subunits). Phase 1 dose-escalation study in relapsed/refractory AML and advanced solid tumours (Molina et al., Nat Med 2018, PMID 29892061; NCT03291938) established pharmacokinetics, pharmacodynamic target engagement (plasma lactate rise as on-target Complex I inhibition biomarker), and early anti-tumour signals. Dose-limiting toxicities included Grade 3 lactic acidosis (on-target consequence of widespread glycolysis/OXPHOS switching) and fatigue; manageable with careful dose selection and lactate monitoring. The lactic acidosis risk will also apply in SDH-deficient patients and mandates careful dose titration.
+
+**Distinction from metformin (already in engine):**
+Metformin is a weak, non-selective Complex I inhibitor at clinical concentrations (mM range in plasma; primary oncological mechanisms are AMPK activation and mTORC1 inhibition); it is listed in the engine under `mtor-pi3k-akt` and `oxidative-stress-ros`. The bottleneck amplification argument requires potent, near-complete Complex I blockade — the specific nanomolar-affinity, cancer-targeted approach of IACS-010759 — not the mild partial inhibition achieved by metformin. The mechanism and drug entry here are therefore genuinely non-redundant with metformin.
+
+**Key limitation:** No published SDH-deficient-specific data for IACS-010759 or any potent selective Complex I inhibitor in SDHA-null GIST, SDHB-KO chromaffin, or patient-derived SDH-deficient PPGL models. Two open questions must be answered before clinical translation: (1) Do SDH-deficient tumours in vivo sufficiently suppress FAO/ETF to confirm the bottleneck topology? (2) What is the therapeutic window given systemic Complex I inhibition causes lactic acidosis? Validation in SDHB-KO hPheo1 cells and SDHA-null GIST cell models is the immediate next experimental step.
 
 ## Important Context for Drug Repurposing
 

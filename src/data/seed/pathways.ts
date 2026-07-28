@@ -334,4 +334,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 20,
   },
+  {
+    name: "Complex I OXPHOS Bottleneck",
+    slug: "complex-i-oxphos-bottleneck",
+    description:
+      "In SDH-deficient cells, the absence of Complex II (SDH) removes one of the primary electron-donation routes to the mitochondrial CoQ pool. Complex I (NADH:ubiquinone oxidoreductase) becomes the sole remaining major electron supplier to CoQ, converting NADH to NAD⁺ and reducing CoQ to CoQH₂. HIF-1α activation (driven by pseudohypoxia) further suppresses fatty acid β-oxidation (by inducing PDHK1 and suppressing CPT1A), minimising the electron-transfer flavoprotein (ETF) contribution. This creates a critical ETC bottleneck: blocking Complex I in SDH-deficient cells eliminates ALL electron flow to the CoQ pool, causing complete electron transport chain shutdown, mitochondrial membrane potential (ΔΨm) collapse, NAD⁺ depletion, and ATP loss — effects far more severe than the same inhibition in SDH-intact cells, where Complex II can continue to supply electrons to CoQ and sustain partial OXPHOS and ΔΨm.",
+    upstream_event:
+      "SDH loss (Complex II absent) + HIF-1α → CPT1A suppression (FAO minimised) → Complex I as sole electron donor to CoQ pool",
+    downstream_effects: [
+      "Complex I is the sole electron entry point to CoQ in SDH-deficient cells",
+      "Complex I inhibition causes complete ETC electron flow cessation (vs. partial disruption in SDH-intact cells where Complex II compensates)",
+      "Mitochondrial membrane potential (ΔΨm) collapse → OXPHOS failure",
+      "NAD⁺ depletion (NADH cannot be oxidised) → glycolytic impairment (GAPDH requires NAD⁺) and aspartate synthesis failure",
+      "Cascading DHODH impairment: ΔΨm collapse → Complex III slow-down → CoQH₂ accumulates → DHODH (step 4, pyrimidine synthesis) lacks oxidised CoQ substrate → compounds the pre-existing Mechanism 17 pyrimidine synthesis vulnerability",
+    ],
+    druggable: true,
+    display_order: 21,
+  },
 ];
