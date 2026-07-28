@@ -208,6 +208,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Rate-limiting enzyme of polyamine catabolism and the principal intracellular target induced by polyamine analogues including DENSPM. SAT1 acetylates spermidine and spermine, targeting them for export or oxidation by polyamine oxidase (PAOX), thereby depleting intracellular polyamine pools. Elevated SSAT/SAT1 activity in response to DENSPM treatment drives further ROS generation via SMOX, creating a toxic cycle in SDH-deficient cells already under oxidative stress.",
   },
   {
+    gene_symbol: "ODC1",
+    name: "Ornithine decarboxylase 1",
+    uniprot_id: "P11926",
+    pathway_slug: "polyamine-metabolism",
+    target_type: "metabolic",
+    description:
+      "Rate-limiting enzyme of polyamine biosynthesis, catalyzing the decarboxylation of ornithine to putrescine — the obligate precursor for spermidine and spermine. Eflornithine (DFMO) is a mechanism-based irreversible suicide inhibitor of ODC1: it is decarboxylated as a substrate mimic and generates a reactive electrophile that permanently modifies the active-site Cys360, permanently inactivating the enzyme. Polyamine levels (spermidine, spermine) are significantly elevated in SDHx-mutated PCC/PGL tissue and SDHB-knockdown cells versus wild-type counterparts (Rai et al., Metabolism 2020, PMID 32562798), implicating the ODC1-driven synthesis pathway as upregulated by SDH loss. ODC1 inhibition with eflornithine prevents replenishment of the polyamine pools depleted by SAT1/SSAT-mediated catabolism (the mechanism of DENSPM), making ODC1 the synthesis-side complement to SAT1 in a combined polyamine depletion strategy.",
+  },
+  {
     gene_symbol: "SLC16A1",
     name: "Monocarboxylate transporter 1 (MCT1)",
     uniprot_id: "P53985",

@@ -575,4 +575,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 33,
     status: "preclinical",
   },
+  {
+    name: "Eflornithine (DFMO)",
+    brand_names: ["Iwilfin", "Ornidyl"],
+    chembl_id: "CHEMBL1023",
+    pubchem_cid: "3009",
+    drug_class:
+      "ODC1 inhibitor (ornithine decarboxylase inhibitor / polyamine synthesis inhibitor)",
+    mechanism_of_action:
+      "Eflornithine (α-difluoromethylornithine, DFMO) is a mechanism-based irreversible suicide inhibitor of ornithine decarboxylase 1 (ODC1), the rate-limiting enzyme of polyamine biosynthesis. ODC1 catalyzes the decarboxylation of ornithine to putrescine, the obligate precursor for spermidine and spermine. Eflornithine mimics ornithine as a substrate, is decarboxylated by ODC1, and generates a reactive electrophilic species that covalently modifies the active-site Cys360 residue, permanently inactivating the enzyme — collapsing polyamine biosynthetic flux irreversibly.\n\nThe rationale in SDH-deficient tumors follows directly from the established polyamine pathway upregulation driven by SDH loss. Rai et al. (Metabolism 2020, PMID 32562798) demonstrated that spermidine and spermine are significantly elevated in SDHx-mutated PCC/PGL tissue versus wild-type counterparts and that SDHB knockdown in chromaffin cells replicates this elevation — establishing that SDH loss drives polyamine synthesis upregulation as part of its metabolic reprogramming. This creates an ODC1-dependent vulnerability: when SDH-deficient cells require abnormally high polyamine levels to sustain their growth program, blocking de novo synthesis at the ODC1 entry point should deplete these elevated pools below the threshold needed for proliferation.\n\nThe critical mechanistic complement is DENSPM (already in this engine): DENSPM selectively kills SDHB-deficient cells by massively inducing SAT1/SSAT, the polyamine acetyltransferase that back-converts spermidine/spermine to putrescine, generating cytotoxic H₂O₂ via SMOX. However, SAT1-mediated catabolism depletes existing spermidine/spermine pools while ODC1-driven synthesis can partially replenish them. Eflornithine blocks this replenishment at the biosynthetic entry point: DENSPM forces catabolism of elevated pools (depletion from above); DFMO prevents resynthesis (blockade from below). A DENSPM + DFMO combination would impose a dual depletion pressure on the same elevated polyamine levels created by SDH loss — a synergistic strategy with mechanistic logic.\n\nClinical context: Eflornithine is FDA-approved as Iwilfin for maintenance therapy of high-risk neuroblastoma (approved November 2023; based on the COG ANBL1232 and European SIOPEN randomized trials demonstrating improved event-free survival). The neuroblastoma indication validates long-term systemic ODC1 inhibition in a cancer maintenance setting, with an established tolerability profile at 1000 mg/m² twice daily; most adverse events are Grade 1–2 (predominantly GI: nausea, diarrhea). The second approval (Ornidyl, intravenous) is for West African sleeping sickness, where parasite ODC1 is selectively inhibited. Both approvals confirm the safety profile for chronic ODC1 inhibition.\n\nKey limitation: No SDH-specific eflornithine experimental data exists. The evidence_score of 23 (theoretical) reflects a strong mechanistic rationale — SDH loss → polyamine elevation → ODC1-dependent synthesis upregulation — combined with the complete absence of direct SDH-deficient preclinical data. Validation in SDHB-KO or SDHA-null cell lines, alone and in combination with DENSPM, is the required next step.",
+    fda_approved: true,
+    approved_indications: [
+      "High-risk neuroblastoma maintenance therapy (after dinutuximab + isotretinoin; FDA-approved as Iwilfin, November 2023; based on COG ANBL1232/SIOPEN trials)",
+      "West African sleeping sickness (Trypanosoma brucei gambiense; as Ornidyl, intravenous)",
+    ],
+    pathway_slugs: ["polyamine-metabolism"],
+    target_gene_symbols: ["ODC1"],
+    evidence_score: 23,
+    status: "theoretical",
+  },
 ];
