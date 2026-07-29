@@ -41,4 +41,8 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "atrx-alt-replication-stress": "bg-stone-100 text-stone-800 dark:bg-stone-900 dark:text-stone-200",
   "polyamine-metabolism": "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
   "succinate-immune-evasion": "bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200",
+  "pyrimidine-synthesis-vulnerability": "bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-200",
+  "polq-tmej-backup-repair": "bg-zinc-100 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200",
+  "sstr2-somatostatin-vulnerability": "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+  "hif-met-axl-signaling": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
 };

@@ -141,3 +141,12 @@ Added: (1) ODC1 as a new metabolic target in `targets.ts` (pathway_slug `polyami
 
 Key limitation: No SDH-specific eflornithine experimental data exists. Evidence_score 23 reflects the strong mechanistic rationale combined with the absence of direct SDH-deficient preclinical validation. Required next step: test eflornithine in SDHB-KO or SDHA-null cell lines, alone and in combination with DENSPM. Candidate directions still unexplored: (1) IACS-010759 / mitochondrial Complex I dependency (uncertain whether SDH-deficient tumors are sufficiently OXPHOS-dependent), (2) MTHFD2 / one-carbon folate-cycle / serine dependency (no SDH-specific data).
 **PR:** morning/2026-07-27-dfmo-polyamine-synthesis
+
+## 2026-07-29
+
+**Direction:** other
+**Angle:** UI quality — missing pathway color mappings for 4 pathways added in runs 2026-07-22 through 2026-07-26
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all 14 PMIDs returned across 6 PubMed queries already present in tracker.md; this is the third consecutive run with no new papers reaching the scan stage)
+**Summary:** Full PubMed scan (6 queries covering SDH-deficient GIST, PPGL, RCC, pituitary, synthetic lethality, and drug repurposing angles, date-limited Apr 29 – Jul 29 2026) returned 14 unique PMIDs, all already logged in tracker.md. No papers evaluated, none added. For Part B: identified that `src/lib/scoring/constants.ts` was missing PATHWAY_COLORS entries for four pathways added in the 2026-07-22 through 2026-07-26 runs — `pyrimidine-synthesis-vulnerability`, `polq-tmej-backup-repair`, `sstr2-somatostatin-vulnerability`, and `hif-met-axl-signaling`. These fell back to generic gray in every component using `PATHWAY_COLORS[slug] || "bg-gray-100 text-gray-800"`, degrading the color-coded pathway badge system that distinguishes mechanism categories at a glance. Added the four missing color assignments (fuchsia, zinc, amber, green respectively). No new drugs or mechanisms were added: the remaining unexplored drug directions (IACS-010759/Complex I — uncertainty documented; MTHFD2/one-carbon — no SDH-specific data) do not clear the relevance gate.
+**PR:** #<TBD>
