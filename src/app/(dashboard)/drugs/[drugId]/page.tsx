@@ -9,6 +9,8 @@ import { SEED_PATHWAYS } from "@/data/seed/pathways";
 import {
   STATUS_COLORS,
   PATHWAY_COLORS,
+  TUMOR_TYPE_COLORS,
+  TUMOR_TYPE_LABELS,
 } from "@/lib/scoring/constants";
 import { cn } from "@/lib/utils";
 import {
@@ -224,6 +226,27 @@ export default async function DrugDetailPage({
               <CardTitle className="text-base">Quick Facts</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
+              <div>
+                <p className="text-xs font-medium text-muted-foreground mb-1">
+                  Tumor Type Applicability
+                </p>
+                <div className="flex flex-wrap gap-1">
+                  {drug.tumor_type_applicability.map((type) => (
+                    <span
+                      key={type}
+                      className={cn(
+                        "rounded-full px-2 py-0.5 text-[10px] font-medium",
+                        TUMOR_TYPE_COLORS[type] || "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+                      )}
+                    >
+                      {TUMOR_TYPE_LABELS[type] ?? type}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <Separator />
+
               <div className="flex items-center gap-2">
                 {drug.fda_approved ? (
                   <CheckCircle2 className="h-4 w-4 text-green-500" />
