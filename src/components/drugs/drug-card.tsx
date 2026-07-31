@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { STATUS_COLORS, PATHWAY_COLORS } from "@/lib/scoring/constants";
+import { STATUS_COLORS, PATHWAY_COLORS, TUMOR_TYPE_COLORS, TUMOR_TYPE_LABELS } from "@/lib/scoring/constants";
 import { cn } from "@/lib/utils";
 import type { SeedDrug } from "@/data/seed/drugs";
 
@@ -76,6 +76,20 @@ export function DrugCard({
                 {slug
                   .replace(/-/g, " ")
                   .replace(/\b\w/g, (c) => c.toUpperCase())}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-1">
+            {drug.tumor_type_applicability.map((type) => (
+              <span
+                key={type}
+                className={cn(
+                  "rounded-full px-2 py-0.5 text-[10px] font-medium",
+                  TUMOR_TYPE_COLORS[type] || "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200"
+                )}
+              >
+                {TUMOR_TYPE_LABELS[type] ?? type}
               </span>
             ))}
           </div>

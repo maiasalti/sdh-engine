@@ -35,6 +35,7 @@ export type Drug = {
   pathway_ids: string[];
   evidence_score: number;
   status: "established" | "preclinical" | "clinical_trial" | "theoretical";
+  tumor_type_applicability: string[];
 };
 
 export type Evidence = {

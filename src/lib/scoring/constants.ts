@@ -23,6 +23,24 @@ export const STATUS_COLORS: Record<string, string> = {
   theoretical: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
 };
 
+/** Human-readable labels for tumor type applicability values */
+export const TUMOR_TYPE_LABELS: Record<string, string> = {
+  gist: "GIST",
+  ppgl: "PPGL/PCC",
+  "ppgl:atrx": "PPGL (ATRX+)",
+  rcc: "RCC",
+  all: "All SDH tumors",
+};
+
+/** Color mapping for tumor type applicability badges */
+export const TUMOR_TYPE_COLORS: Record<string, string> = {
+  gist: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
+  ppgl: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+  "ppgl:atrx": "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
+  rcc: "bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200",
+  all: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
+};
+
 /** Color mapping for pathway badges */
 export const PATHWAY_COLORS: Record<string, string> = {
   "hif-pseudohypoxia": "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
