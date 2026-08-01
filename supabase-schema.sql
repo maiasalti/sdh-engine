@@ -44,6 +44,7 @@ CREATE TABLE drugs (
   evidence_score INTEGER NOT NULL DEFAULT 0,
   status TEXT NOT NULL CHECK (status IN ('established', 'preclinical', 'clinical_trial', 'theoretical')),
   tumor_type_applicability TEXT[] NOT NULL DEFAULT '{}',
+  clinical_trial_ids TEXT[] NOT NULL DEFAULT '{}',
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );

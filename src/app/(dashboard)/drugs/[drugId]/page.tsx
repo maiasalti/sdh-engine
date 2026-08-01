@@ -299,6 +299,29 @@ export default async function DrugDetailPage({
             </CardContent>
           </Card>
 
+          {/* Clinical Trials */}
+          {drug.clinical_trial_ids && drug.clinical_trial_ids.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">Clinical Trials</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                {drug.clinical_trial_ids.map((nctId) => (
+                  <a
+                    key={nctId}
+                    href={`https://clinicaltrials.gov/study/${nctId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-xs hover:bg-muted/50 transition-colors"
+                  >
+                    <span className="font-mono">{nctId}</span>
+                    <ExternalLink className="h-3 w-3 text-muted-foreground" />
+                  </a>
+                ))}
+              </CardContent>
+            </Card>
+          )}
+
           {/* Evidence placeholder */}
           <Card>
             <CardHeader>
