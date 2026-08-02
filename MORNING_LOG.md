@@ -178,3 +178,16 @@ Changes: (1) tazemetostat MoA — PMIDs corrected (23862161→23707781; 23575604
 
 Candidate directions still unexplored: (1) IACS-010759 / Complex I — definitively ruled out (Sokolov preprint, PMID 42239110); (2) MTHFD2 / one-carbon — no SDH-specific data, no clinical-stage inhibitors.
 **PR:** morning/2026-07-31-cimp-evidence-upgrade
+
+## 2026-08-01
+
+**Direction:** schema/metadata
+**Angle:** Structured clinical trial IDs — add `clinical_trial_ids: string[]` to all 35 drug entries, enabling direct ClinicalTrials.gov navigation from the engine
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 6 (PMIDs 42503923, 41704168, 42011694, 42313274, 42355631, 42309573)
+**Summary:** PubMed scan across standard SDH-deficient tumor search angles (GIST, PPGL, RCC, pituitary, SDH+metabolism, belzutifan, hereditary PGL/PCC, WT GIST; date-limited May–August 2026) returned 6 new PMIDs not yet in tracker.md; all 6 rejected: one Chinese-language pediatric PPGL genetics paper (42503923), one MEN2A/RET case report with no SDH content (41704168), one pheochromocytoma surgical technique review (42011694), one VHL disease review (belzutifan already in engine; 42313274), one head-and-neck PGL surgical case report with no confirmed SDH mutation (42355631), and one APC-mutation pheochromocytoma case report (42309573). No papers added.
+
+For Part B: implemented structured `clinical_trial_ids: string[]` field across the full drug schema. Previously, NCT IDs were buried in free-text `mechanism_of_action` prose — making them invisible to any filtering or direct navigation. The new field surfaces verified NCT references as machine-readable structured data. Changes made: (1) `src/types/domain.ts` — added `clinical_trial_ids?: string[]` to the Drug type; (2) `src/data/seed/drugs.ts` — added `clinical_trial_ids: string[]` to SeedDrug type and populated all 35 entries; (3) `supabase-schema.sql` — added `clinical_trial_ids TEXT[] NOT NULL DEFAULT '{}'` column to the drugs table; (4) drug detail page (`[drugId]/page.tsx`) — Clinical Trials card in the Quick Facts sidebar, listing each NCT ID as a clickable link to `https://clinicaltrials.gov/study/NCTxxxxxxx`; (5) `drug-card.tsx` — compact trial count badge (e.g. "2 trials") shown alongside the FDA Approved badge when `clinical_trial_ids` is non-empty. NCT IDs were included only when directly cited in the existing `mechanism_of_action` text for that drug; no NCT IDs were invented or inferred. 14 of 35 drugs received at least one NCT ID; 21 receive empty arrays pending future verification. Drugs with IDs: Tazemetostat (NCT03213665), Hydroxychloroquine (NCT03283150, NCT01023737), Daporinad (NCT00432107), Rogaratinib (NCT04595747), AZD3965 (NCT01791595), Epacadostat (NCT02318277), Birabresib (NCT01713582), Denifanstat (NCT02980029, NCT04341337), Brequinar (NCT01888484), Teriflunomide (NCT02799498), Ym155 (NCT00390117), 177Lu-DOTATATE (NCT01578239), Cabozantinib (NCT02302833, NCT04400474), Ceralasertib (NCT03787680).
+
+Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint 2026-07-30).
+**PR:** morning/2026-08-01-nct-linkage

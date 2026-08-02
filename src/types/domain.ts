@@ -36,6 +36,7 @@ export type Drug = {
   evidence_score: number;
   status: "established" | "preclinical" | "clinical_trial" | "theoretical";
   tumor_type_applicability: string[];
+  clinical_trial_ids?: string[];
 };
 
 export type Evidence = {

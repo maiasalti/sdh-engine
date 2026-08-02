@@ -101,11 +101,18 @@ export function DrugCard({
             <ScoreBar score={drug.evidence_score} />
           </div>
 
-          {drug.fda_approved && (
-            <Badge variant="outline" className="text-[10px] border-green-500 text-green-500">
-              FDA Approved
-            </Badge>
-          )}
+          <div className="flex items-center gap-2">
+            {drug.fda_approved && (
+              <Badge variant="outline" className="text-[10px] border-green-500 text-green-500">
+                FDA Approved
+              </Badge>
+            )}
+            {drug.clinical_trial_ids && drug.clinical_trial_ids.length > 0 && (
+              <Badge variant="outline" className="text-[10px] border-blue-400 text-blue-500 dark:text-blue-400">
+                {drug.clinical_trial_ids.length} trial{drug.clinical_trial_ids.length > 1 ? "s" : ""}
+              </Badge>
+            )}
+          </div>
         </CardContent>
       </Card>
     </Link>
