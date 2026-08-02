@@ -342,4 +342,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "TAM (TYRO3/AXL/MERTK) family receptor tyrosine kinase activated by the ligand GAS6. AXL is upregulated in pseudohypoxic and immunosuppressive tumor microenvironments downstream of HIF-1α stabilization. AXL signaling promotes tumor cell survival, epithelial-to-mesenchymal transition (EMT), metastasis, and innate immune evasion. In SDH-deficient tumors, constitutive pseudohypoxia creates conditions that elevate AXL expression. AXL is co-inhibited by cabozantinib alongside VEGFR2 and MET, contributing to the drug's multi-pronged activity against the HIF-driven receptor tyrosine kinase landscape in these tumors.",
   },
+  {
+    gene_symbol: "CD274",
+    name: "Programmed death-ligand 1 (PD-L1 / B7-H1)",
+    uniprot_id: "Q9NZQ7",
+    pathway_slug: "hif-pdl1-checkpoint-evasion",
+    target_type: "downstream",
+    description:
+      "Type I transmembrane protein and ligand of PD-1 (PDCD1). CD274 promoter contains canonical hypoxia-response elements (HREs) directly activated by HIF-1α, making PD-L1 a transcriptional output of the pseudohypoxic program constitutively active in SDH-deficient tumors. Noman et al. (J Exp Med 2014, PMID 24493797) demonstrated that hypoxia, via HIF-1α, drives PD-L1 expression on tumor cells and that PD-L1 upregulation mediates immune evasion in hypoxic tumor microenvironments. In SDH-deficient tumors, constitutive HIF-1α stabilization via succinate-mediated PHD inhibition creates a persistent pseudohypoxic state that continuously drives CD274 transcription. This HIF-driven PD-L1 expression enables tumor cells to engage PD-1 on cytotoxic T cells and suppress anti-tumor immunity — a second immune-evasion mechanism complementary to the succinate-MCT1 and HIF-IDO1 arms (Mechanism 11). Blocked by PD-1 antibodies (pembrolizumab, nivolumab) which prevent PD-L1/PD-1 engagement.",
+  },
 ];

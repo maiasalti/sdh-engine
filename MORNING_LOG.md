@@ -191,3 +191,20 @@ For Part B: implemented structured `clinical_trial_ids: string[]` field across t
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint 2026-07-30).
 **PR:** morning/2026-08-01-nct-linkage
+
+## 2026-08-02
+
+**Direction:** immune evasion / checkpoint
+**Angle:** HIF-1α-driven PD-L1/checkpoint immune evasion — add pembrolizumab as a new drug candidate in a new `hif-pdl1-checkpoint-evasion` pathway
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 6 (PMIDs 42371006, 42414254, 42417917, 42168872, 41772163, 41707742)
+**Summary:** PubMed scan across SDH-deficient tumor search angles (GIST, PPGL/PCC, RCC, pituitary, SDH+immunity/immune evasion/checkpoint, belzutifan, SDH+metabolism; date window May–August 2026) returned 6 new PMIDs not yet in tracker.md; all 6 rejected: PMID 42371006 (MSI-H/MMRd GIST case with retained SDH expression — SDH-deficient mentioned only as differential), PMID 42414254 (lactate/H3K4me3/PLOD1 in prostate cancer — off-panel tumor type), PMID 42417917 (DNMT3A/TET2 in Type 1 diabetes hematopoiesis — not cancer), PMID 42168872 (cladribine vs. Klebsiella — SDH in bacteria, not cancer), PMID 41772163 (X-ray pre-irradiation + phenolic acids on K562/Dox — no SDH content), PMID 41707742 (EZH2/SDHC in acute kidney injury — AKI non-oncological context). No papers cleared the relevance gate.
+
+For Part B: implemented the HIF-1α → PD-L1 checkpoint immune evasion pathway as a genuinely new direction — the first checkpoint immunology mechanism in the engine, and a mechanistically distinct second arm of immune evasion complementary to the succinate-MCT1-IDO1 axis (Mechanism 11 / AZD3965 + epacadostat entries). The mechanistic anchor is Noman et al. (J Exp Med 2014, PMID 24493797), who demonstrated that HIF-1α directly binds hypoxia-response elements (HREs) in the CD274 promoter to transcriptionally activate PD-L1 on tumor cells — and that this HIF-driven PD-L1 expression is the primary mechanism of immune evasion in hypoxic tumor microenvironments. In SDH-deficient tumors, succinate-mediated PHD inhibition constitutively stabilizes HIF-1α regardless of oxygen, creating a persistent pseudohypoxic state that continuously drives CD274 transcription. The clinical anchors are NCT02721732 (Phase 2 pembrolizumab in rare tumors including metastatic PCC and PGL; n=157; M.D. Anderson) and NCT02834013 (DART: Phase 2 nivolumab+ipilimumab in rare tumors including explicit GIST and paraganglioma cohorts; n=798; NCI) — the latter spanning both major SDH-deficient tumor types.
+
+Changes made: (1) `src/data/seed/pathways.ts` — new pathway `hif-pdl1-checkpoint-evasion` (display_order 21); (2) `src/data/seed/targets.ts` — new target CD274 (PD-L1/B7-H1, UniProt Q9NZQ7, target_type downstream, pathway_slug hif-pdl1-checkpoint-evasion); (3) `src/data/seed/drugs.ts` — new drug pembrolizumab (Keytruda; anti-PD-1 mAb; evidence_score 32; status theoretical; pathway_slugs ["hif-pdl1-checkpoint-evasion", "succinate-immune-evasion"]; target_gene_symbols ["CD274"]; tumor_type_applicability ["all"]; clinical_trial_ids ["NCT02721732", "NCT02834013"]); (4) `src/data/seed/sdh-biology.ts` — new row in druggable targets table and Mechanism 22 detailed section (HIF-Driven PD-L1 / Checkpoint Immune Evasion).
+
+Evidence_score rationale: 32 (theoretical) — HIF-1α → CD274 mechanism well-established in hypoxia literature (PMID 24493797); pseudohypoxia = constitutive HIF-1α in SDH-deficient tumors is established biology; clinical trial activity in GIST and PPGL confirmed; no SDH-genotype-stratified outcome data reported.
+
+Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
+**PR:** morning/2026-08-02-hif-pdl1-checkpoint

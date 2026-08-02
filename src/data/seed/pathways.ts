@@ -334,4 +334,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 20,
   },
+  {
+    name: "HIF-Driven PD-L1 / Checkpoint Immune Evasion",
+    slug: "hif-pdl1-checkpoint-evasion",
+    description:
+      "Constitutive HIF-1α stabilization in SDH-deficient tumors (via succinate-mediated PHD inhibition) directly transcriptionally activates CD274 (PD-L1/B7-H1) via canonical hypoxia-response elements in the CD274 promoter. Tumor-surface PD-L1 engages PD-1 receptors on infiltrating cytotoxic T cells, triggering functional exhaustion and suppressing anti-tumor immunity. This is a second, HIF-driven immune-evasion arm that operates in parallel to the succinate-MCT1-IDO1 axis: both converge on T-cell suppression in the SDH-deficient tumor microenvironment. Blocking PD-1 with checkpoint inhibitors (pembrolizumab, nivolumab) restores T-cell effector function and is under clinical evaluation in GIST and paraganglioma.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → HIF-1α stabilization → HRE-driven CD274 transcription → tumor-surface PD-L1 → PD-1 ligation on T cells → T-cell exhaustion",
+    downstream_effects: [
+      "CD274 (PD-L1) upregulation on tumor cells via HIF-1α-driven HRE transcription",
+      "PD-1/PD-L1 ligation suppresses CD8+ T-cell cytotoxicity and IFN-γ secretion",
+      "Immunosuppressive tumor microenvironment synergistic with succinate-MCT1 and IDO1 arms",
+      "Anti-PD-1 checkpoint blockade (pembrolizumab, nivolumab) restores T-cell effector function",
+      "Clinical evaluation ongoing in GIST (NCT02834013 DART) and PPGL (NCT02721732, NCT02834013)",
+    ],
+    druggable: true,
+    display_order: 21,
+  },
 ];
