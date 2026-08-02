@@ -162,6 +162,23 @@ Key limitation: No SDH-specific eflornithine experimental data exists. Evidence_
 For Part B: implemented `tumor_type_applicability` metadata across the drug schema — a data quality improvement rather than a new drug. The current UI shows all 35 drugs with no indication of which apply to GIST vs. PPGL vs. RCC; drugs like 177Lu-DOTATATE, AZD3965, epacadostat, DENSPM, eflornithine, ceralasertib, and pevonedistat are anchored entirely or primarily in PPGL biology, while rogaratinib, erdafitinib, and birabresib are GIST-specific. Added `tumor_type_applicability: string[]` to the Drug domain type, drugs table (supabase-schema.sql), and all 35 SeedDrug entries. Added `TUMOR_TYPE_LABELS` and `TUMOR_TYPE_COLORS` to scoring/constants.ts. Updated DrugCard to show compact tumor type pills below pathway badges; updated the drug detail page to surface tumor type badges at the top of the Quick Facts sidebar. Classification: 19 drugs as `["all"]`; 3 as `["gist"]` (rogaratinib, erdafitinib, birabresib); 9 as `["ppgl"]` (bevacizumab, temozolomide, ascorbic acid, DENSPM, AZD3965, epacadostat, pevonedistat, 177Lu-DOTATATE, eflornithine); 1 as `["ppgl:atrx"]` (ceralasertib); 1 as `["gist","rcc"]` (regorafenib); 1 as `["ppgl","rcc"]` (cabozantinib); 1 as `["gist","ppgl","rcc"]` (sunitinib). Candidate directions still unexplored: (1) IACS-010759 / Complex I dependency — now definitively ruled out by Sokolov preprint PMID 42239110 showing Complex I suppression as an adaptive response to SDH loss; (2) MTHFD2 / one-carbon metabolism (no SDH-specific data, no clinical-stage inhibitors).
 **PR:** morning/2026-07-30-tumor-type-applicability
 
+## 2026-07-31
+
+**Direction:** scoring / citation-correction
+**Angle:** Fix wrong PMID citations in tazemetostat; upgrade azacitidine (52→58) and decitabine (50→62) evidence scores with the foundational CIMP papers (Letouzé 2013, Killian 2013)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all PMIDs returned across 7 PubMed queries — SDH GIST, SDH PPGL/PCC, SDH RCC, SDH pituitary, SDH epigenetics + CIMP, SDH DNMT inhibitors, SDH synthetic lethality — already present in tracker.md; fourth consecutive run with no new papers)
+**Summary:** PubMed scan across 7 queries (date window 2026-04-30 to 2026-07-31) returned 0 new PMIDs. Every result was already in tracker.md.
+
+Reviewing drugs.ts to pick a Part B direction, a data-quality bug was found: the tazemetostat `mechanism_of_action` field cited two wrong PMIDs — "Letouzé et al., Cancer Cell 2013, PMID: 23862161" (actually a biomechanics paper, Iosa M et al., Biomed Res Int 2013) and "Killian et al., Cancer Discov 2013, PMID: 23575604" (actually a pediatric neurology paper, Schor NF, Ann Neurol 2013). Verified correct PMIDs via PubMed: Letouzé et al. = PMID 23707781 (DOI: 10.1016/j.ccr.2013.04.018); Killian et al. = PMID 23550148 (DOI: 10.1158/2159-8290.CD-13-0092). Corrected both.
+
+The same two papers were also absent — not just miscited — from the azacitidine and decitabine entries, which carried placeholder MoA text with no SDH-specific citations and unwarranted low scores. The Letouzé 2013 paper is specifically relevant to decitabine: it demonstrated that succinate accumulation in SDHB-deficient mouse chromaffin cells established a hypermethylated, pro-migratory phenotype — and that decitabine treatment directly reversed the migratory phenotype in vitro. This is the only published experiment applying a DNMT inhibitor in an SDH-deficient cell model and showing functional rescue; decitabine therefore has stronger evidence than azacitidine (which only has the mechanistic citation establishing CIMP). Killian 2013 established ~85,000 hypermethylated CpG targets in SDH-deficient GIST vs ~8,400 in KIT-mutant GIST, confirming the CIMP burden that makes DNMT inhibition a rational target.
+
+Changes: (1) tazemetostat MoA — PMIDs corrected (23862161→23707781; 23575604→23550148); (2) azacitidine MoA — rewritten with full CIMP rationale citing Letouzé 2013 + Killian 2013; evidence_score 52→58; (3) decitabine MoA — rewritten citing Letouzé 2013 direct decitabine experiment + Killian 2013; evidence_score 50→62.
+
+Candidate directions still unexplored: (1) IACS-010759 / Complex I — definitively ruled out (Sokolov preprint, PMID 42239110); (2) MTHFD2 / one-carbon — no SDH-specific data, no clinical-stage inhibitors.
+**PR:** morning/2026-07-31-cimp-evidence-upgrade
+
 ## 2026-08-01
 
 **Direction:** schema/metadata
