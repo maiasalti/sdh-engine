@@ -118,7 +118,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "9444",
     drug_class: "DNA methyltransferase inhibitor (hypomethylating agent)",
     mechanism_of_action:
-      "Nucleoside analog that incorporates into DNA and irreversibly binds DNMTs, causing their degradation. Reverses DNA hypermethylation, potentially reactivating silenced tumor suppressors in SDH-deficient tumors with CIMP phenotype.",
+      "Nucleoside analog that incorporates into DNA and irreversibly traps DNMTs, causing their depletion and progressive DNA demethylation. In SDH-deficient tumors, SDH loss leads to succinate accumulation that competitively inhibits TET1/2/3 (α-KG-dependent DNA demethylases), establishing a genome-wide CpG island methylator phenotype (CIMP). Letouzé et al. (Cancer Cell 2013, PMID: 23707781, DOI: 10.1016/j.ccr.2013.04.018) demonstrated this SDH-driven CIMP mechanism in paraganglioma; Killian et al. (Cancer Discov 2013, PMID: 23550148, DOI: 10.1158/2159-8290.CD-13-0092) identified ~85,000 hypermethylated CpG targets in SDH-deficient GIST vs ~8,400 in KIT-mutant GIST. Azacitidine bypasses the TET inhibition block by directly trapping DNMTs, providing an orthogonal demethylation route independent of TET activity.",
     fda_approved: true,
     approved_indications: [
       "Myelodysplastic syndromes",
@@ -126,7 +126,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     ],
     pathway_slugs: ["epigenetic-dysregulation"],
     target_gene_symbols: ["DNMT1", "DNMT3A"],
-    evidence_score: 52,
+    evidence_score: 58,
     status: "preclinical",
     tumor_type_applicability: ["all"],
   },
@@ -137,12 +137,12 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "451668",
     drug_class: "DNA methyltransferase inhibitor (hypomethylating agent)",
     mechanism_of_action:
-      "Deoxycytidine analog that incorporates into DNA during replication and traps DNMTs, leading to their depletion. More potent DNA demethylator than azacitidine. Could reverse the CIMP phenotype characteristic of SDH-deficient tumors.",
+      "Deoxycytidine analog that incorporates into DNA during replication and covalently traps DNMT1, causing its progressive depletion — a more potent and DNA-selective demethylation mechanism than azacitidine. The SDH-specific rationale rests on direct experimental evidence: Letouzé et al. (Cancer Cell 2013, PMID: 23707781, DOI: 10.1016/j.ccr.2013.04.018) demonstrated that succinate accumulation in SDHB-deficient mouse chromaffin cells established a hypermethylated, pro-migratory epigenetic phenotype driven by TET enzyme inhibition — and that decitabine treatment directly reversed this migratory phenotype in vitro. This makes decitabine the only DNMT inhibitor with cell-model evidence of phenotypic rescue in SDH-deficient cells. CIMP in SDH-deficient GIST further established by Killian et al. (Cancer Discov 2013, PMID: 23550148, DOI: 10.1158/2159-8290.CD-13-0092).",
     fda_approved: true,
     approved_indications: ["Myelodysplastic syndromes"],
     pathway_slugs: ["epigenetic-dysregulation"],
     target_gene_symbols: ["DNMT1", "DNMT3A"],
-    evidence_score: 50,
+    evidence_score: 62,
     status: "preclinical",
     tumor_type_applicability: ["all"],
   },
@@ -310,7 +310,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "46843906",
     drug_class: "EZH2 inhibitor (PRC2 inhibitor)",
     mechanism_of_action:
-      "Selective, orally bioavailable inhibitor of EZH2, the catalytic subunit of Polycomb Repressive Complex 2 (PRC2), which writes the repressive H3K27me3 histone mark. In SDH-deficient tumors, succinate accumulation inhibits KDM6A (UTX) and KDM6B (JMJD3) — the α-KG-dependent demethylases that erase H3K27me3 — causing global H3K27me3 accumulation and silencing of tumor suppressor and differentiation genes (Letouzé et al., Cancer Cell 2013, PMID: 23862161; Killian et al., Cancer Discov 2013, PMID: 23575604). Tazemetostat blocks EZH2's catalytic activity, reducing further H3K27me3 deposition. FDA-approved for SMARCB1-null epithelioid sarcoma, which shares the mechanism of PRC2 dependency via a different upstream loss. Phase 2 trials in sarcoma and solid tumors ongoing (NCT03213665). Direct evidence in SDH-deficient paraganglioma cell lines: Loriot et al. demonstrated H3K27me3 as an epigenetic vulnerability in paraganglioma (PMID: 25633189).",
+      "Selective, orally bioavailable inhibitor of EZH2, the catalytic subunit of Polycomb Repressive Complex 2 (PRC2), which writes the repressive H3K27me3 histone mark. In SDH-deficient tumors, succinate accumulation inhibits KDM6A (UTX) and KDM6B (JMJD3) — the α-KG-dependent demethylases that erase H3K27me3 — causing global H3K27me3 accumulation and silencing of tumor suppressor and differentiation genes (Letouzé et al., Cancer Cell 2013, PMID: 23707781; Killian et al., Cancer Discov 2013, PMID: 23550148). Tazemetostat blocks EZH2's catalytic activity, reducing further H3K27me3 deposition. FDA-approved for SMARCB1-null epithelioid sarcoma, which shares the mechanism of PRC2 dependency via a different upstream loss. Phase 2 trials in sarcoma and solid tumors ongoing (NCT03213665). Direct evidence in SDH-deficient paraganglioma cell lines: Loriot et al. demonstrated H3K27me3 as an epigenetic vulnerability in paraganglioma (PMID: 25633189).",
     fda_approved: true,
     approved_indications: [
       "Epithelioid sarcoma (SMARCB1-null, locally advanced or metastatic)",
