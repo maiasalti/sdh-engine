@@ -252,6 +252,19 @@ The dominant candidate is **pembrolizumab** (Keytruda, MK-3475), an FDA-approved
 
 **Key limitation:** CD274 upregulation driven by HIF-1α has been established in general hypoxia models (Noman et al. 2014) but has not been directly measured by IHC or RNA-seq in SDH-deficient GIST or PPGL tumor specimens or cell lines. The prediction of elevated tumor PD-L1 expression as a direct consequence of constitutive pseudohypoxia is mechanistically motivated but requires experimental confirmation. The evidence_score of 32 (theoretical) reflects a well-established mechanistic link between HIF-1α and PD-L1 combined with clinical trial activity in the relevant tumor types — but no SDH-genotype-stratified response data.
 
+### 23. Alpha-Particle SSTR2-Targeted Radioligand Therapy — [212Pb]VMT-α-NET
+
+SDH-deficient pheochromocytoma and paraganglioma (PPGL) are universally SSTR2-high (functional DOTATATE-PET/CT uptake, PMID 42454478; direct SSTR2 pharmacological vulnerability via BIM-23120, PMID 41928014), establishing that SSTR2-targeted radioligand therapy delivers high absorbed doses to SDH-deficient PPGL cells. The standard radioligand ¹⁷⁷Lu-DOTATATE (Mechanism 19) uses a beta-emitting radionuclide (low-LET, ~0.2 keV/μm, mean tissue range ~670 μm). [212Pb]VMT-α-NET substitutes lead-212, an alpha-emitting radionuclide that, upon internalization into SSTR2+ tumor cells, delivers densely ionizing alpha-particle radiation (LET ~80 keV/μm, tissue range ~50–80 μm) that produces clustered, complex DNA double-strand breaks (DSBs) qualitatively distinct from the isolated DSBs of beta-particle therapy.
+
+**Why clustered DSBs are mechanistically critical in SDH-deficient cells:**
+The BRCAness phenotype present in all SDH-deficient tumors (Mechanism 14) arises from succinate-mediated inhibition of KDM4A/KDM4B histone demethylases → persistence of H3K9me3 at DSB chromatin → impaired TIP60 (histone acetyltransferase, H4K16ac at DSBs) and ATM kinase activation → compromised homologous recombination (HR). Isolated DSBs from beta-particle radiation may be partially resolved via error-prone pathways (NHEJ, SSA, alt-EJ), but clustered, multi-strand damage caused by alpha particles requires HR for high-fidelity resolution. Because SDH-deficient PPGL cells have severely reduced HR capacity, clustered DSBs are substantially more cytotoxic in these cells than in HR-proficient matched controls — a form of radiobiological synthetic lethality not achievable with beta-particle PRRT at safe doses.
+
+**Clinical trials:**
+- **NCT06427798** (NCI; Phase 1/2; recruiting; n=66): [212Pb]VMT-α-NET in PPGL and GI-NET patients who have had prior PRRT — directly enrolling SDH-deficient PPGL's primary tumor type, post–¹⁷⁷Lu-DOTATATE setting.
+- **NCT05636618** (Perspective Therapeutics; Phase 1/2; first-in-human): [212Pb]VMT-α-NET in advanced SSTR2+ solid tumors including NETs and PPGL.
+
+**Key limitation:** No SDH-genotype-stratified data exist. The alpha-particle / BRCAness synthetic lethality hypothesis is mechanistically motivated by established alpha-particle radiobiology and the Sulkowski BRCAness data, but has not been directly tested in SDH-deficient cell lines or patient-derived organoids. Evidence_score of 28 (theoretical / early clinical trial) reflects sound mechanistic reasoning extrapolated from established biology rather than SDH-specific experimental data.
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
