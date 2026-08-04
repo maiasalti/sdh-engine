@@ -161,7 +161,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "71577426",
     drug_class: "Glutaminase inhibitor",
     mechanism_of_action:
-      "Selective, orally bioavailable inhibitor of glutaminase (GLS). Blocks the conversion of glutamine to glutamate, cutting off the primary anaplerotic fuel source for SDH-deficient cells with disrupted TCA cycles.",
+      "Selective, orally bioavailable inhibitor of glutaminase 1 (GLS1/KGA), the mitochondrial enzyme catalyzing conversion of glutamine to glutamate. In SDH-deficient cells, disrupted electron transport chain flux forces a shift to reductive carboxylation of glutamine-derived alpha-ketoglutarate for citrate synthesis and lipid anabolic support — a dependency characterised in ETC-mutant cell lines by Mullen et al. (Nature 2012; PMID 23051593). Blocking GLS1 cuts the anaplerotic glutamine supply that sustains this reductive metabolism. Telaglenastat demonstrated manageable tolerability in a phase 1 solid-tumour trial (NCT02071862) and showed clinical activity in combination with everolimus in renal cell carcinoma, a tumour type with an SDH-deficient subset, in the ENTRATA phase 2 trial (NCT03872583). SDH-specific clinical evidence remains mechanistic inference; no SDH-genotype-enriched trial has been conducted.",
     fda_approved: false,
     approved_indications: [],
     pathway_slugs: ["glutamine-dependency"],
@@ -169,7 +169,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 60,
     status: "clinical_trial",
     tumor_type_applicability: ["all"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT02071862", "NCT03872583"],
   },
   {
     name: "Olaparib",

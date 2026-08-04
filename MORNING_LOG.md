@@ -208,3 +208,23 @@ Evidence_score rationale: 32 (theoretical) — HIF-1α → CD274 mechanism well-
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-02-hif-pdl1-checkpoint
+
+## 2026-08-04
+
+**Direction:** Telaglenastat data completeness + missing PATHWAY_COLORS fix
+
+**Papers added:** 0
+
+**Papers rejected (logged to tracker.md):** 1 (PMID 42102810); 3 unverifiable (PMIDs 42544736, 42444448, 42481355)
+
+**Summary:** PubMed scan (SDH-GIST, PPGL/PCC, RCC, belzutifan, SDH synthetic lethality, SDH metabolism; date window ~May–August 2026) surfaced 4 new PMIDs not yet in tracker.md. PMID 42102810 (Cancer Cell 2026, DOI 10.1016/j.ccell.2026.04.007): "Whole-genome doubling drives immune evasion by silencing antigen presentation" — full text retrieved via PMC13160227; content confirmed off-mechanism (WGD in mixed solid-tumour cohorts, no SDH-deficient context); rejected. PMIDs 42544736, 42444448, 42481355: convert_article_ids returned no DOI or PMCID for any of the three; content cannot be confirmed without independent verification; logged as unverifiable per standing policy. 0 papers cleared the gate.
+
+For Part B: two maintenance fixes bundled as a single direction.
+
+Fix 1 — **`hif-pdl1-checkpoint-evasion` missing from PATHWAY_COLORS** (`src/lib/scoring/constants.ts`): the 2026-08-02 run added the pathway to `pathways.ts`, the target CD274 to `targets.ts`, and pembrolizumab to `drugs.ts`, but did not add the corresponding colour entry to the PATHWAY_COLORS map in constants.ts. Any UI rendering the pembrolizumab pathway badge would fall through to no colour. Added `"hif-pdl1-checkpoint-evasion": "bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200"`.
+
+Fix 2 — **Telaglenastat data completeness** (`src/data/seed/drugs.ts`): the existing entry carried `status: "clinical_trial"` but `clinical_trial_ids: []` — internally inconsistent. Added two NCT IDs: NCT02071862 (CB-839 phase 1 in solid tumours — foundational safety and PK study) and NCT03872583 (ENTRATA phase 2 of telaglenastat + everolimus in RCC, a tumour class with SDH-deficient subsets). Expanded `mechanism_of_action` from 2 sparse sentences to a full mechanistic paragraph citing Mullen et al. (Nature 2012; PMID 23051593) on reductive carboxylation in ETC-deficient cells, and explicitly notes that SDH-specific clinical evidence remains mechanistic inference with no SDH-genotype-enriched trial conducted. Score unchanged at 60.
+
+Neither fix repeats any prior direction: the PATHWAY_COLORS addition is for a pathway not yet in the colour map (distinct from the 2026-06-24 pathway colour run which predated this pathway's existence); the telaglenastat fix is data plumbing (NCT IDs + MoA prose), not a scoring change (distinct from 2026-07-31 citation/score upgrades which modified scores).
+
+**PR:** morning/2026-08-04-telaglenastat-completeness
