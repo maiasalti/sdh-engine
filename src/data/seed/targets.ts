@@ -351,4 +351,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Type I transmembrane protein and ligand of PD-1 (PDCD1). CD274 promoter contains canonical hypoxia-response elements (HREs) directly activated by HIF-1α, making PD-L1 a transcriptional output of the pseudohypoxic program constitutively active in SDH-deficient tumors. Noman et al. (J Exp Med 2014, PMID 24493797) demonstrated that hypoxia, via HIF-1α, drives PD-L1 expression on tumor cells and that PD-L1 upregulation mediates immune evasion in hypoxic tumor microenvironments. In SDH-deficient tumors, constitutive HIF-1α stabilization via succinate-mediated PHD inhibition creates a persistent pseudohypoxic state that continuously drives CD274 transcription. This HIF-driven PD-L1 expression enables tumor cells to engage PD-1 on cytotoxic T cells and suppress anti-tumor immunity — a second immune-evasion mechanism complementary to the succinate-MCT1 and HIF-IDO1 arms (Mechanism 11). Blocked by PD-1 antibodies (pembrolizumab, nivolumab) which prevent PD-L1/PD-1 engagement.",
   },
+  {
+    gene_symbol: "CDK4",
+    name: "Cyclin-dependent kinase 4",
+    uniprot_id: "P11802",
+    pathway_slug: "cdkn2a-cdk46-cell-cycle",
+    target_type: "downstream",
+    description:
+      "Serine/threonine kinase that, in complex with cyclin D proteins (cyclin D1/D2/D3), phosphorylates RB1 (retinoblastoma protein) at multiple residues to drive the G1→S cell cycle transition. CDK4 (and its paralog CDK6) is physiologically inhibited by p16/INK4A (encoded by CDKN2A), which occupies the CDK4/6 allosteric binding site that cyclin D requires, preventing catalytic activation and keeping RB1 in its growth-suppressive hypophosphorylated state. In SDH-deficient GIST, CIMP-driven promoter hypermethylation silences CDKN2A — identified by Killian et al. (Cancer Discov 2013, PMID 23550148) among ~85,000 hypermethylated CpG sites specific to SDH-deficient GIST (vs ~8,400 in KIT/PDGFRA GIST). Loss of p16/INK4A removes the physiological CDK4/6 brake, enabling constitutive CDK4/6 activity, chronic RB1 hyperphosphorylation, and unrestrained E2F-driven S-phase entry — a cell cycle deregulation downstream of the SDH-CIMP cascade. CDK4/6 inhibitors (palbociclib/Ibrance, ribociclib/Kisqali, abemaciclib/Verzenio) pharmacologically reimpose CDK4/6 inhibition that p16/INK4A silencing ablated, restoring RB1 hypophosphorylation and G1 arrest in RB1-proficient tumor cells.",
+  },
 ];

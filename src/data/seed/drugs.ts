@@ -708,4 +708,24 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: ["NCT06427798", "NCT05636618"],
   },
+  {
+    name: "Palbociclib",
+    brand_names: ["Ibrance"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "CDK4/6 inhibitor",
+    mechanism_of_action:
+      "Palbociclib is a selective, orally bioavailable inhibitor of cyclin-dependent kinases 4 and 6 (CDK4/6) that competes with ATP at the CDK4/6 kinase active site and prevents cyclin D–CDK4/6 complex formation. CDK4/6 inhibition prevents phosphorylation of the retinoblastoma protein (RB1), keeping RB1 in its active (hypophosphorylated) tumor-suppressive state, which sequesters E2F transcription factors and arrests cell cycle progression at the G1/S restriction point.\n\nThe mechanistic rationale in SDH-deficient GIST is grounded in the CIMP-driven silencing of CDKN2A (encoding p16/INK4A), the physiological CDK4/6 inhibitor. The pathway is: SDH loss → succinate → TET1/2/3 inhibition → global DNA hypermethylation (CIMP) → CDKN2A promoter hypermethylation → p16/INK4A silencing → loss of CDK4/6 allosteric inhibition → constitutive CDK4/6 activity → chronic RB1 hyperphosphorylation → E2F constitutive release → unrestrained G1→S transition. Killian et al. (Cancer Discov 2013, PMID 23550148) identified CDKN2A among the ~85,000 CpG sites hypermethylated in SDH-deficient GIST versus ~8,400 in KIT/PDGFRA-mutant GIST — establishing the scale of the CIMP phenotype and confirming CDKN2A as a characteristic silenced tumor suppressor in this subset. CDKN2A methylation is absent from KIT/PDGFRA-mutant GIST, making this cell cycle deregulation a mechanistically SDH-specific feature. Palbociclib pharmacologically reimposing the CDK4/6 brake that CIMP-driven p16 silencing ablated: the drug occupies the CDK4/6 active site that p16/INK4A would normally block, restoring functional RB1-mediated G1 arrest.\n\nThis rationale parallels the established mechanism in HR+/HER2- breast cancer — where palbociclib is FDA-approved — in which p16/INK4A is also functionally absent (through deletion or silencing) and CDK4/6 are constitutively active. The critical pharmacological requirement in both settings is an intact, functional RB1 protein: palbociclib prevents RB1 phosphorylation and depends on hypophosphorylated RB1 to arrest the cell cycle; tumors with RB1 deletion or loss-of-function mutations are intrinsically resistant.\n\nKey limitations: (1) No experimental data tests palbociclib, ribociclib, or abemaciclib in SDH-deficient GIST cell lines or patient-derived models. (2) RB1 status in SDH-deficient GIST has not been systematically characterized — RB1 integrity is a prerequisite for CDK4/6 inhibitor efficacy and must be confirmed before clinical evaluation. (3) p16/INK4A protein loss in SDH-deficient GIST tumors (as opposed to CDKN2A methylation per se) requires direct IHC or Western blot confirmation. (4) The evidence_score of 30 (theoretical) reflects a well-supported mechanistic chain anchored by the Killian 2013 CIMP paper (PMID 23550148) but no direct SDH-specific CDK4/6 inhibitor data.",
+    fda_approved: true,
+    approved_indications: [
+      "HR+/HER2- advanced or metastatic breast cancer (first-line with an aromatase inhibitor; approved February 2015; based on PALOMA-1 and PALOMA-2 trials)",
+      "HR+/HER2- advanced or metastatic breast cancer (with fulvestrant after prior endocrine therapy; approved February 2016; based on PALOMA-3 trial)",
+    ],
+    pathway_slugs: ["cdkn2a-cdk46-cell-cycle", "epigenetic-dysregulation"],
+    target_gene_symbols: ["CDK4"],
+    evidence_score: 30,
+    status: "theoretical",
+    tumor_type_applicability: ["gist"],
+    clinical_trial_ids: [],
+  },
 ];
