@@ -30,7 +30,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 82,
     status: "established",
     tumor_type_applicability: ["all"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT04924075"],
   },
   {
     name: "Sunitinib",
@@ -587,7 +587,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 35,
     status: "established",
     tumor_type_applicability: ["ppgl"],
-    clinical_trial_ids: ["NCT01578239"],
+    clinical_trial_ids: ["NCT01578239", "NCT03206060", "NCT06607692"],
   },
   {
     name: "ART558",
@@ -690,5 +690,22 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02721732", "NCT02834013"],
+  },
+  {
+    name: "[212Pb]VMT-α-NET",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Alpha-particle SSTR2-targeted radioligand therapy (RLT)",
+    mechanism_of_action:
+      "[212Pb]VMT-α-NET (AlphaNet) is a lead-212–labeled SSTR2-targeting peptide radioligand in which the alpha-emitting radionuclide ²¹²Pb is conjugated to a DOTATATE-class somatostatin analogue via a TCMC chelator, delivering high-linear-energy-transfer (high-LET) alpha-particle radiation (and in-situ bismuth-212 daughter particle) directly to SSTR2-expressing tumor cells upon internalization. Alpha particles traverse only 5–9 cell diameters (~50–80 μm) but deposit ~100× more energy per unit path length than ¹⁷⁷Lu β-particles (LET ~80 keV/μm vs. ~0.2 keV/μm), producing densely ionizing, spatially clustered DNA double-strand breaks (DSBs). These clustered, complex DSBs are qualitatively distinct from the isolated DSBs caused by beta-particle emitters — they engage high-fidelity homologous recombination (HR) as the primary repair pathway, with clustered lesions being substantially more refractory to repair even in HR-proficient cells. In SDH-deficient pheochromocytoma and paraganglioma (PPGL), two mechanistic lines converge to make alpha-particle SSTR2-targeted RLT potentially more cytotoxic than standard ¹⁷⁷Lu-DOTATATE. First, SDH-deficient PPGL are universally SSTR2-high (confirmed by DOTATATE-PET/CT imaging, PMID 42454478) and harbor a direct SSTR2 pharmacological vulnerability (BIM-23120 selectively induces apoptosis in SDHB-deficient cells, PMID 41928014), guaranteeing high radioligand uptake. Second, and critically, all SDH-deficient cells carry a BRCAness phenotype: accumulated succinate inhibits KDM4A/KDM4B histone demethylases → H3K9me3 persists at DSB sites → TIP60/ATM axis is impaired → HR efficiency is severely reduced (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). This HR deficiency means SDH-deficient PPGL cells cannot efficiently repair the clustered, complex DSBs produced by alpha-particle radiation — a form of radiobiological synthetic lethality that is mechanistically greater than the analogous β-particle effect from ¹⁷⁷Lu-DOTATATE. [212Pb]VMT-α-NET is in Phase 1/2 clinical evaluation specifically including PPGL: NCT06427798 (NCI, recruiting; Phase 1/2; n=66; PPGL and GI-NETs with prior PRRT) and NCT05636618 (Perspective Therapeutics; first-in-human Phase 1/2; advanced SSTR2+ solid tumors). Key limitations: (1) investigational only — not FDA-approved; available only on clinical trial; (2) no SDH-genotype-stratified data exist yet; (3) the alpha-particle radiobiology / BRCAness synergy is mechanistically motivated but not yet directly tested in SDH-deficient models; (4) ²¹²Pb requires on-site or near-site generator infrastructure and short logistics chain (¹²⁴Pb/²¹²Pb, t½ ~10.6 h); (5) restricted to SSTR2+ tumors (most SDH-deficient PPGL qualify; SDH-deficient GIST and RCC typically do not express SSTR2).",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["sstr2-somatostatin-vulnerability", "sdh-driven-hrd"],
+    target_gene_symbols: ["SSTR2"],
+    evidence_score: 28,
+    status: "clinical_trial",
+    tumor_type_applicability: ["ppgl"],
+    clinical_trial_ids: ["NCT06427798", "NCT05636618"],
   },
 ];
