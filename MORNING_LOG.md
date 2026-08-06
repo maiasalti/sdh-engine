@@ -244,3 +244,46 @@ Evidence_score rationale: 30 (theoretical) — CIMP-driven CDKN2A silencing in S
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-05-cdkn2a-cdk46
+
+## 2026-08-06
+
+**Direction:** drug-pool
+**Angle:** CHK1 replication checkpoint abrogation — prexasertib (LY2606368) as a new synthetic-lethal drug exploiting the compound HR deficiency unique to SDH-deficient cells
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all PMIDs across 10+ PubMed queries already in tracker.md)
+**Summary:** PubMed scan across SDH-deficient tumor search angles (GIST, PPGL, RCC, pituitary, SDH+metabolism, SDH+epigenetics, SDH+drug/therapy, SDH+biology; date window May–August 2026) returned 0 new PMIDs not yet in tracker.md. This is the 5th–6th consecutive run with no new qualifying papers. No papers added.
+
+For Part B: implemented the CHK1 replication checkpoint abrogation direction — a genuinely new node in the DNA damage response network, distinct from all prior directions:
+
+**Mechanistic rationale:** SDH-deficient cells have a COMPOUND HR deficiency from two parallel, non-redundant arms:
+
+1. HIF-1α → RAD51 transcriptional suppression: SDH loss → succinate → PHD inhibition → constitutive HIF-1α stabilization. Bindra et al. (Mol Cell Biol 2004, PMID 15367671) demonstrated that HIF-1α stabilization transcriptionally suppresses RAD51 via E2F4/p130 repressor recruitment to the RAD51 promoter — reducing RAD51 mRNA and protein, reversed by HIF-1α knockdown. In SDH-deficient tumors, constitutive pseudohypoxia creates persistent, oxygen-independent RAD51 suppression throughout the cell cycle.
+
+2. Succinate → KDM4B → BRCAness: Accumulated succinate inhibits KDM4A/KDM4B → H3K9me3 persistence at DSBs → TIP60/ATM impairment → HR initiation failure (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005).
+
+CHK1 (CHEK1), activated by ATR at stalled forks, becomes the critical non-redundant fork-protection kinase in these doubly HR-impaired cells: it enforces the intra-S checkpoint (preventing premature mitotic entry) AND phosphorylates RAD51 Ser309 to recruit the remaining suppressed RAD51 pool to stalled forks. Prexasertib (LY2606368; IC₅₀ ~1 nM CHK1) abrogates both functions → catastrophic fork collapse that doubly HR-impaired cells cannot resolve → replication catastrophe.
+
+**Distinct from prior directions:**
+- Olaparib/PARP (2026-06-23): exploits BRCAness via BER-to-DSB conversion at intact forks
+- POLQ/TMEJ (2026-07-23): blocks backup alt-EJ repair of already-collapsed forks
+- CHK1/prexasertib (today): abrogates the upstream checkpoint preventing fork collapse — a different node in the DNA damage response network; the RAD51-suppression arm adds a mechanistic dimension absent from the olaparib rationale
+
+**Supporting clinical citations (not added to papers.ts — clinical references, not SDH-specific biology papers):**
+- PMID 36192237 (Konstantinopoulos et al., Gynecol Oncol 2022) — prexasertib Phase 2 single-agent in platinum-resistant HGSOC including BRCA-wt (NCT03414047)
+- PMID 34131002 (Do et al., Clin Cancer Res 2021) — prexasertib + olaparib Phase 1 in BRCA-mutant solid tumors (NCT02203513)
+- PMID 15367671 (Bindra et al., Mol Cell Biol 2004) — HIF-1α suppresses RAD51 transcription (key mechanistic citation)
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: Added `chk1-checkpoint-abrogation` (display_order 23)
+- `src/data/seed/targets.ts`: Added CHEK1 target (CHK1, UniProt O14757)
+- `src/data/seed/drugs.ts`: Added Prexasertib (evidence_score 22, status: theoretical, tumor_type_applicability: all)
+- `src/data/seed/sdh-biology.ts`: Added Mechanism 25 (CHK1 Replication Checkpoint Abrogation)
+
+Evidence_score rationale: 22 (theoretical) — mechanistic chain is coherent and anchored in primary literature (Bindra 2004, Sulkowski 2018/2020); clinical activity of prexasertib established in BRCA-deficient and BRCA-wt solid tumors; but no SDH-specific CHK1 inhibitor data exist. The compound HR deficiency in SDH-deficient cells is mechanistically predicted to confer greater CHK1 inhibitor sensitivity than in partially HR-competent cells, but this requires direct experimental validation.
+
+Candidate directions still unexplored:
+1. MTHFD2/one-carbon metabolism (no SDH-specific data, no clinical-stage inhibitors)
+2. ATR inhibitor (ceralasertib/berzosertib): complementary to CHK1 at the ATR→CHK1 axis — different kinase, slightly different biology, same synthetic-lethal rationale but with distinct clinical profile; could extend the replication-checkpoint synthetic-lethal angle with a parallel agent
+3. WEE1 inhibitor (adavosertib/AZD1775): CDK1/CDK2 activator, another checkpoint kinase with replication-stress synthetic-lethal rationale — orthogonal to CHK1/ATR but conceptually adjacent; distinct drug and target
+
+**PR:** morning/2026-08-06-chk1-checkpoint-abrogation

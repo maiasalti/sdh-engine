@@ -360,4 +360,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Serine/threonine kinase that, in complex with cyclin D proteins (cyclin D1/D2/D3), phosphorylates RB1 (retinoblastoma protein) at multiple residues to drive the G1→S cell cycle transition. CDK4 (and its paralog CDK6) is physiologically inhibited by p16/INK4A (encoded by CDKN2A), which occupies the CDK4/6 allosteric binding site that cyclin D requires, preventing catalytic activation and keeping RB1 in its growth-suppressive hypophosphorylated state. In SDH-deficient GIST, CIMP-driven promoter hypermethylation silences CDKN2A — identified by Killian et al. (Cancer Discov 2013, PMID 23550148) among ~85,000 hypermethylated CpG sites specific to SDH-deficient GIST (vs ~8,400 in KIT/PDGFRA GIST). Loss of p16/INK4A removes the physiological CDK4/6 brake, enabling constitutive CDK4/6 activity, chronic RB1 hyperphosphorylation, and unrestrained E2F-driven S-phase entry — a cell cycle deregulation downstream of the SDH-CIMP cascade. CDK4/6 inhibitors (palbociclib/Ibrance, ribociclib/Kisqali, abemaciclib/Verzenio) pharmacologically reimpose CDK4/6 inhibition that p16/INK4A silencing ablated, restoring RB1 hypophosphorylation and G1 arrest in RB1-proficient tumor cells.",
   },
+  {
+    gene_symbol: "CHEK1",
+    name: "Checkpoint kinase 1 (CHK1)",
+    uniprot_id: "O14757",
+    pathway_slug: "chk1-checkpoint-abrogation",
+    target_type: "downstream",
+    description:
+      "Serine/threonine kinase activated by ATR (ataxia-telangiectasia and Rad3-related) in response to single-stranded DNA and stalled replication forks. CHK1 is the master regulator of the intra-S-phase and G2/M checkpoints: it phosphorylates CDC25A/B/C phosphatases, promoting their degradation and nuclear exclusion, to prevent premature CDK1/CDK2 activation and mitotic entry until replication is complete. Beyond checkpoint enforcement, CHK1 directly phosphorylates RAD51 at Ser309, promoting RAD51 nuclear foci formation at stalled forks and enabling template-switching fork restart by HR. In SDH-deficient tumors, CHK1 becomes the critical non-redundant genome-stability kinase because both primary HR arms are simultaneously compromised: HIF-1α-driven RAD51 transcriptional suppression (Bindra et al., Mol Cell Biol 2004, PMID 15367671) reduces the available RAD51 protein pool, while succinate-driven KDM4B inhibition impairs ATM-mediated HR initiation (Sulkowski et al., Nat Genet 2018 / Nature 2020, PMIDs 30013182/32494005). CHK1 inhibition with prexasertib (LY2606368; IC₅₀ ~1 nM for CHK1) abrogates both checkpoint enforcement and RAD51 Ser309 phosphorylation, creating catastrophic replication failure selectively in these doubly HR-impaired cells.",
+  },
 ];

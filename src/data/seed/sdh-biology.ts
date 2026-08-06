@@ -278,6 +278,26 @@ CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib) are selective ATP-compe
 
 **Key limitation:** No experimental data tests palbociclib, ribociclib, or abemaciclib in any SDH-deficient cancer model (GIST, PPGL, RCC). The mechanistic chain is well-supported: CIMP is established as an SDH-specific phenotype; CDKN2A hypermethylation is documented in SDH-deficient GIST CIMP (Killian 2013, PMID 23550148); CDK4/6 hyperactivation is the expected consequence; and CDK4/6 inhibitors are proven to reverse this deregulation in analogous p16-null contexts. However, three preclinical questions require direct experimental resolution: (1) Does CDKN2A silencing translate to p16/INK4A protein loss and elevated CDK4-phospho-RB1 in SDH-deficient GIST tumor specimens and cell lines? (2) Is RB1 itself intact in SDH-deficient GIST (RB1 loss confers intrinsic CDK4/6 inhibitor resistance)? (3) Do CDK4/6 inhibitors reduce proliferation in SDH-deficient GIST cell lines (e.g., SDHA-null LPS18, GIST48) at clinically achievable palbociclib concentrations?
 
+### 25. CHK1 Replication Checkpoint Abrogation — Prexasertib
+
+SDH-deficient tumors carry a compound HR (homologous recombination) deficiency arising from two parallel, mechanistically distinct pathways that both flow from SDH loss:
+
+**Arm 1 — HIF-1α-driven RAD51 transcriptional suppression:**
+Succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization (pseudohypoxia). Bindra et al. (Mol Cell Biol 2004, PMID 15367671) established that HIF-1α transcriptionally represses RAD51 via E2F4/p130 repressor recruitment to the RAD51 promoter, reducing RAD51 mRNA and protein in hypoxic cells, reversed by HIF-1α knockdown. In SDH-deficient tumors, constitutive pseudohypoxia creates persistent, oxygen-independent RAD51 suppression — reducing the RAD51 protein pool available for HR-mediated fork rescue throughout the cell cycle.
+
+**Arm 2 — Succinate→KDM4B→BRCAness:**
+Accumulated succinate competitively inhibits KDM4A/KDM4B (H3K9me3 demethylases) → H3K9me3 persists at DSB chromatin → TIP60 (KAT5) histone acetyltransferase cannot access H3K9me3-marked chromatin for H4K16 acetylation → ATM kinase cannot be activated at DSBs → HR initiation fails. Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) demonstrated this BRCAness phenotype in SDH-deficient cell lines.
+
+**The CHK1 synthetic-lethal logic:**
+In cells with compound HR deficiency (reduced RAD51 pool + impaired ATM/HR initiation), CHK1 (CHEK1) — activated by ATR at stalled forks — becomes the critical, non-redundant kinase for replication fork integrity. CHK1 serves two roles: (a) enforces the intra-S-phase checkpoint by phosphorylating CDC25A/B/C phosphatases, preventing premature mitotic entry with incomplete replication; (b) directly phosphorylates RAD51 at Ser309, recruiting RAD51 to stalled forks for template-switching fork restart. When CHK1 is inhibited by prexasertib (LY2606368; IC₅₀ ~1 nM for CHK1): the intra-S checkpoint fails → cells enter mitosis with stalled/collapsed forks; RAD51 Ser309 phosphorylation is abolished → the already-suppressed RAD51 pool cannot be mobilized to stalled forks; collapsed forks generate DSBs that the doubly HR-impaired cell (reduced RAD51 + impaired ATM-HR) cannot efficiently repair. The result is catastrophic replication failure — replication catastrophe — selectively lethal in cells where both HR arms are simultaneously compromised.
+
+This mechanism is orthogonal to Mechanism 14 (PARP/BRCAness: exploits HR deficiency by generating BER-to-DSB intermediates requiring HR for repair) and Mechanism 20 (POLQ/TMEJ: blocks backup alt-EJ repair of already-collapsed forks). CHK1 inhibition acts upstream: it abrogates the protective checkpoint that prevents fork collapse rather than targeting post-collapse repair pathways.
+
+**Clinical development:**
+Konstantinopoulos et al. (Gynecol Oncol 2022, PMID 36192237; NCT03414047) demonstrated single-agent prexasertib activity in platinum-resistant high-grade serous ovarian cancer including BRCA-wildtype tumors — showing CHK1 inhibition can be active even without germline BRCA mutations, consistent with replication catastrophe in endogenously replication-stressed tumor cells. Do et al. (Clin Cancer Res 2021, PMID 34131002; NCT02203513) evaluated prexasertib plus olaparib in BRCA1/2-mutant solid tumors; the combination showed preliminary activity with reversible Grade 3–4 neutropenia as the primary dose-limiting toxicity, manageable with G-CSF.
+
+**Key limitation:** No published data tests prexasertib in any SDH-deficient cancer model. The mechanistic argument is inferred from established SDH biology (Bindra 2004; Sulkowski 2018/2020). CHK1 inhibitors also show activity in BRCA-wildtype tumors via oncogene-driven endogenous replication stress, so the degree of additional selectivity conferred by the compound HR deficiency in SDH-deficient cells is mechanistically predicted but experimentally unknown. Evidence_score of 22 reflects the strength of the mechanistic reasoning from primary literature combined with the absence of SDH-specific experimental data.
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

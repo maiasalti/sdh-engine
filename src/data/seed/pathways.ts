@@ -368,4 +368,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 22,
   },
+  {
+    name: "CHK1 Replication Checkpoint Abrogation",
+    slug: "chk1-checkpoint-abrogation",
+    description:
+      "In SDH-deficient tumors, a compound HR (homologous recombination) deficiency arises from two parallel mechanisms: (1) constitutive pseudohypoxia via HIF-1α transcriptionally suppresses RAD51 (Bindra et al., Mol Cell Biol 2004, PMID 15367671), and (2) succinate-mediated KDM4B inhibition causes H3K9me3 persistence → impaired TIP60/ATM activation → BRCAness (Sulkowski et al., Nat Genet 2018 / Nature 2020, PMIDs 30013182/32494005). CHK1 (CHEK1), activated by ATR at stalled replication forks, becomes the non-redundant kinase maintaining genome integrity in these doubly HR-impaired cells: it enforces the intra-S-phase checkpoint and directly phosphorylates RAD51 Ser309 to recruit the remaining suppressed RAD51 pool to stalled forks. CHK1 inhibition (prexasertib/LY2606368) abrogates this last protection — forcing SDH-deficient cells through catastrophic fork collapse that cannot be repaired. Mechanistically distinct from PARP inhibition (which exploits BRCAness via BER-to-DSB conversion) and POLQ inhibition (which blocks backup alt-EJ repair of already-collapsed forks): CHK1 inhibition acts upstream, preventing fork collapse rather than blocking its downstream repair.",
+    upstream_event:
+      "SDH loss → succinate → (a) PHD inhibition → HIF-1α stabilization → RAD51 transcriptional suppression (Bindra 2004, PMID 15367671); (b) KDM4B inhibition → H3K9me3 persistence → TIP60/ATM impairment → BRCAness (Sulkowski 2018/2020) → compound HR deficiency → CHK1 becomes critical non-redundant fork-protection kinase → CHK1 inhibition → catastrophic fork collapse in doubly HR-impaired cells",
+    downstream_effects: [
+      "HIF-1α (pseudohypoxia) transcriptionally suppresses RAD51 mRNA/protein via E2F4/p130 repressor recruitment to RAD51 promoter (Bindra et al. 2004, PMID 15367671)",
+      "Succinate→KDM4B inhibition → H3K9me3 persistence → TIP60/ATM axis impairment → reduced HR initiation capacity (Sulkowski 2018/2020, PMIDs 30013182/32494005)",
+      "Compound HR deficiency in all SDH-deficient cells renders CHK1 the sole remaining mechanism for fork-integrity maintenance",
+      "CHK1 inhibition (prexasertib) abrogates intra-S checkpoint enforcement and abolishes CHK1-mediated RAD51 Ser309 phosphorylation",
+      "Stalled forks collapse into DSBs that cannot be efficiently repaired by doubly HR-impaired cells → replication catastrophe",
+    ],
+    druggable: true,
+    display_order: 23,
+  },
 ];
