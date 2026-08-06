@@ -351,4 +351,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 21,
   },
+  {
+    name: "CDKN2A/CDK4/6 Cell Cycle Dysregulation",
+    slug: "cdkn2a-cdk46-cell-cycle",
+    description:
+      "SDH loss drives CIMP-dependent epigenetic silencing of CDKN2A (encoding p16/INK4A), the principal physiological inhibitor of CDK4 and CDK6. Killian et al. (Cancer Discov 2013, PMID 23550148) identified CDKN2A promoter hypermethylation among ~85,000 hypermethylated CpG targets in SDH-deficient GIST (vs ~8,400 in KIT/PDGFRA-mutant GIST), demonstrating that CDKN2A silencing is part of the CIMP signature unique to SDH-deficient tumors. Loss of p16/INK4A removes the allosteric CDK4/6 brake, allowing cyclin D–CDK4/6 complexes to constitutively hyperphosphorylate RB1 and release E2F transcription factors, driving unrestrained G1→S transition. CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib) pharmacologically reimpose the CDK4/6 checkpoint that CIMP-driven p16 silencing ablated, restoring RB1-mediated cell cycle arrest.",
+    upstream_event:
+      "SDH loss → succinate → TET enzyme inhibition → CIMP → CDKN2A promoter hypermethylation → p16/INK4A silencing → constitutive CDK4/6 activity → RB1 hyperphosphorylation → E2F release → unrestrained S-phase entry",
+    downstream_effects: [
+      "CDKN2A promoter hypermethylation and p16/INK4A silencing (part of CIMP signature; Killian et al. Cancer Discov 2013, PMID 23550148)",
+      "CDK4/6 constitutive activation due to loss of p16/INK4A allosteric inhibition",
+      "RB1 chronic hyperphosphorylation → E2F transcription factors constitutively released",
+      "Unrestrained G1/S transition; tumor cells bypass p16/INK4A restriction point",
+      "Pharmacological CDK4/6 inhibition (palbociclib) restores RB1 hypophosphorylation and G1 arrest in RB1-intact tumors",
+    ],
+    druggable: true,
+    display_order: 22,
+  },
 ];

@@ -63,4 +63,6 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "polq-tmej-backup-repair": "bg-zinc-100 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200",
   "sstr2-somatostatin-vulnerability": "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
   "hif-met-axl-signaling": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "hif-pdl1-checkpoint-evasion": "bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200",
+  "cdkn2a-cdk46-cell-cycle": "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
 };

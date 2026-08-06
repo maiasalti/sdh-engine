@@ -192,4 +192,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42025325",
     date: "2026-04",
   },
+  {
+    title:
+      "Genotype-location interaction defines the SSTR-PET phenotype in paragangliomas and pheochromocytomas",
+    authors: "Imperiale A, Montanini F, Canu L, Rapizzi E, Pacak K, Taieb D, Berti V, et al.",
+    journal: "Eur J Nucl Med Mol Imaging",
+    year: 2026,
+    doi: "10.1007/s00259-026-08117-5",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Multi-center study of 174 PPGLs (91 patients) demonstrating that SDHx genotype and anatomical location interact significantly (p<0.001) on all DOTATATE-PET parameters: SDHx-related PPGLs show uniform high SSTR uptake regardless of anatomical location, whereas sporadic PPGLs display a cranio-caudal gradient (highest uptake in head-and-neck, substantially lower in abdominal lesions). SDHx genotype versus sporadic disease in head-and-neck PGL was discriminated with 87.3% accuracy using SSTR-PET parameters alone. These findings define an SDHx-specific SSTR-PET phenotype with direct implications for DOTATATE-PET interpretation and PRRT eligibility assessment in SDH-deficient patients regardless of tumor location.",
+    pmid: "42554827",
+    date: "2026-08",
+  },
 ];
