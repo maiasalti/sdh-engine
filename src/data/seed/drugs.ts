@@ -31,6 +31,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "established",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT04924075"],
+    sdh_specific_evidence: true,
   },
   {
     name: "Sunitinib",
@@ -52,6 +53,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "established",
     tumor_type_applicability: ["gist", "ppgl", "rcc"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: true,
   },
   {
     name: "Bevacizumab",
@@ -74,6 +76,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "established",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Temozolomide",
@@ -94,6 +97,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "clinical_trial",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Everolimus",
@@ -116,6 +120,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Azacitidine",
@@ -136,6 +141,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Decitabine",
@@ -153,6 +159,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: true,
   },
   {
     name: "Telaglenastat",
@@ -170,6 +177,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "clinical_trial",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Olaparib",
@@ -192,6 +200,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: true,
   },
   {
     name: "Niraparib",
@@ -213,6 +222,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Metformin",
@@ -230,6 +240,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Dichloroacetate (DCA)",
@@ -247,6 +258,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Panobinostat",
@@ -264,6 +276,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Ascorbic Acid (High-dose IV)",
@@ -281,6 +294,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: true,
   },
   {
     name: "Enasidenib",
@@ -298,6 +312,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Regorafenib",
@@ -319,6 +334,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "established",
     tumor_type_applicability: ["gist", "rcc"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Tazemetostat",
@@ -339,6 +355,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "clinical_trial",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT03213665"],
+    sdh_specific_evidence: true,
   },
   {
     name: "Hydroxychloroquine",
@@ -360,6 +377,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT03283150", "NCT01023737"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Daporinad (FK866)",
@@ -377,6 +395,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT00432107"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Rogaratinib",
@@ -394,6 +413,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "clinical_trial",
     tumor_type_applicability: ["gist"],
     clinical_trial_ids: ["NCT04595747"],
+    sdh_specific_evidence: true,
   },
   {
     name: "Erdafitinib",
@@ -413,6 +433,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["gist"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "DENSPM (N1,N11-Diethylnorspermine)",
@@ -430,6 +451,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: true,
   },
   {
     name: "AZD3965",
@@ -447,6 +469,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: ["NCT01791595"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Epacadostat",
@@ -464,6 +487,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: ["NCT02318277"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Pevonedistat",
@@ -481,6 +505,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: true,
   },
   {
     name: "Birabresib",
@@ -498,6 +523,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["gist"],
     clinical_trial_ids: ["NCT01713582"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Denifanstat",
@@ -515,6 +541,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02980029", "NCT04341337"],
+    sdh_specific_evidence: true,
   },
   {
     name: "Brequinar",
@@ -532,6 +559,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT01888484"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Teriflunomide",
@@ -551,6 +579,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02799498"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Ym155 (Sepantronium Bromide)",
@@ -568,6 +597,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT00390117"],
+    sdh_specific_evidence: true,
   },
   {
     name: "Lutetium-177 DOTATATE",
@@ -588,6 +618,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "established",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: ["NCT01578239", "NCT03206060", "NCT06607692"],
+    sdh_specific_evidence: true,
   },
   {
     name: "ART558",
@@ -605,6 +636,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Cabozantinib",
@@ -626,6 +658,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "established",
     tumor_type_applicability: ["ppgl", "rcc"],
     clinical_trial_ids: ["NCT02302833", "NCT04400474"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Ceralasertib",
@@ -643,6 +676,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "preclinical",
     tumor_type_applicability: ["ppgl:atrx"],
     clinical_trial_ids: ["NCT03787680"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Eflornithine (DFMO)",
@@ -664,6 +698,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
   {
     name: "Pembrolizumab",
@@ -690,6 +725,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02721732", "NCT02834013"],
+    sdh_specific_evidence: false,
   },
   {
     name: "[212Pb]VMT-α-NET",
@@ -707,6 +743,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "clinical_trial",
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: ["NCT06427798", "NCT05636618"],
+    sdh_specific_evidence: false,
   },
   {
     name: "Palbociclib",
@@ -727,5 +764,6 @@ export const SEED_DRUGS: SeedDrug[] = [
     status: "theoretical",
     tumor_type_applicability: ["gist"],
     clinical_trial_ids: [],
+    sdh_specific_evidence: false,
   },
 ];

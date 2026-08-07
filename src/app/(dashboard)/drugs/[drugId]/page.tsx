@@ -260,6 +260,22 @@ export default async function DrugDetailPage({
                 </span>
               </div>
 
+              <div className="flex items-start gap-2">
+                {drug.sdh_specific_evidence ? (
+                  <CheckCircle2 className="h-4 w-4 text-teal-500 mt-0.5 shrink-0" />
+                ) : (
+                  <AlertCircle className="h-4 w-4 text-amber-500 mt-0.5 shrink-0" />
+                )}
+                <div>
+                  <p className="text-xs font-medium">Evidence Grade</p>
+                  <p className="text-xs text-muted-foreground">
+                    {drug.sdh_specific_evidence
+                      ? "Tested in SDH-deficient models"
+                      : "Mechanistic inference — SDH-specific validation needed"}
+                  </p>
+                </div>
+              </div>
+
               {drug.approved_indications.length > 0 && (
                 <div>
                   <p className="text-xs font-medium text-muted-foreground mb-1">

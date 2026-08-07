@@ -37,6 +37,9 @@ export type Drug = {
   status: "established" | "preclinical" | "clinical_trial" | "theoretical";
   tumor_type_applicability: string[];
   clinical_trial_ids?: string[];
+  /** True if this drug has been directly tested in SDH-deficient cell lines, animal models, or patient populations.
+   *  False = mechanistic inference only; direct SDH-deficient validation is still needed. */
+  sdh_specific_evidence: boolean;
 };
 
 export type Evidence = {

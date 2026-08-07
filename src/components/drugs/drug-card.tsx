@@ -112,6 +112,11 @@ export function DrugCard({
                 {drug.clinical_trial_ids.length} trial{drug.clinical_trial_ids.length > 1 ? "s" : ""}
               </Badge>
             )}
+            {drug.sdh_specific_evidence && (
+              <Badge variant="outline" className="text-[10px] border-teal-500 text-teal-600 dark:text-teal-400">
+                SDH data
+              </Badge>
+            )}
           </div>
         </CardContent>
       </Card>

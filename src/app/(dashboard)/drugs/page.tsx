@@ -14,6 +14,7 @@ export default async function DrugsPage({
     typeof params.pathway === "string" ? params.pathway : null;
   const statusFilter =
     typeof params.status === "string" ? params.status : null;
+  const sdhFilter = params.sdh === "proven";
   const sortBy =
     typeof params.sort === "string" ? params.sort : "score";
 
@@ -24,6 +25,9 @@ export default async function DrugsPage({
   }
   if (statusFilter) {
     drugs = drugs.filter((d) => d.status === statusFilter);
+  }
+  if (sdhFilter) {
+    drugs = drugs.filter((d) => d.sdh_specific_evidence);
   }
 
   if (sortBy === "score") {
@@ -51,7 +55,7 @@ export default async function DrugsPage({
       <div className="flex flex-wrap gap-2">
         <a href="/drugs">
           <Badge
-            variant={!pathwayFilter && !statusFilter ? "default" : "outline"}
+            variant={!pathwayFilter && !statusFilter && !sdhFilter ? "default" : "outline"}
             className="cursor-pointer"
           >
             All ({SEED_DRUGS.length})
@@ -70,6 +74,14 @@ export default async function DrugsPage({
             </a>
           );
         })}
+        <a href="/drugs?sdh=proven">
+          <Badge
+            variant={sdhFilter ? "default" : "outline"}
+            className="cursor-pointer"
+          >
+            SDH-proven ({SEED_DRUGS.filter((d) => d.sdh_specific_evidence).length})
+          </Badge>
+        </a>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

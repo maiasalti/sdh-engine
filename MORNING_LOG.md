@@ -244,3 +244,32 @@ Evidence_score rationale: 30 (theoretical) — CIMP-driven CDKN2A silencing in S
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-05-cdkn2a-cdk46
+
+## 2026-08-07
+
+**Direction:** schema/metadata
+**Angle:** `sdh_specific_evidence: boolean` — distinguish drugs directly tested in SDH-deficient models from those resting on mechanistic inference only
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all PMIDs returned across 9 PubMed queries — SDH GIST, SDH PPGL/PCC, SDH RCC, SDH pituitary, SDH metabolism/enzymes, SDH epigenetics/CIMP, SDH synthetic lethality, SDHB/SDHC/SDHD mutation cancer, belzutifan SDH — already present in tracker.md; fifth consecutive run returning no new papers)
+**Summary:** PubMed scan returned 0 new PMIDs across 9 queries covering all standard SDH-deficient tumor angles (date window May–August 2026). Nothing to add to papers.ts or tracker.md.
+
+For Part B: implemented `sdh_specific_evidence: boolean` as a new drug-level metadata field distinguishing two epistemic tiers currently conflated in the engine. Currently the engine lists 38 drugs, but a user browsing them has no way to know which have actually been tested in SDH-deficient biological systems (cell lines, animal models, or patients genotyped for SDH mutation) versus which rest entirely on mechanistic inference from SDH biology. This distinction is clinically material: direct evidence in SDH-deficient models means the drug has actually been shown to work (or signal) in the relevant context; mechanistic inference means the chain has not yet been closed experimentally. The new field is distinct from `tumor_type_applicability` (which classifies by tumor type) and from the Evidence type's existing `sdh_specific: boolean` (which tracks individual evidence pieces). It provides a drug-level summary of whether any direct SDH-deficient experimental validation exists.
+
+Annotation rationale for the 12 `true` drugs:
+- **Belzutifan**: Phase 2 NCT04924075 directly targets HIF-2α in SDH-deficient PPGL/GIST
+- **Sunitinib**: retrospective clinical data in SDH-deficient GIST specifically
+- **Decitabine**: Letouzé 2013 (PMID 23707781) reversed migratory phenotype in SDHB-deficient mouse chromaffin cells
+- **Olaparib**: Sulkowski 2018 (PMID 30013182) demonstrated HR deficiency and olaparib hypersensitivity in patient-derived SDH-deficient hereditary PPGL cells
+- **Ascorbic Acid**: Rapizzi 2026 (PMID 41404848) tested in SDHB-deficient zebrafish model — result is counterintuitively harmful (promoted tumor growth); retained as `true` because it IS direct SDH-deficient model data, but the badge flags the drug requires careful clinical judgment (the mechanism_of_action already documents the safety signal)
+- **Tazemetostat**: Loriot et al. (PMID 25633189) demonstrated H3K27me3 vulnerability in paraganglioma cell lines
+- **Rogaratinib**: Phase 2 NCT04595747 (Merriam et al., Nat Med 2026, PMID 42191879) enrolled SDH-deficient GIST specifically — 41.7% ORR
+- **DENSPM**: Rai et al. 2020 (PMID 32562798) in SDHB-deficient cells; Alli et al. 2026 (PMID 42249664) xenograft
+- **Pevonedistat**: Al Khazal et al. 2026 (PMID 42181244) — CRISPR screen in SDHB-deficient chromaffin cells identified UBE2F (upstream target) as synthetic lethal
+- **Denifanstat**: G28UCM (same class) shown by Rodríguez-Flores et al. 2026 (PMID 41520938) to cause synthetic lethality in SDHB-KO cell lines
+- **Ym155**: PMID 41711310 (Endocr Relat Cancer 2026) demonstrated selective DNA damage in SDH-deficient cells
+- **177Lu-DOTATATE**: SSTR2 overexpression confirmed in SDH-deficient PPGL (PMID 42454478, PMID 41928014); clinical PRRT use established
+
+UI changes: (1) `drug-card.tsx` — teal "SDH data" badge shown when `sdh_specific_evidence: true`; (2) `[drugId]/page.tsx` — "Evidence Grade" row in Quick Facts sidebar with CheckCircle2 icon + "Tested in SDH-deficient models" (true) or AlertCircle + "Mechanistic inference — SDH-specific validation needed" (false); (3) `drugs/page.tsx` — "SDH-proven (12)" filter badge activating `?sdh=proven` URL param; (4) `supabase-schema.sql` — `sdh_specific_evidence BOOLEAN NOT NULL DEFAULT false` column added to the drugs table.
+
+Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
+**PR:** morning/2026-08-07-sdh-specific-evidence-flag

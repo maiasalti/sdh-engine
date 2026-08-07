@@ -45,6 +45,7 @@ CREATE TABLE drugs (
   status TEXT NOT NULL CHECK (status IN ('established', 'preclinical', 'clinical_trial', 'theoretical')),
   tumor_type_applicability TEXT[] NOT NULL DEFAULT '{}',
   clinical_trial_ids TEXT[] NOT NULL DEFAULT '{}',
+  sdh_specific_evidence BOOLEAN NOT NULL DEFAULT false,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
