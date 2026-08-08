@@ -244,3 +244,22 @@ Evidence_score rationale: 30 (theoretical) — CIMP-driven CDKN2A silencing in S
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-05-cdkn2a-cdk46
+
+## 2026-08-08
+
+**Direction:** drug-pool
+**Angle:** GLUT1/Warburg glycolytic dependency — BAY-876 as HIF-driven glucose transport inhibitor in SDH-deficient tumors
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all PubMed results across 9 queries already present in tracker.md; sixth consecutive run with no new papers)
+**Summary:** PubMed scan across SDH-deficient tumor search angles (GIST, PPGL/PCC, RCC, pituitary, SDH+metabolism, SDH+glycolysis, SDH+HIF, SDH+epigenetics, SDH+GLUT1 specifically; date window 2026-05-08 to 2026-08-08) returned 0 new PMIDs; every result was already present in tracker.md. This is the sixth consecutive run with an empty paper scan, consistent with the pace of rare disease literature output.
+
+For Part B: implemented the GLUT1/Warburg glycolytic dependency direction — not covered in any prior run. The mechanism runs through two converging routes that together create a GLUT1-specific metabolic vulnerability unique to pseudohypoxic tumors: (1) HIF-1α constitutive stabilization (succinate-mediated PHD inhibition → HIF-1α stable → HRE-driven SLC2A1/GLUT1 transcription permanently active → GLUT1 overexpressed on tumor cell surface); and (2) TCA cycle truncation at Complex II depleting OXPHOS capacity, forcing SDH-deficient cells into disproportionate glycolytic ATP dependency — precisely the route GLUT1 inhibition blocks. The mechanistic anchor is Chan et al. (Sci Transl Med 2011, PMID 21697397), who demonstrated that VHL-null renal cancer cells — pseudohypoxic via the identical PHD/HIF-1α mechanism — are selectively killed by the GLUT1 inhibitor STF-31 while isogenic VHL-restored cells survive. The VHL-null/SDH-deficient mechanistic parallel (both: PHD inhibition → constitutive HIF-1α → constitutive GLUT1 upregulation → glucose import dependency) directly motivates GLUT1 inhibitor testing in SDH-deficient models. FDG-PET avidity in SDH-deficient PPGL (PMID 42454478, already in papers.ts) provides clinical imaging evidence that elevated GLUT1-mediated glucose transport is a real in vivo feature of these tumors.
+
+BAY-876 (Siebeneicher et al., ChemMedChem 2016, PMID 27595555) chosen as the representative compound: IC50 ~2 nM for GLUT1, >17-fold selectivity over GLUT2 (35 nM), >67-fold over GLUT3 (134 nM), >80-fold over GLUT4 (160 nM) — best-in-class selectivity profile of any disclosed GLUT1 inhibitor. BAY-876 inhibits 3H-2-deoxy-glucose uptake and reduces proliferative viability in glucose-dependent cancer lines. Currently a pharmacological tool compound — no clinical development.
+
+Changes made: (1) `src/data/seed/pathways.ts` — new pathway `warburg-glycolytic-dependency` (display_order 23); (2) `src/data/seed/targets.ts` — new target SLC2A1 (GLUT1, UniProt P11166, pathway_slug warburg-glycolytic-dependency, target_type downstream); (3) `src/data/seed/drugs.ts` — new drug BAY-876 (GLUT1 inhibitor; evidence_score 26; status preclinical; pathway_slugs ["warburg-glycolytic-dependency", "hif-pseudohypoxia"]; target_gene_symbols ["SLC2A1"]; tumor_type_applicability ["all"]; clinical_trial_ids []); (4) `src/data/seed/sdh-biology.ts` — Mechanism 25 (GLUT1/Warburg Glycolytic Dependency) with full mechanistic explanation, VHL-null precedent, FDG-PET clinical evidence, BAY-876 selectivity profile, and key limitations; (5) `src/lib/scoring/constants.ts` — added PATHWAY_COLORS entry for `warburg-glycolytic-dependency` (yellow).
+
+Evidence_score rationale: 26 (preclinical) — strong mechanistic foundation (canonical HIF-1α → GLUT1; VHL-null pseudohypoxic lethality with STF-31, PMID 21697397; FDG-PET avidity in SDH-deficient PPGL, PMID 42454478); no direct SDH-specific GLUT1 inhibitor experimental data; BAY-876 is tool compound only.
+
+Candidate directions not yet explored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors — minimal justification to add); Complex I direction definitively ruled out (Sokolov preprint PMID 42239110, adaptive Complex I suppression as response to SDH loss).
+**PR:** morning/2026-08-08-glut1-warburg-glycolysis

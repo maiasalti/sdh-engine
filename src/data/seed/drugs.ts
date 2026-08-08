@@ -709,6 +709,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: ["NCT06427798", "NCT05636618"],
   },
   {
+    name: "BAY-876",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "GLUT1 inhibitor",
+    mechanism_of_action:
+      "BAY-876 is a highly potent and selective inhibitor of GLUT1 (SLC2A1), the facilitative glucose transporter whose expression is constitutively driven by HIF-1α via hypoxia-response elements (HREs). In SDH-deficient tumors, succinate accumulation inhibits PHD enzymes → HIF-1α/2α is stabilized regardless of oxygen tension → SLC2A1 transcription is constitutively active → GLUT1 protein is overexpressed on tumor cell surfaces. This creates a Warburg glycolytic dependency that SDH-deficient cells are particularly reliant on because TCA cycle truncation at Complex II simultaneously limits oxidative phosphorylation, leaving glycolysis as the primary ATP-generating route.\n\nBAY-876 was developed and characterized by Siebeneicher et al. (ChemMedChem 2016, PMID 27595555) as a glucose transporter inhibitor with exceptional GLUT1 potency (IC50 ~2 nM, radio-labeled glucose competition assay) and >50-fold selectivity over GLUT2 (~35 nM), GLUT3 (~134 nM), and GLUT4 (~160 nM) — the highest selectivity profile of any disclosed GLUT1 inhibitor. BAY-876 inhibits glucose uptake and reduces proliferative viability in glucose-dependent cancer cell lines, validating on-target GLUT1 pharmacology.\n\nThe mechanistic rationale for SDH-deficient tumors is grounded in VHL-null renal cancer research: Chan et al. (Sci Transl Med 2011, PMID 21697397) demonstrated that VHL-null renal cancer cells — which are pseudohypoxic (HIF-1α constitutively stabilized, GLUT1 upregulated) via the same PHD-inhibition mechanism as SDH-deficient cells — are selectively killed by the GLUT1 inhibitor STF-31, while isogenic VHL-restored cells survive. The selectivity arises because pseudohypoxic cells have upregulated GLUT1 as their dominant glucose import route and cannot compensate through alternative transporters under GLUT1 blockade. FDG-PET avidity in SDH-deficient PPGL (elevated 18F-FDG uptake reflecting high glucose transport; PMID 42454478, already in papers database) provides clinical imaging evidence that GLUT1-mediated glucose transport is elevated in vivo in SDH-deficient tumors.\n\nKey limitations: (1) BAY-876 has no clinical development; it is a pharmacological tool compound. (2) No direct experimental data test BAY-876 or any GLUT1 inhibitor in SDH-deficient cancer cell lines or animal models — the mechanistic extrapolation from VHL-null cancer (Chan 2011) is strong but unvalidated in the SDH context. (3) GLUT1 is expressed in most tissues, including red blood cells and the blood-brain barrier; systemic GLUT1 inhibition carries potential hypoglycemia and neurotoxicity risks that have limited clinical translation of GLUT1 inhibitors generally. (4) Glucose-deprived cells may upregulate GLUT3/4 as compensatory transporters; the BAY-876 selectivity advantage may be insufficient if non-GLUT1 transporters are induced under drug pressure. Evidence_score of 26 reflects solid mechanistic reasoning (HIF-1α → GLUT1 is canonical; VHL-null/pseudohypoxic precedent is direct; FDG-PET confirms elevated glucose transport clinically) anchored by Chan 2011 and the SDH-VHL mechanistic parallel, with no SDH-specific experimental data.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["warburg-glycolytic-dependency", "hif-pseudohypoxia"],
+    target_gene_symbols: ["SLC2A1"],
+    evidence_score: 26,
+    status: "preclinical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: [],
+  },
+  {
     name: "Palbociclib",
     brand_names: ["Ibrance"],
     chembl_id: null,

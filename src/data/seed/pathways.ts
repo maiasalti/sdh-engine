@@ -368,4 +368,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 22,
   },
+  {
+    name: "Warburg Glycolytic Dependency / GLUT1 Upregulation",
+    slug: "warburg-glycolytic-dependency",
+    description:
+      "SDH loss enforces a dual glycolytic dependency: (1) HIF-1α constitutive stabilization (via succinate-mediated PHD inhibition) transcriptionally upregulates GLUT1/SLC2A1, the primary facilitative glucose transporter, driving a Warburg-like aerobic glycolysis program; (2) TCA cycle truncation at Complex II limits oxidative glucose metabolism, forcing SDH-deficient cells to rely disproportionately on glycolysis for ATP and biosynthetic carbon. Chan et al. (Sci Transl Med 2011, PMID 21697397) demonstrated that VHL-null renal cancer cells — which share the same pseudohypoxic HIF-driven GLUT1 upregulation mechanism as SDH-deficient tumors — are selectively killed by the GLUT1 inhibitor STF-31, while isogenic VHL-restored cells are protected. FDG-PET avidity in SDH-deficient PPGL (indirect GLUT1 evidence: high 18F-FDG uptake reflects enhanced glucose transport via GLUT1) confirms elevated glucose transport in the clinical setting (PMID 42454478).",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → HIF-1α/2α stabilization → HRE-driven SLC2A1 (GLUT1) transcriptional upregulation; concurrent TCA truncation limits OXPHOS → compensatory glycolytic dependency",
+    downstream_effects: [
+      "GLUT1/SLC2A1 overexpression on tumor cell surface (HIF-1α HRE-driven transcription)",
+      "Increased glucose uptake and aerobic glycolysis (Warburg effect) independent of oxygen tension",
+      "FDG-PET avidity in SDH-deficient PPGL — imaging correlate of elevated GLUT1-mediated glucose transport",
+      "Selective vulnerability to GLUT1 inhibition: VHL-null (pseudohypoxic, GLUT1-high) cells killed by STF-31 while VHL-restored cells survive (Chan et al., Sci Transl Med 2011, PMID 21697397)",
+      "BAY-876 (IC50 2 nM GLUT1; >50-fold selectivity over GLUT2/3/4) as the most potent and selective GLUT1 inhibitor available for preclinical evaluation",
+    ],
+    druggable: true,
+    display_order: 23,
+  },
 ];
