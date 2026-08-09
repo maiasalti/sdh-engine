@@ -368,4 +368,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 22,
   },
+  {
+    name: "HSP90 Chaperone Dependency for VHL-Independent HIF-1α Proteostasis",
+    slug: "hsp90-hif1a-proteostasis",
+    description:
+      "HIF-1α requires the HSP90 molecular chaperone for proteostatic stability independently of the canonical PHD-VHL degradation pathway. In SDH-deficient tumors, succinate-driven PHD inhibition blocks the VHL-mediated HIF-1α degradation route — but HSP90 remains the sole remaining mechanism preventing HIF-1α from being routed to proteasomal degradation via the CHIP/Hsp70/Hsp40 co-chaperone axis. HSP90 inhibition (ganetespib) depletes HIF-1α protein even when PHDs are inhibited, by engaging this VHL-independent proteasomal route. Simultaneously degrades co-client oncoproteins CDK4, AKT, VEGFR2, MET, and FGFR1 — all relevant SDH-biology effectors. Isaacs et al. (Cancer Cell 2002, PMID 12186565) established this VHL-independent HIF-1α degradative pathway using geldanamycin in VHL-null cells.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → VHL-mediated degradation blocked; HIF-1α remains proteostically stable via HSP90 chaperone machinery as the sole remaining proteasomal gatekeeping pathway",
+    downstream_effects: [
+      "HIF-1α proteostatic stability maintained by HSP90 even when PHD-VHL axis is blocked",
+      "HSP90 inhibition (ganetespib) routes HIF-1α to proteasomal degradation via CHIP/Hsp70/Hsp40 co-chaperone axis",
+      "Both HIF-1α AND HIF-2α proteins are depleted (vs belzutifan, which only suppresses HIF-2α transcriptional activity)",
+      "Simultaneous proteasomal depletion of HSP90 co-clients: CDK4, AKT, VEGFR2 (KDR), MET, FGFR1",
+      "VHL-independent mechanism — effective even in complete PHD/VHL loss-of-function context",
+    ],
+    druggable: true,
+    display_order: 23,
+  },
 ];

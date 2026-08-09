@@ -352,6 +352,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Type I transmembrane protein and ligand of PD-1 (PDCD1). CD274 promoter contains canonical hypoxia-response elements (HREs) directly activated by HIF-1α, making PD-L1 a transcriptional output of the pseudohypoxic program constitutively active in SDH-deficient tumors. Noman et al. (J Exp Med 2014, PMID 24493797) demonstrated that hypoxia, via HIF-1α, drives PD-L1 expression on tumor cells and that PD-L1 upregulation mediates immune evasion in hypoxic tumor microenvironments. In SDH-deficient tumors, constitutive HIF-1α stabilization via succinate-mediated PHD inhibition creates a persistent pseudohypoxic state that continuously drives CD274 transcription. This HIF-driven PD-L1 expression enables tumor cells to engage PD-1 on cytotoxic T cells and suppress anti-tumor immunity — a second immune-evasion mechanism complementary to the succinate-MCT1 and HIF-IDO1 arms (Mechanism 11). Blocked by PD-1 antibodies (pembrolizumab, nivolumab) which prevent PD-L1/PD-1 engagement.",
   },
   {
+    gene_symbol: "HSP90AA1",
+    name: "Heat shock protein 90 alpha (cytosolic, class A member 1)",
+    uniprot_id: "P07900",
+    pathway_slug: "hsp90-hif1a-proteostasis",
+    target_type: "upstream",
+    description:
+      "Cytosolic ATP-dependent molecular chaperone that folds and stabilizes hundreds of client proteins including HIF-1α, HIF-2α, CDK4, AKT, VEGFR2 (KDR), MET, and FGFR1. HSP90AA1 is the inducible isoform (also called HSP90α); HSP90AB1 is the constitutive isoform; both are inhibited by ganetespib. The HSP90 N-terminal ATP-binding pocket is the pharmacological target of all clinical HSP90 inhibitors. Isaacs et al. (Cancer Cell 2002, PMID 12186565) established that HSP90 provides HIF-1α proteostatic stability via a VHL-independent pathway: geldanamycin depletes HIF-1α in VHL-null cells by routing it to the CHIP/Hsp70/Hsp40-mediated proteasomal degradation axis. In SDH-deficient tumors, where the PHD-VHL pathway is constitutively blocked by succinate, HSP90 becomes the sole remaining mechanism preventing HIF-1α proteasomal routing. Ganetespib (STA-9090) is the second-generation, non-ansamycin, resorcinol-class inhibitor with superior potency, no benzoquinone hepatotoxicity, and extensive Phase 1-3 clinical data.",
+  },
+  {
     gene_symbol: "CDK4",
     name: "Cyclin-dependent kinase 4",
     uniprot_id: "P11802",
