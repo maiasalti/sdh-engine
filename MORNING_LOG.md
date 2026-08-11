@@ -263,3 +263,22 @@ Changes made: (1) `src/data/papers.ts` — 3 new entries (PMIDs 42573142, 424902
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-10-belzutifan-ppgl-cb839-gls
+
+## 2026-08-11
+
+**Direction:** evidence quality upgrade (existing drug entry)
+**Angle:** Sunitinib MoA upgrade with FIRSTMAPPP Phase 2 RCT data (Baudin et al., Lancet 2024, PMID 38402886); secondary — metformin MoA correction to remove misleading Complex I rationale (Sokolov preprint PMID 42239110)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 2 (PMID 42176217 — NF1-GIST with EED/CDKN2A loss but SDHB-positive, not SDH-deficient; PMID 41996739 — LOT-kidney with SDHB-positive IHC, MTOR-mutant, different renal subtype)
+**Summary:** PubMed scan (SDH-deficient GIST, PPGL, paraganglioma sunitinib, SDH biology, July–August 2026) returned 2 new PMIDs not in tracker.md. Both rejected: PMID 42176217 is NF1-associated GIST with PRC2/CDKN2A findings but confirmed SDHB expression (not SDH-deficient); PMID 41996739 is a low-grade oncocytic renal tumor (LOT) with SDHB-positive IHC and MTOR mutation — an unrelated renal subtype. No new papers to add. PMID 38402886 (FIRSTMAPPP, Baudin et al., Lancet 2024) was already known to the engine implicitly via the sunitinib entry but had never been formally cited in the MoA or linked as a clinical trial ID.
+
+For Part B: the sunitinib entry (evidence_score 75, second-highest in engine) was the worst-documented established drug — a one-sentence stub with zero citations and empty clinical_trial_ids[]. This is the principal quality defect in the current seed data. FIRSTMAPPP (NCT01371201; Baudin et al., Lancet 2024, PMID 38402886) is the landmark fix: the first randomised Phase 2 trial ever conducted in metastatic PPGL (n=78; 39 per arm; stratified by SDHB status; 32% SDHx patients), showing sunitinib 37.5 mg/day vs placebo achieved 12-month PFS 36% (90% CI 23–50) vs 19% (90% CI 11–31). Authors' verdict: "highest level of evidence for anti-tumour efficacy in progressive metastatic PPGL." The new MoA: (1) retains the kinase/angiogenesis mechanism; (2) adds the HIF-driven VEGF overexpression rationale (why SDH-deficient cells are particularly sensitive); (3) cites FIRSTMAPPP with exact trial outcomes, stratification detail, and PMID; (4) NCT01371201 added to clinical_trial_ids. Evidence_score raised 75→78 — a modest 3-point bump reflecting the FIRSTMAPPP RCT (Phase 2 with randomisation, in a directly SDH-relevant tumor type) relative to prior score based on GIST approval + anecdotal PPGL activity.
+
+Secondary fix — metformin MoA correction: the prior entry stated "additional Complex I inhibition may further disrupt mitochondrial metabolism" — language that was mechanistically wrong in light of the Sokolov preprint (PMID 42239110) demonstrating that SDH-deficient cells adaptively suppress Complex I. The updated MoA removes this claim, notes the Sokolov finding explicitly, and retains only the AMPK→mTOR axis as the plausible residual rationale. drug_class updated from "Biguanide / Complex I inhibitor / AMPK activator" to "Biguanide / AMPK activator" for consistency. Evidence_score unchanged at 40 — the correction removes a false positive rationale; it does not add new evidence.
+
+Changes made: (1) `src/data/seed/drugs.ts` — sunitinib: MoA expanded with FIRSTMAPPP mechanism + RCT outcomes, evidence_score 75→78, clinical_trial_ids [] → ["NCT01371201"]; metformin: MoA corrected (Complex I claim removed, Sokolov caveat added), drug_class simplified; (2) `tracker.md` — 2 new rejected rows (PMIDs 42176217, 41996739).
+
+Evidence_score rationale (sunitinib 78): prior 75 was based on GIST FDA approval + known PPGL activity without randomised data; +3 for FIRSTMAPPP Phase 2 RCT with randomisation and SDHB-stratified subgroup in a directly SDH-relevant tumor type. Does not reach 80+ because FIRSTMAPPP is Phase 2 (not Phase 3), primary endpoint was 12-month PFS rather than OS, and the SDHx-stratified subgroup result (n≈25) is underpowered for definitive conclusions about SDH-deficient PPGL specifically.
+
+Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
+**PR:** morning/2026-08-11-sunitinib-firstmappp

@@ -40,7 +40,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "5329102",
     drug_class: "Multi-kinase inhibitor (VEGFR/PDGFR/KIT)",
     mechanism_of_action:
-      "Inhibits multiple receptor tyrosine kinases including VEGFR1/2/3, PDGFR-α/β, KIT, FLT3, and RET. Blocks angiogenesis and has direct anti-tumor effects. Used as standard therapy in advanced GIST and has shown activity in SDH-deficient GIST and paraganglioma.",
+      "Inhibits multiple receptor tyrosine kinases including VEGFR1/2/3, PDGFR-α/β, KIT, FLT3, and RET. Blocks angiogenesis and exerts direct anti-tumor effects via KIT and PDGFR blockade. In SDH-deficient tumors, HIF-driven VEGF overexpression creates a dependency on angiogenic signaling that sunitinib directly antagonizes. Standard second-line therapy in advanced GIST (after imatinib failure). In paraganglioma: FIRSTMAPPP (NCT01371201; Baudin et al., Lancet 2024, PMID 38402886) — the first randomised Phase 2 trial in metastatic PPGL — demonstrated sunitinib 37.5 mg/day vs placebo significantly improved 12-month PFS (36%, 90% CI 23–50 vs 19%, 90% CI 11–31; n=78, stratified by SDHB status; 32% of patients had germline SDHx variants). Authors concluded sunitinib provides 'the highest level of evidence for anti-tumour efficacy in progressive metastatic PPGL.'",
     fda_approved: true,
     approved_indications: [
       "Advanced GIST (after imatinib failure)",
@@ -49,10 +49,10 @@ export const SEED_DRUGS: SeedDrug[] = [
     ],
     pathway_slugs: ["vegf-signaling", "mtor-pi3k-akt"],
     target_gene_symbols: ["KDR", "KIT"],
-    evidence_score: 75,
+    evidence_score: 78,
     status: "established",
     tumor_type_applicability: ["gist", "ppgl", "rcc"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT01371201"],
   },
   {
     name: "Bevacizumab",
@@ -220,9 +220,9 @@ export const SEED_DRUGS: SeedDrug[] = [
     brand_names: ["Glucophage"],
     chembl_id: "CHEMBL1431",
     pubchem_cid: "4091",
-    drug_class: "Biguanide / Complex I inhibitor / AMPK activator",
+    drug_class: "Biguanide / AMPK activator",
     mechanism_of_action:
-      "Inhibits mitochondrial Complex I, activates AMPK, and inhibits mTOR signaling. In SDH-deficient cells already lacking Complex II, additional Complex I inhibition may further disrupt mitochondrial metabolism. AMPK activation opposes mTOR-driven growth.",
+      "Inhibits mitochondrial Complex I and activates AMPK, thereby inhibiting mTOR signaling. The primary rationale in SDH-deficient tumors is AMPK-mediated mTOR suppression, not Complex I inhibition: Sokolov et al. (PMID 42239110, 2026) demonstrated that SDH-deficient cells adaptively suppress Complex I activity, meaning metformin's Complex I target is already downregulated. The AMPK→mTOR axis remains plausible but is off-mechanism relative to the original Complex I rationale.",
     fda_approved: true,
     approved_indications: ["Type 2 diabetes mellitus"],
     pathway_slugs: ["mtor-pi3k-akt", "oxidative-stress-ros"],
