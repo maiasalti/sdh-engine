@@ -18,16 +18,17 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "134816052",
     drug_class: "HIF-2α inhibitor",
     mechanism_of_action:
-      "Directly binds and inhibits HIF-2α, preventing its dimerization with HIF-1β (ARNT) and blocking transcription of HIF-2α target genes including VEGF, EPO, and metabolic enzymes. FDA-approved for VHL disease, which shares the same pseudohypoxic mechanism as SDH-deficient tumors.",
+      "Directly binds and inhibits HIF-2α (EPAS1), preventing its dimerization with HIF-1β (ARNT) and blocking transcription of HIF-2α target genes including VEGF, EPO, and metabolic enzymes. In the LITESPARK-015 Phase 2 trial (NCT04924075) in locally advanced or metastatic pheochromocytoma and paraganglioma, belzutifan achieved an 85% disease control rate and 26% overall response rate, becoming the first oral and second FDA-approved therapy for metastatic PPGL (Jimenez et al., J Clin Endocrinol Metab 2026, PMID 42573142). This validates HIF-2α inhibition as a clinical target directly downstream of SDHx mutation: SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-2α stabilization — the same pseudohypoxic mechanism as VHL deficiency. Beyond radiographic response, belzutifan improved blood pressure control and quality of life in PPGL patients; the predominant adverse effect is mechanism-based grade 1–3 anemia (EPO suppression).",
     fda_approved: true,
     approved_indications: [
       "VHL-associated renal cell carcinoma",
       "VHL-associated CNS hemangioblastomas",
       "VHL-associated pancreatic neuroendocrine tumors",
+      "Locally advanced or metastatic pheochromocytoma and paraganglioma",
     ],
     pathway_slugs: ["hif-pseudohypoxia"],
     target_gene_symbols: ["EPAS1"],
-    evidence_score: 82,
+    evidence_score: 88,
     status: "established",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT04924075"],
@@ -161,7 +162,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "71577426",
     drug_class: "Glutaminase inhibitor",
     mechanism_of_action:
-      "Selective, orally bioavailable inhibitor of glutaminase (GLS). Blocks the conversion of glutamine to glutamate, cutting off the primary anaplerotic fuel source for SDH-deficient cells with disrupted TCA cycles.",
+      "Selective, orally bioavailable allosteric inhibitor of glutaminase (GLS, both KGA and GAC isoforms). Blocks the conversion of glutamine to glutamate at the inner mitochondrial membrane. In SDH-deficient cells, TCA cycle truncation at the succinate→fumarate step forces a shift to reductive glutamine carboxylation as the dominant citrate-forming pathway: GLS converts glutamine to glutamate → α-ketoglutarate (α-KG), which reverse NADPH-dependent IDH2 then converts to isocitrate and citrate — providing acetyl-CoA for lipid synthesis and replenishing four-carbon anaplerotic intermediates without requiring functional Complex II (Mullen et al., Nature 2012, PMID 22101431). GLS is the committed entry step for this reductive flux; its inhibition more severely depletes citrate, acetyl-CoA, and proliferative capacity in SDH-deficient cells than in SDH-intact cells with intact oxidative TCA cycling. Separately, Lussey-Lepoutre et al. (Nat Commun 2015, PMID 26522426) demonstrated in SDH-deficient paraganglioma models that TCA truncation forces broad compensatory metabolic reprogramming including anaplerotic dependencies not present in SDH-intact cells, confirming this metabolic vulnerability class. CB-839 has been evaluated in the CANTATA (NCT03428217) and ENTRATA (NCT02071862) Phase 2 trials; no SDH-genotype-stratified efficacy data have been reported.",
     fda_approved: false,
     approved_indications: [],
     pathway_slugs: ["glutamine-dependency"],
@@ -169,7 +170,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 60,
     status: "clinical_trial",
     tumor_type_applicability: ["all"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT03428217", "NCT02071862"],
   },
   {
     name: "Olaparib",

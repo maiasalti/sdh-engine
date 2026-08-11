@@ -205,4 +205,43 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42554827",
     date: "2026-08",
   },
+  {
+    title:
+      "Belzutifan, A Hypoxia-Inducible Factor 2-Alpha Inhibitor, for Patients with Advanced Pheochromocytoma and Paraganglioma.",
+    authors: "Jimenez C, Waguespack SG, Kaplan J, Habra MA, Varghese J.",
+    journal: "J Clin Endocrinol Metab",
+    year: 2026,
+    doi: "10.1210/clinem/dgag324",
+    topic: "Treatment & Trials",
+    description:
+      "Review of belzutifan's clinical development for pseudohypoxia-driven PPGLs, anchored by the LITESPARK-015 Phase 2 trial results: 85% disease control rate and 26% overall response rate in locally advanced or metastatic disease. Belzutifan is now the first oral and second FDA-approved therapy for metastatic PPGL, directly validating HIF-2α inhibition — the same pseudohypoxic mechanism driven by SDHx loss — as a clinical target in this disease.",
+    pmid: "42573142",
+    date: "2026-08",
+  },
+  {
+    title:
+      "First-in-human, open-label, single-arm phase 1 study of [211At] meta-astatobenzylguanidine in patients with pheochromocytoma or paraganglioma.",
+    authors: "Okamoto S, Nomura K, Shiga T, et al.",
+    journal: "Clin Cancer Res",
+    year: 2026,
+    doi: "10.1158/1078-0432.CCR-26-1047",
+    topic: "Treatment & Trials",
+    description:
+      "Phase 1 dose-escalation study of [211At]MABG — an alpha-emitting astatine-211 MIBG analog — in 10 patients with refractory MIBG-avid pheochromocytoma or paraganglioma: no dose-limiting toxicities up to 2.1 MBq/kg, 1 partial response and 7 stable disease, with rapid systemic clearance (65% urinary excretion within 72 hours). Establishes clinical feasibility for alpha-particle MIBG therapy as a radiobiologically distinct complement to beta-particle 131I-MIBG and PRRT in MIBG-avid PPGLs.",
+    pmid: "42490294",
+    date: "2026-07",
+  },
+  {
+    title:
+      "SDHC c.397C>T-Related Pheochromocytomas and Paragangliomas: Insights from an International Study.",
+    authors: "Parisien-La Salle S, Perreault F, Mahrokhian S, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0296",
+    topic: "Genetics & Syndromes",
+    description:
+      "International cohort study of 45 patients carrying the SDHC c.397C>T (p.Arg133Ter) founder variant — present in >40% of mutation-positive PGLs in French Canadians — characterizing its phenotype: 97.8% paragangliomas (59.1% head-and-neck, 27.3% thoracic, 13.6% abdominal), 11.1% metastatic disease at diagnosis, and 15.4% post-surgical recurrence over 7.9-year mean follow-up. SDHB IHC loss was confirmed in all available specimens, and the variant likely originated in France before migrating to Quebec and New England.",
+    pmid: "42573129",
+    date: "2026-08",
+  },
 ];
