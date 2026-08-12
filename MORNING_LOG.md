@@ -282,3 +282,22 @@ Evidence_score rationale (sunitinib 78): prior 75 was based on GIST FDA approval
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-11-sunitinib-firstmappp
+
+## 2026-08-12
+
+**Direction:** data quality correction (seed data)
+**Angle:** Fix two wrong `target_gene_symbols` entries — panobinostat (DNMT1 → HDAC1, HDAC2) and enasidenib (IDH1 → IDH2) — with MoA upgrades that add SDH-specific mechanistic context and clinical citations
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0
+**Summary:** PubMed scan (SDH GIST, SDH PPGL/PCC, SDH RCC, SDH pituitary, SDH-deficient cancer, SDH metabolism, SDH epigenetics; date window May–August 2026) returned only PMIDs already present in tracker.md. This is the 3rd consecutive run with no new papers to add; the search space is well-covered.
+
+For Part B: identified two data quality bugs in `src/data/seed/drugs.ts` that would cause incorrect drug-target associations in any query filtering by `target_gene_symbols`:
+
+**1. Panobinostat: `target_gene_symbols` was `["DNMT1"]`** — a copy-paste error. Panobinostat is a pan-HDAC inhibitor (LBH589; Farydak); DNMT1 is a DNA methyltransferase and is not a panobinostat target. The correct primary targets are HDAC1 and HDAC2 (Class I HDACs that panobinostat inhibits at nanomolar concentrations). The MoA was also a 2-sentence stub. Expanded MoA: (1) accurate HDAC1/2 primary target identification; (2) CIMP context — SDH-deficient tumors have dual epigenetic silencing (DNA hypermethylation via TET inhibition + histone hypermethylation via KDM inhibition + HDAC-mediated deacetylation — pan-HDAC inhibition addresses the deacetylation arm); (3) mechanistic anchor for PPGL specifically — Martiniova et al. (Endocr Relat Cancer 2011, PMID 21098082) showed panobinostat upregulates NET/SLC6A2 and increases MIBG uptake at nanomolar concentrations, providing a combination rationale with ¹³¹I-MIBG or [²¹¹At]MABG; (4) NCT00985946 (Phase 2 panobinostat in NETs; University of Wisconsin; 15 patients enrolled before termination) added to `clinical_trial_ids`.
+
+**2. Enasidenib: `target_gene_symbols` was `["IDH1"]`** — wrong gene. Enasidenib (Idhifa) inhibits mutant IDH2; ivosidenib inhibits IDH1. These are different enzymes, different drugs, and different approved indications (AML with IDH2 mutation vs. IDH1 mutation). The gene symbol error would cause any IDH1-targeted query to incorrectly retrieve enasidenib. Corrected to `["IDH2"]`. MoA also expanded: (1) explicit note that enasidenib targets IDH2, not IDH1 (and that ivosidenib is the IDH1 counterpart, to prevent future confusion); (2) 2-HG / succinate cross-oncometabolite parallel fleshed out with citations — Nowicki & Gottlieb FEBS J 2015 (PMID 25864878), Yong et al. Nat Rev Nephrol 2019 (PMID 31636445), Zhao et al. World J Gastroenterol 2020 (PMID 32982110); (3) explicit clarification that enasidenib is not active in SDH-deficient tumors (no IDH2 mutation present), but its inclusion is as a proof-of-concept that oncometabolite-driven α-KG-dioxygenase inhibition is pharmacologically reversible.
+
+Changes made: `src/data/seed/drugs.ts` — panobinostat: `target_gene_symbols` DNMT1→HDAC1,HDAC2; MoA rewritten; `clinical_trial_ids` [] → ["NCT00985946"]. Enasidenib: `target_gene_symbols` IDH1→IDH2; MoA rewritten.
+
+Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
+**PR:** morning/2026-08-12-target-gene-fixes-hdac-idh2
