@@ -301,3 +301,32 @@ Changes made: `src/data/seed/drugs.ts` — panobinostat: `target_gene_symbols` D
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-12-target-gene-fixes-hdac-idh2
+
+## 2026-08-13
+
+**Direction:** evidence quality upgrade (seed data)
+**Angle:** Temozolomide CIMP→MGMT→TMZ mechanistic chain fully cited with clinical outcome data; bevacizumab SDH-pseudohypoxia mechanism grounded and pathway linkage corrected
+
+**Papers added:** 0
+
+**Papers rejected (logged to tracker.md):** 3 new papers (PMID 42526974: general SDH-PPGL review, no new advance; PMID 42348778: H3F3A case report, no SDH content; PMID 42284442: veterinary case report); 2 papers evaluated as out-of-window supporting citations (PMID 38837102: Jun 2024; PMID 41301064: Nov 2025).
+
+**Summary:** PubMed scan (SDH-deficient GIST, PPGL/PCC, RCC; SDH metabolism; SDH epigenetics; temozolomide PPGL; MGMT methylation PPGL; 2026-05-13 to 2026-08-13) yielded 3 new PMIDs — all rejected (general review, non-SDH case reports). 0 papers added to papers.ts.
+
+For Part B: identified that the temozolomide entry was the thinnest major clinical drug in the engine — a 2-sentence stub with no citations, `target_gene_symbols: ["DNMT1"]` (DNA methyltransferase, not a TMZ target and not the relevant biomarker gene), and evidence_score 68 despite being a drug with prospective clinical validation in PPGL.
+
+**Temozolomide upgrade (evidence_score 68→74):**
+- MoA rewritten to include the complete SDH→succinate→TET inhibition→CIMP→MGMT silencing→TMZ sensitivity chain, citing Killian et al. Cancer Discov 2013 (PMID 23550148) for SDH-GIST CIMP and Letouzé et al. Cancer Cell 2013 (PMID 23707781) for SDH-PPGL CIMP
+- Added Cui et al. J Endocrinol Invest 2024 (PMID 38837102) as the key clinical anchor: prospective 62-patient PPGL study, DCR 83%, ORR 24%, mPFS 25.2 months; MGMT promoter methylation >7% → 92.9% disease control rate vs undetectable response in MGMT-unmethylated patients; SDHB in keywords
+- `target_gene_symbols` corrected from `["DNMT1"]` to `["MGMT"]`: MGMT is the silenced repair gene whose loss confers TMZ sensitivity; DNMT1 is mechanistically remote from TMZ's action and was misleading for any target-gene query
+
+**Bevacizumab upgrade (evidence_score 65→67):**
+- MoA rewritten with full SDH→succinate→PHD inhibition→HIF-1α/2α stabilization→VEGF-A transcription chain, replacing the uncited "has shown activity...in combination with temozolomide" stub
+- `pathway_slugs` updated: `["vegf-signaling"]` → `["vegf-signaling", "hif-pseudohypoxia"]` to reflect the upstream pseudohypoxic mechanism that makes VEGF targeting mechanistically appropriate in SDH-deficient PPGL
+- Combination rationale with temozolomide stated explicitly (complementary mechanisms: BEV targets HIF-driven angiogenesis, TMZ exploits CIMP-driven MGMT silencing)
+- Score bumped only 2 points because no new clinical trial data was added; clinical basis remains case-series level
+
+Evidence_score rationale (TMZ 74): prior 68 reflected the uncited stub and indirect mechanistic plausibility. +6 for: (1) citation of CIMP-MGMT mechanism in both GIST and PPGL with two landmark Cancer Cell/Cancer Discov papers; (2) prospective 62-patient trial showing 83% DCR and MGMT methylation as a quantitative predictive biomarker with 92.9% response in methylated subgroup — this is unusually strong biomarker-outcome data for a rare tumor. Does not reach 80+ because: Cui et al. is a single-center prospective study (not multicenter RCT); the SDHB-specific subgroup is not separately reported; no FDA indication in PPGL.
+
+Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
+**PR:** morning/2026-08-13-tmz-mgmt-bevacizumab
