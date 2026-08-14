@@ -729,4 +729,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["gist"],
     clinical_trial_ids: [],
   },
+  {
+    name: "SY-5609",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Selective CDK7 inhibitor",
+    mechanism_of_action:
+      "SY-5609 (Syros Pharmaceuticals) is a selective, non-covalent CDK7 inhibitor with >100-fold selectivity over CDK4, CDK6, CDK9, and CDK12. CDK7 is the catalytic subunit of the CDK-activating kinase (CAK) complex and the RNA Pol II CTD kinase that phosphorylates Ser5 and Ser7 of the heptapeptide CTD repeat, licensing transcriptional initiation at promoters. Super-enhancers — densely clustered enhancers that recruit abnormally high densities of Pol II — are disproportionately dependent on CDK7 for pause-release into productive elongation; CDK7 inhibition therefore causes selective collapse of super-enhancer-driven transcription relative to typical enhancer-driven expression. Kwiatkowski et al. (Science 2014, PMID 25316025) established this selectivity using the covalent CDK7 inhibitor THZ1, demonstrating preferential suppression of super-enhancer-associated oncogenes in T-ALL and other cancer models with a therapeutic window absent from normal cells.\n\nIn SDH-deficient GIST, the mechanistic anchor is the ectopic super-enhancer at the FGF3/FGF4 locus. Merriam et al. (Nat Med 2026, PMID 42191879) demonstrated that SDH-loss-driven CIMP hypermethylation disrupts CTCF insulator elements flanking the FGF3/FGF4 locus, converting these silenced oncogenes into a pathological super-enhancer that drives high-level autocrine FGF3/FGF4 signaling through FGFR1. CDK7 inhibition with SY-5609 would target this ectopic super-enhancer at its most upstream druggable node — Pol II CTD Ser5 phosphorylation and transcriptional initiation — selectively collapsing FGF3/FGF4 expression (and potentially other ectopic super-enhancers created by the same CIMP remodeling) before the signal reaches BRD4 (reader, targeted by birabresib) or FGFR1 (receptor, targeted by rogaratinib). The three-level attack on the SDH-GIST FGF3/FGF4 super-enhancer axis: Level 1 (CDK7/SY-5609 — Pol II initiation), Level 2 (BRD4/birabresib — super-enhancer reader), Level 3 (FGFR1/rogaratinib — downstream receptor signal).\n\nSY-5609 Phase 1 trial NCT04247126 (Syros; n=~40; dose escalation in advanced solid tumors; once-weekly oral dosing) is evaluating safety, pharmacokinetics, and preliminary anti-tumor activity. No SDH-deficient-specific data have been reported. Key limitations: (1) no published SDH-deficient preclinical data for any CDK7 inhibitor; (2) the FGF3/FGF4 super-enhancer data from Merriam 2026 (PMID 42191879) requires confirmation that CDK7 inhibition specifically suppresses this locus over housekeeping genes in SDH-deficient GIST models; (3) SY-5609 Phase 1 is ongoing; dose-limiting toxicities are not yet fully characterized; (4) the mechanistic rationale applies specifically to SDH-deficient GIST (where the ectopic super-enhancer has been demonstrated) and not to PPGL or RCC in the absence of analogous super-enhancer evidence in those tumor types.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["epigenetic-dysregulation", "fgfr-signaling"],
+    target_gene_symbols: ["CDK7"],
+    evidence_score: 28,
+    status: "theoretical",
+    tumor_type_applicability: ["gist"],
+    clinical_trial_ids: ["NCT04247126"],
+  },
 ];

@@ -330,3 +330,31 @@ Evidence_score rationale (TMZ 74): prior 68 reflected the uncited stub and indir
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-13-tmz-mgmt-bevacizumab
+
+## 2026-08-14
+
+**PubMed scan:** 0 new papers. Sixth consecutive zero-result scan. All ~170+ tracked PMIDs remain current. No new papers met the relevance gate. tracker.md unchanged.
+
+**Part B — CDK7 / SY-5609 (theoretical, GIST):**
+
+Direction: CDK7 inhibition targeting the Pol II CTD kinase at the FGF3/FGF4 ectopic super-enhancer in SDH-deficient GIST.
+
+Mechanistic anchor: Merriam et al. (Nat Med 2026, PMID 42191879) established that SDH-loss-driven CIMP disrupts CTCF insulator elements at the FGF3/FGF4 locus, creating a pathological super-enhancer driving autocrine FGFR1 signaling in SDH-GIST. Kwiatkowski et al. (Science 2014, PMID 25316025) established with THZ1 (covalent CDK7i) that CDK7 inhibition selectively collapses super-enhancer-driven transcription over typical-enhancer-driven housekeeping genes, providing a therapeutic window specific to super-enhancer-addicted cancers. SY-5609 (Syros; non-covalent; >100-fold CDK7 vs CDK4/6/9/12 selectivity) is the clinical-stage candidate in Phase 1 (NCT04247126, advanced solid tumors).
+
+This completes the three-level attack on the SDH-GIST FGF3/FGF4 super-enhancer:
+- Level 1 (today): CDK7/SY-5609 — Pol II Ser5/Ser7 CTD phosphorylation → transcriptional initiation
+- Level 2 (2026-07-14): BRD4/birabresib — super-enhancer acetyl-histone reader
+- Level 3 (2026-07-03): FGFR1/rogaratinib — downstream receptor
+
+CDK7 is mechanistically distinct from CDK4/6 (palbociclib, 2026-08-05): CDK4/6 act at the G1→S restriction point via RB1 phosphorylation; CDK7 acts at the transcriptional initiation step, governing Pol II CTD Ser5/Ser7 phosphorylation. The therapeutic selectivity of CDK7i for the FGF3/FGF4 super-enhancer arises because super-enhancers recruit disproportionately high Pol II densities and are more sensitive to CDK7 dosage than typical enhancers.
+
+**Changes:**
+- `src/data/seed/targets.ts`: added CDK7 (gene_symbol "CDK7", uniprot_id P50613, pathway_slug "epigenetic-dysregulation", target_type "synthetic_lethal")
+- `src/data/seed/drugs.ts`: added SY-5609 (evidence_score 28, status "theoretical", tumor_type_applicability ["gist"], pathway_slugs ["epigenetic-dysregulation", "fgfr-signaling"], target_gene_symbols ["CDK7"], clinical_trial_ids ["NCT04247126"])
+- `src/data/seed/sdh-biology.ts`: appended Mechanism 26 (CDK7 super-enhancer, ~650 words)
+
+Evidence_score rationale (28, theoretical): Mechanistic chain is well-supported — SDH loss → CIMP → ectopic super-enhancer → CDK7 dependency — grounded in two high-quality anchor papers (PMID 42191879, PMID 25316025). Score is constrained by: zero SDH-deficient-specific CDK7 inhibitor data; super-enhancer dependency in SDH-GIST is inferred from the Merriam 2026 super-enhancer discovery, not from CDK7i experiments; SY-5609 Phase 1 is ongoing with no efficacy readout. Does not exceed 30 until THZ1 or SY-5609 is tested in SDHA-null GIST cell lines with FGF3/FGF4 transcript as readout.
+
+Remaining unexplored direction: MTHFD2 / one-carbon folate metabolism — note that LY3522348 (Eli Lilly) entered Phase 1 (NCT04899869) making this potentially more tractable than the log's "no clinical-stage inhibitors" note from 2026-08-13 suggested; however, no SDH-specific data exists, so the bar remains the same.
+
+**PR:** morning/2026-08-14-cdk7-super-enhancer
