@@ -103,7 +103,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "6442177",
     drug_class: "mTOR inhibitor (rapalog)",
     mechanism_of_action:
-      "Binds FKBP12 to form a complex that inhibits mTORC1, blocking downstream signaling including S6K1 and 4E-BP1. Reduces cell growth, proliferation, and angiogenesis. Rationale in SDH-deficient tumors comes from metabolic reprogramming-driven mTOR activation.",
+      "Binds FKBP12 to form an FKBP12–rapamycin complex that allosterically inhibits mTORC1, blocking S6K1 and 4E-BP1 phosphorylation and thereby suppressing protein synthesis, cell growth, proliferation, and angiogenesis. In SDH-deficient tumors the mechanistic rationale operates through the pseudohypoxic cascade: succinate accumulation inhibits PHD1/2/3, stabilizing HIF-1α/2α constitutively. HIF-1α transcriptionally activates IGF2 and drives MET overexpression (see HIF→MET direction), whose ligand-receptor pairs (IGF2/IGF1R; HGF/MET) recruit and activate PI3K. PI3K-generated PIP3 activates AKT, which phosphorylates and inactivates TSC2 in the TSC1/TSC2 complex, releasing Rheb-GTP to constitutively activate mTORC1. This HIF-driven RTK→PI3K/AKT→mTOR signaling axis has been directly implicated in SDH-deficient (pseudohypoxic cluster 1) PPGL tumorigenesis (Jochmanová et al., JNCI 2013, PMID 23940289). A key pharmacological limitation is AKT reactivation: mTORC1 inhibition relieves the S6K1→IRS-1 negative feedback, allowing upstream PI3K/AKT to rebound and potentially limit single-agent durability. The first published clinical experience with everolimus in malignant paraganglioma/pheochromocytoma (n=4) documented in vitro mTOR pathway activation evidence and disease stabilization, though overall outcomes were 'relatively disappointing,' motivating combination approaches (Druce et al., Horm Metab Res 2009, PMID 19424940). A systematic review of everolimus in extrapancreatic NETs including pheochromocytoma reported PFS of 12–29.9 months and disease stabilization in 67–100% across sites (Faggiano et al., Oncologist 2016, PMID 27053503).",
     fda_approved: true,
     approved_indications: [
       "Advanced renal cell carcinoma",
@@ -113,10 +113,10 @@ export const SEED_DRUGS: SeedDrug[] = [
     ],
     pathway_slugs: ["mtor-pi3k-akt"],
     target_gene_symbols: ["MTOR"],
-    evidence_score: 55,
-    status: "preclinical",
+    evidence_score: 58,
+    status: "clinical_trial",
     tumor_type_applicability: ["all"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT01152827"],
   },
   {
     name: "Azacitidine",
