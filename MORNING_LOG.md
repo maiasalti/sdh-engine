@@ -330,3 +330,32 @@ Evidence_score rationale (TMZ 74): prior 68 reflected the uncited stub and indir
 
 Candidate directions still unexplored: (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively (Sokolov preprint PMID 42239110, 2026-07-30).
 **PR:** morning/2026-08-13-tmz-mgmt-bevacizumab
+
+## 2026-08-15
+
+**Direction:** evidence quality upgrade (seed data)
+**Angle:** Everolimus mTOR/PI3K/AKT mechanistic chain fully cited and documented; Phase II PPGL trial NCT01152827 added; Mechanism 26 added to SDH biology context
+
+**Papers added:** 1 — PMID 42155081 (Batini et al., Arch Endocrinol Metab 2026-08-01; TERT promoter PVs and ATRX in SDHB-enriched PPGL cohort — deferred from 2026-07-15 as ahead-of-print, now published)
+
+**Papers rejected (logged to tracker.md):** 0 new papers (all PubMed scan queries returned only PMIDs already in tracker.md; 5th consecutive run with no new papers in the 3-month window for this rare disease)
+
+**Summary:** PubMed scan (SDH GIST, SDH PPGL/PCC, SDH RCC, SDH pituitary, SDH-deficient cancer, SDH mTOR, SDH epigenetics; 2026-05-15 to 2026-08-15) returned only PMIDs already logged in tracker.md. PMID 42155081 was deferred 2026-07-15 as ahead-of-print; now published 2026-08-01 and within scan window — re-evaluated and added.
+
+For Part B: the everolimus entry was the worst-documented established drug in the engine — 3-sentence MoA stub with no citations, `status: "preclinical"` despite a completed Phase II PPGL trial (NCT01152827, n=33), `evidence_score: 55`, and `clinical_trial_ids: []`. Upgraded with:
+
+**Everolimus evidence upgrade (evidence_score 55→58, status "preclinical"→"clinical_trial"):**
+- MoA rewritten with full mechanistic chain: succinate → PHD inhibition → HIF-1α/2α stabilization → IGF2/HGF transcriptional upregulation → PI3K/AKT activation → TSC1/2 inhibition → Rheb-GTP → mTORC1 constitutive activation; anchor citation Jochmanová et al. (JNCI 2013, PMID 23940289), which explicitly covers HIF/mTOR interconnection as a tumorigenesis driver in SDH-deficient pseudohypoxic cluster 1 PPGL
+- AKT reactivation caveat added: mTORC1 inhibition removes S6K1→IRS-1 negative feedback → paradoxical AKT rebound via mTORC2/PDK1, limiting single-agent everolimus durability and motivating combination strategies
+- First clinical experience cited: Druce et al. Horm Metab Res 2009 (PMID 19424940) — 4 patients with malignant PGL/PCC; in vitro mTOR basis; outcomes "relatively disappointing," establishing combination rationale
+- Systematic review cited: Faggiano et al. Oncologist 2016 (PMID 27053503) — extrapancreatic NETs including pheochromocytoma; PFS 12–29.9 months; 67–100% disease stabilization
+- `clinical_trial_ids: ["NCT01152827"]` added: Phase II RAD001 monotherapy in unresectable PCC/paraganglioma, n=33, Seoul National University Hospital, completed
+- **Mechanism 26** added to `sdh-biology.ts`: dedicated detailed section covering the PI3K/AKT/mTOR axis in SDH-deficient tumors with full mechanistic chain, AKT reactivation pharmacological limitation, and clinical evidence summary
+- Key Druggable Targets table entry updated from 1-line stub to full mechanistic summary with citations
+
+Evidence_score rationale (everolimus 58): prior 55 reflected a thin theoretical-to-preclinical basis with only FDA approvals in adjacent tumor types. +3 for: (1) Jochmanová 2013 explicitly anchoring HIF/mTOR interconnection in SDH-deficient PPGL; (2) NCT01152827 Phase II completed in PCC/paraganglioma; (3) Faggiano 2016 systematic review including pheochromocytoma with documented PFS and disease-stabilization rates. Does not reach 60+ because: no SDH-genotype-stratified efficacy data exist; NCT01152827 results not peer-reviewed and widely published; Druce 2009 outcomes "relatively disappointing" for single-agent approach.
+
+**Previously logged directions NOT re-evaluated:** MTHFD2/one-carbon (no SDH-specific data, no clinical-stage inhibitors); Complex I definitively ruled out (Sokolov preprint PMID 42239110, 2026-07-30).
+
+**Files changed:** `src/data/papers.ts` (+1 paper, PMID 42155081), `src/data/seed/drugs.ts` (everolimus MoA/evidence/status/clinical_trial_ids), `src/data/seed/sdh-biology.ts` (Mechanism 26 added, mTOR table row updated), `tracker.md` (PMID 42155081 verdict updated from rejected→added; 3 citation PMIDs logged), `MORNING_LOG.md` (this entry).
+**PR:** morning/2026-08-15-mtor-everolimus-upgrade

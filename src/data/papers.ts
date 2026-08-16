@@ -244,4 +244,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42573129",
     date: "2026-08",
   },
+  {
+    title:
+      "Genetic alterations of telomere maintenance pathways in paragangliomas.",
+    authors: "Batini L, Lobato EC, Freitas-Castro F, et al.",
+    journal: "Arch Endocrinol Metab",
+    year: 2026,
+    doi: "10.20945/2359-4292-2026-0050",
+    topic: "Genetics & Syndromes",
+    description:
+      "Brazilian cohort of 79 pheochromocytomas and paragangliomas (53 non-metastatic, 26 metastatic) enriched for Cluster 1A germline variants (35.4%; SDHB 25.3%) found somatic TERT promoter PVs (c.-124C>T/C228T) in 2.5% overall — rising to 16.7% of SDHB-germline-positive metastatic patients — with TERT PVs co-occurring exclusively with germline SDHB PVs and associating with extra-adrenal location and metastatic disease; ATRX somatic variants were found in 11.5% but classified as likely benign. Quantifies the TERT/SDHB co-occurrence frequency in a PPGL cohort and directly supports the ATRX/TERT metastatic risk axis, where TERT promoter activation bypasses ATRX-loss-driven ALT to achieve telomere lengthening in the most aggressive SDHB-metastatic subset.",
+    pmid: "42155081",
+    date: "2026-08",
+  },
 ];
