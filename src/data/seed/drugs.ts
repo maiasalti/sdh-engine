@@ -748,4 +748,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["ppgl", "gist", "rcc"],
     clinical_trial_ids: ["NCT04305496"],
   },
+  {
+    name: "Prexasertib",
+    brand_names: ["LY2606368"],
+    chembl_id: "CHEMBL3039783",
+    pubchem_cid: "49803313",
+    drug_class: "CHK1/CHK2 kinase inhibitor",
+    mechanism_of_action:
+      "Prexasertib (LY2606368; Eli Lilly) is a potent, selective, ATP-competitive inhibitor of CHK1 (IC50 ~1 nM) with secondary CHK2 inhibition (IC50 ~8 nM). It is not FDA-approved and is under Phase 2 clinical evaluation in HR-deficient solid tumors.\n\nIn SDH-deficient tumors, the mechanistic rationale flows directly from the established BRCAness phenotype. Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) demonstrated that SDH loss causes succinate accumulation → inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 persistence at double-strand break (DSB) sites → impaired TIP60 acetyltransferase and ATM kinase recruitment → defective HR repair (BRCAness). BRCAness-positive cells accumulate stalled replication forks that cannot be resolved by HR and become acutely dependent on the ATR→CHK1 replication stress checkpoint for survival.\n\nCHK1 performs three roles that are essential in BRCAness-positive cells: (1) inactivates CDC25A to suppress CDK2 and halt S-phase progression at stalled forks; (2) inactivates CDC25C to prevent premature CDK1 activation and mitotic entry with under-replicated DNA; (3) limits new origin firing to prevent collision with stalled forks. Prexasertib-mediated CHK1 inhibition in BRCAness-positive SDH-deficient cells causes unscheduled origin firing, replication catastrophe, RPA exhaustion, and premature mitotic entry → mitotic catastrophe and selective cell death. HR-proficient SDH-intact cells tolerate CHK1 inhibition via redundant fork protection mechanisms, providing a therapeutic window.\n\nThis mechanism is distinct from ceralasertib (ATR inhibitor, Mechanism 13 in this engine): ATR acts upstream of CHK1 but ceralasertib's selectivity for SDH-deficient cells has been specifically linked to the ATRX-null/ALT replication stress subset (NCT03187965). CHK1 inhibition by prexasertib targets the BRCAness downstream effector relevant to ALL HR-deficient SDH-deficient tumors regardless of ATRX status, broadening the potential responder population.\n\nClinical anchor: Do et al. (Clin Cancer Res 2021, PMID 34131002) reported a Phase 1 combination trial of prexasertib + olaparib in BRCA-mutant HGSOC, demonstrating 4/18 confirmed PRs and pharmacodynamic evidence of CHK1 target engagement (phospho-CDC25C reduction, γ-H2AX induction), validating the CHK1→HR impairment mechanistic chain in a clinical BRCAness context. NCT02873975 (Phase 2; Dana-Farber/Lilly; completed) enrolled patients with advanced solid tumors harboring 'Replicative Stress or Homologous Recombination Repair Deficiency', the clinically defined population that would encompass SDH-deficient BRCAness tumors.\n\nKey limitation: No published data directly test prexasertib in SDH-deficient cell lines or xenograft models. The BRCAness mechanism is genomically established (Sulkowski PMID 30013182, 32494005) but CHK1 inhibitor selectivity in SDH-specific models requires direct experimental validation. Evidence_score 28 (theoretical) reflects a well-anchored mechanistic chain from SDH loss → BRCAness → CHK1 dependency, combined with clinical prexasertib experience in HR-deficient solid tumors, without SDH-specific experimental data.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["chk1-brcas-replication-checkpoint", "sdh-driven-hrd"],
+    target_gene_symbols: ["CHEK1"],
+    evidence_score: 28,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT02873975", "NCT03414047"],
+  },
 ];

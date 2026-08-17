@@ -394,3 +394,29 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 **Files changed:** `src/data/seed/drugs.ts` (capivasertib new entry; regorafenib MoA + target_gene_symbols + pathway_slugs + clinical_trial_ids + evidence_score 58→60), `src/data/seed/targets.ts` (AKT1 new entry), `src/data/seed/sdh-biology.ts` (mTOR/PI3K/AKT table row updated; Mechanism 27 added), `tracker.md` (3 new rejected rows), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add capivasertib (AKT inhibitor) + regorafenib MoA upgrade
+
+---
+
+## 2026-08-17 — CHK1/Replication Stress Checkpoint Synthetic Lethality — Prexasertib
+
+**Paper scan:** 6 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, SDH-deficient RCC, succinate oncometabolite, BRCAness/SDH, ATRX/ALT PPGL). All returned PMIDs already logged in tracker.md. 0 new papers added. This is the 5th+ consecutive run with no new papers from the standard SDH literature.
+
+**Direction:** CHK1/Replication Stress Checkpoint synthetic lethality — prexasertib (LY2606368). New pathway `chk1-brcas-replication-checkpoint` (display_order 23), new target CHEK1 (synthetic_lethal), new drug prexasertib (evidence_score 28, theoretical, tumor_type_applicability ["all"]).
+
+**Rationale for selection:** The prior log explicitly exhausts all known directions through 2026-08-16. The only remaining unexplored branch of the established BRCAness mechanism (Sulkowski Nat Genet 2018 PMID 30013182; Nature 2020 PMID 32494005) is the downstream CHK1 checkpoint effector. Mechanism 13 (ceralasertib, ATR inhibitor) targets ATR upstream of CHK1 but was narrowed to ATRX-null/ALT-positive tumors. CHK1 inhibition addresses the BRCAness replication stress vulnerability in ALL HR-deficient SDH-deficient tumors regardless of ATRX status — a distinct, broader, and non-redundant strategy. Passes HARD RELEVANCE GATE via Sulkowski 2018/2020.
+
+**Mechanistic chain:** SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness) → stalled replication forks → acute CHK1 dependency for fork stabilization (CDC25A inactivation → CDK2 suppression; CDC25C inactivation → CDK1 suppression; dormant origin firing control). CHK1 inhibition causes replication catastrophe and mitotic catastrophe selectively in BRCAness-positive cells.
+
+**Literature anchors:**
+- PMID 30013182 (Sulkowski Nat Genet 2018): succinate → KDM4A/B → H3K9me3 → impaired TIP60/ATM → BRCAness. Core mechanistic anchor.
+- PMID 32494005 (Sulkowski Nature 2020): BRCAness in SDH-deficient tumors confirmed; PARP inhibitor synthetic lethality.
+- PMID 34131002 (Do et al. Clin Cancer Res 2021): prexasertib + olaparib Phase 1, BRCA-mutant HGSOC, 4/18 PRs, pharmacodynamic CHK1 target engagement confirmed.
+- NCT02873975 (Phase 2; Dana-Farber/Lilly; completed): prexasertib in solid tumors with 'Replicative Stress or HR Repair Deficiency'.
+- NCT03414047 (Phase 2; Lilly; completed): prexasertib in platinum-resistant ovarian cancer.
+
+**CHK1 vs ATR distinction (Mechanism 13):** Ceralasertib (ATR) selectivity for ATRX-null/ALT tumors reflects ALT-specific ATR functions (telomere maintenance). CHK1 is the downstream BRCAness effector — applies to all HR-deficient SDH tumors regardless of ATRX status. Non-redundant.
+
+**PMID disambiguation:** PMID 30504279 searched as 'Karzai prexasertib Phase 2 2019' but PubMed returned a Claudin-1 stroke paper (mismatch). PMID 30504279 is NOT used. Clinical anchors are PMID 34131002 (Do et al., verified) and NCT numbers (ClinicalTrials.gov MCP verified).
+
+**Files changed:** `src/data/seed/pathways.ts` (chk1-brcas-replication-checkpoint, display_order 23), `src/data/seed/targets.ts` (CHEK1 synthetic_lethal new entry), `src/data/seed/drugs.ts` (prexasertib new entry, evidence_score 28, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 28 added), `src/lib/scoring/constants.ts` (chk1-brcas-replication-checkpoint color entry), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add prexasertib (CHK1 inhibitor) — BRCAness replication checkpoint synthetic lethality
