@@ -140,7 +140,7 @@ ART558 (Artios Pharma) is the first-in-class selective, oral POLQ inhibitor in P
 |---------|-------------|-----------|
 | HIF / Pseudohypoxia | HIF-1α, HIF-2α (EPAS1) | Direct consequence of SDH loss; HIF-2α inhibitors (belzutifan) FDA-approved for VHL |
 | VEGF Signaling | VEGFA, VEGFR2 (KDR) | Downstream of HIF; anti-angiogenic drugs well-established |
-| mTOR / PI3K / AKT | MTOR, PIK3CA, AKT1 | SDH loss → HIF-1α → IGF2/HGF → PI3K/AKT → TSC1/2 → Rheb-GTP → mTORC1 constitutive activation in SDH-deficient PPGL (Jochmanová et al., JNCI 2013, PMID 23940289); Phase II trial NCT01152827 in unresectable PCC/PGL (n=33); AKT reactivation (S6K1→IRS-1 feedback loss) limits single-agent everolimus efficacy; combination strategies motivated |
+| mTOR / PI3K / AKT | MTOR, PIK3CA, AKT1 | SDH loss → HIF-1α → IGF2/HGF → PI3K/AKT → TSC1/2 → Rheb-GTP → mTORC1 constitutive activation in SDH-deficient PPGL (Jochmanová et al., JNCI 2013, PMID 23940289); Phase II trial NCT01152827 in unresectable PCC/PGL (n=33); AKT reactivation (S6K1→IRS-1 feedback loss) limits single-agent everolimus efficacy; capivasertib (pan-AKT inhibitor, FDA-approved) blocks AKT directly and prevents this rebound — combination rationale for capivasertib + everolimus |
 | Epigenetic | DNMT1, DNMT3A, TET2, KDM4A | Hypermethylation reversal; DNMT inhibitors available |
 | Glutamine Metabolism | GLS (glutaminase) | SDH loss → TCA truncation → reductive glutamine carboxylation for citrate/lipid synthesis (Mullen et al., Nature 2012, PMID 22101431); GLS is the committed entry step; telaglenastat (CB-839) in Phase 2 trials (CANTATA NCT03428217, ENTRATA NCT02071862) — see Mechanism 25 |
 | Glycolysis | LDHA, PDK1 | HIF-driven metabolic shift; glycolysis inhibitors in development |
@@ -310,6 +310,21 @@ Rapalog mTORC1 inhibitors (everolimus, temsirolimus) relieve a critical negative
 Druce et al. (Horm Metab Res 2009, PMID 19424940) reported the first published clinical experience with everolimus (RAD001) in 4 patients with progressive malignant paraganglioma/pheochromocytoma, demonstrating in vitro mTOR pathway activation in PPGL cell lines and clinical disease stabilization, though overall outcomes were described as "relatively disappointing," establishing proof-of-concept while motivating combination strategies. A Phase II trial of single-agent RAD001 (NCT01152827; Seoul National University Hospital; n=33 patients with unresectable pheochromocytoma or extra-adrenal paraganglioma) has completed accrual. A systematic review of everolimus in extrapancreatic NETs including pheochromocytoma (Faggiano et al., Oncologist 2016, PMID 27053503) reported PFS of 12–29.9 months and disease stabilization in 67–100% across sites. Everolimus holds FDA approval for advanced RCC — one of the primary SDH-deficient tumor types — as well as pancreatic NETs, providing established pharmacological context.
 
 **Key limitation:** No SDH-genotype-stratified efficacy data exist for everolimus in PCC/PGL or RCC. NCT01152827 completed but peer-reviewed results have not been widely published. The evidence_score of 58 (clinical_trial) reflects a well-established mechanistic chain (HIF → IGF2/HGF → PI3K/AKT → mTOR, PMID 23940289) combined with Phase II clinical activity in PPGL (NCT01152827) and FDA-approved clinical context in RCC/NETs — without SDH-specific response data or SDH-stratified analysis.
+
+### 27. AKT Kinase Inhibition in SDH-Deficient Tumors — Capivasertib
+
+The PI3K/AKT/mTOR signaling axis in SDH-deficient tumors (Mechanism 26) extends beyond mTORC1 to the upstream kinase AKT itself as an independently druggable node. The mechanistic case rests on two convergent lines.
+
+**The constitutive HIF→RTK→PI3K→AKT axis (Jochmanová 2013, PMID 23940289):**
+SDH loss → succinate → PHD inhibition → HIF-1α/2α stabilization. HIF transcriptionally activates IGF2 and HGF (the MET ligand) via hypoxia-response elements. IGF2 activates IGF1R/IR; HGF activates MET — both feeding the p110/p85 PI3K complex and generating PIP3. PIP3 recruits AKT1/2/3 via pleckstrin homology (PH) domains; PDK1 (Thr308) and mTORC2 (Ser473) activate AKT. AKT is therefore the central integrator of multiple HIF-driven RTK inputs into mTOR signaling.
+
+**The rapalog AKT reactivation problem:**
+mTORC1 inhibitors (everolimus, temsirolimus) do not inhibit AKT. mTORC1 inhibition removes S6K1→IRS-1 negative feedback, allowing unphosphorylated IRS-1 to sustain upstream PI3K activity and drive paradoxical AKT reactivation via mTORC2/PDK1. In SDH-deficient tumors — where the HIF→RTK→PI3K input is constitutively high — this rebound is amplified compared to SDH-intact cancers. The everolimus entry in this engine explicitly documents AKT reactivation as its primary pharmacological limitation and motivates combination strategies.
+
+**Capivasertib as the complement:**
+Capivasertib (AZD5363, Truqap; AstraZeneca) is an oral, allosteric pan-AKT inhibitor binding the PH domain of AKT1, AKT2, and AKT3 — blocking membrane recruitment regardless of AKT mutation status. FDA-approved November 2023 for AKT-pathway-altered HR+/HER2- breast cancer (CAPItello-291 Phase 3, NCT04305496), establishing clinical tolerability. A capivasertib + everolimus combination would simultaneously suppress mTORC1 output (everolimus) and prevent the paradoxical AKT rebound (capivasertib), addressing the single-agent everolimus limitation that is directly documented in the SDH-deficient tumor literature.
+
+**Key limitation:** No published data test capivasertib in any SDH-deficient cell line or animal model. The rationale rests on Jochmanová 2013 (constitutive AKT activation in SDH-deficient PPGL) and established rapalog pharmacology — both well-validated in their respective contexts but not yet combined in an SDH-specific capivasertib experiment. Evidence_score 32 (theoretical): mechanistic chain is direct and well-anchored, but SDH-specific experimental validation is absent.
 
 ## Important Context for Drug Repurposing
 

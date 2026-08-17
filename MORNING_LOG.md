@@ -359,3 +359,38 @@ Evidence_score rationale (everolimus 58): prior 55 reflected a thin theoretical-
 
 **Files changed:** `src/data/papers.ts` (+1 paper, PMID 42155081), `src/data/seed/drugs.ts` (everolimus MoA/evidence/status/clinical_trial_ids), `src/data/seed/sdh-biology.ts` (Mechanism 26 added, mTOR table row updated), `tracker.md` (PMID 42155081 verdict updated from rejected→added; 3 citation PMIDs logged), `MORNING_LOG.md` (this entry).
 **PR:** morning/2026-08-15-mtor-everolimus-upgrade
+
+## 2026-08-16
+
+**Direction:** drug-pool expansion (new drug) + data quality upgrade (existing entry)
+**Angle:** Primary — capivasertib (pan-AKT inhibitor, FDA-approved) as complement to everolimus targeting the AKT reactivation limitation; Secondary — regorafenib MoA upgrade with GRID Phase 3 citation, FGFR1/2 SDH context, and NCT01271712
+
+**Papers added:** 0
+
+**Papers rejected (logged to tracker.md):** 3 new papers — PMID 42258704 (deep learning on GIST histology WSIs predicting KIT/PDGFRA mutations; AI/ML methodology; no SDH-specific content); PMID 42059893 (multiomic landscape 1,427 GIST cases; broad cohort; no SDH subgroup analysis); PMID 42235209 (RNA/DNA NGS of KIT/PDGFRA mutations in GIST; sequencing methodology; no SDH-specific content).
+
+**Summary:** PubMed scan (8 queries across SDH-deficient GIST, PPGL, RCC, pituitary; wild-type GIST; SDH synthetic lethality; SDHB/SDHA mechanism; 2026-05-16 to 2026-08-16) returned 3 new PMIDs — all rejected for the same reason: KIT/PDGFRA-centric methodology or cohort studies without SDH-specific mechanistic or treatment content.
+
+For Part B, identified a genuinely new direction not previously logged: **direct AKT kinase inhibition** as a pharmacological complement to everolimus. The direction passes the hard relevance gate via the Jochmanová JNCI 2013 (PMID 23940289) anchor already cited in the engine's everolimus entry — which identifies constitutive AKT pathway activation as the central tumorigenesis driver in SDH-deficient pseudohypoxic cluster 1 PPGL, and explicitly documents AKT reactivation as the primary limitation of single-agent mTORC1 inhibition. Capivasertib (Truqap, AstraZeneca) is FDA-approved (November 2023; CAPItello-291 Phase 3, NCT04305496) as the first-in-class pan-AKT1/2/3 allosteric inhibitor, blocking AKT membrane recruitment via PH-domain binding regardless of mutation status. No prior run has addressed AKT inhibitors, capivasertib, or the "AKT complement to everolimus" concept.
+
+**Capivasertib (new drug, evidence_score 32, theoretical):**
+- Mechanistic chain: SDH loss → HIF-1α/2α → IGF2/HGF transcription → IGF1R/MET activation → PI3K/PIP3 → AKT recruitment (PH domain) → PDK1/mTORC2 activation → TSC1/2 inactivation → mTORC1. Capivasertib blocks at the AKT node, preventing both the constitutive HIF-driven AKT activation AND the paradoxical AKT rebound caused by everolimus (S6K1→IRS-1 feedback relief → PI3K→AKT reactivation via mTORC2/PDK1)
+- Evidence_score 32 (theoretical): mechanistic chain anchored by Jochmanová 2013 (PMID 23940289) in SDH-deficient PPGL and established rapalog pharmacology; no SDH-specific capivasertib preclinical data published
+- tumor_type_applicability: ["ppgl", "gist", "rcc"] — HIF/mTOR axis is operative in all SDH-deficient tumor types, though PPGL has the most direct documentation
+- AKT1 added to targets.ts; Mechanism 27 added to sdh-biology.ts
+
+**Regorafenib MoA upgrade (evidence_score 58→60):**
+- Prior entry: 2-sentence stub with no citations, no NCT IDs, target_gene_symbols ["KDR", "KIT"] only, pathway_slugs ["vegf-signaling", "mtor-pi3k-akt"] only
+- GRID Phase 3 trial (NCT01271712; Demetri et al., Lancet 2013, PMID 23099011; n=199; median PFS 4.8 vs 0.9 months, HR 0.27, p<0.0001) added as registration trial citation
+- FGFR1/2 inhibitory activity added (IC50 ~130–170 nM at clinically achievable concentrations) with SDH-specific rationale: aberrant FGFR1 autocrine signaling in SDH-deficient GIST is now validated by rogaratinib Phase 2 41.7% ORR (PMID 42191879); regorafenib's FGFR1/2 activity adds a mechanistically relevant dimension beyond anti-angiogenesis that distinguishes it from sunitinib in the SDH-deficient GIST context
+- target_gene_symbols expanded: ["KDR", "KIT"] → ["KDR", "KIT", "FGFR1", "FGFR2"]
+- pathway_slugs expanded: ["vegf-signaling", "mtor-pi3k-akt"] → ["vegf-signaling", "mtor-pi3k-akt", "fgfr-signaling"]
+- clinical_trial_ids: [] → ["NCT01271712"]
+- evidence_score bump 58→60: +2 for GRID Phase 3 registration trial citation and FGFR1/2 SDH-specific mechanistic rationale formally documented
+
+Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct literature anchor in SDH-deficient PPGL by Jochmanová 2013) + FDA-approved compound with established tolerability + addresses a documented limitation of an existing engine drug. Does not exceed 35 because no preclinical data test capivasertib in any SDH-deficient model, no SDH-stratified clinical signal exists, and the AKT reactivation argument is pharmacological inference from general rapalog biology rather than SDH-specific experimental measurement.
+
+**Previously logged directions NOT re-evaluated:** MTHFD2/one-carbon (no SDH-specific data, no clinical-stage inhibitors); Complex I definitively ruled out (Sokolov preprint PMID 42239110, 2026-07-30).
+
+**Files changed:** `src/data/seed/drugs.ts` (capivasertib new entry; regorafenib MoA + target_gene_symbols + pathway_slugs + clinical_trial_ids + evidence_score 58→60), `src/data/seed/targets.ts` (AKT1 new entry), `src/data/seed/sdh-biology.ts` (mTOR/PI3K/AKT table row updated; Mechanism 27 added), `tracker.md` (3 new rejected rows), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add capivasertib (AKT inhibitor) + regorafenib MoA upgrade
