@@ -326,6 +326,36 @@ Capivasertib (AZD5363, Truqap; AstraZeneca) is an oral, allosteric pan-AKT inhib
 
 **Key limitation:** No published data test capivasertib in any SDH-deficient cell line or animal model. The rationale rests on Jochmanová 2013 (constitutive AKT activation in SDH-deficient PPGL) and established rapalog pharmacology — both well-validated in their respective contexts but not yet combined in an SDH-specific capivasertib experiment. Evidence_score 32 (theoretical): mechanistic chain is direct and well-anchored, but SDH-specific experimental validation is absent.
 
+### 28. CHK1 / Replication Stress Checkpoint Synthetic Lethality in BRCAness-Positive SDH-Deficient Tumors — Prexasertib
+
+The BRCAness phenotype established by Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) creates a direct downstream dependency on the ATR→CHK1 replication stress checkpoint that is pharmacologically targetable by prexasertib (LY2606368).
+
+**Mechanistic chain from SDH loss to CHK1 dependency:**
+SDH loss → succinate accumulation → inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 persistence at double-strand break (DSB) sites → impaired TIP60 acetyltransferase activity (which requires an H3K9me3-free chromatin environment to acetylate H4K16 adjacent to DSBs) → impaired ATM kinase recruitment and activation at DSBs → defective homologous recombination (HR) repair. This epigenetic HR deficiency is the BRCAness phenotype: SDH-deficient cells phenocopy BRCA1/BRCA2 mutation-driven HR loss via an oncometabolite-epigenetic mechanism rather than a genetic mechanism. BRCAness-positive cells accumulate stalled replication forks that cannot be efficiently resolved by HR, generating constitutive replication stress.
+
+**CHK1 as the survival effector in BRCAness-positive cells:**
+CHK1 (CHEK1) is the primary substrate of ATR kinase. In response to RPA-coated ssDNA at stalled replication forks, ATR phosphorylates CHK1 at Ser317/Ser345, activating its kinase function. CHK1 then performs three roles critical to stalled-fork survival:
+1. Inactivates CDC25A by phosphorylation (→ ubiquitin-mediated proteasomal degradation) → suppresses CDK2 → halts S-phase progression, preventing active forks from colliding with stalled forks
+2. Inactivates CDC25C (phospho-Ser216 → 14-3-3 sequestration) → prevents premature CDK1 activation → blocks mitotic entry with under-replicated DNA
+3. Limits dormant origin firing via WEE1 stabilization → prevents new replication forks from encountering unresolved ssDNA gaps
+
+In BRCAness-positive HR-deficient cells, CHK1 is the primary (and in many contexts only) mechanism for tolerating constitutive replication stress. HR-proficient SDH-intact cells have redundant fork protection via BRCA1/BRCA2-mediated fork reversal and restart, and are substantially more tolerant of CHK1 inhibition.
+
+**Prexasertib pharmacology and CHK1 inhibition consequences:**
+Prexasertib (LY2606368) is an ATP-competitive CHK1/CHK2 inhibitor (CHK1 IC50 ~1 nM; CHK2 IC50 ~8 nM). CHK1 inhibition in BRCAness-positive SDH-deficient cells causes: (1) unscheduled origin firing from relief of CHK1-mediated dormant-origin suppression → massive increase in replication forks competing for limited dNTP pools; (2) replication catastrophe as active forks collide with unresolved stalled forks, generating DSBs that cannot be repaired by HR; (3) RPA depletion (RPA becomes exhausted coating ssDNA at multiple simultaneous stalled and newly fired forks); (4) CDC25C activation and premature CDK1 activation → mitotic entry of cells with extensively under-replicated DNA → mitotic catastrophe and pan-nuclear γ-H2AX. The net result is selective cytotoxicity in BRCAness-positive cells relative to HR-proficient controls.
+
+**Mechanistic distinction from ceralasertib (Mechanism 13, ATR inhibitor):**
+Mechanism 13 in this engine documents ceralasertib (AZD6738, ATR inhibitor) as a strategy further restricted to ATRX-null/ALT-positive SDH-deficient tumors, where the additional burden of telomere replication stress (ALT mechanism requires ATR for telomere maintenance) creates an enhanced ATR dependency beyond BRCAness alone. CHK1 inhibition by prexasertib targets the downstream effector of ATR relevant to the BRCAness pathway specifically — it would apply to all HR-deficient SDH-deficient tumors regardless of ATRX status, while ceralasertib's selectivity for ATRX-null/ALT cells reflects ALT-specific ATR functions upstream of CHK1. The two strategies are thus mechanistically complementary and non-redundant: ceralasertib for ATRX-null/ALT tumors, prexasertib for the broader BRCAness-positive population.
+
+**Clinical evidence in BRCAness-positive tumors (CHK1 inhibitor class):**
+Do et al. (Clin Cancer Res 2021, PMID 34131002) reported a Phase 1 combination trial of prexasertib + olaparib (PARP inhibitor) in patients with BRCA-mutant high-grade serous ovarian cancer (HGSOC). Among 18 evaluable patients, 4 confirmed partial responses were observed, including in patients with prior platinum resistance. Pharmacodynamic data demonstrated CHK1 target engagement (reduced phospho-CDC25C, increased γ-H2AX) in tumor biopsies, validating the mechanistic model of CHK1 inhibition driving replication catastrophe in HR-compromised cells — the same cellular context as BRCAness-positive SDH-deficient tumors. NCT02873975 (Phase 2; Dana-Farber/Lilly; completed) enrolled patients with advanced solid tumors defined by 'Replicative Stress or Homologous Recombination Repair Deficiency' — the clinically defined BRCAness population that would include SDH-deficient tumors. NCT03414047 (Phase 2; Eli Lilly; platinum-resistant ovarian cancer) enrolled a closely related population.
+
+**Key limitation:** No published data directly test prexasertib or any CHK1 inhibitor in SDHA-null GIST cell lines, SDHB-deficient PPGL models, or SDH-deficient RCC. The BRCAness mechanism is rigorously established (Sulkowski PMID 30013182, 32494005), and CHK1 inhibitor selectivity for HR-deficient cells is validated in BRCA-mutant models (Do et al. PMID 34131002), but the combination — CHK1 inhibitor + SDH-specific BRCAness — has not been tested experimentally. Direct in vitro validation (dose-response curves in isogenic SDH-null vs SDH-intact lines, γ-H2AX and RPA foci as pharmacodynamic readouts, rescue by CDK1/2 inhibition) is the required next experimental step.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CHK1 kinase | CHEK1 | Prexasertib (LY2606368) | Phase 2 (HR-deficient solid tumors) | None; rationale via BRCAness PMID 30013182/32494005 |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

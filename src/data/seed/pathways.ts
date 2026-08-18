@@ -368,4 +368,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 22,
   },
+  {
+    name: "CHK1 / Replication Stress Checkpoint (BRCAness)",
+    slug: "chk1-brcas-replication-checkpoint",
+    description:
+      "SDH loss drives epigenetic silencing of homologous recombination (HR) repair factors — the BRCAness phenotype (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). HR-deficient cells accumulate stalled replication forks and become acutely dependent on the ATR→CHK1 checkpoint kinase axis to stabilize forks, coordinate origin firing, and prevent premature mitotic entry. CHK1 (CHEK1) inhibition in BRCAness-positive cells causes replication catastrophe and mitotic catastrophe — a mechanistic vulnerability distinct from ATR inhibition (Mechanism 13, which is further restricted to ATRX-null/ALT subsets) because CHK1 is the downstream effector relevant to all BRCAness-positive SDH-deficient tumors regardless of ATRX status.",
+    upstream_event:
+      "SDH loss → succinate → KDM4A/KDM4B inhibition (α-KG-dependent histone demethylases) → H3K9me3 persistence at double-strand break sites → impaired TIP60 acetyltransferase and ATM kinase recruitment → HR deficiency (BRCAness) → stalled replication forks → CHK1 checkpoint activation → tumor CHK1 dependency for fork stability and cell cycle coordination",
+    downstream_effects: [
+      "Stalled replication forks accumulate in BRCAness-positive SDH-deficient cells due to HR repair impairment",
+      "CHK1 (phospho-Ser345 by ATR) stabilizes stalled forks by inactivating CDC25A→CDK2 and CDC25C→CDK1",
+      "CHK1 inhibition causes unscheduled origin firing, replication catastrophe, and ssDNA accumulation",
+      "Premature CDK1 activation drives mitotic catastrophe in cells with under-replicated DNA",
+      "CHK1 inhibition is selective for BRCAness-positive (HR-deficient) cells; HR-proficient cells tolerate CHK1 loss via redundant checkpoint pathways",
+      "Prexasertib (LY2606368) provides pharmacological CHK1/CHK2 inhibition with Phase 2 clinical data in HR-deficient solid tumors",
+    ],
+    druggable: true,
+    display_order: 23,
+  },
 ];
