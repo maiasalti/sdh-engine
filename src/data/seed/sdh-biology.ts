@@ -356,6 +356,48 @@ Do et al. (Clin Cancer Res 2021, PMID 34131002) reported a Phase 1 combination t
 |---|---|---|---|---|
 | CHK1 kinase | CHEK1 | Prexasertib (LY2606368) | Phase 2 (HR-deficient solid tumors) | None; rationale via BRCAness PMID 30013182/32494005 |
 
+---
+
+## Mechanism 29: Classical NHEJ Backup Repair — DNA-PK (PRKDC) Synthetic Lethality in BRCAness-Positive SDH-Deficient Tumors
+
+**Core concept:** SDH loss creates BRCAness (epigenetic HR deficiency). When HR fails, cells compensatorily upregulate classical non-homologous end joining (c-NHEJ) — mediated by the PRKDC/KU70/KU80 complex — as the primary backup for double-ended blunt-ended DSBs (~90% of all DSBs). Blocking DNA-PK (PRKDC) with peposertib (M3814) simultaneously with the pre-existing HR deficiency creates a synthetic lethal state: cells cannot repair the quantitatively dominant class of DSBs by either pathway, accumulating lethal unrepaired breaks.
+
+**SDH loss → BRCAness → NHEJ dependency (the mechanistic chain):**
+
+SDH loss (via SDHA/B/C/D subunit mutation or loss) → succinate accumulation → inhibition of α-ketoglutarate-dependent dioxygenases, specifically KDM4A and KDM4B (histone H3K9/K36 demethylases). Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) demonstrated that succinate competitively inhibits KDM4A/KDM4B, causing persistent H3K9 trimethylation (H3K9me3) at DSB sites. H3K9me3 at DSBs prevents TIP60 (KAT5) acetyltransferase recruitment → impaired H4K16 acetylation → impaired ATM kinase activation → defective HR initiation. The result is a universal HR deficiency (BRCAness) present in all SDH-deficient tumors regardless of tumor type or SDH subunit affected.
+
+BRCAness forces cells to rely on backup DSB repair pathways. Classical NHEJ — the predominant pathway for double-ended, blunt-ended or near-blunt DSBs — is quantitatively the most important backup, handling approximately 90% of all DSBs. The NHEJ pathway operates via: KU70 (XRCC6) + KU80 (XRCC5) heterodimer loading at DSB ends → PRKDC recruitment and activation → PRKDC autophosphorylation (Ser2056 cluster, Thr2609 cluster) → end processing (Artemis nuclease for hairpin opening) → synapsis of DSB ends → ligation by the XRCC4–LIG4–XLF complex. PRKDC's kinase activity is essential for NHEJ: its autophosphorylation events drive the conformational rearrangements required for Artemis activation, end-bridging, and ligation complex assembly.
+
+**Peposertib (M3814) — mechanism and clinical data:**
+
+Peposertib (M3814/MSC2490484A; Merck KGaA) is a potent, selective, orally bioavailable ATP-competitive PRKDC kinase inhibitor (IC50 ~3 nM for PRKDC; >100-fold selectivity over PI3K, mTOR, ATR, ATM, and other PIKK family members). It inhibits PRKDC kinase activity directly at the ATP-binding cleft, preventing all downstream autophosphorylation events required for NHEJ catalysis.
+
+Zenke et al. (Clin Cancer Res 2020, PMID 32234879) characterized peposertib pharmacology and demonstrated potent radiosensitization in multiple solid tumor models (SW620 colorectal, A549 NSCLC, FaDu head and neck), confirming that NHEJ blockade by peposertib combined with ionizing radiation (which generates predominantly double-ended DSBs) is lethal in tumor models in vitro and in vivo. Phase 1b dose-escalation/expansion data from NCT02502708 (peposertib + radiotherapy in locally advanced solid tumors) established tolerable dosing (400 mg twice daily) with pharmacodynamic evidence of PRKDC target engagement (inhibition of autophosphorylation Ser2056 in PBMCs and tumor biopsies) and preliminary anti-tumor activity. NCT05044494 (Phase 1b/2; ongoing) evaluates peposertib in combination with systemic therapies in advanced solid tumors, broadening beyond the radiation context to systemic BRCAness exploitation.
+
+**Mechanistic distinction from POLQ/TMEJ (Mechanism 14, ART558):**
+
+This mechanism is non-redundant with the existing POLQ/TMEJ entry (Mechanism 14). POLQ (DNA polymerase theta) mediates microhomology-mediated end joining (MMEJ/alt-EJ, also called TMEJ), which handles: (a) complex one-ended DSBs arising at collapsed replication forks where only one end is available, (b) DSBs with extended resected 3′ single-stranded overhangs, and (c) joins that require microhomology tracts (2–25 nt) for synapsis. POLQ extends from the microhomology-paired 3′ ends in a template-switching manner, filling in gaps before ligation — a mechanistically distinct catalytic operation from the KU/DNA-PK/LIG4 ligation executed in c-NHEJ.
+
+Classical NHEJ (PRKDC/KU70/KU80/LIG4) handles: blunt-ended or near-blunt double-ended DSBs, which constitute the quantitative majority (~90%) of DSBs in dividing cells, including those from DSB-inducing chemotherapy agents, topoisomerase II poisons, and IR. Because most DSBs are double-ended and handled by NHEJ rather than POLQ, peposertib targets a larger fraction of the DSB repair burden that BRCAness-positive SDH-deficient cells depend on for survival. Combining peposertib (NHEJ blockade) with ART558 (POLQ/TMEJ blockade) would theoretically eliminate both major backup DSB repair arms in BRCAness-positive cells — a rational combination hypothesis.
+
+**Synthetic lethality rationale and BRCAness specificity:**
+
+The synthetic lethal interaction requires concurrent absence of both HR (from BRCAness) and classical NHEJ (from peposertib). In BRCAness-positive SDH-deficient cells:
+1. HR is absent → double-ended DSBs cannot be accurately repaired by the high-fidelity pathway
+2. NHEJ is blocked by peposertib → the primary backup route is pharmacologically disabled
+3. POLQ/TMEJ handles only a minority of DSB substrates and becomes rapidly overwhelmed
+4. Cells accumulate lethal unrepaired DSBs → apoptosis or mitotic catastrophe
+
+In HR-proficient SDH-intact cells: HR efficiently repairs double-ended DSBs even with NHEJ blocked (HR is preferred in S/G2 phase and directly competes with NHEJ). This provides the therapeutic window: peposertib selectively kills HR-deficient (BRCAness-positive) cells while HR-proficient cells tolerate NHEJ inhibition via HR backup.
+
+This selectivity principle is directly analogous to the established PARP inhibitor mechanism in BRCA1/2-mutant tumors (where NHEJ is the backup that becomes essential when HR fails) — but inverted: in PARP inhibitor BRCAness, SSBs become DSBs that require HR; in peposertib + BRCAness, DSBs cannot be resolved by either HR (absent) or NHEJ (blocked). The distinction from PARP inhibitors in this engine is that PARP inhibitors target SSB repair → DSB conversion, while peposertib directly targets the DSB backup ligation step.
+
+**Key limitation:** No published data directly test peposertib or any DNA-PK inhibitor in SDH-deficient cell lines or patient-derived models (SDH-null GIST, SDHB-deficient PPGL, SDH-deficient RCC). The BRCAness mechanism is rigorously established (Sulkowski PMID 30013182, 32494005), and NHEJ dependency in HR-deficient cells is conceptually well-supported by the PARP inhibitor synthetic lethality literature and by peposertib's radiosensitizing activity in tumor models, but the specific combination — DNA-PK inhibitor + SDH-specific BRCAness — has not been directly tested. Evidence_score 25 (theoretical) reflects strong mechanistic grounding without SDH-specific experimental data. Required next step: dose-response curves of peposertib in isogenic SDH-null vs SDH-intact cell lines (e.g. SDHA-null HAP1, SDHB-knockout PGL50), γ-H2AX foci kinetics, and colony formation assays to establish BRCAness-selective cytotoxicity.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| DNA-PK (NHEJ catalytic subunit) | PRKDC | Peposertib (M3814) | Phase 1b/2 (solid tumors) | None; rationale via BRCAness PMID 30013182/32494005 |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

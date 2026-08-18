@@ -420,3 +420,27 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 **Files changed:** `src/data/seed/pathways.ts` (chk1-brcas-replication-checkpoint, display_order 23), `src/data/seed/targets.ts` (CHEK1 synthetic_lethal new entry), `src/data/seed/drugs.ts` (prexasertib new entry, evidence_score 28, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 28 added), `src/lib/scoring/constants.ts` (chk1-brcas-replication-checkpoint color entry), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add prexasertib (CHK1 inhibitor) — BRCAness replication checkpoint synthetic lethality
+
+## 2026-08-18
+
+**Direction:** DNA-PK (PRKDC) / Classical NHEJ Backup Repair synthetic lethality — peposertib (M3814). New pathway `nhej-dnapk-backup-repair` (display_order 24), new target PRKDC (synthetic_lethal), new drug peposertib (evidence_score 25, theoretical, tumor_type_applicability ["all"]).
+
+**Angle:** BRCAness-positive SDH-deficient tumors are HR-deficient and compensatorily upregulate classical NHEJ (via PRKDC/KU70/KU80 complex) as their primary backup for the quantitatively dominant class of double-ended blunt-ended DSBs (~90% of all DSBs). Peposertib (M3814/MSC2490484A; Merck KGaA) is a highly selective ATP-competitive PRKDC kinase inhibitor (IC50 ~3 nM; Phase 1b/2 clinical) that blocks NHEJ catalytic function. This is mechanistically non-redundant with POLQ/TMEJ (ART558, Mechanism 14; handles complex one-ended DSBs at collapsed forks with microhomology), CHK1/prexasertib (Mechanism 28; checkpoint kinase), ATR/ceralasertib (Mechanism 13; restricted to ATRX-null/ALT), and PARP inhibitors (target SSB→DSB conversion) — a genuinely new branch of the BRCAness synthetic lethality space.
+
+**Papers added:** 0
+
+**Papers rejected (evaluated, not added):** 1 — PMID 42611605: PMID confirmed to exist via PubMed search API but metadata (title, DOI, abstract, journal) not retrievable due to network proxy blocking NCBI E-utilities and PubMed MCP metadata tool failures. Cannot add per policy ("NEVER add a paper you could not verify on PubMed"). Logged in tracker.md for manual verification.
+
+**Summary:** Added peposertib (DNA-PK inhibitor) as a new theoretical candidate (evidence_score 25) in the NHEJ backup repair direction. The mechanistic chain: SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → HR deficiency (BRCAness; Sulkowski PMID 30013182, 32494005) → compensatory NHEJ upregulation → PRKDC dependency → synthetic lethal with peposertib. Phase 1b clinical data from NCT02502708 (Zenke et al. PMID 32234879) demonstrate PRKDC target engagement and radiosensitizing activity in solid tumors. No SDH-specific experimental data exist; evidence_score 25 reflects strong mechanistic grounding without SDH-specific validation.
+
+**Rationale for selection:** After exhaustive review of all 23 prior log entries, DNA-PK/NHEJ is the last mechanistically justified backup DSB repair direction in the BRCAness theme that has not been logged. The prior log exhausted: POLQ/TMEJ (ART558, Mechanism 14), ATR (ceralasertib, Mechanism 13), PARP inhibitors (olaparib/rucaparib/niraparib, multiple entries), CHK1 (prexasertib, Mechanism 28). NHEJ via PRKDC handles a distinct DSB substrate class (double-ended blunt) from POLQ (one-ended/microhomology) and uses a different protein complex and catalytic mechanism. Passes HARD RELEVANCE GATE via Sulkowski BRCAness mechanism (PMID 30013182, 32494005).
+
+**Literature anchors:**
+- PMID 30013182 (Sulkowski Nat Genet 2018): succinate → KDM4A/B → H3K9me3 → impaired TIP60/ATM → BRCAness. Core mechanistic anchor.
+- PMID 32494005 (Sulkowski Nature 2020): BRCAness in SDH-deficient tumors confirmed; PARP inhibitor synthetic lethality.
+- PMID 32234879 (Zenke et al. Clin Cancer Res 2020): Peposertib pharmacology, PRKDC target engagement, radiosensitization in solid tumor models; Phase 1 dose-finding.
+- NCT02502708 (Phase 1b; peposertib + radiotherapy; solid tumors): clinical PRKDC target engagement data.
+- NCT05044494 (Phase 1b/2; peposertib + systemic therapy; solid tumors): ongoing expansion.
+
+**Files changed:** `src/data/seed/pathways.ts` (nhej-dnapk-backup-repair, display_order 24), `src/data/seed/targets.ts` (PRKDC synthetic_lethal new entry), `src/data/seed/drugs.ts` (peposertib new entry, evidence_score 25, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (nhej-dnapk-backup-repair color entry), `tracker.md` (PMID 42611605 logged), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add peposertib (DNA-PK inhibitor) — NHEJ backup repair synthetic lethality in BRCAness/SDH-deficient tumors

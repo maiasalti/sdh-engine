@@ -386,4 +386,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 23,
   },
+  {
+    name: "Classical NHEJ Backup Repair (DNA-PK)",
+    slug: "nhej-dnapk-backup-repair",
+    description:
+      "SDH loss creates BRCAness — epigenetic HR deficiency driven by succinate-mediated KDM4A/KDM4B inhibition (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). When HR is impaired, cells must rely on backup DSB repair pathways to survive replication-associated damage. Classical non-homologous end joining (NHEJ) — executed by the DNA-PK complex (PRKDC catalytic subunit with KU70/XRCC6 and KU80/XRCC5 regulatory subunits) — becomes the primary backup for the quantitatively dominant class of double-strand breaks (blunt-ended or near-blunt double-ended DSBs, ~90% of all DSBs). This is mechanistically distinct from POLQ-mediated end joining (TMEJ/alt-EJ, Mechanism 14), which handles complex one-ended DSBs arising at collapsed replication forks with microhomology. Peposertib (M3814/MSC2490484A), a highly selective ATP-competitive DNA-PK kinase inhibitor, blocks NHEJ catalytic function, creating a synthetic lethal interaction in BRCAness-positive SDH-deficient cells where HR (absent) and classical NHEJ (blocked) both fail simultaneously.",
+    upstream_event:
+      "SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → HR deficiency (BRCAness) → compensatory classical NHEJ (DNA-PK/PRKDC) upregulation as primary backup DSB repair",
+    downstream_effects: [
+      "DNA-PK (PRKDC/KU70/KU80) complex assembles at blunt double-ended DSB ends and activates via KU heterodimer loading",
+      "PRKDC autophosphorylation (Ser2056, Thr2609) coordinates DNA end processing and ligation via XRCC4/LIG4/XLF",
+      "BRCAness-positive cells show increased NHEJ dependency as classical backup when HR is impaired",
+      "Peposertib (M3814) selectively inhibits PRKDC kinase activity, blocking NHEJ DSB ligation",
+      "Dual HR/NHEJ blockade in BRCAness-positive cells forces error-prone TMEJ or results in lethal DSB accumulation",
+      "Peposertib Phase 1b/2 development in solid tumors (NCT02502708, NCT05044494); radiosensitizing activity demonstrated in combination studies",
+    ],
+    druggable: true,
+    display_order: 24,
+  },
 ];
