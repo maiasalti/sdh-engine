@@ -386,4 +386,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 23,
   },
+  {
+    name: "TERT Telomerase Reactivation",
+    slug: "tert-telomerase-reactivation",
+    description:
+      "TERT promoter mutations (c.-124C>T, C228T) occur in ~16.7% of SDHB-germline-positive metastatic pheochromocytoma/paraganglioma (PPGL), co-occurring exclusively with SDHB pathogenic variants (Batini et al., Arch Endocrinol Metab 2026, PMID 42155081). These hotspot mutations create de novo E-twenty-six (ETS) transcription factor binding sites in the TERT promoter, driving constitutive telomerase (TERT/TERC) transcription and telomere maintenance via the telomerase-dependent pathway. This is mechanistically distinct from the ATRX-loss/ALT pathway (Mechanism 13): ATRX-null tumors use recombination-based, telomerase-independent ALT, whereas TERT-promoter-mutant tumors rely on telomerase enzyme activity. Imetelstat (Rytelo) — a 13-mer thio-phosphoramidate oligonucleotide that competitively binds the TERT catalytic site as a template antagonist — directly inhibits telomerase and is FDA-approved (June 2024) for lower-risk MDS with transfusion-dependent anemia.",
+    upstream_event:
+      "SDHB loss (predominantly) → epigenetic instability → TERT promoter C228T mutation → de novo ETS binding site → constitutive TERT transcription → active telomerase complex → telomere maintenance in metastatic PPGL",
+    downstream_effects: [
+      "Constitutive TERT expression and telomerase enzyme activity in TERT-promoter-mutant PPGL",
+      "Telomere-length maintenance enabling indefinite replicative potential in SDHB-metastatic tumors",
+      "TERT promoter C228T co-occurs exclusively with SDHB PVs (16.7% of metastatic SDHB-PPGL; PMID 42155081)",
+      "Telomerase-dependent pathway — mechanistically non-overlapping with ATRX-null/ALT (Mechanism 13)",
+      "Imetelstat-mediated TERT catalytic-site blockade → progressive telomere shortening → replicative crisis → selective cell death in TERT-promoter-mutant tumors",
+    ],
+    druggable: true,
+    display_order: 24,
+  },
 ];

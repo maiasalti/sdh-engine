@@ -66,4 +66,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-pdl1-checkpoint-evasion": "bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200",
   "cdkn2a-cdk46-cell-cycle": "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
   "chk1-brcas-replication-checkpoint": "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200",
+  "tert-telomerase-reactivation": "bg-indigo-200 text-indigo-900 dark:bg-indigo-800 dark:text-indigo-100",
 };

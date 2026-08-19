@@ -356,6 +356,25 @@ Do et al. (Clin Cancer Res 2021, PMID 34131002) reported a Phase 1 combination t
 |---|---|---|---|---|
 | CHK1 kinase | CHEK1 | Prexasertib (LY2606368) | Phase 2 (HR-deficient solid tumors) | None; rationale via BRCAness PMID 30013182/32494005 |
 
+### 29. TERT Telomerase Reactivation in SDHB-Metastatic PPGL — Imetelstat
+
+TERT promoter hotspot mutations (C228T/c.-124C>T) are present in 16.7% of SDHB-germline-positive metastatic pheochromocytoma/paraganglioma (Batini et al., Arch Endocrinol Metab 2026, PMID 42155081). These mutations co-occur exclusively with SDHB pathogenic variants across the study cohort and are restricted to metastatic disease, identifying TERT promoter reactivation as a late genomic event in the most malignant subset of SDH-deficient PPGL.
+
+**TERT promoter mutation mechanism:**
+The C228T and C250T hotspot mutations in the TERT proximal promoter each create a de novo ETS (E-twenty-six) transcription factor binding motif (GGAA/TTCC) approximately 124 bp or 146 bp upstream of the ATG start site. ETS factors (including GABPA/GABPB1) bind these neo-sites and drive constitutive transcription of the otherwise epigenetically silenced TERT gene in somatic tumor cells. The result is active telomerase holoenzyme (TERT protein + TERC RNA template), which maintains telomere length in cancer cells that would otherwise undergo replicative senescence after a defined number of divisions.
+
+**Mechanistic distinction from ATRX-null/ALT (Mechanism 13):**
+In approximately 30–40% of metastatic SDHB-PPGL, ATRX co-mutations activate the Alternative Lengthening of Telomeres (ALT) pathway — a recombination-based, break-induced replication mechanism for telomere maintenance that operates independently of telomerase. ALT-positive cells are telomerase-negative and have constitutive telomeric replication stress (Mechanism 13). TERT-promoter-mutant tumors use the opposite strategy: constitutive telomerase enzyme activity for telomere maintenance, with no requirement for recombination-based ALT mechanisms. The two pathways are mutually exclusive mechanisms of telomere maintenance in cancer. This non-redundancy is therapeutically critical: imetelstat (telomerase inhibitor) would selectively suppress TERT-dependent tumors, while ceralasertib (ATR inhibitor, Mechanism 13) selectively suppresses ALT-dependent tumors. Together, these two directions cover complementary telomere-maintenance vulnerabilities in metastatic SDHB-PPGL.
+
+**Imetelstat pharmacology:**
+Imetelstat (GRN163L; Rytelo; Geron Corporation) is a 13-mer thio-phosphoramidate oligonucleotide with a palmitoyl lipid conjugate for cellular uptake. It binds the RNA template region (hTR/TERC) of the telomerase active site with high affinity and specificity, blocking TERT reverse transcriptase activity as a competitive template antagonist — directly preventing telomere repeat synthesis. FDA approved June 6, 2024, for transfusion-dependent anemia in low-to-intermediate-1-risk MDS (IMerge Phase 3 trial, NCT02598661). Imetelstat's established clinical safety profile (cytopenias, hepatotoxicity monitored by LFTs) is characterized in the MDS population; PPGL-specific tolerability data are absent.
+
+**Key limitation:** No published data test imetelstat or any telomerase inhibitor in any SDH-deficient tumor model. The TERT promoter mutation frequency data (PMID 42155081) and imetelstat mechanism of action (NCT02598661) are each well-established, but the combination — imetelstat in TERT-promoter-mutant SDH-deficient PPGL — is entirely untested. Required next experimental steps: confirm TERT protein expression and telomerase activity in TERT-promoter-mutant SDHB-PPGL patient samples; test imetelstat dose-response in isogenic TERT-promoter-mutant versus wild-type PPGL cell lines (e.g., MTT, clonogenic assay after 3–6 population doublings to allow telomere shortening); measure telomere length kinetics (TRF or TRAP assay) as pharmacodynamic readout.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| TERT reverse transcriptase | TERT | Imetelstat (Rytelo) | FDA-approved (MDS; June 2024) | None; rationale via TERT-C228T in 16.7% metastatic SDHB-PPGL (PMID 42155081) |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

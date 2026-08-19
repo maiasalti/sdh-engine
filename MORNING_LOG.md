@@ -420,3 +420,28 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 **Files changed:** `src/data/seed/pathways.ts` (chk1-brcas-replication-checkpoint, display_order 23), `src/data/seed/targets.ts` (CHEK1 synthetic_lethal new entry), `src/data/seed/drugs.ts` (prexasertib new entry, evidence_score 28, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 28 added), `src/lib/scoring/constants.ts` (chk1-brcas-replication-checkpoint color entry), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add prexasertib (CHK1 inhibitor) — BRCAness replication checkpoint synthetic lethality
+
+---
+
+## 2026-08-19 — TERT Telomerase Reactivation / Imetelstat
+
+**Direction chosen:** TERT promoter reactivation in SDHB-metastatic PPGL → imetelstat (Rytelo, FDA-approved telomerase inhibitor).
+
+**Paper scan (Step 1):** Six PubMed queries covering SDH-deficient tumors, PPGL genomics, SDH-GIST new trials, epigenetic mechanisms, and BRCAness/repair in the past 3 months. One new PMID found: 42611605 (pediatric SDHA-GIST with retained SDHB IHC staining — a diagnostic false-negative case report). Rejected: the core observation (SDHB IHC false-negative in a subset of SDH-deficient GIST) is already captured by PMID 41985045 (57 tumors, 49% false-negative rate, 4 morphological patterns — a systematic study with 25× greater sample size). No new mechanistic or therapeutic advance.
+
+**Directions ruled out before selecting TERT:**
+- MTHFD2/one-carbon folate: no SDH-specific data; no clinical-stage inhibitors. Ruled out previously; still no evidence to reverse.
+- Complex I (mitochondrial): definitively ruled out by Sokolov preprint (prior log).
+- CD47/macrophage phagocytosis: HIF-1α → CD47 transcriptional link uncertain; magrolimab development halted. Insufficient citation basis.
+- DNMT3B-selective inhibitors: same mechanism angle as existing decitabine/azacitidine entries.
+- Erdafitinib FGFR upgrade: same mechanism as regorafenib upgrade done 2026-08-16.
+
+**TERT direction rationale:**
+PMID 42155081 (Batini et al., Arch Endocrinol Metab 2026) — already in papers.ts — directly quantifies TERT promoter C228T in 16.7% of SDHB-germline-positive metastatic PPGL, co-occurring exclusively with SDHB pathogenic variants. These tumors use the telomerase-DEPENDENT telomere maintenance pathway, mechanistically distinct from ATRX-null/ALT tumors (Mechanism 13) which use recombination-based, telomerase-INDEPENDENT ALT. Imetelstat (Rytelo; Geron) is a 13-mer thio-phosphoramidate oligonucleotide that competitively binds the TERT active-site RNA template region. FDA-approved June 2024 for lower-risk MDS (IMerge Phase 3, NCT02598661). Established clinical safety profile. No SDH-specific data exist, but the genetic epidemiology (PMID 42155081) and mechanism of action (direct TERT catalytic-site antagonism) are both solid. Evidence_score 25 (theoretical), tumor_type_applicability ["ppgl"] only. Non-redundant with all existing engine entries.
+
+**Color allocation:** All standard Tailwind -100 pathway badge colors are exhausted. New pathway uses `bg-indigo-200` (a distinct shade from `bg-indigo-100` already used for neddylation).
+
+**Candidate directions still unexplored:** (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively.
+
+**Files changed:** `src/data/seed/pathways.ts` (tert-telomerase-reactivation, display_order 24), `src/data/seed/targets.ts` (TERT direct new entry), `src/data/seed/drugs.ts` (imetelstat new entry, evidence_score 25, tumor_type_applicability ["ppgl"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (tert-telomerase-reactivation color entry), `tracker.md` (PMID 42611605 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add imetelstat (TERT inhibitor) — telomerase reactivation in SDHB-metastatic PPGL

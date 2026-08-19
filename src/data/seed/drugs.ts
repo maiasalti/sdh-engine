@@ -765,4 +765,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02873975", "NCT03414047"],
   },
+  {
+    name: "Imetelstat",
+    brand_names: ["Rytelo"],
+    chembl_id: "CHEMBL2107840",
+    pubchem_cid: null,
+    drug_class: "Telomerase inhibitor (competitive TERT template antagonist)",
+    mechanism_of_action:
+      "Imetelstat (GRN163L; Rytelo; Geron Corporation) is a 13-mer thio-phosphoramidate oligonucleotide conjugated to a palmitoyl lipid group for cellular uptake. It binds with high affinity and specificity to the RNA template region (hTR/TERC) of the human telomerase active site, acting as a competitive template antagonist that directly blocks TERT reverse transcriptase activity without requiring intracellular metabolism. FDA approved June 2024 for transfusion-dependent anemia in low-to-intermediate-1-risk myelodysplastic syndromes (MDS; IMerge Phase 3 trial, NCT02598661).\n\nThe mechanistic rationale for TERT-promoter-mutant SDHB-metastatic PPGL is direct and specific.\n\n**TERT promoter mutation prevalence in metastatic SDHB-PPGL:**\nBatini et al. (Arch Endocrinol Metab 2026, PMID 42155081) systematically analyzed a cohort of SDHB-germline-positive metastatic PPGL patients and identified TERT promoter C228T (c.-124C>T) mutations in 16.7% of cases. These TERT promoter variants co-occurred exclusively with SDHB pathogenic variants across the cohort, establishing TERT reactivation as a recurrent, SDHB-specific genomic event in metastatic disease. The C228T and C250T hotspot mutations create de novo ETS transcription factor binding sites (GGAA/TTCC motifs) in the TERT proximal promoter, driving constitutive TERT transcription in tumors where TERT is otherwise epigenetically silenced.\n\n**Mechanistic basis for imetelstat selectivity in TERT-promoter-mutant tumors:**\nTERT-promoter-mutant tumors rely on active telomerase for telomere maintenance — the telomerase-DEPENDENT pathway. This is mechanistically and therapeutically distinct from ATRX-null tumors (Mechanism 13 in this engine), which use Alternative Lengthening of Telomeres (ALT): a recombination-based, telomerase-INDEPENDENT mechanism. Normal somatic cells do not express TERT and have no telomerase activity; imetelstat therefore has a wide therapeutic window between TERT-reactivated cancer cells and normal tissue. Imetelstat-mediated telomerase inhibition causes progressive telomere shortening with each cell division; after a threshold of shortening is reached, telomeric dysfunction signals replicative crisis and cell death specifically in TERT-dependent cells.\n\n**Non-redundancy with the ATRX/ALT direction:**\nCeralasertib (ATR inhibitor, Mechanism 13) exploits ALT-specific replication stress in ATRX-null/ALT-positive SDH-deficient tumors — a telomerase-independent subpopulation. Imetelstat targets the orthogonal, telomerase-dependent TERT-promoter-mutant subpopulation. The two strategies are non-overlapping: ALT tumors (ATRX-null) are intrinsically telomerase-negative and would not respond to imetelstat; conversely, TERT-promoter-mutant/ATRX-intact tumors are telomerase-dependent and would not be selectively sensitized by ALT-specific ATR inhibition. Together they cover complementary subsets of the most malignant metastatic SDHB-PPGL.\n\n**Key limitation:** No published data test imetelstat or any telomerase inhibitor in SDHB-deficient PPGL cell lines, patient-derived xenografts, or SDH-deficient models of any type. The mechanistic rationale rests on (1) TERT promoter C228T prevalence data from PMID 42155081 and (2) imetelstat's established mechanism of action in MDS (NCT02598661, FDA label), but SDH-specific experimental validation is absent. The tumor-type applicability is restricted to PPGL because TERT promoter mutations in SDH-deficient GIST and RCC have not been reported in comparable studies. Evidence_score 25 (theoretical) reflects a well-grounded but entirely unvalidated-in-SDH-context hypothesis: the genetic epidemiology (PMID 42155081) is solid, the drug mechanism is clinically established, but the combination has not been tested.",
+    fda_approved: true,
+    approved_indications: [
+      "Transfusion-dependent anemia in adults with low-to-intermediate-1-risk myelodysplastic syndromes (MDS) with or without ring sideroblasts who have failed ESA therapy (FDA-approved June 6, 2024; IMerge Phase 3 trial, NCT02598661)",
+    ],
+    pathway_slugs: ["tert-telomerase-reactivation"],
+    target_gene_symbols: ["TERT"],
+    evidence_score: 25,
+    status: "theoretical",
+    tumor_type_applicability: ["ppgl"],
+    clinical_trial_ids: ["NCT02598661"],
+  },
 ];
