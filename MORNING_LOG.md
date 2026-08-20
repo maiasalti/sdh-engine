@@ -445,3 +445,31 @@ PMID 42155081 (Batini et al., Arch Endocrinol Metab 2026) — already in papers.
 
 **Files changed:** `src/data/seed/pathways.ts` (tert-telomerase-reactivation, display_order 24), `src/data/seed/targets.ts` (TERT direct new entry), `src/data/seed/drugs.ts` (imetelstat new entry, evidence_score 25, tumor_type_applicability ["ppgl"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (tert-telomerase-reactivation color entry), `tracker.md` (PMID 42611605 rejected row), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add imetelstat (TERT inhibitor) — telomerase reactivation in SDHB-metastatic PPGL
+
+---
+
+## 2026-08-20 — MIBG/NET-Targeted Radionuclide Therapy — Iobenguane I-131 (Azedra) + [²¹¹At]MABG
+
+**Paper scan:** 6 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, succinate oncometabolite, SDH BRCAness, tazemetostat EZH2 SDH, succinate immune evasion SDH tumor). 1 new PMID evaluated: 42611605 (pediatric SDHA-GIST case with retained SDHB IHC — single case report, no new mechanism, IHC false-negative pattern already covered by PMID 41985045). 0 papers added. Also added PMID 41404848 (Rapizzi et al., Endocr Relat Cancer Jan 2026, pro-tumorigenic vitamin C in SDHB-PPGL zebrafish model) to papers.ts — this paper was already cited in the Ascorbic Acid drug entry since 2026-07-16 but was missing from papers.ts (outside the 3-month scan window at time of evaluation).
+
+**Direction:** MIBG/NET-targeted radionuclide therapy — new pathway `mibg-net-targeted-radiation` (display_order 24), new target SLC6A2, two new drug entries: Iobenguane I-131/Azedra (evidence_score 42, established, FDA-approved) and [²¹¹At]MABG (evidence_score 26, preclinical, Phase 1), new Mechanism 29 in sdh-biology.ts.
+
+**Rationale for selection:** The tracker flagged PMID 42490294 ([²¹¹At]MABG Phase 1, Okamoto et al. CCR 2026) as "relevant to BRCAness × high-LET synthetic lethality direction" when the paper was added to papers.ts on 2026-08-10, explicitly deferring implementation. Azedra (iobenguane I-131) is FDA-approved specifically for iobenguane-avid PPGL — the most directly applicable existing approved therapy missing from the engine. The MORNING_LOG shows Panobinostat was already upgraded (some prior run) to note its NET/SLC6A2 upregulation and MIBG combination rationale (Martiniova et al. PMID 21098082), creating a natural bridge to the MIBG direction. Both DNA repair angles that were previously unexplored (DNA-PKcs/peposertib) were evaluated and rejected: peposertib is primarily a radiosensitizer and the standalone BRCAness synthetic lethality case for DNA-PKcs is weaker than POLQ (Ceccaldi 2015) or CHK1 (replication checkpoint biology); the key synthetic lethality papers could not be verified via PubMed. The MIBG direction passes the HARD RELEVANCE GATE via NET-selective delivery to chromaffin-lineage SDH-deficient PPGL plus BRCAness-derived radiosensitization.
+
+**Mechanistic chain:**
+- **Primary selectivity:** SDH-deficient PPGL (chromaffin lineage) → NET/SLC6A2 expression → selective MIBG intracellular uptake → intracellular ionizing radiation → DSBs
+- **SDH-specific radiosensitization (BRCAness):** SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSBs → impaired TIP60/ATM → HR deficiency [Sulkowski PMID 30013182/32494005] → impaired repair of radiation-induced DSBs → amplified tumor-selective cytotoxicity
+- **Alpha-particle advantage:** [²¹¹At]MABG high-LET (80 keV/μm) creates complex clustered DSBs specifically requiring HR for faithful repair → BRCAness × high-LET synergy more pronounced than with ¹³¹I-MIBG beta particles
+
+**Literature anchors:**
+- PMID 42490294 (Okamoto et al., CCR 2026): [²¹¹At]MABG Phase 1 — 10 MIBG-avid PCC/PGL; 2.1 MBq/kg; no DLTs; 1 PR + 7 SD. Already in papers.ts.
+- PMID 21098082 (Martiniova et al., Endocr Relat Cancer 2011): panobinostat upregulates NET/SLC6A2 and MIBG uptake in PPGL cells at nanomolar concentrations. Cited in Panobinostat drug entry.
+- PMID 30013182 / PMID 32494005 (Sulkowski Nat Genet 2018 / Nature 2020): BRCAness in SDH-deficient tumors. Already in engine.
+- Azedra MACS0010 Phase 2 registration trial: FDA approval July 2018; ORR ~25%, CBR ~92% (cited by name in drug entry; PMID not confirmed via PubMed lookup).
+
+**Mechanistic distinction from ¹⁷⁷Lu-DOTATATE (Mechanism 19):** SSTR2 vs NET targeting; DOTATATE-avid vs MIBG-avid patient eligibility (not mutually exclusive but not identical); beta particle (¹⁷⁷Lu) vs alpha particle (²¹¹At) radiation type; different BRCAness × radiation LET synergy potential.
+
+**Scope caveat:** Applies strictly to MIBG-avid PPGL. Not applicable to SDH-deficient GIST (mesenchymal, no NET expression) or SDH-deficient RCC.
+
+**Files changed:** `src/data/seed/pathways.ts` (mibg-net-targeted-radiation, display_order 24), `src/data/seed/targets.ts` (SLC6A2, direct), `src/data/seed/drugs.ts` (Iobenguane I-131/Azedra evidence_score 42 established; [²¹¹At]MABG evidence_score 26 preclinical; both tumor_type_applicability ["ppgl"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (mibg-net-targeted-radiation color entry), `src/data/papers.ts` (PMID 41404848 added — vitamin C safety signal paper, cited in drug entry since 2026-07-16 but missing from papers.ts), `tracker.md` (PMID 42611605 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add MIBG/NET-targeted radionuclide therapy pathway — Azedra + [²¹¹At]MABG

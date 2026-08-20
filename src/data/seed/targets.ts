@@ -387,4 +387,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "The catalytic reverse transcriptase subunit of the telomerase holoenzyme (TERT/TERC complex). TERT adds telomeric TTAGGG repeats to chromosome ends using the RNA template component TERC, maintaining replicative capacity in stem cells, germ cells, and cancers. In somatic cells, TERT is silenced; TERT promoter hotspot mutations (C228T/c.-124C>T and C250T/c.-146C>T) create de novo ETS transcription factor binding sites that constitutively reactivate TERT expression, restoring telomerase activity in cancer cells. Batini et al. (Arch Endocrinol Metab 2026, PMID 42155081) identified TERT promoter C228T in 16.7% of SDHB-germline-positive metastatic PPGL — co-occurring exclusively with SDHB pathogenic variants — establishing TERT reactivation as a recurrent genomic alteration in the most malignant SDH-deficient tumor subset. TERT-promoter-mutant tumors depend on active telomerase (telomerase-dependent telomere maintenance), mechanistically distinct from ATRX-null/ALT tumors which use recombination-based, telomerase-independent telomere maintenance. Imetelstat (Rytelo; FDA-approved June 2024 for lower-risk MDS) is a 13-mer thio-phosphoramidate oligonucleotide that binds the TERT active site as a competitive RNA-template antagonist, directly inhibiting telomerase activity.",
   },
+  {
+    gene_symbol: "SLC6A2",
+    name: "Solute carrier family 6 member 2 (Norepinephrine transporter, NET)",
+    uniprot_id: "P23975",
+    pathway_slug: "mibg-net-targeted-radiation",
+    target_type: "direct",
+    description:
+      "Norepinephrine transporter (NET), encoded by SLC6A2, is a 12-transmembrane Na⁺/Cl⁻-dependent monoamine transporter selectively expressed on sympathetic neurons and chromaffin-lineage cells including pheochromocytoma and paraganglioma. NET mediates norepinephrine reuptake and is the molecular basis for selective MIBG uptake: iobenguane (meta-iodobenzylguanidine) and its astatinated analog [²¹¹At]MABG are structural guanethidine analogs actively transported by NET into catecholamine-storing vesicles, delivering ionizing radiation preferentially to NET-expressing tumor cells. Panobinostat (HDAC inhibitor, already in this engine) upregulates SLC6A2 expression and MIBG uptake in PPGL cells at nanomolar concentrations (Martiniova et al., Endocr Relat Cancer 2011, PMID 21098082), providing a pharmacological handle to enhance MIBG delivery in tumors with low baseline NET expression.",
+  },
 ];

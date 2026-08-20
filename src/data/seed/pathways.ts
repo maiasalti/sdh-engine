@@ -403,4 +403,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 24,
   },
+  {
+    name: "MIBG / NET-Targeted Radionuclide Therapy",
+    slug: "mibg-net-targeted-radiation",
+    description:
+      "The norepinephrine transporter (NET, encoded by SLC6A2) is selectively expressed on chromaffin-lineage cells including pheochromocytoma and paraganglioma, enabling tumor-selective intracellular delivery of radiolabeled guanethidine analogs (MIBG: meta-iodo/astatobenzylguanidine). NET actively transports MIBG analogs into catecholamine-storing vesicles, concentrating intracellular ionizing radiation in tumor cells expressing NET. In BRCAness-positive SDH-deficient PPGL, the established HR deficiency (Sulkowski et al. PMID 30013182/32494005) creates an additional vulnerability to radiation-induced DSBs — particularly high-LET alpha-particle radiation — because HR-impaired cells cannot efficiently repair complex clustered DNA lesions. ¹³¹I-MIBG (Azedra) delivers beta-particle radiation and is FDA-approved for iobenguane-avid PPGL. [²¹¹At]MABG delivers high-LET alpha-particle radiation, creating more complex DSBs especially cytotoxic in HR-deficient (BRCAness-positive) SDH-deficient cells.",
+    upstream_event:
+      "SDH loss → SDHB/SDHD-mutant chromaffin cell lineage → NET (SLC6A2) expression on tumor surface → MIBG analog selective intracellular uptake via NET → intracellular ionizing radiation → DNA DSBs; additional sensitization: SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → HR deficiency (BRCAness) → impaired radiation-induced DSB repair",
+    downstream_effects: [
+      "NET/SLC6A2 mediates selective intracellular MIBG uptake in chromaffin-lineage PPGL cells; non-NET-expressing tissues receive minimal radiation dose",
+      "¹³¹I-MIBG (Azedra): beta-particle (β⁻, max range ~2mm) delivered intracellularly; FDA-approved July 2018 for iobenguane-avid locally advanced/metastatic PPGL; ORR ~25%, CBR ~92% in MACS0010 registration trial",
+      "[²¹¹At]MABG: alpha-particle (⁴He²⁺, path length 50–80μm, high-LET ~80 keV/μm) creates complex clustered DSBs; Phase 1 (Okamoto et al. CCR 2026, PMID 42490294): 1 PR + 7 SD in 10 MIBG-avid PCC/PGL patients at 2.1 MBq/kg, no DLTs",
+      "BRCAness (Mechanism 14) predicts enhanced sensitivity to high-LET alpha-particle radiation: complex clustered DSBs require HR for accurate repair; HR-deficient SDH-deficient cells cannot efficiently resolve them, amplifying [²¹¹At]MABG cytotoxicity relative to NET-expressing SDH-intact tissues",
+      "Panobinostat upregulates NET/SLC6A2 expression and MIBG uptake in PPGL cells at nanomolar concentrations (Martiniova et al. PMID 21098082), providing a combination rationale to enhance MIBG delivery",
+      "Mechanistically distinct from ¹⁷⁷Lu-DOTATATE (Mechanism 19, SSTR2-targeted): different tumor surface receptor (NET vs SSTR2), different radiation type (alpha vs beta particles), different patient eligibility (MIBG-avid vs DOTATATE-avid PPGL)",
+      "Limitation: NET expression is restricted to catecholamine-secreting neuroendocrine lineage — not applicable to SDH-deficient GIST (mesenchymal, no NET expression) or SDH-deficient RCC",
+    ],
+    druggable: true,
+    display_order: 25,
+  },
 ];

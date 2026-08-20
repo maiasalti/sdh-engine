@@ -375,6 +375,35 @@ Imetelstat (GRN163L; Rytelo; Geron Corporation) is a 13-mer thio-phosphoramidate
 |---|---|---|---|---|
 | TERT reverse transcriptase | TERT | Imetelstat (Rytelo) | FDA-approved (MDS; June 2024) | None; rationale via TERT-C228T in 16.7% metastatic SDHB-PPGL (PMID 42155081) |
 
+### 29. NET-Targeted Radionuclide Therapy in SDH-Deficient PPGL — Iobenguane I-131 (Azedra) / [²¹¹At]MABG
+
+SDH-deficient pheochromocytoma and paraganglioma (PPGL) arise from catecholamine-producing chromaffin-lineage cells of the sympathoadrenal system that selectively express the norepinephrine transporter (NET, SLC6A2) as part of their neuroendocrine differentiation program. NET-mediated tumor-selective uptake of radiolabeled guanethidine analogs (MIBG: meta-iodo/astatobenzylguanidine) delivers ionizing radiation directly to tumor cells. In BRCAness-positive SDH-deficient PPGL, this NET-based selectivity is augmented by an SDH-specific vulnerability arising from the established HR repair deficiency.
+
+**Norepinephrine transporter (NET/SLC6A2) as the tumor-selective delivery vector:**
+SLC6A2 encodes NET, a Na⁺/Cl⁻-dependent monoamine transporter expressed on sympathetic neurons and chromaffin-lineage cells. NET actively transports MIBG structural analogs (guanethidine derivatives) into catecholamine-storing vesicles via the norepinephrine reuptake mechanism. This creates first-order tumor selectivity: tumor cells expressing NET accumulate intracellular radionuclide at concentrations far exceeding systemic exposure, while tissues without NET expression receive minimal radiation dose. Pre-treatment diagnostic ¹²³I-MIBG scintigraphy identifies MIBG-avid tumors eligible for radionuclide therapy.
+
+**BRCAness — the SDH-specific radiation sensitization layer:**
+The established BRCAness phenotype of SDH-deficient cells (Mechanism 14; Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) creates an SDH-specific amplification of MIBG cytotoxicity beyond NET-mediated selectivity. SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 hypermethylation at DNA DSB sites → impaired TIP60 acetyltransferase activity → impaired ATM kinase activation → HR deficiency. HR-deficient SDH-deficient tumor cells cannot efficiently repair radiation-induced DSBs via HR, potentially amplifying cytotoxicity relative to NET-expressing SDH-intact normal chromaffin cells that retain functional HR. This SDH-specific radiosensitization is particularly relevant for high-LET alpha-particle radiation, which creates complex clustered lesions that specifically require HR for faithful resolution.
+
+**¹³¹I-MIBG (Azedra) — beta-particle FDA-approved modality:**
+Iobenguane I-131 (Azedra) was FDA-approved in July 2018 for iobenguane-avid, locally advanced or metastatic pheochromocytoma or paraganglioma — the first radiopharmaceutical approved specifically for PPGL. The MACS0010 Phase 2 registration study established ORR ~25% and CBR ~92% in heavily pre-treated patients, with acceptable hematologic toxicity. ¹³¹I emits beta particles (β⁻; Emax 606 keV; mean path length ~2mm) that irradiate tumor cells and neighboring cells via a crossfire effect. SDH-deficient PPGL — particularly SDHB-mutant and SDHD-mutant tumors — constitute a major clinically relevant fraction of the iobenguane-avid PPGL population qualifying for Azedra.
+
+**[²¹¹At]MABG — alpha-particle high-LET modality with BRCAness synergy:**
+[²¹¹At]MABG substitutes astatine-211 for iodine in the MIBG scaffold, preserving NET-mediated uptake while delivering alpha particles (⁴He²⁺; LET ~80 keV/μm; path length 50–80 μm ≈ single-cell diameter). Alpha particles create complex clustered DNA lesions — multiple DSBs and base oxidations within a 10–20 base-pair window — that are specifically dependent on HR for faithful repair. In BRCAness-positive SDH-deficient PPGL, the inability to perform HR renders these complex lesions especially cytotoxic: [²¹¹At]MABG-induced complex DSBs cannot be accurately resolved, driving cell death selectively in the HR-deficient tumor while NET-expressing SDH-intact cells (with functional HR) can resolve the same lesions. This constitutes the BRCAness × high-LET synthetic vulnerability that does not apply to ¹³¹I-MIBG's simpler beta-particle DSBs to the same degree. Physical advantages: shorter path length reduces collateral irradiation of adjacent normal tissues; shorter At-211 half-life (7.2h vs. I-131's 8d) reduces radiation isolation requirements. Okamoto et al. (Clin Cancer Res 2026, PMID 42490294) reported the Phase 1 first-in-human study in 10 MIBG-avid PCC/PGL patients: 2.1 MBq/kg single dose; no DLTs; 1 confirmed PR and 7 SD, establishing clinical feasibility.
+
+**Panobinostat combination — NET upregulation to enhance delivery:**
+Martiniova et al. (Endocr Relat Cancer 2011, PMID 21098082) demonstrated panobinostat (pan-HDAC inhibitor, Mechanism 5) upregulates NET/SLC6A2 expression and significantly increases MIBG uptake in PPGL cells at nanomolar concentrations, providing a rationale for panobinostat pre-treatment to amplify both Azedra and [²¹¹At]MABG delivery to NET-low PPGL lesions.
+
+**Mechanistic distinction from ¹⁷⁷Lu-DOTATATE (Mechanism 19):**
+¹⁷⁷Lu-DOTATATE (Lutathera, Mechanism 19) targets somatostatin receptor 2 (SSTR2) and delivers beta-particle radiation with SSTR2-selectivity. MIBG-based therapies target NET (SLC6A2), a monoamine reuptake transporter. SSTR2 and NET expression are not perfectly correlated in PPGL; some patients are MIBG-avid but DOTATATE-negative or vice versa. Additionally, [²¹¹At]MABG delivers high-LET alpha particles versus ¹⁷⁷Lu-DOTATATE's low-LET beta particles, making the two platforms complementary in tumor eligibility criteria, radiation biology, and BRCAness exploitation potential.
+
+**Key limitation:** Azedra's MACS0010 trial did not stratify outcomes by SDH genotype; [²¹¹At]MABG Phase 1 enrolled MIBG-avid PCC/PGL without SDH stratification. The BRCAness × radiation sensitization hypothesis — particularly the high-LET/alpha-particle component — has not been tested in SDH-deficient preclinical models or SDH-stratified patient cohorts. Applicability is strictly to MIBG-avid PPGL — does not apply to SDH-deficient GIST (mesenchymal, no NET expression) or SDH-deficient RCC.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Norepinephrine transporter (NET) | SLC6A2 | Iobenguane I-131 (Azedra) | FDA-approved (PPGL) | No SDH-stratified outcomes; SDH-deficient tumors are a major iobenguane-avid subgroup |
+| Norepinephrine transporter (NET) | SLC6A2 | [²¹¹At]MABG | Phase 1 (PMID 42490294) | No SDH-stratified data; BRCAness × high-LET synergy is hypothesis |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

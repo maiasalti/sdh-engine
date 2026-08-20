@@ -784,4 +784,42 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: ["NCT02598661"],
   },
+  {
+    name: "Iobenguane I-131 (Azedra, ¹³¹I-MIBG)",
+    brand_names: ["Azedra"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class:
+      "NET-targeted beta-particle radiopharmaceutical (¹³¹I-labeled guanethidine analog)",
+    mechanism_of_action:
+      "Iobenguane I-131 (Azedra; Progenics Pharmaceuticals) is a high-specific-activity ¹³¹I-labeled analog of meta-iodobenzylguanidine (MIBG) — a structural guanethidine analog taken up selectively by the norepinephrine transporter (NET, SLC6A2) on chromaffin-lineage cells. NET actively transports iobenguane into the cytoplasm and catecholamine storage vesicles, delivering ¹³¹I-emitting beta particles (β⁻; Emax 606 keV; path length ~2mm in tissue) preferentially to tumor cells expressing NET.\n\nFDA approval (July 2018): Azedra was approved for iobenguane-avid, locally advanced or metastatic pheochromocytoma or paraganglioma requiring systemic anti-tumor therapy, becoming the first radiopharmaceutical approved specifically for PPGL. The MACS0010 Phase 2 registration study established overall response rate (ORR) of ~25% and clinical benefit rate (CBR, defined as ≥50% catecholamine reduction sustained for ≥6 months) of ~92%, with acceptable hematologic toxicity in a heavily pre-treated population.\n\nSDH-specific rationale — tumor type:\nSDH-deficient PPGL arise from catecholamine-producing chromaffin cells of the sympathoadrenal lineage, retaining NET/SLC6A2 expression and MIBG avidity. SDHB-mutant tumors often present with the dopaminergic phenotype (elevated dopamine/3-methoxytyramine) but retain NET expression and iobenguane uptake, qualifying them for MIBG-based therapy. While Azedra's approval covers all iobenguane-avid PPGL regardless of genotype, SDH-deficient PPGL constitute a major clinically relevant fraction of the eligible population.\n\nSDH-specific rationale — BRCAness radiosensitization:\nBeyond tumor-type selectivity, the BRCAness phenotype established by Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) predicts an SDH-specific layer of radiosensitization: SDH loss → succinate-driven KDM4A/KDM4B inhibition → H3K9me3 persistence at DSB sites → impaired TIP60/ATM → HR repair deficiency. HR-deficient SDH-deficient tumor cells cannot efficiently repair radiation-induced DSBs via HR, potentially amplifying iobenguane I-131 cytotoxicity relative to NET-expressing SDH-intact normal chromaffin cells. This BRCAness-mediated radiosensitization has not been tested in SDH-stratified PPGL cohorts but follows mechanistically from the established HR deficiency.\n\nPanobinostat combination — NET upregulation:\nMartiniova et al. (Endocr Relat Cancer 2011, PMID 21098082) demonstrated panobinostat (pan-HDAC inhibitor, already in this engine) upregulates NET/SLC6A2 expression and significantly increases MIBG uptake in PPGL cells at nanomolar concentrations — a combination strategy to enhance Azedra delivery in tumors with low baseline NET expression.\n\nKey limitation: Azedra's MACS0010 registration trial did not report SDH-genotype-stratified outcomes; BRCAness radiosensitization is mechanistically grounded but experimentally unverified in SDH-deficient models. Evidence_score 42 (established): FDA-approved for the exact tumor type; BRCAness radiosensitization rationale is an additional, unexplored mechanistic layer.",
+    fda_approved: true,
+    approved_indications: [
+      "Iobenguane-avid, locally advanced or metastatic pheochromocytoma or paraganglioma in adults and pediatric patients ≥12 years requiring systemic anti-tumor therapy (approved July 2018; MACS0010 Phase 2 registration trial)",
+    ],
+    pathway_slugs: ["mibg-net-targeted-radiation", "sdh-driven-hrd"],
+    target_gene_symbols: ["SLC6A2"],
+    evidence_score: 42,
+    status: "established",
+    tumor_type_applicability: ["ppgl"],
+    clinical_trial_ids: [],
+  },
+  {
+    name: "[²¹¹At]MABG (Alpha-Particle MIBG)",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class:
+      "NET-targeted alpha-particle radiopharmaceutical (²¹¹At-labeled guanethidine analog)",
+    mechanism_of_action:
+      "[²¹¹At]MABG (astatine-211 meta-astatobenzylguanidine) is an investigational alpha-particle radiopharmaceutical that substitutes astatine-211 for iodine-131 in the MIBG scaffold, preserving NET (SLC6A2)-mediated tumor-selective uptake while delivering high-LET alpha radiation instead of low-LET beta particles.\n\nAlpha-particle radiobiology and BRCAness synergy:\nAlpha particles (LET ~80 keV/μm) deposit energy ~400-fold more densely per unit path length than ¹³¹I beta particles (LET ~0.2 keV/μm). This high-LET radiation creates complex clustered DNA lesions — typically 2–3 DSBs and multiple base oxidations within a 10–20 base-pair window — that cannot be accurately resolved by the fast, error-prone NHEJ pathway and specifically require homologous recombination (HR) for faithful repair. In SDH-deficient PPGL, the BRCAness phenotype (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) — succinate-driven KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency — means that [²¹¹At]MABG-induced complex clustered DSBs are especially cytotoxic in SDH-deficient tumor cells, because their HR impairment prevents accurate repair of these complex lesions. SDH-intact NET-expressing normal chromaffin cells, with functional HR, can resolve the same complex DSBs far more efficiently — providing a BRCAness-derived therapeutic window beyond NET-mediated selectivity alone.\n\nPhysical advantages over ¹³¹I-MIBG:\n- Path length: At-211 alpha particles (50–80 μm ≈ single-cell diameter) vs. I-131 beta particles (~2mm) → confines radiation dose within or immediately adjacent to the tumor cell, reducing bystander irradiation of non-NET-expressing normal tissues\n- Half-life: At-211 (7.2h) vs. I-131 (8d) → shorter radiation isolation requirement; logistics advantage for outpatient administration\n- Relative biological effectiveness (RBE): alpha particles ~3–7× more lethal per unit Gy than beta particles; higher tumor-cell kill per disintegration\n- Decay: At-211 decays by alpha emission (42%) to ²⁰⁷Bi (stable) and by electron capture (58%) to ²¹¹Po which promptly alpha-decays to ²⁰⁷Pb (stable); 100% of At-211 atoms ultimately yield exactly one alpha particle\n\nPhase 1 clinical data:\nOkamoto et al. (Clin Cancer Res 2026, PMID 42490294) reported the first-in-human Phase 1 study of [²¹¹At]MABG in 10 patients with refractory MIBG-avid pheochromocytoma or paraganglioma. Single dose 2.1 MBq/kg was administered without dose-limiting toxicities; hematologic toxicity was acceptable (grade 1–2 thrombocytopenia and neutropenia). 1 confirmed partial response and 7 stable disease were observed. The study established clinical feasibility and a preliminary tolerability profile for alpha-particle MIBG therapy in this patient population.\n\nPanobinostat combination:\nAs with Azedra, Martiniova et al. (Endocr Relat Cancer 2011, PMID 21098082) demonstrated panobinostat-mediated NET/SLC6A2 upregulation and increased MIBG uptake in PPGL cells — the same combination rationale applies to amplify [²¹¹At]MABG intracellular delivery.\n\nKey limitation: Phase 1 enrolled MIBG-avid PCC/PGL without SDH genotype stratification; the BRCAness × high-LET synergy hypothesis has not been tested in SDH-deficient preclinical models or in an SDH-stratified patient cohort. No randomized efficacy data. Evidence_score 26 (preclinical): mechanistic chain is well-supported (BRCAness established by Sulkowski; alpha-particle complex DSB biology is established radiobiology; NET-mediated selectivity is the mechanism behind FDA-approved Azedra), combined with first-in-human safety and early activity data (PMID 42490294), without SDH-stratified efficacy signals.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["mibg-net-targeted-radiation", "sdh-driven-hrd"],
+    target_gene_symbols: ["SLC6A2"],
+    evidence_score: 26,
+    status: "preclinical",
+    tumor_type_applicability: ["ppgl"],
+    clinical_trial_ids: [],
+  },
 ];
