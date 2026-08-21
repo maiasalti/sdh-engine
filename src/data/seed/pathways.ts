@@ -386,4 +386,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 23,
   },
+  {
+    name: "NHEJ / DNA-PK Backup Repair",
+    slug: "nhej-dnapk-backup-repair",
+    description:
+      "In HR-deficient BRCAness-positive SDH-deficient cells, the non-homologous end-joining (NHEJ) pathway becomes the primary backup for DNA double-strand break (DSB) repair. DNA-PKcs (PRKDC), together with Ku70/Ku80, forms the DNA-PK holoenzyme at DSB ends — phosphorylating H2AX, activating ARTEMIS nuclease for end processing, and enabling XRCC4-DNA ligase IV ligation. Inhibiting DNA-PKcs in HR-deficient cells (BRCAness from SDH loss) removes this compensatory NHEJ backup, creating synthetic lethality. HR-proficient normal cells retain HR as an alternative DSB repair route and are substantially less affected.",
+    upstream_event:
+      "SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness) → NHEJ becomes dominant/sole DSB repair pathway → dependency on DNA-PKcs for NHEJ execution",
+    downstream_effects: [
+      "NHEJ is the primary DSB repair pathway in BRCAness-positive HR-deficient SDH-deficient cells",
+      "DNA-PKcs (PRKDC) is required for DSB end-synapsis, processing, and ligation via XRCC4-DNA ligase IV",
+      "Peposertib (M3814) inhibits DNA-PKcs → blocks NHEJ → unrepaired DSBs accumulate in BRCAness-positive cells",
+      "HR-proficient normal cells tolerate DNA-PK inhibition via intact HR backup — providing a therapeutic window",
+      "Combination with PRRT (Lu-177 DOTATATE, alpha-particle RLT) in SDH-deficient PPGL: radiation-induced DSBs + HR impairment (BRCAness) + NHEJ inhibition (peposertib) = triple DSB repair failure",
+    ],
+    druggable: true,
+    display_order: 24,
+  },
 ];
