@@ -396,4 +396,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Norepinephrine transporter (NET), encoded by SLC6A2, is a 12-transmembrane Na⁺/Cl⁻-dependent monoamine transporter selectively expressed on sympathetic neurons and chromaffin-lineage cells including pheochromocytoma and paraganglioma. NET mediates norepinephrine reuptake and is the molecular basis for selective MIBG uptake: iobenguane (meta-iodobenzylguanidine) and its astatinated analog [²¹¹At]MABG are structural guanethidine analogs actively transported by NET into catecholamine-storing vesicles, delivering ionizing radiation preferentially to NET-expressing tumor cells. Panobinostat (HDAC inhibitor, already in this engine) upregulates SLC6A2 expression and MIBG uptake in PPGL cells at nanomolar concentrations (Martiniova et al., Endocr Relat Cancer 2011, PMID 21098082), providing a pharmacological handle to enhance MIBG delivery in tumors with low baseline NET expression.",
   },
+  {
+    gene_symbol: "PRKDC",
+    name: "DNA-dependent protein kinase catalytic subunit (DNA-PKcs)",
+    uniprot_id: "P78527",
+    pathway_slug: "nhej-dnapk-backup-repair",
+    target_type: "synthetic_lethal",
+    description:
+      "Serine/threonine kinase and catalytic subunit of the DNA-PK holoenzyme (DNA-PKcs + Ku70/Ku80 heterodimer). DNA-PKcs is recruited to DNA double-strand break (DSB) ends by the Ku70/Ku80 ring, synapses the DSB ends to initiate the NHEJ repair complex, and phosphorylates multiple substrates including H2AX (γ-H2AX chromatin mark), ARTEMIS nuclease (activating it for 5'/3' overhang processing), and itself (autophosphorylation at Thr2609/Ser2056 regulates complex disassembly). DNA-PKcs coordinates XRCC4-DNA ligase IV-XLF ligation of processed DSB ends to complete NHEJ. In BRCAness-positive HR-deficient SDH-deficient tumors (where succinate-driven KDM4A/KDM4B inhibition constitutively impairs HR: Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005), DNA-PKcs-mediated NHEJ becomes the primary DSB repair mechanism. Inhibiting DNA-PKcs with peposertib (M3814) therefore creates synthetic lethality with the BRCAness phenotype — distinct from POLQ inhibition (targets alt-EJ/TMEJ backup) and CHK1 inhibition (targets replication checkpoint, not repair pathway itself).",
+  },
 ];

@@ -68,4 +68,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "chk1-brcas-replication-checkpoint": "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200",
   "tert-telomerase-reactivation": "bg-indigo-200 text-indigo-900 dark:bg-indigo-800 dark:text-indigo-100",
   "mibg-net-targeted-radiation": "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+  "nhej-dnapk-backup-repair": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
 };
