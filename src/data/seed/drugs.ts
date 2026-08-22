@@ -839,4 +839,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02516813", "NCT04750954"],
   },
+  {
+    name: "Ulevostinag",
+    brand_names: ["MK-1454"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Cyclic dinucleotide STING agonist (intratumoral)",
+    mechanism_of_action:
+      "Ulevostinag (MK-1454; Merck) is a synthetic cyclic dinucleotide analogue of cGAMP that directly binds and activates STING (STING1/TMEM173) in tumor-infiltrating immune cells and tumor cells. It bypasses the upstream cGAS sensing step entirely, inducing STING conformational changes that recruit TBK1 → IRF3 phosphorylation → IFN-β and ISG transcription → innate immune priming of the tumor microenvironment.\n\nIn SDH-deficient tumors, the mechanistic rationale flows from the established BRCAness phenotype. Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) demonstrated that SDH loss causes succinate accumulation → inhibition of α-KG-dependent KDM4A/KDM4B histone demethylases → H3K9me3 persistence at double-strand break (DSB) sites → impaired TIP60/ATM recruitment → HR deficiency (BRCAness). BRCAness-positive cells accumulate chromosomal instability from unrepaired DSBs, leading to mis-segregation during mitosis and formation of micronuclei — chromosomal fragments enclosed in abnormal nuclear membranes. Mackenzie et al. (Nature 2017, PMID 28738408) demonstrated that rupture of the micronuclear envelope exposes chromatin to the cytoplasm, where cGAS rapidly accumulates and is activated, producing 2′3′-cGAMP that activates STING → TBK1 → IRF3 → IFN-β. Ulevostinag directly amplifies the terminal effector (STING activation) of this BRCAness-driven innate immune chain, independently of upstream cGAS sensing efficiency.\n\nMechanistic caveat: Liu et al. (Nature 2018, PMID 30356214) identified a distinct nuclear pool of cGAS that, following DNA damage, translocates to the nucleus and suppresses HR by interacting with PARP1 and impairing the PARP1-Timeless complex — a pro-tumorigenic function. This nuclear cGAS effect is mechanistically separate from cytoplasmic/micronuclear cGAS (which activates STING); ulevostinag acts directly at STING and is entirely independent of nuclear cGAS biology.\n\nClinical anchor: Harrington et al. (Clin Cancer Res 2025, PMID 40499147) reported Phase I (NCT03010176) results of intratumoral ulevostinag ± pembrolizumab in 156 patients with advanced solid tumors or lymphomas. Dose-dependent pharmacokinetics were established; circulating IP-10, IFNγ, and IL-6 showed transient elevation at 2–8 h post-injection, directly confirming STING activation and type I IFN response in vivo. The recommended Phase 2 dose was 540 µg intratumoral. In a Phase II expansion in HNSCC (NCT04220866), combination with pembrolizumab yielded 4/8 CR/PR vs 1/10 with pembrolizumab monotherapy, suggesting STING activation can potentiate checkpoint immunotherapy responses.\n\nKey limitations: (1) Intratumoral administration — ulevostinag is delivered by direct tumor injection; diffusely metastatic SDH-deficient tumors may not be accessible. (2) No SDH-specific data exist — all published data are in unselected solid tumor populations; BRCAness-enriched patient selection is theoretically motivated but untested. (3) The BRCAness → chromosomal instability → micronuclei → cGAS-STING chain is plausible from established BRCAness biology and the Mackenzie 2017 paper, but has not been directly quantified in SDH-deficient models. (4) Low ORR in the ulevostinag Phase I monotherapy arm (no confirmed PRs in 22 patients) suggests that biomarker-selected populations — potentially including BRCAness-positive tumors — may be needed for clinical efficacy. (5) Evidence_score 25 (theoretical) reflects a well-anchored multi-step mechanistic chain (PMID 30013182, 32494005, 28738408, 40499147) with no direct SDH-specific experimental validation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["cgas-sting-innate-immune", "sdh-driven-hrd"],
+    target_gene_symbols: ["STING1"],
+    evidence_score: 25,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT03010176"],
+  },
 ];

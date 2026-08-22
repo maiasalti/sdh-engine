@@ -439,4 +439,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 26,
   },
+  {
+    name: "cGAS-STING Innate Immune Activation",
+    slug: "cgas-sting-innate-immune",
+    description:
+      "The BRCAness phenotype established in all SDH-deficient tumors (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) generates constitutive replication stress and chromosomal instability. Stalled, unrepaired replication forks lead to chromosomal mis-segregation during mitosis and formation of micronuclei — fragments of chromatin enclosed in abnormal nuclear membranes. Mackenzie et al. (Nature 2017, PMID 28738408) demonstrated that cGAS (cyclic GMP-AMP synthase; CGAS/MB21D1) localises to ruptured micronuclei and is activated by the exposed chromatin, producing 2′3′-cGAMP. This second messenger binds and activates STING (stimulator of interferon genes; STING1/TMEM173), which recruits TBK1 and activates IRF3 and NF-κB, driving IFN-β and type I interferon-stimulated gene (ISG) expression — an innate immune programme that can prime antitumor adaptive immunity. STING agonists bypass the cGAS sensing step entirely by directly binding and activating STING, amplifying this innate immune response in the SDH-deficient tumour microenvironment. Note: Liu et al. (Nature 2018, PMID 30356214) showed that a distinct nuclear pool of cGAS suppresses homologous recombination via PARP1 interaction; STING agonists act downstream of and independently from this nuclear cGAS pool.",
+    upstream_event:
+      "SDH loss → BRCAness (succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSBs → HR deficiency) → chromosomal mis-segregation → micronuclei formation → micronuclear envelope rupture → cytoplasmic chromatin exposure → cGAS activation → cGAMP → STING → TBK1 → IRF3/NF-κB → IFN-β / ISG expression",
+    downstream_effects: [
+      "Micronuclei formation from BRCAness-driven chromosomal instability in SDH-deficient cells",
+      "cGAS accumulation at ruptured micronuclei → 2′3′-cGAMP production (Mackenzie et al. Nature 2017, PMID 28738408)",
+      "STING-TBK1 complex activation → IRF3 phosphorylation → nuclear translocation",
+      "IFN-β and type I interferon-stimulated gene (ISG) transcription → innate immune priming",
+      "Potential enhancement of adaptive antitumor immunity in the tumour microenvironment",
+      "STING agonists (e.g. ulevostinag/MK-1454) amplify this response directly at STING, bypassing upstream cGAS sensing",
+    ],
+    druggable: true,
+    display_order: 27,
+  },
 ];

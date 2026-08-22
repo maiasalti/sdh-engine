@@ -405,4 +405,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Serine/threonine kinase and catalytic subunit of the DNA-PK holoenzyme (DNA-PKcs + Ku70/Ku80 heterodimer). DNA-PKcs is recruited to DNA double-strand break (DSB) ends by the Ku70/Ku80 ring, synapses the DSB ends to initiate the NHEJ repair complex, and phosphorylates multiple substrates including H2AX (γ-H2AX chromatin mark), ARTEMIS nuclease (activating it for 5'/3' overhang processing), and itself (autophosphorylation at Thr2609/Ser2056 regulates complex disassembly). DNA-PKcs coordinates XRCC4-DNA ligase IV-XLF ligation of processed DSB ends to complete NHEJ. In BRCAness-positive HR-deficient SDH-deficient tumors (where succinate-driven KDM4A/KDM4B inhibition constitutively impairs HR: Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005), DNA-PKcs-mediated NHEJ becomes the primary DSB repair mechanism. Inhibiting DNA-PKcs with peposertib (M3814) therefore creates synthetic lethality with the BRCAness phenotype — distinct from POLQ inhibition (targets alt-EJ/TMEJ backup) and CHK1 inhibition (targets replication checkpoint, not repair pathway itself).",
   },
+  {
+    gene_symbol: "STING1",
+    name: "Stimulator of interferon genes protein (STING; TMEM173)",
+    uniprot_id: "Q86WV6",
+    pathway_slug: "cgas-sting-innate-immune",
+    target_type: "downstream",
+    description:
+      "ER-resident transmembrane adaptor protein (also known as TMEM173, MPYS, MITA, ERIS). STING binds cyclic dinucleotides including cGAMP (produced by cGAS upon cytoplasmic dsDNA sensing) and bacterial CDNs, then translocates to the Golgi where it recruits and activates TBK1. TBK1 phosphorylates IRF3, which dimerises and translocates to the nucleus to drive IFN-β and type I interferon-stimulated gene (ISG) transcription. STING also activates NF-κB for pro-inflammatory cytokine expression. In SDH-deficient tumors, the BRCAness phenotype generates chromosomal instability and micronuclei that activate cGAS → STING (Mackenzie et al. Nature 2017, PMID 28738408). Pharmacological STING agonists (ulevostinag/MK-1454; Merck) directly bind and activate STING, bypassing upstream cGAS and amplifying innate immune signaling in the tumour microenvironment. Clinical Phase I/II (NCT03010176) demonstrated dose-dependent STING target engagement (IP-10, IFNγ, IL-6 transient elevation) and manageable tolerability in advanced solid tumors (Harrington et al. Clin Cancer Res 2025, PMID 40499147).",
+  },
 ];

@@ -434,6 +434,23 @@ Martiniova et al. (Endocr Relat Cancer 2011, PMID 21098082) demonstrated panobin
 | Norepinephrine transporter (NET) | SLC6A2 | Iobenguane I-131 (Azedra) | FDA-approved (PPGL) | No SDH-stratified outcomes; SDH-deficient tumors are a major iobenguane-avid subgroup |
 | Norepinephrine transporter (NET) | SLC6A2 | [²¹¹At]MABG | Phase 1 (PMID 42490294) | No SDH-stratified data; BRCAness × high-LET synergy is hypothesis |
 
+## Mechanism 29: cGAS-STING Innate Immune Activation
+
+The BRCAness phenotype in SDH-deficient tumors (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) produces constitutive replication stress and accumulating DNA damage. When HR-deficient SDH-deficient cells undergo mitosis with unrepaired DSBs, chromosomal mis-segregation creates micronuclei — chromosomal fragments enclosed in ruptured nuclear membranes outside the main nucleus. Mackenzie et al. (Nature 2017, PMID 28738408) demonstrated that rupture of the micronuclear envelope exposes chromatin to the cytoplasm, where cGAS (cyclic GMP-AMP synthase; CGAS/MB21D1) rapidly accumulates and is activated by the exposed double-stranded DNA, producing 2′3′-cGAMP. This second messenger binds and activates STING (stimulator of interferon genes; STING1/TMEM173), triggering TBK1 → IRF3 signaling and IFN-β / ISG transcription — innate immune priming that can enhance antitumor adaptive immunity.
+
+**Mechanistic chain from SDH loss to STING activation:**
+SDH loss → succinate accumulation → inhibition of KDM4A/KDM4B (α-KG-dependent H3K9me3 demethylases) → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness). Unrepaired DSBs in BRCAness-positive cells are not faithfully resolved during S phase; when such cells enter mitosis, lagging chromosomes and acentric fragments become encapsulated in micronuclei. The inherently fragile micronuclear envelope ruptures spontaneously (linked to chromothripsis), exposing chromatin to cytoplasmic cGAS → cGAMP → STING → TBK1 → IRF3 → IFN-β.
+
+**STING agonists as pharmacological amplifiers:**
+STING agonists (cyclic dinucleotide analogues such as ulevostinag/MK-1454) directly bind and activate STING, bypassing the upstream cGAS sensing step entirely. This is conceptually analogous to PARP inhibitors bypassing the upstream BRCAness defect to exploit the downstream repair vulnerability — STING agonists bypass cGAS sensing to exploit the downstream innate immune activation potential that BRCAness-driven chromosomal instability creates.
+
+**Mechanistic caveat — nuclear cGAS:**
+Liu et al. (Nature 2018, PMID 30356214) identified a distinct nuclear pool of cGAS that, following importin-α-mediated nuclear translocation, is phosphorylated at Tyr215 by BLK kinase and interacts with PARP1 via poly(ADP-ribose), impairing the PARP1-Timeless complex and suppressing HR — a pro-tumorigenic function (cGAS knockdown inhibits tumor growth in that model). This nuclear cGAS pool is mechanistically separate from the cytoplasmic/micronuclear cGAS that activates STING; STING agonists act directly at STING and are entirely independent of nuclear cGAS biology.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| STING (innate immune adaptor) | STING1/TMEM173 | Ulevostinag (MK-1454) | Phase I/II (NCT03010176; advanced solid tumors) | None; rationale via BRCAness → chromosomal instability → cGAS-STING (PMID 30013182, 32494005, 28738408) |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

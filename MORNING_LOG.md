@@ -506,3 +506,34 @@ SDH-deficient PPGL are universally SSTR2-high (DOTATATE-PET confirmed). PRRT (Lu
 
 **Files changed:** `src/data/seed/pathways.ts` (nhej-dnapk-backup-repair, display_order 24), `src/data/seed/targets.ts` (PRKDC synthetic_lethal new entry), `src/data/seed/drugs.ts` (peposertib new entry, evidence_score 28, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added; druggable targets table row added), `src/lib/scoring/constants.ts` (nhej-dnapk-backup-repair color entry), `tracker.md` (PMID 41751859 rejected row), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add peposertib (DNA-PKcs/NHEJ inhibitor) — BRCAness backup repair synthetic lethality
+
+---
+
+## 2026-08-22 — cGAS-STING Innate Immune Activation — Ulevostinag
+
+**Paper scan:** 7 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, SDH-deficient RCC, succinate oncometabolite, BRCAness/SDH, cGAS-STING/genome instability, STING agonist clinical trials). 1 new PMID identified within 3-month window:
+- PMID 42611605 (Tanimura et al., J Pediatr Hematol Oncol 2026): Pediatric GIST with SDHA truncation (c.1401T>A, p.Cys467Ter) and false-negative SDHB IHC. **Rejected:** case report confirming the already-documented SDHB IHC false-negative phenomenon (cf. PMID 41985045 already in papers.ts); no new mechanistic or treatment advance. Added to tracker.md.
+
+0 papers added to papers.ts.
+
+**Direction:** cGAS-STING innate immune activation — ulevostinag (MK-1454). New pathway `cgas-sting-innate-immune` (display_order 24), new target STING1/TMEM173 (downstream), new drug ulevostinag (evidence_score 25, theoretical, tumor_type_applicability ["all"]).
+
+**Rationale for selection:** The BRCAness theme (Mechanisms 14, 28 and the ATR/ATRX threads) has been exploited at the DNA-repair level (PARP inhibitors, CHK1, ATR, POLQ). An unexplored downstream consequence of BRCAness-driven chromosomal instability is innate immune activation via the cGAS-STING pathway. The chain is: BRCAness → chromosomal mis-segregation → micronuclei → cGAS activation → STING → IFN-β. STING agonists amplify this directly. This is a novel direction — immunological rather than DNA-repair — with a clean, citation-backed mechanistic chain. Passes HARD RELEVANCE GATE via Sulkowski 2018/2020 (BRCAness) + Mackenzie 2017 (cGAS/micronuclei).
+
+**Mechanistic chain:** SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness) [Sulkowski PMID 30013182, 32494005] → unrepaired DSBs → chromosomal mis-segregation → micronuclei formation → micronuclear envelope rupture → cytoplasmic chromatin → cGAS activation → 2′3′-cGAMP → STING → TBK1 → IRF3 → IFN-β / ISG expression [Mackenzie PMID 28738408]. STING agonists (ulevostinag) bypass cGAS and activate STING directly.
+
+**Mechanistic caveat noted:** Liu et al. Nature 2018 (PMID 30356214) showed nuclear cGAS suppresses HR via PARP1 interaction (pro-tumorigenic). This is a distinct nuclear pool separate from cytoplasmic/micronuclear cGAS; STING agonists act downstream of and independently from nuclear cGAS — the caveat does not affect ulevostinag rationale.
+
+**Literature anchors:**
+- PMID 30013182 (Sulkowski Nat Genet 2018): BRCAness from SDH loss; KDM4A/KDM4B mechanism. Core mechanistic anchor.
+- PMID 32494005 (Sulkowski Nature 2020): BRCAness confirmed; PARP inhibitor synthetic lethality.
+- PMID 28738408 (Mackenzie et al. Nature 2017): cGAS surveillance of micronuclei links genome instability to innate immunity. DOI 10.1038/nature23449. Verified. PMID originally guessed as 28783727 (wrong — that is a Lazaridis et al. ancient DNA paper); correct PMID confirmed via PubMed title search.
+- PMID 30356214 (Liu et al. Nature 2018): Nuclear cGAS suppresses HR; pro-tumorigenic. Context/caveat citation only.
+- PMID 40499147 (Harrington et al. Clin Cancer Res 2025): Ulevostinag (MK-1454) Phase I/II (NCT03010176); STING activation confirmed (IP-10, IFNγ, IL-6 elevation); 540 µg RP2D; 4/8 CR/PR with pembrolizumab in HNSCC expansion.
+
+**PMID disambiguation:** PMID 28783727 searched as Mackenzie cGAS/micronuclei paper but verified via PubMed as Lazaridis et al. Nature 2017 (ancient Greek genome paper). Correct PMID 28738408 found by full-title PubMed search and confirmed by get_article_metadata.
+
+**Evidence_score rationale (ulevostinag 25):** Multi-step chain (BRCAness → chromosomal instability → micronuclei → cGAS → STING → IFN-β) adds an additional hop relative to direct BRCAness-targeted drugs (PARP inhibitors, prexasertib). Clinical STING activation confirmed pharmacodynamically but low ORR in monotherapy arm (no PRs in 22 patients). Scored below prexasertib (28) to reflect the longer indirect chain and the administration limitation (intratumoral). Not scored below 20 because the cGAS-STING mechanistic link from BRCAness-driven chromosomal instability is a proven biological phenomenon (Mackenzie 2017), not a speculative extension.
+
+**Files changed:** `src/data/seed/pathways.ts` (cgas-sting-innate-immune, display_order 24), `src/data/seed/targets.ts` (STING1 downstream new entry), `src/data/seed/drugs.ts` (ulevostinag new entry, evidence_score 25, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (cgas-sting-innate-immune color sky-100/800 entry), `tracker.md` (1 new rejected row: PMID 42611605), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add ulevostinag (STING agonist) — cGAS-STING innate immune activation via BRCAness-driven chromosomal instability
