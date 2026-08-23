@@ -537,3 +537,30 @@ SDH-deficient PPGL are universally SSTR2-high (DOTATATE-PET confirmed). PRRT (Lu
 
 **Files changed:** `src/data/seed/pathways.ts` (cgas-sting-innate-immune, display_order 24), `src/data/seed/targets.ts` (STING1 downstream new entry), `src/data/seed/drugs.ts` (ulevostinag new entry, evidence_score 25, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (cgas-sting-innate-immune color sky-100/800 entry), `tracker.md` (1 new rejected row: PMID 42611605), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add ulevostinag (STING agonist) — cGAS-STING innate immune activation via BRCAness-driven chromosomal instability
+
+---
+
+## Run 2026-08-23: DCA MoA upgrade — mechanistic counterproductivity in SDH-deficient tumors
+
+**Paper scan:** 3 new PMIDs surfaced (42611605, 41555429, 41697759); all rejected. 0 papers added to `papers.ts`. The rare-disease literature stream has been dry for 7+ consecutive runs.
+
+**Part B — DCA mechanism-of-action upgrade:**
+
+**Rationale:** The DCA entry was the last poorly-documented stub in `drugs.ts`: 2-sentence mechanism, zero citations, `evidence_score: 35`, `status: "preclinical"` — with no acknowledgment of a mechanistic safety concern. This is the highest-priority remaining documentation gap.
+
+**Mechanistic analysis:**
+
+DCA inhibits PDK1-4 → reactivates pyruvate dehydrogenase (PDH) → diverts pyruvate from lactate toward acetyl-CoA → increased TCA flux. In SDH-INTACT glycolytic (Warburg) cancers this restores OXPHOS, elevates ROS, and reduces HIF-1α — the intended effect (Michelakis et al., Sci Transl Med 2010, PMID 20463368).
+
+In **SDH-DEFICIENT tumors** the logic inverts:
+1. The TCA cycle is blocked at SDH. DCA-driven flux (citrate → isocitrate → α-KG → succinate) accumulates succinate at the blocked step — strengthening competitive PHD1-3 inhibition and amplifying HIF-1α/HIF-2α pseudohypoxic signaling. The opposite of the intended effect.
+2. Succinate amplification worsens CIMP epigenetic silencing (Killian et al., Cancer Cell 2013, PMID 23707781; Letouzé et al., Cancer Cell 2013, PMID 23550148).
+3. SDH-deficient cells adaptively suppress Complex I to limit pyruvate oxidation pressure (Sokolov et al., bioRxiv 2025, PMID 42239110); DCA overrides this protective adaptation.
+4. No direct evidence of DCA efficacy in any SDH-deficient tumor model exists; all DCA-cancer data originate from SDH-intact glycolytic cancers.
+
+**Changes made:** `evidence_score` 35 → 22; `status` "preclinical" → "theoretical"; `mechanism_of_action` rewritten with full mechanistic chain, counterproductivity reasoning, and safety note. Citation anchors: PMID 20463368 (DCA mechanism), PMID 42239110 (Complex I adaptation), PMID 23707781, PMID 23550148 (CIMP).
+
+**Directions still unexplored:** MTHFD2/one-carbon (insufficient SDH-specific data).
+
+**Files changed:** `src/data/seed/drugs.ts` (DCA entry: MoA rewritten, evidence_score 35→22, status preclinical→theoretical), `tracker.md` (3 new rejected PMIDs: 42611605, 41555429, 41697759), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] DCA MoA upgrade — mechanistic counterproductivity in SDH-deficient tumors
