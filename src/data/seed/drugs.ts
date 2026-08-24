@@ -856,4 +856,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT03010176"],
   },
+  {
+    name: "Plerixafor",
+    brand_names: ["AMD3100", "Mozobil"],
+    chembl_id: "CHEMBL535",
+    pubchem_cid: "65015",
+    drug_class: "CXCR4 chemokine receptor antagonist",
+    mechanism_of_action:
+      "Plerixafor (AMD3100/Mozobil; Sanofi) is a small-molecule bicyclam antagonist of CXCR4 — the G protein-coupled chemokine receptor for CXCL12 (SDF-1). FDA-approved for hematopoietic stem cell mobilization in combination with G-CSF, plerixafor competes with CXCL12 for the CXCR4 binding site, blocking CXCR4-mediated signaling through Gαi and β-arrestin pathways and abolishing CXCL12-directed chemotaxis.\n\nSDH-deficient tumor mechanistic rationale: SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α/2α stabilization (pseudohypoxia). HIF-1α transcriptionally activates CXCR4 via hypoxia-response elements (HREs) in its promoter — a mechanism rigorously established by Staller et al. in VHL-deficient renal cell carcinoma (Nature 2003, PMID 13679920). VHL-deficient RCC and SDH-deficient tumors share an identical pseudohypoxic HIF-1α stabilization mechanism (VHL loss or SDH loss → PHD inhibition → HIF-1α escape from proteasomal degradation), making the VHL/HIF→CXCR4 axis directly applicable to SDH-deficient pseudohypoxic tumors.\n\nCXCR4 overexpression — driven constitutively by HIF-1α in SDH-deficient cells — promotes chemotactic tumor cell migration toward CXCL12-rich organ microenvironments: bone marrow stroma, lymph node cortex, liver sinusoids, and lung parenchyma. These are precisely the metastatic homing sites documented in SDHB-deficient paraganglioma/pheochromocytoma, which carries metastatic risk of 30–70% — the highest of all SDH-deficient tumor types. CXCR4 signaling at metastatic sites additionally activates PI3K/AKT, MAPK/ERK, and JAK/STAT3 to support survival and proliferation of disseminated tumor cells.\n\nPlerixafor-mediated CXCR4 blockade aims to disrupt CXCL12-directed metastatic chemotaxis in HIF-high SDHB-deficient PPGL, potentially reducing metastatic dissemination or mobilizing metastasized cells out of protective niches (by analogy to its mobilization mechanism in the bone marrow hematopoietic niche).\n\nKey limitation: No published experimental data test plerixafor or CXCR4 inhibition in any SDH-deficient cell line, animal model, or patient cohort. The CXCR4/CXCL12 mechanism in SDH-deficient tumors is a direct extrapolation from VHL/HIF biology (PMID 13679920) — logically sound given the shared pseudohypoxic HIF-1α mechanism, but without SDH-specific experimental validation. Evidence_score 20 (theoretical, lower range) reflects mechanistic plausibility anchored by the VHL/HIF→CXCR4 literature, without direct SDH-specific data or clinical data in this indication. tumor_type_applicability restricted to ['ppgl'] because SDHB-deficient PPGL has the highest metastatic burden and thus the clearest clinical rationale for anti-metastatic CXCR4 blockade.",
+    fda_approved: true,
+    approved_indications: [
+      "Hematopoietic stem cell mobilization in combination with G-CSF in patients with non-Hodgkin lymphoma and multiple myeloma (FDA-approved 2008; NCT00186966)",
+    ],
+    pathway_slugs: ["hif-cxcr4-chemokine-metastasis", "hif-pseudohypoxia"],
+    target_gene_symbols: ["CXCR4"],
+    evidence_score: 20,
+    status: "theoretical",
+    tumor_type_applicability: ["ppgl"],
+    clinical_trial_ids: ["NCT00186966"],
+  },
 ];

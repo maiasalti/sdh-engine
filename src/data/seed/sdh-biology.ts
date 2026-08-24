@@ -451,6 +451,28 @@ Liu et al. (Nature 2018, PMID 30356214) identified a distinct nuclear pool of cG
 |---|---|---|---|---|
 | STING (innate immune adaptor) | STING1/TMEM173 | Ulevostinag (MK-1454) | Phase I/II (NCT03010176; advanced solid tumors) | None; rationale via BRCAness → chromosomal instability → cGAS-STING (PMID 30013182, 32494005, 28738408) |
 
+### 29. HIF-Driven CXCR4/CXCL12 Chemokine Metastasis in SDH-Deficient Pseudohypoxic Tumors — Plerixafor
+
+Constitutive HIF-1α stabilization in SDH-deficient tumors (Mechanism 2) transcriptionally activates CXCR4, the G protein-coupled receptor for the CXCL12/SDF-1 chemokine — creating a HIF-driven metastatic dissemination axis that is pharmacologically targetable by plerixafor (AMD3100/Mozobil).
+
+**Mechanistic chain — SDH loss → pseudohypoxia → CXCR4 → metastasis:**
+SDH loss → succinate accumulation → PHD enzyme inhibition → HIF-1α stabilization → transcriptional activation of CXCR4 via hypoxia-response elements (HREs) in the CXCR4 promoter → CXCR4 overexpression on tumor cell surfaces → chemotactic migration along CXCL12/SDF-1 gradients secreted by bone marrow stroma, lymph nodes, liver sinusoids, and lung parenchyma → metastatic homing and dissemination.
+
+**Literature anchor — VHL/HIF→CXCR4 in RCC (PMID 13679920):**
+Staller et al. (Nature 2003, PMID 13679920) demonstrated in VHL-deficient renal cell carcinoma that HIF-1α directly transcriptionally activates CXCR4, with VHL restoration suppressing CXCR4 expression and reducing CXCL12-directed chemotaxis. VHL-deficient RCC and SDH-deficient tumors share an identical pseudohypoxic HIF-1α mechanism — VHL loss prevents HIF-1α hydroxylation and degradation; SDH loss (via succinate-mediated PHD inhibition) achieves the same end. The VHL/HIF→CXCR4 axis therefore constitutes a direct mechanistic extrapolation to SDH-deficient tumors with the same constitutive HIF-1α activation.
+
+**Relevance to SDHB-deficient PPGL — the highest-metastasis SDH tumor type:**
+SDHB-mutant paraganglioma/pheochromocytoma carries metastatic risk of 30–70% — the highest of all SDH-deficient tumor types. The constitutive HIF-1α-driven CXCR4 upregulation operative in all SDH-deficient pseudohypoxic tumors may specifically contribute to the metastatic organotropism of SDHB-deficient PPGL toward CXCL12-rich niches: bone marrow, liver, and lung — exactly the documented metastatic sites in this disease. CXCR4 signaling at metastatic sites activates PI3K/AKT, MAPK/ERK, and JAK/STAT3 to sustain disseminated tumor cell survival.
+
+**Plerixafor pharmacology:**
+Plerixafor (AMD3100/Mozobil; Sanofi) is an FDA-approved, small-molecule bicyclam CXCR4 antagonist that competitively blocks CXCL12 binding, disrupting CXCR4-mediated Gαi signaling and abolishing CXCL12-directed chemotaxis. Approved for hematopoietic stem cell mobilization in NHL and multiple myeloma (2008). The anti-metastatic repositioning rationale: CXCR4 blockade could disrupt CXCL12-driven metastatic seeding and potentially mobilize tumor cells out of protective stromal niches in which CXCL12-CXCR4 signaling sustains minimal residual disease.
+
+**Key limitation:** No published experimental data test plerixafor or any CXCR4 antagonist in SDH-deficient cell lines, animal models, or patient cohorts. The mechanism is a logical extrapolation from VHL/HIF→CXCR4 biology (PMID 13679920), without SDH-specific experimental validation. Evidence_score 20 (theoretical, lower range).
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CXCR4 chemokine receptor | CXCR4 | Plerixafor (AMD3100/Mozobil) | FDA-approved (stem cell mobilization) | None; rationale via VHL/HIF→CXCR4 PMID 13679920 |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

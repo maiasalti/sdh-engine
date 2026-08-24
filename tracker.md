@@ -181,3 +181,4 @@ A running record of every paper this scheduled agent has ever surfaced during a 
 | 42611605 | — | [no PMC ID; abstract-only] | 2026-08-23 | rejected: no PMC full-text access; paper identity unverifiable beyond abstract; SDH relevance cannot be confirmed; logged to prevent re-evaluation |
 | 41555429 | — | [colorectal cancer genomics] | 2026-08-23 | rejected: colorectal cancer study; not an in-scope SDH-deficient tumor type; no SDH-specific mechanism or treatment advance |
 | 41697759 | — | [BRAF-mutant GIST mouse model] | 2026-08-23 | rejected: BRAF-mutant GIST mouse model; KIT/PDGFRA/BRAF-driven biology; no SDH-deficient component; no treatment advance applicable to SDH tumors |
+| 42597314 | 10.3389/fcvm.2026.1861073 | [Frontiers in Cardiovascular Medicine article] | 2026-08-24 | rejected: cardiovascular journal (Frontiers in Cardiovascular Medicine); no SDH-deficient cancer content; outside scope |

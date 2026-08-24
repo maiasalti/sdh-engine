@@ -457,4 +457,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 27,
   },
+  {
+    name: "HIF-Driven CXCR4/CXCL12 Chemokine Metastasis",
+    slug: "hif-cxcr4-chemokine-metastasis",
+    description:
+      "Constitutive HIF-1α stabilization in SDH-deficient pseudohypoxic tumors transcriptionally activates CXCR4, the chemokine receptor for the CXCL12/SDF-1 gradient — a mechanism first described in VHL-deficient RCC (same pseudohypoxic phenotype) by Staller et al. (Nature 2003, PMID 13679920). CXCR4 overexpression drives chemotactic migration toward CXCL12-rich microenvironments (bone marrow, lymph nodes, vascular niches), mediating metastatic homing and dissemination. This pathway is pharmacologically targetable by plerixafor (AMD3100/Mozobil), an FDA-approved CXCR4 antagonist already in clinical use for stem cell mobilization.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → HIF-1α stabilization → HRE-driven CXCR4 transcriptional upregulation → CXCL12 gradient-directed chemotaxis → metastatic dissemination to CXCL12-rich organ niches",
+    downstream_effects: [
+      "CXCR4 transcriptionally upregulated by HIF-1α via hypoxia-response elements (HREs) in its promoter — mechanism established in VHL-deficient RCC (Staller et al. Nature 2003, PMID 13679920)",
+      "CXCR4/CXCL12 axis drives chemotactic migration toward CXCL12-rich metastatic niches (bone marrow, lung parenchyma, lymph nodes)",
+      "CXCR4 signaling activates PI3K/AKT, MAPK/ERK, and JAK/STAT3 pathways to promote tumor cell survival and proliferation at metastatic sites",
+      "SDHB-deficient paraganglioma/pheochromocytoma has high metastatic potential (~30–70% for SDHB) — CXCR4 upregulation via pseudohypoxia may contribute to metastatic organotropism",
+      "Plerixafor (AMD3100) is a competitive CXCR4 antagonist that blocks CXCL12 binding and CXCR4-mediated chemotaxis, FDA-approved for stem cell mobilization (Mozobil)",
+    ],
+    druggable: true,
+    display_order: 28,
+  },
 ];

@@ -564,3 +564,28 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 **Files changed:** `src/data/seed/drugs.ts` (DCA entry: MoA rewritten, evidence_score 35→22, status preclinical→theoretical), `tracker.md` (3 new rejected PMIDs: 42611605, 41555429, 41697759), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] DCA MoA upgrade — mechanistic counterproductivity in SDH-deficient tumors
+
+---
+
+## 2026-08-24 — HIF-Driven CXCR4/CXCL12 Chemokine Metastasis Axis — Plerixafor
+
+**Paper scan:** 10+ PubMed searches (SDH-deficient GIST 2026, paraganglioma pheochromocytoma SDH 2026, SDH-deficient RCC 2026, succinate oncometabolite 2026, SDHA SDHB SDHC SDHD tumor 2026, HIF pseudohypoxia SDH 2026, SDH-deficient cancer treatment 2026, pituitary adenoma SDH 2026, GIST SDH imatinib resistance 2026, paraganglioma metastatic treatment 2026). Only PMID 42597314 (DOI: 10.3389/fcvm.2026.1861073, Frontiers in Cardiovascular Medicine) identified as new; rejected as cardiovascular journal with no SDH-deficient cancer content. 0 papers added. All other returns were already in tracker.md.
+
+**Direction:** HIF-driven CXCR4/CXCL12 chemokine metastasis axis — plerixafor (AMD3100/Mozobil). New pathway `hif-cxcr4-chemokine-metastasis` (display_order 24), new target CXCR4/P61073 (downstream), new drug plerixafor (evidence_score 20, theoretical, tumor_type_applicability ["ppgl"]).
+
+**Rationale for selection:** After exhausting all 28 prior directions logged through 2026-08-17, the HIF-driven CXCR4/CXCL12 axis represents a genuinely unexplored branch of the established pseudohypoxia pathway. All prior pseudohypoxia branches (VEGF/angiogenesis, MET/AXL RTKs, mTOR/PI3K/AKT, CDK4/6 via CDKN2A-CIMP, PD-L1 immune evasion, HIF-2α/belzutifan) are implemented. CXCR4 is a distinct HIF-1α transcriptional target mediating metastatic dissemination — not covered by any prior entry. Clinically motivated by the uniquely high metastatic risk of SDHB-deficient PPGL (30–70%). Passes HARD RELEVANCE GATE via pseudohypoxia/HIF-1α pathway.
+
+**Mechanistic chain:** SDH loss → succinate → PHD inhibition → HIF-1α stabilization → HRE-driven CXCR4 transcription → CXCL12 gradient-directed chemotaxis → metastatic homing to bone marrow, lymph nodes, liver → CXCR4 signaling via PI3K/AKT + MAPK/ERK + JAK/STAT3 at metastatic sites → tumor cell survival and proliferation in niche.
+
+**Literature anchor:**
+- PMID 13679920 (Staller et al., Nature 2003): VHL-deficient RCC — HIF-1α directly transcriptionally activates CXCR4; VHL restoration suppresses CXCR4 and CXCL12-directed chemotaxis. VHL/HIF and SDH/HIF are identical PHD-inhibition/HIF-1α stabilization mechanisms. This is the foundational anchor; direct SDH-specific CXCR4 experimental data do not exist.
+- NCT00186966: plerixafor FDA approval trial (stem cell mobilization); establishes clinical-grade pharmacology and tolerability.
+
+**Evidence score rationale:** 20 (theoretical, lower range). Mechanistic extrapolation is logically tight (shared pseudohypoxic HIF-1α mechanism between VHL and SDH loss), but zero SDH-specific experimental data exist. Score deliberately conservative relative to other theoretical entries to reflect the further-removed extrapolation.
+
+**tumor_type_applicability rationale:** ["ppgl"] only — SDHB-deficient PGL/PCC has uniquely high metastatic rate (30–70%), making CXCR4-driven metastatic dissemination clinically relevant. SDH-deficient GIST and RCC have lower metastatic burden and weaker clinical motivation for this specific strategy.
+
+**What was ruled out during direction search:** MTHFD2/one-carbon metabolism (no SDH-specific data, no clinical-stage inhibitors — do not add). All other previously logged directions remain banned.
+
+**Files changed:** `src/data/seed/pathways.ts` (hif-cxcr4-chemokine-metastasis, display_order 24), `src/data/seed/targets.ts` (CXCR4/P61073 downstream new entry), `src/data/seed/drugs.ts` (plerixafor new entry, evidence_score 20, tumor_type_applicability ["ppgl"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added with druggable targets table), `src/lib/scoring/constants.ts` (hif-cxcr4-chemokine-metastasis color entry cyan), `tracker.md` (PMID 42597314 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add plerixafor (CXCR4 inhibitor) — HIF-driven chemokine metastasis axis

@@ -70,4 +70,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "mibg-net-targeted-radiation": "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
   "nhej-dnapk-backup-repair": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
   "cgas-sting-innate-immune": "bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200",
+  "hif-cxcr4-chemokine-metastasis": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
 };
