@@ -43,7 +43,7 @@ export function MedicalDisclaimer({
       />
       <p
         className={cn(
-          "leading-relaxed text-amber-200/80",
+          "leading-relaxed text-amber-700 dark:text-amber-200/90",
           variant === "banner" ? "text-xs" : "text-[11px]"
         )}
       >

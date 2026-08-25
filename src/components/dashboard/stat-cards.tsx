@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Pill, FlaskConical, Lightbulb, Network } from "lucide-react";
+import { Pill, FlaskConical, BookOpen, Network } from "lucide-react";
+import { PAPERS } from "@/data/papers";
 
 type StatCardProps = {
   title: string;
@@ -45,10 +46,10 @@ export function StatCards() {
         icon={<FlaskConical className="h-4 w-4 text-muted-foreground" />}
       />
       <StatCard
-        title="AI Hypotheses"
-        value={0}
-        description="Generate your first hypothesis"
-        icon={<Lightbulb className="h-4 w-4 text-muted-foreground" />}
+        title="Research Papers"
+        value={PAPERS.length}
+        description="Curated SDH-deficient GIST library"
+        icon={<BookOpen className="h-4 w-4 text-muted-foreground" />}
       />
     </div>
   );

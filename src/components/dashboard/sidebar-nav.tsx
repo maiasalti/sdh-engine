@@ -5,19 +5,20 @@ import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
   Pill,
-  Lightbulb,
   BookOpen,
+  Library,
   FlaskConical,
   Network,
   Info,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/drugs", label: "Drug Candidates", icon: Pill },
-  { href: "/hypotheses", label: "AI Hypotheses", icon: Lightbulb },
   { href: "/research", label: "Research Feed", icon: BookOpen },
+  { href: "/papers", label: "Research Papers", icon: Library },
   { href: "/trials", label: "Clinical Trials", icon: FlaskConical },
   { href: "/about", label: "About / Methods", icon: Info },
 ];
@@ -61,7 +62,8 @@ export function SidebarNav() {
         })}
       </nav>
 
-      <div className="border-t border-border p-4">
+      <div className="space-y-3 border-t border-border p-4">
+        <ThemeToggle />
         <p className="text-[10px] text-muted-foreground">
           Targeting SDH-deficient GIST, paraganglioma, pheochromocytoma, RCC
         </p>

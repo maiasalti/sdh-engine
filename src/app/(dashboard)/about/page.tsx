@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import {
   Network,
   Brain,
@@ -8,7 +7,6 @@ import {
   Pill,
   FlaskConical,
   BookOpen,
-  Lightbulb,
   Target,
   Scale,
   Info,
@@ -55,7 +53,7 @@ export default function AboutPage() {
             The entire application was built using{" "}
             <strong>Claude Code</strong> (Anthropic&apos;s AI coding tool) in
             collaboration with the patient. The AI layer that powers drug scoring
-            and hypothesis generation runs on <strong>Claude</strong> by
+            and paper summarization runs on <strong>Claude</strong> by
             Anthropic.
           </p>
         </CardContent>
@@ -95,9 +93,8 @@ export default function AboutPage() {
               </div>
               <p className="text-xs text-muted-foreground">
                 Claude AI analyzes drug candidates against the SDH biology
-                context, scores evidence across multiple dimensions, generates
-                novel repurposing hypotheses, and summarizes research papers in
-                plain language.
+                context, scores evidence across multiple dimensions, and
+                summarizes research papers in plain language.
               </p>
             </div>
             <div className="rounded-lg border border-border p-4">
@@ -409,49 +406,6 @@ export default function AboutPage() {
         </CardContent>
       </Card>
 
-      {/* AI Hypothesis Generator */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Lightbulb className="h-5 w-5" />
-            AI Hypothesis Generator
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3 text-sm leading-relaxed">
-          <p>
-            The hypothesis generator uses <strong>Claude Opus</strong>{" "}
-            (Anthropic&apos;s most capable model) with adaptive thinking to
-            propose novel drug repurposing candidates not already in the
-            database.
-          </p>
-          <p>The AI receives:</p>
-          <ul className="space-y-1 text-xs text-muted-foreground list-disc pl-5">
-            <li>
-              The complete SDH biology context (~2,500 tokens of curated
-              molecular oncology knowledge)
-            </li>
-            <li>All current drug candidates and their pathway mappings</li>
-            <li>The selected focus pathway (if any)</li>
-            <li>User-provided constraints or context</li>
-          </ul>
-          <p>
-            It then reasons about synthetic lethal interactions, metabolic
-            vulnerabilities, cross-disease parallels (IDH-mutant, FH-deficient,
-            VHL), and combination strategies to propose 3-5 novel candidates with
-            mechanistic rationale and confidence levels.
-          </p>
-          <div className="rounded-lg bg-muted/50 p-4">
-            <p className="text-xs">
-              <strong>Important:</strong> AI-generated hypotheses are starting
-              points for investigation, not clinical recommendations. Always
-              discuss any treatment ideas with your oncology team. The confidence
-              levels reflect the AI&apos;s assessment of the mechanistic
-              plausibility, not clinical proof.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-
       {/* Data Sources */}
       <Card>
         <CardHeader>
@@ -489,7 +443,7 @@ export default function AboutPage() {
             {
               name: "Claude AI (Anthropic)",
               description:
-                "Powers the AI scoring, hypothesis generation, and paper summarization. The biology context is curated and validated, not AI-generated.",
+                "Powers the AI evidence scoring and paper summarization. The biology context is curated and validated, not AI-generated.",
               url: "https://anthropic.com",
             },
           ].map((source) => (
@@ -546,7 +500,7 @@ export default function AboutPage() {
             <strong className="text-amber-500">Disclaimer:</strong> SDH-Engine
             is a research and information tool built by a patient, not a medical
             device. The drug candidates, evidence scores, and AI-generated
-            hypotheses are intended for research exploration and discussion with
+            content are intended for research exploration and discussion with
             your medical team — not as clinical recommendations. Always consult
             your oncologist or healthcare provider before considering any
             treatment changes. The scoring reflects available evidence and
