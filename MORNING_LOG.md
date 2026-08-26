@@ -420,3 +420,21 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 **Files changed:** `src/data/seed/pathways.ts` (chk1-brcas-replication-checkpoint, display_order 23), `src/data/seed/targets.ts` (CHEK1 synthetic_lethal new entry), `src/data/seed/drugs.ts` (prexasertib new entry, evidence_score 28, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 28 added), `src/lib/scoring/constants.ts` (chk1-brcas-replication-checkpoint color entry), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add prexasertib (CHK1 inhibitor) — BRCAness replication checkpoint synthetic lethality
+
+---
+
+## 2026-08-26 — NCT Metadata Quality: Temozolomide SDH-GIST Phase 2 + Cabozantinib RCC Basket + Negative Talazoparib+Avelumab Result
+
+**Paper scan:** 8 PubMed searches (SDH-deficient GIST 2026, SDH PPGL/pheochromocytoma 2026, SDH-deficient RCC 2026, succinate oncometabolite 2026, BRCAness SDH 2026, SDHB cancer mechanism 2026, SDH synthetic lethality 2026, SDHA SDHB SDHC SDHD mutation cancer 2026). All returned PMIDs already in tracker.md or outside the 3-month window. 0 new papers added. Two PMIDs (41751859, 41635891) encountered but abstracts unretrievable; estimated pre-May 2026 publication by PMID numbering — excluded without evaluation, logged to tracker.md. 6th+ consecutive run with no new in-window papers.
+
+**Direction:** schema/metadata quality — clinical trial linkage
+**Angle:** (1) Add NCT03556384 to temozolomide `clinical_trial_ids` (the only completed Phase 2 trial specifically in SDH-mutant/deficient GIST); (2) expand temozolomide `tumor_type_applicability` to include GIST; (3) add NCT03635892 to cabozantinib (Phase 2 nivolumab+cabozantinib in non-clear-cell RCC including SDH-deficient RCC); (4) log negative PMID 37945488 (talazoparib+avelumab Phase 2 — zero ORR, 1.2-month median PFS in cohort including SDH-deficient RCC — preventing erroneous future addition of talazoparib).
+
+**Why this passes the gate:** All three NCT changes point to trials where SDH-deficient patients were enrolled as a named eligibility subgroup or defining population. NCT03556384 (Phase 2, n=23, MSKCC) is titled "Temozolomide in Advanced SDH-Mutant/Deficient GIST" — it is the sole completed trial of TMZ in this exact indication and its absence from the engine was a genuine metadata gap. The CIMP→MGMT-silencing→TMZ-sensitivity mechanistic chain is already documented in the engine's temozolomide MoA text (Killian 2013 PMID 23550148; Letouzé 2013 PMID 23707781); GIST was already one of the exemplary tumor types cited. Extending tumor_type_applicability to include GIST follows directly.
+
+**Negative trial logged (not added):** PMID 37945488 (Kotecha RR et al., Eur Urol Oncol 2023, DOI: 10.1016/j.euo.2023.10.017): Phase 2 trial NCT04068831, talazoparib+avelumab in genomically defined metastatic RCC; cohort 2 included n=1 SDH-deficient patient (with FH-deficient and RMC); ORR 0/8, median PFS 1.2 months; conclusion "did not show clinical benefit." Talazoparib NOT added as a candidate drug. Logged to tracker.md to prevent future re-evaluation.
+
+**Previously logged directions NOT re-evaluated:** MTHFD2/one-carbon (no SDH-specific data; LY3410738/NCT04893525 exists but no SDH-specific trial); Complex I definitively ruled out (Sokolov preprint PMID 42239110).
+
+**Files changed:** `src/data/seed/drugs.ts` (temozolomide: clinical_trial_ids [] → ["NCT03556384"], tumor_type_applicability ["ppgl"] → ["ppgl", "gist"]; cabozantinib: clinical_trial_ids ["NCT02302833","NCT04400474"] → ["NCT02302833","NCT04400474","NCT03635892"]), `tracker.md` (3 new rows: 41751859, 41635891, 37945488), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add NCT03556384 to temozolomide (SDH-GIST Phase 2) + NCT03635892 to cabozantinib + negative talazoparib trial logged
