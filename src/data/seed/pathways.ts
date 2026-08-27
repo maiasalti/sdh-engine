@@ -386,4 +386,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 23,
   },
+  {
+    name: "NHEJ / DNA-PKcs Backup Repair (BRCAness)",
+    slug: "nhej-dna-pkcs-backup-repair",
+    description:
+      "SDH loss drives epigenetic HR deficiency (BRCAness) via succinate-mediated KDM4A/KDM4B inhibition and H3K9me3 accumulation at DSB sites (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). In HR-deficient (BRCAness-positive) cells, classical non-homologous end joining (c-NHEJ), mediated by the DNA-dependent protein kinase catalytic subunit (DNA-PKcs, encoded by PRKDC), becomes the primary pathway for resolving double-strand breaks (DSBs). Inhibiting DNA-PKcs in BRCAness-positive cells removes this backup repair pathway, causing catastrophic DSB accumulation and selective cell death. This mechanism is distinct from POLQ/TMEJ (Mechanism 18, alt-EJ / microhomology-mediated backup) and CHK1 (Mechanism 28, replication fork stabilization checkpoint) — DNA-PKcs/c-NHEJ is the classical DSB repair backup, not an error-prone alt-EJ pathway or a checkpoint kinase.",
+    upstream_event:
+      "SDH loss → succinate → KDM4A/KDM4B inhibition (α-KG-dependent histone demethylases) → H3K9me3 persistence at DSB sites → impaired TIP60 acetyltransferase and ATM kinase recruitment → HR deficiency (BRCAness) → HR-deficient cells become dependent on classical NHEJ (DNA-PKcs/PRKDC + Ku70/Ku80 + XRCC4/LIG4) as the primary remaining DSB repair pathway",
+    downstream_effects: [
+      "HR-deficient (BRCAness-positive) SDH-deficient cells accumulate DSBs that cannot be repaired by HR",
+      "Classical NHEJ (c-NHEJ), requiring the DNA-PK complex (PRKDC/DNA-PKcs + Ku70/XRCC6 + Ku80/XRCC5 + XRCC4/LIG4), becomes the primary DSB repair route in G1 and early-S phase",
+      "DNA-PKcs (PRKDC) is autophosphorylated at Ser2056/Thr2609 upon DSB recognition and is essential for c-NHEJ end-processing and ligation",
+      "DNA-PKcs inhibition removes the primary backup DSB repair pathway in BRCAness-positive cells → catastrophic unrepaired DSB accumulation → apoptosis",
+      "HR-proficient cells tolerate DNA-PKcs inhibition via HR; the selectivity window is created by BRCAness in SDH-deficient tumors",
+      "Anastasia et al. (Mol Cancer Ther 2022, PMID 35149547) demonstrated AZD7648 (elimusertib) potentiated olaparib specifically in BRCA-deficient OC-PDX models but not in BRCA-proficient controls — directly establishing BRCAness-selective DNA-PKcs synthetic lethality",
+      "Berman et al. (Cancers 2026, PMID 42650014) showed 66.7% ORR and 100% DCR in SDH-deficient GIST with Y-90 SIRT, consistent with BRCAness-driven impaired DSB repair creating radiation sensitivity in these tumors",
+    ],
+    druggable: true,
+    display_order: 24,
+  },
 ];
