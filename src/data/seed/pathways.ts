@@ -369,6 +369,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 22,
   },
   {
+    name: "cGAS-STING Innate Immune Sensing",
+    slug: "cgas-sting-innate-immunity",
+    description:
+      "BRCAness in SDH-deficient tumors (succinate → KDM4A/B inhibition → H3K9me3 → HR deficiency) generates unresolved DSBs that fragment chromatin into micronuclei; when micronuclei rupture, cytosolic DNA engages cGAS. cGAS synthesizes 2'3'-cGAMP, which activates STING → TBK1 → IRF3 → type I IFN (IFN-β) production. ENPP1 (ectonucleotidase) degrades extracellular cGAMP, blunting STING-mediated innate immunity. ENPP1 inhibition preserves cGAMP, sustains STING activation, promotes DC maturation and cytotoxic T-cell priming, and converts the BRCAness DNA-damage signal into an immunostimulatory response.",
+    upstream_event:
+      "SDH loss → BRCAness (succinate → KDM4A/B → H3K9me3 → HR deficiency) → unresolved DSBs → chromatin fragmentation / micronuclei → cytosolic DNA → cGAS activation → cGAMP synthesis → STING → TBK1/IRF3 → IFN-β; ENPP1 degrades extracellular cGAMP, limiting innate immune activation",
+    downstream_effects: [
+      "Cytosolic DNA accumulates from BRCAness-driven micronuclei rupture in SDH-deficient tumor cells",
+      "cGAS produces 2'3'-cGAMP — an STING agonist immunotransmitter secreted into the tumor microenvironment",
+      "STING → TBK1 phosphorylation → IRF3 nuclear translocation → IFN-β and co-stimulatory molecule induction on tumor and dendritic cells",
+      "Type I IFN drives dendritic cell maturation and cytotoxic T-cell cross-priming — linking BRCAness repair defect to anti-tumor innate immunity",
+      "ENPP1 degrades extracellular cGAMP; ENPP1 inhibition (RBS2418/uzaribat) restores cGAMP-driven STING signaling and enhances immune infiltration",
+    ],
+    druggable: true,
+    display_order: 24,
+  },
+  {
     name: "CHK1 / Replication Stress Checkpoint (BRCAness)",
     slug: "chk1-brcas-replication-checkpoint",
     description:

@@ -765,4 +765,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02873975", "NCT03414047"],
   },
+  {
+    name: "RBS2418 (Uzaribat)",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "ENPP1 inhibitor",
+    mechanism_of_action:
+      "RBS2418 (uzaribat; Riboscience) is an oral, selective small-molecule inhibitor of ectonucleotide pyrophosphatase/phosphodiesterase 1 (ENPP1), the primary extracellular enzyme that degrades 2'3'-cyclic GMP-AMP (cGAMP) — the immunotransmitter produced by cGAS upon sensing cytosolic DNA.\n\nThe mechanistic rationale in SDH-deficient tumors flows from the established BRCAness phenotype. Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) demonstrated that SDH loss → succinate accumulation → inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 persistence at double-strand break (DSB) sites → impaired TIP60/ATM activation → HR deficiency (BRCAness). BRCAness-positive cells accumulate unresolved DSBs → chromatin fragments and micronuclei form → cytosolic DNA engages cGAS. Mackenzie et al. (Nature 2017, PMID 28953876) established that micronuclei arising from genomic instability activate cGAS-STING, producing IFN-β. Pantelidou et al. (Immunity 2019, PMID 31076331) demonstrated in BRCA1-deficient breast tumors that BRCAness generates STING-dependent type I IFN signaling that drives cytotoxic T-cell infiltration, and that PARP inhibitor treatment amplifies this immune activation — establishing a general principle that BRCAness → cGAS-STING innate immune activation that applies to SDH-deficient BRCAness by extension.\n\nENPP1 degrades extracellular cGAMP before it can engage STING on infiltrating dendritic cells and NK cells. Carozza et al. (Cell 2022, PMID 36265508) demonstrated that ENPP1 is the dominant cGAMP phosphodiesterase in the tumor extracellular matrix and that ENPP1 inhibition preserves tumor-derived cGAMP, enhances STING signaling in immune cells, promotes CD8+ T-cell infiltration, and produces anti-tumor efficacy in syngeneic mouse models. ENPP1 inhibition converts the BRCAness-driven cytosolic DNA signal — constitutively present in SDH-deficient tumors — into a sustained cGAMP signal that drives innate-to-adaptive immune priming.\n\nClinical development: NCT04727138 (Phase 1/2; RBS2418 monotherapy and in combination with pembrolizumab in locally advanced or metastatic solid tumors; Riboscience; open). RBS2418 is a rational combinatorial partner with pembrolizumab (already in this engine): STING-driven IFN-β upregulates CD274 (PD-L1), creating an opportunity for PD-1 blockade to convert innate immune activation into durable adaptive anti-tumor immunity — an ENPP1i + anti-PD-1 combination strategy directly reflected in the NCT04727138 design.\n\nKey limitations: (1) No published data test RBS2418 or any ENPP1 inhibitor in SDH-deficient cell lines or animal models. (2) cGAS-STING activation from BRCAness in SDH-deficient tumors specifically (as opposed to BRCA1/2-mutant tumors) has not been directly demonstrated; the rationale is a mechanistically sound extension of established BRCAness biology (Sulkowski 2018/2020) and cGAS-STING biology in HR-deficient cells (Mackenzie 2017, Pantelidou 2019). (3) Paradoxical STING-driven PD-L1 upregulation could blunt the immune response if not paired with checkpoint blockade. (4) SDH-deficient cells engage multiple overlapping immune evasion arms (succinate-MCT1, HIF-IDO1, HIF-PD-L1); ENPP1 inhibition addresses innate cGAMP sensing but cannot alone reverse all suppressive mechanisms.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["cgas-sting-innate-immunity", "sdh-driven-hrd"],
+    target_gene_symbols: ["ENPP1"],
+    evidence_score: 26,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT04727138"],
+  },
 ];

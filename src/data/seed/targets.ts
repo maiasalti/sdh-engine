@@ -370,6 +370,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Serine/threonine kinase that, in complex with cyclin D proteins (cyclin D1/D2/D3), phosphorylates RB1 (retinoblastoma protein) at multiple residues to drive the G1→S cell cycle transition. CDK4 (and its paralog CDK6) is physiologically inhibited by p16/INK4A (encoded by CDKN2A), which occupies the CDK4/6 allosteric binding site that cyclin D requires, preventing catalytic activation and keeping RB1 in its growth-suppressive hypophosphorylated state. In SDH-deficient GIST, CIMP-driven promoter hypermethylation silences CDKN2A — identified by Killian et al. (Cancer Discov 2013, PMID 23550148) among ~85,000 hypermethylated CpG sites specific to SDH-deficient GIST (vs ~8,400 in KIT/PDGFRA GIST). Loss of p16/INK4A removes the physiological CDK4/6 brake, enabling constitutive CDK4/6 activity, chronic RB1 hyperphosphorylation, and unrestrained E2F-driven S-phase entry — a cell cycle deregulation downstream of the SDH-CIMP cascade. CDK4/6 inhibitors (palbociclib/Ibrance, ribociclib/Kisqali, abemaciclib/Verzenio) pharmacologically reimpose CDK4/6 inhibition that p16/INK4A silencing ablated, restoring RB1 hypophosphorylation and G1 arrest in RB1-proficient tumor cells.",
   },
   {
+    gene_symbol: "ENPP1",
+    name: "Ectonucleotide pyrophosphatase/phosphodiesterase 1 (ENPP1/NPC-PDE1α)",
+    uniprot_id: "P22413",
+    pathway_slug: "cgas-sting-innate-immunity",
+    target_type: "synthetic_lethal",
+    description:
+      "Type II transmembrane ectonucleotidase and the dominant extracellular phosphodiesterase responsible for degrading 2'3'-cyclic GMP-AMP (cGAMP) — the immunotransmitter produced by cGAS upon sensing cytosolic double-stranded DNA, including chromatin fragments and micronuclei generated from BRCAness-driven unresolved DSBs in SDH-deficient tumor cells. ENPP1 hydrolyzes cGAMP to 5'-AMP + GMP, terminating its STING-agonist activity before cGAMP can engage STING on surrounding dendritic cells, NK cells, and T cells. Carozza et al. (Cell 2022, PMID 36265508) identified ENPP1 as the primary cGAMP-degrading enzyme in the tumor extracellular matrix and demonstrated that ENPP1 inhibition increases extracellular cGAMP levels, enhances STING signaling in immune cells, increases intratumoral CD8+ T-cell infiltration, and suppresses tumor growth in syngeneic models. ENPP1 inhibition therefore converts the BRCAness-driven cytosolic DNA burden constitutively present in SDH-deficient tumors into a sustained, immune-activating cGAMP signal — complementary to the PD-1/PD-L1 checkpoint arm (pembrolizumab, Mechanism 22) and distinct from the metabolic immune suppression axes (AZD3965/MCT1, epacadostat/IDO1, Mechanism 11). RBS2418 (uzaribat, Riboscience) is the clinical-stage ENPP1 inhibitor in Phase 1/2 evaluation.",
+  },
+  {
     gene_symbol: "CHEK1",
     name: "Checkpoint kinase 1 (CHK1)",
     uniprot_id: "O14757",
