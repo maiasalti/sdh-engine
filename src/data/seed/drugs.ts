@@ -765,4 +765,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02873975", "NCT03414047"],
   },
+  {
+    name: "Ganetespib",
+    brand_names: ["STA-9090"],
+    chembl_id: "CHEMBL2180717",
+    pubchem_cid: "25151352",
+    drug_class: "HSP90 inhibitor (non-ansamycin resorcinol-based)",
+    mechanism_of_action:
+      "Ganetespib (STA-9090; Synta Pharmaceuticals) is a second-generation, non-ansamycin, resorcinol-based HSP90 inhibitor that binds the N-terminal ATP-binding pocket of HSP90 with high affinity (Kd ~1 nM). It is not FDA-approved but has completed multiple Phase 2 trials including in GIST (NCT01039519).\n\nIn SDH-deficient tumors, the mechanistic rationale exploits constitutive pseudohypoxia. SDH loss → succinate accumulation → PHD2/PHD3 inhibition → permanent HIF-1α/2α stabilization (VHL remains functional but cannot target PHD-unhydroxylated HIF-α for degradation). This locks HIF-1α/2α in their active conformations and creates an absolute cellular dependence on HSP90 chaperone activity to maintain the hyperactive pseudohypoxic transcriptome.\n\nHIF-1α is an obligate HSP90 client protein. Katschinski et al. (Cell Physiol Biochem 2004, PMID 15989551) established that HSP90α (encoded by HSP90AA1) is the dominant cytoplasmic chaperone maintaining HIF-1α in a VHL-binding-competent and transcription-competent conformation. Isaacs et al. (Cancer Res 2002) demonstrated that HSP90 inhibition routes HIF-1α to proteasomal degradation via a VHL-independent ubiquitin ligase pathway, and that this occurs at pharmacologically achievable HSP90 inhibitor concentrations. Minet et al. (Biochem Biophys Res Commun 2000, PMID 10930466) established the direct HSP90-HIF-1α physical interaction underlying this chaperone dependency.\n\nCritical dose-response nuance (Ibrahim et al. Cancer Res 2005, PMID 16322259): low concentrations of HSP90 inhibitors can paradoxically increase HIF-1α protein levels by impairing VHL-competent conformation without achieving proteasomal routing threshold; anti-tumor activity requires doses that drive net HIF-1α reduction. Ganetespib's high HSP90 affinity (Kd ~1 nM) relative to first-generation agents (17-AAG Kd ~26 nM) makes it more likely to achieve the threshold for HIF-α client degradation at tolerable plasma concentrations.\n\nIn SDH-deficient GIST specifically: NCT01039519 (Phase 2, Synta/DFCI, n=27 imatinib-refractory GIST, completed) provides the direct clinical anchor. GIST is mechanistically selected because SDH-deficient GIST is imatinib-resistant (no KIT/PDGFRA driver) and constitutively pseudohypoxic — precisely the context where HIF-α client degradation via HSP90 inhibition has the highest theoretical selectivity over SDH-intact KIT-driven GIST.\n\nAdditional HSP90 client proteins degraded by ganetespib (VEGFR2, CDK4, AKT) provide combinatorial benefit across pathways already implicated in SDH-deficient tumors (VEGF signaling [Mechanism 3], CDK4/6 [Mechanism 22], mTOR/AKT [Mechanism 4]), making ganetespib a pleiotropic inhibitor aligned across multiple SDH-loss-driven oncogenic axes.\n\nKey limitation: No published data directly test ganetespib or any HSP90 inhibitor in isogenic SDH-null GIST cell lines. The NCT01039519 GIST trial enrolled mixed GIST subtypes; SDH-deficient subgroup data have not been separately reported. Direct in vitro validation (dose-response curves in SDHA/B-null vs SDH-intact GIST lines; HIF-1α protein levels and VEGF/GLUT1 transcription as pharmacodynamic readouts; rescue by HIF-1α overexpression) is the required next experimental step. Evidence_score 28 (theoretical) reflects a rigorous mechanistic chain from SDH loss → constitutive HIF-α → HSP90 client dependency, the well-established HSP90-HIF-1α client biology (PMID 15989551, PMID 10930466, PMID 16322259), the Phase 2 clinical trial data in GIST (NCT01039519), and the absence of SDH-specific experimental validation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["hsp90-hif-client-chaperone", "hif-pseudohypoxia"],
+    target_gene_symbols: ["HSP90AA1"],
+    evidence_score: 28,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT01039519"],
+  },
 ];
