@@ -420,3 +420,28 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 **Files changed:** `src/data/seed/pathways.ts` (chk1-brcas-replication-checkpoint, display_order 23), `src/data/seed/targets.ts` (CHEK1 synthetic_lethal new entry), `src/data/seed/drugs.ts` (prexasertib new entry, evidence_score 28, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 28 added), `src/lib/scoring/constants.ts` (chk1-brcas-replication-checkpoint color entry), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add prexasertib (CHK1 inhibitor) — BRCAness replication checkpoint synthetic lethality
+
+---
+
+## 2026-08-30
+
+**Direction:** drug-pool
+**Angle:** Y-90 SIRT liver-directed radioembolization for SDH-deficient GIST (BRCAness × radiation)
+
+**PubMed scan:** 8 queries over 2026-05-30 → 2026-08-30 (SDH GIST, PPGL, RCC, pituitary, metabolism, synthetic lethality, radioembolization angles). Found 1 new PMID not previously seen.
+
+**Papers added (1):**
+- PMID 42650014 — Berman et al., *Cancers (Basel)* 2026: "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series." International multicenter retrospective series (n=12; US, Germany, UK). 66.7% ORR (1 CR, 7 PR), 100% DCR, median OS not reached at 32-month follow-up, 1 grade ≥3 AE. Topic: Treatment & Trials.
+
+**Papers rejected (0):** All other returned PMIDs already in tracker.md.
+
+**Drug added:**
+- **Yttrium-90 SIRT** (SIR-Spheres / TheraSphere; liver-directed radioembolization). evidence_score 43, status: clinical_trial, tumor_type_applicability: ["gist"]. Mechanistic rationale: BRCAness phenotype (Sulkowski Nat Genet 2018 PMID 30013182; Nature 2020 PMID 32494005) → HR deficiency → SDH-deficient GIST cells cannot repair Y-90-induced DSBs via HR → disproportionate radiosensitivity. Anatomic rationale: SDH-deficient GIST characteristically metastasizes to the liver (not lungs or peritoneum), unlike KIT/PDGFRA-mutant GIST; and imatinib/sunitinib are ineffective in SDH-deficient tumors, elevating the clinical need for liver-directed alternatives. pathway_slugs: ["sdh-driven-hrd"]; target_gene_symbols: ["KDM4B"]. Clinical anchor: PMID 42650014 (66.7% ORR vs. typical 20–40% in other GIST subtypes). Distinction from prior radioligand entries: 177Lu-DOTATATE and [212Pb]VMT-α-NET require SSTR2 expression (present in PPGL, absent in GIST); Y-90 SIRT is SSTR2-independent and GIST-specific, entirely non-redundant.
+
+**Biology added:**
+- Mechanism 29 in sdh-biology.ts: Y-90 SIRT BRCAness × radiation synthetic lethality in SDH-deficient GIST liver metastases (KDM4B → H3K9me3 → HR deficiency → DSB repair failure → mitotic catastrophe). Cites Sulkowski PMID 30013182/32494005 and Berman PMID 42650014.
+
+**Remaining unexplored directions:** MTHFD2/one-carbon (no SDH-specific data, no clinical-stage inhibitors — remains unactionable).
+
+**Files changed:** `src/data/papers.ts` (PMID 42650014 new entry), `src/data/seed/drugs.ts` (Y-90 SIRT new entry), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `tracker.md` (PMID 42650014 row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add Y-90 SIRT for SDH-deficient GIST liver metastases + SIRT case series paper
