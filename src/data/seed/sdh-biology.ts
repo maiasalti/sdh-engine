@@ -473,7 +473,7 @@ Plerixafor (AMD3100/Mozobil; Sanofi) is an FDA-approved, small-molecule bicyclam
 |---|---|---|---|---|
 | CXCR4 chemokine receptor | CXCR4 | Plerixafor (AMD3100/Mozobil) | FDA-approved (stem cell mobilization) | None; rationale via VHL/HIF→CXCR4 PMID 13679920 |
 
-### 29. Y-90 SIRT BRCAness × Radiation Synthetic Lethality in SDH-Deficient GIST Liver Metastases
+### 38. Y-90 SIRT BRCAness × Radiation Synthetic Lethality in SDH-Deficient GIST Liver Metastases
 
 **Clinical observation:** Berman et al. (Cancers 2026, PMID 42650014) reported an international multicenter retrospective series (n=12; US, Germany, UK) of Y-90 selective internal radiation therapy (SIRT/radioembolization) in SDH-deficient GIST with progressive, unresectable hepatic metastases. Objective response rate was 66.7% (1 CR, 7 PR) with 100% disease control rate and median OS not reached at 32 months. This response magnitude substantially exceeds typical Y-90 SIRT ORRs in KIT/PDGFRA-mutant GIST (20–40%), suggesting a tumor-intrinsic mechanism of enhanced radiosensitivity rather than a generic hepatic ablation effect.
 
