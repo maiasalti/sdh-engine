@@ -423,6 +423,32 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 ---
 
+## 2026-08-25
+
+**Part A — Paper scan:**
+Searched PubMed across ~10 queries: SDH-deficient GIST/PPGL/RCC/pituitary, belzutifan, SDH metabolism, SDH cancer treatment, GIST WT, SDHB mutation targets. One new PMID found not already in tracker.md:
+
+- PMID 42626933 (Almeida/Dahia/Robledo, Endocr Relat Cancer 2026-08-21): "Molecular clusters and precision medicine in pheochromocytomas and paragangliomas." Comprehensive review covering all three PPGL molecular clusters (pseudohypoxic SDHx/FH/VHL/EPAS1; kinase-signaling RET/NF1/HRAS; WNT/MAML3). **Rejected**: broad PPGL review, not SDH-specific; treatment implications not novel relative to existing engine entries. Logged in tracker.md.
+
+**Part B — Improvement: POLQ inhibitor clinical-stage upgrade (data quality fix)**
+
+**Direction:** Corrected a data quality error in the ART558 POLQ inhibitor entry. ART558 is the preclinical tool compound (Ceccaldi et al., Nature 2015, PMID 25642963); it was never itself registered in a clinical trial. The engine entry had `clinical_trial_ids: []` and `status: "theoretical"` but described ART558 as "in Phase 1 clinical investigation" — internally inconsistent and factually wrong. The actual clinical-stage compounds from Artios Pharma's POLQ inhibitor program are ART4215 (NCT04991480, Phase 1/IIa with talazoparib + niraparib, n=93, COMPLETED December 2025, sites: Yale/MSK/MD Anderson/Penn) and ART6043 (NCT05898399, Phase 1/2 with olaparib, n=181, RECRUITING).
+
+**Rationale:** Phase 1 completion of ART4215 establishes clinical safety/tolerability for the compound class. Both ART4215 and ART6043 are designed as POLQ + PARP inhibitor combinations — directly testing the synthetic lethal strategy that is the mechanistic basis for POLQ inhibitor relevance in SDH-deficient tumors (HR deficiency via BRCAness → dependence on TMEJ backup; PARP inhibitor creates DSB burden → POLQ inhibitor blocks the surviving repair route). This is a genuine evidence upgrade, not a new direction: the POLQ/TMEJ pathway was added on 2026-08-09. This run fixes the clinical status to reflect reality.
+
+**Changes:**
+- `status`: `"theoretical"` → `"clinical_trial"` (ART4215 Phase 1 completed; ART6043 Phase 1/2 recruiting)
+- `evidence_score`: 27 → 30 (clinical safety/tolerability established for compound class)
+- `clinical_trial_ids`: `[]` → `["NCT04991480", "NCT05898399"]`
+- `mechanism_of_action`: Expanded to name ART4215/ART6043 as clinical successors, clarify ART558 as preclinical anchor, note that both clinical trials test POLQ + PARP inhibitor combination (directly validating the synthetic lethality rationale)
+
+**Literature anchor:** PMID 25642963 (Ceccaldi et al., Nature 2015): POLQ/TMEJ synthetic lethality with HR deficiency — the foundational preclinical proof-of-concept. Verified via ClinicalTrials.gov MCP: NCT04991480 status COMPLETED; NCT05898399 status RECRUITING; both sponsored by Artios Pharma; both pairing POLQ inhibitor with PARP inhibitor.
+
+**Files changed:** `src/data/seed/drugs.ts` (ART558 entry: status, evidence_score, clinical_trial_ids, mechanism_of_action updated), `tracker.md` (PMID 42626933 logged as rejected), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] POLQ inhibitor clinical upgrade — ART4215/ART6043 Phase 1 completion
+
+---
+
 ## 2026-08-19 — TERT Telomerase Reactivation / Imetelstat
 
 **Direction chosen:** TERT promoter reactivation in SDHB-metastatic PPGL → imetelstat (Rytelo, FDA-approved telomerase inhibitor).
