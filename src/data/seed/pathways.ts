@@ -492,6 +492,6 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
       "NCT01039519 (Phase 2 ganetespib in refractory GIST, n=27, completed) provides the most direct clinical anchor for this mechanism in GIST",
     ],
     druggable: true,
-    display_order: 24,
+    display_order: 29,
   },
 ];
