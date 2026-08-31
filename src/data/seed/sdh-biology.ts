@@ -497,6 +497,35 @@ Y-90 microspheres (SIR-Spheres, SIRTEX; TheraSphere, Boston Scientific) are infu
 |---|---|---|---|
 | Y-90 SIRT | BRCAness × radiation DSB synthetic lethality; hepatic arterial delivery | SIR-Spheres (SIRTEX), TheraSphere (Boston Scientific) | PMID 42650014: 66.7% ORR, 100% DCR, n=12 SDH-GIST liver mets (Berman et al. 2026) |
 
+## Mechanism 29: NHEJ / DNA-PKcs Backup Repair — Synthetic Lethality via Elimusertib (AZD7648)
+
+**Pathway:** nhej-dnapk-backup-repair
+**Drug:** Elimusertib (AZD7648) — DNA-dependent protein kinase catalytic subunit (DNA-PKcs / PRKDC) inhibitor
+**Evidence level:** Theoretical (mechanistically grounded via BRCAness + preclinical BRCA-deficient selectivity data)
+**Clinical trial:** NCT03907969 (Phase 1/2a, AstraZeneca, completed, n=30)
+
+**Mechanistic rationale:**
+This mechanism adds a third DSB-repair backup dimension to the BRCAness synthetic lethality framework alongside Mechanism 14 (PARP inhibition, SSB→DSB generation), Mechanism 18 (POLQ/TMEJ alt-EJ backup), and Mechanism 28 (CHK1 replication checkpoint). In SDH-deficient tumors, succinate accumulation inhibits the α-KG-dependent histone demethylases KDM4A and KDM4B → H3K9me3 persists at DSB sites → TIP60 acetyltransferase and ATM kinase recruitment is impaired → HR repair efficiency is severely reduced in all SDH-deficient cells, regardless of BRCA1/2 mutation status (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005).
+
+In HR-deficient (BRCAness-positive) cells, classical non-homologous end joining (c-NHEJ), mediated by the DNA-PK holoenzyme (DNA-PKcs/PRKDC + Ku70/XRCC6 + Ku80/XRCC5 + XRCC4/LIG4), becomes the primary DSB repair pathway. DNA-PKcs is recruited to DSB termini by the Ku heterodimer, autophosphorylates at Ser2056 and Thr2609, and phosphorylates XRCC4/LIG4 and Artemis to execute DSB ligation. Inhibiting DNA-PKcs removes this backup in BRCAness-positive cells → unrepaired DSBs accumulate → apoptosis. HR-proficient cells withstand DNA-PKcs inhibition via HR; the synthetic lethality is created by BRCAness.
+
+**Mechanistic distinctions from other DDR mechanisms in this engine:**
+- Mechanism 14 (PARP inhibitors: olaparib/niraparib): PARP trapping → SSBs collapse into DSBs at replication forks; HR-deficient cells cannot repair DSBs via HR. DNA-PKcs inhibition removes c-NHEJ resolution of those DSBs. Complementary, potentially synergistic.
+- Mechanism 18 (POLQ/TMEJ: ART558): POLQ executes alt-EJ / microhomology-mediated end joining (TMEJ) — error-prone, mechanistically distinct from c-NHEJ. ART558 blocks TMEJ; elimusertib blocks c-NHEJ. Non-redundant backup pathways.
+- Mechanism 28 (CHK1: prexasertib): CHK1 is the replication fork stabilization checkpoint kinase (CDC25A/C inactivation, origin firing control) — not a DSB repair effector. Mechanistically distinct from DNA-PKcs, which directly executes DSB ligation.
+
+**Key preclinical evidence — BRCAness selectivity:**
+Anastasia et al. (Mol Cancer Ther 2022, PMID 35149547) tested AZD7648 in BRCA-deficient versus BRCA-proficient ovarian cancer PDX models. AZD7648 significantly potentiated pegylated liposomal doxorubicin and olaparib in BRCA-deficient OC-PDX tumors — preventing abdominal metastases, reducing tumor burden, improving survival — but produced no potentiation in BRCA-proficient OC-PDX controls. This directly establishes BRCAness-selective DNA-PKcs synthetic lethality: AZD7648 is inert in HR-proficient cells, lethal in combination in HR-deficient cells. The same selectivity principle applies to BRCAness-positive SDH-deficient tumors.
+
+**Contextual radiation sensitivity data:**
+Berman et al. (Cancers 2026, PMID 42650014) reported 66.7% objective response rate and 100% disease control rate in 12 SDH-deficient GIST patients treated with Y-90 SIRT for hepatic metastases (median follow-up 32 months; only 2/12 progressed; 1 death). The authors concluded "SDH-deficient GIST may be more sensitive to radiation than previously appreciated." This radiation sensitivity is mechanistically consistent with BRCAness — impaired DSB repair capacity in SDH-deficient cells renders them more vulnerable to radiation-induced DSBs — and directly contextualizes the DNA-PKcs inhibition angle: pharmacologically removing c-NHEJ backup via elimusertib mimics and amplifies this radiation-sensitive phenotype.
+
+**Key limitation:** No published data directly test elimusertib or any DNA-PKcs inhibitor in SDH-deficient GIST, PPGL, or RCC cell lines or xenograft models. The mechanistic case rests on (1) the established Sulkowski BRCAness mechanism (PMID 30013182, 32494005), (2) the Anastasia et al. BRCA-deficient-selective AZD7648 preclinical data (PMID 35149547), and (3) the Berman et al. SDH-GIST radiation sensitivity observation (PMID 42650014). Direct in vitro validation in isogenic SDH-null versus SDH-intact lines (dose-response curves, γ-H2AX foci, 53BP1 colocalization) is the required next experimental step.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| DNA-PKcs | PRKDC | Elimusertib (AZD7648) | Phase 1/2a completed (NCT03907969) | None; rationale via BRCAness PMID 30013182/32494005 + BRCA-deficient selectivity PMID 35149547 |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

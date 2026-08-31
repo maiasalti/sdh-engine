@@ -658,3 +658,27 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 **Files changed:** `src/data/papers.ts` (PMID 42650014 new entry), `src/data/seed/drugs.ts` (Y-90 SIRT new entry), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `tracker.md` (PMID 42650014 row), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add Y-90 SIRT for SDH-deficient GIST liver metastases + SIRT case series paper
+
+---
+
+## 2026-08-27 — NHEJ/DNA-PKcs Backup Repair Synthetic Lethality — Elimusertib (AZD7648)
+
+**Paper scan:** 7 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, SDH-deficient RCC, succinate oncometabolite drug targets, SDH BRCAness DNA repair, radiation therapy SDH-GIST, SDH-deficient pituitary). 2 new PMIDs found: PMID 42650014 (added); PMID 42611605 (rejected).
+
+**Direction:** NHEJ/DNA-PKcs backup repair synthetic lethality — elimusertib (AZD7648). New pathway `nhej-dna-pkcs-backup-repair` (display_order 24), new target PRKDC (synthetic_lethal, UniProt P78527), new drug elimusertib (evidence_score 29, theoretical, tumor_type_applicability ["all"], NCT03907969).
+
+**Rationale for selection:** The BRCAness framework (Sulkowski Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) has three non-redundant backup repair arms in HR-deficient cells that can each be targeted: (1) POLQ/TMEJ alt-EJ (Mechanism 18, ART558), (2) CHK1 replication checkpoint (Mechanism 28, prexasertib), and now (3) c-NHEJ/DNA-PKcs (Mechanism 29, elimusertib). c-NHEJ is mechanistically distinct from TMEJ (different error-prone pathway) and from CHK1 (fork stabilization checkpoint vs. DSB ligation). Has Phase 1/2a completed clinical trial (NCT03907969). Key anchor: PMID 35149547 (Anastasia et al., Mol Cancer Ther 2022) shows AZD7648 potentiates olaparib specifically in BRCA-deficient OC-PDXs but not BRCA-proficient — directly establishing BRCAness-selective DNA-PKcs synthetic lethality. Passes HARD RELEVANCE GATE via Sulkowski 2018/2020 + Anastasia 2022.
+
+**Mechanistic chain:** SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness) → c-NHEJ (DNA-PK holoenzyme: PRKDC/DNA-PKcs + Ku70/Ku80 + XRCC4/LIG4) becomes primary DSB repair backup → DNA-PKcs inhibition by elimusertib removes backup → catastrophic unrepaired DSB accumulation → selective apoptosis in BRCAness-positive cells.
+
+**Literature anchors:**
+- PMID 30013182 (Sulkowski Nat Genet 2018): succinate → KDM4A/B → H3K9me3 → impaired TIP60/ATM → BRCAness. Core mechanistic anchor.
+- PMID 32494005 (Sulkowski Nature 2020): BRCAness confirmed; PARP inhibitor synthetic lethality in SDH-deficient cells.
+- PMID 35149547 (Anastasia et al., Mol Cancer Ther 2022): AZD7648 potentiates olaparib specifically in BRCA-deficient OC-PDX models but NOT in BRCA-proficient — direct preclinical BRCAness-selective DNA-PKcs synthetic lethality. Not added to papers.ts (2022, outside scan window); used as mechanistic citation.
+- PMID 42650014 (Berman et al., Cancers 2026): 12-patient multicenter Y-90 SIRT case series, SDH-deficient GIST hepatic mets, ORR 66.7%, DCR 100%; radiation sensitivity consistent with BRCAness phenotype.
+- NCT03907969 (Phase 1/2a; AstraZeneca; completed; n=30): AZD7648 monotherapy or combined with cytotoxic or novel agents in advanced malignancies.
+
+**PMID disambiguation:** PMID 31341168 (searched as "DNA-PKcs BRCA synthetic lethality 2019") returned a bird DNA methylation study on PubMed — mismatch. That PMID is NOT used. All cited PMIDs verified via PubMed MCP.
+
+**Files changed:** `src/data/papers.ts` (PMID 42650014 added), `src/data/seed/pathways.ts` (nhej-dna-pkcs-backup-repair, display_order 24), `src/data/seed/targets.ts` (PRKDC synthetic_lethal new entry), `src/data/seed/drugs.ts` (elimusertib new entry, evidence_score 29, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (nhej-dna-pkcs-backup-repair color entry), `tracker.md` (3 new rows: PMID 42611605 rejected, PMID 35149547 cited, PMID 42650014 added), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add elimusertib (DNA-PKcs/NHEJ) — BRCAness backup repair synthetic lethality
