@@ -93,8 +93,8 @@ export const SEED_DRUGS: SeedDrug[] = [
     target_gene_symbols: ["MGMT"],
     evidence_score: 74,
     status: "clinical_trial",
-    tumor_type_applicability: ["ppgl"],
-    clinical_trial_ids: [],
+    tumor_type_applicability: ["ppgl", "gist"],
+    clinical_trial_ids: ["NCT03556384"],
   },
   {
     name: "Everolimus",
@@ -626,7 +626,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 62,
     status: "established",
     tumor_type_applicability: ["ppgl", "rcc"],
-    clinical_trial_ids: ["NCT02302833", "NCT04400474"],
+    clinical_trial_ids: ["NCT02302833", "NCT04400474", "NCT03635892"],
   },
   {
     name: "Ceralasertib",
