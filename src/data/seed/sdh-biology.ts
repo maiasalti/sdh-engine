@@ -546,6 +546,36 @@ RBS2418 (uzaribat; Riboscience) is an oral, potent ENPP1 inhibitor in Phase 1/2 
 |---|---|---|---|---|
 | ENPP1 ectonucleotidase | ENPP1 | RBS2418 (uzaribat) | Phase 1/2 (NCT04727138; solid tumors + pembrolizumab) | None; rationale via BRCAness (PMID 30013182/32494005) → cGAS-STING (PMID 28953876, 31076331, 36265508) |
 
+## Mechanism 29: HSP90-Dependent HIF Pseudohypoxic Proteome Stability
+
+### Core concept
+HIF-1α and HIF-2α are obligate HSP90 client proteins. HSP90 (predominantly the α isoform, HSP90AA1/P07900) maintains HIF-α subunits in correctly folded, thermodynamically stable conformations. In normoxia, HSP90 keeps HIF-1α in a VHL-binding-competent conformation, enabling PHD-mediated hydroxylation and VHL-E3-ubiquitin-dependent degradation. Under hypoxia or, equivalently, under constitutive PHD inhibition, HSP90 maintains HIF-α in its active transcription-competent conformation.
+
+In SDH-deficient tumors, succinate accumulation constitutively inhibits PHD2/PHD3 → HIF-1α/2α are permanently stabilized in their active conformations → the cell is chronically dependent on HSP90 chaperone activity to maintain this hyperactive pseudohypoxic proteome. HSP90 inhibition at sufficient concentrations re-routes HIF-1α/2α to a VHL-independent proteasomal degradation pathway, collapsing the SDH-loss-driven pseudohypoxic gene expression program.
+
+### Evidence chain
+Three foundational papers establish the HSP90-HIF-1α client relationship:
+- Minet et al. (Biochem Biophys Res Commun 2000, PMID 10930466): Established the direct HSP90-HIF-1α physical interaction. Geldanamycin (HSP90 inhibitor) reduced HIF-1α protein and VEGF secretion in hypoxic cancer cells.
+- Katschinski et al. (Cell Physiol Biochem 2004, PMID 15989551): Demonstrated HSP90α as the dominant cytoplasmic isoform maintaining HIF-1α stability. HSP90 inhibition triggers proteasomal degradation of HIF-1α via a pathway distinct from PHD/VHL.
+- Ibrahim et al. (Cancer Res 2005, PMID 16322259): Dissected the dose-response relationship. Low-dose HSP90 inhibition can paradoxically increase HIF-1α by impairing VHL-competent conformation without achieving proteasomal routing threshold; high-dose HSP90 inhibition drives net HIF-1α reduction. This nuance is critical for therapeutic design — anti-tumor activity requires doses that cross the threshold for HIF-α client degradation.
+
+### Dose-response caveat
+Ibrahim et al. (PMID 16322259) showed that at sub-threshold HSP90 inhibitor concentrations, HIF-1α protein levels increase (impaired VHL-mediated degradation without compensatory proteasomal routing). Only at concentrations sufficient to trigger the alternative ubiquitin ligase pathway is HIF-1α net reduced. Ganetespib's high HSP90 affinity (Kd ~1 nM vs. 17-AAG Kd ~26 nM) makes threshold crossing more achievable at tolerable plasma levels. This dose-dependence must be considered when interpreting in vitro experiments — dose-response curves spanning sub-threshold to supra-threshold concentrations are necessary to distinguish paradoxical increase from therapeutic decrease of HIF-1α.
+
+### Ganetespib (STA-9090) pharmacology
+Ganetespib is a second-generation, non-ansamycin, resorcinol-triazolone HSP90 inhibitor. Advantages over first-generation benzoquinone ansamycins (geldanamycin, 17-AAG/tanespimycin):
+- No hepatotoxicity from benzoquinone moiety
+- ~25-fold higher HSP90 affinity than 17-AAG at N-terminal ATP pocket
+- No P-glycoprotein efflux liability (17-AAG is a P-gp substrate)
+- Completed Phase 1 and Phase 2 trials including NCT01039519 (Phase 2 in imatinib-refractory GIST, n=27)
+
+### SDH-deficient GIST as priority indication
+SDH-deficient GIST is imatinib-resistant by definition (no KIT/PDGFRA driver). The pseudohypoxic phenotype is constitutive and central to GIST oncogenesis in this subtype. NCT01039519 enrolled imatinib-refractory GIST broadly; a SDH-deficient subgroup analysis was not reported separately, representing a defined gap for future investigation. Ganetespib's additional clients — VEGFR2 (Mechanism 3), CDK4 (Mechanism 22), AKT (Mechanism 4), HER2 — create a pleiotropic inhibition pattern aligned across multiple SDH-loss-driven oncogenic axes, making it a uniquely multi-targeted agent in this context.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| HSP90α chaperone | HSP90AA1 | Ganetespib (STA-9090) | Phase 2 in GIST (NCT01039519) | None; rationale via constitutive HIF-α client dependency PMID 15989551/16322259 |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

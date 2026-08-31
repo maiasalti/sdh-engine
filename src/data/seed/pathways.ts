@@ -476,4 +476,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 28,
   },
+  {
+    name: "HSP90-Dependent HIF Pseudohypoxic Proteome Stability",
+    slug: "hsp90-hif-client-chaperone",
+    description:
+      "HIF-1α and HIF-2α are obligate HSP90 client proteins: HSP90 maintains HIF-α subunits in a stable, VHL-competent conformation under normoxia and in an active, transcription-competent conformation under hypoxia. In SDH-deficient tumors, constitutive PHD inhibition by accumulated succinate drives permanent HIF-α stabilization, creating an absolute cellular dependence on HSP90 chaperone activity to maintain the hyperactive pseudohypoxic transcriptome. HSP90 inhibition at sufficient doses disrupts HIF-1α/2α conformation, directing these client proteins to proteasomal degradation independently of VHL, collapsing the SDH-loss-driven pseudohypoxic gene expression program.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD2/PHD3 inhibition → VHL-independent HIF-1α/2α stabilization → constitutive pseudohypoxic transcription → HSP90 required to maintain HIF-α client proteins in active conformation → tumor HSP90 chaperone dependency for pseudohypoxic proteome maintenance",
+    downstream_effects: [
+      "HIF-1α and HIF-2α are obligate HSP90 client proteins; HSP90 inhibition routes HIF-α to proteasomal degradation via an alternative ubiquitin ligase pathway independent of VHL",
+      "High-dose HSP90 inhibition reduces HIF-1α protein levels and suppresses HIF target gene transcription (VEGF, GLUT1, LDHA, CAIX)",
+      "Ganetespib (STA-9090), a second-generation non-ansamycin HSP90 inhibitor, achieves HIF-1α client degradation without the hepatotoxicity of first-generation agents",
+      "HSP90 inhibition in SDH-deficient cells disrupts the constitutively activated pseudohypoxic proteome that drives tumor growth and metastatic potential",
+      "Caution: low-dose HSP90 inhibition can paradoxically increase HIF-1α by impairing VHL-binding competency; anti-tumor effect requires doses sufficient to trigger proteasomal client degradation",
+      "NCT01039519 (Phase 2 ganetespib in refractory GIST, n=27, completed) provides the most direct clinical anchor for this mechanism in GIST",
+    ],
+    druggable: true,
+    display_order: 24,
+  },
 ];

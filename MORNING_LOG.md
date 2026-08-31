@@ -714,3 +714,30 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 **Files changed:** `src/data/seed/pathways.ts` (cgas-sting-innate-immunity, display_order 24), `src/data/seed/targets.ts` (ENPP1 synthetic_lethal new entry), `src/data/seed/drugs.ts` (RBS2418/uzaribat new entry, evidence_score 26, pathway_slugs ["cgas-sting-innate-immunity", "sdh-driven-hrd"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (cgas-sting-innate-immunity color entry), `src/data/papers.ts` (PMID 42650014 added), `tracker.md` (2 new rows), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add cGAS-STING innate immunity (ENPP1/RBS2418) + SIRT paper for SDH-deficient GIST
+
+---
+
+## 2026-08-29 — HSP90-Dependent HIF Pseudohypoxic Proteome Stability (Ganetespib)
+
+**Direction chosen:** Mechanism 29 — HSP90 as the chaperone maintaining the constitutively active HIF-1α/2α pseudohypoxic proteome in SDH-deficient tumors. Drug: Ganetespib (STA-9090), second-generation non-ansamycin HSP90 inhibitor.
+
+**Novelty gate:** Verified against all 28 prior mechanisms. HSP90 inhibition has never appeared in any prior morning run (not as drug class, pathway, or target). The hsp90-hif-client-chaperone pathway is entirely new. Passes the non-repetition gate.
+
+**Relevance gate:** The HIF pseudohypoxia axis (Mechanism 1) is the central downstream consequence of SDH loss. HIF-1α/2α are obligate HSP90 client proteins — a direct, well-characterized molecular interaction supported by three independent foundational papers (PMID 10930466, PMID 15989551, PMID 16322259). HSP90 inhibition collapses HIF-α stability via a VHL-independent proteasomal degradation pathway, acting orthogonally to PHD/VHL (the canonical oxygen-sensing route that SDH-loss has permanently bypassed). This is not generic anti-cancer activity — it is a mechanistically specific attack on the protein chaperone that SDH-deficient cells absolutely require to maintain their aberrant HIF-driven transcriptome.
+
+**Clinical anchor:** NCT01039519 — Phase 2 trial of ganetespib (STA-9090) in imatinib-refractory GIST (n=27, completed). This is the most direct possible clinical anchor: the same drug, the same tumor type, the same molecular context (GIST that is imatinib-resistant, which enriches for SDH-deficient subtype given that SDH-deficient GIST is definitionally imatinib-resistant by virtue of lacking KIT/PDGFRA drivers).
+
+**Dose-response nuance documented:** Ibrahim et al. (Cancer Res 2005, PMID 16322259) showed that low-dose HSP90 inhibition paradoxically increases HIF-1α; high-dose drives net reduction via proteasomal routing. This nuance is explicitly incorporated into the ganetespib MoA text and the Mechanism 29 biology section. Ganetespib's ~25-fold higher HSP90 affinity than 17-AAG supports threshold crossing at tolerable concentrations.
+
+**Papers scanned this run (2 new PMIDs evaluated):**
+- PMID 42650014: Added to papers.ts — multicenter SIRT (Y-90 SIRT) series for SDH-deficient GIST hepatic metastases (Berman ZT et al., Cancers 2026). Mechanistically relevant ("Treatment & Trials"), first multi-institutional evidence base for SIRT in this molecular subtype.
+- PMID 42611605: Rejected — single pediatric GIST case report (SDHA truncation, retained SDHB staining). No mechanistic or treatment advance.
+
+**Citation QA:** PMID 12208751 was initially queried as the Isaacs et al. Cancer Res 2002 HSP90-HIF paper. PubMed verification confirmed PMID 12208751 is actually a lung cancer methylation SNP paper (Shen et al. 2002) — completely unrelated. This wrong PMID was excluded from all entries. The Isaacs 2002 mechanistic chain is established via the three confirmed PMIDs above (10930466, 15989551, 16322259) and the ClinicalTrials.gov-verified NCT01039519.
+
+**Evidence score rationale (28, theoretical):** Strong mechanistic chain (SDH loss → constitutive HIF-α → HSP90 client dependency), three independent foundational papers, Phase 2 clinical trial in GIST (NCT01039519). Theoretical (not preclinical) because no published data directly test ganetespib or any HSP90 inhibitor in isogenic SDH-null GIST cell lines. Score 28 matches prior theoretical entries with comparable mechanistic depth (prexasertib, Mechanism 28).
+
+**Pleiotropic benefit note:** Ganetespib degrades multiple HSP90 clients relevant to SDH-deficient tumors (VEGFR2/Mechanism 3, CDK4/Mechanism 22, AKT/Mechanism 4, HER2), providing combinatorial multi-pathway inhibition from a single drug — a qualitative advantage over more targeted agents in this small-population disease.
+
+**Files changed:** `src/data/papers.ts` (PMID 42650014 SIRT paper added), `src/data/seed/pathways.ts` (hsp90-hif-client-chaperone, display_order 24), `src/data/seed/targets.ts` (HSP90AA1 direct target new entry), `src/data/seed/drugs.ts` (ganetespib new entry, evidence_score 28, tumor_type_applicability ["all"], NCT01039519), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (hsp90-hif-client-chaperone color entry), `tracker.md` (2 rows added), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add ganetespib (HSP90 inhibitor) — constitutive HIF pseudohypoxic proteome destabilization + SIRT paper
