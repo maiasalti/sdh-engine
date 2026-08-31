@@ -257,4 +257,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42155081",
     date: "2026-08",
   },
+  {
+    title:
+      "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series.",
+    authors: "Berman ZT, Hohenberger P, Bulusu R, et al.",
+    journal: "Cancers (Basel)",
+    year: 2026,
+    doi: "10.3390/cancers18162704",
+    topic: "Treatment & Trials",
+    description:
+      "International multicenter retrospective series (n=12; 3 centers in US, Germany, and UK) of Y-90 selective internal radiation therapy (SIRT/radioembolization) for progressive, unresectable SDH-deficient GIST hepatic metastases: 66.7% objective response rate (1 CR, 7 PR), 100% disease control rate, only 1 grade ≥3 adverse event, and median overall survival not reached at 32-month follow-up. Suggests SDH-deficient GIST may be disproportionately radiosensitive and that liver-directed SIRT is a useful option when systemic therapies are limited.",
+    pmid: "42650014",
+    date: "2026-08",
+  },
 ];
