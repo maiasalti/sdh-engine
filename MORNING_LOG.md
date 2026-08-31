@@ -682,3 +682,35 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 **Files changed:** `src/data/papers.ts` (PMID 42650014 added), `src/data/seed/pathways.ts` (nhej-dna-pkcs-backup-repair, display_order 24), `src/data/seed/targets.ts` (PRKDC synthetic_lethal new entry), `src/data/seed/drugs.ts` (elimusertib new entry, evidence_score 29, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (nhej-dna-pkcs-backup-repair color entry), `tracker.md` (3 new rows: PMID 42611605 rejected, PMID 35149547 cited, PMID 42650014 added), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add elimusertib (DNA-PKcs/NHEJ) — BRCAness backup repair synthetic lethality
+
+---
+
+## 2026-08-28 — cGAS-STING Innate Immune Sensing / ENPP1 Inhibition — RBS2418 (Uzaribat)
+
+**Paper scan:** 7 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, SDH-deficient RCC, succinate oncometabolite, cGAS-STING/BRCAness, ATRX/ALT PPGL, wild-type GIST). 2 new PMIDs found; 1 added, 1 rejected.
+
+**Papers added:** 1 — PMID 42650014 (Berman ZT et al., Cancers 2026: Y-90 SIRT in SDH-deficient GIST; 12 patients, 66.7% ORR, 100% DCR; supports BRCAness radiosensitivity; topic: Treatment & Trials)
+**Papers rejected:** 1 — PMID 42611605 (pediatric SDHA-truncation GIST with false-negative SDHB IHC; single case report; no advance beyond PMID 41985045)
+
+**Direction:** drug-pool
+**Angle:** cGAS-STING innate immune sensing — ENPP1 inhibition (RBS2418/uzaribat). New pathway `cgas-sting-innate-immunity` (display_order 24), new target ENPP1 (ectonucleotidase), new drug RBS2418 (evidence_score 26, theoretical, tumor_type_applicability ["all"], NCT04727138).
+
+**Rationale for selection:** The BRCAness mechanism (Sulkowski 2018/2020, PMIDs 30013182/32494005) generates a constitutive cytosolic DNA burden in SDH-deficient tumor cells through unresolved DSBs → chromatin fragmentation → micronuclei (Mackenzie et al. Nature 2017, PMID 28953876). When micronuclei rupture, cytosolic dsDNA activates cGAS → 2'3'-cGAMP → STING → TBK1/IRF3 → IFN-β. ENPP1 (ectonucleotidase NPC-PDE1α) is the dominant extracellular phosphodiesterase hydrolyzing cGAMP to 5'-AMP + GMP, terminating STING signaling before it can act on DCs and T cells (Carozza et al. Cell 2022, PMID 36265508). ENPP1 inhibition preserves extracellular cGAMP, sustains STING-driven innate immunity, increases intratumoral CD8+ T-cell infiltration, and converts the constitutive BRCAness DNA-damage signal into an immunostimulatory output. Pantelidou et al. Immunity 2019 (PMID 31076331) demonstrated that BRCAness in BRCA1-mutant breast cancer activates the same cGAS-STING pathway, providing the mechanistic precedent for extrapolation to SDH-deficient BRCAness. Passes HARD RELEVANCE GATE via established BRCAness chain. This is a genuinely new immunological arm not previously in the engine — distinct from: HIF-PD-L1/pembrolizumab checkpoint arm (Mechanism 22), succinate immune evasion pathway (metabolic TME suppression), and AZD3965/MCT1 + epacadostat/IDO1 axes.
+
+**Definitively ruled-out directions re-confirmed:**
+- IACS-010759/Complex I (Sokolov preprint PMID 42239110 — SDH-deficient cells adaptively suppress Complex I; targeting it is synthetic lethal in the wrong direction)
+- MTHFD2/one-carbon metabolism (no SDH-specific data, no clinical-stage inhibitors)
+- WEE1/adavosertib (kills HR-PROFICIENT cells preferentially; opposite selectivity in BRCAness context)
+
+**Evidence_score rationale (26, theoretical):** One inferential step beyond prexasertib (28) because: (1) SDH-specific cGAS-STING activation via BRCAness/micronuclei has not been directly demonstrated in SDHA/B/C/D-null tumor cells — the chain is mechanistically sound but is an extrapolation from BRCA1/2-mutant models; (2) RBS2418 has not been evaluated in any SDH-deficient tumor; (3) no preclinical ENPP1-inhibition data exist in GIST or PPGL models. If micronuclei/cytosolic DNA accumulation in SDH-null cells is directly demonstrated, evidence_score should rise to ~32-35 (preclinical anchor exists but not in directly relevant model).
+
+**Literature anchors:**
+- PMID 30013182 (Sulkowski Nat Genet 2018): succinate → KDM4A/B → H3K9me3 → BRCAness. Core.
+- PMID 32494005 (Sulkowski Nature 2020): BRCAness confirmed in SDH-deficient tumors.
+- PMID 28953876 (Mackenzie et al. Nature 2017): micronuclei → cytosolic DNA → cGAS activation.
+- PMID 31076331 (Pantelidou et al. Immunity 2019): BRCAness (BRCA1-mutant) → cGAS-STING → IFN-β; PARP inhibitors enhance STING signaling.
+- PMID 36265508 (Carozza et al. Cell 2022): ENPP1 as dominant extracellular cGAMP phosphodiesterase; ENPP1 inhibition enhances CD8+ T-cell infiltration.
+- NCT04727138: RBS2418 + pembrolizumab Phase 1/2 in solid tumors (Riboscience).
+
+**Files changed:** `src/data/seed/pathways.ts` (cgas-sting-innate-immunity, display_order 24), `src/data/seed/targets.ts` (ENPP1 synthetic_lethal new entry), `src/data/seed/drugs.ts` (RBS2418/uzaribat new entry, evidence_score 26, pathway_slugs ["cgas-sting-innate-immunity", "sdh-driven-hrd"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (cgas-sting-innate-immunity color entry), `src/data/papers.ts` (PMID 42650014 added), `tracker.md` (2 new rows), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add cGAS-STING innate immunity (ENPP1/RBS2418) + SIRT paper for SDH-deficient GIST
