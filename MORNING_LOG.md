@@ -423,6 +423,175 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 ---
 
+## 2026-08-19 — TERT Telomerase Reactivation / Imetelstat
+
+**Direction chosen:** TERT promoter reactivation in SDHB-metastatic PPGL → imetelstat (Rytelo, FDA-approved telomerase inhibitor).
+
+**Paper scan (Step 1):** Six PubMed queries covering SDH-deficient tumors, PPGL genomics, SDH-GIST new trials, epigenetic mechanisms, and BRCAness/repair in the past 3 months. One new PMID found: 42611605 (pediatric SDHA-GIST with retained SDHB IHC staining — a diagnostic false-negative case report). Rejected: the core observation (SDHB IHC false-negative in a subset of SDH-deficient GIST) is already captured by PMID 41985045 (57 tumors, 49% false-negative rate, 4 morphological patterns — a systematic study with 25× greater sample size). No new mechanistic or therapeutic advance.
+
+**Directions ruled out before selecting TERT:**
+- MTHFD2/one-carbon folate: no SDH-specific data; no clinical-stage inhibitors. Ruled out previously; still no evidence to reverse.
+- Complex I (mitochondrial): definitively ruled out by Sokolov preprint (prior log).
+- CD47/macrophage phagocytosis: HIF-1α → CD47 transcriptional link uncertain; magrolimab development halted. Insufficient citation basis.
+- DNMT3B-selective inhibitors: same mechanism angle as existing decitabine/azacitidine entries.
+- Erdafitinib FGFR upgrade: same mechanism as regorafenib upgrade done 2026-08-16.
+
+**TERT direction rationale:**
+PMID 42155081 (Batini et al., Arch Endocrinol Metab 2026) — already in papers.ts — directly quantifies TERT promoter C228T in 16.7% of SDHB-germline-positive metastatic PPGL, co-occurring exclusively with SDHB pathogenic variants. These tumors use the telomerase-DEPENDENT telomere maintenance pathway, mechanistically distinct from ATRX-null/ALT tumors (Mechanism 13) which use recombination-based, telomerase-INDEPENDENT ALT. Imetelstat (Rytelo; Geron) is a 13-mer thio-phosphoramidate oligonucleotide that competitively binds the TERT active-site RNA template region. FDA-approved June 2024 for lower-risk MDS (IMerge Phase 3, NCT02598661). Established clinical safety profile. No SDH-specific data exist, but the genetic epidemiology (PMID 42155081) and mechanism of action (direct TERT catalytic-site antagonism) are both solid. Evidence_score 25 (theoretical), tumor_type_applicability ["ppgl"] only. Non-redundant with all existing engine entries.
+
+**Color allocation:** All standard Tailwind -100 pathway badge colors are exhausted. New pathway uses `bg-indigo-200` (a distinct shade from `bg-indigo-100` already used for neddylation).
+
+**Candidate directions still unexplored:** (1) MTHFD2 / one-carbon folate metabolism (no SDH-specific data, no clinical-stage inhibitors); Complex I direction ruled out definitively.
+
+**Files changed:** `src/data/seed/pathways.ts` (tert-telomerase-reactivation, display_order 24), `src/data/seed/targets.ts` (TERT direct new entry), `src/data/seed/drugs.ts` (imetelstat new entry, evidence_score 25, tumor_type_applicability ["ppgl"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (tert-telomerase-reactivation color entry), `tracker.md` (PMID 42611605 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add imetelstat (TERT inhibitor) — telomerase reactivation in SDHB-metastatic PPGL
+
+---
+
+## 2026-08-20 — MIBG/NET-Targeted Radionuclide Therapy — Iobenguane I-131 (Azedra) + [²¹¹At]MABG
+
+**Paper scan:** 6 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, succinate oncometabolite, SDH BRCAness, tazemetostat EZH2 SDH, succinate immune evasion SDH tumor). 1 new PMID evaluated: 42611605 (pediatric SDHA-GIST case with retained SDHB IHC — single case report, no new mechanism, IHC false-negative pattern already covered by PMID 41985045). 0 papers added. Also added PMID 41404848 (Rapizzi et al., Endocr Relat Cancer Jan 2026, pro-tumorigenic vitamin C in SDHB-PPGL zebrafish model) to papers.ts — this paper was already cited in the Ascorbic Acid drug entry since 2026-07-16 but was missing from papers.ts (outside the 3-month scan window at time of evaluation).
+
+**Direction:** MIBG/NET-targeted radionuclide therapy — new pathway `mibg-net-targeted-radiation` (display_order 24), new target SLC6A2, two new drug entries: Iobenguane I-131/Azedra (evidence_score 42, established, FDA-approved) and [²¹¹At]MABG (evidence_score 26, preclinical, Phase 1), new Mechanism 29 in sdh-biology.ts.
+
+**Rationale for selection:** The tracker flagged PMID 42490294 ([²¹¹At]MABG Phase 1, Okamoto et al. CCR 2026) as "relevant to BRCAness × high-LET synthetic lethality direction" when the paper was added to papers.ts on 2026-08-10, explicitly deferring implementation. Azedra (iobenguane I-131) is FDA-approved specifically for iobenguane-avid PPGL — the most directly applicable existing approved therapy missing from the engine. The MORNING_LOG shows Panobinostat was already upgraded (some prior run) to note its NET/SLC6A2 upregulation and MIBG combination rationale (Martiniova et al. PMID 21098082), creating a natural bridge to the MIBG direction. Both DNA repair angles that were previously unexplored (DNA-PKcs/peposertib) were evaluated and rejected: peposertib is primarily a radiosensitizer and the standalone BRCAness synthetic lethality case for DNA-PKcs is weaker than POLQ (Ceccaldi 2015) or CHK1 (replication checkpoint biology); the key synthetic lethality papers could not be verified via PubMed. The MIBG direction passes the HARD RELEVANCE GATE via NET-selective delivery to chromaffin-lineage SDH-deficient PPGL plus BRCAness-derived radiosensitization.
+
+**Mechanistic chain:**
+- **Primary selectivity:** SDH-deficient PPGL (chromaffin lineage) → NET/SLC6A2 expression → selective MIBG intracellular uptake → intracellular ionizing radiation → DSBs
+- **SDH-specific radiosensitization (BRCAness):** SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSBs → impaired TIP60/ATM → HR deficiency [Sulkowski PMID 30013182/32494005] → impaired repair of radiation-induced DSBs → amplified tumor-selective cytotoxicity
+- **Alpha-particle advantage:** [²¹¹At]MABG high-LET (80 keV/μm) creates complex clustered DSBs specifically requiring HR for faithful repair → BRCAness × high-LET synergy more pronounced than with ¹³¹I-MIBG beta particles
+
+**Literature anchors:**
+- PMID 42490294 (Okamoto et al., CCR 2026): [²¹¹At]MABG Phase 1 — 10 MIBG-avid PCC/PGL; 2.1 MBq/kg; no DLTs; 1 PR + 7 SD. Already in papers.ts.
+- PMID 21098082 (Martiniova et al., Endocr Relat Cancer 2011): panobinostat upregulates NET/SLC6A2 and MIBG uptake in PPGL cells at nanomolar concentrations. Cited in Panobinostat drug entry.
+- PMID 30013182 / PMID 32494005 (Sulkowski Nat Genet 2018 / Nature 2020): BRCAness in SDH-deficient tumors. Already in engine.
+- Azedra MACS0010 Phase 2 registration trial: FDA approval July 2018; ORR ~25%, CBR ~92% (cited by name in drug entry; PMID not confirmed via PubMed lookup).
+
+**Mechanistic distinction from ¹⁷⁷Lu-DOTATATE (Mechanism 19):** SSTR2 vs NET targeting; DOTATATE-avid vs MIBG-avid patient eligibility (not mutually exclusive but not identical); beta particle (¹⁷⁷Lu) vs alpha particle (²¹¹At) radiation type; different BRCAness × radiation LET synergy potential.
+
+**Scope caveat:** Applies strictly to MIBG-avid PPGL. Not applicable to SDH-deficient GIST (mesenchymal, no NET expression) or SDH-deficient RCC.
+
+**Files changed:** `src/data/seed/pathways.ts` (mibg-net-targeted-radiation, display_order 24), `src/data/seed/targets.ts` (SLC6A2, direct), `src/data/seed/drugs.ts` (Iobenguane I-131/Azedra evidence_score 42 established; [²¹¹At]MABG evidence_score 26 preclinical; both tumor_type_applicability ["ppgl"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (mibg-net-targeted-radiation color entry), `src/data/papers.ts` (PMID 41404848 added — vitamin C safety signal paper, cited in drug entry since 2026-07-16 but missing from papers.ts), `tracker.md` (PMID 42611605 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add MIBG/NET-targeted radionuclide therapy pathway — Azedra + [²¹¹At]MABG
+
+---
+
+## 2026-08-21 — NHEJ / DNA-PKcs Synthetic Lethality — Peposertib
+
+**Paper scan:** 9 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma therapy, succinate dehydrogenase cancer 2026, SDH BRCAness DNA repair, DNA-PK NHEJ BRCAness, paraganglioma treatment, SDH-deficient tumor drug, SDHB SDHC SDHD tumor, SDH replication stress 2026). 1 new PMID found: PMID 41751859 (Altered Expression of Mitochondrial Succinate Dehydrogenase Subunit D Influences Breast Cancer Progression; DOI 10.3390/ijms27041722; February 2026). Rejected: breast cancer off-panel, SDHD upregulated (not deficient), outside 3-month window. 0 new papers added to papers.ts.
+
+**Direction:** NHEJ / DNA-PKcs synthetic lethality — peposertib (M3814). New pathway `nhej-dnapk-backup-repair` (display_order 24), new target PRKDC (synthetic_lethal), new drug peposertib (evidence_score 28, theoretical, tumor_type_applicability ["all"]).
+
+**Rationale for selection:** All established BRCAness-targeted directions in this engine attack the synthetic lethality of SDH-deficient HR deficiency through: SSB→DSB conversion (PARP inhibitors, Mechanism 14), alt-EJ/TMEJ backup pathway (POLQ inhibitor ART558, Mechanism 18), replication checkpoint effector (CHK1/prexasertib, Mechanism 28), or upstream replication stress ATR kinase (ceralasertib, Mechanism 13). None targets canonical NHEJ — the dominant and often sole DSB repair pathway in BRCAness-positive HR-deficient cells. DNA-PKcs (PRKDC) is the essential kinase for canonical NHEJ execution; peposertib is an oral, clinical-stage, selective DNA-PKcs inhibitor (Phase 1/2 NCT02516813; NCT04750954). This is a fourth orthogonal attack on BRCAness in SDH-deficient tumors. Passes HARD RELEVANCE GATE via Sulkowski 2018/2020.
+
+**Mechanistic chain:** SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness) → NHEJ becomes dominant DSB repair pathway → acute DNA-PKcs dependency → peposertib inhibits DNA-PKcs autophosphorylation at Thr2609 → NHEJ stalls at synapsis step → unrepaired DSBs accumulate → selective lethality in BRCAness-positive cells (HR-proficient cells retain alternative HR route and are substantially less sensitive).
+
+**Compelling sub-rationale for SDH-deficient PPGL + PRRT combination:**
+SDH-deficient PPGL are universally SSTR2-high (DOTATATE-PET confirmed). PRRT (Lu-177 DOTATATE) delivers targeted radiation → DSBs in SSTR2+ tumor cells. BRCAness impairs HR of those DSBs. Peposertib blocks NHEJ of those DSBs. Triple DSB repair failure in SSTR2-high BRCAness-positive SDH-deficient PPGL. This tri-mechanic rationale is exactly what NCT04750954 (NCI Phase 1b, peposertib + Lu-177 DOTATATE in SSTR2+ GEP-NETs) tests clinically — the closest existing trial to SDH-deficient PPGL.
+
+**Distinction from prior BRCAness entries:**
+- Mechanism 14 (PARP): SSB trap → SSB→DSB collapse → impaired HR → death
+- Mechanism 18 (POLQ/ART558): alt-EJ/TMEJ backup (not canonical NHEJ)
+- Mechanism 28 (CHK1/prexasertib): replication checkpoint effector, not a DSB repair pathway
+- Mechanism 29 (peposertib): canonical NHEJ pathway itself — the only entry targeting a canonical DSB repair route
+
+**Literature anchors:**
+- PMID 30013182 (Sulkowski Nat Genet 2018): succinate → KDM4A/B → H3K9me3 → impaired TIP60/ATM → BRCAness. Core mechanistic anchor.
+- PMID 32494005 (Sulkowski Nature 2020): BRCAness confirmed in SDH-deficient tumors; PARP inhibitor synthetic lethality.
+- PMID 32265313 (Zenke FT et al. Mol Cancer Ther 2020): peposertib radiosensitizes human tumor xenografts; single-agent and combination activity.
+- NCT02516813 (Phase 1a/1b; peposertib + RT + cisplatin; advanced solid tumors; n=52; Merck KGaA; completed).
+- NCT04750954 (Phase 1b; peposertib + Lu-177 DOTATATE; SSTR2+ GEP-NETs; NCI; open): closest existing trial to PPGL rationale.
+
+**Previously logged directions NOT re-evaluated:** MTHFD2/one-carbon (no SDH-specific data, no clinical-stage inhibitors); Complex I definitively ruled out (Sokolov preprint PMID 42239110, 2026-07-30).
+
+**Files changed:** `src/data/seed/pathways.ts` (nhej-dnapk-backup-repair, display_order 24), `src/data/seed/targets.ts` (PRKDC synthetic_lethal new entry), `src/data/seed/drugs.ts` (peposertib new entry, evidence_score 28, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added; druggable targets table row added), `src/lib/scoring/constants.ts` (nhej-dnapk-backup-repair color entry), `tracker.md` (PMID 41751859 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add peposertib (DNA-PKcs/NHEJ inhibitor) — BRCAness backup repair synthetic lethality
+
+---
+
+## 2026-08-22 — cGAS-STING Innate Immune Activation — Ulevostinag
+
+**Paper scan:** 7 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, SDH-deficient RCC, succinate oncometabolite, BRCAness/SDH, cGAS-STING/genome instability, STING agonist clinical trials). 1 new PMID identified within 3-month window:
+- PMID 42611605 (Tanimura et al., J Pediatr Hematol Oncol 2026): Pediatric GIST with SDHA truncation (c.1401T>A, p.Cys467Ter) and false-negative SDHB IHC. **Rejected:** case report confirming the already-documented SDHB IHC false-negative phenomenon (cf. PMID 41985045 already in papers.ts); no new mechanistic or treatment advance. Added to tracker.md.
+
+0 papers added to papers.ts.
+
+**Direction:** cGAS-STING innate immune activation — ulevostinag (MK-1454). New pathway `cgas-sting-innate-immune` (display_order 24), new target STING1/TMEM173 (downstream), new drug ulevostinag (evidence_score 25, theoretical, tumor_type_applicability ["all"]).
+
+**Rationale for selection:** The BRCAness theme (Mechanisms 14, 28 and the ATR/ATRX threads) has been exploited at the DNA-repair level (PARP inhibitors, CHK1, ATR, POLQ). An unexplored downstream consequence of BRCAness-driven chromosomal instability is innate immune activation via the cGAS-STING pathway. The chain is: BRCAness → chromosomal mis-segregation → micronuclei → cGAS activation → STING → IFN-β. STING agonists amplify this directly. This is a novel direction — immunological rather than DNA-repair — with a clean, citation-backed mechanistic chain. Passes HARD RELEVANCE GATE via Sulkowski 2018/2020 (BRCAness) + Mackenzie 2017 (cGAS/micronuclei).
+
+**Mechanistic chain:** SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness) [Sulkowski PMID 30013182, 32494005] → unrepaired DSBs → chromosomal mis-segregation → micronuclei formation → micronuclear envelope rupture → cytoplasmic chromatin → cGAS activation → 2′3′-cGAMP → STING → TBK1 → IRF3 → IFN-β / ISG expression [Mackenzie PMID 28738408]. STING agonists (ulevostinag) bypass cGAS and activate STING directly.
+
+**Mechanistic caveat noted:** Liu et al. Nature 2018 (PMID 30356214) showed nuclear cGAS suppresses HR via PARP1 interaction (pro-tumorigenic). This is a distinct nuclear pool separate from cytoplasmic/micronuclear cGAS; STING agonists act downstream of and independently from nuclear cGAS — the caveat does not affect ulevostinag rationale.
+
+**Literature anchors:**
+- PMID 30013182 (Sulkowski Nat Genet 2018): BRCAness from SDH loss; KDM4A/KDM4B mechanism. Core mechanistic anchor.
+- PMID 32494005 (Sulkowski Nature 2020): BRCAness confirmed; PARP inhibitor synthetic lethality.
+- PMID 28738408 (Mackenzie et al. Nature 2017): cGAS surveillance of micronuclei links genome instability to innate immunity. DOI 10.1038/nature23449. Verified. PMID originally guessed as 28783727 (wrong — that is a Lazaridis et al. ancient DNA paper); correct PMID confirmed via PubMed title search.
+- PMID 30356214 (Liu et al. Nature 2018): Nuclear cGAS suppresses HR; pro-tumorigenic. Context/caveat citation only.
+- PMID 40499147 (Harrington et al. Clin Cancer Res 2025): Ulevostinag (MK-1454) Phase I/II (NCT03010176); STING activation confirmed (IP-10, IFNγ, IL-6 elevation); 540 µg RP2D; 4/8 CR/PR with pembrolizumab in HNSCC expansion.
+
+**PMID disambiguation:** PMID 28783727 searched as Mackenzie cGAS/micronuclei paper but verified via PubMed as Lazaridis et al. Nature 2017 (ancient Greek genome paper). Correct PMID 28738408 found by full-title PubMed search and confirmed by get_article_metadata.
+
+**Evidence_score rationale (ulevostinag 25):** Multi-step chain (BRCAness → chromosomal instability → micronuclei → cGAS → STING → IFN-β) adds an additional hop relative to direct BRCAness-targeted drugs (PARP inhibitors, prexasertib). Clinical STING activation confirmed pharmacodynamically but low ORR in monotherapy arm (no PRs in 22 patients). Scored below prexasertib (28) to reflect the longer indirect chain and the administration limitation (intratumoral). Not scored below 20 because the cGAS-STING mechanistic link from BRCAness-driven chromosomal instability is a proven biological phenomenon (Mackenzie 2017), not a speculative extension.
+
+**Files changed:** `src/data/seed/pathways.ts` (cgas-sting-innate-immune, display_order 24), `src/data/seed/targets.ts` (STING1 downstream new entry), `src/data/seed/drugs.ts` (ulevostinag new entry, evidence_score 25, tumor_type_applicability ["all"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (cgas-sting-innate-immune color sky-100/800 entry), `tracker.md` (1 new rejected row: PMID 42611605), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add ulevostinag (STING agonist) — cGAS-STING innate immune activation via BRCAness-driven chromosomal instability
+
+---
+
+## Run 2026-08-23: DCA MoA upgrade — mechanistic counterproductivity in SDH-deficient tumors
+
+**Paper scan:** 3 new PMIDs surfaced (42611605, 41555429, 41697759); all rejected. 0 papers added to `papers.ts`. The rare-disease literature stream has been dry for 7+ consecutive runs.
+
+**Part B — DCA mechanism-of-action upgrade:**
+
+**Rationale:** The DCA entry was the last poorly-documented stub in `drugs.ts`: 2-sentence mechanism, zero citations, `evidence_score: 35`, `status: "preclinical"` — with no acknowledgment of a mechanistic safety concern. This is the highest-priority remaining documentation gap.
+
+**Mechanistic analysis:**
+
+DCA inhibits PDK1-4 → reactivates pyruvate dehydrogenase (PDH) → diverts pyruvate from lactate toward acetyl-CoA → increased TCA flux. In SDH-INTACT glycolytic (Warburg) cancers this restores OXPHOS, elevates ROS, and reduces HIF-1α — the intended effect (Michelakis et al., Sci Transl Med 2010, PMID 20463368).
+
+In **SDH-DEFICIENT tumors** the logic inverts:
+1. The TCA cycle is blocked at SDH. DCA-driven flux (citrate → isocitrate → α-KG → succinate) accumulates succinate at the blocked step — strengthening competitive PHD1-3 inhibition and amplifying HIF-1α/HIF-2α pseudohypoxic signaling. The opposite of the intended effect.
+2. Succinate amplification worsens CIMP epigenetic silencing (Killian et al., Cancer Cell 2013, PMID 23707781; Letouzé et al., Cancer Cell 2013, PMID 23550148).
+3. SDH-deficient cells adaptively suppress Complex I to limit pyruvate oxidation pressure (Sokolov et al., bioRxiv 2025, PMID 42239110); DCA overrides this protective adaptation.
+4. No direct evidence of DCA efficacy in any SDH-deficient tumor model exists; all DCA-cancer data originate from SDH-intact glycolytic cancers.
+
+**Changes made:** `evidence_score` 35 → 22; `status` "preclinical" → "theoretical"; `mechanism_of_action` rewritten with full mechanistic chain, counterproductivity reasoning, and safety note. Citation anchors: PMID 20463368 (DCA mechanism), PMID 42239110 (Complex I adaptation), PMID 23707781, PMID 23550148 (CIMP).
+
+**Directions still unexplored:** MTHFD2/one-carbon (insufficient SDH-specific data).
+
+**Files changed:** `src/data/seed/drugs.ts` (DCA entry: MoA rewritten, evidence_score 35→22, status preclinical→theoretical), `tracker.md` (3 new rejected PMIDs: 42611605, 41555429, 41697759), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] DCA MoA upgrade — mechanistic counterproductivity in SDH-deficient tumors
+
+---
+
+## 2026-08-24 — HIF-Driven CXCR4/CXCL12 Chemokine Metastasis Axis — Plerixafor
+
+**Paper scan:** 10+ PubMed searches (SDH-deficient GIST 2026, paraganglioma pheochromocytoma SDH 2026, SDH-deficient RCC 2026, succinate oncometabolite 2026, SDHA SDHB SDHC SDHD tumor 2026, HIF pseudohypoxia SDH 2026, SDH-deficient cancer treatment 2026, pituitary adenoma SDH 2026, GIST SDH imatinib resistance 2026, paraganglioma metastatic treatment 2026). Only PMID 42597314 (DOI: 10.3389/fcvm.2026.1861073, Frontiers in Cardiovascular Medicine) identified as new; rejected as cardiovascular journal with no SDH-deficient cancer content. 0 papers added. All other returns were already in tracker.md.
+
+**Direction:** HIF-driven CXCR4/CXCL12 chemokine metastasis axis — plerixafor (AMD3100/Mozobil). New pathway `hif-cxcr4-chemokine-metastasis` (display_order 24), new target CXCR4/P61073 (downstream), new drug plerixafor (evidence_score 20, theoretical, tumor_type_applicability ["ppgl"]).
+
+**Rationale for selection:** After exhausting all 28 prior directions logged through 2026-08-17, the HIF-driven CXCR4/CXCL12 axis represents a genuinely unexplored branch of the established pseudohypoxia pathway. All prior pseudohypoxia branches (VEGF/angiogenesis, MET/AXL RTKs, mTOR/PI3K/AKT, CDK4/6 via CDKN2A-CIMP, PD-L1 immune evasion, HIF-2α/belzutifan) are implemented. CXCR4 is a distinct HIF-1α transcriptional target mediating metastatic dissemination — not covered by any prior entry. Clinically motivated by the uniquely high metastatic risk of SDHB-deficient PPGL (30–70%). Passes HARD RELEVANCE GATE via pseudohypoxia/HIF-1α pathway.
+
+**Mechanistic chain:** SDH loss → succinate → PHD inhibition → HIF-1α stabilization → HRE-driven CXCR4 transcription → CXCL12 gradient-directed chemotaxis → metastatic homing to bone marrow, lymph nodes, liver → CXCR4 signaling via PI3K/AKT + MAPK/ERK + JAK/STAT3 at metastatic sites → tumor cell survival and proliferation in niche.
+
+**Literature anchor:**
+- PMID 13679920 (Staller et al., Nature 2003): VHL-deficient RCC — HIF-1α directly transcriptionally activates CXCR4; VHL restoration suppresses CXCR4 and CXCL12-directed chemotaxis. VHL/HIF and SDH/HIF are identical PHD-inhibition/HIF-1α stabilization mechanisms. This is the foundational anchor; direct SDH-specific CXCR4 experimental data do not exist.
+- NCT00186966: plerixafor FDA approval trial (stem cell mobilization); establishes clinical-grade pharmacology and tolerability.
+
+**Evidence score rationale:** 20 (theoretical, lower range). Mechanistic extrapolation is logically tight (shared pseudohypoxic HIF-1α mechanism between VHL and SDH loss), but zero SDH-specific experimental data exist. Score deliberately conservative relative to other theoretical entries to reflect the further-removed extrapolation.
+
+**tumor_type_applicability rationale:** ["ppgl"] only — SDHB-deficient PGL/PCC has uniquely high metastatic rate (30–70%), making CXCR4-driven metastatic dissemination clinically relevant. SDH-deficient GIST and RCC have lower metastatic burden and weaker clinical motivation for this specific strategy.
+
+**What was ruled out during direction search:** MTHFD2/one-carbon metabolism (no SDH-specific data, no clinical-stage inhibitors — do not add). All other previously logged directions remain banned.
+
+**Files changed:** `src/data/seed/pathways.ts` (hif-cxcr4-chemokine-metastasis, display_order 24), `src/data/seed/targets.ts` (CXCR4/P61073 downstream new entry), `src/data/seed/drugs.ts` (plerixafor new entry, evidence_score 20, tumor_type_applicability ["ppgl"]), `src/data/seed/sdh-biology.ts` (Mechanism 29 added with druggable targets table), `src/lib/scoring/constants.ts` (hif-cxcr4-chemokine-metastasis color entry cyan), `tracker.md` (PMID 42597314 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add plerixafor (CXCR4 inhibitor) — HIF-driven chemokine metastasis axis
+
+---
+
 ## 2026-08-30
 
 **Direction:** drug-pool

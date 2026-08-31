@@ -259,6 +259,19 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
+      "Pro-tumoural effects of vitamin C supplementation in a zebrafish model for SDHB-associated pheochromocytoma and paraganglioma.",
+    authors: "Rapizzi E, Canu L, Bechmann N, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-25-0370",
+    topic: "Tumor Biology",
+    description:
+      "CRITICAL SAFETY SIGNAL: In a SDHB-deficient pheochromocytoma/paraganglioma zebrafish model, vitamin C (ascorbic acid) supplementation PROMOTED rather than suppressed tumor growth — a counterintuitive finding directly opposite to the hypothesized TET-rescue or pro-oxidant anti-tumor benefit. Plausible mechanisms for the pro-tumorigenic effect include reactivation of pro-survival gene programs silenced by CIMP hypermethylation, paradoxical HIF-1α survival pathway activation, or metabolic anaplerosis support. Clinically important for SDH-deficient patients: oral or IV vitamin C supplementation may be counterproductive in SDHB-PPGL until dedicated mammalian-model and prospective clinical data are available. Cited in this engine's Ascorbic Acid drug entry, which was downgraded from evidence_score 38/preclinical to 18/theoretical based on this finding.",
+    pmid: "41404848",
+    date: "2026-01",
+  },
+  {
+    title:
       "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series.",
     authors: "Berman ZT, Hohenberger P, Bulusu R, et al.",
     journal: "Cancers (Basel)",

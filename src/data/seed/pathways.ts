@@ -386,4 +386,92 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 23,
   },
+  {
+    name: "TERT Telomerase Reactivation",
+    slug: "tert-telomerase-reactivation",
+    description:
+      "TERT promoter mutations (c.-124C>T, C228T) occur in ~16.7% of SDHB-germline-positive metastatic pheochromocytoma/paraganglioma (PPGL), co-occurring exclusively with SDHB pathogenic variants (Batini et al., Arch Endocrinol Metab 2026, PMID 42155081). These hotspot mutations create de novo E-twenty-six (ETS) transcription factor binding sites in the TERT promoter, driving constitutive telomerase (TERT/TERC) transcription and telomere maintenance via the telomerase-dependent pathway. This is mechanistically distinct from the ATRX-loss/ALT pathway (Mechanism 13): ATRX-null tumors use recombination-based, telomerase-independent ALT, whereas TERT-promoter-mutant tumors rely on telomerase enzyme activity. Imetelstat (Rytelo) — a 13-mer thio-phosphoramidate oligonucleotide that competitively binds the TERT catalytic site as a template antagonist — directly inhibits telomerase and is FDA-approved (June 2024) for lower-risk MDS with transfusion-dependent anemia.",
+    upstream_event:
+      "SDHB loss (predominantly) → epigenetic instability → TERT promoter C228T mutation → de novo ETS binding site → constitutive TERT transcription → active telomerase complex → telomere maintenance in metastatic PPGL",
+    downstream_effects: [
+      "Constitutive TERT expression and telomerase enzyme activity in TERT-promoter-mutant PPGL",
+      "Telomere-length maintenance enabling indefinite replicative potential in SDHB-metastatic tumors",
+      "TERT promoter C228T co-occurs exclusively with SDHB PVs (16.7% of metastatic SDHB-PPGL; PMID 42155081)",
+      "Telomerase-dependent pathway — mechanistically non-overlapping with ATRX-null/ALT (Mechanism 13)",
+      "Imetelstat-mediated TERT catalytic-site blockade → progressive telomere shortening → replicative crisis → selective cell death in TERT-promoter-mutant tumors",
+    ],
+    druggable: true,
+    display_order: 24,
+  },
+  {
+    name: "MIBG / NET-Targeted Radionuclide Therapy",
+    slug: "mibg-net-targeted-radiation",
+    description:
+      "The norepinephrine transporter (NET, encoded by SLC6A2) is selectively expressed on chromaffin-lineage cells including pheochromocytoma and paraganglioma, enabling tumor-selective intracellular delivery of radiolabeled guanethidine analogs (MIBG: meta-iodo/astatobenzylguanidine). NET actively transports MIBG analogs into catecholamine-storing vesicles, concentrating intracellular ionizing radiation in tumor cells expressing NET. In BRCAness-positive SDH-deficient PPGL, the established HR deficiency (Sulkowski et al. PMID 30013182/32494005) creates an additional vulnerability to radiation-induced DSBs — particularly high-LET alpha-particle radiation — because HR-impaired cells cannot efficiently repair complex clustered DNA lesions. ¹³¹I-MIBG (Azedra) delivers beta-particle radiation and is FDA-approved for iobenguane-avid PPGL. [²¹¹At]MABG delivers high-LET alpha-particle radiation, creating more complex DSBs especially cytotoxic in HR-deficient (BRCAness-positive) SDH-deficient cells.",
+    upstream_event:
+      "SDH loss → SDHB/SDHD-mutant chromaffin cell lineage → NET (SLC6A2) expression on tumor surface → MIBG analog selective intracellular uptake via NET → intracellular ionizing radiation → DNA DSBs; additional sensitization: SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → HR deficiency (BRCAness) → impaired radiation-induced DSB repair",
+    downstream_effects: [
+      "NET/SLC6A2 mediates selective intracellular MIBG uptake in chromaffin-lineage PPGL cells; non-NET-expressing tissues receive minimal radiation dose",
+      "¹³¹I-MIBG (Azedra): beta-particle (β⁻, max range ~2mm) delivered intracellularly; FDA-approved July 2018 for iobenguane-avid locally advanced/metastatic PPGL; ORR ~25%, CBR ~92% in MACS0010 registration trial",
+      "[²¹¹At]MABG: alpha-particle (⁴He²⁺, path length 50–80μm, high-LET ~80 keV/μm) creates complex clustered DSBs; Phase 1 (Okamoto et al. CCR 2026, PMID 42490294): 1 PR + 7 SD in 10 MIBG-avid PCC/PGL patients at 2.1 MBq/kg, no DLTs",
+      "BRCAness (Mechanism 14) predicts enhanced sensitivity to high-LET alpha-particle radiation: complex clustered DSBs require HR for accurate repair; HR-deficient SDH-deficient cells cannot efficiently resolve them, amplifying [²¹¹At]MABG cytotoxicity relative to NET-expressing SDH-intact tissues",
+      "Panobinostat upregulates NET/SLC6A2 expression and MIBG uptake in PPGL cells at nanomolar concentrations (Martiniova et al. PMID 21098082), providing a combination rationale to enhance MIBG delivery",
+      "Mechanistically distinct from ¹⁷⁷Lu-DOTATATE (Mechanism 19, SSTR2-targeted): different tumor surface receptor (NET vs SSTR2), different radiation type (alpha vs beta particles), different patient eligibility (MIBG-avid vs DOTATATE-avid PPGL)",
+      "Limitation: NET expression is restricted to catecholamine-secreting neuroendocrine lineage — not applicable to SDH-deficient GIST (mesenchymal, no NET expression) or SDH-deficient RCC",
+    ],
+    druggable: true,
+    display_order: 25,
+  },
+  {
+    name: "NHEJ / DNA-PK Backup Repair",
+    slug: "nhej-dnapk-backup-repair",
+    description:
+      "In HR-deficient BRCAness-positive SDH-deficient cells, the non-homologous end-joining (NHEJ) pathway becomes the primary backup for DNA double-strand break (DSB) repair. DNA-PKcs (PRKDC), together with Ku70/Ku80, forms the DNA-PK holoenzyme at DSB ends — phosphorylating H2AX, activating ARTEMIS nuclease for end processing, and enabling XRCC4-DNA ligase IV ligation. Inhibiting DNA-PKcs in HR-deficient cells (BRCAness from SDH loss) removes this compensatory NHEJ backup, creating synthetic lethality. HR-proficient normal cells retain HR as an alternative DSB repair route and are substantially less affected.",
+    upstream_event:
+      "SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness) → NHEJ becomes dominant/sole DSB repair pathway → dependency on DNA-PKcs for NHEJ execution",
+    downstream_effects: [
+      "NHEJ is the primary DSB repair pathway in BRCAness-positive HR-deficient SDH-deficient cells",
+      "DNA-PKcs (PRKDC) is required for DSB end-synapsis, processing, and ligation via XRCC4-DNA ligase IV",
+      "Peposertib (M3814) inhibits DNA-PKcs → blocks NHEJ → unrepaired DSBs accumulate in BRCAness-positive cells",
+      "HR-proficient normal cells tolerate DNA-PK inhibition via intact HR backup — providing a therapeutic window",
+      "Combination with PRRT (Lu-177 DOTATATE, alpha-particle RLT) in SDH-deficient PPGL: radiation-induced DSBs + HR impairment (BRCAness) + NHEJ inhibition (peposertib) = triple DSB repair failure",
+    ],
+    druggable: true,
+    display_order: 26,
+  },
+  {
+    name: "cGAS-STING Innate Immune Activation",
+    slug: "cgas-sting-innate-immune",
+    description:
+      "The BRCAness phenotype established in all SDH-deficient tumors (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) generates constitutive replication stress and chromosomal instability. Stalled, unrepaired replication forks lead to chromosomal mis-segregation during mitosis and formation of micronuclei — fragments of chromatin enclosed in abnormal nuclear membranes. Mackenzie et al. (Nature 2017, PMID 28738408) demonstrated that cGAS (cyclic GMP-AMP synthase; CGAS/MB21D1) localises to ruptured micronuclei and is activated by the exposed chromatin, producing 2′3′-cGAMP. This second messenger binds and activates STING (stimulator of interferon genes; STING1/TMEM173), which recruits TBK1 and activates IRF3 and NF-κB, driving IFN-β and type I interferon-stimulated gene (ISG) expression — an innate immune programme that can prime antitumor adaptive immunity. STING agonists bypass the cGAS sensing step entirely by directly binding and activating STING, amplifying this innate immune response in the SDH-deficient tumour microenvironment. Note: Liu et al. (Nature 2018, PMID 30356214) showed that a distinct nuclear pool of cGAS suppresses homologous recombination via PARP1 interaction; STING agonists act downstream of and independently from this nuclear cGAS pool.",
+    upstream_event:
+      "SDH loss → BRCAness (succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSBs → HR deficiency) → chromosomal mis-segregation → micronuclei formation → micronuclear envelope rupture → cytoplasmic chromatin exposure → cGAS activation → cGAMP → STING → TBK1 → IRF3/NF-κB → IFN-β / ISG expression",
+    downstream_effects: [
+      "Micronuclei formation from BRCAness-driven chromosomal instability in SDH-deficient cells",
+      "cGAS accumulation at ruptured micronuclei → 2′3′-cGAMP production (Mackenzie et al. Nature 2017, PMID 28738408)",
+      "STING-TBK1 complex activation → IRF3 phosphorylation → nuclear translocation",
+      "IFN-β and type I interferon-stimulated gene (ISG) transcription → innate immune priming",
+      "Potential enhancement of adaptive antitumor immunity in the tumour microenvironment",
+      "STING agonists (e.g. ulevostinag/MK-1454) amplify this response directly at STING, bypassing upstream cGAS sensing",
+    ],
+    druggable: true,
+    display_order: 27,
+  },
+  {
+    name: "HIF-Driven CXCR4/CXCL12 Chemokine Metastasis",
+    slug: "hif-cxcr4-chemokine-metastasis",
+    description:
+      "Constitutive HIF-1α stabilization in SDH-deficient pseudohypoxic tumors transcriptionally activates CXCR4, the chemokine receptor for the CXCL12/SDF-1 gradient — a mechanism first described in VHL-deficient RCC (same pseudohypoxic phenotype) by Staller et al. (Nature 2003, PMID 13679920). CXCR4 overexpression drives chemotactic migration toward CXCL12-rich microenvironments (bone marrow, lymph nodes, vascular niches), mediating metastatic homing and dissemination. This pathway is pharmacologically targetable by plerixafor (AMD3100/Mozobil), an FDA-approved CXCR4 antagonist already in clinical use for stem cell mobilization.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → HIF-1α stabilization → HRE-driven CXCR4 transcriptional upregulation → CXCL12 gradient-directed chemotaxis → metastatic dissemination to CXCL12-rich organ niches",
+    downstream_effects: [
+      "CXCR4 transcriptionally upregulated by HIF-1α via hypoxia-response elements (HREs) in its promoter — mechanism established in VHL-deficient RCC (Staller et al. Nature 2003, PMID 13679920)",
+      "CXCR4/CXCL12 axis drives chemotactic migration toward CXCL12-rich metastatic niches (bone marrow, lung parenchyma, lymph nodes)",
+      "CXCR4 signaling activates PI3K/AKT, MAPK/ERK, and JAK/STAT3 pathways to promote tumor cell survival and proliferation at metastatic sites",
+      "SDHB-deficient paraganglioma/pheochromocytoma has high metastatic potential (~30–70% for SDHB) — CXCR4 upregulation via pseudohypoxia may contribute to metastatic organotropism",
+      "Plerixafor (AMD3100) is a competitive CXCR4 antagonist that blocks CXCL12 binding and CXCR4-mediated chemotaxis, FDA-approved for stem cell mobilization (Mozobil)",
+    ],
+    druggable: true,
+    display_order: 28,
+  },
 ];

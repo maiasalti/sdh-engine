@@ -378,4 +378,49 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Serine/threonine kinase and primary effector of the ATR-mediated replication stress response. CHK1 is phosphorylated by ATR at Ser317/Ser345 in response to single-stranded DNA (ssDNA) coated by RPA, which accumulates at stalled replication forks. Activated CHK1 inactivates CDC25A (by phosphorylation → ubiquitin-mediated degradation) to suppress CDK2 activity and arrest S-phase progression, and inactivates CDC25C to prevent premature CDK1 activation and mitotic entry. CHK1 also stabilizes stalled replication forks by limiting new origin firing and promoting fork restart.\n\nIn SDH-deficient tumors, the BRCAness phenotype (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) — epigenetic HR deficiency driven by succinate-mediated KDM4A/KDM4B inhibition and H3K9me3 accumulation at DSB sites — generates constitutive replication stress from stalled forks that cannot be efficiently repaired by HR. This creates an acute CHK1 dependency: BRCAness-positive SDH-deficient cells must rely on CHK1 to tolerate ongoing replication stress, whereas HR-proficient SDH-intact cells have redundant fork protection mechanisms.\n\nSynthetic lethality rationale: CHK1 inhibition in BRCAness-positive cells causes (1) unscheduled origin firing (origin dormancy is CHK1-regulated), (2) replication catastrophe from collision of active forks with unresolved stalled forks, (3) ssDNA accumulation and RPA exhaustion, and (4) premature mitotic entry of cells with under-replicated DNA → mitotic catastrophe and cell death. This mechanism applies to all BRCAness-positive SDH-deficient tumors, distinct from ceralasertib (ATR inhibitor, Mechanism 13) which is further restricted to the ATRX-null/ALT subset. Prexasertib (LY2606368, Eli Lilly) is the clinical-stage CHK1/CHK2 inhibitor with Phase 2 data in HR-deficient solid tumors.",
   },
+  {
+    gene_symbol: "TERT",
+    name: "Telomerase reverse transcriptase",
+    uniprot_id: "O14746",
+    pathway_slug: "tert-telomerase-reactivation",
+    target_type: "direct",
+    description:
+      "The catalytic reverse transcriptase subunit of the telomerase holoenzyme (TERT/TERC complex). TERT adds telomeric TTAGGG repeats to chromosome ends using the RNA template component TERC, maintaining replicative capacity in stem cells, germ cells, and cancers. In somatic cells, TERT is silenced; TERT promoter hotspot mutations (C228T/c.-124C>T and C250T/c.-146C>T) create de novo ETS transcription factor binding sites that constitutively reactivate TERT expression, restoring telomerase activity in cancer cells. Batini et al. (Arch Endocrinol Metab 2026, PMID 42155081) identified TERT promoter C228T in 16.7% of SDHB-germline-positive metastatic PPGL — co-occurring exclusively with SDHB pathogenic variants — establishing TERT reactivation as a recurrent genomic alteration in the most malignant SDH-deficient tumor subset. TERT-promoter-mutant tumors depend on active telomerase (telomerase-dependent telomere maintenance), mechanistically distinct from ATRX-null/ALT tumors which use recombination-based, telomerase-independent telomere maintenance. Imetelstat (Rytelo; FDA-approved June 2024 for lower-risk MDS) is a 13-mer thio-phosphoramidate oligonucleotide that binds the TERT active site as a competitive RNA-template antagonist, directly inhibiting telomerase activity.",
+  },
+  {
+    gene_symbol: "SLC6A2",
+    name: "Solute carrier family 6 member 2 (Norepinephrine transporter, NET)",
+    uniprot_id: "P23975",
+    pathway_slug: "mibg-net-targeted-radiation",
+    target_type: "direct",
+    description:
+      "Norepinephrine transporter (NET), encoded by SLC6A2, is a 12-transmembrane Na⁺/Cl⁻-dependent monoamine transporter selectively expressed on sympathetic neurons and chromaffin-lineage cells including pheochromocytoma and paraganglioma. NET mediates norepinephrine reuptake and is the molecular basis for selective MIBG uptake: iobenguane (meta-iodobenzylguanidine) and its astatinated analog [²¹¹At]MABG are structural guanethidine analogs actively transported by NET into catecholamine-storing vesicles, delivering ionizing radiation preferentially to NET-expressing tumor cells. Panobinostat (HDAC inhibitor, already in this engine) upregulates SLC6A2 expression and MIBG uptake in PPGL cells at nanomolar concentrations (Martiniova et al., Endocr Relat Cancer 2011, PMID 21098082), providing a pharmacological handle to enhance MIBG delivery in tumors with low baseline NET expression.",
+  },
+  {
+    gene_symbol: "PRKDC",
+    name: "DNA-dependent protein kinase catalytic subunit (DNA-PKcs)",
+    uniprot_id: "P78527",
+    pathway_slug: "nhej-dnapk-backup-repair",
+    target_type: "synthetic_lethal",
+    description:
+      "Serine/threonine kinase and catalytic subunit of the DNA-PK holoenzyme (DNA-PKcs + Ku70/Ku80 heterodimer). DNA-PKcs is recruited to DNA double-strand break (DSB) ends by the Ku70/Ku80 ring, synapses the DSB ends to initiate the NHEJ repair complex, and phosphorylates multiple substrates including H2AX (γ-H2AX chromatin mark), ARTEMIS nuclease (activating it for 5'/3' overhang processing), and itself (autophosphorylation at Thr2609/Ser2056 regulates complex disassembly). DNA-PKcs coordinates XRCC4-DNA ligase IV-XLF ligation of processed DSB ends to complete NHEJ. In BRCAness-positive HR-deficient SDH-deficient tumors (where succinate-driven KDM4A/KDM4B inhibition constitutively impairs HR: Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005), DNA-PKcs-mediated NHEJ becomes the primary DSB repair mechanism. Inhibiting DNA-PKcs with peposertib (M3814) therefore creates synthetic lethality with the BRCAness phenotype — distinct from POLQ inhibition (targets alt-EJ/TMEJ backup) and CHK1 inhibition (targets replication checkpoint, not repair pathway itself).",
+  },
+  {
+    gene_symbol: "STING1",
+    name: "Stimulator of interferon genes protein (STING; TMEM173)",
+    uniprot_id: "Q86WV6",
+    pathway_slug: "cgas-sting-innate-immune",
+    target_type: "downstream",
+    description:
+      "ER-resident transmembrane adaptor protein (also known as TMEM173, MPYS, MITA, ERIS). STING binds cyclic dinucleotides including cGAMP (produced by cGAS upon cytoplasmic dsDNA sensing) and bacterial CDNs, then translocates to the Golgi where it recruits and activates TBK1. TBK1 phosphorylates IRF3, which dimerises and translocates to the nucleus to drive IFN-β and type I interferon-stimulated gene (ISG) transcription. STING also activates NF-κB for pro-inflammatory cytokine expression. In SDH-deficient tumors, the BRCAness phenotype generates chromosomal instability and micronuclei that activate cGAS → STING (Mackenzie et al. Nature 2017, PMID 28738408). Pharmacological STING agonists (ulevostinag/MK-1454; Merck) directly bind and activate STING, bypassing upstream cGAS and amplifying innate immune signaling in the tumour microenvironment. Clinical Phase I/II (NCT03010176) demonstrated dose-dependent STING target engagement (IP-10, IFNγ, IL-6 transient elevation) and manageable tolerability in advanced solid tumors (Harrington et al. Clin Cancer Res 2025, PMID 40499147).",
+  },
+  {
+    gene_symbol: "CXCR4",
+    name: "C-X-C chemokine receptor type 4",
+    uniprot_id: "P61073",
+    pathway_slug: "hif-cxcr4-chemokine-metastasis",
+    target_type: "downstream",
+    description:
+      "G protein-coupled receptor (GPCR) for the CXCL12 (SDF-1) chemokine ligand. CXCR4 expression is transcriptionally regulated by HIF-1α via hypoxia-response elements (HREs) in its promoter, establishing a direct link between pseudohypoxic HIF-1α stabilization and chemokine-directed metastatic behavior. The VHL/HIF→CXCR4 axis was defined by Staller et al. (Nature 2003, PMID 13679920) in VHL-deficient renal cell carcinoma — the same pseudohypoxic HIF-1α stabilization mechanism operative in SDH-deficient tumors. Upon CXCL12 binding, CXCR4 signals through Gαi, Gβγ, and β-arrestin pathways to activate PI3K/AKT, MAPK/ERK, and JAK/STAT3 — promoting chemotactic migration toward CXCL12-rich organ microenvironments (bone marrow stroma, lymph node cortex, lung parenchyma), survival signaling, and proliferation at metastatic sites.\n\nRelevance to SDH-deficient PPGL: SDHB-mutant paraganglioma/pheochromocytoma carries the highest metastatic risk among SDH-deficient tumor types (~30–70% of SDHB-mutant cases develop metastatic disease). Constitutive HIF-1α-driven CXCR4 overexpression (through the SDH→succinate→PHD→HIF-1α pseudohypoxia pathway) may contribute to the characteristic organotropism of metastatic SDHB PPGL toward bone, lymph nodes, and liver — each a CXCL12-rich microenvironment.\n\nDrug target: Plerixafor (AMD3100/Mozobil; Sanofi) is an FDA-approved bicyclam CXCR4 antagonist that competitively inhibits CXCL12 binding and downstream CXCR4 signaling, approved for hematopoietic stem cell mobilization (NCT00186966). Clinical-stage repositioning rationale: CXCR4 antagonism to disrupt CXCL12-driven metastatic chemotaxis in HIF-high, pseudohypoxic SDHB-deficient PPGL.",
+  },
 ];

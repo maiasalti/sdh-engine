@@ -352,9 +352,126 @@ Do et al. (Clin Cancer Res 2021, PMID 34131002) reported a Phase 1 combination t
 
 **Key limitation:** No published data directly test prexasertib or any CHK1 inhibitor in SDHA-null GIST cell lines, SDHB-deficient PPGL models, or SDH-deficient RCC. The BRCAness mechanism is rigorously established (Sulkowski PMID 30013182, 32494005), and CHK1 inhibitor selectivity for HR-deficient cells is validated in BRCA-mutant models (Do et al. PMID 34131002), but the combination — CHK1 inhibitor + SDH-specific BRCAness — has not been tested experimentally. Direct in vitro validation (dose-response curves in isogenic SDH-null vs SDH-intact lines, γ-H2AX and RPA foci as pharmacodynamic readouts, rescue by CDK1/2 inhibition) is the required next experimental step.
 
+### 29. NHEJ / DNA-PKcs Synthetic Lethality in BRCAness-Positive SDH-Deficient Tumors — Peposertib
+
+The BRCAness phenotype established by Sulkowski et al. (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) leaves SDH-deficient tumor cells dependent on a secondary DSB repair pathway. Where Mechanism 28 (prexasertib) disables the CHK1 replication-stress checkpoint, Mechanism 29 eliminates canonical NHEJ itself — the primary backup DSB repair route in HR-deficient cells.
+
+**Mechanistic chain from SDH loss to NHEJ dependency:**
+SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 persistence at DSB chromatin → impaired TIP60 acetyltransferase activity → impaired ATM kinase recruitment and activation at DSBs → defective homologous recombination (HR) repair = BRCAness. In HR-proficient cells, DSBs in S/G2 phase are preferentially routed to HR (higher fidelity); in G1 and throughout M, canonical NHEJ predominates. In BRCAness-positive HR-deficient cells, NHEJ becomes the primary (and often sole) mechanism for resolving all DSBs across the cell cycle — creating an acute dependency on the NHEJ kinase DNA-PKcs (PRKDC).
+
+**DNA-PK holoenzyme and DNA-PKcs function in NHEJ:**
+The DNA-PK holoenzyme is assembled when the Ku70/Ku80 ring heterodimer binds blunt or near-blunt DNA DSB ends and recruits DNA-PKcs. DNA-PKcs performs five essential NHEJ functions: (1) synapses the two DSB ends, holding them together for ligation; (2) phosphorylates histone H2AX at Ser139 (γ-H2AX), marking the DSB and recruiting additional repair factors; (3) autophosphorylates at Thr2609 and Ser2056, licensing conformational changes that allow end-processing enzymes access to DSB ends; (4) phosphorylates and activates ARTEMIS nuclease, which generates 3'/5' overhangs suitable for ligation; (5) coordinates recruitment of the ligation complex (XRCC4-DNA ligase IV-XLF), enabling gap-fill synthesis by Polμ/Polλ and final ligation. Peposertib (M3814) is an oral, ATP-competitive, selective DNA-PKcs inhibitor that blocks autophosphorylation at Thr2609, preventing complex disassembly and end-processing — effectively stalling NHEJ at the synapsis step with DNA-PKcs trapped at DSB ends as a dead-end complex.
+
+**Synthetic lethality rationale:**
+In BRCAness-positive SDH-deficient cells, peposertib removes the dominant DSB repair pathway. HR is constitutively impaired by the succinate-KDM4B-H3K9me3 mechanism; alt-EJ/TMEJ (Mechanism 18, POLQ inhibitor ART558) provides only a minor backup. Blocking all three pathways — HR by epigenetics, alt-EJ by POLQ inhibitor, and NHEJ by peposertib — would create comprehensive DSB repair failure. Even as a single agent, peposertib forces BRCAness-positive cells to survive with exclusively alt-EJ (error-prone, slow, and itself under-capacity at high DSB load) — a non-viable situation when DSBs accumulate from replication stress or exogenous radiation. HR-proficient SDH-intact cells retain full HR capacity and are substantially less sensitive to DNA-PKcs inhibition.
+
+**Mechanistic distinction from other BRCAness-targeted entries:**
+- Mechanism 14 (PARP inhibitors: olaparib, niraparib): PARP1 trapping at SSBs → SSBs collapse to DSBs at replication forks → those DSBs cannot be resolved by impaired HR → cell death. Acts on SSB→DSB conversion, not on DSB repair itself.
+- Mechanism 18 (POLQ inhibitor: ART558): blocks alt-EJ/TMEJ (PolQ-mediated end-joining), the error-prone backup repair pathway distinct from canonical NHEJ.
+- Mechanism 28 (CHK1 inhibitor: prexasertib): targets the ATR→CHK1 replication stress checkpoint effector, causing replication catastrophe — not a DSB repair pathway.
+- Mechanism 29 (peposertib): directly ablates canonical NHEJ by inhibiting DNA-PKcs — the only mechanism in this engine that targets a canonical DSB repair pathway rather than a checkpoint, a SSB repair enzyme, or an alternative backup pathway.
+
+**Compelling combination rationale: peposertib + PRRT in SDH-deficient PPGL:**
+SDH-deficient PPGL universally overexpresses SSTR2 (somatostatin receptor 2) — confirmed by DOTATATE-PET imaging — making them inherently eligible for Lutetium-177 DOTATATE (Lu-177 DOTATATE; Lutathera) peptide receptor radionuclide therapy (PRRT). PRRT delivers β-particle (and trace α-particle via Auger conversion) radiation directly to SSTR2-positive tumor cells, causing targeted DSBs within those cells. In SDH-deficient PPGL: (1) PRRT causes targeted DSBs; (2) BRCAness (Mechanism 14) impairs HR repair; (3) peposertib blocks NHEJ repair — creating triple DSB repair failure specifically in BRCAness-positive SSTR2-high SDH-deficient cells. This mechanistic convergence is directly reflected in NCT04750954 (NCI Phase 1b, open), which tests peposertib + Lu-177 DOTATATE in SSTR2+ GEP-NET patients — a population that substantially overlaps with SDH-deficient PPGL.
+
+**Clinical data anchor:**
+- NCT02516813 (Phase 1a/1b; peposertib + fractionated RT + cisplatin; advanced solid tumors; n=52; Merck KGaA/EMD Serono; completed): established peposertib safety profile and preliminary dosing in combination with radiation and a DNA-damaging agent — the clinical scenario of greatest relevance for the PPGL + PRRT rationale.
+- Zenke FT et al. (Mol Cancer Ther 2020, PMID 32265313): peposertib radiosensitizes human tumor xenografts; single-agent and combination activity demonstrated.
+- NCT04750954 (Phase 1b; peposertib + Lu-177 DOTATATE; SSTR2+ GEP-NETs; NCI; open): the closest existing trial to the SDH-deficient PPGL rationale.
+
+**Key limitation:** No published data test peposertib in any SDH-deficient cell line or xenograft. No SDH-genotype-stratified efficacy data exist from any peposertib trial. The synthetic lethality of DNA-PK inhibition with SDH-specific BRCAness requires direct experimental validation in isogenic SDHA-null/SDHB-KO cell lines (γ-H2AX foci accumulation, clonogenic survival, rescue by CDK1/2 inhibition as mechanistic controls). Evidence_score 28 (theoretical): well-anchored mechanistic chain from SDH loss through BRCAness to NHEJ dependency, with supporting peposertib clinical data in directly relevant contexts (radiation + DNA-PKcs inhibition; SSTR2+ NETs + DNA-PKcs inhibitor), but absent SDH-specific experimental or clinical data.
+
 | Druggable target | Gene | Drug | Stage | SDH-specific data |
 |---|---|---|---|---|
 | CHK1 kinase | CHEK1 | Prexasertib (LY2606368) | Phase 2 (HR-deficient solid tumors) | None; rationale via BRCAness PMID 30013182/32494005 |
+| NHEJ / DNA-PKcs | PRKDC | Peposertib (M3814) | Phase 1 (solid tumors + PRRT in SSTR2+ NETs) | None; rationale via BRCAness PMID 30013182/32494005; NCT04750954 |
+
+### 29. TERT Telomerase Reactivation in SDHB-Metastatic PPGL — Imetelstat
+
+TERT promoter hotspot mutations (C228T/c.-124C>T) are present in 16.7% of SDHB-germline-positive metastatic pheochromocytoma/paraganglioma (Batini et al., Arch Endocrinol Metab 2026, PMID 42155081). These mutations co-occur exclusively with SDHB pathogenic variants across the study cohort and are restricted to metastatic disease, identifying TERT promoter reactivation as a late genomic event in the most malignant subset of SDH-deficient PPGL.
+
+**TERT promoter mutation mechanism:**
+The C228T and C250T hotspot mutations in the TERT proximal promoter each create a de novo ETS (E-twenty-six) transcription factor binding motif (GGAA/TTCC) approximately 124 bp or 146 bp upstream of the ATG start site. ETS factors (including GABPA/GABPB1) bind these neo-sites and drive constitutive transcription of the otherwise epigenetically silenced TERT gene in somatic tumor cells. The result is active telomerase holoenzyme (TERT protein + TERC RNA template), which maintains telomere length in cancer cells that would otherwise undergo replicative senescence after a defined number of divisions.
+
+**Mechanistic distinction from ATRX-null/ALT (Mechanism 13):**
+In approximately 30–40% of metastatic SDHB-PPGL, ATRX co-mutations activate the Alternative Lengthening of Telomeres (ALT) pathway — a recombination-based, break-induced replication mechanism for telomere maintenance that operates independently of telomerase. ALT-positive cells are telomerase-negative and have constitutive telomeric replication stress (Mechanism 13). TERT-promoter-mutant tumors use the opposite strategy: constitutive telomerase enzyme activity for telomere maintenance, with no requirement for recombination-based ALT mechanisms. The two pathways are mutually exclusive mechanisms of telomere maintenance in cancer. This non-redundancy is therapeutically critical: imetelstat (telomerase inhibitor) would selectively suppress TERT-dependent tumors, while ceralasertib (ATR inhibitor, Mechanism 13) selectively suppresses ALT-dependent tumors. Together, these two directions cover complementary telomere-maintenance vulnerabilities in metastatic SDHB-PPGL.
+
+**Imetelstat pharmacology:**
+Imetelstat (GRN163L; Rytelo; Geron Corporation) is a 13-mer thio-phosphoramidate oligonucleotide with a palmitoyl lipid conjugate for cellular uptake. It binds the RNA template region (hTR/TERC) of the telomerase active site with high affinity and specificity, blocking TERT reverse transcriptase activity as a competitive template antagonist — directly preventing telomere repeat synthesis. FDA approved June 6, 2024, for transfusion-dependent anemia in low-to-intermediate-1-risk MDS (IMerge Phase 3 trial, NCT02598661). Imetelstat's established clinical safety profile (cytopenias, hepatotoxicity monitored by LFTs) is characterized in the MDS population; PPGL-specific tolerability data are absent.
+
+**Key limitation:** No published data test imetelstat or any telomerase inhibitor in any SDH-deficient tumor model. The TERT promoter mutation frequency data (PMID 42155081) and imetelstat mechanism of action (NCT02598661) are each well-established, but the combination — imetelstat in TERT-promoter-mutant SDH-deficient PPGL — is entirely untested. Required next experimental steps: confirm TERT protein expression and telomerase activity in TERT-promoter-mutant SDHB-PPGL patient samples; test imetelstat dose-response in isogenic TERT-promoter-mutant versus wild-type PPGL cell lines (e.g., MTT, clonogenic assay after 3–6 population doublings to allow telomere shortening); measure telomere length kinetics (TRF or TRAP assay) as pharmacodynamic readout.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| TERT reverse transcriptase | TERT | Imetelstat (Rytelo) | FDA-approved (MDS; June 2024) | None; rationale via TERT-C228T in 16.7% metastatic SDHB-PPGL (PMID 42155081) |
+
+### 29. NET-Targeted Radionuclide Therapy in SDH-Deficient PPGL — Iobenguane I-131 (Azedra) / [²¹¹At]MABG
+
+SDH-deficient pheochromocytoma and paraganglioma (PPGL) arise from catecholamine-producing chromaffin-lineage cells of the sympathoadrenal system that selectively express the norepinephrine transporter (NET, SLC6A2) as part of their neuroendocrine differentiation program. NET-mediated tumor-selective uptake of radiolabeled guanethidine analogs (MIBG: meta-iodo/astatobenzylguanidine) delivers ionizing radiation directly to tumor cells. In BRCAness-positive SDH-deficient PPGL, this NET-based selectivity is augmented by an SDH-specific vulnerability arising from the established HR repair deficiency.
+
+**Norepinephrine transporter (NET/SLC6A2) as the tumor-selective delivery vector:**
+SLC6A2 encodes NET, a Na⁺/Cl⁻-dependent monoamine transporter expressed on sympathetic neurons and chromaffin-lineage cells. NET actively transports MIBG structural analogs (guanethidine derivatives) into catecholamine-storing vesicles via the norepinephrine reuptake mechanism. This creates first-order tumor selectivity: tumor cells expressing NET accumulate intracellular radionuclide at concentrations far exceeding systemic exposure, while tissues without NET expression receive minimal radiation dose. Pre-treatment diagnostic ¹²³I-MIBG scintigraphy identifies MIBG-avid tumors eligible for radionuclide therapy.
+
+**BRCAness — the SDH-specific radiation sensitization layer:**
+The established BRCAness phenotype of SDH-deficient cells (Mechanism 14; Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) creates an SDH-specific amplification of MIBG cytotoxicity beyond NET-mediated selectivity. SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 hypermethylation at DNA DSB sites → impaired TIP60 acetyltransferase activity → impaired ATM kinase activation → HR deficiency. HR-deficient SDH-deficient tumor cells cannot efficiently repair radiation-induced DSBs via HR, potentially amplifying cytotoxicity relative to NET-expressing SDH-intact normal chromaffin cells that retain functional HR. This SDH-specific radiosensitization is particularly relevant for high-LET alpha-particle radiation, which creates complex clustered lesions that specifically require HR for faithful resolution.
+
+**¹³¹I-MIBG (Azedra) — beta-particle FDA-approved modality:**
+Iobenguane I-131 (Azedra) was FDA-approved in July 2018 for iobenguane-avid, locally advanced or metastatic pheochromocytoma or paraganglioma — the first radiopharmaceutical approved specifically for PPGL. The MACS0010 Phase 2 registration study established ORR ~25% and CBR ~92% in heavily pre-treated patients, with acceptable hematologic toxicity. ¹³¹I emits beta particles (β⁻; Emax 606 keV; mean path length ~2mm) that irradiate tumor cells and neighboring cells via a crossfire effect. SDH-deficient PPGL — particularly SDHB-mutant and SDHD-mutant tumors — constitute a major clinically relevant fraction of the iobenguane-avid PPGL population qualifying for Azedra.
+
+**[²¹¹At]MABG — alpha-particle high-LET modality with BRCAness synergy:**
+[²¹¹At]MABG substitutes astatine-211 for iodine in the MIBG scaffold, preserving NET-mediated uptake while delivering alpha particles (⁴He²⁺; LET ~80 keV/μm; path length 50–80 μm ≈ single-cell diameter). Alpha particles create complex clustered DNA lesions — multiple DSBs and base oxidations within a 10–20 base-pair window — that are specifically dependent on HR for faithful repair. In BRCAness-positive SDH-deficient PPGL, the inability to perform HR renders these complex lesions especially cytotoxic: [²¹¹At]MABG-induced complex DSBs cannot be accurately resolved, driving cell death selectively in the HR-deficient tumor while NET-expressing SDH-intact cells (with functional HR) can resolve the same lesions. This constitutes the BRCAness × high-LET synthetic vulnerability that does not apply to ¹³¹I-MIBG's simpler beta-particle DSBs to the same degree. Physical advantages: shorter path length reduces collateral irradiation of adjacent normal tissues; shorter At-211 half-life (7.2h vs. I-131's 8d) reduces radiation isolation requirements. Okamoto et al. (Clin Cancer Res 2026, PMID 42490294) reported the Phase 1 first-in-human study in 10 MIBG-avid PCC/PGL patients: 2.1 MBq/kg single dose; no DLTs; 1 confirmed PR and 7 SD, establishing clinical feasibility.
+
+**Panobinostat combination — NET upregulation to enhance delivery:**
+Martiniova et al. (Endocr Relat Cancer 2011, PMID 21098082) demonstrated panobinostat (pan-HDAC inhibitor, Mechanism 5) upregulates NET/SLC6A2 expression and significantly increases MIBG uptake in PPGL cells at nanomolar concentrations, providing a rationale for panobinostat pre-treatment to amplify both Azedra and [²¹¹At]MABG delivery to NET-low PPGL lesions.
+
+**Mechanistic distinction from ¹⁷⁷Lu-DOTATATE (Mechanism 19):**
+¹⁷⁷Lu-DOTATATE (Lutathera, Mechanism 19) targets somatostatin receptor 2 (SSTR2) and delivers beta-particle radiation with SSTR2-selectivity. MIBG-based therapies target NET (SLC6A2), a monoamine reuptake transporter. SSTR2 and NET expression are not perfectly correlated in PPGL; some patients are MIBG-avid but DOTATATE-negative or vice versa. Additionally, [²¹¹At]MABG delivers high-LET alpha particles versus ¹⁷⁷Lu-DOTATATE's low-LET beta particles, making the two platforms complementary in tumor eligibility criteria, radiation biology, and BRCAness exploitation potential.
+
+**Key limitation:** Azedra's MACS0010 trial did not stratify outcomes by SDH genotype; [²¹¹At]MABG Phase 1 enrolled MIBG-avid PCC/PGL without SDH stratification. The BRCAness × radiation sensitization hypothesis — particularly the high-LET/alpha-particle component — has not been tested in SDH-deficient preclinical models or SDH-stratified patient cohorts. Applicability is strictly to MIBG-avid PPGL — does not apply to SDH-deficient GIST (mesenchymal, no NET expression) or SDH-deficient RCC.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Norepinephrine transporter (NET) | SLC6A2 | Iobenguane I-131 (Azedra) | FDA-approved (PPGL) | No SDH-stratified outcomes; SDH-deficient tumors are a major iobenguane-avid subgroup |
+| Norepinephrine transporter (NET) | SLC6A2 | [²¹¹At]MABG | Phase 1 (PMID 42490294) | No SDH-stratified data; BRCAness × high-LET synergy is hypothesis |
+
+## Mechanism 29: cGAS-STING Innate Immune Activation
+
+The BRCAness phenotype in SDH-deficient tumors (Sulkowski et al. Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) produces constitutive replication stress and accumulating DNA damage. When HR-deficient SDH-deficient cells undergo mitosis with unrepaired DSBs, chromosomal mis-segregation creates micronuclei — chromosomal fragments enclosed in ruptured nuclear membranes outside the main nucleus. Mackenzie et al. (Nature 2017, PMID 28738408) demonstrated that rupture of the micronuclear envelope exposes chromatin to the cytoplasm, where cGAS (cyclic GMP-AMP synthase; CGAS/MB21D1) rapidly accumulates and is activated by the exposed double-stranded DNA, producing 2′3′-cGAMP. This second messenger binds and activates STING (stimulator of interferon genes; STING1/TMEM173), triggering TBK1 → IRF3 signaling and IFN-β / ISG transcription — innate immune priming that can enhance antitumor adaptive immunity.
+
+**Mechanistic chain from SDH loss to STING activation:**
+SDH loss → succinate accumulation → inhibition of KDM4A/KDM4B (α-KG-dependent H3K9me3 demethylases) → H3K9me3 persistence at DSBs → impaired TIP60/ATM → HR deficiency (BRCAness). Unrepaired DSBs in BRCAness-positive cells are not faithfully resolved during S phase; when such cells enter mitosis, lagging chromosomes and acentric fragments become encapsulated in micronuclei. The inherently fragile micronuclear envelope ruptures spontaneously (linked to chromothripsis), exposing chromatin to cytoplasmic cGAS → cGAMP → STING → TBK1 → IRF3 → IFN-β.
+
+**STING agonists as pharmacological amplifiers:**
+STING agonists (cyclic dinucleotide analogues such as ulevostinag/MK-1454) directly bind and activate STING, bypassing the upstream cGAS sensing step entirely. This is conceptually analogous to PARP inhibitors bypassing the upstream BRCAness defect to exploit the downstream repair vulnerability — STING agonists bypass cGAS sensing to exploit the downstream innate immune activation potential that BRCAness-driven chromosomal instability creates.
+
+**Mechanistic caveat — nuclear cGAS:**
+Liu et al. (Nature 2018, PMID 30356214) identified a distinct nuclear pool of cGAS that, following importin-α-mediated nuclear translocation, is phosphorylated at Tyr215 by BLK kinase and interacts with PARP1 via poly(ADP-ribose), impairing the PARP1-Timeless complex and suppressing HR — a pro-tumorigenic function (cGAS knockdown inhibits tumor growth in that model). This nuclear cGAS pool is mechanistically separate from the cytoplasmic/micronuclear cGAS that activates STING; STING agonists act directly at STING and are entirely independent of nuclear cGAS biology.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| STING (innate immune adaptor) | STING1/TMEM173 | Ulevostinag (MK-1454) | Phase I/II (NCT03010176; advanced solid tumors) | None; rationale via BRCAness → chromosomal instability → cGAS-STING (PMID 30013182, 32494005, 28738408) |
+
+### 29. HIF-Driven CXCR4/CXCL12 Chemokine Metastasis in SDH-Deficient Pseudohypoxic Tumors — Plerixafor
+
+Constitutive HIF-1α stabilization in SDH-deficient tumors (Mechanism 2) transcriptionally activates CXCR4, the G protein-coupled receptor for the CXCL12/SDF-1 chemokine — creating a HIF-driven metastatic dissemination axis that is pharmacologically targetable by plerixafor (AMD3100/Mozobil).
+
+**Mechanistic chain — SDH loss → pseudohypoxia → CXCR4 → metastasis:**
+SDH loss → succinate accumulation → PHD enzyme inhibition → HIF-1α stabilization → transcriptional activation of CXCR4 via hypoxia-response elements (HREs) in the CXCR4 promoter → CXCR4 overexpression on tumor cell surfaces → chemotactic migration along CXCL12/SDF-1 gradients secreted by bone marrow stroma, lymph nodes, liver sinusoids, and lung parenchyma → metastatic homing and dissemination.
+
+**Literature anchor — VHL/HIF→CXCR4 in RCC (PMID 13679920):**
+Staller et al. (Nature 2003, PMID 13679920) demonstrated in VHL-deficient renal cell carcinoma that HIF-1α directly transcriptionally activates CXCR4, with VHL restoration suppressing CXCR4 expression and reducing CXCL12-directed chemotaxis. VHL-deficient RCC and SDH-deficient tumors share an identical pseudohypoxic HIF-1α mechanism — VHL loss prevents HIF-1α hydroxylation and degradation; SDH loss (via succinate-mediated PHD inhibition) achieves the same end. The VHL/HIF→CXCR4 axis therefore constitutes a direct mechanistic extrapolation to SDH-deficient tumors with the same constitutive HIF-1α activation.
+
+**Relevance to SDHB-deficient PPGL — the highest-metastasis SDH tumor type:**
+SDHB-mutant paraganglioma/pheochromocytoma carries metastatic risk of 30–70% — the highest of all SDH-deficient tumor types. The constitutive HIF-1α-driven CXCR4 upregulation operative in all SDH-deficient pseudohypoxic tumors may specifically contribute to the metastatic organotropism of SDHB-deficient PPGL toward CXCL12-rich niches: bone marrow, liver, and lung — exactly the documented metastatic sites in this disease. CXCR4 signaling at metastatic sites activates PI3K/AKT, MAPK/ERK, and JAK/STAT3 to sustain disseminated tumor cell survival.
+
+**Plerixafor pharmacology:**
+Plerixafor (AMD3100/Mozobil; Sanofi) is an FDA-approved, small-molecule bicyclam CXCR4 antagonist that competitively blocks CXCL12 binding, disrupting CXCR4-mediated Gαi signaling and abolishing CXCL12-directed chemotaxis. Approved for hematopoietic stem cell mobilization in NHL and multiple myeloma (2008). The anti-metastatic repositioning rationale: CXCR4 blockade could disrupt CXCL12-driven metastatic seeding and potentially mobilize tumor cells out of protective stromal niches in which CXCL12-CXCR4 signaling sustains minimal residual disease.
+
+**Key limitation:** No published experimental data test plerixafor or any CXCR4 antagonist in SDH-deficient cell lines, animal models, or patient cohorts. The mechanism is a logical extrapolation from VHL/HIF→CXCR4 biology (PMID 13679920), without SDH-specific experimental validation. Evidence_score 20 (theoretical, lower range).
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CXCR4 chemokine receptor | CXCR4 | Plerixafor (AMD3100/Mozobil) | FDA-approved (stem cell mobilization) | None; rationale via VHL/HIF→CXCR4 PMID 13679920 |
 
 ## Mechanism 29: Y-90 SIRT BRCAness × Radiation Synthetic Lethality in SDH-Deficient GIST Liver Metastases
 
