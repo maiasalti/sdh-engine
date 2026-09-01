@@ -741,3 +741,15 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 **Files changed:** `src/data/papers.ts` (PMID 42650014 SIRT paper added), `src/data/seed/pathways.ts` (hsp90-hif-client-chaperone, display_order 24), `src/data/seed/targets.ts` (HSP90AA1 direct target new entry), `src/data/seed/drugs.ts` (ganetespib new entry, evidence_score 28, tumor_type_applicability ["all"], NCT01039519), `src/data/seed/sdh-biology.ts` (Mechanism 29 added), `src/lib/scoring/constants.ts` (hsp90-hif-client-chaperone color entry), `tracker.md` (2 rows added), `MORNING_LOG.md` (this entry).
 **PR:** [Morning] Add ganetespib (HSP90 inhibitor) — constitutive HIF pseudohypoxic proteome destabilization + SIRT paper
+
+
+---
+
+## 2026-08-31
+
+**Direction:** data-quality
+**Angle:** Y-90 SIRT mechanism number correction (sdh-biology.ts 29→38) + drugs.ts null-consistency fix
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 1 (PMID 42481355)
+**Summary:** Exhaustive 10-query PubMed scan (2026-05-01 to 2026-08-31) across SDH-deficient GIST, PPGL, RCC, pseudohypoxia, BRCAness, FGFR, SSTR, and immune angles returned only PMIDs already in tracker.md. One newly seen paper logged and rejected: PMID 42481355 (Toledo et al., Trends Endocrinol Metab, 2026-07-21) — viewpoint calling for biomarker stratification data in belzutifan-treated PPGL; no new mechanistic or clinical treatment data, and belzutifan is already in the engine as established with FDA-approved PPGL indication. For Part B: fixed two data quality issues introduced by the 2026-08-30 run. (1) Y-90 SIRT was labeled "### 29." in sdh-biology.ts — inserted between Mechanisms 34 and 35, creating an out-of-sequence header (file order was 33→34→29→35→36→37). Corrected to "### 38." so mechanism numbers follow physical file order. (2) The Y-90 SIRT drugs.ts entry used empty strings (`chembl_id: ""`, `pubchem_cid: ""`) instead of `null`, inconsistent with every other entry that lacks ChEMBL/PubChem IDs. Corrected to `null`.
+**PR:** morning/2026-08-31-y90-data-quality-fix
