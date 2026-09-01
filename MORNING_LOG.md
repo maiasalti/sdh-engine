@@ -753,3 +753,15 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 **Papers rejected (logged to tracker.md):** 1 (PMID 42481355)
 **Summary:** Exhaustive 10-query PubMed scan (2026-05-01 to 2026-08-31) across SDH-deficient GIST, PPGL, RCC, pseudohypoxia, BRCAness, FGFR, SSTR, and immune angles returned only PMIDs already in tracker.md. One newly seen paper logged and rejected: PMID 42481355 (Toledo et al., Trends Endocrinol Metab, 2026-07-21) — viewpoint calling for biomarker stratification data in belzutifan-treated PPGL; no new mechanistic or clinical treatment data, and belzutifan is already in the engine as established with FDA-approved PPGL indication. For Part B: fixed two data quality issues introduced by the 2026-08-30 run. (1) Y-90 SIRT was labeled "### 29." in sdh-biology.ts — inserted between Mechanisms 34 and 35, creating an out-of-sequence header (file order was 33→34→29→35→36→37). Corrected to "### 38." so mechanism numbers follow physical file order. (2) The Y-90 SIRT drugs.ts entry used empty strings (`chembl_id: ""`, `pubchem_cid: ""`) instead of `null`, inconsistent with every other entry that lacks ChEMBL/PubChem IDs. Corrected to `null`.
 **PR:** morning/2026-08-31-y90-data-quality-fix
+
+
+---
+
+## 2026-09-01
+
+**Direction:** data-quality
+**Angle:** Olaparib status correction — upgrade from "preclinical" to "clinical_trial" and add NCT06607692 (LuPARPed: 177Lu-DOTATATE + olaparib in PPGL)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 5 (PMIDs 42544736, 42416402, 42452875, 42281449, 42244475)
+**Summary:** 8-query PubMed scan (2026-06-01 to 2026-09-01) across SDH-deficient GIST, PPGL, RCC, pseudohypoxia/CIMP, BRCAness/PARP, WT-GIST, and immune angles returned 5 new PMIDs not yet in tracker.md. All rejected: two GIST-related reviews/series with no SDH-specific treatment advance (42544736, 42416402), one SDH-deficient RCC morphology case report (42452875), one surgical pathology review (42281449), and one WT-GIST NGS retrospective (42244475). No qualifying papers added. For Part B: the olaparib entry in drugs.ts incorrectly classified the drug as "preclinical" (clinical_trial_ids: []) despite the LuPARPed trial (NCT06607692) — 177Lu-DOTATATE + olaparib in PPGL — actively enrolling. NCT06607692 has been in the 177Lu-DOTATATE entry since 2026-08-03 but was never cross-referenced in the olaparib entry. This is a factual misclassification: any clinician or patient reading the engine would see olaparib as a preclinical-only candidate, unaware of an active clinical trial in PPGL. Corrected by: (1) adding NCT06607692 to olaparib clinical_trial_ids, (2) upgrading status from "preclinical" to "clinical_trial", (3) raising evidence_score 58→62 to reflect clinical trial stage in an SDH-relevant tumor type, (4) updating mechanism_of_action to describe the LuPARPed trial rationale (BRCAness + PRRT-induced DSBs). No new drug directions cleared the hard relevance gate today; the exhaustive search returned nothing mechanistically novel or SDH-specific in the scan window.
+**PR:** [Morning] Correct olaparib classification to clinical_trial, add NCT06607692 (LuPARPed)
