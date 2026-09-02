@@ -283,4 +283,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42650014",
     date: "2026-08",
   },
+  {
+    title:
+      "Comprehensive Genomic Analysis in Hereditary Adrenal and Extra-Adrenal Paragangliomas.",
+    authors: "Purnaghshband H, Tuzlali E, Deka KB, et al.",
+    journal: "Endocr Pathol",
+    year: 2026,
+    doi: "10.1007/s12022-026-09930-2",
+    topic: "Genetics & Syndromes",
+    description:
+      "In 110 consecutive PPGL patients at a single centre (2011–2023), a tiered diagnostic strategy — germline panel + SDHB IHC first, then whole-genome sequencing (WGS) for uninformative panel cases, then optical genome mapping (OGM) for structurally complex variants — resolved 85.7% (6/7) of uninformative panel cases in SDH-deficient tumours via WGS, with OGM resolving one SDHA inverted tandem duplication that WGS alone could not fully characterise. Clinically relevant for SDHA-deficient disease: OGM is the only current method to resolve complex SDHA structural rearrangements when standard sequencing panels and WGS leave diagnoses unsolved.",
+    pmid: "42635851",
+    date: "2026-08",
+  },
 ];

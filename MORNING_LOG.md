@@ -753,3 +753,46 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 **Papers rejected (logged to tracker.md):** 1 (PMID 42481355)
 **Summary:** Exhaustive 10-query PubMed scan (2026-05-01 to 2026-08-31) across SDH-deficient GIST, PPGL, RCC, pseudohypoxia, BRCAness, FGFR, SSTR, and immune angles returned only PMIDs already in tracker.md. One newly seen paper logged and rejected: PMID 42481355 (Toledo et al., Trends Endocrinol Metab, 2026-07-21) — viewpoint calling for biomarker stratification data in belzutifan-treated PPGL; no new mechanistic or clinical treatment data, and belzutifan is already in the engine as established with FDA-approved PPGL indication. For Part B: fixed two data quality issues introduced by the 2026-08-30 run. (1) Y-90 SIRT was labeled "### 29." in sdh-biology.ts — inserted between Mechanisms 34 and 35, creating an out-of-sequence header (file order was 33→34→29→35→36→37). Corrected to "### 38." so mechanism numbers follow physical file order. (2) The Y-90 SIRT drugs.ts entry used empty strings (`chembl_id: ""`, `pubchem_cid: ""`) instead of `null`, inconsistent with every other entry that lacks ChEMBL/PubChem IDs. Corrected to `null`.
 **PR:** morning/2026-08-31-y90-data-quality-fix
+
+---
+
+## 2026-09-02 — Papers-only run (genomic diagnostics in hereditary PPGL)
+
+**Direction:** papers-only
+**Angle:** Add 1 paper (comprehensive genomic analysis of hereditary PPGL — WGS + OGM tiered diagnostic approach); no new drug direction cleared the bar
+
+**Papers added:** 1 — PMID 42635851 (Purnaghshband H et al., Endocr Pathol 2026-08-24, DOI: 10.1007/s12022-026-09930-2)
+- "Comprehensive Genomic Analysis in Hereditary Adrenal and Extra-Adrenal Paragangliomas"
+- 110-case PPGL cohort (University Health Network Toronto, 2011–2023); germline panel + WGS + OGM
+- WGS resolved 85.7% (6/7) of uninformative targeted panel cases in SDH-deficient tumours
+- OGM resolved one SDHA inverted tandem duplication that WGS alone could not characterise
+- VUS reclassification rates lower in non-European patients (28.6% vs 40.0%) — equity data
+- Incidental P/LP variants in TSC1 and PALB2 identified by WGS beyond targeted PPGL panel
+- Topic: Genetics & Syndromes; directly relevant to SDHA-deficient disease and complex structural variant workup
+
+**Papers rejected (logged to tracker.md):** 2
+- PMID 42621358 (Khatun MM et al., Health Sci Rep 2026-08-19): broad oncometabolite narrative review (2-HG, fumarate, succinate); not SDH-specific; no new mechanism or treatment advance
+- PMID 41904096 (Moradi A et al., Urol Oncol 2026-03-27): broad non-ccRCC subtype review; SDH-deficient RCC is one of 7–8 molecularly defined entities discussed; outside 3-month window (March 2026); no SDH-specific advance
+
+**Additional queries returning only known PMIDs:** SDH-deficient GIST 2026 (already in tracker); PPGL/SDHB treatment 2026 (already in tracker); SDH-deficient RCC 2026 (42281449, 41284030, 40827068, 41904096, 41711310 — all previously tracked or evaluated today); SDH pituitary 2026 (0 results); SDHB synthetic lethality 2026 (0 results).
+
+**Part B — No new drug direction added:**
+
+All 38 mechanisms and 50 drugs in the engine cover the full established spectrum of SDH-deficient biology. After reviewing all prior directions (MORNING_LOG entries 2026-06-23 through 2026-08-31):
+- MTHFD2/one-carbon: ruled out since 2026-07 (no SDH-specific data, no clinical-stage inhibitors)
+- Complex I (IACS-010759): definitively ruled out (Sokolov PMID 42239110)
+- WEE1/adavosertib: ruled out (opposite selectivity — kills HR-proficient cells)
+- All other major SDH-biology angles exhausted across prior 41 runs
+
+No direction identified today clears the hard relevance gate + novelty gate simultaneously without SDH-specific preclinical or clinical data to anchor it.
+
+**Candidate directions for owner review (not yet ruled out, but no data cleared the bar today):**
+
+1. **ACLY inhibitor (bempedoic acid / ETC-1002):** SDH-deficient cells use reductive carboxylation (glutamine → α-KG → isocitrate → citrate via reverse IDH2) as their primary lipid synthesis route; ACLY cleaves that citrate to oxaloacetate + acetyl-CoA for lipid synthesis and histone acetylation. Bempedoic acid is FDA-approved (hypercholesterolaemia; ETC-1002, Nexletol). A direct attack on the reductive carboxylation output node — distinct from GLS/telaglenastat (upstream glutamine entry point already in engine). No SDH-specific preclinical data published. Would be rated theoretical (~20–22).
+
+2. **Ferroptosis (GPX4 inhibitor or SLC7A11/xCT inhibitor):** SDH loss → mitochondrial ROS elevation via reverse electron transport + NADH/FADH2 imbalance → potential GSH/GPX4 vulnerability. Erastin (xCT/SLC7A11) and RSL3 (direct GPX4 inhibitor) are preclinical probes; no clinical-stage ferroptosis inducer is approved. The mechanistic link (SDH loss → ferroptosis vulnerability) has not been directly demonstrated in SDH-null cell lines; only generic cancer-cell data exist. Evidence_score would be ~18–20 (theoretical, one inferential hop removed from a demonstrated SDH-specific mechanism).
+
+3. **LDH-A inhibitor (GNE-140):** SDH-deficient cells are pseudo-hypoxic; HIF-1α drives LDHA transcription and Warburg glycolysis; LDHA inhibition would impair lactate production and NAD+ regeneration in glycolysis-dependent SDH-deficient cells. GNE-140 (Genentech) Phase 1 development was paused. No SDH-specific data. Rationale is an extension of the HIF-pseudohypoxia axis (Mechanism 1) but at a downstream metabolic node not currently targeted. Evidence_score would be ~20–24 (theoretical).
+
+**Files changed:** `src/data/papers.ts` (PMID 42635851 added), `tracker.md` (3 new rows: 42635851 added, 42621358 rejected, 41904096 rejected), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add hereditary PPGL genomics paper (WGS+OGM tiered diagnostics) — papers-only run
