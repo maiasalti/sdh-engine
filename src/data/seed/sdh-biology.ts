@@ -14,10 +14,10 @@ Loss-of-function mutations in any SDH subunit gene (SDHA, SDHB, SDHC, SDHD) or a
 - **Gastrointestinal stromal tumors (GIST)** — ~5-7.5% of all GISTs are SDH-deficient, predominantly in young patients. Unlike KIT/PDGFRA-mutant GIST, SDH-deficient GIST is resistant to imatinib.
 - **Paragangliomas (PGL)** — Extra-adrenal neuroendocrine tumors, especially associated with SDHB mutations.
 - **Pheochromocytomas (PCC)** — Adrenal medullary tumors, associated with SDHB and SDHD mutations.
-- **Renal cell carcinoma (RCC)** — SDH-deficient RCC is a distinct WHO-recognized subtype.
+- **Renal cell carcinoma (RCC)** — SDH-deficient RCC is a distinct WHO-recognized subtype. SDHA-deficient RCC is the most recently characterized entity within this group: it shows papillary and nested architecture, higher histologic grade, and increased metastatic potential compared with SDHB/C/D-deficient RCC. A critical diagnostic pitfall: SDHA IHC may return false-negative results despite confirmed SDHA mutation, because residual SDHA protein from the non-mutated allele can retain detectable staining. SDHB IHC loss is therefore the recommended first-line screen; when SDHB IHC is lost but SDHA IHC appears retained, NGS is recommended to exclude SDHA mutation before assuming a non-SDHA driver (Kandukuri et al., Am J Surg Pathol 2026, PMID 42687764).
 - **Pituitary adenomas** — Rare, associated with SDHA and SDHB mutations.
 
-SDH-deficient tumors are collectively known as the SDH-deficient tumor syndrome. They are characterized by loss of SDHB immunohistochemistry staining and a distinct hypermethylation phenotype.
+SDH-deficient tumors are collectively known as the SDH-deficient tumor syndrome. They are characterized by loss of SDHB immunohistochemistry staining and a distinct hypermethylation phenotype. Note: SDHB IHC is the recommended universal first-line screen across all SDH-deficient tumor types, as SDHB protein loss occurs downstream of any SDH subunit loss — including SDHA loss, which may paradoxically yield retained SDHA IHC in some cases.
 
 ## Molecular Consequences of SDH Loss
 
