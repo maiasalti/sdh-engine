@@ -283,4 +283,43 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42650014",
     date: "2026-08",
   },
+  {
+    title:
+      "Expanding the Morphologic, Clinical, and Molecular Spectrum of Succinate Dehydrogenase A (SDHA)-Deficient Renal Cell Carcinoma: A Case Series With Review of Literature",
+    authors: "Kandukuri S, et al.",
+    journal: "Am J Surg Pathol",
+    year: 2026,
+    doi: "10.1097/PAS.0000000000002611",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Five-patient multi-institutional case series of SDHA-deficient RCC documenting a morphologically distinct and clinically aggressive entity: papillary and nested architecture, higher histologic grade, and increased metastatic potential compared with other SDH-deficient RCC subtypes. A critical diagnostic pitfall is identified — SDHA IHC may yield false-negative results despite confirmed SDHA mutation, because residual protein from the intact allele can retain staining. SDHB IHC loss is the more reliable first-line screen; NGS is recommended whenever SDHB staining is lost regardless of SDHA IHC appearance.",
+    pmid: "42687764",
+    date: "2026-09",
+  },
+  {
+    title:
+      "Comprehensive Genomic Analysis in Hereditary Adrenal and Extra-Adrenal Paragangliomas",
+    authors: "Purnaghshband H, Kim RH, et al.",
+    journal: "Endocr Pathol",
+    year: 2026,
+    doi: "10.1007/s12022-026-09930-2",
+    topic: "Genetics & Syndromes",
+    description:
+      "Toronto cohort study (n=110) comparing targeted gene panel sequencing versus whole-genome sequencing (WGS) in hereditary PPGL: WGS detected pathogenic/likely pathogenic variants in 85.7% of SDHB IHC-negative cases that were uninformative on targeted panels, including a complex SDHA inverted tandem duplication resolved only by optical genome mapping (OGM). Supports a tiered diagnostic approach — WGS as the essential second-line investigation when targeted panels are negative in SDHB IHC-negative tumors.",
+    pmid: "42635851",
+    date: "2026-08",
+  },
+  {
+    title:
+      "Succinate dehydrogenase germline mutation carriers: before tumours develop",
+    authors: "Lim ES, Bayley JP, Gimenez-Roqueplo AP, Clifton-Bligh RJ, Richter S.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0282",
+    topic: "Review / Overview",
+    description:
+      "Review of SDHx germline pathogenic variant carrier biology in the pre-tumor haploinsufficient state, consolidating genotype-phenotype penetrance differences, environmental and epigenetic factors that may push succinate and ROS above tumorigenic thresholds, and the biology of non-tumor tissues in healthy SDHx carriers — providing mechanistic context for surveillance strategies and the molecular triggers of tumor initiation.",
+    pmid: "42626917",
+    date: "2026-08",
+  },
 ];
