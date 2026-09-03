@@ -179,7 +179,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     pubchem_cid: "23725625",
     drug_class: "PARP inhibitor (PARP1/2)",
     mechanism_of_action:
-      "Selective PARP1/2 inhibitor that traps PARP at unrepaired single-strand breaks, converting them to cytotoxic double-strand breaks at replication forks. The mechanistic rationale in SDH-deficient tumors is a confirmed 'BRCAness' phenotype: succinate competitively inhibits the α-KG-dependent histone demethylases KDM4A and KDM4B, causing aberrant H3K9me3 hypermethylation at DNA double-strand break sites. This blocks TIP60 acetyltransferase and ATM kinase recruitment, impairing DNA end-resection and homologous recombination (HR) — despite wild-type BRCA1/2 (Sulkowski et al., Nature 2020, PMID: 32494005). Sulkowski et al. (Nat Genet 2018, PMID: 30013182) directly demonstrated HR deficiency and olaparib hypersensitivity in patient-derived FH-deficient and SDH-deficient hereditary paraganglioma/PPGL cells, establishing PARP inhibition as a mechanistically grounded synthetic lethality — not merely a ROS-amplification strategy. Multiple clinical trials are exploring PARP inhibitors in non-BRCA hereditary cancer syndromes based on this rationale. Key limitation: prospective clinical data in SDH-deficient patients specifically are not yet available; biomarker-selected trials (RAD51 foci, HRD genomic scar score) are needed to confirm the HR-deficient phenotype in SDH-deficient tumors in vivo.",
+      "Selective PARP1/2 inhibitor that traps PARP at unrepaired single-strand breaks, converting them to cytotoxic double-strand breaks at replication forks. The mechanistic rationale in SDH-deficient tumors is a confirmed 'BRCAness' phenotype: succinate competitively inhibits the α-KG-dependent histone demethylases KDM4A and KDM4B, causing aberrant H3K9me3 hypermethylation at DNA double-strand break sites. This blocks TIP60 acetyltransferase and ATM kinase recruitment, impairing DNA end-resection and homologous recombination (HR) — despite wild-type BRCA1/2 (Sulkowski et al., Nature 2020, PMID: 32494005). Sulkowski et al. (Nat Genet 2018, PMID: 30013182) directly demonstrated HR deficiency and olaparib hypersensitivity in patient-derived FH-deficient and SDH-deficient hereditary paraganglioma/PPGL cells, establishing PARP inhibition as a mechanistically grounded synthetic lethality — not merely a ROS-amplification strategy. Multiple clinical trials are exploring PARP inhibitors in non-BRCA hereditary cancer syndromes based on this rationale. The LuPARPed trial (NCT06607692) evaluates olaparib in combination with 177Lu-DOTATATE in pheochromocytoma and paraganglioma — the first prospective clinical evaluation of PARP inhibition specifically in PPGL, exploiting the mechanistic intersection of PRRT-induced DSBs and the SDH-driven BRCAness that prevents their HR-mediated resolution. Key limitation: SDH-subtype-stratified efficacy data from NCT06607692 are not yet reported; biomarker validation (RAD51 foci, HRD genomic scar score) in SDH-deficient specimens remains the critical confirmatory step.",
     fda_approved: true,
     approved_indications: [
       "BRCA-mutated ovarian cancer",
@@ -189,10 +189,10 @@ export const SEED_DRUGS: SeedDrug[] = [
     ],
     pathway_slugs: ["sdh-driven-hrd", "oxidative-stress-ros"],
     target_gene_symbols: ["PARP1", "KDM4B"],
-    evidence_score: 58,
-    status: "preclinical",
+    evidence_score: 62,
+    status: "clinical_trial",
     tumor_type_applicability: ["all"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT06607692"],
   },
   {
     name: "Niraparib",
