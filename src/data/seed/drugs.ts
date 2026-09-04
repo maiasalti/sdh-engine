@@ -927,6 +927,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: ["NCT04727138"],
   },
   {
+    name: "Elesclomol",
+    brand_names: ["STA-4783"],
+    chembl_id: "CHEMBL499681",
+    pubchem_cid: "5488895",
+    drug_class: "Copper ionophore",
+    mechanism_of_action:
+      "Elesclomol (STA-4783; Synta Pharmaceuticals) is a copper-chelating ionophore that binds Cu²⁺ extracellularly and transports it across the plasma membrane into mitochondria. FDX1 (ferredoxin-1) reduces Cu²⁺ → Cu⁺; Cu⁺ directly attacks lipoylated TCA cycle proteins — principally DLAT and DLST — causing their toxic aggregation and proteotoxic cell death via the cuproptosis pathway (Tsvetkov et al. Science 2022, PMID 35588000).\n\nMechanistic rationale for SDH-deficient tumors: SDH loss constitutively upregulates FASN expression in SDH-deficient GIST cell lines and patient tumors (Rodríguez-Flores et al. Cancer Res 2026, PMID 41520938). FASN supplies mitochondrial fatty acid synthesis (mtFAS) with octanoyl-ACP, the obligate lipoic acid precursor via LIPT1/LIPT2. Elevated octanoyl-ACP → elevated lipoic acid → elevated lipoylated DLAT/DLST. This constitutively elevated lipoylated-protein pool is mechanistically predicted to sensitize SDH-deficient cells to FDX1-mediated Cu⁺ attack, lowering the cuproptosis threshold relative to SDH-intact cells.\n\nClinical history: In Phase 3 NCT00088010 (n=651, advanced melanoma; elesclomol + paclitaxel vs. paclitaxel), the trial was stopped early due to excess mortality in the elesclomol arm specifically in patients with elevated baseline LDH — a biomarker of high glycolytic flux and oxidative stress. Crucially, the pre-specified normal-LDH subgroup showed no excess mortality. SDH-deficient tumors are constitutively pseudohypoxic but rely on reductive glutamine carboxylation (not aerobic glycolysis) for lipid synthesis; LDH-elevating aerobic glycolysis is not their dominant metabolic phenotype, which may mitigate the stratified risk signal. Current clinical context: NCT04710888 (Phase 1/2; elesclomol + CuSO₄ in advanced malignant pleural mesothelioma, FDX1-high tumors enriched) provides the most direct safety and dosing anchor for the cuproptosis mechanism in solid tumors.\n\nKey limitations: (1) No data test elesclomol in SDH-deficient models; the FASN→mtFAS→lipoic acid→cuproptosis chain in SDH-deficient cells is mechanistically grounded but experimentally untested. (2) FDX1 expression levels in SDH-deficient GIST, PPGL, and RCC are unknown; expression is highest in adrenocortical/steroidogenic tissue, making PPGL a biologically plausible priority. (3) The NCT00088010 Phase 3 safety signal requires careful attention to patient selection (LDH stratification) in any SDH-deficient trial design. Evidence_score 22 reflects a rigorous two-anchor mechanistic chain (SDH→FASN elevation, PMID 41520938; FDX1→cuproptosis, PMID 35588000) without direct SDH-deficient model validation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["cuproptosis-lipoylation-mtfas", "de-novo-lipogenesis"],
+    target_gene_symbols: ["FDX1"],
+    evidence_score: 22,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT04710888"],
+  },
+  {
     name: "Ganetespib",
     brand_names: ["STA-9090"],
     chembl_id: "CHEMBL2180717",
