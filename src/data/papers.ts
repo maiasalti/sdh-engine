@@ -283,4 +283,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42650014",
     date: "2026-08",
   },
+  {
+    title:
+      "Genetic, cellular, and environmental factors influencing tumourigenesis in carriers of succinate dehydrogenase germline mutations.",
+    authors: "Lim ES, Bayley JP, Gimenez-Roqueplo AP, Clifton-Bligh RJ, Richter S",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0282",
+    topic: "Tumor Biology",
+    description:
+      "Comprehensive review by five of the field's leading SDH/PPGL researchers (Gimenez-Roqueplo, Bayley, Clifton-Bligh, Richter) covering the multifactorial basis of tumorigenesis in SDHx germline mutation carriers: SDH's dual roles in the Krebs cycle and oxidative phosphorylation; succinate accumulation as an oncometabolite driving pseudohypoxia via PHD inhibition and CIMP via TET inhibition; elevated ROS from loss of Complex II electron transfer; the Knudson two-hit model applied to SDHx; haploinsufficiency as an under-explored contributor in non-transformed carrier cells; genotype-phenotype correlations across all five SDHx genes (SDHA, SDHB, SDHC, SDHD, SDHAF2); and environmental factors (hormonal, metabolic, inflammatory) that may tip succinate/ROS above the tumourigenic threshold. Published Sep 2026 in Endocrine-Related Cancer — the top-tier journal for this field.",
+    pmid: "42626917",
+    date: "2026-09",
+  },
 ];

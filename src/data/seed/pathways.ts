@@ -494,4 +494,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 29,
   },
+  {
+    name: "Cuproptosis via Lipoylation-mtFAS Vulnerability",
+    slug: "cuproptosis-lipoylation-mtfas",
+    description:
+      "SDH loss constitutively upregulates FASN-dependent lipid synthesis (Rodríguez-Flores et al. Cancer Res 2026, PMID 41520938); FASN supplies mitochondrial fatty acid synthesis (mtFAS) with octanoyl-ACP, the obligate precursor for lipoic acid biosynthesis. Elevated lipoic acid synthesis increases the lipoylated pool of TCA cycle proteins (DLAT, DLST). Copper ionophores (elesclomol) deliver Cu²⁺ intracellularly; FDX1 (ferredoxin-1) reduces Cu²⁺ → Cu⁺, which directly attacks lipoylated TCA proteins, triggering proteotoxic aggregation and cell death via cuproptosis (Tsvetkov et al. Science 2022, PMID 35588000). SDH-deficient cells, with constitutively elevated lipoylated TCA proteins via the FASN→mtFAS→lipoic acid chain, may be selectively vulnerable to copper ionophore-induced cuproptosis.",
+    upstream_event:
+      "SDH loss → succinate accumulation → FASN upregulation (PMID 41520938) → elevated FASN→mtFAS octanoyl-ACP flux → increased lipoic acid biosynthesis (LIPT1/LIPT2) → elevated lipoylated TCA proteins (DLAT, DLST) → heightened FDX1-mediated Cu⁺ attack sensitivity → cuproptosis",
+    downstream_effects: [
+      "FDX1 reduces Cu²⁺ → Cu⁺; Cu⁺ directly attacks lipoylated DLAT and DLST, causing toxic aggregation and proteotoxic cell death (Tsvetkov et al. Science 2022, PMID 35588000)",
+      "Elesclomol (STA-4783) is a copper ionophore that shuttles Cu²⁺ across the plasma membrane to mitochondrial FDX1, inducing cuproptosis",
+      "FDX1 expression level is the primary determinant of cuproptosis sensitivity; lipoylated-DLAT aggregation is the proximal cytotoxic event",
+      "SDH-deficient cells exhibit FASN dependency (PMID 41520938); the FASN→mtFAS→lipoic acid flux elevation predicts an elevated lipoylated DLAT/DLST substrate pool that lowers the cuproptosis threshold",
+      "Cuproptosis is mechanistically distinct from apoptosis, ferroptosis, and necroptosis — cells resistant to conventional cell death may retain cuproptosis sensitivity",
+      "Phase I/II clinical context for elesclomol: NCT04710888 (advanced mesothelioma, FDX1-high tumors) establishes tolerability and dosing for the copper ionophore class",
+    ],
+    druggable: true,
+    display_order: 30,
+  },
 ];
