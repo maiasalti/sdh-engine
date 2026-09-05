@@ -576,6 +576,28 @@ SDH-deficient GIST is imatinib-resistant by definition (no KIT/PDGFRA driver). T
 |---|---|---|---|---|
 | HSP90α chaperone | HSP90AA1 | Ganetespib (STA-9090) | Phase 2 in GIST (NCT01039519) | None; rationale via constitutive HIF-α client dependency PMID 15989551/16322259 |
 
+---
+
+## Mechanism 39: Reductive Carboxylation / ACLY Bottleneck
+
+### Pathway overview
+SDH (succinate dehydrogenase, Complex II) catalyzes the oxidation of succinate to fumarate in the TCA cycle. Its inactivation does more than accumulate succinate — it severs the forward TCA cycle at the succinate→fumarate step, blocking the canonical route by which mitochondria synthesize citrate (from acetyl-CoA + OAA). SDH-deficient cells must therefore obtain citrate by an alternative route to sustain fatty acid synthesis and histone acetylation.
+
+The alternative is **reductive carboxylation**: glutamine is catabolized to glutamate then α-ketoglutarate (α-KG), and the IDH1/2 enzymes run in reverse — carboxylating α-KG to isocitrate, then isocitrate to citrate, consuming NADPH. This mitochondrially generated citrate is exported to the cytoplasm via the mitochondrial citrate carrier (SLC25A1). In the cytoplasm, **ATP-citrate lyase (ACLY)** cleaves citrate into acetyl-CoA and oxaloacetate (OAA), consuming one ATP. This is the obligate final step before acetyl-CoA enters de novo fatty acid synthesis (via FASN/ACC) and histone acetyltransferases.
+
+Mullen et al. (Nature 2012, PMID 22101431) established this pathway by 13C isotopic tracing in cells with ETC-complex defects (including fumarate hydratase mutations and cytochrome oxidase deficiency): reverse IDH flux and ACLY-dependent acetyl-CoA production were demonstrated directly. SDH-deficient cells fit this same category — the forward TCA is truncated identically.
+
+Because the forward TCA route is blocked, ACLY is the **non-redundant bottleneck** for acetyl-CoA supply in SDH-deficient cells. Inhibiting ACLY cuts the sole cytoplasmic acetyl-CoA supply line, creating selective vulnerability relative to normal cells (which retain forward TCA flux and can bypass partial ACLY inhibition).
+
+### Drug: Bempedoic Acid (ETC-1002, Nexletol)
+Bempedoic acid is an FDA-approved ACLY inhibitor (approved 2020 for heterozygous familial hypercholesterolaemia). It is a prodrug: the liver enzyme long-chain acyl-CoA synthetase 1 (ACSL1) converts it to the active CoA thioester, which then competes with citrate at the ACLY active site. The prodrug mechanism concentrates activity in hepatocytes and limits systemic exposure, which is favorable for the approved indication but introduces a critical uncertainty for oncology: tumor cells generally express low levels of ACSL1 (primarily hepatic/adipose). Prodrug activation in SDH-deficient GIST, PPGL, or RCC cells is unproven. This is the primary limitation of repurposing bempedoic acid to oncology, and it should be evaluated with in vitro prodrug activation assays before in vivo testing.
+
+No clinical or preclinical data in SDH-deficient tumors exist. The rationale is entirely mechanistic, extrapolated from isotopic tracing in ETC-deficient non-SDH models.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| ATP-citrate lyase | ACLY | Bempedoic Acid (ETC-1002) | FDA-approved (hypercholesterolaemia); no oncology trials | None; rationale via reductive carboxylation in ETC-deficient cells (PMID 22101431); ACSL1 prodrug activation in tumor cells unverified |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

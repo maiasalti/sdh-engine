@@ -943,4 +943,24 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT01039519"],
   },
+  {
+    name: "Bempedoic Acid",
+    brand_names: ["Nexletol", "Nilemdo"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "ACLY inhibitor (ATP-citrate lyase inhibitor, prodrug)",
+    mechanism_of_action:
+      "Bempedoic acid (ETC-1002; brand names Nexletol/Nilemdo; Esperion Therapeutics) is an orally bioavailable prodrug activated to its active CoA thioester (ETC-1002-CoA) by very-long-chain acyl-CoA synthetase 1 (ACSL1). The active form competitively inhibits ACLY (ATP-citrate lyase), the cytoplasmic enzyme that cleaves citrate into acetyl-CoA and oxaloacetate. FDA-approved in 2020 for heterozygous familial hypercholesterolaemia (LDL lowering) with a well-characterized safety profile established in the CLEAR Outcomes trial (~14,000 patients, cardiovascular event endpoint).\n\nThe SDH-specific rationale rests on the metabolic rewiring imposed by Complex II (SDH) loss. Normal cells generate cytoplasmic acetyl-CoA via the canonical forward TCA route: glucose → pyruvate → acetyl-CoA (mitochondria) → citrate (via citrate synthase) → cytoplasm → ACLY cleavage to acetyl-CoA. When SDH is inactivated, the forward TCA cycle is blocked at succinate → fumarate, making forward-route citrate synthesis impossible. SDH-deficient cells compensate via reductive carboxylation: glutamine-derived α-ketoglutarate is converted to isocitrate and then citrate by IDH2 (reverse, NADPH-dependent) in mitochondria; this reductively generated citrate is exported via SLC25A1 to the cytoplasm, where ACLY cleaves it to acetyl-CoA. Mullen et al. (Nature 2012, PMID 22101431, DOI 10.1038/nature10642) established this pathway by 13C isotopic tracing in ETC-deficient cells, including fumarate hydratase-deficient cells (the enzyme immediately downstream of SDH), confirming that reductive carboxylation is the dominant citrate-generating route when mitochondrial ETC function is impaired.\n\nACLY therefore becomes the non-redundant bottleneck enzyme in SDH-deficient cells: it is their only route to cytoplasmic acetyl-CoA for de novo lipid synthesis, histone acetylation, and cholesterol production. Normal cells with intact SDH can buffer ACLY inhibition by partially shifting TCA metabolism, creating a relative therapeutic window. ACLY is also constitutively activated in cancer via AKT-mediated phosphorylation at Ser455 and is overexpressed in high-grade tumors (Migita et al., Cancer Res 2008, PMID 18922930), reinforcing its role as a cancer-relevant metabolic target beyond the SDH-specific context.\n\nKey limitations:\n1. ACSL1-dependent prodrug activation: bempedoic acid requires ACSL1 to convert it to the active CoA thioester. ACSL1 expression in tumor cells outside liver and adipose tissue may be insufficient for effective activation — this is the principal uncertainty for repurposing to solid tumor oncology. Direct ACLY inhibitors not requiring ACSL1 activation (e.g., NDI-091143, Nimbus Therapeutics) may ultimately be more suitable but are earlier-stage.\n2. No published SDH-deficient cell-line or xenograft data for bempedoic acid; the mechanistic case is inferred from the Mullen 2012 reductive carboxylation data (PMID 22101431) and the established ACLY role as the bottleneck cleavage step.\n3. No dedicated oncology clinical trial data for bempedoic acid.\n\nEvidence_score 23 (theoretical): the mechanistic chain from SDH loss → reductive carboxylation → ACLY bottleneck is directly supported by the Mullen 2012 isotopic tracing data; ACLY inhibition by bempedoic acid is a logical extension. Score held low relative to other theoretical entries because the ACSL1 prodrug activation uncertainty introduces a significant additional pharmacological unknown beyond the mechanistic extrapolation from analogous FH-deficient cells to SDH-deficient cells.",
+    fda_approved: true,
+    approved_indications: [
+      "Heterozygous familial hypercholesterolaemia (adjunct to maximally tolerated statin therapy)",
+      "Primary hyperlipidaemia or mixed dyslipidaemia (adjunct to diet)",
+    ],
+    pathway_slugs: ["reductive-carboxylation", "glutamine-dependency"],
+    target_gene_symbols: ["ACLY"],
+    evidence_score: 23,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: [],
+  },
 ];

@@ -494,4 +494,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 29,
   },
+  {
+    name: "Reductive Carboxylation / ACLY Bottleneck",
+    slug: "reductive-carboxylation",
+    description:
+      "With SDH (Complex II) inactivated, SDH-deficient cells cannot synthesize citrate via the forward TCA cycle. Instead, they run IDH reactions in reverse — reductive carboxylation — using glutamine-derived α-ketoglutarate to generate isocitrate and then citrate. This reductively generated citrate is exported to the cytoplasm and cleaved by ATP-citrate lyase (ACLY) into acetyl-CoA and oxaloacetate. ACLY therefore acts as the obligate bottleneck enzyme converting the products of reductive carboxylation into biosynthetic substrates. This was established by 13C isotopic tracing in tumor cells with ETC-complex defects and fumarate hydratase mutations (Mullen et al., Nature 2012, PMID 22101431).",
+    upstream_event:
+      "SDH loss (Complex II inactivation) → forward TCA citrate synthesis blocked → glutamine-dependent reductive carboxylation via reverse IDH1/2 → cytosolic citrate → ACLY cleavage to acetyl-CoA + oxaloacetate",
+    downstream_effects: [
+      "Acetyl-CoA production for de novo fatty acid synthesis (FASN/ACC) and histone acetylation",
+      "Oxaloacetate for aspartate synthesis and gluconeogenic intermediates",
+      "Selective dependency on ACLY as the obligate bottleneck of the alternative biosynthetic route",
+      "SDH-deficient cells disproportionately vulnerable to ACLY inhibition compared to normal cells using forward TCA",
+      "ACLY inhibition by bempedoic acid cuts acetyl-CoA supply at the reductive carboxylation node",
+    ],
+    druggable: true,
+    display_order: 30,
+  },
 ];
