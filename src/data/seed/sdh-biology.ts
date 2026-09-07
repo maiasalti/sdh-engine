@@ -576,6 +576,36 @@ SDH-deficient GIST is imatinib-resistant by definition (no KIT/PDGFRA driver). T
 |---|---|---|---|---|
 | HSP90α chaperone | HSP90AA1 | Ganetespib (STA-9090) | Phase 2 in GIST (NCT01039519) | None; rationale via constitutive HIF-α client dependency PMID 15989551/16322259 |
 
+### 39. HIF-Driven IGF2/IGF1R Autocrine Growth Loop in SDH-Deficient Pseudohypoxic Tumours — Linsitinib
+
+SDH-deficient tumours overexpress IGF2 (insulin-like growth factor 2) through two reinforcing mechanisms that both flow directly from SDH loss, making IGF2 one of the most mechanistically well-anchored HIF targets in this tumour class.
+
+**Mechanism 1 — Pseudohypoxia-driven IGF2 transcription:**
+SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α/2α stabilisation → HIF-α/HIF-1β heterodimer binds HREs in the IGF2 P3/P4 promoters → transcriptional upregulation of IGF2. This is the same pseudohypoxic transcriptional program driving VEGF, CAIX, GLUT1, and CXCR4 (Mechanisms 1, 3, 20, 27). IGF2 is a well-characterised HIF-1α/2α transcriptional target in multiple tumour types.
+
+**Mechanism 2 — CIMP-driven loss of imprinting:**
+SDH loss → succinate → competitive inhibition of α-KG-dependent TET1/2/3 dioxygenases → impaired 5-methylcytosine oxidation (5mC→5hmC) → CIMP (CpG island methylator phenotype; Letouzé et al. Cancer Cell 2013, PMID 23550148; Killian et al. Cancer Cell 2013, PMID 23707781) → aberrant methylation of the H19 imprinting control region (ICR) at chr11p15.5 → silencing of the H19 long non-coding RNA, which normally represses IGF2 transcription from the paternal allele → loss of imprinting → biallelic IGF2 expression. Nielsen et al. (Endocr Relat Cancer 2015, PMID 26400872) confirmed this mechanism in adrenal tumours: H19 ICR hypermethylation correlated directly with IGF2 overexpression in 100% of pheochromocytomas and 85% of adrenocortical carcinomas analysed.
+
+**Downstream effector pathway:**
+IGF2 (secreted) → autocrine/paracrine binding to IGF1R and IR-A (fetal/cancer insulin receptor isoform) → receptor transautophosphorylation → IRS1/IRS2 docking → PI3K/p85 → PIP3 → PDK1 → AKT1/2/3 → mTORC1/S6K1/4EBP1 (proliferation, protein synthesis) and FOXO inhibition (survival); parallel KRAS/RAF/MEK/ERK activation (cell cycle entry). This PI3K/AKT/mTOR convergence overlaps with Mechanism 4 (mTOR/everolimus) and Mechanism 27 (AKT/capivasertib) — providing rationale for combination strategies.
+
+**Evidence for IGF2 overexpression in SDHx pseudohypoxic PPGL:**
+Nielsen et al. (Endocr Relat Cancer 2015, PMID 26400872) demonstrated IGF2 overexpression in 100% of pheochromocytomas across a 10-PCC cohort and showed that the overexpression was caused by copy number changes at chr11p15.5 and correlated with H19 ICR methylation — establishing both the genetic and epigenetic mechanisms. Both SDHx PPGL and adrenocortical carcinoma show this convergent IGF2 overexpression; the mechanism in SDHx PPGL is particularly reinforced by the CIMP arm driven by succinate-TET inhibition, which would methylate the H19 ICR independently of copy number changes.
+
+**Therapeutic approach — linsitinib (OSI-906):**
+Linsitinib is an oral, ATP-competitive, dual IGF1R/IR kinase inhibitor (IGF1R IC50 ~35 nM; IR IC50 ~75 nM). Its small-molecule scaffold provides oral bioavailability and CNS penetration (relevant for SDHx PPGL with intracranial metastases). Dual IGF1R/IR blockade prevents signalling rebound via IR-A that would occur with IGF1R monospecific antibodies.
+
+**Clinical data in the analogue IGF2-overexpressing tumour:**
+- Phase 1 (Jones et al. Clin Cancer Res 2014, PMID 25208878): MTD 600 mg/day (intermittent schedule); IGF1R target engagement confirmed in peripheral blood mononuclear cells (reduced phospho-IGF1R); 2 confirmed partial responses in adrenocortical carcinoma patients.
+- Phase 3 RCT (Fassnacht et al. Lancet Oncol 2015, PMID 25795408; NCT00924989): linsitinib vs. placebo in advanced ACC (n=139); no improvement in overall survival (HR 0.94, p=0.77). **Important negative context:** The Phase 3 was conducted in an unselected ACC population without IGF2 expression stratification — not all ACCs overexpress IGF2 equally, and the signal-to-noise ratio in an unselected population may have been insufficient. The null result cannot be directly extrapolated to SDHx PPGL, where IGF2 overexpression is near-universal and driven by two convergent SDH-loss-specific mechanisms.
+
+**Combination rationale:**
+The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus, Mechanism 4) and AKT (capivasertib, Mechanism 27). An upstream+downstream combination (linsitinib + everolimus) could prevent the IGF1R-driven AKT reactivation that limits single-agent mTOR inhibitor efficacy — a pharmacological concept tested in other IGF2-high tumours. This is speculative in SDHx PPGL but mechanistically motivated.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

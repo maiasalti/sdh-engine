@@ -283,4 +283,30 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42650014",
     date: "2026-08",
   },
+  {
+    title:
+      "Expanding the Morphologic, Clinical, and Molecular Spectrum of Succinate Dehydrogenase A (SDHA)-Deficient Renal Cell Carcinoma: A Case Series With Review of Literature.",
+    authors: "Kandukuri S, Lobo A, Tsai H, et al.",
+    journal: "Am J Surg Pathol",
+    year: 2026,
+    doi: "10.1097/PAS.0000000000002611",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Multi-institutional case series (n=5) of SDHA-deficient RCC emphasises that SDHA IHC can be retained despite a pathogenic SDHA mutation (4/5 showed SDHA protein loss but 1/5 retained staining), while SDHB is uniformly lost across all five; NGS is therefore essential for diagnosis when SDHB loss is detected regardless of SDHA staining. Clinically, SDHA-deficient RCC appears more aggressive than SDHB-deficient RCC, with 2/4 patients developing metastases within 14–34 months of diagnosis.",
+    pmid: "42687764",
+    date: "2026-09",
+  },
+  {
+    title:
+      "Genetic, cellular, and environmental factors influencing tumourigenesis in carriers of succinate dehydrogenase germline mutations.",
+    authors: "Lim ES, Bayley JP, Gimenez-Roqueplo AP, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0282",
+    topic: "Genetics & Syndromes",
+    description:
+      "Comprehensive review by leading SDH researchers consolidating the biology of SDHx germline variant carriers: covers genotype–phenotype differences across SDHA/B/C/D/AF2 genes, the poorly understood haploinsufficient state in which the remaining wild-type allele sustains sub-tumourigenic SDH activity, and how environmental factors (metabolic stress, inflammation, hypoxia exposure) may push succinate or ROS above the tumourigenic threshold to trigger the second hit. Particularly relevant for understanding why penetrance varies among SDHx germline carriers and what modifiable factors might influence cancer risk.",
+    pmid: "42626917",
+    date: "2026-09",
+  },
 ];
