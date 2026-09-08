@@ -283,4 +283,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42650014",
     date: "2026-08",
   },
+  {
+    title:
+      "Expanding the Morphologic, Clinical, and Molecular Spectrum of Succinate Dehydrogenase A (SDHA)-Deficient Renal Cell Carcinoma: A Case Series With Review of Literature.",
+    authors: "Kandukuri S, Lobo A, Tsai H, Aron M, et al.",
+    journal: "Am J Surg Pathol",
+    year: 2026,
+    doi: "10.1097/PAS.0000000000002611",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Multi-institutional case series (n=5; UCI, Brigham/Harvard, USC, Manipal, CORE) characterizing SDHA-deficient RCC across a broader morphological and clinical spectrum: papillary/nested architecture with eosinophilic cytoplasm in all 5 cases; SDHB IHC lost in all 5 but SDHA IHC preserved in 1/5 (emphasizing need for molecular/NGS confirmation when SDHA-deficient is suspected but SDHA IHC appears retained); 2/4 patients with follow-up developed metastases within 14–34 months, suggesting SDHA-deficient RCC may carry higher metastatic risk than classic SDHB-deficient RCC. Adds to the sparse SDHA-deficient RCC literature and reinforces that IHC alone may underdiagnose SDHA-deficient cases.",
+    pmid: "42687764",
+    date: "2026-09",
+  },
 ];

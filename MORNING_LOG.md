@@ -765,3 +765,42 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 **Papers rejected (logged to tracker.md):** 5 (PMIDs 42544736, 42416402, 42452875, 42281449, 42244475)
 **Summary:** 8-query PubMed scan (2026-06-01 to 2026-09-01) across SDH-deficient GIST, PPGL, RCC, pseudohypoxia/CIMP, BRCAness/PARP, WT-GIST, and immune angles returned 5 new PMIDs not yet in tracker.md. All rejected: two GIST-related reviews/series with no SDH-specific treatment advance (42544736, 42416402), one SDH-deficient RCC morphology case report (42452875), one surgical pathology review (42281449), and one WT-GIST NGS retrospective (42244475). No qualifying papers added. For Part B: the olaparib entry in drugs.ts incorrectly classified the drug as "preclinical" (clinical_trial_ids: []) despite the LuPARPed trial (NCT06607692) — 177Lu-DOTATATE + olaparib in PPGL — actively enrolling. NCT06607692 has been in the 177Lu-DOTATATE entry since 2026-08-03 but was never cross-referenced in the olaparib entry. This is a factual misclassification: any clinician or patient reading the engine would see olaparib as a preclinical-only candidate, unaware of an active clinical trial in PPGL. Corrected by: (1) adding NCT06607692 to olaparib clinical_trial_ids, (2) upgrading status from "preclinical" to "clinical_trial", (3) raising evidence_score 58→62 to reflect clinical trial stage in an SDH-relevant tumor type, (4) updating mechanism_of_action to describe the LuPARPed trial rationale (BRCAness + PRRT-induced DSBs). No new drug directions cleared the hard relevance gate today; the exhaustive search returned nothing mechanistically novel or SDH-specific in the scan window.
 **PR:** [Morning] Correct olaparib classification to clinical_trial, add NCT06607692 (LuPARPed)
+
+---
+
+## 2026-09-08 — SDHA-deficient RCC case series + niraparib NCT fix
+
+**Branch:** `morning/2026-09-08-niraparib-nct-sdha-rcc-paper`
+
+### Part A — Paper Scan
+
+Queries run (7 total; 3-month window June–September 2026):
+- SDH-deficient tumor drug repurposing / therapeutic targets
+- Paraganglioma pheochromocytoma HIF pseudohypoxia treatment
+- GIST SDH-deficient clinical trial
+- SDH-deficient renal cell carcinoma
+- SDHB-deficient epigenetic BRCAness synthetic lethality
+- Succinate oncometabolite immunotherapy
+- SDH-deficient pituitary adenoma treatment
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42687764 | **ADDED** | Kandukuri S et al., Am J Surg Pathol 2026-09-03. Multi-institutional case series (n=5) of SDHA-deficient RCC from UCI/Brigham/Harvard/USC/Manipal/CORE. Papillary/nested architecture in all 5; SDHB IHC lost in all 5 but SDHA IHC retained in 1/5 (reinforces need for NGS); 2/4 follow-up patients developed metastases at 14–34 months — SDHA-deficient RCC may be more aggressive than SDHB-deficient RCC. Topic: Diagnosis & Pathology. |
+| 42663066 | **rejected** | Chung C, Albayeh A, Am J Health Syst Pharm 2026-08-28. General GIST review focusing on KIT/PDGFRA TKI management and supportive care. SDH-deficient GIST mentioned only peripherally; no new mechanistic or treatment advance. |
+
+**Papers added to `src/data/papers.ts`:** 1 (PMID 42687764)
+
+### Part B — Improvement
+
+**Direction:** Data consistency fix — niraparib missing `clinical_trial_ids`
+
+Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial (NCT02655016; González-Martín et al., NEJM 2019) as the foundational clinical anchor: it established that niraparib benefit extends to HRD-positive non-gBRCA populations (HR 0.43, 95% CI 0.31–0.59), which is exactly the rationale for applying niraparib to SDH-deficient tumors with succinate-driven BRCAness. Despite this citation, `clinical_trial_ids` was `[]`. Added `NCT02655016` to restore the machine-readable reference that the narrative already described.
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: niraparib `clinical_trial_ids: []` → `["NCT02655016"]`
+- `src/data/papers.ts`: added PMID 42687764 (SDHA-deficient RCC multi-institutional series)
+- `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
+
+**No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).

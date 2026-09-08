@@ -213,7 +213,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 45,
     status: "theoretical",
     tumor_type_applicability: ["all"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT02655016"],
   },
   {
     name: "Metformin",
