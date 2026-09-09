@@ -73,4 +73,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-cxcr4-chemokine-metastasis": "bg-teal-200 text-teal-900 dark:bg-teal-800 dark:text-teal-100",
   "hsp90-hif-client-chaperone": "bg-red-200 text-red-900 dark:bg-red-800 dark:text-red-100",
   "cuproptosis-lipoylation-mtfas": "bg-orange-200 text-orange-900 dark:bg-orange-800 dark:text-orange-100",
+  "reductive-carboxylation": "bg-lime-200 text-lime-900 dark:bg-lime-800 dark:text-lime-100",
 };

@@ -792,3 +792,15 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 For Part B: Added the cuproptosis direction — a genuinely new mechanism not in any prior run. The mechanistic chain: SDH loss → FASN upregulation (PMID 41520938, Rodríguez-Flores 2026) → FASN supplies mtFAS with octanoyl-ACP → lipoic acid biosynthesis (LIPT1/LIPT2) → elevated lipoylated DLAT/DLST → FDX1 reduces Cu²⁺ → Cu⁺ attacks lipoylated proteins → toxic aggregation → cuproptosis (Tsvetkov et al. Science 2022, PMID 35588000). This connects two established, well-cited axes — the SDH→FASN elevation already in the engine (PMID 41520938) and the cuproptosis mechanism defined by Science 2022 — via the FASN→mtFAS→lipoic acid chain that is constitutively active in SDH-deficient cells. Files changed: (1) pathways.ts: new pathway `cuproptosis-lipoylation-mtfas` (display_order 30); (2) targets.ts: new target FDX1 (ferredoxin-1, Q14213); (3) drugs.ts: new drug elesclomol (STA-4783, evidence_score 22, theoretical, NCT04710888); (4) sdh-biology.ts: Mechanism 39 (cuproptosis section); (5) src/lib/scoring/constants.ts: pathway color for cuproptosis-lipoylation-mtfas.
 **PR:** morning/2026-09-04-cuproptosis-copper-ionophore
+
+
+---
+
+## 2026-09-05
+
+**Direction:** drug-pool
+**Angle:** Reductive carboxylation / ACLY bottleneck — bempedoic acid (ETC-1002)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all 10 PMIDs evaluated were already in tracker.md from prior runs)
+**Summary:** 10-query PubMed scan (2026-06-05 to 2026-09-05) across SDH-deficient GIST, PPGL/PCC, RCC, pituitary adenoma, pseudohypoxia, epigenetics, immune evasion, metabolic reprogramming, BRCAness, and SSTR angles returned 10 PMIDs. All already in tracker.md from runs 2026-07-03 through 2026-09-01; no new papers qualify. For Part B: added bempedoic acid (ETC-1002/Nexletol) as the first ACLY inhibitor in the engine, covering the reductive carboxylation pathway. When SDH (Complex II) is inactivated, cells cannot synthesize citrate via the forward TCA cycle; instead they run IDH enzymes in reverse (reductive carboxylation: glutamine → α-KG → isocitrate → citrate) and export citrate to the cytoplasm where ACLY cleaves it into acetyl-CoA + OAA. ACLY is the non-redundant bottleneck for acetyl-CoA supply in SDH-deficient cells. Bempedoic acid is FDA-approved (hypercholesterolaemia) and is a competitive ACLY inhibitor, but is a prodrug requiring ACSL1 activation — primarily expressed in hepatocytes, making prodrug activation in tumor cells the key unresolved uncertainty. Evidence_score 23 (theoretical), lower than other theoretical entries to reflect the ACSL1 activation uncertainty layered on top of the mechanistic extrapolation. New pathway `reductive-carboxylation` (display_order 30) and target ACLY (UniProt P53396) added. Mechanism 39 added to sdh-biology.ts. Key mechanistic reference: Mullen et al., Nature 2012 (PMID 22101431).
+**PR:** morning/2026-09-05-acly-bempedoic-acid
