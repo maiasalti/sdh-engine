@@ -473,30 +473,6 @@ Plerixafor (AMD3100/Mozobil; Sanofi) is an FDA-approved, small-molecule bicyclam
 |---|---|---|---|---|
 | CXCR4 chemokine receptor | CXCR4 | Plerixafor (AMD3100/Mozobil) | FDA-approved (stem cell mobilization) | None; rationale via VHL/HIF→CXCR4 PMID 13679920 |
 
-### 38. Y-90 SIRT BRCAness × Radiation Synthetic Lethality in SDH-Deficient GIST Liver Metastases
-
-**Clinical observation:** Berman et al. (Cancers 2026, PMID 42650014) reported an international multicenter retrospective series (n=12; US, Germany, UK) of Y-90 selective internal radiation therapy (SIRT/radioembolization) in SDH-deficient GIST with progressive, unresectable hepatic metastases. Objective response rate was 66.7% (1 CR, 7 PR) with 100% disease control rate and median OS not reached at 32 months. This response magnitude substantially exceeds typical Y-90 SIRT ORRs in KIT/PDGFRA-mutant GIST (20–40%), suggesting a tumor-intrinsic mechanism of enhanced radiosensitivity rather than a generic hepatic ablation effect.
-
-**Anatomic rationale — why SIRT is specifically applicable to SDH-deficient GIST:**
-Unlike KIT/PDGFRA-mutant GIST, SDH-deficient GIST characteristically metastasizes to the liver — not lungs or peritoneum — frequently in young patients who exhaust limited systemic options early. The liver-dominant metastatic pattern makes SDH-deficient GIST uniquely suited to a hepatic arterial procedure. Standard GIST therapies (imatinib, sunitinib) are not effective in SDH-deficient tumors (no activating KIT/PDGFRA mutation to inhibit), further elevating the clinical need for liver-directed alternatives.
-
-**Molecular mechanism — BRCAness × radiation-induced DSB synthetic lethality:**
-SDH loss → succinate accumulation → inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 persistence at double-strand break (DSB) sites → impaired TIP60 acetyltransferase and ATM kinase recruitment at DSBs → defective homologous recombination (HR) repair [Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005].
-
-Y-90 β-radiation (mean energy ~935 keV; mean tissue penetration ~2.5 mm) induces dense ionization tracks that generate clustered DSBs — precisely the lesion class requiring HR for error-free repair. In SDH-deficient cells, BRCAness-driven HR deficiency means radiation-induced DSBs cannot be repaired via HR; NHEJ attempts produce error-prone or incomplete repair, leading to mitotic catastrophe and selective cell death. Surrounding HR-proficient hepatocytes retain the capacity for HR-mediated DSB repair, providing a therapeutic window for selective tumor killing.
-
-**Mechanistic chain summary:**
-SDH loss → succinate → KDM4B inhibition → H3K9me3 at DSB sites → HR deficiency (BRCAness) → inability to repair Y-90-induced DSBs → mitotic catastrophe → selective SDH-GIST cell killing
-
-**Pharmacological delivery:**
-Y-90 microspheres (SIR-Spheres, SIRTEX; TheraSphere, Boston Scientific) are infused via hepatic arterial access (interventional radiology). Microspheres lodge in tumor microvasculature (tumor blood supply is arterial; normal liver is primarily portal), concentrating radiation dose intratumorally (typically 100–300 Gy). The 64.1-hour half-life (~2.7 days) allows sustained β-emission over ~2 weeks, maintaining ongoing DSB induction throughout the period when apoptotic and mitotic catastrophe signaling is active.
-
-**Key limitation:** Retrospective series (n=12), no concurrent control arm, and no direct experimental validation linking the BRCAness mechanism to SIRT radiosensitivity in SDH-deficient GIST cell lines or xenograft models. The mechanistic explanation (BRCAness → HR deficiency → radiation sensitivity) is biologically sound and consistent with published in vitro data showing BRCA-null cells are hypersensitive to ionizing radiation, but causality in SDH-deficient GIST specifically requires experimental confirmation.
-
-| Approach | Mechanism | Products | SDH-specific evidence |
-|---|---|---|---|
-| Y-90 SIRT | BRCAness × radiation DSB synthetic lethality; hepatic arterial delivery | SIR-Spheres (SIRTEX), TheraSphere (Boston Scientific) | PMID 42650014: 66.7% ORR, 100% DCR, n=12 SDH-GIST liver mets (Berman et al. 2026) |
-
 ### 35. NHEJ / DNA-PKcs Backup Repair — Synthetic Lethality via Elimusertib (AZD7648)
 
 **Pathway:** nhej-dnapk-backup-repair
@@ -575,6 +551,30 @@ SDH-deficient GIST is imatinib-resistant by definition (no KIT/PDGFRA driver). T
 | Druggable target | Gene | Drug | Stage | SDH-specific data |
 |---|---|---|---|---|
 | HSP90α chaperone | HSP90AA1 | Ganetespib (STA-9090) | Phase 2 in GIST (NCT01039519) | None; rationale via constitutive HIF-α client dependency PMID 15989551/16322259 |
+
+### 38. Y-90 SIRT BRCAness × Radiation Synthetic Lethality in SDH-Deficient GIST Liver Metastases
+
+**Clinical observation:** Berman et al. (Cancers 2026, PMID 42650014) reported an international multicenter retrospective series (n=12; US, Germany, UK) of Y-90 selective internal radiation therapy (SIRT/radioembolization) in SDH-deficient GIST with progressive, unresectable hepatic metastases. Objective response rate was 66.7% (1 CR, 7 PR) with 100% disease control rate and median OS not reached at 32 months. This response magnitude substantially exceeds typical Y-90 SIRT ORRs in KIT/PDGFRA-mutant GIST (20–40%), suggesting a tumor-intrinsic mechanism of enhanced radiosensitivity rather than a generic hepatic ablation effect.
+
+**Anatomic rationale — why SIRT is specifically applicable to SDH-deficient GIST:**
+Unlike KIT/PDGFRA-mutant GIST, SDH-deficient GIST characteristically metastasizes to the liver — not lungs or peritoneum — frequently in young patients who exhaust limited systemic options early. The liver-dominant metastatic pattern makes SDH-deficient GIST uniquely suited to a hepatic arterial procedure. Standard GIST therapies (imatinib, sunitinib) are not effective in SDH-deficient tumors (no activating KIT/PDGFRA mutation to inhibit), further elevating the clinical need for liver-directed alternatives.
+
+**Molecular mechanism — BRCAness × radiation-induced DSB synthetic lethality:**
+SDH loss → succinate accumulation → inhibition of α-KG-dependent KDM4A and KDM4B histone demethylases → H3K9me3 persistence at double-strand break (DSB) sites → impaired TIP60 acetyltransferase and ATM kinase recruitment at DSBs → defective homologous recombination (HR) repair [Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005].
+
+Y-90 β-radiation (mean energy ~935 keV; mean tissue penetration ~2.5 mm) induces dense ionization tracks that generate clustered DSBs — precisely the lesion class requiring HR for error-free repair. In SDH-deficient cells, BRCAness-driven HR deficiency means radiation-induced DSBs cannot be repaired via HR; NHEJ attempts produce error-prone or incomplete repair, leading to mitotic catastrophe and selective cell death. Surrounding HR-proficient hepatocytes retain the capacity for HR-mediated DSB repair, providing a therapeutic window for selective tumor killing.
+
+**Mechanistic chain summary:**
+SDH loss → succinate → KDM4B inhibition → H3K9me3 at DSB sites → HR deficiency (BRCAness) → inability to repair Y-90-induced DSBs → mitotic catastrophe → selective SDH-GIST cell killing
+
+**Pharmacological delivery:**
+Y-90 microspheres (SIR-Spheres, SIRTEX; TheraSphere, Boston Scientific) are infused via hepatic arterial access (interventional radiology). Microspheres lodge in tumor microvasculature (tumor blood supply is arterial; normal liver is primarily portal), concentrating radiation dose intratumorally (typically 100–300 Gy). The 64.1-hour half-life (~2.7 days) allows sustained β-emission over ~2 weeks, maintaining ongoing DSB induction throughout the period when apoptotic and mitotic catastrophe signaling is active.
+
+**Key limitation:** Retrospective series (n=12), no concurrent control arm, and no direct experimental validation linking the BRCAness mechanism to SIRT radiosensitivity in SDH-deficient GIST cell lines or xenograft models. The mechanistic explanation (BRCAness → HR deficiency → radiation sensitivity) is biologically sound and consistent with published in vitro data showing BRCA-null cells are hypersensitive to ionizing radiation, but causality in SDH-deficient GIST specifically requires experimental confirmation.
+
+| Approach | Mechanism | Products | SDH-specific evidence |
+|---|---|---|---|
+| Y-90 SIRT | BRCAness × radiation DSB synthetic lethality; hepatic arterial delivery | SIR-Spheres (SIRTEX), TheraSphere (Boston Scientific) | PMID 42650014: 66.7% ORR, 100% DCR, n=12 SDH-GIST liver mets (Berman et al. 2026) |
 
 ## Mechanism 39: Cuproptosis via FASN→mtFAS→Lipoylation Vulnerability
 

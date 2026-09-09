@@ -866,3 +866,36 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-09 — SDHB splice variant paper + sdh-biology.ts mechanism reordering fix
+
+### Part A: PubMed paper scan
+
+Searched 8 queries across SDH-deficient tumor biology themes published in the last ~3 months. Found 2 new PMIDs not in tracker:
+
+**Added (1):**
+- **PMID 42711465** — Köhler A et al., NPJ Precis Oncol 2026 (10.1038/s41698-026-01685-7). "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B." Minigene spanning SDHB exons 2–5; functional RNA-seq classification of 48 splice-associated SDHB variants; 38% PVS1_Strong; 50% reclassification rate. Added as **Genetics & Syndromes**.
+
+**Rejected (1):**
+- **PMID 42635383** — Ann Afr Med 2025. "Vulvar paraganglioma: a rare tumor in an unusual site." Single case report of vulvar PGL; no SDH mutation reported; no treatment or mechanistic advance.
+
+### Part B: Data quality fix — sdh-biology.ts mechanism reordering
+
+**Bug identified:** Mechanism sections 35, 36, 37 appeared AFTER section 38 (Y-90 SIRT) in `src/data/seed/sdh-biology.ts`, creating an out-of-order context block that could confuse the AI (narrative flow: 34 → 38 → 35 → 36 → 37 → 39). Mechanism 38 had been inserted between mechanisms 34 and 35 instead of after 37.
+
+**Fix applied (2-step text reorder):**
+1. Removed mechanism 38 block from between mechanisms 34 and 35
+2. Re-inserted mechanism 38 block after mechanism 37 and before mechanism 39
+
+Correct ordering is now: 34 → 35 → 36 → 37 → 38 → 39 → 40 → 41.
+
+**No new drugs added.** BCL-2/MCL-1 (venetoclax/navitoclax) was considered but rejected: BCL-2 is not specifically upregulated by SDH loss; BCL-2 targeting in solid-tumor GIST/PPGL lacks mechanistic grounding in the SDH pathway. Data quality fix is the Part B deliverable for today.
+
+**Changes made:**
+- `src/data/papers.ts`: added PMID 42711465 (SDHB splice variant classification)
+- `src/data/seed/sdh-biology.ts`: mechanism reordering — 38 (Y-90 SIRT) moved to correct position after 37
+- `tracker.md`: logged PMID 42711465 (added) and PMID 42635383 (rejected)
+
+**Permanently ruled out (carried forward):** MTHFD2/one-carbon, Complex I/IACS-010759, WEE1/adavosertib, ferroptosis branch (sulfasalazine/artesunate/auranofin), BCL-2/venetoclax.

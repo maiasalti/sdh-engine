@@ -322,4 +322,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42626917",
     date: "2026-08",
   },
+  {
+    title:
+      "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B",
+    authors: "Köhler A, Baumann AA, Lewis N, et al.",
+    journal: "NPJ Precis Oncol",
+    year: 2026,
+    doi: "10.1038/s41698-026-01685-7",
+    topic: "Genetics & Syndromes",
+    description:
+      "Minigene system spanning SDHB exons 2–5 was used to functionally evaluate 48 splice-associated SDHB variants by targeted RNA sequencing in HEK293T cells: 38% received PVS1_Strong (RNA) evidence supporting pathogenicity, while 12 variants were reclassified from VUS to likely benign (downgrade). Overall, 50% of 26 classified variants were reclassified — demonstrating a scalable RNA-based approach that substantially improves clinical interpretation of SDHB splice-site variants for hereditary paraganglioma/pheochromocytoma risk assessment.",
+    pmid: "42711465",
+    date: "2026-09",
+  },
 ];
