@@ -477,6 +477,24 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 28,
   },
   {
+    name: "HIF-Driven IGF2/IGF1R Autocrine Growth Loop",
+    slug: "hif-igf2-igf1r-growth-signaling",
+    description:
+      "SDH loss constitutively activates HIF-1α/2α pseudohypoxia and drives CIMP DNA hypermethylation — two independent mechanisms that both upregulate IGF2 (insulin-like growth factor 2), creating an autocrine/paracrine growth loop via IGF1R and IR-A. IGF2 is among the most uniformly overexpressed transcripts in pseudohypoxic pheochromocytoma/paraganglioma (100% overexpression in PCC in one cohort: Nielsen et al. Endocr Relat Cancer 2015, PMID 26400872). This IGF1R-driven mitogenic and survival axis is pharmacologically targetable by linsitinib (OSI-906), a dual IGF1R/insulin receptor inhibitor.",
+    upstream_event:
+      "SDH loss → succinate → (1) PHD inhibition → HIF-1α/2α constitutive stabilisation → hypoxia-response element (HRE)-driven IGF2 transcriptional induction; AND (2) succinate → TET1/2/3 inhibition → CIMP epigenetic silencing → H19 imprinting control region (ICR) hypermethylation → loss of genomic imprinting → biallelic IGF2 expression → massive IGF2 protein secretion → IGF1R and IR-A receptor activation → PI3K/AKT/mTOR and MAPK/ERK proliferative and survival signalling",
+    downstream_effects: [
+      "HIF-1α/2α constitutively transcribes IGF2 via hypoxia-response elements (HREs) in the IGF2 promoter — the same pseudohypoxic mechanism that drives VEGF, CAIX, and GLUT1 in SDH-deficient tumours",
+      "CIMP-driven methylation of the H19 imprinting control region (ICR) silences the H19 non-coding RNA repressor, de-repressing the adjacent IGF2 locus on the normally silent maternal allele (loss of imprinting → biallelic IGF2 expression; Nielsen et al. Endocr Relat Cancer 2015, PMID 26400872)",
+      "IGF2 overexpression is near-universal in pheochromocytomas (100% in a 10-PCC cohort; Nielsen et al. 2015, PMID 26400872) and elevated in adrenocortical carcinoma, the closest analogue with the same IGF2-driven mechanism",
+      "IGF2 binds IGF1R (high affinity) and IR-A (isoform expressed in foetal/cancer tissue) → receptor autophosphorylation → IRS1/IRS2 docking → PI3K/AKT/mTOR activation (converging with Mechanism 4) and MAPK/ERK proliferative signalling",
+      "Linsitinib (OSI-906) is an ATP-competitive dual inhibitor of IGF1R kinase (IC50 ~35 nM) and IR (IC50 ~75 nM); it was advanced to a Phase 3 randomised controlled trial (NCT00924989) in IGF2-overexpressing adrenocortical carcinoma, establishing clinical-stage pharmacology and tolerability data directly in an IGF2-driven tumour",
+      "Downstream PI3K/AKT/mTOR engagement creates rationale for combination with mTOR inhibitors (everolimus, Mechanism 4) or AKT inhibitors (capivasertib, Mechanism 27) — IGF1R inhibition could prevent feedback AKT re-activation seen with mTOR monotherapy",
+    ],
+    druggable: true,
+    display_order: 32,
+  },
+  {
     name: "HSP90-Dependent HIF Pseudohypoxic Proteome Stability",
     slug: "hsp90-hif-client-chaperone",
     description:
