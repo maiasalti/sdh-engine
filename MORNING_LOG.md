@@ -827,3 +827,42 @@ For Part B: Added the cuproptosis direction — a genuinely new mechanism not in
 **Papers rejected (logged to tracker.md):** 0
 **Summary:** Added linsitinib (OSI-906) targeting the IGF2/IGF1R autocrine growth loop — the first genuinely new, task-description-endorsed ("IGF1R" listed as a relevant pathway) direction not yet in the engine. IGF2 is massively overexpressed in SDH-deficient pseudohypoxic PPGL via two independent mechanisms: (1) HIF-1α/2α transcription via HREs in the IGF2 promoter, and (2) CIMP-driven H19 ICR hypermethylation → loss of genomic imprinting → biallelic IGF2 expression (PMID 26400872: 100% PCC overexpression). Linsitinib advanced to Phase 3 in the closest IGF2-driven analogue tumour (ACC; NCT00924989; Fassnacht et al. Lancet Oncol 2015, PMID 25795408) but produced a negative OS result in an unselected population. Evidence_score set conservatively at 22 (theoretical) to reflect the negative Phase 3 precedent, absence of SDH-specific preclinical data, and the distinction that SDHx PPGL is a more molecularly homogeneous IGF2-high population than unselected ACC. Two genuinely new qualifying papers added (SDHA-deficient RCC pathology series and SDHx germline biology review by Gimenez-Roqueplo group). Added: new pathway hif-igf2-igf1r-growth-signaling (display_order 30), new target IGF1R, new drug linsitinib, new Mechanism 39 in sdh-biology.ts, new color in scoring/constants.ts.
 **PR:** morning/2026-09-07-igf2-igf1r-linsitinib
+
+---
+
+## 2026-09-08 — SDHA-deficient RCC case series + niraparib NCT fix
+
+**Branch:** `morning/2026-09-08-niraparib-nct-sdha-rcc-paper`
+
+### Part A — Paper Scan
+
+Queries run (7 total; 3-month window June–September 2026):
+- SDH-deficient tumor drug repurposing / therapeutic targets
+- Paraganglioma pheochromocytoma HIF pseudohypoxia treatment
+- GIST SDH-deficient clinical trial
+- SDH-deficient renal cell carcinoma
+- SDHB-deficient epigenetic BRCAness synthetic lethality
+- Succinate oncometabolite immunotherapy
+- SDH-deficient pituitary adenoma treatment
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42687764 | **ADDED** | Kandukuri S et al., Am J Surg Pathol 2026-09-03. Multi-institutional case series (n=5) of SDHA-deficient RCC from UCI/Brigham/Harvard/USC/Manipal/CORE. Papillary/nested architecture in all 5; SDHB IHC lost in all 5 but SDHA IHC retained in 1/5 (reinforces need for NGS); 2/4 follow-up patients developed metastases at 14–34 months — SDHA-deficient RCC may be more aggressive than SDHB-deficient RCC. Topic: Diagnosis & Pathology. |
+| 42663066 | **rejected** | Chung C, Albayeh A, Am J Health Syst Pharm 2026-08-28. General GIST review focusing on KIT/PDGFRA TKI management and supportive care. SDH-deficient GIST mentioned only peripherally; no new mechanistic or treatment advance. |
+
+**Papers added to `src/data/papers.ts`:** 1 (PMID 42687764)
+
+### Part B — Improvement
+
+**Direction:** Data consistency fix — niraparib missing `clinical_trial_ids`
+
+Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial (NCT02655016; González-Martín et al., NEJM 2019) as the foundational clinical anchor: it established that niraparib benefit extends to HRD-positive non-gBRCA populations (HR 0.43, 95% CI 0.31–0.59), which is exactly the rationale for applying niraparib to SDH-deficient tumors with succinate-driven BRCAness. Despite this citation, `clinical_trial_ids` was `[]`. Added `NCT02655016` to restore the machine-readable reference that the narrative already described.
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: niraparib `clinical_trial_ids: []` → `["NCT02655016"]`
+- `src/data/papers.ts`: added PMID 42687764 (SDHA-deficient RCC multi-institutional series)
+- `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
+
+**No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
