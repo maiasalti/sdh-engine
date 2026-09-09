@@ -477,6 +477,24 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 28,
   },
   {
+    name: "HIF-Driven IGF2/IGF1R Autocrine Growth Loop",
+    slug: "hif-igf2-igf1r-growth-signaling",
+    description:
+      "SDH loss constitutively activates HIF-1α/2α pseudohypoxia and drives CIMP DNA hypermethylation — two independent mechanisms that both upregulate IGF2 (insulin-like growth factor 2), creating an autocrine/paracrine growth loop via IGF1R and IR-A. IGF2 is among the most uniformly overexpressed transcripts in pseudohypoxic pheochromocytoma/paraganglioma (100% overexpression in PCC in one cohort: Nielsen et al. Endocr Relat Cancer 2015, PMID 26400872). This IGF1R-driven mitogenic and survival axis is pharmacologically targetable by linsitinib (OSI-906), a dual IGF1R/insulin receptor inhibitor.",
+    upstream_event:
+      "SDH loss → succinate → (1) PHD inhibition → HIF-1α/2α constitutive stabilisation → hypoxia-response element (HRE)-driven IGF2 transcriptional induction; AND (2) succinate → TET1/2/3 inhibition → CIMP epigenetic silencing → H19 imprinting control region (ICR) hypermethylation → loss of genomic imprinting → biallelic IGF2 expression → massive IGF2 protein secretion → IGF1R and IR-A receptor activation → PI3K/AKT/mTOR and MAPK/ERK proliferative and survival signalling",
+    downstream_effects: [
+      "HIF-1α/2α constitutively transcribes IGF2 via hypoxia-response elements (HREs) in the IGF2 promoter — the same pseudohypoxic mechanism that drives VEGF, CAIX, and GLUT1 in SDH-deficient tumours",
+      "CIMP-driven methylation of the H19 imprinting control region (ICR) silences the H19 non-coding RNA repressor, de-repressing the adjacent IGF2 locus on the normally silent maternal allele (loss of imprinting → biallelic IGF2 expression; Nielsen et al. Endocr Relat Cancer 2015, PMID 26400872)",
+      "IGF2 overexpression is near-universal in pheochromocytomas (100% in a 10-PCC cohort; Nielsen et al. 2015, PMID 26400872) and elevated in adrenocortical carcinoma, the closest analogue with the same IGF2-driven mechanism",
+      "IGF2 binds IGF1R (high affinity) and IR-A (isoform expressed in foetal/cancer tissue) → receptor autophosphorylation → IRS1/IRS2 docking → PI3K/AKT/mTOR activation (converging with Mechanism 4) and MAPK/ERK proliferative signalling",
+      "Linsitinib (OSI-906) is an ATP-competitive dual inhibitor of IGF1R kinase (IC50 ~35 nM) and IR (IC50 ~75 nM); it was advanced to a Phase 3 randomised controlled trial (NCT00924989) in IGF2-overexpressing adrenocortical carcinoma, establishing clinical-stage pharmacology and tolerability data directly in an IGF2-driven tumour",
+      "Downstream PI3K/AKT/mTOR engagement creates rationale for combination with mTOR inhibitors (everolimus, Mechanism 4) or AKT inhibitors (capivasertib, Mechanism 27) — IGF1R inhibition could prevent feedback AKT re-activation seen with mTOR monotherapy",
+    ],
+    druggable: true,
+    display_order: 32,
+  },
+  {
     name: "HSP90-Dependent HIF Pseudohypoxic Proteome Stability",
     slug: "hsp90-hif-client-chaperone",
     description:
@@ -493,5 +511,40 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     ],
     druggable: true,
     display_order: 29,
+  },
+  {
+    name: "Cuproptosis via Lipoylation-mtFAS Vulnerability",
+    slug: "cuproptosis-lipoylation-mtfas",
+    description:
+      "SDH loss constitutively upregulates FASN-dependent lipid synthesis (Rodríguez-Flores et al. Cancer Res 2026, PMID 41520938); FASN supplies mitochondrial fatty acid synthesis (mtFAS) with octanoyl-ACP, the obligate precursor for lipoic acid biosynthesis. Elevated lipoic acid synthesis increases the lipoylated pool of TCA cycle proteins (DLAT, DLST). Copper ionophores (elesclomol) deliver Cu²⁺ intracellularly; FDX1 (ferredoxin-1) reduces Cu²⁺ → Cu⁺, which directly attacks lipoylated TCA proteins, triggering proteotoxic aggregation and cell death via cuproptosis (Tsvetkov et al. Science 2022, PMID 35588000). SDH-deficient cells, with constitutively elevated lipoylated TCA proteins via the FASN→mtFAS→lipoic acid chain, may be selectively vulnerable to copper ionophore-induced cuproptosis.",
+    upstream_event:
+      "SDH loss → succinate accumulation → FASN upregulation (PMID 41520938) → elevated FASN→mtFAS octanoyl-ACP flux → increased lipoic acid biosynthesis (LIPT1/LIPT2) → elevated lipoylated TCA proteins (DLAT, DLST) → heightened FDX1-mediated Cu⁺ attack sensitivity → cuproptosis",
+    downstream_effects: [
+      "FDX1 reduces Cu²⁺ → Cu⁺; Cu⁺ directly attacks lipoylated DLAT and DLST, causing toxic aggregation and proteotoxic cell death (Tsvetkov et al. Science 2022, PMID 35588000)",
+      "Elesclomol (STA-4783) is a copper ionophore that shuttles Cu²⁺ across the plasma membrane to mitochondrial FDX1, inducing cuproptosis",
+      "FDX1 expression level is the primary determinant of cuproptosis sensitivity; lipoylated-DLAT aggregation is the proximal cytotoxic event",
+      "SDH-deficient cells exhibit FASN dependency (PMID 41520938); the FASN→mtFAS→lipoic acid flux elevation predicts an elevated lipoylated DLAT/DLST substrate pool that lowers the cuproptosis threshold",
+      "Cuproptosis is mechanistically distinct from apoptosis, ferroptosis, and necroptosis — cells resistant to conventional cell death may retain cuproptosis sensitivity",
+      "Phase I/II clinical context for elesclomol: NCT04710888 (advanced mesothelioma, FDX1-high tumors) establishes tolerability and dosing for the copper ionophore class",
+    ],
+    druggable: true,
+    display_order: 30,
+  },
+  {
+    name: "Reductive Carboxylation / ACLY Bottleneck",
+    slug: "reductive-carboxylation",
+    description:
+      "With SDH (Complex II) inactivated, SDH-deficient cells cannot synthesize citrate via the forward TCA cycle. Instead, they run IDH reactions in reverse — reductive carboxylation — using glutamine-derived α-ketoglutarate to generate isocitrate and then citrate. This reductively generated citrate is exported to the cytoplasm and cleaved by ATP-citrate lyase (ACLY) into acetyl-CoA and oxaloacetate. ACLY therefore acts as the obligate bottleneck enzyme converting the products of reductive carboxylation into biosynthetic substrates. This was established by 13C isotopic tracing in tumor cells with ETC-complex defects and fumarate hydratase mutations (Mullen et al., Nature 2012, PMID 22101431).",
+    upstream_event:
+      "SDH loss (Complex II inactivation) → forward TCA citrate synthesis blocked → glutamine-dependent reductive carboxylation via reverse IDH1/2 → cytosolic citrate → ACLY cleavage to acetyl-CoA + oxaloacetate",
+    downstream_effects: [
+      "Acetyl-CoA production for de novo fatty acid synthesis (FASN/ACC) and histone acetylation",
+      "Oxaloacetate for aspartate synthesis and gluconeogenic intermediates",
+      "Selective dependency on ACLY as the obligate bottleneck of the alternative biosynthetic route",
+      "SDH-deficient cells disproportionately vulnerable to ACLY inhibition compared to normal cells using forward TCA",
+      "ACLY inhibition by bempedoic acid cuts acetyl-CoA supply at the reductive carboxylation node",
+    ],
+    druggable: true,
+    display_order: 31,
   },
 ];

@@ -14,10 +14,10 @@ Loss-of-function mutations in any SDH subunit gene (SDHA, SDHB, SDHC, SDHD) or a
 - **Gastrointestinal stromal tumors (GIST)** — ~5-7.5% of all GISTs are SDH-deficient, predominantly in young patients. Unlike KIT/PDGFRA-mutant GIST, SDH-deficient GIST is resistant to imatinib.
 - **Paragangliomas (PGL)** — Extra-adrenal neuroendocrine tumors, especially associated with SDHB mutations.
 - **Pheochromocytomas (PCC)** — Adrenal medullary tumors, associated with SDHB and SDHD mutations.
-- **Renal cell carcinoma (RCC)** — SDH-deficient RCC is a distinct WHO-recognized subtype.
+- **Renal cell carcinoma (RCC)** — SDH-deficient RCC is a distinct WHO-recognized subtype. SDHA-deficient RCC is the most recently characterized entity within this group: it shows papillary and nested architecture, higher histologic grade, and increased metastatic potential compared with SDHB/C/D-deficient RCC. A critical diagnostic pitfall: SDHA IHC may return false-negative results despite confirmed SDHA mutation, because residual SDHA protein from the non-mutated allele can retain detectable staining. SDHB IHC loss is therefore the recommended first-line screen; when SDHB IHC is lost but SDHA IHC appears retained, NGS is recommended to exclude SDHA mutation before assuming a non-SDHA driver (Kandukuri et al., Am J Surg Pathol 2026, PMID 42687764).
 - **Pituitary adenomas** — Rare, associated with SDHA and SDHB mutations.
 
-SDH-deficient tumors are collectively known as the SDH-deficient tumor syndrome. They are characterized by loss of SDHB immunohistochemistry staining and a distinct hypermethylation phenotype.
+SDH-deficient tumors are collectively known as the SDH-deficient tumor syndrome. They are characterized by loss of SDHB immunohistochemistry staining and a distinct hypermethylation phenotype. Note: SDHB IHC is the recommended universal first-line screen across all SDH-deficient tumor types, as SDHB protein loss occurs downstream of any SDH subunit loss — including SDHA loss, which may paradoxically yield retained SDHA IHC in some cases.
 
 ## Molecular Consequences of SDH Loss
 
@@ -575,6 +575,78 @@ SDH-deficient GIST is imatinib-resistant by definition (no KIT/PDGFRA driver). T
 | Druggable target | Gene | Drug | Stage | SDH-specific data |
 |---|---|---|---|---|
 | HSP90α chaperone | HSP90AA1 | Ganetespib (STA-9090) | Phase 2 in GIST (NCT01039519) | None; rationale via constitutive HIF-α client dependency PMID 15989551/16322259 |
+
+## Mechanism 39: Cuproptosis via FASN→mtFAS→Lipoylation Vulnerability
+
+SDH loss → constitutive FASN upregulation → elevated mtFAS octanoyl-ACP → elevated lipoic acid → elevated lipoylated DLAT/DLST → FDX1-mediated Cu⁺ attack → proteotoxic aggregation → cuproptosis.
+
+Cuproptosis is a copper-dependent, non-apoptotic, non-ferroptotic programmed cell death modality identified by Tsvetkov et al. (Science 2022, PMID 35588000). The proximal cytotoxic event is aggregation of lipoylated TCA cycle proteins — principally DLAT (E2 subunit of pyruvate dehydrogenase) and DLST (E2 subunit of α-ketoglutarate dehydrogenase) — caused by Fe²⁺-like Cu⁺ ions generated intracellularly by FDX1 (ferredoxin-1) from ionophore-delivered Cu²⁺. The degree of cuproptosis sensitivity tracks with FDX1 expression and with the abundance of lipoylated DLAT/DLST.
+
+The SDH-deficient connection runs through the FASN axis. Rodríguez-Flores et al. (Cancer Res 2026, PMID 41520938) demonstrated that SDH loss constitutively upregulates FASN in GIST cell lines and patient tumors. FASN provides the octanoyl-ACP substrate for mitochondrial fatty acid synthesis (mtFAS); mtFAS converts octanoyl-ACP to protein-bound lipoic acid via LIPT1 and LIPT2. Elevated octanoyl-ACP flux → elevated lipoylated DLAT/DLST pool → increased lipoylated substrate for FDX1-mediated Cu⁺ attack → lower cuproptosis threshold in SDH-deficient cells vs. SDH-intact controls.
+
+### Evidence anchors
+- Tsvetkov et al. (Science 2022, PMID 35588000): Defined cuproptosis; identified FDX1 as the key reductase; showed lipoylated-DLAT aggregation as the proximal event; genome-wide screen identified FDX1, LIAS, LIPT1 as top cuproptosis sensitizers.
+- Rodríguez-Flores et al. (Cancer Res 2026, PMID 41520938): Demonstrated FASN upregulation in SDH-deficient GIST; FASN inhibition selectively impairs SDH-deficient cell viability.
+- mtFAS→lipoic acid pathway: octanoyl-ACP (FASN product) → octanoyl-ACP:protein-N-octanoyltransferase (LIPT2) → lipoyl-ACP → lipoyl transferase (LIPT1) → lipoylated DLAT/DLST.
+
+### Drug: Elesclomol (STA-4783)
+Elesclomol is a cell-permeable copper ionophore that chelates Cu²⁺ extracellularly and delivers it to mitochondrial FDX1. Phase 3 NCT00088010 (melanoma) was terminated due to excess mortality in the high-LDH subgroup — patients with aerobic glycolysis-driven metabolic phenotypes. SDH-deficient tumors are pseudohypoxic but use reductive glutamine carboxylation (not aerobic glycolysis) as the dominant carbon source for lipogenesis; the LDH-high risk stratum may not apply. NCT04710888 (Phase 1/2; elesclomol + CuSO₄ in mesothelioma, FDX1-enriched) is the current clinical anchor.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Lipoylated TCA proteins via FDX1 | FDX1 | Elesclomol (STA-4783) | Phase 1/2 NCT04710888 (mesothelioma) | None; rationale via FASN→mtFAS→lipoic acid elevation (PMID 41520938 + PMID 35588000) |
+
+---
+
+## Mechanism 40: Reductive Carboxylation / ACLY Bottleneck
+
+### Pathway overview
+SDH (succinate dehydrogenase, Complex II) catalyzes the oxidation of succinate to fumarate in the TCA cycle. Its inactivation does more than accumulate succinate — it severs the forward TCA cycle at the succinate→fumarate step, blocking the canonical route by which mitochondria synthesize citrate (from acetyl-CoA + OAA). SDH-deficient cells must therefore obtain citrate by an alternative route to sustain fatty acid synthesis and histone acetylation.
+
+The alternative is **reductive carboxylation**: glutamine is catabolized to glutamate then α-ketoglutarate (α-KG), and the IDH1/2 enzymes run in reverse — carboxylating α-KG to isocitrate, then isocitrate to citrate, consuming NADPH. This mitochondrially generated citrate is exported to the cytoplasm via the mitochondrial citrate carrier (SLC25A1). In the cytoplasm, **ATP-citrate lyase (ACLY)** cleaves citrate into acetyl-CoA and oxaloacetate (OAA), consuming one ATP. This is the obligate final step before acetyl-CoA enters de novo fatty acid synthesis (via FASN/ACC) and histone acetyltransferases.
+
+Mullen et al. (Nature 2012, PMID 22101431) established this pathway by 13C isotopic tracing in cells with ETC-complex defects (including fumarate hydratase mutations and cytochrome oxidase deficiency): reverse IDH flux and ACLY-dependent acetyl-CoA production were demonstrated directly. SDH-deficient cells fit this same category — the forward TCA is truncated identically.
+
+Because the forward TCA route is blocked, ACLY is the **non-redundant bottleneck** for acetyl-CoA supply in SDH-deficient cells. Inhibiting ACLY cuts the sole cytoplasmic acetyl-CoA supply line, creating selective vulnerability relative to normal cells (which retain forward TCA flux and can bypass partial ACLY inhibition).
+
+### Drug: Bempedoic Acid (ETC-1002, Nexletol)
+Bempedoic acid is an FDA-approved ACLY inhibitor (approved 2020 for heterozygous familial hypercholesterolaemia). It is a prodrug: the liver enzyme long-chain acyl-CoA synthetase 1 (ACSL1) converts it to the active CoA thioester, which then competes with citrate at the ACLY active site. The prodrug mechanism concentrates activity in hepatocytes and limits systemic exposure, which is favorable for the approved indication but introduces a critical uncertainty for oncology: tumor cells generally express low levels of ACSL1 (primarily hepatic/adipose). Prodrug activation in SDH-deficient GIST, PPGL, or RCC cells is unproven. This is the primary limitation of repurposing bempedoic acid to oncology, and it should be evaluated with in vitro prodrug activation assays before in vivo testing.
+
+No clinical or preclinical data in SDH-deficient tumors exist. The rationale is entirely mechanistic, extrapolated from isotopic tracing in ETC-deficient non-SDH models.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| ATP-citrate lyase | ACLY | Bempedoic Acid (ETC-1002) | FDA-approved (hypercholesterolaemia); no oncology trials | None; rationale via reductive carboxylation in ETC-deficient cells (PMID 22101431); ACSL1 prodrug activation in tumor cells unverified |
+
+### 41. HIF-Driven IGF2/IGF1R Autocrine Growth Loop in SDH-Deficient Pseudohypoxic Tumours — Linsitinib
+
+SDH-deficient tumours overexpress IGF2 (insulin-like growth factor 2) through two reinforcing mechanisms that both flow directly from SDH loss, making IGF2 one of the most mechanistically well-anchored HIF targets in this tumour class.
+
+**Mechanism 1 — Pseudohypoxia-driven IGF2 transcription:**
+SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α/2α stabilisation → HIF-α/HIF-1β heterodimer binds HREs in the IGF2 P3/P4 promoters → transcriptional upregulation of IGF2. This is the same pseudohypoxic transcriptional program driving VEGF, CAIX, GLUT1, and CXCR4 (Mechanisms 1, 3, 20, 27). IGF2 is a well-characterised HIF-1α/2α transcriptional target in multiple tumour types.
+
+**Mechanism 2 — CIMP-driven loss of imprinting:**
+SDH loss → succinate → competitive inhibition of α-KG-dependent TET1/2/3 dioxygenases → impaired 5-methylcytosine oxidation (5mC→5hmC) → CIMP (CpG island methylator phenotype; Letouzé et al. Cancer Cell 2013, PMID 23550148; Killian et al. Cancer Cell 2013, PMID 23707781) → aberrant methylation of the H19 imprinting control region (ICR) at chr11p15.5 → silencing of the H19 long non-coding RNA, which normally represses IGF2 transcription from the paternal allele → loss of imprinting → biallelic IGF2 expression. Nielsen et al. (Endocr Relat Cancer 2015, PMID 26400872) confirmed this mechanism in adrenal tumours: H19 ICR hypermethylation correlated directly with IGF2 overexpression in 100% of pheochromocytomas and 85% of adrenocortical carcinomas analysed.
+
+**Downstream effector pathway:**
+IGF2 (secreted) → autocrine/paracrine binding to IGF1R and IR-A (fetal/cancer insulin receptor isoform) → receptor transautophosphorylation → IRS1/IRS2 docking → PI3K/p85 → PIP3 → PDK1 → AKT1/2/3 → mTORC1/S6K1/4EBP1 (proliferation, protein synthesis) and FOXO inhibition (survival); parallel KRAS/RAF/MEK/ERK activation (cell cycle entry). This PI3K/AKT/mTOR convergence overlaps with Mechanism 4 (mTOR/everolimus) and Mechanism 27 (AKT/capivasertib) — providing rationale for combination strategies.
+
+**Evidence for IGF2 overexpression in SDHx pseudohypoxic PPGL:**
+Nielsen et al. (Endocr Relat Cancer 2015, PMID 26400872) demonstrated IGF2 overexpression in 100% of pheochromocytomas across a 10-PCC cohort and showed that the overexpression was caused by copy number changes at chr11p15.5 and correlated with H19 ICR methylation — establishing both the genetic and epigenetic mechanisms. Both SDHx PPGL and adrenocortical carcinoma show this convergent IGF2 overexpression; the mechanism in SDHx PPGL is particularly reinforced by the CIMP arm driven by succinate-TET inhibition, which would methylate the H19 ICR independently of copy number changes.
+
+**Therapeutic approach — linsitinib (OSI-906):**
+Linsitinib is an oral, ATP-competitive, dual IGF1R/IR kinase inhibitor (IGF1R IC50 ~35 nM; IR IC50 ~75 nM). Its small-molecule scaffold provides oral bioavailability and CNS penetration (relevant for SDHx PPGL with intracranial metastases). Dual IGF1R/IR blockade prevents signalling rebound via IR-A that would occur with IGF1R monospecific antibodies.
+
+**Clinical data in the analogue IGF2-overexpressing tumour:**
+- Phase 1 (Jones et al. Clin Cancer Res 2014, PMID 25208878): MTD 600 mg/day (intermittent schedule); IGF1R target engagement confirmed in peripheral blood mononuclear cells (reduced phospho-IGF1R); 2 confirmed partial responses in adrenocortical carcinoma patients.
+- Phase 3 RCT (Fassnacht et al. Lancet Oncol 2015, PMID 25795408; NCT00924989): linsitinib vs. placebo in advanced ACC (n=139); no improvement in overall survival (HR 0.94, p=0.77). **Important negative context:** The Phase 3 was conducted in an unselected ACC population without IGF2 expression stratification — not all ACCs overexpress IGF2 equally, and the signal-to-noise ratio in an unselected population may have been insufficient. The null result cannot be directly extrapolated to SDHx PPGL, where IGF2 overexpression is near-universal and driven by two convergent SDH-loss-specific mechanisms.
+
+**Combination rationale:**
+The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus, Mechanism 4) and AKT (capivasertib, Mechanism 27). An upstream+downstream combination (linsitinib + everolimus) could prevent the IGF1R-driven AKT reactivation that limits single-agent mTOR inhibitor efficacy — a pharmacological concept tested in other IGF2-high tumours. This is speculative in SDHx PPGL but mechanistically motivated.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
 
 ## Important Context for Drug Repurposing
 
