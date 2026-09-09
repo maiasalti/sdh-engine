@@ -769,6 +769,19 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 ---
 
+## 2026-09-03
+
+**Direction:** data-quality / biology-enrichment
+**Angle:** SDHA-deficient RCC phenotypic detail and SDHA IHC false-negative diagnostic pitfall — enrich sdh-biology.ts tumor type description with PMID 42687764 findings
+**Papers added:** 3 (PMIDs 42687764, 42635851, 42626917)
+**Papers rejected (logged to tracker.md):** 0
+**Summary:** PubMed scan (2026-06-01 to 2026-09-03) across SDH-deficient GIST, PPGL, RCC, pseudohypoxia, BRCAness, FGFR, SSTR, surveillance, and carrier biology angles returned 3 new qualifying papers. (1) PMID 42687764 (Kandukuri et al., Am J Surg Pathol 2026-09-03, DOI 10.1097/PAS.0000000000002611): 5-patient multi-institutional SDHA-deficient RCC case series — papillary/nested architecture, higher grade, increased metastatic risk, and a clinically important false-negative SDHA IHC risk despite SDHA mutation. (2) PMID 42635851 (Purnaghshband, Kim RH et al., Endocr Pathol 2026-08-24, DOI 10.1007/s12022-026-09930-2): Toronto cohort (n=110) showing WGS detects pathogenic variants in 85.7% of SDHB IHC-negative cases missed by targeted panels; complex SDHA inverted tandem duplication resolved by optical genome mapping. (3) PMID 42626917 (Lim ES, Bayley JP et al., Endocr Relat Cancer 2026-08-21, DOI 10.1530/ERC-26-0282): review of SDHx carrier haploinsufficient pre-tumor biology, genotype-phenotype penetrance differences, and environmental triggers of tumor initiation. All three added to papers.ts. For Part B: all existing pathway slugs in drugs.ts are correctly assigned (nhej-dnapk-backup-repair and cgas-sting-innate-immune verified). No new drug directions cleared the hard relevance gate. MTHFD2 remains unactionable (no SDH-specific data, no clinical-stage inhibitors). Part B: enriched the SDH-Deficient Tumors section in sdh-biology.ts with SDHA-deficient RCC phenotype detail — papillary/nested morphology, aggressive clinical course, and the SDHA IHC false-negative diagnostic pitfall grounded in PMID 42687764; added a universal note that SDHB IHC is the recommended first-line screen across all SDH-deficient tumor types, with SDHA loss being the edge case that can escape SDHA IHC detection.
+**Files changed:** `src/data/papers.ts` (3 papers added: PMIDs 42687764, 42635851, 42626917), `src/data/seed/sdh-biology.ts` (RCC bullet expanded with SDHA-deficient RCC phenotype and SDHA IHC false-negative pitfall; universal SDHB IHC note added), `tracker.md` (3 rows added), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add 3 papers; document SDHA-deficient RCC phenotype and IHC pitfall in SDH biology
+
+
+---
+
 ## 2026-09-04
 
 **Direction:** new mechanism
