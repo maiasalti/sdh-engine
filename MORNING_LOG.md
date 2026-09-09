@@ -769,6 +769,45 @@ In **SDH-DEFICIENT tumors** the logic inverts:
 
 ---
 
+## 2026-09-03
+
+**Direction:** data-quality / biology-enrichment
+**Angle:** SDHA-deficient RCC phenotypic detail and SDHA IHC false-negative diagnostic pitfall — enrich sdh-biology.ts tumor type description with PMID 42687764 findings
+**Papers added:** 3 (PMIDs 42687764, 42635851, 42626917)
+**Papers rejected (logged to tracker.md):** 0
+**Summary:** PubMed scan (2026-06-01 to 2026-09-03) across SDH-deficient GIST, PPGL, RCC, pseudohypoxia, BRCAness, FGFR, SSTR, surveillance, and carrier biology angles returned 3 new qualifying papers. (1) PMID 42687764 (Kandukuri et al., Am J Surg Pathol 2026-09-03, DOI 10.1097/PAS.0000000000002611): 5-patient multi-institutional SDHA-deficient RCC case series — papillary/nested architecture, higher grade, increased metastatic risk, and a clinically important false-negative SDHA IHC risk despite SDHA mutation. (2) PMID 42635851 (Purnaghshband, Kim RH et al., Endocr Pathol 2026-08-24, DOI 10.1007/s12022-026-09930-2): Toronto cohort (n=110) showing WGS detects pathogenic variants in 85.7% of SDHB IHC-negative cases missed by targeted panels; complex SDHA inverted tandem duplication resolved by optical genome mapping. (3) PMID 42626917 (Lim ES, Bayley JP et al., Endocr Relat Cancer 2026-08-21, DOI 10.1530/ERC-26-0282): review of SDHx carrier haploinsufficient pre-tumor biology, genotype-phenotype penetrance differences, and environmental triggers of tumor initiation. All three added to papers.ts. For Part B: all existing pathway slugs in drugs.ts are correctly assigned (nhej-dnapk-backup-repair and cgas-sting-innate-immune verified). No new drug directions cleared the hard relevance gate. MTHFD2 remains unactionable (no SDH-specific data, no clinical-stage inhibitors). Part B: enriched the SDH-Deficient Tumors section in sdh-biology.ts with SDHA-deficient RCC phenotype detail — papillary/nested morphology, aggressive clinical course, and the SDHA IHC false-negative diagnostic pitfall grounded in PMID 42687764; added a universal note that SDHB IHC is the recommended first-line screen across all SDH-deficient tumor types, with SDHA loss being the edge case that can escape SDHA IHC detection.
+**Files changed:** `src/data/papers.ts` (3 papers added: PMIDs 42687764, 42635851, 42626917), `src/data/seed/sdh-biology.ts` (RCC bullet expanded with SDHA-deficient RCC phenotype and SDHA IHC false-negative pitfall; universal SDHB IHC note added), `tracker.md` (3 rows added), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add 3 papers; document SDHA-deficient RCC phenotype and IHC pitfall in SDH biology
+
+
+---
+
+## 2026-09-04
+
+**Direction:** new mechanism
+**Angle:** Cuproptosis via copper ionophore (elesclomol) — FASN→mtFAS→lipoylation synthetic vulnerability in SDH-deficient cells
+**Papers added:** 1 (PMID 42626917)
+**Papers rejected (logged to tracker.md):** 5 (PMIDs 42687764, 42293364, 42621358, 42587830, and also confirmed already-in-tracker PMIDs from additional searches)
+**Summary:** 6-query PubMed scan (Jun–Sep 2026) across SDH-deficient GIST, SDH RCC, SDH pituitary, succinate oncometabolite/epigenetic, and belzutifan/HIF2 angles returned 5 new PMIDs not yet in tracker.md. Four rejected: PMID 42687764 (SDHA-deficient RCC 5-case morphology series, diagnostic focus); PMID 42293364 (hereditary RCC screening score, SDH not focus); PMID 42621358 (narrative oncometabolite review, non-specialist group, no novelty beyond existing engine); PMID 42587830 (broad TME immunotherapy review, succinate mentioned peripherally). PMID 42626917 (Lim, Bayley, Gimenez-Roqueplo, Clifton-Bligh, Richter — Endocr Relat Cancer Sep 2026) added: comprehensive SDHx germline tumourigenesis review by the field's top researchers covering succinate oncometabolism, pseudohypoxia, CIMP, ROS, haploinsufficiency, and environmental modifiers.
+
+For Part B: Added the cuproptosis direction — a genuinely new mechanism not in any prior run. The mechanistic chain: SDH loss → FASN upregulation (PMID 41520938, Rodríguez-Flores 2026) → FASN supplies mtFAS with octanoyl-ACP → lipoic acid biosynthesis (LIPT1/LIPT2) → elevated lipoylated DLAT/DLST → FDX1 reduces Cu²⁺ → Cu⁺ attacks lipoylated proteins → toxic aggregation → cuproptosis (Tsvetkov et al. Science 2022, PMID 35588000). This connects two established, well-cited axes — the SDH→FASN elevation already in the engine (PMID 41520938) and the cuproptosis mechanism defined by Science 2022 — via the FASN→mtFAS→lipoic acid chain that is constitutively active in SDH-deficient cells. Files changed: (1) pathways.ts: new pathway `cuproptosis-lipoylation-mtfas` (display_order 30); (2) targets.ts: new target FDX1 (ferredoxin-1, Q14213); (3) drugs.ts: new drug elesclomol (STA-4783, evidence_score 22, theoretical, NCT04710888); (4) sdh-biology.ts: Mechanism 39 (cuproptosis section); (5) src/lib/scoring/constants.ts: pathway color for cuproptosis-lipoylation-mtfas.
+**PR:** morning/2026-09-04-cuproptosis-copper-ionophore
+
+
+---
+
+## 2026-09-05
+
+**Direction:** drug-pool
+**Angle:** Reductive carboxylation / ACLY bottleneck — bempedoic acid (ETC-1002)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all 10 PMIDs evaluated were already in tracker.md from prior runs)
+**Summary:** 10-query PubMed scan (2026-06-05 to 2026-09-05) across SDH-deficient GIST, PPGL/PCC, RCC, pituitary adenoma, pseudohypoxia, epigenetics, immune evasion, metabolic reprogramming, BRCAness, and SSTR angles returned 10 PMIDs. All already in tracker.md from runs 2026-07-03 through 2026-09-01; no new papers qualify. For Part B: added bempedoic acid (ETC-1002/Nexletol) as the first ACLY inhibitor in the engine, covering the reductive carboxylation pathway. When SDH (Complex II) is inactivated, cells cannot synthesize citrate via the forward TCA cycle; instead they run IDH enzymes in reverse (reductive carboxylation: glutamine → α-KG → isocitrate → citrate) and export citrate to the cytoplasm where ACLY cleaves it into acetyl-CoA + OAA. ACLY is the non-redundant bottleneck for acetyl-CoA supply in SDH-deficient cells. Bempedoic acid is FDA-approved (hypercholesterolaemia) and is a competitive ACLY inhibitor, but is a prodrug requiring ACSL1 activation — primarily expressed in hepatocytes, making prodrug activation in tumor cells the key unresolved uncertainty. Evidence_score 23 (theoretical), lower than other theoretical entries to reflect the ACSL1 activation uncertainty layered on top of the mechanistic extrapolation. New pathway `reductive-carboxylation` (display_order 30) and target ACLY (UniProt P53396) added. Mechanism 39 added to sdh-biology.ts. Key mechanistic reference: Mullen et al., Nature 2012 (PMID 22101431).
+**PR:** morning/2026-09-05-acly-bempedoic-acid
+
+
+---
+
 ## 2026-09-06
 
 **Direction:** literature scan / papers-only

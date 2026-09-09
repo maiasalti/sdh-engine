@@ -14,10 +14,10 @@ Loss-of-function mutations in any SDH subunit gene (SDHA, SDHB, SDHC, SDHD) or a
 - **Gastrointestinal stromal tumors (GIST)** — ~5-7.5% of all GISTs are SDH-deficient, predominantly in young patients. Unlike KIT/PDGFRA-mutant GIST, SDH-deficient GIST is resistant to imatinib.
 - **Paragangliomas (PGL)** — Extra-adrenal neuroendocrine tumors, especially associated with SDHB mutations.
 - **Pheochromocytomas (PCC)** — Adrenal medullary tumors, associated with SDHB and SDHD mutations.
-- **Renal cell carcinoma (RCC)** — SDH-deficient RCC is a distinct WHO-recognized subtype.
+- **Renal cell carcinoma (RCC)** — SDH-deficient RCC is a distinct WHO-recognized subtype. SDHA-deficient RCC is the most recently characterized entity within this group: it shows papillary and nested architecture, higher histologic grade, and increased metastatic potential compared with SDHB/C/D-deficient RCC. A critical diagnostic pitfall: SDHA IHC may return false-negative results despite confirmed SDHA mutation, because residual SDHA protein from the non-mutated allele can retain detectable staining. SDHB IHC loss is therefore the recommended first-line screen; when SDHB IHC is lost but SDHA IHC appears retained, NGS is recommended to exclude SDHA mutation before assuming a non-SDHA driver (Kandukuri et al., Am J Surg Pathol 2026, PMID 42687764).
 - **Pituitary adenomas** — Rare, associated with SDHA and SDHB mutations.
 
-SDH-deficient tumors are collectively known as the SDH-deficient tumor syndrome. They are characterized by loss of SDHB immunohistochemistry staining and a distinct hypermethylation phenotype.
+SDH-deficient tumors are collectively known as the SDH-deficient tumor syndrome. They are characterized by loss of SDHB immunohistochemistry staining and a distinct hypermethylation phenotype. Note: SDHB IHC is the recommended universal first-line screen across all SDH-deficient tumor types, as SDHB protein loss occurs downstream of any SDH subunit loss — including SDHA loss, which may paradoxically yield retained SDHA IHC in some cases.
 
 ## Molecular Consequences of SDH Loss
 
@@ -575,6 +575,48 @@ SDH-deficient GIST is imatinib-resistant by definition (no KIT/PDGFRA driver). T
 | Druggable target | Gene | Drug | Stage | SDH-specific data |
 |---|---|---|---|---|
 | HSP90α chaperone | HSP90AA1 | Ganetespib (STA-9090) | Phase 2 in GIST (NCT01039519) | None; rationale via constitutive HIF-α client dependency PMID 15989551/16322259 |
+
+## Mechanism 39: Cuproptosis via FASN→mtFAS→Lipoylation Vulnerability
+
+SDH loss → constitutive FASN upregulation → elevated mtFAS octanoyl-ACP → elevated lipoic acid → elevated lipoylated DLAT/DLST → FDX1-mediated Cu⁺ attack → proteotoxic aggregation → cuproptosis.
+
+Cuproptosis is a copper-dependent, non-apoptotic, non-ferroptotic programmed cell death modality identified by Tsvetkov et al. (Science 2022, PMID 35588000). The proximal cytotoxic event is aggregation of lipoylated TCA cycle proteins — principally DLAT (E2 subunit of pyruvate dehydrogenase) and DLST (E2 subunit of α-ketoglutarate dehydrogenase) — caused by Fe²⁺-like Cu⁺ ions generated intracellularly by FDX1 (ferredoxin-1) from ionophore-delivered Cu²⁺. The degree of cuproptosis sensitivity tracks with FDX1 expression and with the abundance of lipoylated DLAT/DLST.
+
+The SDH-deficient connection runs through the FASN axis. Rodríguez-Flores et al. (Cancer Res 2026, PMID 41520938) demonstrated that SDH loss constitutively upregulates FASN in GIST cell lines and patient tumors. FASN provides the octanoyl-ACP substrate for mitochondrial fatty acid synthesis (mtFAS); mtFAS converts octanoyl-ACP to protein-bound lipoic acid via LIPT1 and LIPT2. Elevated octanoyl-ACP flux → elevated lipoylated DLAT/DLST pool → increased lipoylated substrate for FDX1-mediated Cu⁺ attack → lower cuproptosis threshold in SDH-deficient cells vs. SDH-intact controls.
+
+### Evidence anchors
+- Tsvetkov et al. (Science 2022, PMID 35588000): Defined cuproptosis; identified FDX1 as the key reductase; showed lipoylated-DLAT aggregation as the proximal event; genome-wide screen identified FDX1, LIAS, LIPT1 as top cuproptosis sensitizers.
+- Rodríguez-Flores et al. (Cancer Res 2026, PMID 41520938): Demonstrated FASN upregulation in SDH-deficient GIST; FASN inhibition selectively impairs SDH-deficient cell viability.
+- mtFAS→lipoic acid pathway: octanoyl-ACP (FASN product) → octanoyl-ACP:protein-N-octanoyltransferase (LIPT2) → lipoyl-ACP → lipoyl transferase (LIPT1) → lipoylated DLAT/DLST.
+
+### Drug: Elesclomol (STA-4783)
+Elesclomol is a cell-permeable copper ionophore that chelates Cu²⁺ extracellularly and delivers it to mitochondrial FDX1. Phase 3 NCT00088010 (melanoma) was terminated due to excess mortality in the high-LDH subgroup — patients with aerobic glycolysis-driven metabolic phenotypes. SDH-deficient tumors are pseudohypoxic but use reductive glutamine carboxylation (not aerobic glycolysis) as the dominant carbon source for lipogenesis; the LDH-high risk stratum may not apply. NCT04710888 (Phase 1/2; elesclomol + CuSO₄ in mesothelioma, FDX1-enriched) is the current clinical anchor.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Lipoylated TCA proteins via FDX1 | FDX1 | Elesclomol (STA-4783) | Phase 1/2 NCT04710888 (mesothelioma) | None; rationale via FASN→mtFAS→lipoic acid elevation (PMID 41520938 + PMID 35588000) |
+
+---
+
+## Mechanism 40: Reductive Carboxylation / ACLY Bottleneck
+
+### Pathway overview
+SDH (succinate dehydrogenase, Complex II) catalyzes the oxidation of succinate to fumarate in the TCA cycle. Its inactivation does more than accumulate succinate — it severs the forward TCA cycle at the succinate→fumarate step, blocking the canonical route by which mitochondria synthesize citrate (from acetyl-CoA + OAA). SDH-deficient cells must therefore obtain citrate by an alternative route to sustain fatty acid synthesis and histone acetylation.
+
+The alternative is **reductive carboxylation**: glutamine is catabolized to glutamate then α-ketoglutarate (α-KG), and the IDH1/2 enzymes run in reverse — carboxylating α-KG to isocitrate, then isocitrate to citrate, consuming NADPH. This mitochondrially generated citrate is exported to the cytoplasm via the mitochondrial citrate carrier (SLC25A1). In the cytoplasm, **ATP-citrate lyase (ACLY)** cleaves citrate into acetyl-CoA and oxaloacetate (OAA), consuming one ATP. This is the obligate final step before acetyl-CoA enters de novo fatty acid synthesis (via FASN/ACC) and histone acetyltransferases.
+
+Mullen et al. (Nature 2012, PMID 22101431) established this pathway by 13C isotopic tracing in cells with ETC-complex defects (including fumarate hydratase mutations and cytochrome oxidase deficiency): reverse IDH flux and ACLY-dependent acetyl-CoA production were demonstrated directly. SDH-deficient cells fit this same category — the forward TCA is truncated identically.
+
+Because the forward TCA route is blocked, ACLY is the **non-redundant bottleneck** for acetyl-CoA supply in SDH-deficient cells. Inhibiting ACLY cuts the sole cytoplasmic acetyl-CoA supply line, creating selective vulnerability relative to normal cells (which retain forward TCA flux and can bypass partial ACLY inhibition).
+
+### Drug: Bempedoic Acid (ETC-1002, Nexletol)
+Bempedoic acid is an FDA-approved ACLY inhibitor (approved 2020 for heterozygous familial hypercholesterolaemia). It is a prodrug: the liver enzyme long-chain acyl-CoA synthetase 1 (ACSL1) converts it to the active CoA thioester, which then competes with citrate at the ACLY active site. The prodrug mechanism concentrates activity in hepatocytes and limits systemic exposure, which is favorable for the approved indication but introduces a critical uncertainty for oncology: tumor cells generally express low levels of ACSL1 (primarily hepatic/adipose). Prodrug activation in SDH-deficient GIST, PPGL, or RCC cells is unproven. This is the primary limitation of repurposing bempedoic acid to oncology, and it should be evaluated with in vitro prodrug activation assays before in vivo testing.
+
+No clinical or preclinical data in SDH-deficient tumors exist. The rationale is entirely mechanistic, extrapolated from isotopic tracing in ETC-deficient non-SDH models.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| ATP-citrate lyase | ACLY | Bempedoic Acid (ETC-1002) | FDA-approved (hypercholesterolaemia); no oncology trials | None; rationale via reductive carboxylation in ETC-deficient cells (PMID 22101431); ACSL1 prodrug activation in tumor cells unverified |
 
 ## Important Context for Drug Repurposing
 
