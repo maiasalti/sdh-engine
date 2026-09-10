@@ -75,4 +75,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "cuproptosis-lipoylation-mtfas": "bg-orange-200 text-orange-900 dark:bg-orange-800 dark:text-orange-100",
   "reductive-carboxylation": "bg-lime-200 text-lime-900 dark:bg-lime-800 dark:text-lime-100",
   "hif-igf2-igf1r-growth-signaling": "bg-fuchsia-200 text-fuchsia-900 dark:bg-fuchsia-800 dark:text-fuchsia-100",
+  "hif-cd73-adenosine-immunosuppression": "bg-green-200 text-green-900 dark:bg-green-800 dark:text-green-100",
 };

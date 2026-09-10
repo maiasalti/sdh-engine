@@ -531,6 +531,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 30,
   },
   {
+    name: "HIF-Driven CD73/Adenosine Immunosuppression",
+    slug: "hif-cd73-adenosine-immunosuppression",
+    description:
+      "Constitutive HIF-1α stabilization in SDH-deficient tumors transcriptionally activates NT5E (CD73), a cell-surface ecto-5'-nucleotidase, via a canonical hypoxia-response element in the NT5E promoter. CD73 converts extracellular AMP to adenosine, which accumulates in the tumor microenvironment and binds A2A and A2B receptors on infiltrating T cells and NK cells. A2A/A2B signaling elevates cAMP and suppresses effector T-cell activation, IFN-γ secretion, and cytotoxic function — a third, mechanistically distinct immune-evasion arm complementary to the succinate-MCT1, IDO1, and PD-L1 axes.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HRE-driven NT5E/CD73 transcriptional activation → CD73-catalyzed extracellular AMP → adenosine",
+    downstream_effects: [
+      "NT5E/CD73 upregulation on tumor cells via HIF-1α binding to hypoxia-response element (HRE) in the NT5E promoter",
+      "Elevated extracellular adenosine in the tumor microenvironment",
+      "Adenosine → A2A/A2B receptor activation on CD4+/CD8+ T cells and NK cells → cAMP/PKA elevation → effector function suppression",
+      "IFN-γ secretion, TCR signaling, and cytotoxic T-cell degranulation suppressed",
+      "Anti-CD73 antibodies (oleclumab/MEDI9447) block CD73 enzymatic activity, reducing adenosine production",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
+  {
     name: "Reductive Carboxylation / ACLY Bottleneck",
     slug: "reductive-carboxylation",
     description:
