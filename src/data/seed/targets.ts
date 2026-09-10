@@ -442,6 +442,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "Mitochondrial ferredoxin-1 (FDX1; UniProt Q14213) is an iron-sulfur [2Fe-2S] electron-transfer protein located in the mitochondrial inner membrane space. FDX1 serves as the proximal electron donor for adrenal steroidogenesis (CYP11A1, CYP11B1) and is required for Fe-S cluster biogenesis. Tsvetkov et al. (Science 2022, PMID 35588000) identified FDX1 as the essential mediator of copper ionophore-induced cuproptosis: FDX1 reduces Cu²⁺ → Cu⁺, and Cu⁺ directly attacks lipoylated TCA cycle proteins — principally DLAT (E2 subunit of pyruvate dehydrogenase) and DLST (E2 subunit of α-ketoglutarate dehydrogenase) — triggering their toxic aggregation and proteotoxic cell death. FDX1 knockdown confers cuproptosis resistance; FDX1 overexpression sensitizes cells.\n\nRelevance to SDH-deficient tumors: SDH loss drives FASN upregulation (Rodríguez-Flores et al. Cancer Res 2026, PMID 41520938), and FASN supplies mtFAS with octanoyl-ACP, the obligate lipoic acid precursor. Elevated lipoic acid biosynthesis in SDH-deficient mitochondria increases the lipoylated DLAT/DLST pool available for FDX1-mediated Cu⁺ attack, mechanistically predicting reduced cuproptosis threshold relative to SDH-intact cells. PPGL may be particularly relevant given high intrinsic FDX1 expression in adrenocortical/chromaffin-origin tissue (adrenal steroidogenesis). FDX1 is a predictive biomarker of cuproptosis sensitivity rather than a conventional pharmacological target; copper ionophores (elesclomol) are the drug class that engages FDX1 catalytic activity to generate cytotoxic Cu⁺.",
   },
   {
+    gene_symbol: "NT5E",
+    name: "Ecto-5'-nucleotidase (CD73)",
+    uniprot_id: "P21589",
+    pathway_slug: "hif-cd73-adenosine-immunosuppression",
+    target_type: "downstream",
+    description:
+      "GPI-anchored cell-surface ectonucleotidase encoded by NT5E that dephosphorylates extracellular AMP to adenosine. The NT5E promoter contains a canonical hypoxia-response element (HRE) directly activated by HIF-1α; Synnestvedt et al. (J Clin Invest 2002, PMID 12370277) established HIF-1α as the transcriptional regulator of CD73 and demonstrated that HIF-1α binding to this site drives NT5E transcription under hypoxic conditions via luciferase reporter and antisense-oligonucleotide experiments. Samanta et al. (PNAS 2018, PMID 29367423) extended this finding to cancer cells, showing HIF-1α co-induces CD73, CD47, and PD-L1 in tumor cells — establishing CD73 induction as part of the canonical HIF-1α immunosuppressive transcriptional program. In SDH-deficient tumors, constitutive PHD inhibition by accumulated succinate locks HIF-1α in a permanently active state, making NT5E/CD73 upregulation constitutive and oxygen-independent. Elevated CD73 enzymatic activity increases extracellular adenosine, which suppresses effector T-cell and NK-cell activity via A2A/A2B receptor signaling. Pharmacological target of oleclumab (MEDI9447), an anti-CD73 IgG1 monoclonal antibody that blocks CD73 enzymatic activity.",
+  },
+  {
     gene_symbol: "ACLY",
     name: "ATP-citrate lyase",
     uniprot_id: "P53396",
