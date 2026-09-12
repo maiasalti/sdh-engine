@@ -866,3 +866,44 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+## 2026-09-12 — Erdafitinib: add NCT04083976 (Janssen Phase 2 FGFR-altered solid tumors)
+
+**Direction:** Data consistency fix — erdafitinib missing `clinical_trial_ids`
+
+**Angle:** NCT fill for FDA-approved FGFR inhibitor with verified Phase 2 solid-tumor trial
+
+**Papers added:** 0
+
+**Papers rejected (logged to tracker.md):** 6 (PMIDs 42728076, 42723163, 42718648, 42688135, 42590786, 42626938)
+
+### Part A — PubMed scan (Jun 12 – Sep 12, 2026)
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42728076 | **rejected** | Clinically silent PCC presenting as adrenal incidentaloma. Surgical/biochemical case report; no SDH content, no treatment advance. |
+| 42723163 | **rejected** | Immunological features of NEN and adrenal tumors. PPGL mentioned; immune microenvironment reviewed across molecular subtypes; not SDH-focused; no SDH-specific mechanistic or treatment advance. |
+| 42718648 | **rejected** | Fulminant pheochromocytoma crisis triggered by glucocorticoids. Surgical/ICU case report; no SDH content. |
+| 42688135 | **rejected** | PCC vs sympathetic PGL management and outcomes (Karolinska n=220). Not SDH-focused; no SDH-specific treatment or mechanistic advance. |
+| 42590786 | **rejected** | Giant pediatric PCC case report; preserved SDHB staining; no SDH-deficient treatment or mechanistic advance. |
+| 42626938 | **rejected** | Octreotide as preoperative hemodynamic bridge in catecholamine-secreting PPGL (n=27). Not an anti-tumor treatment study; SSTR2 direction already in engine via 177Lu-DOTATATE and [212Pb]VMT-α-NET. |
+
+**Papers added to `src/data/papers.ts`:** 0 (no paper cleared the SDH-specific relevance gate)
+
+### Part B — Improvement
+
+**Direction:** Data consistency fix — erdafitinib missing `clinical_trial_ids`
+
+Erdafitinib (Balversa) is an FDA-approved pan-FGFR1-4 inhibitor in the engine as an alternative FGFR inhibitor for SDH-GIST, using the same mechanistic rationale as rogaratinib: succinate-driven DNA hypermethylation disrupts insulators at the FGF3/FGF4 locus → aberrant FGF ligands → FGFR1 autocrine loop. The entry had `clinical_trial_ids: []` with no machine-readable trial reference.
+
+Verified via ClinicalTrials MCP tool: NCT04083976 "A Phase 2 Study of Erdafitinib in Subjects With Advanced Solid Tumors and FGFR Gene Alterations" — Janssen Research & Development, COMPLETED, 316 patients, 179 sites, started 2019-11-20, primary completion 2023-12-04. This is a broad FGFR-altered solid tumor basket trial (equivalent to the RAGNAR trial) that provides the closest clinical context for erdafitinib use in FGFR-altered tumors beyond urothelial carcinoma.
+
+Bevacizumab NCT verification was also attempted: search returned only NCT00970970 (observational 89Zr-bevacizumab PET imaging study in VHL, not a therapeutic trial) — bevacizumab therapeutic PPGL trial not found.
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: erdafitinib `clinical_trial_ids: []` → `["NCT04083976"]`
+- `tracker.md`: logged 6 rejected PMIDs (42728076, 42723163, 42718648, 42688135, 42590786, 42626938)
+
+**No prior log entries cover this direction** — previous NCT fixes were for olaparib (2026-09-01) and niraparib (2026-09-08); erdafitinib is a different drug.
+
+**PR:** morning/2026-09-12-erdafitinib-nct-ragnar
