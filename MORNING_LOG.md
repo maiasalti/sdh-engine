@@ -866,3 +866,45 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-13 — Dual mTORC1/2 kinase inhibition (sapanisertib) + paper scan
+
+**Branch:** `morning/2026-09-13-dual-mtor-sapanisertib`
+
+### Part A — Paper Scan
+
+Queries run (11 total; 3-month window 2026-06-13 to 2026-09-13):
+- SDH-deficient GIST treatment clinical trial 2026
+- paraganglioma pheochromocytoma SDH therapy 2026
+- SDH-deficient renal cell carcinoma treatment
+- succinate oncometabolite HIF pseudohypoxia 2026
+- SDHB SDHA mutation tumor BRCAness PARP 2026
+- SDH-deficient GIST epigenetics CIMP methylation 2026
+- PPGL pheochromocytoma paraganglioma immunotherapy 2026
+- SDH complex II mitochondria cancer metabolism 2026
+- SDH GIST sunitinib everolimus clinical 2026
+- pseudohypoxia HIF VHL SDH tumor 2026
+- SDH-deficient tumor succinate epigenetics treatment 2026
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| — | — | All 11 queries returned PMIDs already present in tracker.md from prior runs. Zero new papers qualify. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** drug-pool
+**Angle:** Dual mTORC1/2 kinase inhibition — sapanisertib (TAK-228/MLN0128), addressing the AKT-Ser473 reactivation feedback that limits everolimus
+
+**Rationale:** Everolimus (mTORC1 allosteric inhibitor, evidence_score 58) is the highest-scored mTOR entry in the engine. Its clinical limitation is well-established: mTORC1 inhibition relieves S6K1-mediated IRS-1 negative feedback → PI3K/PDK1 → AKT-Thr308 reactivation; simultaneously mTORC2 (responsible for AKT-Ser473) remains uninhibited by everolimus at clinical concentrations. The net result is paradoxical AKT reactivation — a documented resistance mechanism. Capivasertib (AKT kinase inhibitor, Mechanism 27) and sapanisertib both address AKT, but at distinct mechanistic points: capivasertib blocks the AKT kinase domain; sapanisertib blocks the upstream mTOR kinase active site (shared by mTORC1 and mTORC2), preventing mTORC2 from phosphorylating AKT-Ser473 in the first place. These are mechanistically non-redundant. SDH anchor: Jochmanová et al. (JNCI 2013, PMID 23940289) established constitutive PI3K/AKT/mTOR activation as a defining feature of the pseudohypoxic SDH/VHL PPGL cluster. Clinical anchor: NCT02724020 (Phase 2, Millennium/Takeda, n=96, completed) — head-to-head sapanisertib vs. everolimus in ccRCC after VEGF-targeted therapy. Evidence_score 31 (theoretical), higher than other theoretical entries because the Phase 2 RCT in RCC (an SDH-deficient tumor type) directly compares against the engine's existing everolimus entry.
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: added sapanisertib (evidence_score 31, theoretical, pathway_slugs ["mtor-pi3k-akt"], tumor_type_applicability ["all"], clinical_trial_ids ["NCT02724020"])
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (dual mTORC1/2 inhibition rationale, AKT-Ser473 feedback, sapanisertib clinical data table)
+
+**No prior log entries cover dual mTOR kinase (mTORC1+2) inhibition** — the closest prior entries are everolimus (mTORC1 only, 2026-06-23 initial run) and capivasertib (AKT kinase, a different target); this is the first entry targeting the mTOR kinase itself to block both complexes simultaneously.
