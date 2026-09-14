@@ -866,3 +866,55 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-14
+
+### Part A — Literature Scan
+
+**Queries run (2026-09-08 to 2026-09-14):**
+- "SDH succinate dehydrogenase GIST paraganglioma pheochromocytoma RCC treatment"
+- "succinate SDHB SDHD paraganglioma drug repurposing"
+- "pseudohypoxia HIF SDH-deficient tumor therapy"
+- "MTHFD2 cancer nucleotide synthesis SDH"
+- "succinate oncometabolite epigenetic tumor"
+
+**Papers evaluated:**
+
+| PMID | Title | Verdict |
+|---|---|---|
+| 42732958 | Somatic-only SDHD variant with tumor-specific LOH in metastatic carotid body tumor (Kasahara K et al., Endocr J 2026-09-11) | **ADDED** — Case Reports |
+
+**Decision:** 1 paper added. Dry window — most queries returned 0 results. The Kasahara case is clinically significant: first confirmed metastatic carotid body tumor from somatic-only (non-germline) SDHD variant + tumor-specific LOH. Germline testing was negative — establishes that germline-negative patients still require tumor-level SDH profiling.
+
+---
+
+### Part B — Drug Pool Addition: LY3410738 (MTHFD2 inhibitor)
+
+**Direction chosen:** One-carbon folate / nucleotide synthesis dependency via MTHFD2
+
+**Mechanistic chain:**
+
+SDH loss truncates TCA → OAA/aspartate depletion. Accumulated succinate also directly inhibits ATCase (CAD complex), the first enzyme of de novo pyrimidine synthesis — confirmed by Hart et al. 2025 (PMID 42082831). The combined nucleotide stress triggers the Integrated Stress Response (ISR: GCN2/HRI → p-eIF2α → ATF4 selective translation). ATF4 transcriptionally upregulates MTHFD2 as a compensatory adaptation, routing nucleotide synthesis through the mitochondrial one-carbon folate cycle. MTHFD2 generates 10-formyl-THF (purines via GART/ATIC) and 5,10-methylene-THF (thymidylate via TYMS), creating a broad one-carbon dependency.
+
+LY3410738 (Eli Lilly dual MTHFD2/MTHFD1L inhibitor) inhibits this compensatory axis, simultaneously depleting both purine and thymidylate branches — compounding the nucleotide stress already imposed by SDH loss.
+
+**Why this is distinct from existing DHODH entry (Mechanism 17):**
+- DHODH/brequinar: pyrimidine de novo synthesis enzyme (UMP branch only)
+- MTHFD2/LY3410738: folate cofactor supply for BOTH purines (10-formyl-THF) AND thymidylate (5,10-methylene-THF) — additive stress, entirely different enzymatic node
+
+**Evidence score:** 20 (theoretical) — mechanistic chain via Hart PMID 42082831 (succinate-ATCase); no SDH-specific MTHFD2 data published yet; no LY3410738 clinical trial identified (NCT04893525 confirmed to be a buprenorphine/naloxone opioid use disorder study — NOT an MTHFD2 trial)
+
+**Status:** theoretical | **Applicability:** all SDH tumors
+
+**Changes made:**
+- `src/data/papers.ts`: added PMID 42732958 (Kasahara K, Endocr J 2026, somatic SDHD LOH carotid body tumor)
+- `src/data/seed/pathways.ts`: added `one-carbon-folate-nucleotide-synthesis` pathway (display_order 33)
+- `src/data/seed/targets.ts`: added MTHFD2 target (UniProt P13995, pathway_slug one-carbon-folate-nucleotide-synthesis, target_type metabolic)
+- `src/data/seed/drugs.ts`: added LY3410738 (evidence_score 20, status theoretical, `clinical_trial_ids: []`)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (MTHFD2/LY3410738 one-carbon folate nucleotide synthesis)
+- `src/lib/scoring/constants.ts`: added `one-carbon-folate-nucleotide-synthesis` color (bg-violet-200)
+- `tracker.md`: logged PMID 42732958 (added)
+
+**No prior log entries cover this direction.**
