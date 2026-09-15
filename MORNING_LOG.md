@@ -866,3 +866,44 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-15
+
+**Direction:** papers-only
+**Angle:** SDHB splice-site variant functional characterization via minigene assay — Genetics & Syndromes
+
+**Papers added:** 1 (PMID 42711465)
+**Papers rejected (logged to tracker.md):** 1 (PMID 42690223)
+
+### Part A — Paper Scan
+
+Queries run (10 total; 3-month window Jun–Sep 2026): SDH-deficient GIST treatment 2026, paraganglioma pheochromocytoma SDH 2026, SDH-deficient RCC 2026, succinate oncometabolite drug 2026, SDHB SDHA mutation functional 2026, succinate dehydrogenase splice variant 2026, BRCAness SDH synthetic lethality 2026, SDH-deficient pituitary 2026, pseudohypoxia HIF SDH tumor 2026, wild-type GIST SDH 2026.
+
+**PMID 42711465** — Köhler A, Rosenbaum T, Rump A, et al. "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B." *NPJ Precis Oncol* 2026-09-08. DOI: 10.1038/s41698-026-01685-7.
+**VERDICT: ADDED** (Genetics & Syndromes). Minigene assay systematically evaluated 48 SDHB splice-site variants: 34% showed ≥90% aberrant splicing (classifying as pathogenic/likely pathogenic); 13/26 previously classified variants were reclassified, including 12 VUS → likely benign. This is a clinically actionable functional genomics paper directly relevant to genetic counselling for SDHx carriers — the primary user population of this engine. Minigene assay output directly informs whether a carrier is at risk, making it a genuine contribution to the Genetics & Syndromes literature base.
+
+**PMID 42690223** — Alkaissi H, Gordon CM, Pacak K. "PPGLomics: An Interactive Platform for Pheochromocytoma and Paraganglioma Transcriptomics." *Endocr Relat Cancer* 2026-09-03. DOI: 10.1530/ERC-26-0140.
+**VERDICT: REJECTED** — Resource/tool paper. PPGLomics integrates TCGA-PCPG (n=160) and A5 SDHB-mutant cohort (n=91) for interactive transcriptomics browsing. No new mechanistic findings or treatment advances; the data pre-exist, only the interface is new. Logged to tracker.md.
+
+All other returned PMIDs were already in tracker.md from prior runs.
+
+### Part B — No New Direction
+
+No drug or improvement direction cleared the hard relevance gate today.
+
+**Directions explored and rejected:**
+- **Aurora A kinase (AURKA) / alisertib**: Rationale explored — SDH loss → constitutive HIF-2α → potential transcriptional activation of AURKA (by analogy with VHL-null ccRCC, same PHD→HIF mechanism). Three PubMed searches (Aurora kinase A HIF pseudohypoxia, alisertib paraganglioma pheochromocytoma, AURKA HIF-2α) returned **0 results** in PubMed-indexed literature. Cannot be cited; direction abandoned as unverifiable.
+- **MTHFD2/one-carbon folate metabolism**: Definitively ruled out in prior logs; no SDH-specific data, no clinical-stage inhibitors. Status unchanged.
+- **Complex I (IACS-010759)**: Definitively ruled out (Sokolov preprint PMID 42239110: SDH-deficient cells suppress Complex I as an adaptation). Status unchanged.
+
+**Candidate directions for future consideration (owner discretion):**
+1. **LAG-3 inhibition (relatlimab/Opdualag)**: Mechanistic chain — succinate-driven T-cell exhaustion → LAG-3 upregulation on exhausted CD8+ T cells → LAG-3 blockade restores effector function. Distinct from existing pembrolizumab (PD-1) entry. Requires PubMed verification of succinate → LAG-3 link specifically.
+2. **TIGIT inhibition (tiragolumab)**: HIF-1α → CD155/PVR transcriptional upregulation → TIGIT ligation → T-cell exhaustion. Similar pseudohypoxia → immune checkpoint axis. Requires verification of HIF-1α → CD155 link in SDH-deficient or pseudohypoxic context.
+3. **RXRα agonist (bexarotene)**: Retinoid X receptor nuclear agonist; some neuroendocrine tumor activity and CIMP/epigenetic precedent. No direct SDH-specific data known; would require full PubMed verification pass before adding.
+
+The overriding principle applies: papers-only is the correct outcome for today. No new drug was added.
+
+**Files changed:** `src/data/papers.ts` (+1: PMID 42711465), `tracker.md` (+2 rows: PMID 42711465 added, PMID 42690223 rejected), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add SDHB splice-variant minigene paper (PMID 42711465); papers-only run
