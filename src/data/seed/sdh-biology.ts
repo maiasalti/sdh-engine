@@ -648,6 +648,27 @@ The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus,
 |---|---|---|---|---|
 | IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
 
+### 42. G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality via CX-5461
+
+**Pathway:** g4-quadruplex-brcas-lethality
+**Drug:** CX-5461 — G-quadruplex DNA stabilizer (Senhwa Biosciences)
+**Evidence level:** Preclinical (G4-selective lethality established in BRCA-deficient PDX models; Phase 1 clinical trial NCT02719977 in BRCA1/2-deficient hematologic malignancies)
+
+G-quadruplex (G4) DNA structures are four-stranded helices formed at guanine-rich sequences throughout the genome. CX-5461 stabilizes G4 structures, blocking replication fork progression and generating DSBs that require BRCA1/2-mediated HR for repair.
+
+**Why SDH-deficient tumors are vulnerable:**
+The Sulkowski BRCAness mechanism (Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005) establishes that succinate accumulation in SDH-deficient cells → KDM4A/KDM4B inhibition → H3K9me3 at DSB sites → impaired TIP60/ATM → constitutive HR deficiency (BRCAness) in ALL SDH-deficient tumors regardless of BRCA1/2 germline status. This mechanistically places SDH-deficient tumors in the same BRCAness class as BRCA1/2-mutant tumors for which CX-5461 shows selective lethality (Xu et al., Nat Commun 2017, PMID 28211448).
+
+**Amplification in ATRX-null/ALT SDHB-PPGL:**
+ATRX normally resolves G4 structures and R-loops at replication forks; ATRX loss in ~30–40% of metastatic SDHB-PPGL (PMID 42230482) elevates the baseline G4 burden. The combination of SDH-driven BRCAness (impaired G4-break repair) AND ATRX-null G4 overload (increased G4-break generation) creates a compounded vulnerability to CX-5461. This is mechanistically distinct from ceralasertib (Mechanism 13), which inhibits ATR kinase signaling in ATRX-null cells — CX-5461 instead amplifies the upstream G4 DNA damage rather than blocking the downstream ATR response.
+
+**Non-redundancy with existing BRCAness drugs:**
+Xu et al. 2017 (PMID 28211448) specifically demonstrated CX-5461 activity in PARP inhibitor-resistant BRCA-deficient tumors — establishing that G4 stabilization generates a distinct category of HR-requiring DNA damage orthogonal to PARP-trapped SSBs→DSBs. This extends CX-5461 utility to SDH-deficient tumors that have acquired or intrinsic PARP inhibitor resistance, and distinguishes it from elimusertib (DNA-PKcs, Mechanism 35), prexasertib (CHK1, Mechanism 28), and ART558 (POLQ, Mechanism 18), all of which operate downstream of DSB generation rather than at it.
+
+| Druggable target | Drug | Stage | SDH-specific data |
+|---|---|---|---|
+| G-quadruplex DNA | CX-5461 | Phase 1 (NCT02719977, BRCA-deficient hematologic malignancies); Phase 1b (NCT03914288, BRCA-mutated solid tumours) | None; rationale via Sulkowski BRCAness (PMID 30013182, 32494005) + Xu et al. G4/BRCA-selective lethality (PMID 28211448) |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

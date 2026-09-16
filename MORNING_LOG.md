@@ -866,3 +866,59 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+**PR:** morning/2026-09-08-niraparib-nct-sdha-rcc-paper
+
+---
+
+## 2026-09-16 — CX-5461 G-quadruplex stabilizer (BRCAness synthetic lethality)
+
+**Branch:** `morning/2026-09-16-cx5461-g4-brcas`
+
+### Part A — Paper Scan
+
+Queries run (6 total; 3-month window June–September 2026):
+- SDH-deficient GIST treatment clinical trial 2026
+- Paraganglioma pheochromocytoma SDHB HIF treatment 2026
+- SDH-deficient renal cell carcinoma therapy 2026
+- SDHB PPGL metastatic synthetic lethality BRCAness
+- Succinate dehydrogenase tumor drug repurposing mechanism
+- SDH-deficient pituitary adenoma treatment
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42590786 | **rejected** | Giant pediatric pheochromocytoma case report with preserved SDHB IHC expression — SDH-intact tumor; SDH-deficient biology not applicable. |
+| 41634405 | **rejected** | Italian pathologist survey on SDH/FH-deficient RCC diagnostic practices — published February 2026, outside 3-month scan window; diagnostic/survey focus only, no treatment advance. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** Drug-pool — G-quadruplex DNA stabilization × BRCAness synthetic lethality via CX-5461
+**Angle:** Mechanistically distinct G4 trapping orthogonal to all existing DDR entries; uniquely active in PARP inhibitor-resistant BRCA-deficient models
+
+**Mechanistic chain:**
+SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSB sites → impaired TIP60/ATM → HR deficiency (BRCAness) [Sulkowski PMID 30013182, 32494005] → SDH-deficient cells functionally equivalent to BRCA1/2-null. CX-5461 stabilizes G4 DNA → stalled replication forks → DSBs → HR-deficient BRCAness cells cannot repair → selective lethality. Xu et al. (Nat Commun 2017, PMID 28211448) directly demonstrated this selectivity in BRCA-deficient PDX models including PARP inhibitor-resistant tumors.
+
+**ATRX-null amplification:** ATRX loss in ~30–40% of metastatic SDHB-PPGL (PMID 42230482) elevates baseline G4 burden (ATRX normally resolves G4 structures and R-loops). The compound vulnerability — BRCAness (impaired G4-break repair) + ATRX-null (elevated G4-break generation) — is mechanistically additive. Distinct from ceralasertib (Mechanism 13, ATR kinase inhibition in ATRX-null/ALT cells): CX-5461 amplifies the upstream G4 damage; ceralasertib blocks the downstream ATR response. Non-redundant.
+
+**Non-redundancy with existing engine entries:**
+- Olaparib/niraparib (Mechanism 14): PARP-trapped SSBs → DSBs; CX-5461 active in PARP inhibitor-resistant BRCA-deficient models (Xu et al. 2017)
+- Prexasertib (Mechanism 28): CHK1 checkpoint — acts at fork stabilization, not DSB generation
+- Elimusertib (Mechanism 35): DNA-PKcs c-NHEJ backup — acts after DSB generation, not at it
+- ART558 (Mechanism 18): POLQ/TMEJ alt-EJ backup — acts after DSB generation
+- Ceralasertib (Mechanism 13): ATR kinase inhibition in ATRX-null/ALT subgroup — orthogonal to G4 stabilization
+
+**Evidence_score 30 (preclinical):** Strong: Xu et al. 2017 G4/BRCA-selective lethality PDX data (PMID 28211448); Sulkowski BRCAness (PMID 30013182, 32494005); Phase 1 clinical pharmacology in BRCA-deficient patients (NCT02719977, NCT03914288). Limitation: no SDH-specific experimental validation.
+
+**Decision gate:** Passes — (1) mechanistically distinct G4 stabilization not previously in engine, (2) novel drug-mechanism combination (G4 → DSB → BRCAness selectivity), (3) activity specifically in PARP inhibitor-resistant BRCA-deficient tumors (clinical differentiator), (4) direct clinical trials in BRCA-deficient patients, (5) PMID 28211448 verified on PubMed (Xu et al., Nat Commun 2017, doi 10.1038/ncomms14432).
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: new pathway `g4-quadruplex-brcas-lethality` (display_order 33)
+- `src/data/seed/drugs.ts`: new drug CX-5461 (evidence_score 30, preclinical, tumor_type_applicability ["all"], NCT02719977 + NCT03914288)
+- `src/data/seed/sdh-biology.ts`: Mechanism 42 added
+- `src/lib/scoring/constants.ts`: `g4-quadruplex-brcas-lethality` color entry (violet-200)
+- `tracker.md`: 2 new rejected rows (PMID 42590786, PMID 41634405)
+- `MORNING_LOG.md`: this entry
+**PR:** [Morning] Add CX-5461 (G4 stabilizer) — BRCAness × G-quadruplex synthetic lethality
