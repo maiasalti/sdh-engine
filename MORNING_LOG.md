@@ -866,3 +866,45 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-17
+
+### Part A — PubMed paper scan
+
+**Date window:** 2026-06-17 to 2026-09-17
+
+Queries run (9 total):
+- SDH-deficient GIST treatment clinical trial
+- Paraganglioma pheochromocytoma succinate pseudohypoxia therapy
+- SDH-deficient renal cell carcinoma treatment
+- SDHB-deficient synthetic lethality BRCAness
+- Succinate oncometabolite drug repurposing
+- SDH succinate TCA epigenetic cancer mechanism
+- Pheochromocytoma paraganglioma new treatment 2026
+- GIST SDH wild-type clinical trial 2026
+- SDH pituitary adenoma treatment
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 41634405 | **rejected** | Fanelli GN et al., Virchows Arch 2026-02-04. Italian GIUP survey of IHC practices for SDH/FH-deficient RCC across Italian pathology labs. (a) Published 2026-02-04 — outside the 3-month scan window. (b) Diagnostic pathology survey only; no therapeutic or mechanistic advance. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** Add pemigatinib — FDA-approved FGFR1/2/3 inhibitor with new dedicated Phase 2 trial in SDH-deficient GIST
+
+**Rationale:** ClinicalTrials.gov scan surfaced NCT07434843 (PEMIGIST; Dana-Farber Cancer Institute; Phase 2; recruiting since 2026-05-19; n=24; pemigatinib in advanced SDH-deficient GIST). The FGFR pathway is mechanistically established in SDH-deficient GIST via PMID 42191879 (Merriam et al., Nat Med 2026): CIMP-driven FGF3/FGF4 insulator disruption creates an autocrine FGFR1 loop. Pemigatinib (Pemazyre; Incyte) is distinct from rogaratinib and erdafitinib already in the engine:
+- FDA-approved (cholangiocarcinoma FGFR2 fusions, 2020; FGFR1-rearranged myeloid neoplasms, 2022) → more accessible off-label
+- FGFR1/2/3 selective (spares FGFR4) → potentially different hyperphosphatemia severity
+- Dedicated SDH-deficient GIST Phase 2 trial (NCT07434843) → independent clinical validation of FGFR target in this tumor type
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: added pemigatinib entry (evidence_score 58, clinical_trial, gist, NCT07434843)
+- `tracker.md`: logged PMID 41634405 (rejected)
+
+**No prior log entries cover pemigatinib or NCT07434843.**

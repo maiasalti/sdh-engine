@@ -997,4 +997,24 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
   },
+  {
+    name: "Pemigatinib",
+    brand_names: ["Pemazyre"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Selective FGFR1/2/3 inhibitor",
+    mechanism_of_action:
+      "Orally bioavailable, selective inhibitor of FGFR1, FGFR2, and FGFR3 (spares FGFR4). FDA-approved for cholangiocarcinoma with FGFR2 fusions/rearrangements (2020) and myeloid/lymphoid neoplasms with FGFR1 rearrangement (2022). The mechanistic rationale in SDH-deficient GIST is shared with rogaratinib: SDH loss drives genome-wide CIMP hypermethylation (via succinate-mediated TET dioxygenase inhibition) that disrupts CTCF-binding insulator elements flanking the FGF3/FGF4 locus, causing aberrant overexpression of these oncogenic FGF ligands and establishing an autocrine FGFR1 signaling loop selectively in SDH-deficient tumor cells. Pemigatinib blocks FGFR1/2/3 kinase activity, interrupting this epigenetically-driven FGF signaling cascade. The FGFR target and underlying mechanism were established by Merriam et al. (Nat Med 2026, PMID: 42191879), which documented 41.7% ORR and 31-month median PFS for pan-FGFR inhibition in SDH-deficient GIST. Pemigatinib's FGFR1/2/3 selectivity (sparing FGFR4) may reduce the FGFR4-related hyperphosphatemia that is prominent with pan-FGFR inhibitors. Clinical anchor for SDH-deficient GIST: NCT07434843 (PEMIGIST; Phase 2; Dana-Farber Cancer Institute; recruiting as of May 2026; n=24; primary endpoint ORR by RECIST 1.1; pemigatinib on continuous 21-day cycles). This is the second dedicated Phase 2 trial of an FGFR inhibitor specifically in SDH-deficient GIST, independent of and complementary to the rogaratinib data. Pemigatinib's FDA approval in a FGFR2-fusion setting validates FGFR pharmacology and makes the drug more accessible (off-label basis possible pending PEMIGIST results) than investigational rogaratinib. Key limitations: no published efficacy data for pemigatinib in SDH-deficient GIST yet (PEMIGIST results expected 2028); FGFR4 sparing may reduce certain toxicities but also potentially narrows activity if FGFR4 contributes meaningfully to SDH-GIST signaling (rogaratinib pan-FGFR activity provides no disambiguation).",
+    fda_approved: true,
+    approved_indications: [
+      "Locally advanced or metastatic cholangiocarcinoma with FGFR2 fusion or rearrangement (second-line)",
+      "Relapsed or refractory myeloid/lymphoid neoplasms with FGFR1 rearrangement",
+    ],
+    pathway_slugs: ["fgfr-signaling"],
+    target_gene_symbols: ["FGFR1", "FGFR2", "FGFR3"],
+    evidence_score: 58,
+    status: "clinical_trial",
+    tumor_type_applicability: ["gist"],
+    clinical_trial_ids: ["NCT07434843"],
+  },
 ];
