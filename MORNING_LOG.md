@@ -866,3 +866,32 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-18
+
+**Direction:** data-quality
+
+**Angle:** Fix pathways.ts file-array position of `hif-igf2-igf1r-growth-signaling` (display_order 32 placed before display_order 29/30/31 entries)
+
+### Part A — Paper Scan
+
+12 PubMed queries run covering: SDH-deficient GIST (3-month window), PPGL/pheochromocytoma/paraganglioma, SDH-deficient RCC, pseudohypoxia/HIF SDH, BRCAness/PARP SDH, succinate oncometabolite, CIMP/DNA methylation SDH, HIF-2α/belzutifan SDH, SSTR2 GIST, FASN/lipid SDH, cGAS-STING/innate immune GIST, and SDHA/SDHB/SDHC/SDHD recent 2026.
+
+**Papers added:** 0
+
+**Papers rejected (logged to tracker.md):** 0
+
+All PMIDs returned in today's scan were already present in tracker.md. No new eligible papers identified.
+
+### Part B — Improvement
+
+**Direction:** Data consistency fix — pathways.ts array order does not match `display_order` sort order for `hif-igf2-igf1r-growth-signaling`
+
+The `hif-igf2-igf1r-growth-signaling` pathway (added 2026-09-07, display_order 32) was positioned in the array between `hif-cxcr4-chemokine-metastasis` (display_order 28) and `hsp90-hif-client-chaperone` (display_order 29), breaking the invariant that file order matches ascending `display_order`. All 31 other pathways in the file were sorted correctly by `display_order`. This inconsistency was introduced when the IGF2/IGF1R pathway was appended mid-array. Fixed by moving the block to after `reductive-carboxylation` (display_order 31), restoring the invariant.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: moved `hif-igf2-igf1r-growth-signaling` object to end of array (after `reductive-carboxylation`, display_order 31), so array order matches ascending `display_order` throughout
+
+**No prior log entries cover this direction** — array-order consistency fix is a new category; previous data-quality runs fixed display_order numbering gaps (2026-08-12, 2026-08-26) and missing NCT IDs (2026-09-01, 2026-09-08).
