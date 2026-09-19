@@ -648,6 +648,31 @@ The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus,
 |---|---|---|---|---|
 | IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
 
+### 42. CDK9 / P-TEFb Super-Enhancer Transcription Elongation Dependency in SDH-Deficient GIST
+
+The CIMP-driven chromatin remodeling that results from SDH loss creates not only the BRD4 super-enhancer reading dependency (already captured in this engine's BET inhibitor entry) but an orthogonal, downstream dependency on CDK9 — the kinase that releases RNA Pol II from promoter-proximal pause to enable elongation through super-enhancer-driven gene bodies.
+
+**The SDH-deficient GIST super-enhancer discovery (Merriam et al., Nat Med 2026, PMID 42191879):**
+Merriam et al. directly established in SDH-deficient GIST that SDH loss → succinate accumulation → TET1/2/3 inhibition → CIMP → hypermethylation of CTCF insulator binding sites → loss of topologically associating domain (TAD) boundaries → ectopic chromatin loop formation → activation of a de novo FGF3/FGF4 super-enhancer that is completely absent in KIT/PDGFRA-mutant GIST and normal mesenchymal tissue. This is a direct, experimentally demonstrated consequence of SDH loss in GIST — the most specific mechanistic anchor for any transcription-targeting strategy in this tumor subtype.
+
+**CDK9 / P-TEFb — the obligate elongation kinase at super-enhancers:**
+All active super-enhancers depend on CDK9 (cyclin-dependent kinase 9), the catalytic subunit of the Positive Transcription Elongation Factor b (P-TEFb) complex (CDK9 + Cyclin T1). CDK9 phosphorylates Ser2 of the RNA polymerase II C-terminal domain (CTD) heptapeptide repeat, releasing Pol II from the promoter-proximal pause maintained by the DSIF (SPT4/SPT5) and NELF complexes. This pause release is rate-limiting for productive elongation; without it, Pol II stalls ~30–50 bp downstream of the transcription start site. At super-enhancers — which have high Pol II density and disproportionate promoter-proximal pausing — CDK9-mediated pause release is the critical gating step for high-output transcription. Genes driven from large SEs (including MYC, MCL1, and tumor-specific SE-activated oncogenes) show greater sensitivity to CDK9 inhibition than housekeeping genes with smaller, conventional enhancers.
+
+**BRD4 → CDK9 hierarchy and pharmacological non-redundancy:**
+BRD4 binds H3K27ac marks at the ectopic SDH-deficient GIST super-enhancer via its bromodomains and recruits P-TEFb/CDK9 to the SE via direct interaction with Cyclin T1. BRD4 inhibitors (JQ1, INCB054329 — already in engine) block the reading step: BRD4 cannot bind H3K27ac, cannot recruit CDK9, and cannot enable elongation. CDK9 inhibitors block the kinase step: Pol II CTD Ser2 is not phosphorylated, pause release does not occur, and elongation fails regardless of BRD4 occupancy. The two targets are pharmacologically non-redundant: CDK9 inhibition can overcome BRD4 inhibitor resistance (e.g., via CDK9 recruitment by alternative transcription factor complexes not dependent on BRD4 bromodomain binding), and the two may combine synergistically on the same SE axis. From a drug resistance standpoint, CDK9 inhibition addresses BRD4-independent elongation recruitment that can underlie BET inhibitor resistance.
+
+**Drug candidate — KB-0742 (Kronos Bio):**
+KB-0742 is an orally bioavailable, selective CDK9 inhibitor that completed Phase 1 dose escalation (NCT04718675) in relapsed/refractory AML and MDS. AML/MDS is driven by super-enhancer-dependent transcription of MYC and MCL1 — the same SE biology that makes CDK9 the pharmacological target. NCT04718675 established human CDK9 pharmacokinetics and a tolerability profile (primary toxicity: myelosuppression, mechanistically expected from CDK9 inhibition in hematopoietic progenitors with high MCL1/MYC SE dependence). The AML/MDS clinical experience does not translate directly to GIST dosing, but demonstrates that selective CDK9 inhibition is clinically achievable in humans.
+
+**Specificity for SDH-deficient GIST vs. other SDH-deficient tumor types:**
+The super-enhancer dependency (PMID 42191879) is established specifically in SDH-deficient GIST. It is not established in SDH-deficient PPGL or RCC. tumor_type_applicability is therefore restricted to GIST: the mechanistic anchor does not extend to other SDH-deficient tumor types without additional experimental evidence. SDH-deficient PPGL and RCC may lack the specific CTCF insulator disruption and ectopic FGF3/FGF4 SE, as their chromatin architecture and CIMP landscapes may differ from GIST's mesenchymal context.
+
+**Key limitation:** No experimental data test CDK9 inhibitors in SDH-deficient GIST. The connection flows as: SDH loss (established) → CIMP/CTCF disruption (established) → ectopic FGF3/FGF4 SE in SDH-GIST (directly established by PMID 42191879) → CDK9 elongation dependency (inferred from general SE biology; not directly tested in SDH-GIST). Required next steps: KB-0742 or fadraciclib dose-response in SDHA-null GIST48 vs. SDH-intact cells; Pol II CTD pSer2 as pharmacodynamic readout; FGF3/FGF4 mRNA levels as SE-specific transcriptional output; ChIP-seq for CDK9 and Pol II pSer2 at the ectopic FGF3/FGF4 SE in SDH-deficient GIST cells.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CDK9 / P-TEFb elongation kinase | CDK9 | KB-0742 | Phase 1 (NCT04718675; AML/MDS; completed) | None; rationale via SDH-GIST-specific super-enhancer (Merriam Nat Med 2026, PMID 42191879) + CDK9 SE elongation biology |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

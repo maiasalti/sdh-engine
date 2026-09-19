@@ -547,4 +547,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 31,
   },
+  {
+    name: "CDK9 / P-TEFb Super-Enhancer Transcription Elongation",
+    slug: "cdk9-super-enhancer-elongation",
+    description:
+      "SDH loss in GIST drives CIMP (CpG island methylator phenotype) via succinate-mediated TET inhibition. CIMP-driven methylation of CTCF insulator sequences disrupts chromatin boundaries, enabling the formation of an ectopic FGF3/FGF4 super-enhancer — directly established by Merriam et al. in SDH-deficient GIST (Nat Med 2026, PMID 42191879). Active super-enhancers are dependent on CDK9 (cyclin-dependent kinase 9), the catalytic subunit of the positive transcription elongation factor b (P-TEFb). CDK9 phosphorylates Ser2 of the RNA polymerase II C-terminal domain (CTD), releasing Pol II from promoter-proximal pausing (held by DSIF/NELF) and enabling productive transcriptional elongation. At super-enhancers — densely clustered transcription factor and Mediator binding regions marked by high H3K27ac — CDK9-mediated Pol II CTD Ser2 phosphorylation is rate-limiting for transcription of SDH-deficient-GIST-specific oncogenes driven from the ectopic super-enhancer. BRD4 (inhibited by BET inhibitors, already in the engine) reads H3K27ac and recruits P-TEFb/CDK9 to super-enhancers; CDK9 inhibition therefore acts downstream of BRD4 on the same super-enhancer axis but at the elongation kinase step rather than the chromatin reader step — pharmacologically distinct and non-redundant.",
+    upstream_event:
+      "SDH loss → succinate → TET inhibition → CIMP → CTCF insulator methylation → chromatin boundary disruption → ectopic FGF3/FGF4 super-enhancer (Merriam Nat Med 2026, PMID 42191879) → BRD4-recruited CDK9/P-TEFb → Pol II CTD Ser2 phosphorylation → transcriptional elongation of SE-driven oncogenes",
+    downstream_effects: [
+      "CDK9 phosphorylates Ser2 of the RNA Pol II CTD heptapeptide repeat, releasing Pol II from promoter-proximal pause (DSIF/NELF-mediated) and enabling elongation through gene bodies",
+      "Super-enhancer-driven oncogene transcription (including FGF3/FGF4 and other SE-associated genes in SDH-deficient GIST) is disproportionately sensitive to CDK9 inhibition relative to constitutively transcribed housekeeping genes",
+      "CDK9/P-TEFb is directly recruited to super-enhancers by BRD4 (via its BRD4 interaction domain on Cyclin T1), creating a hierarchical dependency: CIMP → SE formation → BRD4 → CDK9 → SE gene elongation",
+      "CDK9 inhibition produces selective transcriptional downregulation of high-output SE-driven genes (including MCL1, MYC, and tumor-specific SE-activated oncogenes) versus housekeeping genes — the mechanistic basis for therapeutic window",
+      "BRD4 inhibitors (already in engine) block CDK9 recruitment; CDK9 inhibitors block CDK9 kinase activity directly — orthogonal pharmacological nodes on the same elongation axis",
+    ],
+    druggable: true,
+    display_order: 32,
+  },
 ];
