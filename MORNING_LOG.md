@@ -866,3 +866,51 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-21 — Linsitinib GIST Phase 2 failure + plasma succinate biomarker paper
+
+### PubMed scan (2026-09-08 to 2026-09-21)
+
+Queries run: SDH-deficient GIST/PPGL/RCC/pituitary (last 3 months), succinate TCA cancer, pseudohypoxia HIF SDH, CIMP epigenetic SDH, BRCAness HR deficiency SDH, SDH-deficient drug treatment, paraganglioma pheochromocytoma new treatment, plasma succinate biomarker SDH.
+
+**New paper found (1):**
+
+| PMID | Title | Verdict |
+|---|---|---|
+| 42758527 | Cole Y et al., Endocr Relat Cancer 2026-09-18. "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model." DOI 10.1530/ERC-26-0323 | ADDED — Diagnosis & Pathology |
+
+**Rejected:** 0 additional papers. All other queries returned either zero new results or papers already in tracker.
+
+---
+
+### Paper added: PMID 42758527
+
+**Topic:** Diagnosis & Pathology
+
+**Rationale for adding:** Prospective plasma metabolomics study in SDHx germline carriers. Core finding: plasma succinate levels are elevated in carriers with active tumour, correlate with tumour burden, and can distinguish active-disease carriers from unaffected carriers and healthy controls. Validated in a Sdhb-deficient murine model. Directly relevant to the engine's scope (SDHx carrier biology, early detection, surveillance biomarkers). Added to `src/data/papers.ts`.
+
+---
+
+### Part B improvement: Linsitinib MoA data quality correction
+
+**Direction:** Correct a patient-safety-relevant omission in the linsitinib entry added 2026-09-07.
+
+**Problem identified:** The linsitinib MoA text mentioned the ACC Phase 3 failure (Fassnacht et al., PMID 25795408, NCT00924989) but omitted the SARC/NCI Phase 2 trial in WT/SDH-deficient GIST (von Mehren et al., Clin Cancer Res 2020, PMID 31792037, NCT01560260). The "Key limitation" section incorrectly stated "No published preclinical or clinical data directly test linsitinib or any IGF1R inhibitor in SDH-deficient GIST, PPGL, or RCC." This is factually wrong — there is a dedicated Phase 2 trial in SDH-enriched WT GIST showing 0% ORR.
+
+This omission is patient-safety-relevant: the engine owner has SDHA-deficient GIST and could read the linsitinib entry without encountering the most directly relevant negative trial for their tumour type.
+
+**Fix applied:**
+- Added new section **"GIST-specific clinical trial — NEGATIVE Phase 2 (direct patient safety note for SDHA-deficient GIST)"** to linsitinib MoA, citing von Mehren et al. (PMID 31792037, NCT01560260): n=20 adult/paediatric WT-GIST, 35% SDHA IHC-negative, 88% SDHB IHC-negative; primary endpoint ORR = **0%**; CBR 40% at 9 months (SD only). Explicitly explains why `tumor_type_applicability: ["ppgl"]` — GIST disqualified by direct Phase 2 evidence.
+- Updated "Key limitation" section to remove the incorrect claim and reference both negative trials.
+- Added NCT01560260 to `clinical_trial_ids`.
+
+**Files changed:** `src/data/seed/drugs.ts` (linsitinib MoA + clinical_trial_ids), `src/data/papers.ts` (new entry PMID 42758527), `tracker.md` (new row).
+
+**Ruled-out directions (still standing):**
+- Complex I/IACS-010759: Sokolov preprint PMID 42239110 — no SDH-specific evidence
+- MTHFD2/one-carbon: no SDH-specific data, no clinical-stage inhibitors
+- WEE1/adavosertib: wrong selectivity
+- IGF1R/linsitinib in GIST: disqualified by Phase 2 (0 ORR, PMID 31792037)
+
