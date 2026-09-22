@@ -648,6 +648,61 @@ The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus,
 |---|---|---|---|---|
 | IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
 
+## Mechanism 42: HIF-Driven CD73/Adenosine Immunosuppression
+
+SDH loss → succinate → PHD inhibition → constitutive HIF-1α stabilization → HRE-driven NT5E/CD73 transcription on tumor cell surface → extracellular adenosine generation → A2AR activation on T cells → cAMP elevation → T-cell exhaustion.
+
+This is a third mechanistically distinct immunosuppressive arm downstream of HIF-1α in SDH-deficient tumors, operating in parallel to succinate-MCT1 direct T-cell metabolic suppression (Mechanism 11a) and HIF-IDO1-kynurenine tryptophan depletion (Mechanism 11b), and orthogonal to HIF-PD-L1 checkpoint evasion (Mechanism 22).
+
+### The HIF-1α → CD73 transcriptional link (foundational paper)
+Synnestvedt et al. (J Clin Invest 2002, PMID 12370277, DOI 10.1172/JCI15337) established the mechanistic core of this axis:
+- Microarray analysis of hypoxic epithelial cells revealed upregulation of both CD73 (NT5E) and CD39 (apyrase).
+- Metabolic studies showed hypoxia enhances CD39/CD73 ectoenzyme function up to 6-fold over normoxia in intact epithelia.
+- The CD73 gene promoter was shown to contain at least one canonical HIF-1 binding site (HRE).
+- Antisense oligonucleotides against HIF-1α significantly blocked hypoxia-inducible CD73 mRNA expression.
+- Luciferase reporter constructs confirmed HIF-1-dependent CD73 promoter activity under hypoxia, which was lost in truncated constructs lacking the HRE.
+- Mutagenesis of the HIF-1α binding site resulted in **nearly complete loss of hypoxia-inducibility**.
+- In vivo: a CD73 inhibitor promoted increased intestinal permeability during hypoxia, confirming functional relevance of hypoxia-induced CD73 in vivo.
+
+This paper proves that HIF-1α is the direct transcriptional activator of NT5E/CD73 expression via a specific HRE in its promoter — and that this regulation applies under conditions of constitutive PHD inhibition (i.e., in all SDH-deficient pseudohypoxic tumors).
+
+### The adenosine immunosuppression axis
+Sitkovsky MV et al. (Cancer Immunol Res 2014, PMID 24990240, DOI 10.1158/2326-6066.CIR-14-0075) established that 'hostile, hypoxia-A2-adenosinergic tumor biology' represents a major barrier to anti-tumor immunity. The mechanistic sequence:
+1. Tumor hypoxia (or pseudohypoxia via HIF-1α stabilization) → HIF-1α → CD39 + CD73 upregulation on tumor cells and regulatory T cells
+2. CD39 converts extracellular ATP/ADP → AMP; CD73 converts AMP → adenosine
+3. Extracellular adenosine accumulates in the tumor microenvironment
+4. Adenosine binds ADORA2A (A2A receptor) on tumor-infiltrating effector T cells — a Gαs-coupled GPCR
+5. A2AR activation → adenylyl cyclase → cAMP → PKA → CREB phosphorylation → transcriptional suppression of TCR-proximal signaling
+6. Net effect: suppressed IFN-γ secretion, impaired granzyme B/perforin-mediated cytotoxicity, inhibited T-cell proliferation, and promotion of regulatory T-cell phenotype
+7. Tumor immune evasion persists as long as adenosine supply is maintained — a continuously driven program in pseudohypoxic tumors
+
+Hatfield SM & Sitkovsky MV (Curr Opin Pharmacol 2016, PMID 27429212, DOI 10.1016/j.coph.2016.06.009) explicitly connected HIF-1α activity to upregulation of CD39/CD73 adenosine-generating enzymes and identified A2AR antagonists as a strategy to 'weaken the hypoxia-HIF-1α-driven immunosuppression' and improve cancer immunotherapy. This paper names the precise HIF-1α → CD73 → adenosine → A2AR → T-cell exhaustion chain as a tractable pharmacological target.
+
+### Drug: Oleclumab (MEDI9447; AstraZeneca)
+Oleclumab is a fully human IgG1 monoclonal antibody that binds CD73 (NT5E) and blocks its ectoenzyme activity, preventing AMP → adenosine conversion on the tumor cell surface. By cutting the adenosine supply, oleclumab relieves A2AR-driven T-cell exhaustion in the tumor microenvironment.
+
+**Clinical trials:**
+- NCT02503774 (Phase 1; AstraZeneca; completed): oleclumab monotherapy in advanced solid tumors — established safety, pharmacokinetics, and pharmacodynamic evidence of CD73 ectoenzyme inhibition and reduced extracellular adenosine.
+- NCT02935634 (Phase 1/2): oleclumab + durvalumab (anti-PD-L1) — tested the combination of CD73 blockade + PD-L1 checkpoint inhibition in solid tumors; combination rationale mirrors the co-presence of CD73-adenosine and PD-L1/PD-1 axes in the pseudohypoxic TME.
+
+**Distinction from other immunosuppressive axes in this engine:**
+| Mechanism | Driver | Effector | Target | Drug |
+|---|---|---|---|---|
+| MCT1/succinate | Extracellular succinate | T-cell TCA impairment | SLC16A1 | AZD3965 |
+| IDO1/kynurenine | HIF-1α → IDO1 | Tryptophan depletion | IDO1 | Epacadostat |
+| PD-L1/PD-1 | HIF-1α → CD274 | T-cell PD-1 ligation | PDCD1/CD274 | Pembrolizumab |
+| CD73/adenosine | HIF-1α → NT5E | A2AR-cAMP T-cell exhaustion | NT5E | Oleclumab |
+
+All four arms converge on T-cell suppression in the SDH-deficient TME and are mechanistically non-redundant, suggesting combination strategies across these axes could substantially restore T-cell effector function.
+
+**Key limitation:** No published experimental data test oleclumab or any CD73 inhibitor in SDH-deficient GIST, PPGL, or RCC cell lines or patient-derived models. NT5E expression in SDH-genotype-stratified tumor specimens has not been measured. The mechanistic case rests on the HIF-1α → NT5E HRE evidence (PMID 12370277) plus the established adenosine immunosuppression biology (PMID 24990240, 27429212) — both foundational, verified, and mechanistically tight, but SDH-specific validation is absent.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CD73 ectoenzyme | NT5E | Oleclumab (MEDI9447) | Phase 1/2 NCT02503774, NCT02935634 | None; rationale via HIF-1α → NT5E HRE mechanism (PMID 12370277) + adenosine immunosuppression (PMID 24990240, 27429212) |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

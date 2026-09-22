@@ -866,3 +866,27 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+## 2026-09-22
+
+**Direction:** Immune evasion — HIF-driven CD73/adenosine immunosuppression axis; oleclumab (MEDI9447, anti-CD73 mAb)
+**Angle:** Third independent immunosuppressive arm in SDH-deficient tumors: SDH loss → succinate → PHD inhibition → constitutive HIF-1α → HRE-driven NT5E/CD73 transcription → extracellular adenosine → A2AR on T cells → cAMP → T-cell exhaustion. Mechanistically distinct from (1) MCT1-succinate direct T-cell metabolic suppression, (2) HIF-IDO1-kynurenine, and (3) HIF-PD-L1.
+
+**Summary:** Added `hif-cd73-adenosine-suppression` pathway (display_order 33), NT5E (CD73) target (UniProt P21589), and oleclumab (MEDI9447, AstraZeneca anti-CD73 IgG1, evidence_score 22, theoretical, all tumor types, NCT02503774 + NCT02935634) to the engine. Added Mechanism 42 to sdh-biology.ts. Added PATHWAY_COLORS entry for the new pathway. Citations: Synnestvedt et al. (J Clin Invest 2002, PMID 12370277) — foundational HIF-1α → NT5E HRE mutagenesis paper; Sitkovsky et al. (Cancer Immunol Res 2014, PMID 24990240) — CD73/adenosine immunosuppression in cancer; Hatfield & Sitkovsky (Curr Opin Pharmacol 2016, PMID 27429212) — HIF-1α → CD73 adenosine axis and A2AR antagonists in cancer immunotherapy.
+
+**Part A — Paper scan (June 22 – September 22, 2026):**
+- 1 new PMID found not in tracker.md: PMID 41634405 (Fanelli et al., Virchows Arch 2026, Feb 4 2026 — Italian pathologist survey on SDH/FH-deficient RCC diagnostic awareness). REJECTED: published February 4, 2026, outside the 3-month scan window (cutoff: June 22, 2026); diagnostic survey only; no mechanistic or treatment advance.
+- 0 papers added to `src/data/papers.ts`.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: added `hif-cd73-adenosine-suppression` (display_order 33)
+- `src/data/seed/targets.ts`: added NT5E (CD73, UniProt P21589, pathway_slug: hif-cd73-adenosine-suppression)
+- `src/data/seed/drugs.ts`: added oleclumab (MEDI9447; evidence_score 22; theoretical; NCT02503774, NCT02935634)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (HIF-Driven CD73/Adenosine Immunosuppression)
+- `src/lib/scoring/constants.ts`: added PATHWAY_COLORS entry for `hif-cd73-adenosine-suppression`
+- `tracker.md`: logged PMID 41634405 (rejected: outside scan window)
+
+**Mechanistic chain passes hard relevance gate:**
+SDH loss → succinate → PHD inhibition → HIF-1α stabilization (directly demonstrated) → HRE in NT5E/CD73 promoter directly binds HIF-1α (Synnestvedt 2002, PMID 12370277, mutagenesis proof) → elevated CD73 ectoenzyme → AMP → adenosine → A2AR on T cells → cAMP → T-cell exhaustion. Every step in this chain has direct experimental evidence. Mechanistically non-redundant with all prior directions in this log.
+
+**PR:** morning/2026-09-22-cd73-adenosine-immune (via branch claude/clever-lovelace-dzcqtw)

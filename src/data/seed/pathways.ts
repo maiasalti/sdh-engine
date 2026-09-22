@@ -547,4 +547,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 31,
   },
+  {
+    name: "HIF-Driven CD73/Adenosine Immunosuppression",
+    slug: "hif-cd73-adenosine-suppression",
+    description:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HRE-driven transcription of NT5E (CD73/ecto-5'-nucleotidase) on the tumor cell surface. CD73 dephosphorylates extracellular AMP to adenosine. Extracellular adenosine binds A2A receptors (ADORA2A) on tumor-infiltrating T cells → Gαs-coupled cAMP elevation → PKA-mediated phosphorylation of CREB → T-cell functional exhaustion: suppressed TCR signaling, impaired IFN-γ and granzyme B secretion, and inhibited proliferative expansion. This is a third mechanistically distinct immunosuppressive arm in SDH-deficient tumors, operating in parallel to succinate-MCT1 T-cell metabolic suppression and HIF-IDO1 tryptophan depletion, and orthogonal to the HIF-PD-L1 checkpoint axis.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → HIF-1α constitutive stabilization → HRE-driven NT5E/CD73 transcriptional upregulation → CD73 ectoenzyme activity on tumor cell surface → extracellular AMP → adenosine → ADORA2A on T cells → cAMP elevation → T-cell exhaustion",
+    downstream_effects: [
+      "HIF-1α directly transcribes NT5E via hypoxia-response elements (HREs) in its promoter — demonstrated by HIF-1α antisense abolition and HRE mutagenesis (Synnestvedt et al., J Clin Invest 2002, PMID 12370277)",
+      "CD73 ectoenzyme on tumor cell surface converts extracellular AMP → adenosine",
+      "Extracellular adenosine accumulation in the tumor microenvironment",
+      "A2AR (ADORA2A) activation on tumor-infiltrating T cells → Gαs → cAMP → PKA → CREB-mediated suppression of TCR signaling",
+      "T-cell functional exhaustion: reduced IFN-γ and granzyme B secretion, impaired cytotoxic degranulation, and inhibited proliferative clonal expansion",
+      "Third independent immunosuppressive arm in SDH-deficient tumors (alongside MCT1-succinate and IDO1-kynurenine axes)",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
 ];
