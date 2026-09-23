@@ -547,4 +547,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 31,
   },
+  {
+    name: "CBP/p300 HAT Co-Activator",
+    slug: "cbp-p300-hat-coactivator",
+    description:
+      "HIF-1α and HIF-2α require CBP (CREBBP) and p300 (EP300) as obligate transcriptional co-activators. In SDH-deficient pseudohypoxic tumors, constitutively stabilized HIF-α subunits recruit CBP/p300 via the HIF C-TAD domain (Arany et al. PNAS 1996, PMID 8917528). p300/CBP then write H3K27ac marks at HIF target gene promoters and at ectopic super-enhancers — as demonstrated at the FGF3/FGF4 locus in SDH-deficient GIST (Merriam et al. Nat Med 2026, PMID 42191879). Blocking the p300/CBP bromodomain prevents co-activator recruitment to HIF-α C-TAD and collapses the SDH-loss-driven HIF transcriptome, including VEGF, CXCR4, PD-L1, BIRC5, and IGF2.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → HIF-1α/2α stabilization → HIF C-TAD domain recruits CBP/p300 bromodomain → p300/CBP HAT domain writes H3K27ac at HIF target promoters and super-enhancers",
+    downstream_effects: [
+      "H3K27ac deposition at HIF target gene promoters (VEGF, CXCR4, PD-L1, BIRC5, IGF2)",
+      "Super-enhancer maintenance at ectopic HIF-activated loci (e.g. FGF3/FGF4 in SDH-deficient GIST, PMID 42191879)",
+      "CBP/p300 bromodomain inhibition displaces HIF co-activator complex → transcriptional shutdown of HIF-driven genes",
+      "Mechanistically distinct from BRD4/BET (H3K27ac reader) and EZH2 (H3K27me3 writer) — inhibits the H3K27ac writer step",
+      "HIF co-activator dependency is universal across SDH-deficient tumor types (GIST, PPGL, RCC)",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
 ];

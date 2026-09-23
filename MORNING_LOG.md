@@ -866,3 +866,48 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-23
+
+### Part A — Paper Scan
+
+Queries run (6 total; 3-month window June–September 2026):
+- SDH-deficient tumor GIST paraganglioma treatment 2026
+- Pheochromocytoma paraganglioma systemic therapy 2026
+- GIST gastrointestinal stromal tumor SDH clinical trial 2026
+- SDH-deficient renal cell carcinoma therapy 2026
+- SDHB synthetic lethality epigenetic succinate 2026
+- SDH-deficient PPGL GIST BRCAness metabolic vulnerability 2026
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42764321 | **rejected** | General RLT review; no SDH-specific advance; SSTR2/MIBG pathways already in engine |
+| 42762504 | **rejected** | Adrenal hypertension clinical series; no SDH-specific content |
+| 42755565 | **rejected** | Composite pheochromocytoma case report; no SDH content |
+| 42742768 | **rejected** | Surgical technique for adrenal tumors; no SDH-specific advance |
+| 42728076 | **rejected** | Clinically silent PCC case report; no SDH content |
+| 42723163 | **rejected** | NET/adrenal immunology review; not SDH-specific |
+| 42704026 | **rejected** | Spanish SIADH case report; no SDH content |
+| 42626938 | **rejected** | Octreotide retrospective in PPGL; cold SSA direction already covered by SSTR2 pathway; no SDH-specific mechanistic advance |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** drug-pool expansion — CBP/p300 HAT co-activator dependency
+
+**Angle:** In SDH-deficient pseudohypoxic tumors, constitutively stabilized HIF-1α/2α requires CBP/p300 (EP300/CREBBP) as obligate transcriptional co-activators via direct C-TAD domain docking (Arany et al. PNAS 1996, PMID 8917528). p300/CBP also writes H3K27ac marks at ectopic super-enhancers in SDH-deficient GIST (Merriam et al. Nat Med 2026, PMID 42191879). CCS1477 (inobrodib; Phase 1b/2 NCT04068597) inhibits the p300/CBP bromodomain, preventing HIF co-activator recruitment and collapsing the HIF-driven transcriptome plus super-enhancer maintenance. Mechanistically non-redundant: EZH2/tazemetostat targets H3K27me3 WRITING (opposite mark, repressed chromatin); BRD4/birabresib targets H3K27ac READING (downstream of p300/CBP writing); belzutifan targets HIF-2α protein directly.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: added `cbp-p300-hat-coactivator` pathway (display_order 33)
+- `src/data/seed/targets.ts`: added EP300 target entry
+- `src/data/seed/drugs.ts`: added CCS1477 (inobrodib; evidence_score 27; status: clinical_trial; NCT04068597; tumor_type_applicability: ["all"])
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (CBP/p300 HAT Co-Activator Dependency)
+- `src/lib/scoring/constants.ts`: added `cbp-p300-hat-coactivator` color (violet-200)
+- `tracker.md`: logged 8 rejected PMIDs (42764321, 42762504, 42755565, 42742768, 42728076, 42723163, 42704026, 42626938)
+
+**Evidence_score rationale:** 27 (theoretical) — mechanistic chain fully supported by established SDH-deficient biology (PMID 8917528, PMID 42191879) but no direct preclinical data in SDH-deficient cell lines; CCS1477 is Phase 1b/2 in non-SDH indications.

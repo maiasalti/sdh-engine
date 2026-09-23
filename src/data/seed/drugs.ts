@@ -961,6 +961,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: ["NCT00924989"],
   },
   {
+    name: "CCS1477",
+    brand_names: ["Inobrodib"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "CBP/p300 bromodomain inhibitor",
+    mechanism_of_action:
+      "CCS1477 (inobrodib; CellCentric/Ono Pharmaceutical) is an oral, selective small-molecule inhibitor of the CBP (CREBBP) and p300 (EP300) bromodomains. It competitively binds the acetyl-lysine-recognition pocket of the p300/CBP bromodomain, displacing the co-activator complex from acetylated histones and transcription factor C-TAD domains.\n\nThe SDH-specific rationale flows directly from two established features of SDH-deficient biology:\n\n**1 — HIF-driven CBP/p300 co-activator dependency (universal across SDH tumors):**\nSDH loss → succinate accumulation → PHD2/PHD3 inhibition → VHL cannot target HIF-α for degradation → constitutive HIF-1α/2α stabilization. Arany et al. (PNAS 1996, PMID 8917528) established that HIF-1α transcriptional activation requires direct physical recruitment of CBP/p300 via the HIF C-terminal transactivation domain (C-TAD, residues 813–826). Without CBP/p300 bromodomain engagement, HIF-α cannot assemble a functional transcriptional activation complex at HREs. In SDH-deficient pseudohypoxic tumors, the HIF-α C-TAD is constitutively available — creating a chronic, SDH-loss-driven dependency on CBP/p300 co-activator recruitment for HIF target gene transcription (VEGF, GLUT1, CXCR4, PD-L1, BIRC5, IGF2, CAIX). Blocking the p300/CBP bromodomain with CCS1477 prevents C-TAD docking and collapses this HIF-driven transcriptional program.\n\n**2 — Super-enhancer maintenance at ectopic loci (SDH-deficient GIST):**\nMerriam et al. (Nat Med 2026, PMID 42191879) demonstrated that succinate-driven CIMP disrupts CTCF insulator elements flanking the FGF3/FGF4 locus in SDH-deficient GIST, creating high-occupancy super-enhancers characterized by dense H3K27ac marks. H3K27ac is deposited by the p300/CBP HAT domain. CBP/p300 bromodomain inhibition (CCS1477) prevents co-activator re-recruitment to these super-enhancers and is expected to collapse the FGF3/FGF4 super-enhancer program — the same program that rogaratinib (FGFR1 inhibitor) targets pharmacologically downstream.\n\n**Mechanistic distinction from existing engine entries:**\n- EZH2/tazemetostat (H3K27me3 WRITER, PRC2 complex; Mechanism 2): opposite histone mark, different chromatin state, different drug class.\n- BRD4/birabresib (H3K27ac READER, BET bromodomain; Mechanism 2): p300/CBP is the H3K27ac WRITER; inhibiting writing vs. reading are mechanistically orthogonal, use different drugs, and have non-overlapping target classes.\n- Belzutifan (HIF-2α direct inhibitor; Mechanism 1): targets HIF protein directly at the HIF-2α PAS-B pocket; CCS1477 targets the HIF co-activator complex, one step downstream in the transcriptional activation chain.\n\n**Clinical anchor:**\nCCS1477 (inobrodib) is in Phase 1b/2 clinical development (NCT04068597; CellCentric/Ono Pharmaceutical) in patients with metastatic castration-resistant prostate cancer and haematological malignancies including diffuse large B-cell lymphoma and multiple myeloma. The trial establishes human pharmacokinetics, target engagement, and an initial tolerability profile for the CBP/p300 bromodomain inhibitor class.\n\n**Limitations and evidence level:**\nNo published preclinical data in SDH-deficient cell lines or xenograft models for CCS1477 or any CBP/p300 inhibitor. The mechanistic rationale rests on (1) the HIF-CBP/p300 C-TAD interaction (PMID 8917528), (2) the super-enhancer mechanism in SDH-deficient GIST (PMID 42191879), and (3) CCS1477 clinical-stage pharmacology in NCT04068597. Evidence_score 27 (theoretical) reflects a strong mechanistic basis in established SDH-deficient biology but no direct experimental validation in SDH-deficient models. Priority experiment: CBP/p300 inhibition in isogenic SDHA/B-null GIST or PPGL cell lines, using HIF target gene expression (VEGF, FGF3/FGF4) and H3K27ac ChIP-seq at HIF-driven super-enhancers as pharmacodynamic readouts.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["cbp-p300-hat-coactivator", "epigenetic-dysregulation"],
+    target_gene_symbols: ["EP300"],
+    evidence_score: 27,
+    status: "clinical_trial",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT04068597"],
+  },
+  {
     name: "Ganetespib",
     brand_names: ["STA-9090"],
     chembl_id: "CHEMBL2180717",
