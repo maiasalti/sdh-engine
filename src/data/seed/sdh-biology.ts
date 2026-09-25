@@ -648,6 +648,24 @@ The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus,
 |---|---|---|---|---|
 | IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
 
+### 42. HIF-Driven CA9 Tumour Acidosis — SLC-0111 (WBI-5111)
+
+Carbonic Anhydrase IX (CA9/CAIX) is a transmembrane zinc metalloenzyme (UniProt Q16790) whose expression is driven by one of the most tightly HIF-1-regulated gene promoters known. Wykoff et al. (Cancer Res 2000, PMID 11156414) identified a HIF-1-dependent hypoxia-response element (HRE) in the CA9 minimal promoter and demonstrated that: (i) CA9 is constitutively expressed in VHL-deficient renal carcinoma cells regardless of oxygen level, consistent with constitutive HIF-1α activity; (ii) restoring pVHL function in VHL-null cells suppresses CA9 expression, confirming the HIF/VHL regulatory axis; and (iii) the CA9 HRE is necessary and sufficient for HIF-1-driven induction. In SDH-deficient tumours, the identical PHD-inhibition mechanism — succinate → PHD2/PHD3 competitive inhibition → constitutive HIF-1α/2α stabilisation — drives constitutive CA9 expression in the same manner as VHL-deficient tumours.
+
+CA9's extracellular catalytic domain converts CO₂ + H₂O → H⁺ + HCO₃⁻ at the cell surface. The H⁺ is exported into the extracellular space (lowering pHe to ~6.5–6.9), while HCO₃⁻ is imported to buffer intracellular pH near-neutral (~7.2). This enforced reverse pH gradient — a hallmark of the Warburg and pseudohypoxic metabolic phenotype — has three independent tumorigenic consequences: (1) extracellular acid activates pH-sensitive proteases (cathepsins B, D, L; MMP-2, MMP-9), driving local invasion and ECM degradation; (2) lactic acid and H⁺ accumulation suppresses CD8⁺ T-cell cytolytic function and NK cell activity at ~pH 6.5 (TCR signalling impaired, IL-2 secretion reduced), enabling immune evasion in the TME; and (3) weakly basic drugs (doxorubicin, vinca alkaloids, paclitaxel) are protonated and trapped in the extracellular space, reducing intracellular accumulation and driving multidrug resistance.
+
+**CAIX expression in SDH-deficient/pseudohypoxic PPGLs:**
+Mete et al. (Am J Surg Pathol 2021, PMID 33826547) analysed CAIX IHC in 77 PPGLs, finding membranous CAIX staining in 8/51 (16%) tumours. All 5 VHL-related PCCs were CAIX-positive, and 1 SDHx-related PCC was CAIX-positive; NF1-driven and RET-driven cluster 2 PPGLs were uniformly CAIX-negative. This confirms that CAIX expression is a feature of pseudohypoxic (HIF-activated) cluster 1 PPGLs, though the proportion of SDHx-specific CAIX expressors was lower than in VHL-related cases — likely reflecting quantitative differences in HIF-1α transcriptional output between SDHx-driven (succinate-mediated PHD inhibition) and VHL-null (complete pVHL loss) pseudohypoxia.
+
+**Therapeutic approach — SLC-0111 (WBI-5111):**
+SLC-0111 is an orally bioavailable, selective CA9/CA12 inhibitor with >100-fold selectivity over cytosolic CA1 and CA2. By blocking transmembrane isoforms only, it avoids disruption of essential physiological carbonic anhydrase functions. Two clinical trials establish human pharmacology:
+- NCT02215850 (Phase 1 monotherapy; 24 solid tumour patients; COMPLETED): defined safety, tolerability, and PK of oral SLC-0111.
+- NCT03450018 (Phase 1b/2 SLC-0111 + gemcitabine in CAIX-positive PDAC; TERMINATED at n=6): terminated due to slow enrolment with CAIX IHC selection criteria, not toxicity.
+
+| Target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CA9/CAIX transmembrane carbonic anhydrase | CA9 | SLC-0111 (WBI-5111) | Phase 1 completed (NCT02215850) | None; rationale via HIF→CA9 HRE (PMID 11156414) + CAIX in pseudohypoxic PPGLs (PMID 33826547) |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
