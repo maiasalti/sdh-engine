@@ -669,6 +669,29 @@ No published data test oleclumab or any CD73 inhibitor in SDH-deficient GIST, PP
 |---|---|---|---|---|
 | CD73 (ecto-5'-nucleotidase) | NT5E | Oleclumab (MEDI9447) | Phase 2 (NCT05061550, NCT03334617) | None; rationale via HIF-1α→NT5E HRE mechanism (PMID 12370277, PMID 29367423) |
 
+### 42. Dual mTORC1/2 Kinase Inhibition — Overcoming mTORC2-Driven AKT Reactivation Feedback in SDH-Deficient Tumors — Sapanisertib (TAK-228/MLN0128)
+
+SDH-deficient tumors exhibit constitutive activation of the PI3K/AKT/mTOR signaling axis driven by pseudohypoxia. Jochmanová et al. (JNCI 2013, PMID 23940289) established through transcriptomic and pathway analysis that the SDH/VHL pseudohypoxic cluster of PPGL has constitutively activated PI3K/AKT/mTOR signaling as a defining molecular feature, distinguishing it from the RAS/MAPK kinase-signaling cluster (NF1/RET/TMEM127/MAX mutations).
+
+**The mTORC1 reactivation feedback that limits everolimus:**
+Everolimus (Mechanism 4) inhibits mTORC1 via the rapamycin-FKBP12 allosteric mechanism, blocking S6K1 (Thr389) and 4EBP1. However, mTORC1 inhibition releases S6K1's negative feedback on IRS-1 (S6K1 normally serine-phosphorylates IRS-1 to cause proteasomal degradation). When this feedback is relieved, IRS-1 is stabilised → hyperactivation of upstream PI3K/PDK1 → AKT-Thr308 phosphorylation. Simultaneously, everolimus does not directly inhibit the mTOR kinase and only weakly suppresses mTORC2 (the kinase complex responsible for AKT-Ser473 phosphorylation, the second activating phosphorylation required for full AKT activity) at clinically achievable concentrations. The net result: mTORC1 inhibition by everolimus paradoxically causes AKT-Ser473 reactivation via maintained mTORC2 activity plus relieved IRS-1 negative feedback — a well-documented resistance mechanism that limits the depth of response in mTOR-dependent tumors.
+
+**How sapanisertib differs from everolimus and capivasertib:**
+Sapanisertib (TAK-228; formerly MLN0128/INK128) is an orally bioavailable, ATP-competitive inhibitor of the mTOR kinase active site. Unlike everolimus (allosteric mTORC1-only), sapanisertib directly occupies the kinase ATP pocket shared by both mTORC1 and mTORC2. This simultaneously blocks:
+1. mTORC1 (S6K1-Thr389, 4EBP1) — same node as everolimus
+2. mTORC2 (AKT-Ser473 phosphorylation) — absent with everolimus
+
+By inhibiting mTORC2, sapanisertib prevents the AKT-Ser473 reactivation that drives everolimus resistance, achieving more complete pathway suppression. Capivasertib (Mechanism 27) also addresses AKT, but via direct allosteric PH-domain-dependent AKT kinase inhibition rather than upstream mTOR kinase inhibition — a mechanistically distinct point of intervention. Sapanisertib acts further upstream (mTOR → AKT-Ser473 → downstream survival), while capivasertib acts at the AKT kinase itself.
+
+**Clinical evidence:**
+NCT02724020 (Phase 2, Millennium/Takeda; n=96; 36 sites; completed 2020): head-to-head randomised study of sapanisertib (MLN0128) monotherapy versus everolimus in patients with advanced or metastatic clear-cell RCC that progressed after VEGF-targeted therapy. This is the most direct clinical anchor available — the same tumour-type (RCC) and same second-line setting (post-VEGF failure) where everolimus gained its SDH-RCC clinical relevance. NCT06385496 (NCI MATCH Subprotocol L; Phase 2; active not recruiting): sapanisertib in patients with mTOR-pathway mutations across tumour types — a biomarker-selected context where mTOR pathway activation is molecularly confirmed, the same node constitutively active in SDH-deficient pseudohypoxic tumors.
+
+**Key limitation:** No published data test sapanisertib directly in SDH-deficient cell lines, PDX models, or clinical cohorts. The SDH-specific rationale rests on (1) Jochmanová JNCI 2013 (PMID 23940289) establishing constitutive PI3K/AKT/mTOR activation as a defining feature of the pseudohypoxic SDH/VHL cluster; (2) the documented AKT reactivation feedback that limits everolimus (the engine's existing mTORC1 inhibitor); and (3) the Phase 2 RCT in RCC (NCT02724020) demonstrating clinical-stage evaluation at the exact same mTOR node. Direct in vitro validation (dose-response in isogenic SDH-null vs. SDH-intact lines; phospho-AKT-Ser473 readout after sapanisertib vs. everolimus; rescue by constitutively active AKT-S473D) is the required next experimental step.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| mTOR kinase (mTORC1 + mTORC2) | MTOR | Sapanisertib (TAK-228) | Phase 2 in RCC vs everolimus (NCT02724020; completed); Phase 2 in mTOR-mutant solid tumors (NCT06385496; active) | None; rationale via constitutive PI3K/AKT/mTOR activation in SDH/VHL pseudohypoxic cluster (PMID 23940289) + AKT-Ser473 reactivation feedback limitation of everolimus |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

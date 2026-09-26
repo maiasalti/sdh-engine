@@ -995,6 +995,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: ["NCT01039519"],
   },
   {
+    name: "Sapanisertib",
+    brand_names: ["TAK-228", "MLN0128"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Dual mTORC1/2 kinase inhibitor (active-site TOR inhibitor)",
+    mechanism_of_action:
+      "Sapanisertib (TAK-228; formerly MLN0128/INK128; Millennium/Takeda) is an orally bioavailable, potent ATP-competitive inhibitor of the mTOR kinase active site. Unlike everolimus — which acts allosterically via the rapamycin-FKBP12 mechanism and selectively inhibits mTORC1 — sapanisertib directly occupies the ATP-binding pocket shared by both mTOR complexes, simultaneously suppressing mTORC1 (S6K1-Thr389, 4EBP1) and mTORC2 (AKT-Ser473 phosphorylation).\n\nThe key mechanistic distinction from everolimus (already in this engine, evidence_score 58, clinical_trial): mTORC1 inhibition by everolimus paradoxically causes AKT reactivation via two complementary feedback mechanisms. First, S6K1 normally serine-phosphorylates IRS-1 for proteasomal degradation; when everolimus suppresses S6K1, IRS-1 is stabilised → hyperactivation of upstream PI3K/PDK1 → AKT-Thr308 phosphorylation. Second, everolimus does not directly inhibit mTOR kinase and only weakly suppresses mTORC2 at clinically achievable concentrations, so mTORC2-mediated AKT-Ser473 phosphorylation persists. The net result is partial or transient AKT suppression — a documented clinical resistance mechanism that limits everolimus depth of response in mTOR-dependent tumors. Sapanisertib blocks mTORC2 directly, preventing the AKT-Ser473 reactivation and achieving more complete AKT/mTOR pathway suppression.\n\nMechanistic distinction from capivasertib (AKT1/2/3 kinase inhibitor, Mechanism 27): capivasertib inhibits the AKT kinase domain via a PH-domain-dependent allosteric mechanism, acting directly on AKT. Sapanisertib acts upstream at the mTOR kinase, blocking mTORC2's ability to phosphorylate AKT-Ser473. These are mechanistically distinct and non-redundant points of intervention in the same PI3K/AKT/mTOR pathway.\n\nSDH-biology anchor: Jochmanová et al. (JNCI 2013, PMID 23940289) established through transcriptomic and pathway analysis that the SDH/VHL pseudohypoxic cluster of PPGL has constitutively activated PI3K/AKT/mTOR signaling as a defining molecular feature. SDH loss → succinate → PHD inhibition → HIF-α stabilisation → suppression of REDD1 (a negative mTOR regulator under AMPK control) and direct HIF-driven transcriptional upregulation of genes sustaining the mTOR-active state — creating the constitutive PI3K/AKT/mTOR activation that makes this pathway a rational therapeutic node in all SDH-deficient tumor types.\n\nClinical anchor: NCT02724020 (Phase 2; Millennium/Takeda; n=96; 36 sites; completed 2020): randomised head-to-head comparison of sapanisertib (MLN0128) monotherapy versus everolimus in patients with advanced or metastatic clear-cell RCC after progression on VEGF-targeted therapy. This is the most directly relevant clinical dataset because RCC (including the SDH-deficient subtype) is one of the three major SDH-deficient tumour types and the trial tests sapanisertib against the exact existing engine entry (everolimus) in the same tumour type and treatment line. NCT06385496 (NCI MATCH Subprotocol L; Phase 2; active not recruiting as of 2026) evaluates sapanisertib in mTOR-pathway-mutated solid tumors — a biomarker-enriched context that parallels the constitutive mTOR activation in SDH-deficient tumours.\n\nKey limitations: (1) No published data test sapanisertib in SDH-deficient cell lines, PDX models, or clinical cohorts. (2) Direct comparison results from NCT02724020 in ccRCC are the primary clinical anchor but this trial was not SDH-deficient-specific — SDH-deficient RCC is a minor subtype within ccRCC. (3) mTORC2 inhibition suppresses AKT-Ser473 but AKT-Thr308 reactivation can still occur via PI3K/PDK1 if growth factor signalling remains active (e.g., via the relieved IRS-1 feedback); complete PI3K/AKT/mTOR pathway suppression may require triple blockade. Evidence_score 31 (theoretical) reflects the strong mechanistic rationale (SDH-pseudohypoxia → constitutive mTOR; AKT-Ser473 reactivation limitation of everolimus), the clinical-stage evaluation in RCC (NCT02724020), and the absence of SDH-specific data.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["mtor-pi3k-akt"],
+    target_gene_symbols: ["MTOR"],
+    evidence_score: 31,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT02724020"],
+  },
+  {
     name: "Bempedoic Acid",
     brand_names: ["Nexletol", "Nilemdo"],
     chembl_id: "CHEMBL3545313",
