@@ -413,7 +413,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 42,
     status: "theoretical",
     tumor_type_applicability: ["gist"],
-    clinical_trial_ids: [],
+    clinical_trial_ids: ["NCT04083976"],
   },
   {
     name: "DENSPM (N1,N11-Diethylnorspermine)",
