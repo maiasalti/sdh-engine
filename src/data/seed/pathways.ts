@@ -564,4 +564,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 31,
   },
+  {
+    name: "One-Carbon Folate / Nucleotide Synthesis Dependency (MTHFD2)",
+    slug: "one-carbon-folate-nucleotide-synthesis",
+    description:
+      "SDH loss truncates the TCA cycle at succinate, depleting the OAA and aspartate pool via two convergent mechanisms: (1) forward TCA stalling prevents OAA synthesis; (2) accumulated succinate allosterically inhibits ATCase (carbamoyl-phosphate synthetase II / aspartate transcarbamylase / dihydroorotase, CAD), the first committed enzyme of de novo pyrimidine synthesis (Hart et al. 2025, PMID 42082831). The resulting nucleotide stress triggers the Integrated Stress Response (ISR) via GCN2 and/or HRI kinases, leading to eIF2α phosphorylation and selective translation of ATF4. ATF4 transcriptionally upregulates MTHFD2 (mitochondrial methylenetetrahydrofolate dehydrogenase 2 / cyclohydrolase), the rate-limiting enzyme of the mitochondrial one-carbon folate cycle. MTHFD2 converts 5,10-methylene-THF to 10-formyl-THF, generating folate cofactors that feed both de novo purine synthesis (10-formyl-THF → IMP via ATIC/GART) and thymidylate synthesis (5,10-methylene-THF → dTMP via TYMS). SDH-deficient cells thus develop a broad one-carbon/nucleotide synthesis dependency mediated by elevated MTHFD2 — distinct from and complementary to DHODH (pyrimidine-only). Inhibiting MTHFD2 depletes both purine and thymidylate branches simultaneously, compounding the nucleotide stress imposed by SDH loss itself.",
+    upstream_event:
+      "SDH loss → succinate accumulation → (1) OAA depletion (TCA block) + (2) succinate-ATCase inhibition (Hart PMID 42082831) → nucleotide stress → ISR (GCN2/HRI → p-eIF2α) → ATF4 translation → MTHFD2 transcriptional upregulation → one-carbon folate cofactor dependency",
+    downstream_effects: [
+      "MTHFD2 generates 10-formyl-THF (feeds GART/ATIC for de novo purine synthesis) and 5,10-methylene-THF (feeds TYMS for thymidylate synthesis)",
+      "MTHFD2 inhibition depletes both purine and pyrimidylate branches simultaneously — compounding the nucleotide stress already imposed by succinate-ATCase inhibition",
+      "Complementary to (not redundant with) DHODH inhibition: DHODH targets pyrimidine synthesis only; MTHFD2 covers both purine and thymidylate via folate cofactor route",
+      "ATF4-driven MTHFD2 upregulation links ISR activation to one-carbon metabolism — the same ISR arm that mediates stress adaptation in many cancer types with metabolic vulnerabilities",
+      "MTHFD2 is overexpressed in multiple solid tumors (TCGA pan-cancer) and inversely correlates with survival, making it a validated cancer metabolic target beyond the SDH-specific context",
+      "LY3410738 (Eli Lilly) is a potent, selective dual MTHFD2/MTHFD1L inhibitor in preclinical development",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
 ];

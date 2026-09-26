@@ -335,4 +335,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42711465",
     date: "2026-09",
   },
+  {
+    title:
+      "Somatic-only SDHD variant with tumor-specific loss of heterozygosity in metastatic carotid body tumor: a case report with review of literature",
+    authors: "Kasahara K, Minagawa A, Sato Y, et al.",
+    journal: "Endocr J",
+    year: 2026,
+    doi: "10.1507/endocrj.EJ26-0224",
+    topic: "Case Reports",
+    description:
+      "First documented case of a metastatic carotid body tumor driven by a somatic-only (non-germline) SDHD pathogenic variant with tumor-specific loss of heterozygosity (LOH), confirmed negative on conventional germline testing. Demonstrates that SDH-deficient paraganglioma can arise through somatic mosaicism or tumor-restricted two-hit inactivation without an inherited predisposition — with direct clinical implication that germline-negative patients still require tumor-level SDH genomic profiling to identify actionable SDH deficiency.",
+    pmid: "42732958",
+    date: "2026-09",
+  },
 ];

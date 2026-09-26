@@ -692,6 +692,35 @@ NCT02724020 (Phase 2, Millennium/Takeda; n=96; 36 sites; completed 2020): head-t
 |---|---|---|---|---|
 | mTOR kinase (mTORC1 + mTORC2) | MTOR | Sapanisertib (TAK-228) | Phase 2 in RCC vs everolimus (NCT02724020; completed); Phase 2 in mTOR-mutant solid tumors (NCT06385496; active) | None; rationale via constitutive PI3K/AKT/mTOR activation in SDH/VHL pseudohypoxic cluster (PMID 23940289) + AKT-Ser473 reactivation feedback limitation of everolimus |
 
+### 42. One-Carbon Folate Nucleotide Synthesis Dependency (MTHFD2/LY3410738)
+
+**Mechanism:**
+SDH loss imposes nucleotide stress through two convergent mechanisms that converge on the Integrated Stress Response (ISR) and drive MTHFD2 upregulation as a compensatory adaptation:
+
+1. **TCA truncation → OAA/aspartate depletion:** With the SDH-mediated succinate→fumarate step blocked, forward TCA citrate synthesis is impaired and OAA cannot be regenerated normally. This depletes the aspartate pool — a required nitrogen donor and carbon backbone for both purine synthesis (ADSS/ASL) and pyrimidine synthesis (CAD/DHODH pathway).
+
+2. **Succinate-ATCase inhibition:** Accumulated succinate directly inhibits the ATCase (aspartate transcarbamylase) domain of the CAD complex — the first committed enzyme of de novo pyrimidine synthesis — as established by Hart et al. (2025, PMID 42082831). This is a direct oncometabolite-mediated blockade of pyrimidine synthesis, distinct from and additive to the aspartate depletion above.
+
+The combined nucleotide depletion activates the Integrated Stress Response (ISR): GCN2 (uncharged tRNA sensor) and/or HRI kinase phosphorylate eIF2α, globally suppressing cap-dependent translation while enabling selective translation of stress-response mRNAs with upstream open reading frames. ATF4 (activating transcription factor 4) is selectively translated under these conditions and transcriptionally upregulates the mitochondrial one-carbon folate cycle, including MTHFD2, as a compensatory adaptation to restore nucleotide synthesis via the folate pathway.
+
+**MTHFD2 as the rate-limiting compensatory enzyme:**
+MTHFD2 (bifunctional methylenetetrahydrofolate dehydrogenase/cyclohydrolase, mitochondrial) catalyzes:
+- Oxidation of 5,10-methylene-THF → 5,10-methenyl-THF (dehydrogenase)
+- Hydrolysis of 5,10-methenyl-THF → 10-formyl-THF (cyclohydrolase)
+
+The 10-formyl-THF product feeds GART and ATIC for de novo purine synthesis; 5,10-methylene-THF feeds TYMS for thymidylate (dTMP) synthesis. MTHFD2 upregulation in SDH-deficient cells thus partially compensates nucleotide stress by routing both purine and pyrimidine synthesis through the folate one-carbon pathway — but creates an exploitable dependency.
+
+**Therapeutic implication:**
+LY3410738 (Eli Lilly), a potent dual MTHFD2/MTHFD1L inhibitor, would collapse this compensatory route. Unlike DHODH inhibitors (Mechanism 17, pyrimidine-only), MTHFD2 inhibition depletes folate cofactors for BOTH purine synthesis (10-formyl-THF branch) AND thymidylate synthesis (5,10-methylene-THF branch), causing a broader nucleotide depletion. This would compound — not merely duplicate — the nucleotide stress already imposed by succinate-ATCase inhibition (Hart PMID 42082831), potentially creating a synthetic metabolic vulnerability in SDH-deficient tumors. MTHFD2 is broadly overexpressed in cancer (TCGA pan-cancer; Nilsson et al. Nat Commun 2014) and generally low in normal adult tissues, providing a potential therapeutic window.
+
+**Complementary to existing mechanisms:**
+- Mechanism 17 (DHODH/brequinar) targets pyrimidines only via the de novo synthesis enzyme; MTHFD2 covers both purines AND thymidylate via folate cofactor supply — additive stress, different enzymes
+- Mechanism 16 (PARP/olaparib, via BRCAness) targets DNA repair; MTHFD2 operates upstream at nucleotide supply — complementary combination axis
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| MTHFD2/MTHFD1L dual inhibitor | MTHFD2 | LY3410738 (Eli Lilly) | Preclinical | None; rationale via Hart PMID 42082831 (succinate-ATCase) + ISR-ATF4-MTHFD2 compensatory axis |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
