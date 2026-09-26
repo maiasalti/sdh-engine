@@ -78,4 +78,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-cd73-adenosine-immunosuppression": "bg-green-200 text-green-900 dark:bg-green-800 dark:text-green-100",
   "one-carbon-folate-nucleotide-synthesis": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "g4-quadruplex-brcas-lethality": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
+  "cdk9-super-enhancer-elongation": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
 };

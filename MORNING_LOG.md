@@ -1254,3 +1254,58 @@ The `hif-igf2-igf1r-growth-signaling` pathway (added 2026-09-07, display_order 3
 - `src/data/seed/pathways.ts`: moved `hif-igf2-igf1r-growth-signaling` object to end of array (after `reductive-carboxylation`, display_order 31), so array order matches ascending `display_order` throughout
 
 **No prior log entries cover this direction** — array-order consistency fix is a new category; previous data-quality runs fixed display_order numbering gaps (2026-08-12, 2026-08-26) and missing NCT IDs (2026-09-01, 2026-09-08).
+
+---
+
+## 2026-09-19 — CDK9/P-TEFb super-enhancer elongation dependency in SDH-deficient GIST
+
+### Part A — PubMed Scan
+
+Searches run (date window ≥ 2026-06-19):
+- "succinate dehydrogenase deficient GIST 2026"
+- "SDHB SDHA paraganglioma pheochromocytoma therapy 2026"
+- "succinate oncometabolite cancer epigenetics 2026"
+- "succinate dehydrogenase pheochromocytoma paraganglioma 2026"
+- "SDH deficient renal cell carcinoma treatment 2026"
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42544736 | already tracked | — |
+| 42489911 | already tracked | — |
+| 42650014 | already tracked | — |
+| 42416402 | already tracked | — |
+| 42281449 | already tracked | — |
+| 42526974 | already tracked | — |
+| 42626917 | already tracked | — |
+| 42590786 | **rejected** | Simsek E et al., J Pediatr Endocrinol Metab 2026-08-14. Case report of giant SDH-intact pheochromocytoma (preserved SDHB IHC) in a 16-yr-old; PASS/GAPP risk context but no SDH-deficient treatment advance. |
+| 42758527 | **rejected** | Cole Y et al., Endocr Relat Cancer 2026-09-18. Prospective plasma metabolomics identifying succinate as biomarker for SDHx deficiency and tumor surveillance. Diagnostics/biomarker focus; no new treatment advance. |
+| 42711465 | **rejected** | Köhler A et al., NPJ Precis Oncol 2026-09-08. Minigene-based functional RNA assay for SDHB splice variants (48 variants in HEK293T); ACMG reclassification of 13 variants. Variant interpretation; no treatment advance. |
+| 42760995 | **rejected** | Günler T, Çordan İ, Front Endocrinol 2026-09-04. IHC study (n=35 PPGL) correlating HIF-2α, CD105, Ki-67 with GAPP score. Confirms known HIF-2α pseudohypoxia biology; belzutifan already in engine. |
+| 42635383 | **rejected** | Kshirsagar SP et al., Ann Afr Med 2026-08-25. Case report of SDHB-deficient metastatic paraganglioma of the vulva; Ki-67 ~60%. Rare anatomic site; no new treatment or mechanistic advance. |
+| 42573142 | **rejected** | Jimenez C et al., J Clin Endocrinol Metab 2026-08-10. Review of belzutifan (HIF-2α inhibitor) in PPGL including LITESPARK-015 Phase 2 data. Drug already catalogued in engine; no new trial data beyond what is there. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** CDK9/P-TEFb super-enhancer transcription elongation dependency in SDH-deficient GIST
+
+**Mechanistic rationale:** Merriam et al. (Nat Med 2026, PMID 42191879) established that SDH loss → CIMP → CTCF insulator methylation → ectopic FGF3/FGF4 super-enhancer in SDH-deficient GIST. Active super-enhancers universally depend on CDK9 (catalytic subunit of P-TEFb) to phosphorylate RNA Pol II CTD Ser2, releasing Pol II from promoter-proximal pause and enabling elongation. This is mechanistically non-redundant with BRD4/BET inhibition (already in engine): BRD4 reads H3K27ac and recruits CDK9 (upstream); CDK9 phosphorylates Pol II CTD Ser2 to drive elongation (downstream). CDK9 inhibition acts at the elongation kinase step, independent of and orthogonal to BRD4 bromodomain reading. KB-0742 (Kronos Bio), a highly selective CDK9 inhibitor with completed Phase 1 (NCT04718675 in AML/MDS), is the clinical-grade candidate.
+
+**Why GIST-specific:** The super-enhancer biology anchor is GIST-specific per PMID 42191879; no equivalent super-enhancer disruption has been demonstrated in SDH-deficient PPGL or RCC. tumor_type_applicability = ["gist"].
+
+**Evidence_score:** 27 (theoretical) — strong mechanistic chain with direct SE biology anchor in SDH-GIST; no SDH-specific CDK9 data.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: added `cdk9-super-enhancer-elongation` (display_order 32)
+- `src/data/seed/targets.ts`: added `CDK9` target (UniProt P50750; synthetic_lethal)
+- `src/data/seed/drugs.ts`: added KB-0742 (CDK9 inhibitor; evidence_score 27; theoretical; ["gist"]; NCT04718675)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (CDK9/P-TEFb super-enhancer elongation)
+- `src/lib/scoring/constants.ts`: added pathway color for `cdk9-super-enhancer-elongation`
+- `tracker.md`: logged 6 new PMIDs evaluated (all rejected)
+
+**Directions considered and ruled out this run:**
+- PI3K inhibitors: same pathway as everolimus/capivasertib (already in engine); adding one more node insufficient
+- SUCNR1 antagonists: no clinical-stage compounds available
+- NRF2 inhibitors: no clinical-stage options
+- CDK7: too mechanistically similar to BRD4 (both transcription initiation machinery); CDK9 selected as clearly distinct elongation step
