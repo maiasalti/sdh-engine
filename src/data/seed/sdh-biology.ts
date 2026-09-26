@@ -877,6 +877,31 @@ All four arms converge on T-cell suppression in the SDH-deficient TME and are me
 
 ---
 
+## Mechanism 42: CBP/p300 HAT Co-Activator Dependency (CCS1477/Inobrodib)
+
+### Pathway overview
+SDH loss drives constitutive HIF-1α/2α stabilization via succinate-mediated PHD inhibition. HIF-α transcriptional activity is not intrinsic — it requires obligate recruitment of the transcriptional co-activators CBP (CREBBP) and p300 (EP300). Arany et al. (PNAS 1996, PMID 8917528) established the direct physical interaction between the HIF-1α C-terminal transactivation domain (C-TAD, residues 813–826) and the CH1/cysteine-histidine-rich domain of CBP/p300. Without this co-activator docking, HIF-α cannot assemble a functional transcriptional activation complex at hypoxia-response elements (HREs).
+
+In SDH-deficient pseudohypoxic tumors, the HIF-α C-TAD is constitutively available — the HIF co-activator interaction is therefore chronically engaged, creating a permanent tumor-specific dependency on CBP/p300 co-activator activity. The p300/CBP HAT domain writes H3K27ac marks at HIF target gene promoters and at ectopic super-enhancers, which are the transcriptionally active chromatin structures that define the SDH-loss-specific oncogenic transcriptome. Merriam et al. (Nat Med 2026, PMID 42191879) demonstrated that succinate-driven CIMP disrupts CTCF insulator elements flanking the FGF3/FGF4 locus in SDH-deficient GIST, creating high-H3K27ac super-enhancers. p300/CBP is the enzyme that deposits this H3K27ac mark — making it the chromatin writer that maintains the GIST super-enhancer program as well as the HIF co-activator for the broader pseudohypoxic transcriptome.
+
+### Mechanistic distinctions within the epigenetic-dysregulation space
+- **EZH2/tazemetostat** (H3K27me3 WRITER, PRC2 complex): targets the opposing histone mark on repressed chromatin. Completely different target, different mark, different chromatin state.
+- **BRD4/birabresib** (H3K27ac READER, BET bromodomain): reads the H3K27ac marks after they are written. p300/CBP writes H3K27ac; BRD4 reads it — the two are mechanistically upstream and downstream of the same mark, use different protein families, and are inhibited by chemically distinct drugs.
+- **Belzutifan** (HIF-2α PAS-B direct inhibitor): binds HIF-2α protein directly at its dimerization domain. CCS1477 targets the co-activator one step downstream in the transcriptional activation chain.
+
+### Evidence anchors
+- Arany et al. (PNAS 1996, PMID 8917528): Direct physical interaction between HIF-1α C-TAD and CBP/p300 CH1 domain; established CBP/p300 as obligate HIF co-activators required for hypoxia-inducible gene transcription.
+- Merriam et al. (Nat Med 2026, PMID 42191879): Ectopic super-enhancers at FGF3/FGF4 in SDH-deficient GIST are H3K27ac-high — marks written by p300/CBP HAT domain; clinical validation via rogaratinib Phase 2 trial.
+
+### Drug: CCS1477 (Inobrodib)
+CCS1477 (inobrodib; CellCentric/Ono Pharmaceutical) is an oral, selective small-molecule inhibitor of the CBP/p300 bromodomain. It competitively displaces the co-activator complex from acetylated-lysine-binding — preventing p300/CBP engagement with the HIF-1α C-TAD and collapsing the SDH-loss-driven HIF transcriptome (VEGF, CXCR4, PD-L1, BIRC5, IGF2, CAIX). CCS1477 is in Phase 1b/2 clinical development (NCT04068597) in haematological malignancies and metastatic castration-resistant prostate cancer, with established human pharmacokinetics and tolerability.
+
+Key limitation: No published preclinical data in SDH-deficient cell lines or xenograft models for any CBP/p300 inhibitor. The evidence level is theoretical.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CBP/p300 bromodomain (HIF co-activator) | EP300 | CCS1477 (Inobrodib) | Phase 1b/2 NCT04068597 (haem malignancies, mCRPC) | None; rationale via HIF-CBP/p300 C-TAD interaction (PMID 8917528) + SDH-deficient GIST super-enhancer mechanism (PMID 42191879) |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

@@ -80,4 +80,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "g4-quadruplex-brcas-lethality": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "cdk9-super-enhancer-elongation": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "hif-cd73-adenosine-suppression": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
+  "cbp-p300-hat-coactivator": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
 };
