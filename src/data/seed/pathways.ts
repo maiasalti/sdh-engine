@@ -148,6 +148,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 9,
   },
   {
+    name: "Neddylation / Ubiquitin-Proteasome Axis",
+    slug: "neddylation",
+    description:
+      "An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in SDHB-deficient chromaffin cells identified the neddylation pathway as selectively essential for SDH-deficient tumor survival. Neddylation — attachment of the ubiquitin-like modifier NEDD8 to cullin-RING E3 ligases by NAE1/UBA3 and specific E2 enzymes — controls ubiquitin-mediated proteolysis. Loss of UBE2F suppressed growth of SDHB-deficient cells specifically, while neddylation inhibitors (pevonedistat, HA-9104) preferentially blocked proliferation in the SDH-deficient context (PMID 42181244).",
+    upstream_event:
+      "SDH loss → metabolic and proteotoxic stress → upregulated dependency on cullin-RING ligase-mediated protein degradation via neddylation",
+    downstream_effects: [
+      "Selective UBE2F dependency in SDHB-deficient cells",
+      "Cullin-RING ligase inactivation upon NAE inhibition",
+      "Proteotoxic stress accumulation",
+      "Selective growth suppression in SDH-deficient tumor cells",
+    ],
+    druggable: true,
+    display_order: 10,
+  },
+  {
     name: "Polyamine Metabolism",
     slug: "polyamine-metabolism",
     description:
@@ -182,20 +198,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 12,
   },
   {
-    name: "Neddylation / Ubiquitin-Proteasome Axis",
-    slug: "neddylation",
+    name: "ATRX Loss / ALT Replication Stress",
+    slug: "atrx-alt-replication-stress",
     description:
-      "An unbiased genome-wide CRISPR-Cas9 synthetic lethality screen in SDHB-deficient chromaffin cells identified the neddylation pathway as selectively essential for SDH-deficient tumor survival. Neddylation — attachment of the ubiquitin-like modifier NEDD8 to cullin-RING E3 ligases by NAE1/UBA3 and specific E2 enzymes — controls ubiquitin-mediated proteolysis. Loss of UBE2F suppressed growth of SDHB-deficient cells specifically, while neddylation inhibitors (pevonedistat, HA-9104) preferentially blocked proliferation in the SDH-deficient context (PMID 42181244).",
+      "In SDHB-driven metastatic pheochromocytoma and paraganglioma, ATRX co-mutations occur in ~30–40% of cases and are among the strongest genomic predictors of malignancy (confirmed by multi-omics profiling: PMID 42230482). ATRX loss activates the Alternative Lengthening of Telomeres (ALT) pathway — a recombination-based telomere maintenance mechanism — which creates constitutive replication stress at telomeric sequences through G-quadruplex DNA accumulation, R-loop formation, and fragile telomeres. ALT-positive cells are rendered hypersensitive to ATR kinase inhibition: Flynn et al. (Science 2015, PMID 25614623) demonstrated that ATRX-loss/ALT-positive cancer cells are 10–30× more sensitive to ATR inhibitors than ALT-negative cells across multiple cancer types, establishing a synthetic lethality that is absent in ATRX-wild-type tumors.",
     upstream_event:
-      "SDH loss → metabolic and proteotoxic stress → upregulated dependency on cullin-RING ligase-mediated protein degradation via neddylation",
+      "SDH loss (particularly SDHB mutation) → epigenetic instability → ATRX co-mutation → ALT pathway activation → constitutive telomeric replication stress → ATR dependency",
     downstream_effects: [
-      "Selective UBE2F dependency in SDHB-deficient cells",
-      "Cullin-RING ligase inactivation upon NAE inhibition",
-      "Proteotoxic stress accumulation",
-      "Selective growth suppression in SDH-deficient tumor cells",
+      "G-quadruplex DNA accumulation at telomeres",
+      "R-loop formation and replication fork stalling",
+      "Constitutive ATR kinase activation at stalled forks",
+      "Synthetic lethality with ATR inhibition (10–30× sensitization vs. ALT-negative cells)",
+      "C-circles as an extrachromosomal DNA biomarker of ALT activity",
+      "High metastatic potential in SDHB-driven PPGL",
     ],
     druggable: true,
-    display_order: 10,
+    display_order: 13,
   },
   {
     name: "Succinate-Driven Homologous Recombination Deficiency",
@@ -215,22 +233,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 14,
   },
   {
-    name: "ATRX Loss / ALT Replication Stress",
-    slug: "atrx-alt-replication-stress",
+    name: "De Novo Lipogenesis / FASN Dependency",
+    slug: "de-novo-lipogenesis",
     description:
-      "In SDHB-driven metastatic pheochromocytoma and paraganglioma, ATRX co-mutations occur in ~30–40% of cases and are among the strongest genomic predictors of malignancy (confirmed by multi-omics profiling: PMID 42230482). ATRX loss activates the Alternative Lengthening of Telomeres (ALT) pathway — a recombination-based telomere maintenance mechanism — which creates constitutive replication stress at telomeric sequences through G-quadruplex DNA accumulation, R-loop formation, and fragile telomeres. ALT-positive cells are rendered hypersensitive to ATR kinase inhibition: Flynn et al. (Science 2015, PMID 25614623) demonstrated that ATRX-loss/ALT-positive cancer cells are 10–30× more sensitive to ATR inhibitors than ALT-negative cells across multiple cancer types, establishing a synthetic lethality that is absent in ATRX-wild-type tumors.",
+      "SDH loss truncates the TCA cycle at the succinate → fumarate step, forcing cells to generate lipid precursors via reductive carboxylation of glutamine: glutamate → α-KG → isocitrate → citrate (reverse TCA via IDH1/IDH2), which is exported to the cytoplasm and cleaved by ATP-citrate lyase (ACLY) to yield acetyl-CoA. Fatty acid synthase (FASN) then converts acetyl-CoA and malonyl-CoA into palmitate and longer-chain fatty acids required for membrane biogenesis, lipid signalling, and mitochondrial lipid supply. Independently, FASN products are required for mitochondrial fatty acid synthesis (mtFAS), which produces the lipoic acid moiety needed by key mitochondrial enzyme complexes. A FASN-SDHB synthetic interaction was directly demonstrated using the FASN inhibitor G28UCM in SDHB-knockout cell lines: G28UCM impaired FASN activity and mitochondrial fatty acid synthesis more profoundly in SDHB-deficient cells than in WT controls, establishing selective synthetic lethality (Rodríguez-Flores et al., Pharmacol Res 2026, PMID 41520938).",
     upstream_event:
-      "SDH loss (particularly SDHB mutation) → epigenetic instability → ATRX co-mutation → ALT pathway activation → constitutive telomeric replication stress → ATR dependency",
+      "SDH loss → TCA cycle truncation at Complex II → reductive glutamine carboxylation as primary citrate-generation route → ACLY-mediated cytoplasmic acetyl-CoA production → upregulated FASN-mediated de novo fatty acid synthesis; concurrent dependence on FASN products for mitochondrial lipid supply and mtFAS",
     downstream_effects: [
-      "G-quadruplex DNA accumulation at telomeres",
-      "R-loop formation and replication fork stalling",
-      "Constitutive ATR kinase activation at stalled forks",
-      "Synthetic lethality with ATR inhibition (10–30× sensitization vs. ALT-negative cells)",
-      "C-circles as an extrachromosomal DNA biomarker of ALT activity",
-      "High metastatic potential in SDHB-driven PPGL",
+      "Reductive carboxylation of glutamine as primary lipid precursor route (replaces pyruvate-derived acetyl-CoA)",
+      "Elevated FASN-mediated palmitate and long-chain fatty acid synthesis",
+      "Dependency on FASN products for mitochondrial membrane lipids and lipoic acid (via mtFAS)",
+      "FASN inhibition (G28UCM) selectively impairs mitochondrial fatty acid synthesis and induces lethality in SDHB-deficient vs. WT cells (PMID 41520938)",
+      "Dual cytoplasmic + mitochondrial lipid impairment under FASN inhibition exceeds the threshold tolerated by SDH-compromised cells",
     ],
     druggable: true,
-    display_order: 13,
+    display_order: 15,
   },
   {
     name: "HIF-1α-Driven Apoptosis Evasion (Survivin / BIRC5)",
@@ -299,23 +316,6 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     ],
     druggable: true,
     display_order: 19,
-  },
-  {
-    name: "De Novo Lipogenesis / FASN Dependency",
-    slug: "de-novo-lipogenesis",
-    description:
-      "SDH loss truncates the TCA cycle at the succinate → fumarate step, forcing cells to generate lipid precursors via reductive carboxylation of glutamine: glutamate → α-KG → isocitrate → citrate (reverse TCA via IDH1/IDH2), which is exported to the cytoplasm and cleaved by ATP-citrate lyase (ACLY) to yield acetyl-CoA. Fatty acid synthase (FASN) then converts acetyl-CoA and malonyl-CoA into palmitate and longer-chain fatty acids required for membrane biogenesis, lipid signalling, and mitochondrial lipid supply. Independently, FASN products are required for mitochondrial fatty acid synthesis (mtFAS), which produces the lipoic acid moiety needed by key mitochondrial enzyme complexes. A FASN-SDHB synthetic interaction was directly demonstrated using the FASN inhibitor G28UCM in SDHB-knockout cell lines: G28UCM impaired FASN activity and mitochondrial fatty acid synthesis more profoundly in SDHB-deficient cells than in WT controls, establishing selective synthetic lethality (Rodríguez-Flores et al., Pharmacol Res 2026, PMID 41520938).",
-    upstream_event:
-      "SDH loss → TCA cycle truncation at Complex II → reductive glutamine carboxylation as primary citrate-generation route → ACLY-mediated cytoplasmic acetyl-CoA production → upregulated FASN-mediated de novo fatty acid synthesis; concurrent dependence on FASN products for mitochondrial lipid supply and mtFAS",
-    downstream_effects: [
-      "Reductive carboxylation of glutamine as primary lipid precursor route (replaces pyruvate-derived acetyl-CoA)",
-      "Elevated FASN-mediated palmitate and long-chain fatty acid synthesis",
-      "Dependency on FASN products for mitochondrial membrane lipids and lipoic acid (via mtFAS)",
-      "FASN inhibition (G28UCM) selectively impairs mitochondrial fatty acid synthesis and induces lethality in SDHB-deficient vs. WT cells (PMID 41520938)",
-      "Dual cytoplasmic + mitochondrial lipid impairment under FASN inhibition exceeds the threshold tolerated by SDH-compromised cells",
-    ],
-    druggable: true,
-    display_order: 15,
   },
   {
     name: "HIF-Driven MET and AXL Signaling",
@@ -477,42 +477,6 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 28,
   },
   {
-    name: "HIF-Driven IGF2/IGF1R Autocrine Growth Loop",
-    slug: "hif-igf2-igf1r-growth-signaling",
-    description:
-      "SDH loss constitutively activates HIF-1α/2α pseudohypoxia and drives CIMP DNA hypermethylation — two independent mechanisms that both upregulate IGF2 (insulin-like growth factor 2), creating an autocrine/paracrine growth loop via IGF1R and IR-A. IGF2 is among the most uniformly overexpressed transcripts in pseudohypoxic pheochromocytoma/paraganglioma (100% overexpression in PCC in one cohort: Nielsen et al. Endocr Relat Cancer 2015, PMID 26400872). This IGF1R-driven mitogenic and survival axis is pharmacologically targetable by linsitinib (OSI-906), a dual IGF1R/insulin receptor inhibitor.",
-    upstream_event:
-      "SDH loss → succinate → (1) PHD inhibition → HIF-1α/2α constitutive stabilisation → hypoxia-response element (HRE)-driven IGF2 transcriptional induction; AND (2) succinate → TET1/2/3 inhibition → CIMP epigenetic silencing → H19 imprinting control region (ICR) hypermethylation → loss of genomic imprinting → biallelic IGF2 expression → massive IGF2 protein secretion → IGF1R and IR-A receptor activation → PI3K/AKT/mTOR and MAPK/ERK proliferative and survival signalling",
-    downstream_effects: [
-      "HIF-1α/2α constitutively transcribes IGF2 via hypoxia-response elements (HREs) in the IGF2 promoter — the same pseudohypoxic mechanism that drives VEGF, CAIX, and GLUT1 in SDH-deficient tumours",
-      "CIMP-driven methylation of the H19 imprinting control region (ICR) silences the H19 non-coding RNA repressor, de-repressing the adjacent IGF2 locus on the normally silent maternal allele (loss of imprinting → biallelic IGF2 expression; Nielsen et al. Endocr Relat Cancer 2015, PMID 26400872)",
-      "IGF2 overexpression is near-universal in pheochromocytomas (100% in a 10-PCC cohort; Nielsen et al. 2015, PMID 26400872) and elevated in adrenocortical carcinoma, the closest analogue with the same IGF2-driven mechanism",
-      "IGF2 binds IGF1R (high affinity) and IR-A (isoform expressed in foetal/cancer tissue) → receptor autophosphorylation → IRS1/IRS2 docking → PI3K/AKT/mTOR activation (converging with Mechanism 4) and MAPK/ERK proliferative signalling",
-      "Linsitinib (OSI-906) is an ATP-competitive dual inhibitor of IGF1R kinase (IC50 ~35 nM) and IR (IC50 ~75 nM); it was advanced to a Phase 3 randomised controlled trial (NCT00924989) in IGF2-overexpressing adrenocortical carcinoma, establishing clinical-stage pharmacology and tolerability data directly in an IGF2-driven tumour",
-      "Downstream PI3K/AKT/mTOR engagement creates rationale for combination with mTOR inhibitors (everolimus, Mechanism 4) or AKT inhibitors (capivasertib, Mechanism 27) — IGF1R inhibition could prevent feedback AKT re-activation seen with mTOR monotherapy",
-    ],
-    druggable: true,
-    display_order: 32,
-  },
-  {
-    name: "G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality",
-    slug: "g4-quadruplex-brcas-lethality",
-    description:
-      "G-quadruplex (G4) DNA structures form at guanine-rich sequences genome-wide — at telomeres, gene promoters, replication origins, and non-B-DNA sites — during transcription and replication. CX-5461 stabilizes G4 DNA, blocking replication fork progression and inducing DNA strand breaks that require BRCA-mediated homologous recombination (HR) for repair (Xu et al., Nat Commun 2017, PMID 28211448). In SDH-deficient tumors, succinate accumulation inhibits KDM4A and KDM4B histone demethylases at double-strand break sites, impairs TIP60 acetyltransferase and ATM kinase recruitment, and establishes constitutive HR deficiency (BRCAness) independently of BRCA1/2 mutation status (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). This BRCAness renders SDH-deficient cells unable to repair G4-induced DNA damage, creating synthetic lethality. In ATRX-null/ALT-positive SDHB-metastatic PPGL (~30–40% of metastatic cases), ATRX loss independently elevates the G4 burden at telomeric and non-telomeric chromatin, amplifying CX-5461 sensitivity beyond the BRCAness baseline.",
-    upstream_event:
-      "SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM4A/KDM4B histone demethylases → H3K9me3 persistence at DSB sites → impaired TIP60/ATM → HR deficiency (BRCAness); CX-5461 stabilizes G4 DNA → stalled replication forks → DSBs → BRCAness-selective lethality; amplified in ATRX-null/ALT cells by elevated baseline G4 burden",
-    downstream_effects: [
-      "CX-5461 stabilizes G-quadruplex DNA structures genome-wide, blocking replication fork progression and generating single-stranded DNA gaps and DSBs",
-      "Resulting DNA damage requires BRCA1/2-mediated HR for repair; SDH-deficient BRCAness cells cannot execute HR → selective cytotoxicity",
-      "Xu et al. 2017 (PMID 28211448) demonstrated CX-5461 selectivity in BRCA1/2-deficient patient-derived xenograft models, including tumours resistant to PARP inhibition — establishing a mechanistic distinction from PARP inhibitors",
-      "ATRX-null/ALT SDHB-metastatic PPGL (~30–40% of metastatic cases) carries elevated G4 burden from ATRX-mediated G4 resolution failure, predicted to amplify CX-5461 sensitivity beyond BRCAness alone",
-      "Non-redundant with PARP inhibitors (olaparib/niraparib), DNA-PKcs inhibitors (elimusertib), CHK1 inhibitors (prexasertib), or POLQ inhibitors (ART558) — G4 stabilization generates the upstream DSB load rather than preventing its resolution",
-      "Phase 1 NCT02719977 (BRCA1/2-deficient hematologic malignancies) and Phase 1b NCT03914288 (BRCA1/2-mutated solid tumours) establish CX-5461 clinical pharmacology in the BRCAness patient population",
-    ],
-    druggable: true,
-    display_order: 33,
-  },
-  {
     name: "HSP90-Dependent HIF Pseudohypoxic Proteome Stability",
     slug: "hsp90-hif-client-chaperone",
     description:
@@ -549,23 +513,6 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 30,
   },
   {
-    name: "HIF-Driven CD73/Adenosine Immunosuppression",
-    slug: "hif-cd73-adenosine-immunosuppression",
-    description:
-      "Constitutive HIF-1α stabilization in SDH-deficient tumors transcriptionally activates NT5E (CD73), a cell-surface ecto-5'-nucleotidase, via a canonical hypoxia-response element in the NT5E promoter. CD73 converts extracellular AMP to adenosine, which accumulates in the tumor microenvironment and binds A2A and A2B receptors on infiltrating T cells and NK cells. A2A/A2B signaling elevates cAMP and suppresses effector T-cell activation, IFN-γ secretion, and cytotoxic function — a third, mechanistically distinct immune-evasion arm complementary to the succinate-MCT1, IDO1, and PD-L1 axes.",
-    upstream_event:
-      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HRE-driven NT5E/CD73 transcriptional activation → CD73-catalyzed extracellular AMP → adenosine",
-    downstream_effects: [
-      "NT5E/CD73 upregulation on tumor cells via HIF-1α binding to hypoxia-response element (HRE) in the NT5E promoter",
-      "Elevated extracellular adenosine in the tumor microenvironment",
-      "Adenosine → A2A/A2B receptor activation on CD4+/CD8+ T cells and NK cells → cAMP/PKA elevation → effector function suppression",
-      "IFN-γ secretion, TCR signaling, and cytotoxic T-cell degranulation suppressed",
-      "Anti-CD73 antibodies (oleclumab/MEDI9447) block CD73 enzymatic activity, reducing adenosine production",
-    ],
-    druggable: true,
-    display_order: 33,
-  },
-  {
     name: "Reductive Carboxylation / ACLY Bottleneck",
     slug: "reductive-carboxylation",
     description:
@@ -581,24 +528,6 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     ],
     druggable: true,
     display_order: 31,
-  },
-  {
-    name: "One-Carbon Folate / Nucleotide Synthesis Dependency (MTHFD2)",
-    slug: "one-carbon-folate-nucleotide-synthesis",
-    description:
-      "SDH loss truncates the TCA cycle at succinate, depleting the OAA and aspartate pool via two convergent mechanisms: (1) forward TCA stalling prevents OAA synthesis; (2) accumulated succinate allosterically inhibits ATCase (carbamoyl-phosphate synthetase II / aspartate transcarbamylase / dihydroorotase, CAD), the first committed enzyme of de novo pyrimidine synthesis (Hart et al. 2025, PMID 42082831). The resulting nucleotide stress triggers the Integrated Stress Response (ISR) via GCN2 and/or HRI kinases, leading to eIF2α phosphorylation and selective translation of ATF4. ATF4 transcriptionally upregulates MTHFD2 (mitochondrial methylenetetrahydrofolate dehydrogenase 2 / cyclohydrolase), the rate-limiting enzyme of the mitochondrial one-carbon folate cycle. MTHFD2 converts 5,10-methylene-THF to 10-formyl-THF, generating folate cofactors that feed both de novo purine synthesis (10-formyl-THF → IMP via ATIC/GART) and thymidylate synthesis (5,10-methylene-THF → dTMP via TYMS). SDH-deficient cells thus develop a broad one-carbon/nucleotide synthesis dependency mediated by elevated MTHFD2 — distinct from and complementary to DHODH (pyrimidine-only). Inhibiting MTHFD2 depletes both purine and thymidylate branches simultaneously, compounding the nucleotide stress imposed by SDH loss itself.",
-    upstream_event:
-      "SDH loss → succinate accumulation → (1) OAA depletion (TCA block) + (2) succinate-ATCase inhibition (Hart PMID 42082831) → nucleotide stress → ISR (GCN2/HRI → p-eIF2α) → ATF4 translation → MTHFD2 transcriptional upregulation → one-carbon folate cofactor dependency",
-    downstream_effects: [
-      "MTHFD2 generates 10-formyl-THF (feeds GART/ATIC for de novo purine synthesis) and 5,10-methylene-THF (feeds TYMS for thymidylate synthesis)",
-      "MTHFD2 inhibition depletes both purine and pyrimidylate branches simultaneously — compounding the nucleotide stress already imposed by succinate-ATCase inhibition",
-      "Complementary to (not redundant with) DHODH inhibition: DHODH targets pyrimidine synthesis only; MTHFD2 covers both purine and thymidylate via folate cofactor route",
-      "ATF4-driven MTHFD2 upregulation links ISR activation to one-carbon metabolism — the same ISR arm that mediates stress adaptation in many cancer types with metabolic vulnerabilities",
-      "MTHFD2 is overexpressed in multiple solid tumors (TCGA pan-cancer) and inversely correlates with survival, making it a validated cancer metabolic target beyond the SDH-specific context",
-      "LY3410738 (Eli Lilly) is a potent, selective dual MTHFD2/MTHFD1L inhibitor in preclinical development",
-    ],
-    druggable: true,
-    display_order: 33,
   },
   {
     name: "HIF-Driven IGF2/IGF1R Autocrine Growth Loop",
@@ -619,6 +548,59 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 32,
   },
   {
+    name: "HIF-Driven CD73/Adenosine Immunosuppression",
+    slug: "hif-cd73-adenosine-immunosuppression",
+    description:
+      "Constitutive HIF-1α stabilization in SDH-deficient tumors transcriptionally activates NT5E (CD73), a cell-surface ecto-5'-nucleotidase, via a canonical hypoxia-response element in the NT5E promoter. CD73 converts extracellular AMP to adenosine, which accumulates in the tumor microenvironment and binds A2A and A2B receptors on infiltrating T cells and NK cells. A2A/A2B signaling elevates cAMP and suppresses effector T-cell activation, IFN-γ secretion, and cytotoxic function — a third, mechanistically distinct immune-evasion arm complementary to the succinate-MCT1, IDO1, and PD-L1 axes.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HRE-driven NT5E/CD73 transcriptional activation → CD73-catalyzed extracellular AMP → adenosine",
+    downstream_effects: [
+      "NT5E/CD73 upregulation on tumor cells via HIF-1α binding to hypoxia-response element (HRE) in the NT5E promoter",
+      "Elevated extracellular adenosine in the tumor microenvironment",
+      "Adenosine → A2A/A2B receptor activation on CD4+/CD8+ T cells and NK cells → cAMP/PKA elevation → effector function suppression",
+      "IFN-γ secretion, TCR signaling, and cytotoxic T-cell degranulation suppressed",
+      "Anti-CD73 antibodies (oleclumab/MEDI9447) block CD73 enzymatic activity, reducing adenosine production",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
+  {
+    name: "One-Carbon Folate / Nucleotide Synthesis Dependency (MTHFD2)",
+    slug: "one-carbon-folate-nucleotide-synthesis",
+    description:
+      "SDH loss truncates the TCA cycle at succinate, depleting the OAA and aspartate pool via two convergent mechanisms: (1) forward TCA stalling prevents OAA synthesis; (2) accumulated succinate allosterically inhibits ATCase (carbamoyl-phosphate synthetase II / aspartate transcarbamylase / dihydroorotase, CAD), the first committed enzyme of de novo pyrimidine synthesis (Hart et al. 2025, PMID 42082831). The resulting nucleotide stress triggers the Integrated Stress Response (ISR) via GCN2 and/or HRI kinases, leading to eIF2α phosphorylation and selective translation of ATF4. ATF4 transcriptionally upregulates MTHFD2 (mitochondrial methylenetetrahydrofolate dehydrogenase 2 / cyclohydrolase), the rate-limiting enzyme of the mitochondrial one-carbon folate cycle. MTHFD2 converts 5,10-methylene-THF to 10-formyl-THF, generating folate cofactors that feed both de novo purine synthesis (10-formyl-THF → IMP via ATIC/GART) and thymidylate synthesis (5,10-methylene-THF → dTMP via TYMS). SDH-deficient cells thus develop a broad one-carbon/nucleotide synthesis dependency mediated by elevated MTHFD2 — distinct from and complementary to DHODH (pyrimidine-only). Inhibiting MTHFD2 depletes both purine and thymidylate branches simultaneously, compounding the nucleotide stress imposed by SDH loss itself.",
+    upstream_event:
+      "SDH loss → succinate accumulation → (1) OAA depletion (TCA block) + (2) succinate-ATCase inhibition (Hart PMID 42082831) → nucleotide stress → ISR (GCN2/HRI → p-eIF2α) → ATF4 translation → MTHFD2 transcriptional upregulation → one-carbon folate cofactor dependency",
+    downstream_effects: [
+      "MTHFD2 generates 10-formyl-THF (feeds GART/ATIC for de novo purine synthesis) and 5,10-methylene-THF (feeds TYMS for thymidylate synthesis)",
+      "MTHFD2 inhibition depletes both purine and pyrimidylate branches simultaneously — compounding the nucleotide stress already imposed by succinate-ATCase inhibition",
+      "Complementary to (not redundant with) DHODH inhibition: DHODH targets pyrimidine synthesis only; MTHFD2 covers both purine and thymidylate via folate cofactor route",
+      "ATF4-driven MTHFD2 upregulation links ISR activation to one-carbon metabolism — the same ISR arm that mediates stress adaptation in many cancer types with metabolic vulnerabilities",
+      "MTHFD2 is overexpressed in multiple solid tumors (TCGA pan-cancer) and inversely correlates with survival, making it a validated cancer metabolic target beyond the SDH-specific context",
+      "LY3410738 (Eli Lilly) is a potent, selective dual MTHFD2/MTHFD1L inhibitor in preclinical development",
+    ],
+    druggable: true,
+    display_order: 34,
+  },
+  {
+    name: "G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality",
+    slug: "g4-quadruplex-brcas-lethality",
+    description:
+      "G-quadruplex (G4) DNA structures form at guanine-rich sequences genome-wide — at telomeres, gene promoters, replication origins, and non-B-DNA sites — during transcription and replication. CX-5461 stabilizes G4 DNA, blocking replication fork progression and inducing DNA strand breaks that require BRCA-mediated homologous recombination (HR) for repair (Xu et al., Nat Commun 2017, PMID 28211448). In SDH-deficient tumors, succinate accumulation inhibits KDM4A and KDM4B histone demethylases at double-strand break sites, impairs TIP60 acetyltransferase and ATM kinase recruitment, and establishes constitutive HR deficiency (BRCAness) independently of BRCA1/2 mutation status (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). This BRCAness renders SDH-deficient cells unable to repair G4-induced DNA damage, creating synthetic lethality. In ATRX-null/ALT-positive SDHB-metastatic PPGL (~30–40% of metastatic cases), ATRX loss independently elevates the G4 burden at telomeric and non-telomeric chromatin, amplifying CX-5461 sensitivity beyond the BRCAness baseline.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM4A/KDM4B histone demethylases → H3K9me3 persistence at DSB sites → impaired TIP60/ATM → HR deficiency (BRCAness); CX-5461 stabilizes G4 DNA → stalled replication forks → DSBs → BRCAness-selective lethality; amplified in ATRX-null/ALT cells by elevated baseline G4 burden",
+    downstream_effects: [
+      "CX-5461 stabilizes G-quadruplex DNA structures genome-wide, blocking replication fork progression and generating single-stranded DNA gaps and DSBs",
+      "Resulting DNA damage requires BRCA1/2-mediated HR for repair; SDH-deficient BRCAness cells cannot execute HR → selective cytotoxicity",
+      "Xu et al. 2017 (PMID 28211448) demonstrated CX-5461 selectivity in BRCA1/2-deficient patient-derived xenograft models, including tumours resistant to PARP inhibition — establishing a mechanistic distinction from PARP inhibitors",
+      "ATRX-null/ALT SDHB-metastatic PPGL (~30–40% of metastatic cases) carries elevated G4 burden from ATRX-mediated G4 resolution failure, predicted to amplify CX-5461 sensitivity beyond BRCAness alone",
+      "Non-redundant with PARP inhibitors (olaparib/niraparib), DNA-PKcs inhibitors (elimusertib), CHK1 inhibitors (prexasertib), or POLQ inhibitors (ART558) — G4 stabilization generates the upstream DSB load rather than preventing its resolution",
+      "Phase 1 NCT02719977 (BRCA1/2-deficient hematologic malignancies) and Phase 1b NCT03914288 (BRCA1/2-mutated solid tumours) establish CX-5461 clinical pharmacology in the BRCAness patient population",
+    ],
+    druggable: true,
+    display_order: 35,
+  },
+  {
     name: "CDK9 / P-TEFb Super-Enhancer Transcription Elongation",
     slug: "cdk9-super-enhancer-elongation",
     description:
@@ -633,25 +615,7 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
       "BRD4 inhibitors (already in engine) block CDK9 recruitment; CDK9 inhibitors block CDK9 kinase activity directly — orthogonal pharmacological nodes on the same elongation axis",
     ],
     druggable: true,
-    display_order: 32,
-  },
-  {
-    name: "HIF-Driven CD73/Adenosine Immunosuppression",
-    slug: "hif-cd73-adenosine-suppression",
-    description:
-      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HRE-driven transcription of NT5E (CD73/ecto-5'-nucleotidase) on the tumor cell surface. CD73 dephosphorylates extracellular AMP to adenosine. Extracellular adenosine binds A2A receptors (ADORA2A) on tumor-infiltrating T cells → Gαs-coupled cAMP elevation → PKA-mediated phosphorylation of CREB → T-cell functional exhaustion: suppressed TCR signaling, impaired IFN-γ and granzyme B secretion, and inhibited proliferative expansion. This is a third mechanistically distinct immunosuppressive arm in SDH-deficient tumors, operating in parallel to succinate-MCT1 T-cell metabolic suppression and HIF-IDO1 tryptophan depletion, and orthogonal to the HIF-PD-L1 checkpoint axis.",
-    upstream_event:
-      "SDH loss → succinate → PHD inhibition → HIF-1α constitutive stabilization → HRE-driven NT5E/CD73 transcriptional upregulation → CD73 ectoenzyme activity on tumor cell surface → extracellular AMP → adenosine → ADORA2A on T cells → cAMP elevation → T-cell exhaustion",
-    downstream_effects: [
-      "HIF-1α directly transcribes NT5E via hypoxia-response elements (HREs) in its promoter — demonstrated by HIF-1α antisense abolition and HRE mutagenesis (Synnestvedt et al., J Clin Invest 2002, PMID 12370277)",
-      "CD73 ectoenzyme on tumor cell surface converts extracellular AMP → adenosine",
-      "Extracellular adenosine accumulation in the tumor microenvironment",
-      "A2AR (ADORA2A) activation on tumor-infiltrating T cells → Gαs → cAMP → PKA → CREB-mediated suppression of TCR signaling",
-      "T-cell functional exhaustion: reduced IFN-γ and granzyme B secretion, impaired cytotoxic degranulation, and inhibited proliferative clonal expansion",
-      "Third independent immunosuppressive arm in SDH-deficient tumors (alongside MCT1-succinate and IDO1-kynurenine axes)",
-    ],
-    druggable: true,
-    display_order: 33,
+    display_order: 36,
   },
   {
     name: "CBP/p300 HAT Co-Activator",
@@ -668,7 +632,7 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
       "HIF co-activator dependency is universal across SDH-deficient tumor types (GIST, PPGL, RCC)",
     ],
     druggable: true,
-    display_order: 33,
+    display_order: 37,
   },
   {
     name: "HIF→CA9 Tumour pH Regulation",
@@ -685,6 +649,6 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
       "SLC-0111 completed Phase 1 monotherapy safety/PK study in solid tumours (NCT02215850) and Phase 1b/2 combination with gemcitabine in CAIX-positive pancreatic adenocarcinoma (NCT03450018)",
     ],
     druggable: true,
-    display_order: 33,
+    display_order: 38,
   },
 ];

@@ -79,7 +79,6 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "one-carbon-folate-nucleotide-synthesis": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "g4-quadruplex-brcas-lethality": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "cdk9-super-enhancer-elongation": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
-  "hif-cd73-adenosine-suppression": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "cbp-p300-hat-coactivator": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "hif-ca9-ph-regulation": "bg-cyan-300 text-cyan-950 dark:bg-cyan-700 dark:text-cyan-50",
 };

@@ -92,6 +92,13 @@ The H3K27me3 accumulation driven by succinate-mediated KDM6A/B inhibition (Mecha
 
 In SDH-deficient GIST specifically, the 2026 Nature Medicine Phase 2 trial (Merriam et al., PMID: 42191879) directly demonstrated that SDH loss creates ectopic super-enhancer activity: DNA hypermethylation disrupts CTCF-binding insulator elements at the FGF3/FGF4 gene locus, releasing these normally silenced oncogenes under the control of a pathological super-enhancer that drives autocrine FGFR1 signaling. BRD4 is required for the transcriptional output of precisely this class of ectopic super-enhancer. This positions BET inhibition as a mechanistically motivated complement to FGFR inhibition: rogaratinib targets the downstream FGFR kinase output of the ectopic super-enhancer, whereas BRD4 inhibitors target the super-enhancer maintenance machinery itself — and would simultaneously suppress other ectopically activated super-enhancers beyond the FGF3/FGF4 locus that arise from the same CIMP-driven epigenomic remodeling. Birabresib (OTX015, pan-BRD2/3/4 inhibitor) is the lead clinical candidate; Phase 1b/2 data exist in haematological malignancies and NUT carcinoma (NCT01713582). No SDH-deficient-specific preclinical data has been published; this remains a mechanistic inference requiring experimental validation in SDH-deficient cell and xenograft models.
 
+### 14. Succinate-Driven Homologous Recombination Deficiency (BRCAness)
+The enzymatic consequences of succinate accumulation extend beyond HIF stabilization and epigenetic silencing: succinate also competitively inhibits the α-ketoglutarate (α-KG)-dependent histone demethylases KDM4A and KDM4B (also known as JMJD2A and JMJD2B). These enzymes normally erase the repressive H3K9me3 histone mark at sites of DNA double-strand breaks (DSBs), a chromatin de-repression step required for TIP60 acetyltransferase recruitment, ATM kinase activation, and initiation of DNA end-resection — the first committed step of homologous recombination (HR) repair. When KDM4A/B are inhibited by succinate, H3K9me3 hypermethylation persists at DSB sites, blocking the entire downstream HR cascade.
+
+Sulkowski et al. (Nat Genet 2018, PMID: 30013182) established that hereditary cancer syndromes driven by oncometabolites — including SDH-deficient (paraganglioma/PPGL) and FH-deficient tumors — share a 'BRCAness' phenotype: impaired homology-directed repair despite wild-type BRCA1/2, with demonstrated hypersensitivity to PARP inhibitors in patient-derived cell lines and tumor models from SDH-deficient patients. Sulkowski et al. (Nature 2020, PMID: 32494005) resolved the mechanism: 2-HG, succinate, and fumarate all inhibit KDM4B, causing H3K9me3-masked DSB chromatin that cannot recruit the HR initiation machinery; restoring KDM4B activity pharmacologically rescued HR competence and reversed PARP inhibitor hypersensitivity.
+
+This mechanism is distinct from the ATRX-loss/ALT replication stress pathway: ATRX-loss creates telomeric replication stress in a subset (~30–40%) of SDHB-metastatic tumors and requires ATR inhibition; the KDM4B/HRD mechanism creates an HR-deficient state at all DSBs in all SDH-deficient cells (succinate-driven, not ATRX-dependent) and creates sensitivity to PARP trapping. The two mechanisms may coexist in ATRX-co-mutant tumors. FDA-approved PARP inhibitors olaparib (Lynparza) and niraparib (Zejula) are the lead candidates; niraparib's approval in HRD-positive non-BRCA ovarian cancer (PRIMA trial, González-Martín et al., NEJM 2019, PMID: 31562799) provides a biomarker-selection framework (genomic scar assay) applicable if SDH-deficient tumors generate a comparable HRD signature.
+
 ### 15. De Novo Lipogenesis / FASN Synthetic Lethality
 SDH loss truncates the TCA cycle at the succinate → fumarate step, and one of the compensatory adaptations is a shift to reductive carboxylation of glutamine as the primary route for generating citrate and, downstream, acetyl-CoA for lipid synthesis. The pathway runs: glutamine → glutamate → α-ketoglutarate (via GDH or transaminases) → isocitrate → citrate (via the reverse, reductive activity of IDH1/IDH2, which is thermodynamically favoured when the mitochondrial α-KG pool is large and the TCA cycle cannot run forward past Complex II). Cytoplasmic citrate is then cleaved by ATP-citrate lyase (ACLY) to acetyl-CoA and oxaloacetate. FASN (fatty acid synthase), the large multifunctional cytoplasmic enzyme that converts acetyl-CoA and malonyl-CoA to palmitate, is the terminal effector of this glutamine-derived lipid supply route. When SDH-deficient cells are thus dependent on FASN for membrane fatty acids, inhibiting FASN collapses a route the cells cannot compensate for.
 
@@ -110,12 +117,23 @@ Ym155 (sepantronium bromide) suppresses survivin transcription by displacing Sp1
 
 **SAFETY SIGNAL (Vitamin C):** A related finding that inverts the expected biology: ascorbate (vitamin C), long hypothesized as a TET cofactor that might partially rescue SDH-deficient epigenetics, was shown to PROMOTE tumor growth in an SDHB-deficient zebrafish model (Rapizzi et al., Endocr Relat Cancer 2026, PMID 41404848). High-dose vitamin C supplementation should be considered potentially counterproductive in SDH-deficient patients pending dedicated SDHA/GIST-specific data.
 
-### 14. Succinate-Driven Homologous Recombination Deficiency (BRCAness)
-The enzymatic consequences of succinate accumulation extend beyond HIF stabilization and epigenetic silencing: succinate also competitively inhibits the α-ketoglutarate (α-KG)-dependent histone demethylases KDM4A and KDM4B (also known as JMJD2A and JMJD2B). These enzymes normally erase the repressive H3K9me3 histone mark at sites of DNA double-strand breaks (DSBs), a chromatin de-repression step required for TIP60 acetyltransferase recruitment, ATM kinase activation, and initiation of DNA end-resection — the first committed step of homologous recombination (HR) repair. When KDM4A/B are inhibited by succinate, H3K9me3 hypermethylation persists at DSB sites, blocking the entire downstream HR cascade.
+### 17. Pyrimidine Synthesis Vulnerability (DHODH Inhibition)
+A 2026 Nature Metabolism study (Hart et al., PMID 42082831, already validated and in the papers database) established a mechanistically novel vulnerability downstream of SDH loss: succinate accumulation suppresses de novo pyrimidine synthesis through a dual block that positions DHODH inhibitors as a synthetic-lethality strategy in SDH-deficient cells.
 
-Sulkowski et al. (Nat Genet 2018, PMID: 30013182) established that hereditary cancer syndromes driven by oncometabolites — including SDH-deficient (paraganglioma/PPGL) and FH-deficient tumors — share a 'BRCAness' phenotype: impaired homology-directed repair despite wild-type BRCA1/2, with demonstrated hypersensitivity to PARP inhibitors in patient-derived cell lines and tumor models from SDH-deficient patients. Sulkowski et al. (Nature 2020, PMID: 32494005) resolved the mechanism: 2-HG, succinate, and fumarate all inhibit KDM4B, causing H3K9me3-masked DSB chromatin that cannot recruit the HR initiation machinery; restoring KDM4B activity pharmacologically rescued HR competence and reversed PARP inhibitor hypersensitivity.
+**The dual block mechanism:**
+De novo pyrimidine synthesis runs through six steps from glutamine and aspartate to UMP. Step 2 (catalyzed by the trifunctional CAD protein's ATCase domain) commits aspartate — by condensation with carbamoyl phosphate — to carbamoyl aspartate, the first committed pyrimidine intermediate. In SDH-deficient cells, aspartate availability is already reduced because the truncated TCA cycle cannot sustain adequate oxaloacetate → aspartate flux (transamination of OAA by GOT1/GOT2). On top of this substrate depletion, Hart et al. directly demonstrated that accumulated succinate acts as a competitive inhibitor of ATCase, blocking this committed step. Crucially, SDH-deficient cells show an apparent aspartate rebound (cells transiently elevate aspartate) but proliferation is still suppressed — indicating the succinate-ATCase enzymatic block, not aspartate depletion per se, is the dominant anti-proliferative constraint. The net result is substantially reduced flux through steps 1–3 of the de novo pathway.
 
-This mechanism is distinct from the ATRX-loss/ALT replication stress pathway: ATRX-loss creates telomeric replication stress in a subset (~30–40%) of SDHB-metastatic tumors and requires ATR inhibition; the KDM4B/HRD mechanism creates an HR-deficient state at all DSBs in all SDH-deficient cells (succinate-driven, not ATRX-dependent) and creates sensitivity to PARP trapping. The two mechanisms may coexist in ATRX-co-mutant tumors. FDA-approved PARP inhibitors olaparib (Lynparza) and niraparib (Zejula) are the lead candidates; niraparib's approval in HRD-positive non-BRCA ovarian cancer (PRIMA trial, González-Martín et al., NEJM 2019, PMID: 31562799) provides a biomarker-selection framework (genomic scar assay) applicable if SDH-deficient tumors generate a comparable HRD signature.
+**Where DHODH inhibitors intervene:**
+Step 4 of the same de novo pathway is catalyzed by DHODH (dihydroorotate dehydrogenase), a mitochondrial inner-membrane enzyme that oxidizes dihydroorotate to orotate using ubiquinone (CoQ) as the electron acceptor. DHODH inhibitors (brequinar, teriflunomide) block this step, further reducing orotate and UMP synthesis. In normal cells with intact ATCase and adequate aspartate, abundant flux through steps 1–3 provides a large buffer; DHODH inhibition reduces but does not eliminate UMP production. In SDH-deficient cells, ATCase activity is already partially blocked by succinate, so the pathway operates near a pyrimidine synthesis floor. Additional DHODH inhibition depletes the remaining UMP supply below the threshold needed for nucleotide repletion, DNA synthesis, and proliferation — a selective synthetic lethality.
+
+**Additional ETC dimension:**
+DHODH catalysis is obligatorily coupled to the mitochondrial ETC: it reduces CoQ (accepts electrons from dihydroorotate oxidation), and CoQ must be re-oxidized by downstream ETC complexes for continued DHODH activity. In SDH-deficient cells, Complex II (SDH) is absent and CoQ loading from complex II is lost, potentially altering the kinetics of CoQ availability for DHODH. Whether this exacerbates or mitigates DHODH inhibitor sensitivity in the SDH-deficient context awaits direct experimental measurement.
+
+**Drug candidates:**
+- **Brequinar** (DUP-785): potent, selective DHODH inhibitor (IC50 ~3 nM); Phase 1/2 clinical data in solid tumors and AML (NCT01888484); not FDA-approved. Higher intrinsic potency than teriflunomide makes it the preferred experimental candidate.
+- **Teriflunomide** (Aubagio): FDA-approved DHODH inhibitor (relapsing MS; 2012); active metabolite of leflunomide (FDA-approved for RA since 1998). Orally available, well-characterized long-term safety profile, immediately accessible for off-label study. Phase 2 anti-tumor activity data in glioblastoma (NCT02799498). Lower DHODH potency (IC50 ~600 nM) than brequinar, but immediate clinical availability enables rapid human proof-of-concept evaluation.
+
+**Key limitation:** No direct experimental data exists for DHODH inhibitor selectivity in SDH-deficient versus SDH-intact cell lines or xenografts. The rationale is mechanistic inference: the succinate-ATCase block (PMID 42082831) reduces pyrimidine synthesis reserve, and DHODH inhibition at step 4 compounds this. Validation in SDHA-null GIST and SDHB-deficient PPGL cell models is the critical next step before clinical evaluation.
 
 ### 18. Pol θ-Mediated End-Joining (TMEJ) Backup Repair — POLQ Synthetic Lethality
 The BRCAness phenotype created by succinate-driven KDM4B inhibition (Mechanism 14) has a second exploitable consequence beyond PARP inhibitor sensitivity: HR-deficient cells upregulate Pol θ-mediated end-joining (TMEJ, also called microhomology-mediated end-joining / MMEJ) as a backup DSB repair pathway. TMEJ is executed by DNA polymerase theta (POLQ), which extends from short (~2–25 bp) microhomology sequences to bridge and ligate DSB ends in an error-prone manner. When HR is impaired, cells become dependent on TMEJ/POLQ for survival; POLQ inhibition then creates a second synthetic lethal hit.
@@ -162,24 +180,6 @@ ART558 (Artios Pharma) is the first-in-class selective, oral POLQ inhibitor in P
 | HIF-Driven MET and AXL Signaling | MET, AXL | SDH loss → HIF-1α stabilization → HRE-driven transcriptional activation of MET (HGFR) and AXL; HIF-1α→MET mechanism established by Pennacchietti et al. (Cancer Cell 2003, PMID 12726861); MET → PI3K/AKT/mTOR → HIF-1α positive-feedback amplifies pseudohypoxia; cabozantinib (VEGFR2/MET/AXL/RET/KIT inhibitor, FDA-approved for RCC/HCC/thyroid) demonstrated ORR 25%, PFS 16.6 months in metastatic PPGL (Natalie trial, Lancet Oncol 2024, PMID 38608693); pharmacologically distinct from sunitinib/regorafenib by virtue of MET and AXL co-inhibition |
 | HIF-Driven PD-L1 / Checkpoint Immune Evasion | CD274 (PD-L1) | SDH loss → succinate → PHD inhibition → HIF-1α stabilization → HRE-driven CD274 transcription → tumor-surface PD-L1 → PD-1 ligation → T-cell exhaustion; HIF-1α→PD-L1 mechanism established by Noman et al. (J Exp Med 2014, PMID 24493797); second immune-evasion arm complementary to succinate-MCT1-IDO1 (Mechanism 11); pembrolizumab (anti-PD-1, Keytruda, FDA-approved) and nivolumab under clinical evaluation in GIST and PPGL (NCT02834013 DART, NCT02721732) |
 | CDKN2A/CDK4/6 Cell Cycle Dysregulation | CDK4, CDK6 | SDH loss → CIMP → CDKN2A promoter hypermethylation → p16/INK4A silencing → CDK4/6 constitutive activation → RB1 hyperphosphorylation → E2F-driven unrestrained S-phase entry; CDKN2A among ~85,000 hypermethylated CpG sites in SDH-deficient GIST CIMP (Killian et al., Cancer Discov 2013, PMID 23550148); CDK4/6 inhibitors (palbociclib/Ibrance, FDA-approved for HR+/HER2- breast cancer) pharmacologically reimpose the p16/CDK4/6 brake lost through CIMP silencing; evidence restricted to SDH-deficient GIST (CDKN2A methylation is CIMP-specific, not present in KIT/PDGFRA GIST) |
-
-### 17. Pyrimidine Synthesis Vulnerability (DHODH Inhibition)
-A 2026 Nature Metabolism study (Hart et al., PMID 42082831, already validated and in the papers database) established a mechanistically novel vulnerability downstream of SDH loss: succinate accumulation suppresses de novo pyrimidine synthesis through a dual block that positions DHODH inhibitors as a synthetic-lethality strategy in SDH-deficient cells.
-
-**The dual block mechanism:**
-De novo pyrimidine synthesis runs through six steps from glutamine and aspartate to UMP. Step 2 (catalyzed by the trifunctional CAD protein's ATCase domain) commits aspartate — by condensation with carbamoyl phosphate — to carbamoyl aspartate, the first committed pyrimidine intermediate. In SDH-deficient cells, aspartate availability is already reduced because the truncated TCA cycle cannot sustain adequate oxaloacetate → aspartate flux (transamination of OAA by GOT1/GOT2). On top of this substrate depletion, Hart et al. directly demonstrated that accumulated succinate acts as a competitive inhibitor of ATCase, blocking this committed step. Crucially, SDH-deficient cells show an apparent aspartate rebound (cells transiently elevate aspartate) but proliferation is still suppressed — indicating the succinate-ATCase enzymatic block, not aspartate depletion per se, is the dominant anti-proliferative constraint. The net result is substantially reduced flux through steps 1–3 of the de novo pathway.
-
-**Where DHODH inhibitors intervene:**
-Step 4 of the same de novo pathway is catalyzed by DHODH (dihydroorotate dehydrogenase), a mitochondrial inner-membrane enzyme that oxidizes dihydroorotate to orotate using ubiquinone (CoQ) as the electron acceptor. DHODH inhibitors (brequinar, teriflunomide) block this step, further reducing orotate and UMP synthesis. In normal cells with intact ATCase and adequate aspartate, abundant flux through steps 1–3 provides a large buffer; DHODH inhibition reduces but does not eliminate UMP production. In SDH-deficient cells, ATCase activity is already partially blocked by succinate, so the pathway operates near a pyrimidine synthesis floor. Additional DHODH inhibition depletes the remaining UMP supply below the threshold needed for nucleotide repletion, DNA synthesis, and proliferation — a selective synthetic lethality.
-
-**Additional ETC dimension:**
-DHODH catalysis is obligatorily coupled to the mitochondrial ETC: it reduces CoQ (accepts electrons from dihydroorotate oxidation), and CoQ must be re-oxidized by downstream ETC complexes for continued DHODH activity. In SDH-deficient cells, Complex II (SDH) is absent and CoQ loading from complex II is lost, potentially altering the kinetics of CoQ availability for DHODH. Whether this exacerbates or mitigates DHODH inhibitor sensitivity in the SDH-deficient context awaits direct experimental measurement.
-
-**Drug candidates:**
-- **Brequinar** (DUP-785): potent, selective DHODH inhibitor (IC50 ~3 nM); Phase 1/2 clinical data in solid tumors and AML (NCT01888484); not FDA-approved. Higher intrinsic potency than teriflunomide makes it the preferred experimental candidate.
-- **Teriflunomide** (Aubagio): FDA-approved DHODH inhibitor (relapsing MS; 2012); active metabolite of leflunomide (FDA-approved for RA since 1998). Orally available, well-characterized long-term safety profile, immediately accessible for off-label study. Phase 2 anti-tumor activity data in glioblastoma (NCT02799498). Lower DHODH potency (IC50 ~600 nM) than brequinar, but immediate clinical availability enables rapid human proof-of-concept evaluation.
-
-**Key limitation:** No direct experimental data exists for DHODH inhibitor selectivity in SDH-deficient versus SDH-intact cell lines or xenografts. The rationale is mechanistic inference: the succinate-ATCase block (PMID 42082831) reduces pyrimidine synthesis reserve, and DHODH inhibition at step 4 compounds this. Validation in SDHA-null GIST and SDHB-deficient PPGL cell models is the critical next step before clinical evaluation.
 
 ### 19. SSTR2 / Somatostatin Receptor Vulnerability in SDH-Deficient PPGL
 
@@ -669,7 +669,7 @@ No published data test oleclumab or any CD73 inhibitor in SDH-deficient GIST, PP
 |---|---|---|---|---|
 | CD73 (ecto-5'-nucleotidase) | NT5E | Oleclumab (MEDI9447) | Phase 2 (NCT05061550, NCT03334617) | None; rationale via HIF-1α→NT5E HRE mechanism (PMID 12370277, PMID 29367423) |
 
-### 42. Dual mTORC1/2 Kinase Inhibition — Overcoming mTORC2-Driven AKT Reactivation Feedback in SDH-Deficient Tumors — Sapanisertib (TAK-228/MLN0128)
+### 43. Dual mTORC1/2 Kinase Inhibition — Overcoming mTORC2-Driven AKT Reactivation Feedback in SDH-Deficient Tumors — Sapanisertib (TAK-228/MLN0128)
 
 SDH-deficient tumors exhibit constitutive activation of the PI3K/AKT/mTOR signaling axis driven by pseudohypoxia. Jochmanová et al. (JNCI 2013, PMID 23940289) established through transcriptomic and pathway analysis that the SDH/VHL pseudohypoxic cluster of PPGL has constitutively activated PI3K/AKT/mTOR signaling as a defining molecular feature, distinguishing it from the RAS/MAPK kinase-signaling cluster (NF1/RET/TMEM127/MAX mutations).
 
@@ -692,7 +692,7 @@ NCT02724020 (Phase 2, Millennium/Takeda; n=96; 36 sites; completed 2020): head-t
 |---|---|---|---|---|
 | mTOR kinase (mTORC1 + mTORC2) | MTOR | Sapanisertib (TAK-228) | Phase 2 in RCC vs everolimus (NCT02724020; completed); Phase 2 in mTOR-mutant solid tumors (NCT06385496; active) | None; rationale via constitutive PI3K/AKT/mTOR activation in SDH/VHL pseudohypoxic cluster (PMID 23940289) + AKT-Ser473 reactivation feedback limitation of everolimus |
 
-### 42. One-Carbon Folate Nucleotide Synthesis Dependency (MTHFD2/LY3410738)
+### 44. One-Carbon Folate Nucleotide Synthesis Dependency (MTHFD2/LY3410738)
 
 **Mechanism:**
 SDH loss imposes nucleotide stress through two convergent mechanisms that converge on the Integrated Stress Response (ISR) and drive MTHFD2 upregulation as a compensatory adaptation:
@@ -721,7 +721,7 @@ LY3410738 (Eli Lilly), a potent dual MTHFD2/MTHFD1L inhibitor, would collapse th
 |---|---|---|---|---|
 | MTHFD2/MTHFD1L dual inhibitor | MTHFD2 | LY3410738 (Eli Lilly) | Preclinical | None; rationale via Hart PMID 42082831 (succinate-ATCase) + ISR-ATF4-MTHFD2 compensatory axis |
 
-### 42. G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality via CX-5461
+### 45. G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality via CX-5461
 
 **Pathway:** g4-quadruplex-brcas-lethality
 **Drug:** CX-5461 — G-quadruplex DNA stabilizer (Senhwa Biosciences)
@@ -742,7 +742,7 @@ Xu et al. 2017 (PMID 28211448) specifically demonstrated CX-5461 activity in PAR
 |---|---|---|---|
 | G-quadruplex DNA | CX-5461 | Phase 1 (NCT02719977, BRCA-deficient hematologic malignancies); Phase 1b (NCT03914288, BRCA-mutated solid tumours) | None; rationale via Sulkowski BRCAness (PMID 30013182, 32494005) + Xu et al. G4/BRCA-selective lethality (PMID 28211448) |
 
-### 42. CDK9 / P-TEFb Super-Enhancer Transcription Elongation Dependency in SDH-Deficient GIST
+### 46. CDK9 / P-TEFb Super-Enhancer Transcription Elongation Dependency in SDH-Deficient GIST
 
 The CIMP-driven chromatin remodeling that results from SDH loss creates not only the BRD4 super-enhancer reading dependency (already captured in this engine's BET inhibitor entry) but an orthogonal, downstream dependency on CDK9 — the kinase that releases RNA Pol II from promoter-proximal pause to enable elongation through super-enhancer-driven gene bodies.
 
@@ -769,11 +769,11 @@ The super-enhancer dependency (PMID 42191879) is established specifically in SDH
 
 ---
 
-## Mechanism 42: Extracellular Succinate as Paracrine Immunomodulator — SUCNR1/GPR91 in the Tumor Microenvironment
+## Mechanism 47: Extracellular Succinate as Paracrine Immunomodulator — SUCNR1/GPR91 in the Tumor Microenvironment
 
 ### Context
 
-All prior mechanisms describe the intracellular consequences of SDH loss and succinate accumulation within the tumor cell. Mechanism 42 concerns the extracellular dimension: SDH-deficient cells continuously export succinate into the tumor microenvironment (TME), where it acts as a paracrine signal on infiltrating immune cells via the succinate receptor SUCNR1 (GPR91). This extracellular succinate loop is mechanistically distinct from the intracellular succinate effects (α-KG dioxygenase inhibition, PHD/HIF stabilization, CIMP, BRCAness) and explains the paradoxical immunological phenotype of SDH-deficient tumors — an inflamed-appearing TME with deficient adaptive cytotoxic immunity.
+All prior mechanisms describe the intracellular consequences of SDH loss and succinate accumulation within the tumor cell. Mechanism 47 concerns the extracellular dimension: SDH-deficient cells continuously export succinate into the tumor microenvironment (TME), where it acts as a paracrine signal on infiltrating immune cells via the succinate receptor SUCNR1 (GPR91). This extracellular succinate loop is mechanistically distinct from the intracellular succinate effects (α-KG dioxygenase inhibition, PHD/HIF stabilization, CIMP, BRCAness) and explains the paradoxical immunological phenotype of SDH-deficient tumors — an inflamed-appearing TME with deficient adaptive cytotoxic immunity.
 
 ### Mechanism
 
@@ -820,64 +820,7 @@ No clinical-stage SUCNR1 antagonist currently exists. SUCNR1 is therefore not a 
 | Succinate export | MCT1/NaDC3 | Sustained extracellular succinate; targetable by AZD3965 |
 | T-cell effector suppression | Intracellular succinate uptake via MCT1 | CTL dysfunction; rationale for AZD3965 (Mechanism 16) |
 
----
-
-## Mechanism 42: HIF-Driven CD73/Adenosine Immunosuppression
-
-SDH loss → succinate → PHD inhibition → constitutive HIF-1α stabilization → HRE-driven NT5E/CD73 transcription on tumor cell surface → extracellular adenosine generation → A2AR activation on T cells → cAMP elevation → T-cell exhaustion.
-
-This is a third mechanistically distinct immunosuppressive arm downstream of HIF-1α in SDH-deficient tumors, operating in parallel to succinate-MCT1 direct T-cell metabolic suppression (Mechanism 11a) and HIF-IDO1-kynurenine tryptophan depletion (Mechanism 11b), and orthogonal to HIF-PD-L1 checkpoint evasion (Mechanism 22).
-
-### The HIF-1α → CD73 transcriptional link (foundational paper)
-Synnestvedt et al. (J Clin Invest 2002, PMID 12370277, DOI 10.1172/JCI15337) established the mechanistic core of this axis:
-- Microarray analysis of hypoxic epithelial cells revealed upregulation of both CD73 (NT5E) and CD39 (apyrase).
-- Metabolic studies showed hypoxia enhances CD39/CD73 ectoenzyme function up to 6-fold over normoxia in intact epithelia.
-- The CD73 gene promoter was shown to contain at least one canonical HIF-1 binding site (HRE).
-- Antisense oligonucleotides against HIF-1α significantly blocked hypoxia-inducible CD73 mRNA expression.
-- Luciferase reporter constructs confirmed HIF-1-dependent CD73 promoter activity under hypoxia, which was lost in truncated constructs lacking the HRE.
-- Mutagenesis of the HIF-1α binding site resulted in **nearly complete loss of hypoxia-inducibility**.
-- In vivo: a CD73 inhibitor promoted increased intestinal permeability during hypoxia, confirming functional relevance of hypoxia-induced CD73 in vivo.
-
-This paper proves that HIF-1α is the direct transcriptional activator of NT5E/CD73 expression via a specific HRE in its promoter — and that this regulation applies under conditions of constitutive PHD inhibition (i.e., in all SDH-deficient pseudohypoxic tumors).
-
-### The adenosine immunosuppression axis
-Sitkovsky MV et al. (Cancer Immunol Res 2014, PMID 24990240, DOI 10.1158/2326-6066.CIR-14-0075) established that 'hostile, hypoxia-A2-adenosinergic tumor biology' represents a major barrier to anti-tumor immunity. The mechanistic sequence:
-1. Tumor hypoxia (or pseudohypoxia via HIF-1α stabilization) → HIF-1α → CD39 + CD73 upregulation on tumor cells and regulatory T cells
-2. CD39 converts extracellular ATP/ADP → AMP; CD73 converts AMP → adenosine
-3. Extracellular adenosine accumulates in the tumor microenvironment
-4. Adenosine binds ADORA2A (A2A receptor) on tumor-infiltrating effector T cells — a Gαs-coupled GPCR
-5. A2AR activation → adenylyl cyclase → cAMP → PKA → CREB phosphorylation → transcriptional suppression of TCR-proximal signaling
-6. Net effect: suppressed IFN-γ secretion, impaired granzyme B/perforin-mediated cytotoxicity, inhibited T-cell proliferation, and promotion of regulatory T-cell phenotype
-7. Tumor immune evasion persists as long as adenosine supply is maintained — a continuously driven program in pseudohypoxic tumors
-
-Hatfield SM & Sitkovsky MV (Curr Opin Pharmacol 2016, PMID 27429212, DOI 10.1016/j.coph.2016.06.009) explicitly connected HIF-1α activity to upregulation of CD39/CD73 adenosine-generating enzymes and identified A2AR antagonists as a strategy to 'weaken the hypoxia-HIF-1α-driven immunosuppression' and improve cancer immunotherapy. This paper names the precise HIF-1α → CD73 → adenosine → A2AR → T-cell exhaustion chain as a tractable pharmacological target.
-
-### Drug: Oleclumab (MEDI9447; AstraZeneca)
-Oleclumab is a fully human IgG1 monoclonal antibody that binds CD73 (NT5E) and blocks its ectoenzyme activity, preventing AMP → adenosine conversion on the tumor cell surface. By cutting the adenosine supply, oleclumab relieves A2AR-driven T-cell exhaustion in the tumor microenvironment.
-
-**Clinical trials:**
-- NCT02503774 (Phase 1; AstraZeneca; completed): oleclumab monotherapy in advanced solid tumors — established safety, pharmacokinetics, and pharmacodynamic evidence of CD73 ectoenzyme inhibition and reduced extracellular adenosine.
-- NCT02935634 (Phase 1/2): oleclumab + durvalumab (anti-PD-L1) — tested the combination of CD73 blockade + PD-L1 checkpoint inhibition in solid tumors; combination rationale mirrors the co-presence of CD73-adenosine and PD-L1/PD-1 axes in the pseudohypoxic TME.
-
-**Distinction from other immunosuppressive axes in this engine:**
-| Mechanism | Driver | Effector | Target | Drug |
-|---|---|---|---|---|
-| MCT1/succinate | Extracellular succinate | T-cell TCA impairment | SLC16A1 | AZD3965 |
-| IDO1/kynurenine | HIF-1α → IDO1 | Tryptophan depletion | IDO1 | Epacadostat |
-| PD-L1/PD-1 | HIF-1α → CD274 | T-cell PD-1 ligation | PDCD1/CD274 | Pembrolizumab |
-| CD73/adenosine | HIF-1α → NT5E | A2AR-cAMP T-cell exhaustion | NT5E | Oleclumab |
-
-All four arms converge on T-cell suppression in the SDH-deficient TME and are mechanistically non-redundant, suggesting combination strategies across these axes could substantially restore T-cell effector function.
-
-**Key limitation:** No published experimental data test oleclumab or any CD73 inhibitor in SDH-deficient GIST, PPGL, or RCC cell lines or patient-derived models. NT5E expression in SDH-genotype-stratified tumor specimens has not been measured. The mechanistic case rests on the HIF-1α → NT5E HRE evidence (PMID 12370277) plus the established adenosine immunosuppression biology (PMID 24990240, 27429212) — both foundational, verified, and mechanistically tight, but SDH-specific validation is absent.
-
-| Druggable target | Gene | Drug | Stage | SDH-specific data |
-|---|---|---|---|---|
-| CD73 ectoenzyme | NT5E | Oleclumab (MEDI9447) | Phase 1/2 NCT02503774, NCT02935634 | None; rationale via HIF-1α → NT5E HRE mechanism (PMID 12370277) + adenosine immunosuppression (PMID 24990240, 27429212) |
-
----
-
-## Mechanism 42: CBP/p300 HAT Co-Activator Dependency (CCS1477/Inobrodib)
+## Mechanism 48: CBP/p300 HAT Co-Activator Dependency (CCS1477/Inobrodib)
 
 ### Pathway overview
 SDH loss drives constitutive HIF-1α/2α stabilization via succinate-mediated PHD inhibition. HIF-α transcriptional activity is not intrinsic — it requires obligate recruitment of the transcriptional co-activators CBP (CREBBP) and p300 (EP300). Arany et al. (PNAS 1996, PMID 8917528) established the direct physical interaction between the HIF-1α C-terminal transactivation domain (C-TAD, residues 813–826) and the CH1/cysteine-histidine-rich domain of CBP/p300. Without this co-activator docking, HIF-α cannot assemble a functional transcriptional activation complex at hypoxia-response elements (HREs).
@@ -902,7 +845,7 @@ Key limitation: No published preclinical data in SDH-deficient cell lines or xen
 |---|---|---|---|---|
 | CBP/p300 bromodomain (HIF co-activator) | EP300 | CCS1477 (Inobrodib) | Phase 1b/2 NCT04068597 (haem malignancies, mCRPC) | None; rationale via HIF-CBP/p300 C-TAD interaction (PMID 8917528) + SDH-deficient GIST super-enhancer mechanism (PMID 42191879) |
 
-### 42. HIF-Driven CA9 Tumour Acidosis — SLC-0111 (WBI-5111)
+### 49. HIF-Driven CA9 Tumour Acidosis — SLC-0111 (WBI-5111)
 
 Carbonic Anhydrase IX (CA9/CAIX) is a transmembrane zinc metalloenzyme (UniProt Q16790) whose expression is driven by one of the most tightly HIF-1-regulated gene promoters known. Wykoff et al. (Cancer Res 2000, PMID 11156414) identified a HIF-1-dependent hypoxia-response element (HRE) in the CA9 minimal promoter and demonstrated that: (i) CA9 is constitutively expressed in VHL-deficient renal carcinoma cells regardless of oxygen level, consistent with constitutive HIF-1α activity; (ii) restoring pVHL function in VHL-null cells suppresses CA9 expression, confirming the HIF/VHL regulatory axis; and (iii) the CA9 HRE is necessary and sufficient for HIF-1-driven induction. In SDH-deficient tumours, the identical PHD-inhibition mechanism — succinate → PHD2/PHD3 competitive inhibition → constitutive HIF-1α/2α stabilisation — drives constitutive CA9 expression in the same manner as VHL-deficient tumours.
 

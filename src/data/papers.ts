@@ -350,19 +350,6 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
-      "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B",
-    authors: "Köhler A, Rosenbaum T, Rump A, et al.",
-    journal: "NPJ Precis Oncol",
-    year: 2026,
-    doi: "10.1038/s41698-026-01685-7",
-    topic: "Genetics & Syndromes",
-    description:
-      "Minigene splicing assay evaluated 48 SDHB splice-site variants; 34% showed ≥90% aberrant splicing, confirming pathogenicity. Of 26 previously classified variants, 13 were reclassified — including 12 VUS reclassified to likely benign — validating minigene assays as a clinical-grade tool for SDHB variant classification in hereditary paraganglioma/pheochromocytoma.",
-    pmid: "42711465",
-    date: "2026-09",
-  },
-  {
-    title:
       "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model",
     authors: "Cole Y, Abramovich I, Fernandez-Garcia J, et al.",
     journal: "Endocr Relat Cancer",
@@ -371,19 +358,6 @@ export const PAPERS: CuratedPaper[] = [
     topic: "Diagnosis & Pathology",
     description:
       "Prospective plasma metabolomics study in SDHx germline carriers establishing plasma succinate as a biomarker for SDH-deficient tumour diagnosis and surveillance. Plasma succinate levels correlated with tumour burden and distinguished carriers with active disease from unaffected carriers and healthy controls. Validated mechanistically in a Sdhb-deficient murine model showing elevated adrenal succinate. Supports longitudinal succinate measurement as a non-invasive biomarker for early detection and treatment response monitoring in SDH-deficient tumours.",
-    pmid: "42758527",
-    date: "2026-09",
-  },
-  {
-    title:
-      "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model",
-    authors: "Cole Y, Abramovich I, Fernandez-Garcia J, et al.",
-    journal: "Endocr Relat Cancer",
-    year: 2026,
-    doi: "10.1530/ERC-26-0323",
-    topic: "Diagnosis & Pathology",
-    description:
-      "Prospective plasma metabolomics study demonstrating that plasma succinate is robustly elevated in SDHx germline variant carriers with active tumours, validated in parallel in a Sdhb-deficient murine model. Supports plasma succinate as a non-invasive biomarker for SDHx-driven tumour burden and post-treatment disease surveillance.",
     pmid: "42758527",
     date: "2026-09",
   },
