@@ -1482,3 +1482,47 @@ Queries run (6 total; 3-month window June–September 2026):
 - `tracker.md`: logged 8 rejected PMIDs (42764321, 42762504, 42755565, 42742768, 42728076, 42723163, 42704026, 42626938)
 
 **Evidence_score rationale:** 27 (theoretical) — mechanistic chain fully supported by established SDH-deficient biology (PMID 8917528, PMID 42191879) but no direct preclinical data in SDH-deficient cell lines; CCS1477 is Phase 1b/2 in non-SDH indications.
+
+
+---
+
+## 2026-09-24
+
+**Direction:** literature scan / papers-only
+**Angle:** Plasma succinate as a non-invasive biomarker for SDHx-deficient tumour surveillance
+**Papers added:** 1 (PMID 42758527)
+**Papers rejected (logged to tracker.md):** 2 (PMIDs 42764100, 41634405)
+**Branch:** `morning/2026-09-24-plasma-succinate-biomarker`
+
+### Part A — Paper Scan
+
+Queries run (7 total; 3-month window June 24 – September 24, 2026):
+1. SDH-deficient GIST treatment 2026
+2. Pheochromocytoma paraganglioma SDH treatment 2026
+3. SDH-deficient renal cell carcinoma 2026
+4. SDH tumor pseudohypoxia drug 2026
+5. SDHB SDHA SDHC SDHD tumor cancer novel mechanism 2026
+6. WT-GIST SDH imatinib resistance 2026
+7. Paraganglioma pheochromocytoma novel therapeutic target 2026
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42758527 | **ADDED** | Cole Y, Abramovich I, Fernandez-Garcia J et al. — "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model." Endocr Relat Cancer, 2026-09-18. DOI: 10.1530/ERC-26-0323. Prospective plasma metabolomics study by Cambridge/NCI group demonstrating that plasma succinate is robustly elevated in SDHx germline variant carriers with active tumours relative to healthy carriers; validated in a Sdhb-deficient murine model. Directly relevant SDH-deficient tumour biology from authoritative investigators. Topic: Diagnosis & Pathology. |
+| 42764100 | **rejected** | Troisi R et al. — "Emerging patterns of kidney cancer in young adults." Crit Rev Oncol Hematol, 2026-09-20. Broad RCC epidemiology review in young adults; SDH-deficient RCC mentioned as one of several rare hereditary subtypes. No SDH-specific mechanistic or treatment advance. |
+| 41634405 | **outside window** | Fanelli M et al. — "Diagnostic practice and awareness of SDH- and FH-deficient RCC: Italian GIUP survey." Virchows Arch, 2026-02-04. DOI: 10.1007/s00428-026-03958-4. Published February 2026; outside the 3-month window (June 24 – September 24 2026). Logged to tracker.md to prevent re-evaluation. |
+
+### Part B — Improvement Decision
+
+No drug or mechanism added today.
+
+The only remaining candidate considered was atorvastatin (HMGCR inhibitor; mevalonate/isoprenoid pathway). The mechanistic argument: SDH loss → reductive carboxylation generates excess acetyl-CoA → acetyl-CoA → HMG-CoA → mevalonate → cholesterol/isoprenoids (HMGCR step). However:
+- No SDH-specific preclinical data exist for statins in SDH-deficient tumour models
+- The mevalonate/isoprenoid branch is NOT listed in the hard relevance gate's enumerated pathways
+- Evidence score would be ~18 (theoretical only) — the engine already has six drugs at ≤23 covering adjacent acetyl-CoA branches (denifanstat/FASN, bempedoic acid/ACLY)
+- Adding a weakly-justified drug is explicitly stated to be WORSE than adding nothing
+
+Papers-only is the correct outcome for today.
+
+**Summary:** 7-query PubMed scan returned one genuinely new qualifying paper (PMID 42758527) — a prospective plasma metabolomics study establishing plasma succinate as a non-invasive biomarker for SDHx-driven tumour burden and post-treatment surveillance. This is directly relevant to the engine's SDH-deficient tumour focus and adds to the Diagnosis & Pathology corpus. Two other PMIDs were evaluated: one rejected as a broad RCC epidemiology review with only peripheral SDH mention, one logged as outside the 3-month window. No drug or mechanism addition was made; the atorvastatin/mevalonate direction was considered but does not clear the hard relevance gate (no SDH-specific data; adjacent acetyl-CoA branches already well covered).
