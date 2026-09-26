@@ -1309,3 +1309,59 @@ Searches run (date window ≥ 2026-06-19):
 - SUCNR1 antagonists: no clinical-stage compounds available
 - NRF2 inhibitors: no clinical-stage options
 - CDK7: too mechanistically similar to BRD4 (both transcription initiation machinery); CDK9 selected as clearly distinct elongation step
+
+
+---
+
+## 2026-09-20 — Extracellular Succinate / SUCNR1 Paracrine TME Immunosuppression — Biology Enrichment
+
+**Branch:** `morning/2026-09-20-sucnr1-extracellular-succinate-tme`
+
+### Part A — Paper Scan
+
+Queries run (5 total; 3-month window June–September 2026):
+- Succinate dehydrogenase pheochromocytoma paraganglioma therapy 2026
+- SDH-deficient GIST sunitinib imatinib regorafenib resistance mutation 2026
+- HIF-2alpha belzutifan VHL SDH paraganglioma pheochromocytoma clinical 2026
+- Succinate dehydrogenase GIST paraganglioma pheochromocytoma treatment outcome 2026
+- Succinate dehydrogenase epigenetic methylation TET KDM demethylase inhibition cancer 2026
+
+**New PMIDs evaluated (not previously in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42590786 | **rejected** | Simsek E et al., J Pediatr Endocrinol Metab 2026-08-14. Pediatric case report of 12.4 cm pheo with PRESERVED SDHB expression and Ki-67 2–3%. Not an SDH-deficient tumor; no mechanistic or treatment advance. |
+| 41634405 | **out-of-window** | Fanelli GN et al., Virchows Arch 2026-02-04. Italian GIUP survey on SDH/FH-deficient RCC diagnostic practice (21 pathologists). Published Feb 2026, outside 3-month scan window; diagnostic-only content. |
+| 41664736 | **out-of-window** | Qasim H et al., Cureus 2026-01-09. Broad GIST review covering molecular subtypes including SDH-deficient. Published Jan 2026, outside 3-month scan window; no SDH-specific treatment advance. |
+
+Note: PMID 42416402 returned in GIST search but was already in tracker.md (logged 2026-09-01, rejected).
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Biology Enrichment
+
+**Direction:** biology-enrichment
+**Angle:** Extracellular succinate as a paracrine immunomodulator — SUCNR1/GPR91 receptor on dendritic cells and macrophages in the SDH-deficient TME
+
+**Rationale for selection:** All prior morning runs document the intracellular consequences of SDH loss (pseudohypoxia, CIMP, BRCAness, cuproptosis sensitization, etc.). The extracellular dimension — constitutive succinate export into the TME and its paracrine SUCNR1/GPR91-mediated immunomodulatory effects — is entirely absent from sdh-biology.ts. This mechanism explains the immunological paradox in SDH-deficient tumors (stromal inflammation without effective CD8+ T-cell immunity) and critically contextualizes why the multiple immune-targeting drugs in the engine (pembrolizumab, ulevostinag, RBS2418, AZD3965, epacadostat) must overcome a constitutive paracrine immunosuppressive signal from exported succinate. Confirmed new to the engine — no prior run log mentions SUCNR1, GPR91, extracellular succinate, or paracrine TME signaling.
+
+**All new drug directions ruled out before selecting this direction:**
+- m6A / METTL3 inhibition (FTO/ALKBH5 α-KG dioxygenases): Mechanistically sound but foundational PMID (guessed 32109378) resolved to an unrelated mouse skin paper; no SDH-specific m6A data found in PubMed search; cannot cite the anchor paper → fails hard relevance gate. Logged as explored and unverifiable.
+- MTHFD2/one-carbon metabolism: no SDH-specific data, no clinical-stage inhibitors — definitively unactionable (carried over from 47 prior runs).
+- Complex I / IACS-010759: definitively ruled out (Sokolov preprint PMID 42239110).
+- All other prior drug directions: already in engine.
+
+**Mechanistic chain documented in Mechanism 42 (sdh-biology.ts):**
+SDH loss → massive intracellular succinate accumulation → succinate exported via NaDC3/SLC13A3 and MCT1/SLC16A1 → extracellular succinate reaches SUCNR1/GPR91 concentrations in the TME → macrophage SUCNR1 activation + intracellular succinate uptake → macrophage HIF-1α stabilization (same pseudohypoxic mechanism as in tumor cells) → IL-1β production (pro-inflammatory but non-cytotoxic; angiogenic) → dendritic cell SUCNR1 activation → impaired DC maturation and IL-12 production → deficient CD8+ T-cell priming → combined with HIF-PD-L1 (Mechanism 22), IDO1/kynurenine (Mechanism 16), and T-cell MCT1 suppression (Mechanism 16) = paradoxical "inflamed-but-immunosuppressed" TME.
+
+**Literature anchor:**
+- PMID 23535595 (Tannahill et al., Nature 2013, DOI 10.1038/nature11986): "Succinate is an inflammatory signal that induces IL-1β through HIF-1α." Demonstrates that succinate → macrophage HIF-1α stabilization → IL-1β is a core innate immune signalling mechanism. The same HIF-1α pseudohypoxic mechanism operative in SDH-deficient tumor cells is recapitulated in succinate-exposed macrophages.
+
+**Therapeutic implications documented:**
+1. MCT1 inhibition (AZD3965) has an additional mechanistic rationale beyond T-cell intrinsic effects: limiting succinate export reduces extracellular succinate → less SUCNR1-mediated DC dysfunction.
+2. Pembrolizumab and cGAS-STING agonists (ulevostinag, RBS2418) must overcome SUCNR1-mediated DC impairment; combination with MCT1 blockade may be synergistic.
+3. No SUCNR1 antagonist exists in clinical development — this remains a non-druggable biology gap today.
+
+**Previously logged directions NOT re-evaluated:** MTHFD2/one-carbon (no SDH-specific data, no clinical-stage inhibitors); Complex I definitively ruled out (Sokolov preprint PMID 42239110, 2026-07-30).
+
+**Files changed:** `src/data/seed/sdh-biology.ts` (Mechanism 42 added — extracellular succinate / SUCNR1 paracrine TME), `tracker.md` (3 new rows: PMIDs 42590786, 41634405, 41664736), `MORNING_LOG.md` (this entry).

@@ -767,6 +767,61 @@ The super-enhancer dependency (PMID 42191879) is established specifically in SDH
 |---|---|---|---|---|
 | CDK9 / P-TEFb elongation kinase | CDK9 | KB-0742 | Phase 1 (NCT04718675; AML/MDS; completed) | None; rationale via SDH-GIST-specific super-enhancer (Merriam Nat Med 2026, PMID 42191879) + CDK9 SE elongation biology |
 
+---
+
+## Mechanism 42: Extracellular Succinate as Paracrine Immunomodulator — SUCNR1/GPR91 in the Tumor Microenvironment
+
+### Context
+
+All prior mechanisms describe the intracellular consequences of SDH loss and succinate accumulation within the tumor cell. Mechanism 42 concerns the extracellular dimension: SDH-deficient cells continuously export succinate into the tumor microenvironment (TME), where it acts as a paracrine signal on infiltrating immune cells via the succinate receptor SUCNR1 (GPR91). This extracellular succinate loop is mechanistically distinct from the intracellular succinate effects (α-KG dioxygenase inhibition, PHD/HIF stabilization, CIMP, BRCAness) and explains the paradoxical immunological phenotype of SDH-deficient tumors — an inflamed-appearing TME with deficient adaptive cytotoxic immunity.
+
+### Mechanism
+
+**Step 1 — Succinate export:**
+Intracellular succinate concentrations in SDH-deficient cells are 100–1000× higher than in SDH-intact cells. Succinate is exported into the extracellular space via the sodium-coupled dicarboxylate cotransporter NaDC3 (SLC13A3) and, to a lesser extent, monocarboxylate transporter 1 (MCT1/SLC16A1). Tumor tissue from SDH-deficient PPGL shows elevated extracellular succinate measurable by metabolomic profiling.
+
+**Step 2 — SUCNR1/GPR91 activation on immune cells:**
+Extracellular succinate binds and activates SUCNR1 (also known as GPR91), a Gi/q-coupled G-protein-coupled receptor expressed on dendritic cells (DCs), macrophages, NK cells, platelets, and retinal ganglion cells. SUCNR1 was identified as the cognate succinate receptor by He et al. (Nature 2004), establishing the first evidence that a TCA cycle intermediate functions as an extracellular signaling molecule. SUCNR1 has high sensitivity to succinate (EC50 ~20–50 µM) — concentrations reached in the SDH-deficient TME.
+
+**Step 3 — Macrophage HIF-1α/IL-1β induction:**
+Within macrophages, both SUCNR1 activation and direct intracellular succinate uptake converge on HIF-1α stabilization. Tannahill et al. (Nature 2013, PMID 23535595) demonstrated that succinate is a primary endogenous "danger signal" in innate immunity: LPS-activated macrophages accumulate intracellular succinate → this stabilizes HIF-1α independently of oxygen tension (recapitulating the same pseudohypoxic HIF-1α mechanism operative in SDH-deficient tumor cells) → HIF-1α drives IL-1β transcription and processing. This creates a constitutive pro-inflammatory macrophage activation in the SDH-deficient TME — elevated IL-1β, TNF-α, and stromal inflammation — which paradoxically may enhance tumor survival by promoting angiogenesis (IL-1β is an angiogenic cytokine) and creating a suppressive, non-cytotoxic immune environment.
+
+**Step 4 — Dendritic cell dysfunction:**
+SUCNR1 activation on DCs impairs their maturation and antigen-presenting function. DCs exposed to sustained high-succinate conditions develop a tolerogenic rather than immunostimulatory phenotype: reduced MHC-II upregulation, reduced IL-12 (Th1/CTL-priming cytokine) production, and impaired migration to lymph nodes for antigen presentation. The net result is poor priming of tumor-specific CD8+ cytotoxic T lymphocytes (CTLs) — even in the presence of tumor-derived neoantigens.
+
+**Step 5 — Paradoxical "inflamed but cold" TME:**
+The combination of:
+- Constitutive IL-1β/TNF-α/stromal inflammation (macrophage arm)
+- Poor DC maturation → deficient CD8+ T-cell priming (DC arm)
+- HIF-PD-L1 expression on tumor cells (Mechanism 22)
+- Succinate-MCT1 suppression of T-cell effector function (Mechanism 16, AZD3965 rationale)
+- Kynurenine/IDO1 tryptophan depletion (Mechanism 16, epacadostat rationale)
+
+…creates a TME that superficially appears inflamed (immune infiltrate, cytokines) but has quantitatively and functionally impaired adaptive CTL immunity. SDH-deficient PPGL show this phenotype: heavy macrophage/stromal infiltration with low CD8+ T-cell density in the tumor core.
+
+### Therapeutic implications
+
+No clinical-stage SUCNR1 antagonist currently exists. SUCNR1 is therefore not a directly druggable target today. However, this mechanism is clinically important because:
+
+1. **Contextualizes combination immunotherapy:** The extracellular succinate-SUCNR1 loop must be disrupted (via succinate export inhibition, SUCNR1 blockade, or metabolic normalization) for PD-1/PD-L1 blockade (pembrolizumab, Mechanism 22) and cGAS-STING activation (ulevostinag, RBS2418, Mechanisms 33/36) to achieve full potency. DC maturation defects caused by succinate-SUCNR1 would limit T-cell priming even if checkpoint blockade is provided.
+
+2. **Motivates MCT1 inhibition at the source:** AZD3965 (MCT1 inhibitor, Mechanism 16) blocks one export route for succinate, potentially reducing extracellular succinate concentrations and limiting SUCNR1-mediated DC/macrophage dysfunction — an additional mechanistic justification beyond the T-cell intrinsic rationale documented in Mechanism 16.
+
+3. **Predicts poor monotherapy responses to checkpoint inhibitors in this TME:** The multiple overlapping immunosuppressive arms (HIF-PD-L1, IDO1, succinate-MCT1, SUCNR1-DC dysfunction) suggest that single-agent checkpoint inhibition is unlikely to be sufficient in SDH-deficient tumors without addressing at least one of the upstream suppressive mechanisms.
+
+### Evidence anchors
+- Tannahill et al. (Nature 2013, PMID 23535595): Landmark paper identifying succinate as an innate immune danger signal; succinate → HIF-1α stabilization → IL-1β production in macrophages; directly demonstrates that the same HIF-1α pseudohypoxic mechanism operative in SDH-deficient tumor cells is recapitulated in succinate-exposed immune cells.
+- He et al. (Nature 2004): Identification of SUCNR1/GPR91 as the cognate succinate receptor; established succinate as an extracellular signaling molecule with high-affinity GPCR.
+
+| TME effect | Receptor/mechanism | Clinical consequence |
+|---|---|---|
+| Macrophage IL-1β / HIF-1α | SUCNR1 + intracellular succinate | Angiogenic, pro-tumorigenic, non-cytotoxic inflammation |
+| DC maturation impairment | SUCNR1 | Deficient CD8+ T-cell priming; poor neoantigen response |
+| Succinate export | MCT1/NaDC3 | Sustained extracellular succinate; targetable by AZD3965 |
+| T-cell effector suppression | Intracellular succinate uptake via MCT1 | CTL dysfunction; rationale for AZD3965 (Mechanism 16) |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
