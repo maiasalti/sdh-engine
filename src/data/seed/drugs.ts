@@ -997,4 +997,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
   },
+  {
+    name: "Samuraciclib",
+    brand_names: ["CT7001"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "CDK7 inhibitor (selective, non-covalent, oral)",
+    mechanism_of_action:
+      "Samuraciclib (CT7001; Carrick Therapeutics) is an orally bioavailable, non-covalent, highly selective CDK7 inhibitor. Unlike first-generation CDK7 tools (THZ1, which is a covalent inhibitor with off-target CDK12/CDK13 reactivity), samuraciclib achieves CDK7 selectivity through an ATP-competitive, non-covalent mechanism with >10-fold selectivity window over other CDKs. Phase 1 (NCT03363645, CATCH-1) established tolerability and CDK7 target engagement in patients with advanced solid tumors.\n\nCDK7's primary transcriptional substrates are CDK9 (T186 activation — required for P-TEFb activity and RNA Pol II CTD Ser2 elongation phosphorylation) and, separately, CDK4 (T172) and CDK6 (T177) for cell cycle licensing. In super-enhancer-addicted tumors, CDK7 inhibition preferentially collapses transcription at large, clustered super-enhancer loci relative to typical enhancers, because these regions drive extreme RNA Pol II loading density that is disproportionately dependent on CDK7-mediated CDK9 activation (Kwiatkowski et al. Nature 2014, PMID 25043025, DOI 10.1038/nature13393).\n\nThe SDH-deficient GIST rationale is mechanistically grounded in two primary literature pillars: (1) Merriam et al. (Nat Med 2026, PMID 42191879) demonstrated that SDH-deficient GIST forms ectopic super-enhancers at FGF3/FGF4 via CIMP-driven CTCF insulator methylation → TAD boundary disruption — establishing that SDH-deficient GIST is a super-enhancer-addicted tumor with a defined, CDK7-dependent transcriptional vulnerability; (2) Kwiatkowski et al. (Nature 2014, PMID 25043025) established the principle that CDK7 inhibition preferentially collapses super-enhancer-driven transcription programs.\n\nThe mechanistic chain connecting SDH loss to CDK7 dependency: SDH loss → CIMP (succinate-driven TET enzyme inhibition) → CTCF insulator site methylation → TAD boundary disruption → ectopic FGF3/FGF4 super-enhancer formation → BRD4 occupancy at SE → CDK9/P-TEFb recruitment → CDK7 (CAK complex) activates CDK9 T186 → RNA Pol II CTD Ser2 phosphorylation → transcription elongation of FGF3/FGF4 autocrine loop. Samuraciclib blocks CDK7 → CDK9 activation at the apex of this cascade, suppressing FGF3/FGF4 driven proliferation.\n\nThis is non-redundant with birabresib (BRD4 bromodomain inhibitor, Mechanism 13) because BRD4 reads enhancer acetyl-marks and recruits P-TEFb, while CDK7 activates CDK9 within P-TEFb — both are required, and the two mechanisms predict non-overlapping resistance routes. It is also non-redundant with palbociclib (direct CDK4/6 inhibitor, Mechanism 24), which inhibits the effector CDKs rather than the upstream activating kinase.\n\nLimitations: no preclinical data in SDH-deficient cells; FGF3/FGF4 super-enhancer activation by CIMP has been confirmed in SDH-deficient GIST (PMID 42191879) but the CDK7 dependency of this specific super-enhancer has not been directly tested. Evidence score is theoretical, reflecting the strength of the two-pillar mechanistic chain without direct SDH-deficient model data.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["cdk7-super-enhancer-transcription", "epigenetic-dysregulation"],
+    target_gene_symbols: ["CDK7"],
+    evidence_score: 28,
+    status: "theoretical",
+    tumor_type_applicability: ["gist"],
+    clinical_trial_ids: ["NCT03363645"],
+  },
 ];

@@ -866,3 +866,50 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-26 — CDK7 / super-enhancer transcription addiction — samuraciclib (CT7001)
+
+**Branch:** `claude/clever-lovelace-902psi`
+
+### Part A — Paper Scan
+
+Queries run (9 total; covering 2026-06-26 through 2026-09-26, with tighter ranges for post-2026-09-08 publications):
+- SDH-deficient GIST therapeutic targets 2026
+- Paraganglioma pheochromocytoma SDH treatment new
+- GIST SDH-deficient clinical trial 2026
+- SDH-deficient renal cell carcinoma treatment
+- Succinate oncometabolite epigenetic BRCAness
+- Pseudohypoxia HIF SDH cancer drug
+- SDH pituitary adenoma treatment
+- SDH-deficient GIST super-enhancer FGF
+- CDK7 super-enhancer cancer SDH
+
+**Result:** 0 new qualifying papers. All PMIDs encountered were already in tracker.md. This is the 9th+ consecutive run with no new papers — consistent with low-volume rare-disease literature and the high specificity of the tracker (>200 previously evaluated PMIDs). tracker.md required no updates.
+
+### Part B — Improvement
+
+**Direction:** drug-pool
+**Angle:** CDK7 / super-enhancer-dependent transcription — samuraciclib (CT7001) as the upstream CAK/P-TEFb activation step in SDH-deficient GIST FGF3/FGF4 super-enhancer addiction
+
+**Mechanistic chain:**
+SDH loss → CIMP (succinate-driven TET enzyme inhibition) → CTCF insulator methylation → TAD boundary dissolution → ectopic FGF3/FGF4 super-enhancer (Merriam et al. Nat Med 2026, PMID 42191879) → BRD4 occupancy at SE → CDK9/P-TEFb recruitment → **CDK7 (CAK complex: CDK7/Cyclin H/MAT1) phosphorylates CDK9 T186** → active P-TEFb phosphorylates RNA Pol II CTD Ser2 → productive elongation of FGF3/FGF4 autocrine loop. CDK7 inhibition preferentially collapses this SE-driven transcription (Kwiatkowski et al. Nature 2014, PMID 25043025, DOI 10.1038/nature13393). CDK7 also activates CDK4 (T172) and CDK6 (T177) — independent G1/S checkpoint contribution.
+
+**Non-redundancy verification:**
+- vs. birabresib (Mechanism 13, BRD4 bromodomain inhibitor): BRD4 reads enhancer acetyl-marks and recruits P-TEFb; CDK7 activates CDK9 within P-TEFb — sequential steps, non-overlapping targets.
+- vs. palbociclib (Mechanism 24, CDK4/6 direct inhibitor): palbociclib inhibits the effector CDKs; CDK7 is the upstream activating kinase — non-redundant mechanism, independent druggable node.
+- vs. all 48 prior directions in MORNING_LOG: none covers CDK7 as a transcription kinase target.
+
+**Key primary literature cited:**
+- PMID 42191879 — Merriam et al. Nat Med 2026: ectopic FGF3/FGF4 super-enhancer in SDH-deficient GIST via CIMP/CTCF
+- PMID 25043025 — Kwiatkowski et al. Nature 2014 (DOI 10.1038/nature13393): CDK7 covalent inhibitor collapses super-enhancer-driven transcription, T-ALL super-enhancer sensitivity
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: new pathway `cdk7-super-enhancer-transcription` (display_order 33)
+- `src/data/seed/targets.ts`: new target CDK7 (UniProt P50613, synthetic_lethal)
+- `src/data/seed/drugs.ts`: new drug samuraciclib (CT7001; evidence_score 28, theoretical, gist, NCT03363645)
+- `src/data/seed/sdh-biology.ts`: Mechanism 42 (CDK7/super-enhancer transcription addiction section)
+- `src/lib/scoring/constants.ts`: color `cdk7-super-enhancer-transcription` → `bg-violet-200 text-violet-900`
+
+**PR:** [Morning] Add samuraciclib (CDK7 inhibitor) — super-enhancer transcription dependency in SDH-deficient GIST

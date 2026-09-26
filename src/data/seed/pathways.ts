@@ -547,4 +547,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 31,
   },
+  {
+    name: "CDK7 / Super-Enhancer Transcription Addiction",
+    slug: "cdk7-super-enhancer-transcription",
+    description:
+      "SDH-deficient GIST forms ectopic super-enhancers at FGF3/FGF4 via CIMP-driven methylation of CTCF insulator sites, disrupting TAD boundaries (Merriam et al. Nat Med 2026, PMID 42191879). Super-enhancers recruit BRD4, which recruits P-TEFb (CDK9/Cyclin T). CDK7, as the CAK (CDK-activating kinase) complex, phosphorylates CDK9 at T186 to activate P-TEFb. Active P-TEFb then phosphorylates RNA Pol II CTD Ser2, driving productive elongation. CDK7 inhibition preferentially collapses transcription at super-enhancer loci because these clustered enhancers drive extreme Pol II loading that is disproportionately dependent on CDK7-mediated elongation initiation (Kwiatkowski et al. Nature 2014, PMID 25043025). CDK7 also activates CDK4 (T172) and CDK6 (T177), compounding G1/S arrest with transcriptional collapse.",
+    upstream_event:
+      "SDH loss → CIMP → CTCF insulator methylation → TAD boundary disruption → ectopic FGF3/FGF4 super-enhancer → BRD4 occupancy → CDK9/P-TEFb recruitment → CDK7 (CAK complex) activates CDK9 T186 → RNA Pol II CTD Ser2 phosphorylation → transcription elongation of FGF3/FGF4 autocrine loop",
+    downstream_effects: [
+      "BRD4 marks ectopic super-enhancers at FGF3/FGF4 in SDH-deficient GIST (PMID 42191879)",
+      "CDK7 (CAK complex) phosphorylates CDK9 T186 — the obligate activation step for P-TEFb",
+      "Active P-TEFb phosphorylates RNA Pol II CTD Ser2 → productive elongation of FGF3/FGF4 autocrine loop transcripts",
+      "CDK7 inhibition preferentially collapses super-enhancer-driven transcription (Kwiatkowski et al. Nature 2014, PMID 25043025)",
+      "CDK7 additionally activates CDK4 (T172) and CDK6 (T177) — independent G1/S checkpoint contribution",
+      "Samuraciclib (CT7001) is an oral, non-covalent, selective CDK7 inhibitor under Phase 1/2 evaluation (NCT03363645)",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
 ];

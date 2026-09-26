@@ -648,6 +648,63 @@ The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus,
 |---|---|---|---|---|
 | IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
 
+---
+
+## Mechanism 42: CDK7 / Super-Enhancer Transcription Addiction — Samuraciclib (CT7001)
+
+### Core concept
+
+SDH-deficient GIST develops ectopic super-enhancers at oncogenic loci (principally FGF3/FGF4) via CIMP-driven methylation of CTCF insulator sites. When CTCF binding is abolished at these sites by aberrant CpG methylation, topologically associating domain (TAD) boundaries dissolve, allowing strong constitutional enhancers from adjacent chromatin domains to act on the FGF3/FGF4 locus in an ectopic manner. This creates a super-enhancer-driven autocrine FGF3/FGF4 signaling loop that sustains SDH-deficient GIST proliferation independently of KIT/PDGFRA — the central finding of Merriam et al. (Nat Med 2026, PMID 42191879).
+
+Super-enhancers concentrate extremely high densities of mediator, BRD4, and RNA Pol II. They generate transcription bursts that are uniquely dependent on the transcription elongation machinery — and specifically on CDK7-mediated activation of CDK9. The cascade:
+
+**BRD4 (SE reader) → recruits P-TEFb (CDK9/Cyclin T) → CDK7 (CAK: CDK7/Cyclin H/MAT1) phosphorylates CDK9 at T186 (activation loop) → active P-TEFb phosphorylates RNA Pol II CTD Ser2 → paused Pol II enters productive elongation → FGF3/FGF4 autocrine loop transcription.**
+
+CDK7 inhibition blocks CDK9 T186 phosphorylation, collapsing P-TEFb activity. Because super-enhancer-driven genes are far more dependent on the resulting elongation capacity than typical enhancer-driven genes (Pol II density is proportionally higher), CDK7 inhibition preferentially suppresses this transcriptional program while sparing most housekeeping loci.
+
+### Evidence anchors
+
+**Pillar 1 — The SDH-deficient GIST ectopic super-enhancer:**
+Merriam et al. (Nat Med 2026, PMID 42191879) used ATAC-seq, H3K27ac ChIP-seq, and Hi-C in SDH-deficient GIST patient tumors and cell lines to demonstrate:
+- CIMP at CTCF binding sites between the FGF3/FGF4 locus and adjacent domains
+- Dissolution of TAD insulation, permitting enhancer–promoter contacts from a neighboring constitutionally active domain
+- Formation of a functional FGF3/FGF4 super-enhancer (defined by H3K27ac breadth and BRD4 density) in SDH-deficient but not KIT/PDGFRA-mutant GIST
+- FGF3/FGF4 autocrine loop sustains FGFR1/FGFR2 pathway activation independently of receptor mutation
+- BET bromodomain inhibitor (JQ1) collapsed this super-enhancer and suppressed SDH-deficient GIST cell line growth — validating the SE as a druggable dependency
+
+**Pillar 2 — CDK7 governs super-enhancer-driven transcription:**
+Kwiatkowski et al. (Nature 2014, PMID 25043025, DOI 10.1038/nature13393) showed that:
+- THZ1, a covalent CDK7 inhibitor, disproportionately reduced transcription at RUNX1 and a small set of super-enhancer-driven oncogenes in T-ALL cells
+- Genome-wide Pol II ChIP-seq showed selective reduction at SE loci while housekeeping genes were largely spared
+- T-ALL cell lines with RUNX1 super-enhancer dependency had exceptional sensitivity (nanomolar GI50) vs. non-T-ALL lines
+- The selectivity is explained by the extreme Pol II loading at SE loci: they require sustained CDK9 activation to maintain elongation, making them hypersensitive to the upstream CDK7 → CDK9 bottleneck
+
+**Mechanistic connection between the two pillars:**
+The BRD4 dependency at the FGF3/FGF4 SE (validated by Merriam et al. with JQ1) is mechanistically upstream of CDK7 dependency: BRD4 recruits P-TEFb to the SE, and CDK7 activates CDK9 within that P-TEFb complex. Both steps are required for elongation; targeting either collapses SE transcription. The CDK7 step is non-redundant with BRD4 inhibition (birabresib; Mechanism 13) because the two proteins act sequentially and have distinct resistance mechanisms (BRD4 bromodomain mutations vs. CDK9 T186 phosphorylation-bypass mutations).
+
+### CDK7 also activates CDK4/6 — compound cell cycle effect
+
+CDK7 phosphorylates CDK4 at T172 and CDK6 at T177 — the T-loop activation steps required for their kinase activity. CDK4/6 are already directly inhibitable (palbociclib, Mechanism 24) in SDH-deficient GIST via CDKN2A/p16 silencing. CDK7 inhibition imposes an independent G1/S block on top of the FGF3/FGF4 transcriptional collapse, compounding cytostasis. This is additional cancer-cell-selective burden because CDK4/6 activation (and thus CDK7 activity at CDK4/6 T-loops) is higher in cycling cancer cells than in quiescent normal tissue.
+
+### Drug: Samuraciclib (CT7001)
+
+Samuraciclib (CT7001; Carrick Therapeutics) is an orally bioavailable, non-covalent, highly selective CDK7 inhibitor. It was developed specifically to overcome the CDK12/CDK13 off-target covalent reactivity of early CDK7 tool compounds (THZ1, SY-1365). Samuraciclib achieves CDK7 selectivity via an ATP-competitive mechanism with a >10-fold selectivity window over the next most potent CDK family member.
+
+Phase 1 (NCT03363645, CATCH-1; advanced solid tumors): single-agent dose escalation established tolerability and CDK7 target engagement (pharmacodynamic marker: reduction of phospho-RNA Pol II CTD Ser5, a CDK7 substrate in pre-initiation complex assembly, in peripheral blood cells). Dose-limiting toxicities were predominantly gastrointestinal (nausea, diarrhea) at high doses; a recommended Phase 2 dose was identified.
+
+Samuraciclib has been evaluated in combination with fulvestrant in ER+ breast cancer (a super-enhancer-addicted context via ESR1 SE), and preclinical work in MYC-amplified SCLC and NUT carcinoma supports the super-enhancer collapse mechanism across cancer types.
+
+**Key uncertainties in the SDH-deficient GIST context:**
+1. The FGF3/FGF4 super-enhancer was defined by BRD4/H3K27ac enrichment (Merriam et al.) but CDK7 occupancy and CDK9 T186 phosphorylation at this specific locus have not been measured in SDH-deficient GIST cells.
+2. Not all SDH-deficient GISTs carry the exact CTCF methylation pattern that creates the FGF3/FGF4 SE; the fraction with fully activated SEs is not quantified.
+3. No samuraciclib data in GIST models exist. The first experiment needed is CDK7 inhibitor treatment in SDH-deficient GIST cell lines (GIST-T1-lacking-SDH or patient-derived organoids) with FGF3/FGF4 SE activation confirmed by ChIP-seq.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CDK7 (CAK: CDK7/Cyclin H/MAT1) | CDK7 | Samuraciclib (CT7001) | Phase 1 NCT03363645 (CATCH-1; advanced solid tumors) | None; rationale via CIMP→FGF3/FGF4 super-enhancer (PMID 42191879) + CDK7 preferential SE transcription collapse (PMID 25043025) |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
