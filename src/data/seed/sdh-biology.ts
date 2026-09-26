@@ -648,6 +648,27 @@ The IGF1R → PI3K/AKT/mTOR axis overlaps mechanistically with mTOR (everolimus,
 |---|---|---|---|---|
 | IGF1R / IR-A dual kinase | IGF1R | Linsitinib (OSI-906) | Phase 3 in ACC (NCT00924989; negative in unselected population) | None; rationale via 100% PCC IGF2 overexpression (PMID 26400872) + CIMP/H19 mechanism |
 
+### 42. HIF-Driven CD73 (NT5E) / Adenosine Immunosuppressive Axis — Oleclumab
+
+**Mechanism:**
+SDH loss → succinate accumulation → competitive inhibition of PHD1/2/3 prolyl hydroxylases → constitutive HIF-1α stabilization (pseudohypoxia). HIF-1α transcriptionally activates NT5E (encoding CD73, ecto-5'-nucleotidase) via a canonical hypoxia-response element (HRE) in the NT5E promoter. This mechanism was established by Synnestvedt et al. (J Clin Invest 2002, PMID 12370277, DOI 10.1172/JCI15337): HIF-1α binding to the NT5E HRE drives CD73 transcription under hypoxia; antisense knockdown of HIF-1α significantly inhibited hypoxia-inducible CD73 expression, and mutagenesis of the HIF-1 binding site in the NT5E promoter nearly abolished hypoxia-inducibility. In cancer, Samanta et al. (PNAS 2018, PMID 29367423, DOI 10.1073/pnas.1718197115) demonstrated that HIF-1α co-induces CD73, CD47, and PD-L1 in tumor cells under hypoxia — establishing NT5E induction as part of the canonical HIF-1α immunosuppressive transcriptional program. In SDH-deficient tumors, constitutive PHD inhibition by accumulated succinate locks HIF-1α in a permanently active state, making NT5E/CD73 upregulation constitutive and oxygen-independent.
+
+**Downstream Adenosine Immunosuppression:**
+Tumor-surface CD73 dephosphorylates extracellular AMP → adenosine. Adenosine accumulates in the tumor microenvironment (TME) and binds A2A receptors (ADORA2A) and A2B receptors (ADORA2B) on infiltrating CD8+ cytotoxic T cells, CD4+ helper T cells, and NK cells. A2A/A2B receptor activation elevates intracellular cAMP via Gs-coupled adenylyl cyclase → PKA activation → suppression of TCR signaling and effector gene programs → reduced IFN-γ secretion, degranulation, and cytotoxic T-lymphocyte killing. Adenosine simultaneously promotes FoxP3+ regulatory T cell (Treg) expansion and myeloid-derived suppressor cell (MDSC) recruitment. Leone & Emens (J Immunother Cancer 2018, PMID 29914571, DOI 10.1186/s40425-018-0360-8) reviewed the CD39-CD73-A2A/A2B axis as a major non-checkpoint immune-evasion pathway and highlighted co-targeting with PD-1/PD-L1 inhibitors.
+
+**SDH-Specific Context:**
+The HIF→CD73→adenosine axis constitutes a third mechanistically distinct immune-suppression arm in SDH-deficient tumors — complementary to (1) the succinate-MCT1 axis (direct T-cell metabolic impairment via MCT1-mediated succinate uptake; Mechanism 11), (2) the HIF-IDO1-kynurenine axis (tryptophan catabolism; Mechanism 11), and (3) the HIF-PD-L1 axis (checkpoint ligation; Mechanism 21). All four arms flow from SDH loss via pseudohypoxia and converge on T-cell suppression, but they operate through distinct receptors and second messengers: adenosine/cAMP (CD73/A2A), metabolite toxicity (succinate/MCT1), amino acid depletion (IDO1/kynurenine), and receptor co-inhibition (PD-L1/PD-1). This mechanistic orthogonality makes the CD73 axis combinable with PD-1/PD-L1 blockade (Mechanism 21) without shared target overlap.
+
+**Therapeutic Approach — Oleclumab (MEDI9447):**
+Oleclumab is a human IgG1λ anti-CD73 monoclonal antibody (AstraZeneca) that binds the catalytic domain of CD73, blocking enzymatic AMP→adenosine conversion. Phase 2 trials: NCT05061550 (NeoCOAST-2; NSCLC, actively recruiting, n=630; oleclumab + durvalumab ± other agents) and NCT03334617 (HUDSON; NSCLC, active, n=528; oleclumab arm alongside other PD-L1-resistance strategies). These establish Phase 2 dosing, tolerability, and pharmacodynamic data in solid tumors.
+
+**Key Limitation:**
+No published data test oleclumab or any CD73 inhibitor in SDH-deficient GIST, PPGL, or RCC models. CD73 expression in SDH-deficient tumor tissue has not been systematically confirmed. The rationale is extrapolated from well-established HIF-1α → NT5E biology in non-SDH-specific hypoxia and cancer models; experimental validation in SDH-null isogenic cell lines is the required next step.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CD73 (ecto-5'-nucleotidase) | NT5E | Oleclumab (MEDI9447) | Phase 2 (NCT05061550, NCT03334617) | None; rationale via HIF-1α→NT5E HRE mechanism (PMID 12370277, PMID 29367423) |
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
