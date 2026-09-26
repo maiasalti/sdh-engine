@@ -910,3 +910,44 @@ Correct ordering is now: 34 → 35 → 36 → 37 → 38 → 39 → 40 → 41.
 **Papers evaluated for mechanism verification (tracker.md updated):** 3 (PMIDs 12370277, 29367423, 29914571 — used to anchor Mechanism 42)
 **Summary:** 8-query PubMed scan (2026-06-10 to 2026-09-10) returned 0 new qualifying papers; all PMIDs already tracked. For Part B: identified the HIF-1α → CD73 (NT5E) → adenosine → A2A/A2B receptor immunosuppressive axis as a genuinely new direction not covered in any prior run (30+ runs to date). This is the fourth mechanistically distinct immune-evasion arm in SDH-deficient tumors flowing from pseudohypoxia, complementary to and non-overlapping with the existing succinate-MCT1 (Mechanism 11), HIF-IDO1 (Mechanism 11), and HIF-PD-L1 (Mechanism 21) arms. Mechanistic anchors: (1) Synnestvedt et al. (J Clin Invest 2002, PMID 12370277, DOI 10.1172/JCI15337) — established HIF-1α binding to the canonical HRE in the NT5E promoter drives CD73 transcription; mutagenesis of the HIF-1 site abolished hypoxia-inducibility; (2) Samanta et al. (PNAS 2018, PMID 29367423, DOI 10.1073/pnas.1718197115) — HIF-1α co-induces CD73, CD47, and PD-L1 in cancer cells under hypoxia, confirming this is part of the canonical HIF-1α immunosuppressive transcriptional program in tumors; (3) Leone & Emens (J Immunother Cancer 2018, PMID 29914571, DOI 10.1186/s40425-018-0360-8) — review establishing the CD39-CD73-A2A/A2B adenosine pathway as a major non-checkpoint immune-evasion mechanism with clinical development context. ClinicalTrials.gov verification: oleclumab (MEDI9447) confirmed Phase 2 in NCT05061550 (NeoCOAST-2, NSCLC, actively recruiting, n=630) and NCT03334617 (HUDSON umbrella, NSCLC, n=528). Evidence_score 23 (theoretical) — strong three-paper mechanistic chain; Phase 2 clinical stage; no SDH-specific preclinical or clinical data. New pathway `hif-cd73-adenosine-immunosuppression` (display_order 33), new target NT5E (UniProt P21589), new drug oleclumab added.
 **Files changed:** `src/data/seed/pathways.ts` (new pathway hif-cd73-adenosine-immunosuppression, display_order 33), `src/data/seed/targets.ts` (new target NT5E/CD73, UniProt P21589), `src/data/seed/drugs.ts` (new drug oleclumab, evidence_score 23, theoretical, NCT05061550+NCT03334617), `src/data/seed/sdh-biology.ts` (Mechanism 42 section), `src/lib/scoring/constants.ts` (pathway color bg-green-200 for hif-cd73-adenosine-immunosuppression), `tracker.md` (3 mechanism-verification rows added), `MORNING_LOG.md` (this entry).
+
+---
+
+## 2026-09-11
+
+**Direction:** data-quality
+**Angle:** Fix incorrect and duplicate PubChem CIDs; fill in missing ChEMBL and PubChem IDs for FDA-approved and well-characterized drugs
+
+**Paper scan:** 11 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, SDH-deficient RCC, pseudohypoxia/HIF, BRCAness/DDR, succinate oncometabolite, ATRX/ALT/TERT, SSTR/MIBG radioligand, immune evasion, G4 stabilizer/BRCA, and succinate metabolomics 2026). 1 new PMID found: PMID 42590786 (pediatric giant PCC case report; SDHB IHC preserved — not SDH-deficient; no treatment advance). 0 papers added to papers.ts.
+
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 1 (PMID 42590786)
+
+**Part B — Data quality fix: incorrect PubChem CIDs and missing ChEMBL/PubChem IDs**
+
+During review of drugs.ts, two entries were found sharing PubChem CID `"25151352"` — capivasertib (line 735) and ganetespib (line 967). PubChem CID 25151352 is **pexidartinib** (C20H15ClF3N5), a CSF1R/KIT inhibitor — entirely unrelated to either drug. Both entries had been assigned the wrong CID. Additionally, three FDA-approved or well-characterized drugs (palbociclib, linsitinib, bempedoic acid) had `chembl_id: null, pubchem_cid: null` despite having established entries in both databases.
+
+**Verified corrections (all checked via PubChem and ChEMBL web lookups):**
+
+| Drug | Field | Was | Now | Source |
+|------|-------|-----|-----|--------|
+| Capivasertib | pubchem_cid | "25151352" (= pexidartinib) | "25227436" | pubchem.ncbi.nlm.nih.gov/compound/azd5363 |
+| Ganetespib | pubchem_cid | "25151352" (= pexidartinib) | "135564985" | pubchem.ncbi.nlm.nih.gov/compound/Ganetespib |
+| Palbociclib | chembl_id | null | "CHEMBL189963" | ebi.ac.uk/chembl/explore/compound/CHEMBL189963 |
+| Palbociclib | pubchem_cid | null | "5330286" | pubchem.ncbi.nlm.nih.gov/compound/Palbociclib |
+| Linsitinib | chembl_id | null | "CHEMBL1091644" | ebi.ac.uk/chembl/web_components/explore/compound/CHEMBL1091644 |
+| Linsitinib | pubchem_cid | null | "11640390" | pubchem.ncbi.nlm.nih.gov/compound/11640390 |
+| Bempedoic Acid | chembl_id | null | "CHEMBL3545313" | ebi.ac.uk/chembl/compound_report_card/CHEMBL3545313/ |
+| Bempedoic Acid | pubchem_cid | null | "10472693" | pubchem.ncbi.nlm.nih.gov/compound/etc-1002 |
+
+**Root cause:** The CID 25151352 appears to have been copy-pasted from an adjacent entry (or from an unrelated lookup) when both capivasertib and ganetespib entries were created. The missing IDs were gaps from initial entry creation.
+
+**No new drugs were added today.** No paper cleared the HARD RELEVANCE GATE. The G4 stabilizer (CX-5461/pidnarulex) direction was evaluated: mechanistically compelling via BRCAness + ATRX-null ALT replication stress, but the anchor paper could not be verified via PubMed (search returned 0 results for "CX-5461 G-quadruplex BRCA synthetic lethality cancer"), and per the task rules, no direction is implemented without a verifiable PubMed anchor.
+
+**Candidate directions for owner consideration:**
+1. **CX-5461 / pidnarulex (G4 stabilizer)** — mechanistically anchored in BRCAness + ATRX-null ALT replication stress; could not be verified via PubMed MCP search today; re-evaluate if PMID for anchor paper is confirmed.
+2. **Ym155 (survivin/BIRC5 inhibitor)** — PMID 41711310 (Endocr Relat Cancer 2026) shows selective DNA damage in SDH-deficient cells; was outside the 3-month window; revisit when in-window.
+3. **MTHFD2 / one-carbon folate metabolism** — constitutively unactionable (no SDH-specific data, no clinical-stage inhibitors at this time).
+
+**Files changed:** `src/data/seed/drugs.ts` (8 PubChem/ChEMBL field corrections across 5 entries: capivasertib, ganetespib, palbociclib, linsitinib, bempedoic acid), `tracker.md` (PMID 42590786 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Fix incorrect pubchem_cid for capivasertib/ganetespib; add missing ChEMBL/PubChem IDs
