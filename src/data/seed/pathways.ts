@@ -670,4 +670,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 33,
   },
+  {
+    name: "HIF→CA9 Tumour pH Regulation",
+    slug: "hif-ca9-ph-regulation",
+    description:
+      "SDH-deficient cells constitutively activate HIF-1α and HIF-2α via the pseudohypoxia pathway. One of the direct HIF transcriptional targets is Carbonic Anhydrase IX (CA9/CAIX) — Wykoff et al. (Cancer Res 2000, PMID 11156414) identified a HIF-1-dependent hypoxia-response element (HRE) in the CA9 minimal promoter and showed that CA9 is among the most tightly HIF-regulated genes in tumour cells. CA9 is a transmembrane metalloenzyme (UniProt Q16790) that catalyses the reversible hydration of CO₂ to H⁺ and HCO₃⁻ (CO₂ + H₂O ⇌ H⁺ + HCO₃⁻). The extracellular-facing active site releases H⁺ into the tumour microenvironment, creating a low extracellular pH (pHe ~6.5–6.9) while bicarbonate is imported to buffer intracellular pH. This enforced reverse pH gradient — acid outside, near-neutral inside — promotes invasion (via acid-activated cathepsins and matrix metalloproteinases), immune evasion (acidic TME suppresses T-cell cytotoxicity), and multidrug resistance (weakly basic drugs trapped in acidic extracellular space). CAIX membranous staining is detected in SDHx/VHL-related pseudohypoxic PPGLs (Mete et al. Am J Surg Pathol 2021, PMID 33826547).",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive PHD2/PHD3 inhibition → constitutive HIF-1α/2α stabilisation → HRE-driven CA9 transcription → transmembrane CA9 protein expression → extracellular CO₂ → H⁺ + HCO₃⁻ catalysis → tumour acidosis",
+    downstream_effects: [
+      "Extracellular acidification (pHe 6.5–6.9) activates matrix metalloproteinases and cathepsins → enhanced local invasion and basement membrane degradation",
+      "Acidic TME suppresses CD8⁺ T-cell cytolytic function and NK cell activity → immune evasion",
+      "Reverse pH gradient traps weakly basic chemotherapeutics in extracellular space (protonated, membrane-impermeant form) → reduced intracellular drug accumulation → multidrug resistance",
+      "CA9 inhibition by SLC-0111 (WBI-5111) restores extracellular pH homeostasis and sensitises tumours to immune effector cells",
+      "SLC-0111 completed Phase 1 monotherapy safety/PK study in solid tumours (NCT02215850) and Phase 1b/2 combination with gemcitabine in CAIX-positive pancreatic adenocarcinoma (NCT03450018)",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
 ];

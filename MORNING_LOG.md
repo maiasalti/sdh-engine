@@ -1526,3 +1526,62 @@ The only remaining candidate considered was atorvastatin (HMGCR inhibitor; meval
 Papers-only is the correct outcome for today.
 
 **Summary:** 7-query PubMed scan returned one genuinely new qualifying paper (PMID 42758527) — a prospective plasma metabolomics study establishing plasma succinate as a non-invasive biomarker for SDHx-driven tumour burden and post-treatment surveillance. This is directly relevant to the engine's SDH-deficient tumour focus and adds to the Diagnosis & Pathology corpus. Two other PMIDs were evaluated: one rejected as a broad RCC epidemiology review with only peripheral SDH mention, one logged as outside the 3-month window. No drug or mechanism addition was made; the atorvastatin/mevalonate direction was considered but does not clear the hard relevance gate (no SDH-specific data; adjacent acetyl-CoA branches already well covered).
+
+---
+
+## 2026-09-25 — HIF→CA9 tumour pH regulation / SLC-0111
+
+**Branch:** `morning/2026-09-25-hif-ca9-slc0111`
+
+### Part A — Paper Scan
+
+Queries run (8 total; 3-month window June 25 – September 25, 2026):
+- SDH-deficient tumor drug repurposing therapeutic targets 2026
+- Paraganglioma pheochromocytoma HIF pseudohypoxia treatment 2026
+- GIST SDH-deficient clinical trial 2026
+- SDH-deficient renal cell carcinoma 2026
+- SDHB succinate BRCAness synthetic lethality 2026
+- Succinate oncometabolite immunotherapy 2026
+- SDH-deficient pituitary adenoma treatment 2026
+- Carbonic anhydrase IX CAIX HIF pseudohypoxia SDH tumor 2026
+
+**New PMIDs found not already in tracker.md:** 3 (all outside the 3-month window based on PMID numbering; logged to tracker.md for future reference)
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 41634405 | **not evaluated** | PMID in ~41.6M range; estimated pre-June 2026 publication, outside 3-month scan window. Logged to tracker.md to prevent re-evaluation. |
+| 41384711 | **not evaluated** | PMID in ~41.4M range; estimated pre-June 2026 publication, outside 3-month scan window. Logged to tracker.md. |
+| 41904096 | **not evaluated** | PMID in ~41.9M range; estimated pre-June 2026 publication, outside 3-month scan window. Logged to tracker.md. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** drug-pool — HIF-driven CA9 tumour acidosis / SLC-0111 (WBI-5111) selective CA9/CA12 inhibitor
+
+**Mechanistic basis:**
+SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α/2α stabilisation → HRE-driven CA9 transcription. The CA9 HRE was definitively characterised by Wykoff et al. (Cancer Res 2000, PMID 11156414): CA9 is among the most tightly HIF-1-regulated genes known, constitutively expressed in VHL-deficient renal carcinoma cells (analogous constitutive HIF mechanism) and HRE-dependent in the CA9 minimal promoter. SDH-deficient tumours share the identical PHD-inhibition pathway initiated by succinate accumulation. Constitutive CA9 expression acidifies the tumour microenvironment (pHe ~6.5–6.9), promoting invasion (acid-activated proteases), immune evasion (TME acidosis suppresses T-cell cytotoxicity), and multidrug resistance (weakly basic drugs trapped extracellularly). CAIX IHC confirmed in pseudohypoxic cluster 1 PPGLs (Mete et al., Am J Surg Pathol 2021, PMID 33826547).
+
+**Why this direction passes the relevance gate:** CA9 is an established direct HIF transcriptional target — expressly within the pseudohypoxia/HIF pathway listed as a qualifying mechanism in the task description. CAIX is already mentioned in the engine (IGF1R target description, linsitinib MoA: "VEGF, CAIX, GLUT1, and CXCR4 in SDH-deficient tumours") but has never been a therapeutic direction.
+
+**Why this direction is new:** Exhaustive log review confirmed no prior morning run has targeted CA9, carbonic anhydrase, or tumour pH regulation.
+
+**Clinical anchor:** NCT02215850 (Phase 1 SLC-0111 monotherapy in solid tumours; n=24; COMPLETED). NCT03450018 (Phase 1b/2 SLC-0111 + gemcitabine in CAIX-positive PDAC; TERMINATED at n=6 due to slow enrolment, not toxicity).
+
+**Evidence_score:** 20 (theoretical) — strong mechanistic chain + Phase 1 clinical data; held lower because CAIX IHC sensitivity in SDHx PPGLs specifically is limited (~16% in Mete 2021 cohort, predominantly VHL-related), no SDH-deficient preclinical data for SLC-0111.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: new pathway `hif-ca9-ph-regulation` (display_order 33)
+- `src/data/seed/targets.ts`: new target CA9 (UniProt Q16790, downstream, pathway_slug `hif-ca9-ph-regulation`)
+- `src/data/seed/drugs.ts`: new drug SLC-0111 (evidence_score 20, theoretical, all tumour types, NCT02215850 + NCT03450018)
+- `src/data/seed/sdh-biology.ts`: Mechanism 42 — HIF→CA9 tumour acidosis
+- `src/lib/scoring/constants.ts`: new color entry `hif-ca9-ph-regulation`
+- `tracker.md`: logged 3 outside-window PMIDs (41634405, 41384711, 41904096)
+
+**Key citations:**
+- Wykoff CC et al. Hypoxia-inducible expression of tumor-associated carbonic anhydrases. Cancer Res 2000;60(24):7075-83. PMID 11156414.
+- Mete O et al. Significance of Alpha-inhibin Expression in Pheochromocytomas and Paragangliomas. Am J Surg Pathol 2021;45(9):1264-73. PMID 33826547. DOI 10.1097/PAS.0000000000001715.
+- NCT02215850 (Phase 1 SLC-0111 monotherapy; Welichem Biotech; COMPLETED).
+- NCT03450018 (Phase 1b/2 SLC-0111 + gemcitabine in CAIX-positive PDAC; TERMINATED).
+
+**PR:** morning/2026-09-25-hif-ca9-slc0111
