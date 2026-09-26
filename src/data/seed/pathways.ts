@@ -495,6 +495,24 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 32,
   },
   {
+    name: "G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality",
+    slug: "g4-quadruplex-brcas-lethality",
+    description:
+      "G-quadruplex (G4) DNA structures form at guanine-rich sequences genome-wide — at telomeres, gene promoters, replication origins, and non-B-DNA sites — during transcription and replication. CX-5461 stabilizes G4 DNA, blocking replication fork progression and inducing DNA strand breaks that require BRCA-mediated homologous recombination (HR) for repair (Xu et al., Nat Commun 2017, PMID 28211448). In SDH-deficient tumors, succinate accumulation inhibits KDM4A and KDM4B histone demethylases at double-strand break sites, impairs TIP60 acetyltransferase and ATM kinase recruitment, and establishes constitutive HR deficiency (BRCAness) independently of BRCA1/2 mutation status (Sulkowski et al., Nat Genet 2018, PMID 30013182; Nature 2020, PMID 32494005). This BRCAness renders SDH-deficient cells unable to repair G4-induced DNA damage, creating synthetic lethality. In ATRX-null/ALT-positive SDHB-metastatic PPGL (~30–40% of metastatic cases), ATRX loss independently elevates the G4 burden at telomeric and non-telomeric chromatin, amplifying CX-5461 sensitivity beyond the BRCAness baseline.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM4A/KDM4B histone demethylases → H3K9me3 persistence at DSB sites → impaired TIP60/ATM → HR deficiency (BRCAness); CX-5461 stabilizes G4 DNA → stalled replication forks → DSBs → BRCAness-selective lethality; amplified in ATRX-null/ALT cells by elevated baseline G4 burden",
+    downstream_effects: [
+      "CX-5461 stabilizes G-quadruplex DNA structures genome-wide, blocking replication fork progression and generating single-stranded DNA gaps and DSBs",
+      "Resulting DNA damage requires BRCA1/2-mediated HR for repair; SDH-deficient BRCAness cells cannot execute HR → selective cytotoxicity",
+      "Xu et al. 2017 (PMID 28211448) demonstrated CX-5461 selectivity in BRCA1/2-deficient patient-derived xenograft models, including tumours resistant to PARP inhibition — establishing a mechanistic distinction from PARP inhibitors",
+      "ATRX-null/ALT SDHB-metastatic PPGL (~30–40% of metastatic cases) carries elevated G4 burden from ATRX-mediated G4 resolution failure, predicted to amplify CX-5461 sensitivity beyond BRCAness alone",
+      "Non-redundant with PARP inhibitors (olaparib/niraparib), DNA-PKcs inhibitors (elimusertib), CHK1 inhibitors (prexasertib), or POLQ inhibitors (ART558) — G4 stabilization generates the upstream DSB load rather than preventing its resolution",
+      "Phase 1 NCT02719977 (BRCA1/2-deficient hematologic malignancies) and Phase 1b NCT03914288 (BRCA1/2-mutated solid tumours) establish CX-5461 clinical pharmacology in the BRCAness patient population",
+    ],
+    druggable: true,
+    display_order: 33,
+  },
+  {
     name: "HSP90-Dependent HIF Pseudohypoxic Proteome Stability",
     slug: "hsp90-hif-client-chaperone",
     description:
