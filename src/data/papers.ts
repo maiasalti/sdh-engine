@@ -322,4 +322,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42626917",
     date: "2026-08",
   },
+  {
+    title:
+      "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model",
+    authors: "Cole Y, Abramovich I, Fernandez-Garcia J, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0323",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Prospective plasma metabolomics study (Cambridge/NCI/Technion) identifying circulating succinate as a quantitative biomarker for SDHx germline pathogenic variant carriers. Plasma succinate levels reflected SDHx deficiency and correlated with tumour burden across PPGL, GIST, and RCC subtypes; longitudinal sampling demonstrated that serial measurements can track disease trajectory. Validated in an Sdhb-deficient murine model, where elevated succinate was observed in adrenal gland tissue. First prospective clinical evidence for plasma succinate as a non-invasive surveillance biomarker and potential pharmacodynamic readout for succinate-targeting therapies.",
+    pmid: "42758527",
+    date: "2026-09",
+  },
 ];

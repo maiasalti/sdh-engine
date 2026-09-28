@@ -978,6 +978,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: ["NCT01039519"],
   },
   {
+    name: "CCS1477",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "p300/CBP bromodomain inhibitor (KAT3 family acetyltransferase inhibitor)",
+    mechanism_of_action:
+      "CCS1477 (Carrick Therapeutics) is a first-in-class, selective inhibitor of the bromodomain of the p300/CBP KAT3 acetyltransferase family (EP300 and CREBBP). The p300/CBP bromodomain reads acetyl-lysine marks on histones (H3K27ac, H3K18ac) at enhancers and promoters, stabilising p300/CBP chromatin occupancy and HAT activity at those loci. CCS1477 occupies the bromodomain acetyl-lysine binding pocket, preventing p300/CBP from engaging acetylated chromatin and reducing coactivator assembly at transcriptionally active loci.\n\nThe SDH-specific rationale operates through the constitutive pseudohypoxic HIF programme. SDH inactivation → succinate accumulation → PHD2/PHD3 competitive inhibition → permanent VHL-independent HIF-1α/2α stabilisation. Stabilised HIF-α subunits heterodimerize with ARNT and recruit p300/CBP as the key transcriptional coactivator: the HIF-α C-terminal transactivation domain (C-TAD) engages the TAZ1/CH1 domain of p300/CBP; separately, stable p300 chromatin occupancy at HIF target gene promoters and enhancers requires p300's bromodomain to read H3K27ac/H3K18ac marks at those loci. CCS1477 blocks this bromodomain-mediated chromatin binding step, reducing p300 occupancy at HIF target loci and suppressing the coactivator assembly required for full HIF target gene activation (VEGF/VEGFA, GLUT1/SLC2A1, PDK1, CAIX/CA9, LDHA, EPO).\n\nMechanistic distinction from other HIF-axis inhibitors in this engine:\n(1) Ganetespib (HSP90 inhibitor): acts upstream — routes HIF-1α client protein to proteasomal degradation, reducing HIF-1α protein levels. CCS1477 acts downstream of HIF-1α stabilisation, at the chromatin coactivation step; even stabilised HIF-1α cannot efficiently drive target gene transcription without p300 chromatin engagement.\n(2) Belzutifan (HIF-2α inhibitor): prevents HIF-2α-ARNT heterodimerisation, suppressing HIF-2α-specific transcription. CCS1477 affects both HIF-1α and HIF-2α-driven transcription by blocking their shared coactivator's chromatin engagement.\n(3) Birabresib/BET inhibitors (BRD4 at super-enhancers): block BRD4 from reading acetylated chromatin at ectopic super-enhancers — a distinct chromatin reader (BET family, not KAT3) targeting BRD4-regulated gene sets, not specifically the p300 coactivator complex at HIF response elements.\n\nSelectivity argument: normal cells use HIF transiently under genuine hypoxic stress; SDH-deficient cells have constitutive pseudohypoxic HIF activity — a sustained dependency on p300 coactivation for HIF target transcription. This mirrors the selectivity logic for ganetespib (constitutive HIF-α chaperone dependency vs. transient HIF dependency in normal cells) and is the basis for a therapeutic window.\n\nClinical context: CCS1477 is in Phase 1b/2 evaluation (NCT03568656) in advanced prostate cancer and relapsed/refractory haematological malignancies, establishing clinical tolerability and preliminary efficacy data. No SDH-deficient tumour cohort has been studied. No published experiment has directly tested any p300/CBP bromodomain inhibitor in isogenic SDH-deficient vs. SDH-intact cell lines; the mechanistic case rests on established HIF-1α-p300 coactivation biology (Freedman SJ et al., PNAS 2002, PMID 11959990; Bhatt DL et al., Biochem J 2019) and the constitutive-HIF selectivity argument applicable across all SDH-deficient tumour types. Evidence_score 28 (theoretical) matches ganetespib — both argue constitutive-HIF coactivator/chaperone dependency, both have Phase 1/2 clinical anchors in non-SDH-specific cancers, both lack SDH-specific experimental validation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["hif-pseudohypoxia"],
+    target_gene_symbols: ["EP300", "CREBBP"],
+    evidence_score: 28,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT03568656"],
+  },
+  {
     name: "Bempedoic Acid",
     brand_names: ["Nexletol", "Nilemdo"],
     chembl_id: null,

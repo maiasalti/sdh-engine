@@ -866,3 +866,30 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+## 2026-09-28
+
+### Part A — PubMed Scan
+
+**Search window:** 2026-07-01 to 2026-09-28 (6 queries: SDH-deficient GIST/RCC/PPGL treatment 2026; SDHx pheochromocytoma paraganglioma clinical trial; succinate dehydrogenase cancer epigenetics 2026; SDH-deficient pituitary adenoma; succinate accumulation HIF epigenetic cancer; SDH deficient immunotherapy checkpoint inhibitor)
+
+**Papers added to `src/data/papers.ts`:** 1 (PMID 42758527)
+
+PMID 42758527 (Cole Y et al., Endocr Relat Cancer 2026-09-18, DOI 10.1530/ERC-26-0323): "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model." Prospective Cambridge/NCI/Technion plasma metabolomics study. Plasma succinate correlates with tumour burden across PPGL, GIST, and RCC in SDHx GPV carriers; serial sampling tracks disease trajectory; validated in Sdhb-deficient murine model (elevated adrenal succinate). First prospective clinical evidence for plasma succinate as a surveillance biomarker and pharmacodynamic readout. Added as Diagnosis & Pathology.
+
+**Papers rejected (logged to tracker.md):** 7 (42764100: general young-onset RCC review; 42759926: renal fibrosis SDHB/VDAC1 non-cancer; 42635383: case report vulvar PGL; 41644424: ACD-RCC not SDH-deficient + outside window; 42760995: small PPGL IHC series n=31 no SDH-specific biology; 41963519: metformin in ccRCC outside window + metformin increases SDH activity here)
+
+### Part B — Improvement
+
+**Direction:** drug-pool
+**Angle:** p300/CBP bromodomain inhibition — HIF transcriptional coactivation dependency in constitutively pseudohypoxic SDH-deficient tumours (CCS1477)
+
+SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → permanent HIF-1α/2α stabilisation. HIF-α subunits require p300/CBP (KAT3 family acetyltransferases, EP300/CREBBP) as obligate transcriptional coactivators for target gene activation: the HIF-α C-terminal transactivation domain (C-TAD) recruits p300/CBP via the TAZ1/CH1 domain; p300's bromodomain must then read H3K27ac/H3K18ac at HIF target gene loci for stable chromatin occupancy and full HAT/coactivator assembly. In SDH-deficient tumours this HIF-p300 coactivation is constitutively sustained (vs. transient in normoxic cells), creating a therapeutic window over normal tissues — the same selectivity argument as ganetespib (HSP90 → constitutive HIF-α protein stability dependency). CCS1477 (Carrick Therapeutics, NCT03568656, Phase 1b/2) is the first clinical-stage selective p300/CBP BRD inhibitor. Distinct from: ganetespib (acts upstream at HIF-α protein stability), belzutifan (HIF-2α-ARNT heterodimerisation), birabresib (BET/BRD4 — different protein family, super-enhancer readers not HIF coactivators). Evidence_score 28 (theoretical): mechanistic chain well-supported; Phase 1b/2 clinical data establishing tolerability; no SDH-specific preclinical validation exists.
+
+**Changes made:**
+- `src/data/seed/targets.ts`: added EP300 target entry (pathway: hif-pseudohypoxia, type: downstream)
+- `src/data/seed/drugs.ts`: added CCS1477 (evidence_score 28, theoretical, tumor_type_applicability: all, NCT03568656)
+- `src/data/papers.ts`: added PMID 42758527
+- `tracker.md`: logged all 8 evaluated papers (1 added, 7 rejected)
+
+**No prior log entries cover this direction** — p300/CBP and CCS1477 do not appear in any previous run. Birabresib (BET/BRD4, run 2026-07-14) and tazemetostat (EZH2, run 2026-06-23) cover adjacent epigenetic nodes but not the KAT3-family bromodomain coactivation step.
