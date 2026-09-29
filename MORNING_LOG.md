@@ -1626,3 +1626,68 @@ SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → per
 - `tracker.md`: logged all 8 evaluated papers (1 added, 7 rejected)
 
 **No prior log entries cover this direction** — p300/CBP and CCS1477 do not appear in any previous run. Birabresib (BET/BRD4, run 2026-07-14) and tazemetostat (EZH2, run 2026-06-23) cover adjacent epigenetic nodes but not the KAT3-family bromodomain coactivation step.
+
+---
+
+## 2026-09-29
+
+**Direction:** scan-only (no new drug, no new papers)
+**Branch:** `morning/2026-09-29-scan-only`
+
+### Part A — PubMed Scan
+
+Queries run (13 total; 3-month window July–September 2026):
+
+| Query topic | PMIDs returned | Outcome |
+|---|---|---|
+| SDH pituitary adenoma treatment targeted therapy | 0 | nothing in window |
+| HIF-1α CD155 PVR TIGIT cancer transcription immune evasion | 0 | nothing found |
+| Succinate BRCAness HR deficiency PARP synthetic lethality | 0 | nothing in window |
+| TIGIT CD155 PVR hypoxia HIF upregulation solid tumor | 0 | nothing found |
+| Pseudohypoxia HIF succinate SDH immune checkpoint immunotherapy 2026 | 0 | nothing in window |
+| HIF-1α immune checkpoint ligand transcription activation cancer | 40607414, 37014700, 35499071 | all old or not relevant to TIGIT/CD155 axis |
+| WEE1 inhibitor BRCA HR deficiency synthetic lethality | 41383404, 31374917, 42451670 | WEE1 DISQUALIFIED (see below) |
+| Adavosertib AZD1775 BRCA-deficient tumor response | 41354716 | already in tracker (rejected 2026-07-23) |
+| TIGIT checkpoint SDH paraganglioma immunotherapy | 0 | nothing found |
+| HIF hypoxia CD155 PVR ligand TIGIT NK T cell tumor | 0 | nothing found |
+| Ferroptosis HIF hypoxia cancer cell death 2025–2026 | 42365271, 41811553 | ferroptosis DISQUALIFIED (see below) |
+| MDM2 inhibitor milademetan sarcoma | 37369013, 36669146, 40788172, 37222206 | MDM2 rejected (see below) |
+| Succinate dehydrogenase deficient tumor 2026 therapy mechanism | 0 | nothing in window |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+**Papers evaluated and logged to tracker.md:**
+
+| PMID | DOI | Decision | Rationale |
+|------|-----|----------|-----------|
+| 42365271 | 10.1186/s11658-026-00973-1 | rejected | HIF-1α suppresses ferroptosis via ACSL4 downregulation (Xie R et al., Cell Mol Biol Lett 2026-06-27); SDH-deficient tumours with constitutive HIF-1α are therefore ferroptosis-RESISTANT — direction fails the relevance gate |
+| 42451670 | 10.3390/molecules31132303 | rejected | TNBC DDR review (Jończyk J et al., Molecules 2026-07-01); WEE1, ATR/CHK1, PARP topics all already covered in engine; no SDH-specific advance |
+
+### Part B — Improvement Evaluation
+
+Four candidate directions evaluated; all rejected:
+
+**1. TIGIT inhibition / tiragolumab**
+Proposed mechanistic chain: SDH loss → succinate → PHD inhibition → HIF-1α → CD155/PVR transcriptional upregulation → TIGIT co-inhibitory signalling → T-cell exhaustion. Searched exhaustively (6 PubMed queries). Found zero PubMed publications establishing HIF-1α as a direct transcriptional activator of CD155 (PVR). Without a verifiable citation for the HIF→CD155 node, the chain cannot be confirmed. Rejected — fails hard relevance gate (must be PubMed-verifiable).
+
+**2. LAG-3 inhibition / relatlimab**
+Searched for succinate → LAG-3 or exhaustion-linked LAG-3 upregulation in SDH-deficient context. Zero PubMed results. No verifiable mechanistic anchor to SDH-deficient biology. Rejected.
+
+**3. WEE1 inhibition / adavosertib (AZD1775)**
+PMID 41354716 (Cell Death & Disease 2025; Xi Q et al., DOI 10.1038/s41419-025-08324-2) directly demonstrates that adavosertib kills HR-PROFICIENT (BRCA-WT) cells via mitotic catastrophe; BRCA-mutant/HR-deficient cells are RESISTANT, explained by preserved NHEJ activity. SDH-deficient tumours display acquired BRCAness (HR-deficiency via succinate → KDM4A/B inhibition → H3K9me3). Therefore adavosertib would be expected to be LESS effective in SDH-deficient (HR-deficient) tumours. Direction fails the relevance gate. (PMID 41354716 was already in tracker.md from 2026-07-23.)
+
+**4. Ferroptosis induction / ferroptosis sensitisers**
+PMID 42365271 (Cell Mol Biol Lett 2026-06-27; Xie R et al., DOI 10.1186/s11658-026-00973-1) demonstrates that HIF-1α transcriptionally suppresses ACSL4 expression → reduced PUFA-phospholipid biosynthesis → ferroptosis resistance in anaplastic thyroid carcinoma under hypoxia. SDH-deficient tumours have constitutively elevated HIF-1α (pseudohypoxia). By the mechanism in this paper, SDH-deficient tumours would be constitutively ferroptosis-resistant. Direction fails the relevance gate.
+
+**5. MDM2 inhibition / milademetan**
+PMID 40788172 (Clin Cancer Res 2025; Dumbrava EE et al., DOI 10.1158/1078-0432.CCR-25-0762) shows milademetan responses in MDM2-amplified, TP53-WT solid tumours (Phase 2 MANTRA-2). SDH-deficient tumours do not characteristically carry MDM2 amplification; the drug's activity is biomarker-selected for MDM2amp tumours. No mechanistic pathway connecting SDH biology to MDM2 overexpression. Rejected — insufficient mechanistic link.
+
+### Conclusion
+
+No new drug directions pass the hard relevance gate today. No new papers qualify for addition. The correct outcome is adding nothing substantive and documenting all evaluated material. This is an acceptable daily outcome per the overriding principle.
+
+**Changes made:**
+- `tracker.md`: logged 2 new evaluated papers (42365271, 42451670)
+- `MORNING_LOG.md`: this entry
+
+**PR:** [Morning] Scan-only — no new qualifying papers or drug directions (2026-09-29)
