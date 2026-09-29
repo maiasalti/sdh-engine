@@ -1134,7 +1134,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     evidence_score: 27,
     status: "clinical_trial",
     tumor_type_applicability: ["all"],
-    clinical_trial_ids: ["NCT04068597"],
+    clinical_trial_ids: ["NCT04068597", "NCT03568656"],
   },
   {
     name: "SLC-0111",
