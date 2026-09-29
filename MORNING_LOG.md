@@ -1585,3 +1585,17 @@ SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α/2α sta
 - NCT03450018 (Phase 1b/2 SLC-0111 + gemcitabine in CAIX-positive PDAC; TERMINATED).
 
 **PR:** morning/2026-09-25-hif-ca9-slc0111
+
+---
+
+## 2026-09-27
+
+**Direction:** drug-pool / new mechanism
+**Angle:** Aurora A kinase (AURKA) / HIF transcriptional co-activation — alisertib (MLN8237)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 2 — PMID 41634405 (outside 3-month window; Feb 2026 Italian GIUP survey on SDH-/FH-deficient RCC diagnostic awareness; diagnostic only), PMID 34326467 (2021 Oncogene paper; too old for papers.ts; used as mechanistic anchor only)
+**Summary:** 8-query PubMed scan (June–September 2026) across SDH-deficient GIST, PPGL/PCC, RCC, pseudohypoxia/HIF, BRCAness, epigenetics, succinate immune evasion, and neuroendocrine treatment angles returned 0 new qualifying papers. All evaluated PMIDs were either already in tracker.md or outside the 3-month window. PMID 41634405 confirmed as Feb 2026 (outside window, diagnostic survey only); PMID 34326467 confirmed as 2021 (outside window by 5+ years), used only as mechanistic evidence.
+
+For Part B: Added alisertib (MLN8237) targeting the Aurora A kinase / HIF transcriptional co-activation axis — a genuinely new direction not in any prior run. The mechanistic basis: nuclear AURKA binds HIF1β (ARNT — the constitutively expressed, oxygen-insensitive HIF dimerization partner) and recruits CBP/p300 coactivators plus TFIIB/RNA Pol II to HRE-containing promoters, co-activating HIF target gene transcription WITHOUT requiring HIF1α protein stabilization (Whately et al., Oncogene 2021, PMID 34326467). In SDH-deficient tumors, where the canonical pseudohypoxia arm (succinate → PHD inhibition → HIF1α/2α stabilization) is already constitutively active, AURKA overexpression adds a reinforcing second HIF co-activation signal that amplifies the pseudohypoxic transcriptional program from a mechanistically independent node. Second axis: AURKA stabilizes MYCN protein (by phosphorylating Thr58, blocking FBXW7 recognition) — relevant to neural crest-lineage PPGL. Clinical anchor: NCT01799278 (Phase 2, neuroendocrine prostate cancer, n=60, completed with results, Weill Cornell/MSKCC) — nearest neuroendocrine analogue with Phase 2 alisertib data. Evidence_score 26 (theoretical); no direct SDH-specific preclinical data. Files changed: (1) pathways.ts: new pathway `aurora-kinase-hif-feedback` (display_order 33); (2) targets.ts: new target AURKA (UniProt O14965); (3) drugs.ts: new drug alisertib (MLN8237, evidence_score 26, theoretical, NCT01799278); (4) sdh-biology.ts: Mechanism 42 (AURKA/HIF co-activation); (5) src/lib/scoring/constants.ts: pathway color `aurora-kinase-hif-feedback` (bg-violet-200).
+**Branch:** `morning/2026-09-27-aurora-kinase-hif-alisertib`
+**PR:** [Morning] Add alisertib (Aurora A / HIF transcriptional co-activation) — second HIF activation axis in SDH-deficient pseudohypoxic tumors

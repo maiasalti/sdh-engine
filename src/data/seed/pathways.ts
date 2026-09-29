@@ -651,4 +651,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 38,
   },
+||||||| 5b793c3
+  {
+    name: "Aurora A Kinase / HIF Transcriptional Amplification",
+    slug: "aurora-kinase-hif-feedback",
+    description:
+      "Nuclear Aurora A kinase (AURKA) directly binds HIF1β (ARNT — the constitutively expressed HIF dimerization partner) and co-activates transcription of HIF target genes under normoxic conditions, independently of HIF1α protein stabilization. Whately et al. (Oncogene 2021, PMID 34326467) demonstrated that nuclear AURKA recruits CBP/p300 coactivators and TFIIB/RNA Pol II to HRE-containing promoters, driving HIF-dependent gene expression without elevating HIF1α protein. In SDH-deficient tumors, where succinate-mediated PHD inhibition already constitutively stabilizes HIF1α/2α, AURKA overexpression adds a second, independent HIF co-activation signal that amplifies the pseudohypoxic transcriptional program. AURKA also stabilizes MYCN protein in neuroendocrine-lineage tumors by preventing FBXW7-mediated proteasomal degradation — relevant to PPGL. Alisertib (MLN8237) is an oral selective AURKA inhibitor with Phase 2 clinical data in neuroendocrine tumors (NCT01799278).",
+    upstream_event:
+      "SDH loss → constitutive pseudohypoxia (succinate → PHD inhibition → HIF1α/2α stabilization) PLUS AURKA overexpression → nuclear AURKA directly binds HIF1β (ARNT) on HRE-containing promoters → CBP/p300 and TFIIB/RNA Pol II recruitment → amplified HIF target gene transcription independent of HIF1α levels; secondary axis: AURKA phosphorylates MYCN Thr58, blocking FBXW7-mediated proteasomal degradation and stabilizing MYCN in neural crest-lineage PPGL cells",
+    downstream_effects: [
+      "Nuclear AURKA binds HIF1β (ARNT) and co-activates transcription of HIF target genes (VEGFA, survival/invasion genes, stemness factors) without requiring elevated HIF1α protein (Whately et al. Oncogene 2021, PMID 34326467)",
+      "AURKA-HIF1β complex recruits CBP, p300, and TFIIB/RNA Pol II components, forming a transcriptionally active complex on HRE-containing promoters confirmed by mass spectrometry",
+      "In SDH-deficient tumors, both HIF arms are simultaneously active: canonical HIF1α/2α stabilization (succinate-PHD inhibition) AND AURKA-HIF1β co-activation — dual convergent HIF transcription",
+      "AURKA stabilizes MYCN protein by phosphorylating Thr58, preventing FBXW7 ubiquitin ligase recognition and proteasomal degradation — relevant to neural crest chromaffin-lineage PPGL",
+      "Alisertib (MLN8237) is an oral selective AURKA inhibitor (IC50 1.2 nM AURKA vs 396 nM AURKB; >300-fold selectivity); Phase 2 data in neuroendocrine tumors (NCT01799278, n=60, completed with results)",
+    ],
+    druggable: true,
+    display_order: 39,
+  },
 ];

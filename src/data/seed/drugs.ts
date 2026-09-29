@@ -961,6 +961,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: ["NCT00924989", "NCT01560260"],
   },
   {
+    name: "Alisertib",
+    brand_names: ["MLN8237"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Aurora A kinase inhibitor (selective, oral)",
+    mechanism_of_action:
+      "Alisertib (MLN8237; Takeda/Millennium Pharmaceuticals) is a potent, selective, orally bioavailable ATP-competitive inhibitor of Aurora A kinase (AURKA; STK15). IC50 ~1.2 nM for AURKA vs ~396 nM for AURKB — >300-fold selectivity over the B-isoform, distinguishing alisertib from pan-Aurora inhibitors.\n\nThe mechanistic rationale in SDH-deficient tumors rests on a second, non-canonical HIF transcriptional co-activation axis established by Whately et al. (Oncogene 2021, PMID 34326467). SDH-deficient tumors are constitutively pseudohypoxic via succinate accumulation → competitive PHD2/PHD3 inhibition → HIF1α/2α stabilization regardless of oxygen. This creates an absolute cellular dependence on HIF target gene transcription (VEGFA, GLUT1, LDHA, invasion genes). Whately et al. demonstrated a parallel axis: nuclear AURKA directly binds HIF1β (ARNT) — the constitutively expressed, oxygen-insensitive HIF dimerization partner — and recruits CBP/p300 coactivators and TFIIB/RNA Pol II to HRE-containing promoters, driving HIF target gene transcription WITHOUT requiring elevated HIF1α protein. Mass spectrometry confirmed AURKA physically associates with HIF1β, CBP, p300, and TFIIB/RNA Pol II in a nuclear transcriptional complex. This mechanism produces pseudohypoxic gene induction independently of the PHD/VHL/HIF1α oxygen-sensing arm.\n\nIn SDH-deficient tumors, the two HIF activation arms operate simultaneously:\n- **Canonical arm:** SDH loss → succinate → PHD inhibition → HIF1α/2α stabilization → HIF heterodimer formation with HIF1β → HRE transcription\n- **AURKA co-activation arm:** AURKA nuclear translocation → AURKA binds constitutive HIF1β → CBP/p300/TFIIB → HRE transcription independently of HIF1α protein level\n\nAURKA inhibition by alisertib blocks the co-activation arm, reducing HIF target gene transcription in cells already dependent on HIF signaling for survival.\n\nSecond oncogenic axis — AURKA-MYCN stabilization: AURKA phosphorylates MYCN at Thr58, masking the FBXW7 ubiquitin ligase recognition site and preventing MYCN proteasomal degradation. MYCN amplification drives aggressive neuroendocrine transcriptional programs; in neural crest-derived PPGL — which shares chromaffin cell lineage origin with neuroblastoma — AURKA-dependent MYCN stabilization provides a second mechanistic axis for alisertib efficacy beyond HIF co-activation.\n\nClinical evidence: NCT01799278 (Phase 2; Weill Cornell Medical College / MSKCC; n=60; neuroendocrine prostate cancer — the nearest neuroendocrine analogue with completed Phase 2 trial data; dosing 50 mg twice daily × 7 days every 21 days; COMPLETED with results posted). Chromogranin A and NSE were followed as pharmacodynamic biomarkers — both used in PPGL monitoring, validating translational utility of biomarker endpoints. The neuroendocrine prostate cancer trial established tolerability and clinical pharmacology in a neuroendocrine histology with shared neuroendocrine differentiation markers (synaptophysin, chromogranin A) with PPGL.\n\nKey limitations: (1) No published data directly test alisertib in SDH-deficient GIST, PPGL, or RCC cell lines or xenograft models. (2) The AURKA-HIF1β co-activation mechanism (PMID 34326467) was characterized in triple-negative breast cancer; demonstration in SDH-deficient cells specifically is absent. (3) AURKA expression and nuclear localization in SDH-deficient tumor subtypes have not been systematically characterized. (4) Hematological toxicity (neutropenia, thrombocytopenia — principal dose-limiting toxicities in Phase 2 trials) is an on-target Aurora A effect from impaired mitotic kinase activity. Evidence_score 26 (theoretical) reflects the mechanistically rigorous AURKA-HIF1β co-activation rationale (PMID 34326467), Phase 2 clinical data in the nearest neuroendocrine analogue (NCT01799278), and absence of SDH-specific experimental validation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["aurora-kinase-hif-feedback", "hif-pseudohypoxia"],
+    target_gene_symbols: ["AURKA"],
+    evidence_score: 26,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT01799278"],
+  },
+  {
     name: "Ganetespib",
     brand_names: ["STA-9090"],
     chembl_id: "CHEMBL2180717",
