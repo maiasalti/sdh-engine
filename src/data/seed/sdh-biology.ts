@@ -863,7 +863,6 @@ SLC-0111 is an orally bioavailable, selective CA9/CA12 inhibitor with >100-fold 
 |---|---|---|---|---|
 | CA9/CAIX transmembrane carbonic anhydrase | CA9 | SLC-0111 (WBI-5111) | Phase 1 completed (NCT02215850) | None; rationale via HIF→CA9 HRE (PMID 11156414) + CAIX in pseudohypoxic PPGLs (PMID 33826547) |
 
-||||||| 5b793c3
 ## Mechanism 50: Aurora A Kinase (AURKA) / HIF Transcriptional Co-Activation
 
 ### Core concept

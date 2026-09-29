@@ -81,6 +81,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "cdk9-super-enhancer-elongation": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "cbp-p300-hat-coactivator": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "hif-ca9-ph-regulation": "bg-cyan-300 text-cyan-950 dark:bg-cyan-700 dark:text-cyan-50",
-||||||| 5b793c3
   "aurora-kinase-hif-feedback": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
 };

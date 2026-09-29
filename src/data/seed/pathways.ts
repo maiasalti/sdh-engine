@@ -651,7 +651,6 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 38,
   },
-||||||| 5b793c3
   {
     name: "Aurora A Kinase / HIF Transcriptional Amplification",
     slug: "aurora-kinase-hif-feedback",
