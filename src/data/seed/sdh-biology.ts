@@ -863,6 +863,41 @@ SLC-0111 is an orally bioavailable, selective CA9/CA12 inhibitor with >100-fold 
 |---|---|---|---|---|
 | CA9/CAIX transmembrane carbonic anhydrase | CA9 | SLC-0111 (WBI-5111) | Phase 1 completed (NCT02215850) | None; rationale via HIF→CA9 HRE (PMID 11156414) + CAIX in pseudohypoxic PPGLs (PMID 33826547) |
 
+## Mechanism 50: Aurora A Kinase (AURKA) / HIF Transcriptional Co-Activation
+
+### Core concept
+SDH-deficient tumors are constitutively pseudohypoxic via succinate-mediated PHD2/PHD3 inhibition → HIF1α/2α constitutive stabilization (Mechanism 1). A second, mechanistically independent axis of HIF target gene activation is provided by Aurora A kinase (AURKA; STK15). Nuclear AURKA directly binds HIF1β (ARNT — the constitutively expressed, oxygen-insensitive HIF heterodimer partner) and co-activates transcription of HIF target genes under normoxic conditions, without requiring HIF1α stabilization.
+
+The two arms converge on HRE-containing target promoters from different directions:
+- **Canonical pseudohypoxia arm:** SDH loss → succinate → PHD inhibition → HIF1α/2α stabilization → HIF heterodimer formation with HIF1β → HRE transcription
+- **AURKA co-activation arm:** AURKA nuclear translocation → AURKA directly binds HIF1β on HRE-containing promoters → CBP/p300 coactivator and TFIIB/RNA Pol II recruitment → HIF target gene transcription independently of HIF1α levels
+
+In SDH-deficient tumors where the canonical arm is already constitutively activated, AURKA overexpression adds a reinforcing second co-activation signal that amplifies the pseudohypoxic gene expression program from an independent mechanistic node.
+
+### Mechanistic evidence
+Whately et al. (Oncogene 2021, PMID 34326467; DOI 10.1038/s41388-021-01969-1) established the AURKA-HIF1β axis in triple-negative breast cancer:
+- Nuclear AURKA activates transcription of HIF-dependent genes (migration/invasion, survival, stemness) under normoxic conditions WITHOUT increasing HIF1α protein levels
+- Mass spectrometry confirmed AURKA physically associates with HIF1β (ARNT), CBP, p300, and TFIIB/RNA Pol II components in a nuclear transcriptional complex on HRE-containing promoters
+- Nuclear (not cytoplasmic) AURKA localization is required; nuclear AURKA expression correlates with decreased patient survival in clinical tumor specimens
+- HIF-dependent gene induction includes VEGFA, survival/death mediators, and stemness factors — the same HIF target suite constitutively active in SDH-deficient pseudohypoxic tumors
+
+### Second oncogenic axis: AURKA-MYCN stabilization in neural crest-derived PPGL
+AURKA phosphorylates MYCN at Thr58, masking the FBXW7 ubiquitin ligase recognition site and preventing MYCN proteasomal degradation. MYCN amplification drives aggressive neuroendocrine transcriptional programs in neuroblastoma; the same neural crest chromaffin cell lineage of pheochromocytoma/paraganglioma (PPGL) can exhibit MYCN upregulation in aggressive metastatic SDHB-associated tumors. Alisertib-mediated AURKA inhibition removes this MYCN stabilization arm simultaneously with the HIF co-activation arm.
+
+### Drug: Alisertib (MLN8237)
+Alisertib is an oral, potent, selective AURKA inhibitor (IC50 ~1.2 nM AURKA vs ~396 nM AURKB; >300-fold selectivity). Clinical dosing from Phase 2: 50 mg twice daily × 7 days every 21 days. Principal toxicity is hematological (neutropenia, thrombocytopenia) — on-target mitotic Aurora A effect.
+
+**Clinical anchor:** NCT01799278 (Phase 2; Weill Cornell Medical College/MSKCC; n=60; neuroendocrine prostate cancer; COMPLETED with results posted). Neuroendocrine prostate cancer shares neuroendocrine differentiation markers (chromogranin A, NSE, synaptophysin) and neuroendocrine histology with PPGL — the most clinically relevant analogue for alisertib neuroendocrine pharmacology data. Chromogranin A and NSE were used as pharmacodynamic biomarkers in NCT01799278, directly applicable to PPGL monitoring.
+
+### Key limitation
+No published data directly test alisertib in SDH-deficient GIST, PPGL, or RCC cell lines or xenograft models. The AURKA-HIF1β mechanism (PMID 34326467) was characterized in TNBC; its operation in SDH-deficient cells specifically has not been demonstrated. AURKA expression levels and nuclear localization in SDH-deficient tumor subtypes are not systematically reported. Direct in vitro validation — AURKA nuclear localization assessment, HIF target gene (VEGFA, CAIX, GLUT1) expression before/after alisertib in SDH-null vs SDH-intact isogenic lines, rescue by HIF1β knockdown — is the required next experimental step.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Aurora A kinase | AURKA | Alisertib (MLN8237) | Phase 2 in neuroendocrine prostate cancer (NCT01799278; completed) | None; rationale via AURKA-HIF1β pseudohypoxia amplification (PMID 34326467) + AURKA-MYCN stabilization |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

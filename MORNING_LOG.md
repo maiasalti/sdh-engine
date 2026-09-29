@@ -1585,3 +1585,44 @@ SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α/2α sta
 - NCT03450018 (Phase 1b/2 SLC-0111 + gemcitabine in CAIX-positive PDAC; TERMINATED).
 
 **PR:** morning/2026-09-25-hif-ca9-slc0111
+
+---
+
+## 2026-09-27
+
+**Direction:** drug-pool / new mechanism
+**Angle:** Aurora A kinase (AURKA) / HIF transcriptional co-activation — alisertib (MLN8237)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 2 — PMID 41634405 (outside 3-month window; Feb 2026 Italian GIUP survey on SDH-/FH-deficient RCC diagnostic awareness; diagnostic only), PMID 34326467 (2021 Oncogene paper; too old for papers.ts; used as mechanistic anchor only)
+**Summary:** 8-query PubMed scan (June–September 2026) across SDH-deficient GIST, PPGL/PCC, RCC, pseudohypoxia/HIF, BRCAness, epigenetics, succinate immune evasion, and neuroendocrine treatment angles returned 0 new qualifying papers. All evaluated PMIDs were either already in tracker.md or outside the 3-month window. PMID 41634405 confirmed as Feb 2026 (outside window, diagnostic survey only); PMID 34326467 confirmed as 2021 (outside window by 5+ years), used only as mechanistic evidence.
+
+For Part B: Added alisertib (MLN8237) targeting the Aurora A kinase / HIF transcriptional co-activation axis — a genuinely new direction not in any prior run. The mechanistic basis: nuclear AURKA binds HIF1β (ARNT — the constitutively expressed, oxygen-insensitive HIF dimerization partner) and recruits CBP/p300 coactivators plus TFIIB/RNA Pol II to HRE-containing promoters, co-activating HIF target gene transcription WITHOUT requiring HIF1α protein stabilization (Whately et al., Oncogene 2021, PMID 34326467). In SDH-deficient tumors, where the canonical pseudohypoxia arm (succinate → PHD inhibition → HIF1α/2α stabilization) is already constitutively active, AURKA overexpression adds a reinforcing second HIF co-activation signal that amplifies the pseudohypoxic transcriptional program from a mechanistically independent node. Second axis: AURKA stabilizes MYCN protein (by phosphorylating Thr58, blocking FBXW7 recognition) — relevant to neural crest-lineage PPGL. Clinical anchor: NCT01799278 (Phase 2, neuroendocrine prostate cancer, n=60, completed with results, Weill Cornell/MSKCC) — nearest neuroendocrine analogue with Phase 2 alisertib data. Evidence_score 26 (theoretical); no direct SDH-specific preclinical data. Files changed: (1) pathways.ts: new pathway `aurora-kinase-hif-feedback` (display_order 33); (2) targets.ts: new target AURKA (UniProt O14965); (3) drugs.ts: new drug alisertib (MLN8237, evidence_score 26, theoretical, NCT01799278); (4) sdh-biology.ts: Mechanism 42 (AURKA/HIF co-activation); (5) src/lib/scoring/constants.ts: pathway color `aurora-kinase-hif-feedback` (bg-violet-200).
+**Branch:** `morning/2026-09-27-aurora-kinase-hif-alisertib`
+**PR:** [Morning] Add alisertib (Aurora A / HIF transcriptional co-activation) — second HIF activation axis in SDH-deficient pseudohypoxic tumors
+
+## 2026-09-28
+
+### Part A — PubMed Scan
+
+**Search window:** 2026-07-01 to 2026-09-28 (6 queries: SDH-deficient GIST/RCC/PPGL treatment 2026; SDHx pheochromocytoma paraganglioma clinical trial; succinate dehydrogenase cancer epigenetics 2026; SDH-deficient pituitary adenoma; succinate accumulation HIF epigenetic cancer; SDH deficient immunotherapy checkpoint inhibitor)
+
+**Papers added to `src/data/papers.ts`:** 1 (PMID 42758527)
+
+PMID 42758527 (Cole Y et al., Endocr Relat Cancer 2026-09-18, DOI 10.1530/ERC-26-0323): "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model." Prospective Cambridge/NCI/Technion plasma metabolomics study. Plasma succinate correlates with tumour burden across PPGL, GIST, and RCC in SDHx GPV carriers; serial sampling tracks disease trajectory; validated in Sdhb-deficient murine model (elevated adrenal succinate). First prospective clinical evidence for plasma succinate as a surveillance biomarker and pharmacodynamic readout. Added as Diagnosis & Pathology.
+
+**Papers rejected (logged to tracker.md):** 7 (42764100: general young-onset RCC review; 42759926: renal fibrosis SDHB/VDAC1 non-cancer; 42635383: case report vulvar PGL; 41644424: ACD-RCC not SDH-deficient + outside window; 42760995: small PPGL IHC series n=31 no SDH-specific biology; 41963519: metformin in ccRCC outside window + metformin increases SDH activity here)
+
+### Part B — Improvement
+
+**Direction:** drug-pool
+**Angle:** p300/CBP bromodomain inhibition — HIF transcriptional coactivation dependency in constitutively pseudohypoxic SDH-deficient tumours (CCS1477)
+
+SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → permanent HIF-1α/2α stabilisation. HIF-α subunits require p300/CBP (KAT3 family acetyltransferases, EP300/CREBBP) as obligate transcriptional coactivators for target gene activation: the HIF-α C-terminal transactivation domain (C-TAD) recruits p300/CBP via the TAZ1/CH1 domain; p300's bromodomain must then read H3K27ac/H3K18ac at HIF target gene loci for stable chromatin occupancy and full HAT/coactivator assembly. In SDH-deficient tumours this HIF-p300 coactivation is constitutively sustained (vs. transient in normoxic cells), creating a therapeutic window over normal tissues — the same selectivity argument as ganetespib (HSP90 → constitutive HIF-α protein stability dependency). CCS1477 (Carrick Therapeutics, NCT03568656, Phase 1b/2) is the first clinical-stage selective p300/CBP BRD inhibitor. Distinct from: ganetespib (acts upstream at HIF-α protein stability), belzutifan (HIF-2α-ARNT heterodimerisation), birabresib (BET/BRD4 — different protein family, super-enhancer readers not HIF coactivators). Evidence_score 28 (theoretical): mechanistic chain well-supported; Phase 1b/2 clinical data establishing tolerability; no SDH-specific preclinical validation exists.
+
+**Changes made:**
+- `src/data/seed/targets.ts`: added EP300 target entry (pathway: hif-pseudohypoxia, type: downstream)
+- `src/data/seed/drugs.ts`: added CCS1477 (evidence_score 28, theoretical, tumor_type_applicability: all, NCT03568656)
+- `src/data/papers.ts`: added PMID 42758527
+- `tracker.md`: logged all 8 evaluated papers (1 added, 7 rejected)
+
+**No prior log entries cover this direction** — p300/CBP and CCS1477 do not appear in any previous run. Birabresib (BET/BRD4, run 2026-07-14) and tazemetostat (EZH2, run 2026-06-23) cover adjacent epigenetic nodes but not the KAT3-family bromodomain coactivation step.
