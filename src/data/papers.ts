@@ -322,4 +322,43 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42626917",
     date: "2026-08",
   },
+  {
+    title:
+      "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B",
+    authors: "Köhler A, Baumann AA, Lewis N, et al.",
+    journal: "NPJ Precis Oncol",
+    year: 2026,
+    doi: "10.1038/s41698-026-01685-7",
+    topic: "Genetics & Syndromes",
+    description:
+      "Minigene system spanning SDHB exons 2–5 was used to functionally evaluate 48 splice-associated SDHB variants by targeted RNA sequencing in HEK293T cells: 38% received PVS1_Strong (RNA) evidence supporting pathogenicity, while 12 variants were reclassified from VUS to likely benign (downgrade). Overall, 50% of 26 classified variants were reclassified — demonstrating a scalable RNA-based approach that substantially improves clinical interpretation of SDHB splice-site variants for hereditary paraganglioma/pheochromocytoma risk assessment.",
+    pmid: "42711465",
+    date: "2026-09",
+  },
+  {
+    title:
+      "Somatic-only SDHD variant with tumor-specific loss of heterozygosity in metastatic carotid body tumor: a case report with review of literature",
+    authors: "Kasahara K, Minagawa A, Sato Y, et al.",
+    journal: "Endocr J",
+    year: 2026,
+    doi: "10.1507/endocrj.EJ26-0224",
+    topic: "Case Reports",
+    description:
+      "First documented case of a metastatic carotid body tumor driven by a somatic-only (non-germline) SDHD pathogenic variant with tumor-specific loss of heterozygosity (LOH), confirmed negative on conventional germline testing. Demonstrates that SDH-deficient paraganglioma can arise through somatic mosaicism or tumor-restricted two-hit inactivation without an inherited predisposition — with direct clinical implication that germline-negative patients still require tumor-level SDH genomic profiling to identify actionable SDH deficiency.",
+    pmid: "42732958",
+    date: "2026-09",
+  },
+  {
+    title:
+      "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model",
+    authors: "Cole Y, Abramovich I, Fernandez-Garcia J, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0323",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Prospective plasma metabolomics study in SDHx germline carriers establishing plasma succinate as a biomarker for SDH-deficient tumour diagnosis and surveillance. Plasma succinate levels correlated with tumour burden and distinguished carriers with active disease from unaffected carriers and healthy controls. Validated mechanistically in a Sdhb-deficient murine model showing elevated adrenal succinate. Supports longitudinal succinate measurement as a non-invasive biomarker for early detection and treatment response monitoring in SDH-deficient tumours.",
+    pmid: "42758527",
+    date: "2026-09",
+  },
 ];

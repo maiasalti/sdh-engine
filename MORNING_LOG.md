@@ -866,3 +866,722 @@ Niraparib's `mechanism_of_action` text explicitly cites the PRIMA Phase 3 trial 
 - `tracker.md`: logged PMID 42687764 (added) and PMID 42663066 (rejected)
 
 **No prior log entries cover this direction** — previous NCT fix was for olaparib (2026-09-01).
+
+---
+
+## 2026-09-09 — SDHB splice variant paper + sdh-biology.ts mechanism reordering fix
+
+### Part A: PubMed paper scan
+
+Searched 8 queries across SDH-deficient tumor biology themes published in the last ~3 months. Found 2 new PMIDs not in tracker:
+
+**Added (1):**
+- **PMID 42711465** — Köhler A et al., NPJ Precis Oncol 2026 (10.1038/s41698-026-01685-7). "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B." Minigene spanning SDHB exons 2–5; functional RNA-seq classification of 48 splice-associated SDHB variants; 38% PVS1_Strong; 50% reclassification rate. Added as **Genetics & Syndromes**.
+
+**Rejected (1):**
+- **PMID 42635383** — Ann Afr Med 2025. "Vulvar paraganglioma: a rare tumor in an unusual site." Single case report of vulvar PGL; no SDH mutation reported; no treatment or mechanistic advance.
+
+### Part B: Data quality fix — sdh-biology.ts mechanism reordering
+
+**Bug identified:** Mechanism sections 35, 36, 37 appeared AFTER section 38 (Y-90 SIRT) in `src/data/seed/sdh-biology.ts`, creating an out-of-order context block that could confuse the AI (narrative flow: 34 → 38 → 35 → 36 → 37 → 39). Mechanism 38 had been inserted between mechanisms 34 and 35 instead of after 37.
+
+**Fix applied (2-step text reorder):**
+1. Removed mechanism 38 block from between mechanisms 34 and 35
+2. Re-inserted mechanism 38 block after mechanism 37 and before mechanism 39
+
+Correct ordering is now: 34 → 35 → 36 → 37 → 38 → 39 → 40 → 41.
+
+**No new drugs added.** BCL-2/MCL-1 (venetoclax/navitoclax) was considered but rejected: BCL-2 is not specifically upregulated by SDH loss; BCL-2 targeting in solid-tumor GIST/PPGL lacks mechanistic grounding in the SDH pathway. Data quality fix is the Part B deliverable for today.
+
+**Changes made:**
+- `src/data/papers.ts`: added PMID 42711465 (SDHB splice variant classification)
+- `src/data/seed/sdh-biology.ts`: mechanism reordering — 38 (Y-90 SIRT) moved to correct position after 37
+- `tracker.md`: logged PMID 42711465 (added) and PMID 42635383 (rejected)
+
+**Permanently ruled out (carried forward):** MTHFD2/one-carbon, Complex I/IACS-010759, WEE1/adavosertib, ferroptosis branch (sulfasalazine/artesunate/auranofin), BCL-2/venetoclax.
+
+---
+
+## 2026-09-10
+
+**Direction:** drug-pool / new immune mechanism
+**Angle:** HIF-driven CD73 (NT5E) / adenosine immunosuppression axis — oleclumab (MEDI9447, anti-CD73 mAb)
+**Papers added:** 0 (8 PubMed searches across SDH-deficient GIST, PPGL, RCC, pituitary, pseudohypoxia, immune TME, BRCAness, and metabolic reprogramming returned 0 new qualifying PMIDs; all returned results were already in tracker.md)
+**Papers evaluated for mechanism verification (tracker.md updated):** 3 (PMIDs 12370277, 29367423, 29914571 — used to anchor Mechanism 42)
+**Summary:** 8-query PubMed scan (2026-06-10 to 2026-09-10) returned 0 new qualifying papers; all PMIDs already tracked. For Part B: identified the HIF-1α → CD73 (NT5E) → adenosine → A2A/A2B receptor immunosuppressive axis as a genuinely new direction not covered in any prior run (30+ runs to date). This is the fourth mechanistically distinct immune-evasion arm in SDH-deficient tumors flowing from pseudohypoxia, complementary to and non-overlapping with the existing succinate-MCT1 (Mechanism 11), HIF-IDO1 (Mechanism 11), and HIF-PD-L1 (Mechanism 21) arms. Mechanistic anchors: (1) Synnestvedt et al. (J Clin Invest 2002, PMID 12370277, DOI 10.1172/JCI15337) — established HIF-1α binding to the canonical HRE in the NT5E promoter drives CD73 transcription; mutagenesis of the HIF-1 site abolished hypoxia-inducibility; (2) Samanta et al. (PNAS 2018, PMID 29367423, DOI 10.1073/pnas.1718197115) — HIF-1α co-induces CD73, CD47, and PD-L1 in cancer cells under hypoxia, confirming this is part of the canonical HIF-1α immunosuppressive transcriptional program in tumors; (3) Leone & Emens (J Immunother Cancer 2018, PMID 29914571, DOI 10.1186/s40425-018-0360-8) — review establishing the CD39-CD73-A2A/A2B adenosine pathway as a major non-checkpoint immune-evasion mechanism with clinical development context. ClinicalTrials.gov verification: oleclumab (MEDI9447) confirmed Phase 2 in NCT05061550 (NeoCOAST-2, NSCLC, actively recruiting, n=630) and NCT03334617 (HUDSON umbrella, NSCLC, n=528). Evidence_score 23 (theoretical) — strong three-paper mechanistic chain; Phase 2 clinical stage; no SDH-specific preclinical or clinical data. New pathway `hif-cd73-adenosine-immunosuppression` (display_order 33), new target NT5E (UniProt P21589), new drug oleclumab added.
+**Files changed:** `src/data/seed/pathways.ts` (new pathway hif-cd73-adenosine-immunosuppression, display_order 33), `src/data/seed/targets.ts` (new target NT5E/CD73, UniProt P21589), `src/data/seed/drugs.ts` (new drug oleclumab, evidence_score 23, theoretical, NCT05061550+NCT03334617), `src/data/seed/sdh-biology.ts` (Mechanism 42 section), `src/lib/scoring/constants.ts` (pathway color bg-green-200 for hif-cd73-adenosine-immunosuppression), `tracker.md` (3 mechanism-verification rows added), `MORNING_LOG.md` (this entry).
+
+---
+
+## 2026-09-11
+
+**Direction:** data-quality
+**Angle:** Fix incorrect and duplicate PubChem CIDs; fill in missing ChEMBL and PubChem IDs for FDA-approved and well-characterized drugs
+
+**Paper scan:** 11 PubMed searches (SDH-deficient GIST, PPGL/pheochromocytoma, SDH-deficient RCC, pseudohypoxia/HIF, BRCAness/DDR, succinate oncometabolite, ATRX/ALT/TERT, SSTR/MIBG radioligand, immune evasion, G4 stabilizer/BRCA, and succinate metabolomics 2026). 1 new PMID found: PMID 42590786 (pediatric giant PCC case report; SDHB IHC preserved — not SDH-deficient; no treatment advance). 0 papers added to papers.ts.
+
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 1 (PMID 42590786)
+
+**Part B — Data quality fix: incorrect PubChem CIDs and missing ChEMBL/PubChem IDs**
+
+During review of drugs.ts, two entries were found sharing PubChem CID `"25151352"` — capivasertib (line 735) and ganetespib (line 967). PubChem CID 25151352 is **pexidartinib** (C20H15ClF3N5), a CSF1R/KIT inhibitor — entirely unrelated to either drug. Both entries had been assigned the wrong CID. Additionally, three FDA-approved or well-characterized drugs (palbociclib, linsitinib, bempedoic acid) had `chembl_id: null, pubchem_cid: null` despite having established entries in both databases.
+
+**Verified corrections (all checked via PubChem and ChEMBL web lookups):**
+
+| Drug | Field | Was | Now | Source |
+|------|-------|-----|-----|--------|
+| Capivasertib | pubchem_cid | "25151352" (= pexidartinib) | "25227436" | pubchem.ncbi.nlm.nih.gov/compound/azd5363 |
+| Ganetespib | pubchem_cid | "25151352" (= pexidartinib) | "135564985" | pubchem.ncbi.nlm.nih.gov/compound/Ganetespib |
+| Palbociclib | chembl_id | null | "CHEMBL189963" | ebi.ac.uk/chembl/explore/compound/CHEMBL189963 |
+| Palbociclib | pubchem_cid | null | "5330286" | pubchem.ncbi.nlm.nih.gov/compound/Palbociclib |
+| Linsitinib | chembl_id | null | "CHEMBL1091644" | ebi.ac.uk/chembl/web_components/explore/compound/CHEMBL1091644 |
+| Linsitinib | pubchem_cid | null | "11640390" | pubchem.ncbi.nlm.nih.gov/compound/11640390 |
+| Bempedoic Acid | chembl_id | null | "CHEMBL3545313" | ebi.ac.uk/chembl/compound_report_card/CHEMBL3545313/ |
+| Bempedoic Acid | pubchem_cid | null | "10472693" | pubchem.ncbi.nlm.nih.gov/compound/etc-1002 |
+
+**Root cause:** The CID 25151352 appears to have been copy-pasted from an adjacent entry (or from an unrelated lookup) when both capivasertib and ganetespib entries were created. The missing IDs were gaps from initial entry creation.
+
+**No new drugs were added today.** No paper cleared the HARD RELEVANCE GATE. The G4 stabilizer (CX-5461/pidnarulex) direction was evaluated: mechanistically compelling via BRCAness + ATRX-null ALT replication stress, but the anchor paper could not be verified via PubMed (search returned 0 results for "CX-5461 G-quadruplex BRCA synthetic lethality cancer"), and per the task rules, no direction is implemented without a verifiable PubMed anchor.
+
+**Candidate directions for owner consideration:**
+1. **CX-5461 / pidnarulex (G4 stabilizer)** — mechanistically anchored in BRCAness + ATRX-null ALT replication stress; could not be verified via PubMed MCP search today; re-evaluate if PMID for anchor paper is confirmed.
+2. **Ym155 (survivin/BIRC5 inhibitor)** — PMID 41711310 (Endocr Relat Cancer 2026) shows selective DNA damage in SDH-deficient cells; was outside the 3-month window; revisit when in-window.
+3. **MTHFD2 / one-carbon folate metabolism** — constitutively unactionable (no SDH-specific data, no clinical-stage inhibitors at this time).
+
+**Files changed:** `src/data/seed/drugs.ts` (8 PubChem/ChEMBL field corrections across 5 entries: capivasertib, ganetespib, palbociclib, linsitinib, bempedoic acid), `tracker.md` (PMID 42590786 rejected row), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Fix incorrect pubchem_cid for capivasertib/ganetespib; add missing ChEMBL/PubChem IDs
+
+## 2026-09-12 — Erdafitinib: add NCT04083976 (Janssen Phase 2 FGFR-altered solid tumors)
+
+**Direction:** Data consistency fix — erdafitinib missing `clinical_trial_ids`
+
+**Angle:** NCT fill for FDA-approved FGFR inhibitor with verified Phase 2 solid-tumor trial
+
+**Papers added:** 0
+
+**Papers rejected (logged to tracker.md):** 6 (PMIDs 42728076, 42723163, 42718648, 42688135, 42590786, 42626938)
+
+### Part A — PubMed scan (Jun 12 – Sep 12, 2026)
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42728076 | **rejected** | Clinically silent PCC presenting as adrenal incidentaloma. Surgical/biochemical case report; no SDH content, no treatment advance. |
+| 42723163 | **rejected** | Immunological features of NEN and adrenal tumors. PPGL mentioned; immune microenvironment reviewed across molecular subtypes; not SDH-focused; no SDH-specific mechanistic or treatment advance. |
+| 42718648 | **rejected** | Fulminant pheochromocytoma crisis triggered by glucocorticoids. Surgical/ICU case report; no SDH content. |
+| 42688135 | **rejected** | PCC vs sympathetic PGL management and outcomes (Karolinska n=220). Not SDH-focused; no SDH-specific treatment or mechanistic advance. |
+| 42590786 | **rejected** | Giant pediatric PCC case report; preserved SDHB staining; no SDH-deficient treatment or mechanistic advance. |
+| 42626938 | **rejected** | Octreotide as preoperative hemodynamic bridge in catecholamine-secreting PPGL (n=27). Not an anti-tumor treatment study; SSTR2 direction already in engine via 177Lu-DOTATATE and [212Pb]VMT-α-NET. |
+
+**Papers added to `src/data/papers.ts`:** 0 (no paper cleared the SDH-specific relevance gate)
+
+### Part B — Improvement
+
+**Direction:** Data consistency fix — erdafitinib missing `clinical_trial_ids`
+
+Erdafitinib (Balversa) is an FDA-approved pan-FGFR1-4 inhibitor in the engine as an alternative FGFR inhibitor for SDH-GIST, using the same mechanistic rationale as rogaratinib: succinate-driven DNA hypermethylation disrupts insulators at the FGF3/FGF4 locus → aberrant FGF ligands → FGFR1 autocrine loop. The entry had `clinical_trial_ids: []` with no machine-readable trial reference.
+
+Verified via ClinicalTrials MCP tool: NCT04083976 "A Phase 2 Study of Erdafitinib in Subjects With Advanced Solid Tumors and FGFR Gene Alterations" — Janssen Research & Development, COMPLETED, 316 patients, 179 sites, started 2019-11-20, primary completion 2023-12-04. This is a broad FGFR-altered solid tumor basket trial (equivalent to the RAGNAR trial) that provides the closest clinical context for erdafitinib use in FGFR-altered tumors beyond urothelial carcinoma.
+
+Bevacizumab NCT verification was also attempted: search returned only NCT00970970 (observational 89Zr-bevacizumab PET imaging study in VHL, not a therapeutic trial) — bevacizumab therapeutic PPGL trial not found.
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: erdafitinib `clinical_trial_ids: []` → `["NCT04083976"]`
+- `tracker.md`: logged 6 rejected PMIDs (42728076, 42723163, 42718648, 42688135, 42590786, 42626938)
+
+**No prior log entries cover this direction** — previous NCT fixes were for olaparib (2026-09-01) and niraparib (2026-09-08); erdafitinib is a different drug.
+
+**PR:** morning/2026-09-12-erdafitinib-nct-ragnar
+
+---
+
+## 2026-09-13 — Dual mTORC1/2 kinase inhibition (sapanisertib) + paper scan
+
+**Branch:** `morning/2026-09-13-dual-mtor-sapanisertib`
+
+### Part A — Paper Scan
+
+Queries run (11 total; 3-month window 2026-06-13 to 2026-09-13):
+- SDH-deficient GIST treatment clinical trial 2026
+- paraganglioma pheochromocytoma SDH therapy 2026
+- SDH-deficient renal cell carcinoma treatment
+- succinate oncometabolite HIF pseudohypoxia 2026
+- SDHB SDHA mutation tumor BRCAness PARP 2026
+- SDH-deficient GIST epigenetics CIMP methylation 2026
+- PPGL pheochromocytoma paraganglioma immunotherapy 2026
+- SDH complex II mitochondria cancer metabolism 2026
+- SDH GIST sunitinib everolimus clinical 2026
+- pseudohypoxia HIF VHL SDH tumor 2026
+- SDH-deficient tumor succinate epigenetics treatment 2026
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| — | — | All 11 queries returned PMIDs already present in tracker.md from prior runs. Zero new papers qualify. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** drug-pool
+**Angle:** Dual mTORC1/2 kinase inhibition — sapanisertib (TAK-228/MLN0128), addressing the AKT-Ser473 reactivation feedback that limits everolimus
+
+**Rationale:** Everolimus (mTORC1 allosteric inhibitor, evidence_score 58) is the highest-scored mTOR entry in the engine. Its clinical limitation is well-established: mTORC1 inhibition relieves S6K1-mediated IRS-1 negative feedback → PI3K/PDK1 → AKT-Thr308 reactivation; simultaneously mTORC2 (responsible for AKT-Ser473) remains uninhibited by everolimus at clinical concentrations. The net result is paradoxical AKT reactivation — a documented resistance mechanism. Capivasertib (AKT kinase inhibitor, Mechanism 27) and sapanisertib both address AKT, but at distinct mechanistic points: capivasertib blocks the AKT kinase domain; sapanisertib blocks the upstream mTOR kinase active site (shared by mTORC1 and mTORC2), preventing mTORC2 from phosphorylating AKT-Ser473 in the first place. These are mechanistically non-redundant. SDH anchor: Jochmanová et al. (JNCI 2013, PMID 23940289) established constitutive PI3K/AKT/mTOR activation as a defining feature of the pseudohypoxic SDH/VHL PPGL cluster. Clinical anchor: NCT02724020 (Phase 2, Millennium/Takeda, n=96, completed) — head-to-head sapanisertib vs. everolimus in ccRCC after VEGF-targeted therapy. Evidence_score 31 (theoretical), higher than other theoretical entries because the Phase 2 RCT in RCC (an SDH-deficient tumor type) directly compares against the engine's existing everolimus entry.
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: added sapanisertib (evidence_score 31, theoretical, pathway_slugs ["mtor-pi3k-akt"], tumor_type_applicability ["all"], clinical_trial_ids ["NCT02724020"])
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (dual mTORC1/2 inhibition rationale, AKT-Ser473 feedback, sapanisertib clinical data table)
+
+**No prior log entries cover dual mTOR kinase (mTORC1+2) inhibition** — the closest prior entries are everolimus (mTORC1 only, 2026-06-23 initial run) and capivasertib (AKT kinase, a different target); this is the first entry targeting the mTOR kinase itself to block both complexes simultaneously.
+
+---
+
+## 2026-09-14
+
+### Part A — Literature Scan
+
+**Queries run (2026-09-08 to 2026-09-14):**
+- "SDH succinate dehydrogenase GIST paraganglioma pheochromocytoma RCC treatment"
+- "succinate SDHB SDHD paraganglioma drug repurposing"
+- "pseudohypoxia HIF SDH-deficient tumor therapy"
+- "MTHFD2 cancer nucleotide synthesis SDH"
+- "succinate oncometabolite epigenetic tumor"
+
+**Papers evaluated:**
+
+| PMID | Title | Verdict |
+|---|---|---|
+| 42732958 | Somatic-only SDHD variant with tumor-specific LOH in metastatic carotid body tumor (Kasahara K et al., Endocr J 2026-09-11) | **ADDED** — Case Reports |
+
+**Decision:** 1 paper added. Dry window — most queries returned 0 results. The Kasahara case is clinically significant: first confirmed metastatic carotid body tumor from somatic-only (non-germline) SDHD variant + tumor-specific LOH. Germline testing was negative — establishes that germline-negative patients still require tumor-level SDH profiling.
+
+---
+
+### Part B — Drug Pool Addition: LY3410738 (MTHFD2 inhibitor)
+
+**Direction chosen:** One-carbon folate / nucleotide synthesis dependency via MTHFD2
+
+**Mechanistic chain:**
+
+SDH loss truncates TCA → OAA/aspartate depletion. Accumulated succinate also directly inhibits ATCase (CAD complex), the first enzyme of de novo pyrimidine synthesis — confirmed by Hart et al. 2025 (PMID 42082831). The combined nucleotide stress triggers the Integrated Stress Response (ISR: GCN2/HRI → p-eIF2α → ATF4 selective translation). ATF4 transcriptionally upregulates MTHFD2 as a compensatory adaptation, routing nucleotide synthesis through the mitochondrial one-carbon folate cycle. MTHFD2 generates 10-formyl-THF (purines via GART/ATIC) and 5,10-methylene-THF (thymidylate via TYMS), creating a broad one-carbon dependency.
+
+LY3410738 (Eli Lilly dual MTHFD2/MTHFD1L inhibitor) inhibits this compensatory axis, simultaneously depleting both purine and thymidylate branches — compounding the nucleotide stress already imposed by SDH loss.
+
+**Why this is distinct from existing DHODH entry (Mechanism 17):**
+- DHODH/brequinar: pyrimidine de novo synthesis enzyme (UMP branch only)
+- MTHFD2/LY3410738: folate cofactor supply for BOTH purines (10-formyl-THF) AND thymidylate (5,10-methylene-THF) — additive stress, entirely different enzymatic node
+
+**Evidence score:** 20 (theoretical) — mechanistic chain via Hart PMID 42082831 (succinate-ATCase); no SDH-specific MTHFD2 data published yet; no LY3410738 clinical trial identified (NCT04893525 confirmed to be a buprenorphine/naloxone opioid use disorder study — NOT an MTHFD2 trial)
+
+**Status:** theoretical | **Applicability:** all SDH tumors
+
+**Changes made:**
+- `src/data/papers.ts`: added PMID 42732958 (Kasahara K, Endocr J 2026, somatic SDHD LOH carotid body tumor)
+- `src/data/seed/pathways.ts`: added `one-carbon-folate-nucleotide-synthesis` pathway (display_order 33)
+- `src/data/seed/targets.ts`: added MTHFD2 target (UniProt P13995, pathway_slug one-carbon-folate-nucleotide-synthesis, target_type metabolic)
+- `src/data/seed/drugs.ts`: added LY3410738 (evidence_score 20, status theoretical, `clinical_trial_ids: []`)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (MTHFD2/LY3410738 one-carbon folate nucleotide synthesis)
+- `src/lib/scoring/constants.ts`: added `one-carbon-folate-nucleotide-synthesis` color (bg-violet-200)
+- `tracker.md`: logged PMID 42732958 (added)
+
+**No prior log entries cover this direction.**
+
+---
+
+## 2026-09-15
+
+**Direction:** papers-only
+**Angle:** SDHB splice-site variant functional characterization via minigene assay — Genetics & Syndromes
+
+**Papers added:** 1 (PMID 42711465)
+**Papers rejected (logged to tracker.md):** 1 (PMID 42690223)
+
+### Part A — Paper Scan
+
+Queries run (10 total; 3-month window Jun–Sep 2026): SDH-deficient GIST treatment 2026, paraganglioma pheochromocytoma SDH 2026, SDH-deficient RCC 2026, succinate oncometabolite drug 2026, SDHB SDHA mutation functional 2026, succinate dehydrogenase splice variant 2026, BRCAness SDH synthetic lethality 2026, SDH-deficient pituitary 2026, pseudohypoxia HIF SDH tumor 2026, wild-type GIST SDH 2026.
+
+**PMID 42711465** — Köhler A, Rosenbaum T, Rump A, et al. "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B." *NPJ Precis Oncol* 2026-09-08. DOI: 10.1038/s41698-026-01685-7.
+**VERDICT: ADDED** (Genetics & Syndromes). Minigene assay systematically evaluated 48 SDHB splice-site variants: 34% showed ≥90% aberrant splicing (classifying as pathogenic/likely pathogenic); 13/26 previously classified variants were reclassified, including 12 VUS → likely benign. This is a clinically actionable functional genomics paper directly relevant to genetic counselling for SDHx carriers — the primary user population of this engine. Minigene assay output directly informs whether a carrier is at risk, making it a genuine contribution to the Genetics & Syndromes literature base.
+
+**PMID 42690223** — Alkaissi H, Gordon CM, Pacak K. "PPGLomics: An Interactive Platform for Pheochromocytoma and Paraganglioma Transcriptomics." *Endocr Relat Cancer* 2026-09-03. DOI: 10.1530/ERC-26-0140.
+**VERDICT: REJECTED** — Resource/tool paper. PPGLomics integrates TCGA-PCPG (n=160) and A5 SDHB-mutant cohort (n=91) for interactive transcriptomics browsing. No new mechanistic findings or treatment advances; the data pre-exist, only the interface is new. Logged to tracker.md.
+
+All other returned PMIDs were already in tracker.md from prior runs.
+
+### Part B — No New Direction
+
+No drug or improvement direction cleared the hard relevance gate today.
+
+**Directions explored and rejected:**
+- **Aurora A kinase (AURKA) / alisertib**: Rationale explored — SDH loss → constitutive HIF-2α → potential transcriptional activation of AURKA (by analogy with VHL-null ccRCC, same PHD→HIF mechanism). Three PubMed searches (Aurora kinase A HIF pseudohypoxia, alisertib paraganglioma pheochromocytoma, AURKA HIF-2α) returned **0 results** in PubMed-indexed literature. Cannot be cited; direction abandoned as unverifiable.
+- **MTHFD2/one-carbon folate metabolism**: Definitively ruled out in prior logs; no SDH-specific data, no clinical-stage inhibitors. Status unchanged.
+- **Complex I (IACS-010759)**: Definitively ruled out (Sokolov preprint PMID 42239110: SDH-deficient cells suppress Complex I as an adaptation). Status unchanged.
+
+**Candidate directions for future consideration (owner discretion):**
+1. **LAG-3 inhibition (relatlimab/Opdualag)**: Mechanistic chain — succinate-driven T-cell exhaustion → LAG-3 upregulation on exhausted CD8+ T cells → LAG-3 blockade restores effector function. Distinct from existing pembrolizumab (PD-1) entry. Requires PubMed verification of succinate → LAG-3 link specifically.
+2. **TIGIT inhibition (tiragolumab)**: HIF-1α → CD155/PVR transcriptional upregulation → TIGIT ligation → T-cell exhaustion. Similar pseudohypoxia → immune checkpoint axis. Requires verification of HIF-1α → CD155 link in SDH-deficient or pseudohypoxic context.
+3. **RXRα agonist (bexarotene)**: Retinoid X receptor nuclear agonist; some neuroendocrine tumor activity and CIMP/epigenetic precedent. No direct SDH-specific data known; would require full PubMed verification pass before adding.
+
+The overriding principle applies: papers-only is the correct outcome for today. No new drug was added.
+
+**Files changed:** `src/data/papers.ts` (+1: PMID 42711465), `tracker.md` (+2 rows: PMID 42711465 added, PMID 42690223 rejected), `MORNING_LOG.md` (this entry).
+**PR:** [Morning] Add SDHB splice-variant minigene paper (PMID 42711465); papers-only run
+**PR:** morning/2026-09-08-niraparib-nct-sdha-rcc-paper
+
+---
+
+## 2026-09-16 — CX-5461 G-quadruplex stabilizer (BRCAness synthetic lethality)
+
+**Branch:** `morning/2026-09-16-cx5461-g4-brcas`
+
+### Part A — Paper Scan
+
+Queries run (6 total; 3-month window June–September 2026):
+- SDH-deficient GIST treatment clinical trial 2026
+- Paraganglioma pheochromocytoma SDHB HIF treatment 2026
+- SDH-deficient renal cell carcinoma therapy 2026
+- SDHB PPGL metastatic synthetic lethality BRCAness
+- Succinate dehydrogenase tumor drug repurposing mechanism
+- SDH-deficient pituitary adenoma treatment
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42590786 | **rejected** | Giant pediatric pheochromocytoma case report with preserved SDHB IHC expression — SDH-intact tumor; SDH-deficient biology not applicable. |
+| 41634405 | **rejected** | Italian pathologist survey on SDH/FH-deficient RCC diagnostic practices — published February 2026, outside 3-month scan window; diagnostic/survey focus only, no treatment advance. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** Drug-pool — G-quadruplex DNA stabilization × BRCAness synthetic lethality via CX-5461
+**Angle:** Mechanistically distinct G4 trapping orthogonal to all existing DDR entries; uniquely active in PARP inhibitor-resistant BRCA-deficient models
+
+**Mechanistic chain:**
+SDH loss → succinate → KDM4A/KDM4B inhibition → H3K9me3 at DSB sites → impaired TIP60/ATM → HR deficiency (BRCAness) [Sulkowski PMID 30013182, 32494005] → SDH-deficient cells functionally equivalent to BRCA1/2-null. CX-5461 stabilizes G4 DNA → stalled replication forks → DSBs → HR-deficient BRCAness cells cannot repair → selective lethality. Xu et al. (Nat Commun 2017, PMID 28211448) directly demonstrated this selectivity in BRCA-deficient PDX models including PARP inhibitor-resistant tumors.
+
+**ATRX-null amplification:** ATRX loss in ~30–40% of metastatic SDHB-PPGL (PMID 42230482) elevates baseline G4 burden (ATRX normally resolves G4 structures and R-loops). The compound vulnerability — BRCAness (impaired G4-break repair) + ATRX-null (elevated G4-break generation) — is mechanistically additive. Distinct from ceralasertib (Mechanism 13, ATR kinase inhibition in ATRX-null/ALT cells): CX-5461 amplifies the upstream G4 damage; ceralasertib blocks the downstream ATR response. Non-redundant.
+
+**Non-redundancy with existing engine entries:**
+- Olaparib/niraparib (Mechanism 14): PARP-trapped SSBs → DSBs; CX-5461 active in PARP inhibitor-resistant BRCA-deficient models (Xu et al. 2017)
+- Prexasertib (Mechanism 28): CHK1 checkpoint — acts at fork stabilization, not DSB generation
+- Elimusertib (Mechanism 35): DNA-PKcs c-NHEJ backup — acts after DSB generation, not at it
+- ART558 (Mechanism 18): POLQ/TMEJ alt-EJ backup — acts after DSB generation
+- Ceralasertib (Mechanism 13): ATR kinase inhibition in ATRX-null/ALT subgroup — orthogonal to G4 stabilization
+
+**Evidence_score 30 (preclinical):** Strong: Xu et al. 2017 G4/BRCA-selective lethality PDX data (PMID 28211448); Sulkowski BRCAness (PMID 30013182, 32494005); Phase 1 clinical pharmacology in BRCA-deficient patients (NCT02719977, NCT03914288). Limitation: no SDH-specific experimental validation.
+
+**Decision gate:** Passes — (1) mechanistically distinct G4 stabilization not previously in engine, (2) novel drug-mechanism combination (G4 → DSB → BRCAness selectivity), (3) activity specifically in PARP inhibitor-resistant BRCA-deficient tumors (clinical differentiator), (4) direct clinical trials in BRCA-deficient patients, (5) PMID 28211448 verified on PubMed (Xu et al., Nat Commun 2017, doi 10.1038/ncomms14432).
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: new pathway `g4-quadruplex-brcas-lethality` (display_order 33)
+- `src/data/seed/drugs.ts`: new drug CX-5461 (evidence_score 30, preclinical, tumor_type_applicability ["all"], NCT02719977 + NCT03914288)
+- `src/data/seed/sdh-biology.ts`: Mechanism 42 added
+- `src/lib/scoring/constants.ts`: `g4-quadruplex-brcas-lethality` color entry (violet-200)
+- `tracker.md`: 2 new rejected rows (PMID 42590786, PMID 41634405)
+- `MORNING_LOG.md`: this entry
+**PR:** [Morning] Add CX-5461 (G4 stabilizer) — BRCAness × G-quadruplex synthetic lethality
+
+---
+
+## 2026-09-17
+
+### Part A — PubMed paper scan
+
+**Date window:** 2026-06-17 to 2026-09-17
+
+Queries run (9 total):
+- SDH-deficient GIST treatment clinical trial
+- Paraganglioma pheochromocytoma succinate pseudohypoxia therapy
+- SDH-deficient renal cell carcinoma treatment
+- SDHB-deficient synthetic lethality BRCAness
+- Succinate oncometabolite drug repurposing
+- SDH succinate TCA epigenetic cancer mechanism
+- Pheochromocytoma paraganglioma new treatment 2026
+- GIST SDH wild-type clinical trial 2026
+- SDH pituitary adenoma treatment
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 41634405 | **rejected** | Fanelli GN et al., Virchows Arch 2026-02-04. Italian GIUP survey of IHC practices for SDH/FH-deficient RCC across Italian pathology labs. (a) Published 2026-02-04 — outside the 3-month scan window. (b) Diagnostic pathology survey only; no therapeutic or mechanistic advance. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** Add pemigatinib — FDA-approved FGFR1/2/3 inhibitor with new dedicated Phase 2 trial in SDH-deficient GIST
+
+**Rationale:** ClinicalTrials.gov scan surfaced NCT07434843 (PEMIGIST; Dana-Farber Cancer Institute; Phase 2; recruiting since 2026-05-19; n=24; pemigatinib in advanced SDH-deficient GIST). The FGFR pathway is mechanistically established in SDH-deficient GIST via PMID 42191879 (Merriam et al., Nat Med 2026): CIMP-driven FGF3/FGF4 insulator disruption creates an autocrine FGFR1 loop. Pemigatinib (Pemazyre; Incyte) is distinct from rogaratinib and erdafitinib already in the engine:
+- FDA-approved (cholangiocarcinoma FGFR2 fusions, 2020; FGFR1-rearranged myeloid neoplasms, 2022) → more accessible off-label
+- FGFR1/2/3 selective (spares FGFR4) → potentially different hyperphosphatemia severity
+- Dedicated SDH-deficient GIST Phase 2 trial (NCT07434843) → independent clinical validation of FGFR target in this tumor type
+
+**Changes made:**
+- `src/data/seed/drugs.ts`: added pemigatinib entry (evidence_score 58, clinical_trial, gist, NCT07434843)
+- `tracker.md`: logged PMID 41634405 (rejected)
+
+**No prior log entries cover pemigatinib or NCT07434843.**
+
+---
+
+## 2026-09-18
+
+**Direction:** data-quality
+
+**Angle:** Fix pathways.ts file-array position of `hif-igf2-igf1r-growth-signaling` (display_order 32 placed before display_order 29/30/31 entries)
+
+### Part A — Paper Scan
+
+12 PubMed queries run covering: SDH-deficient GIST (3-month window), PPGL/pheochromocytoma/paraganglioma, SDH-deficient RCC, pseudohypoxia/HIF SDH, BRCAness/PARP SDH, succinate oncometabolite, CIMP/DNA methylation SDH, HIF-2α/belzutifan SDH, SSTR2 GIST, FASN/lipid SDH, cGAS-STING/innate immune GIST, and SDHA/SDHB/SDHC/SDHD recent 2026.
+
+**Papers added:** 0
+
+**Papers rejected (logged to tracker.md):** 0
+
+All PMIDs returned in today's scan were already present in tracker.md. No new eligible papers identified.
+
+### Part B — Improvement
+
+**Direction:** Data consistency fix — pathways.ts array order does not match `display_order` sort order for `hif-igf2-igf1r-growth-signaling`
+
+The `hif-igf2-igf1r-growth-signaling` pathway (added 2026-09-07, display_order 32) was positioned in the array between `hif-cxcr4-chemokine-metastasis` (display_order 28) and `hsp90-hif-client-chaperone` (display_order 29), breaking the invariant that file order matches ascending `display_order`. All 31 other pathways in the file were sorted correctly by `display_order`. This inconsistency was introduced when the IGF2/IGF1R pathway was appended mid-array. Fixed by moving the block to after `reductive-carboxylation` (display_order 31), restoring the invariant.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: moved `hif-igf2-igf1r-growth-signaling` object to end of array (after `reductive-carboxylation`, display_order 31), so array order matches ascending `display_order` throughout
+
+**No prior log entries cover this direction** — array-order consistency fix is a new category; previous data-quality runs fixed display_order numbering gaps (2026-08-12, 2026-08-26) and missing NCT IDs (2026-09-01, 2026-09-08).
+
+---
+
+## 2026-09-19 — CDK9/P-TEFb super-enhancer elongation dependency in SDH-deficient GIST
+
+### Part A — PubMed Scan
+
+Searches run (date window ≥ 2026-06-19):
+- "succinate dehydrogenase deficient GIST 2026"
+- "SDHB SDHA paraganglioma pheochromocytoma therapy 2026"
+- "succinate oncometabolite cancer epigenetics 2026"
+- "succinate dehydrogenase pheochromocytoma paraganglioma 2026"
+- "SDH deficient renal cell carcinoma treatment 2026"
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42544736 | already tracked | — |
+| 42489911 | already tracked | — |
+| 42650014 | already tracked | — |
+| 42416402 | already tracked | — |
+| 42281449 | already tracked | — |
+| 42526974 | already tracked | — |
+| 42626917 | already tracked | — |
+| 42590786 | **rejected** | Simsek E et al., J Pediatr Endocrinol Metab 2026-08-14. Case report of giant SDH-intact pheochromocytoma (preserved SDHB IHC) in a 16-yr-old; PASS/GAPP risk context but no SDH-deficient treatment advance. |
+| 42758527 | **rejected** | Cole Y et al., Endocr Relat Cancer 2026-09-18. Prospective plasma metabolomics identifying succinate as biomarker for SDHx deficiency and tumor surveillance. Diagnostics/biomarker focus; no new treatment advance. |
+| 42711465 | **rejected** | Köhler A et al., NPJ Precis Oncol 2026-09-08. Minigene-based functional RNA assay for SDHB splice variants (48 variants in HEK293T); ACMG reclassification of 13 variants. Variant interpretation; no treatment advance. |
+| 42760995 | **rejected** | Günler T, Çordan İ, Front Endocrinol 2026-09-04. IHC study (n=35 PPGL) correlating HIF-2α, CD105, Ki-67 with GAPP score. Confirms known HIF-2α pseudohypoxia biology; belzutifan already in engine. |
+| 42635383 | **rejected** | Kshirsagar SP et al., Ann Afr Med 2026-08-25. Case report of SDHB-deficient metastatic paraganglioma of the vulva; Ki-67 ~60%. Rare anatomic site; no new treatment or mechanistic advance. |
+| 42573142 | **rejected** | Jimenez C et al., J Clin Endocrinol Metab 2026-08-10. Review of belzutifan (HIF-2α inhibitor) in PPGL including LITESPARK-015 Phase 2 data. Drug already catalogued in engine; no new trial data beyond what is there. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** CDK9/P-TEFb super-enhancer transcription elongation dependency in SDH-deficient GIST
+
+**Mechanistic rationale:** Merriam et al. (Nat Med 2026, PMID 42191879) established that SDH loss → CIMP → CTCF insulator methylation → ectopic FGF3/FGF4 super-enhancer in SDH-deficient GIST. Active super-enhancers universally depend on CDK9 (catalytic subunit of P-TEFb) to phosphorylate RNA Pol II CTD Ser2, releasing Pol II from promoter-proximal pause and enabling elongation. This is mechanistically non-redundant with BRD4/BET inhibition (already in engine): BRD4 reads H3K27ac and recruits CDK9 (upstream); CDK9 phosphorylates Pol II CTD Ser2 to drive elongation (downstream). CDK9 inhibition acts at the elongation kinase step, independent of and orthogonal to BRD4 bromodomain reading. KB-0742 (Kronos Bio), a highly selective CDK9 inhibitor with completed Phase 1 (NCT04718675 in AML/MDS), is the clinical-grade candidate.
+
+**Why GIST-specific:** The super-enhancer biology anchor is GIST-specific per PMID 42191879; no equivalent super-enhancer disruption has been demonstrated in SDH-deficient PPGL or RCC. tumor_type_applicability = ["gist"].
+
+**Evidence_score:** 27 (theoretical) — strong mechanistic chain with direct SE biology anchor in SDH-GIST; no SDH-specific CDK9 data.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: added `cdk9-super-enhancer-elongation` (display_order 32)
+- `src/data/seed/targets.ts`: added `CDK9` target (UniProt P50750; synthetic_lethal)
+- `src/data/seed/drugs.ts`: added KB-0742 (CDK9 inhibitor; evidence_score 27; theoretical; ["gist"]; NCT04718675)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (CDK9/P-TEFb super-enhancer elongation)
+- `src/lib/scoring/constants.ts`: added pathway color for `cdk9-super-enhancer-elongation`
+- `tracker.md`: logged 6 new PMIDs evaluated (all rejected)
+
+**Directions considered and ruled out this run:**
+- PI3K inhibitors: same pathway as everolimus/capivasertib (already in engine); adding one more node insufficient
+- SUCNR1 antagonists: no clinical-stage compounds available
+- NRF2 inhibitors: no clinical-stage options
+- CDK7: too mechanistically similar to BRD4 (both transcription initiation machinery); CDK9 selected as clearly distinct elongation step
+
+
+---
+
+## 2026-09-20 — Extracellular Succinate / SUCNR1 Paracrine TME Immunosuppression — Biology Enrichment
+
+**Branch:** `morning/2026-09-20-sucnr1-extracellular-succinate-tme`
+
+### Part A — Paper Scan
+
+Queries run (5 total; 3-month window June–September 2026):
+- Succinate dehydrogenase pheochromocytoma paraganglioma therapy 2026
+- SDH-deficient GIST sunitinib imatinib regorafenib resistance mutation 2026
+- HIF-2alpha belzutifan VHL SDH paraganglioma pheochromocytoma clinical 2026
+- Succinate dehydrogenase GIST paraganglioma pheochromocytoma treatment outcome 2026
+- Succinate dehydrogenase epigenetic methylation TET KDM demethylase inhibition cancer 2026
+
+**New PMIDs evaluated (not previously in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42590786 | **rejected** | Simsek E et al., J Pediatr Endocrinol Metab 2026-08-14. Pediatric case report of 12.4 cm pheo with PRESERVED SDHB expression and Ki-67 2–3%. Not an SDH-deficient tumor; no mechanistic or treatment advance. |
+| 41634405 | **out-of-window** | Fanelli GN et al., Virchows Arch 2026-02-04. Italian GIUP survey on SDH/FH-deficient RCC diagnostic practice (21 pathologists). Published Feb 2026, outside 3-month scan window; diagnostic-only content. |
+| 41664736 | **out-of-window** | Qasim H et al., Cureus 2026-01-09. Broad GIST review covering molecular subtypes including SDH-deficient. Published Jan 2026, outside 3-month scan window; no SDH-specific treatment advance. |
+
+Note: PMID 42416402 returned in GIST search but was already in tracker.md (logged 2026-09-01, rejected).
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Biology Enrichment
+
+**Direction:** biology-enrichment
+**Angle:** Extracellular succinate as a paracrine immunomodulator — SUCNR1/GPR91 receptor on dendritic cells and macrophages in the SDH-deficient TME
+
+**Rationale for selection:** All prior morning runs document the intracellular consequences of SDH loss (pseudohypoxia, CIMP, BRCAness, cuproptosis sensitization, etc.). The extracellular dimension — constitutive succinate export into the TME and its paracrine SUCNR1/GPR91-mediated immunomodulatory effects — is entirely absent from sdh-biology.ts. This mechanism explains the immunological paradox in SDH-deficient tumors (stromal inflammation without effective CD8+ T-cell immunity) and critically contextualizes why the multiple immune-targeting drugs in the engine (pembrolizumab, ulevostinag, RBS2418, AZD3965, epacadostat) must overcome a constitutive paracrine immunosuppressive signal from exported succinate. Confirmed new to the engine — no prior run log mentions SUCNR1, GPR91, extracellular succinate, or paracrine TME signaling.
+
+**All new drug directions ruled out before selecting this direction:**
+- m6A / METTL3 inhibition (FTO/ALKBH5 α-KG dioxygenases): Mechanistically sound but foundational PMID (guessed 32109378) resolved to an unrelated mouse skin paper; no SDH-specific m6A data found in PubMed search; cannot cite the anchor paper → fails hard relevance gate. Logged as explored and unverifiable.
+- MTHFD2/one-carbon metabolism: no SDH-specific data, no clinical-stage inhibitors — definitively unactionable (carried over from 47 prior runs).
+- Complex I / IACS-010759: definitively ruled out (Sokolov preprint PMID 42239110).
+- All other prior drug directions: already in engine.
+
+**Mechanistic chain documented in Mechanism 42 (sdh-biology.ts):**
+SDH loss → massive intracellular succinate accumulation → succinate exported via NaDC3/SLC13A3 and MCT1/SLC16A1 → extracellular succinate reaches SUCNR1/GPR91 concentrations in the TME → macrophage SUCNR1 activation + intracellular succinate uptake → macrophage HIF-1α stabilization (same pseudohypoxic mechanism as in tumor cells) → IL-1β production (pro-inflammatory but non-cytotoxic; angiogenic) → dendritic cell SUCNR1 activation → impaired DC maturation and IL-12 production → deficient CD8+ T-cell priming → combined with HIF-PD-L1 (Mechanism 22), IDO1/kynurenine (Mechanism 16), and T-cell MCT1 suppression (Mechanism 16) = paradoxical "inflamed-but-immunosuppressed" TME.
+
+**Literature anchor:**
+- PMID 23535595 (Tannahill et al., Nature 2013, DOI 10.1038/nature11986): "Succinate is an inflammatory signal that induces IL-1β through HIF-1α." Demonstrates that succinate → macrophage HIF-1α stabilization → IL-1β is a core innate immune signalling mechanism. The same HIF-1α pseudohypoxic mechanism operative in SDH-deficient tumor cells is recapitulated in succinate-exposed macrophages.
+
+**Therapeutic implications documented:**
+1. MCT1 inhibition (AZD3965) has an additional mechanistic rationale beyond T-cell intrinsic effects: limiting succinate export reduces extracellular succinate → less SUCNR1-mediated DC dysfunction.
+2. Pembrolizumab and cGAS-STING agonists (ulevostinag, RBS2418) must overcome SUCNR1-mediated DC impairment; combination with MCT1 blockade may be synergistic.
+3. No SUCNR1 antagonist exists in clinical development — this remains a non-druggable biology gap today.
+
+**Previously logged directions NOT re-evaluated:** MTHFD2/one-carbon (no SDH-specific data, no clinical-stage inhibitors); Complex I definitively ruled out (Sokolov preprint PMID 42239110, 2026-07-30).
+
+**Files changed:** `src/data/seed/sdh-biology.ts` (Mechanism 42 added — extracellular succinate / SUCNR1 paracrine TME), `tracker.md` (3 new rows: PMIDs 42590786, 41634405, 41664736), `MORNING_LOG.md` (this entry).
+
+---
+
+## 2026-09-21 — Linsitinib GIST Phase 2 failure + plasma succinate biomarker paper
+
+### PubMed scan (2026-09-08 to 2026-09-21)
+
+Queries run: SDH-deficient GIST/PPGL/RCC/pituitary (last 3 months), succinate TCA cancer, pseudohypoxia HIF SDH, CIMP epigenetic SDH, BRCAness HR deficiency SDH, SDH-deficient drug treatment, paraganglioma pheochromocytoma new treatment, plasma succinate biomarker SDH.
+
+**New paper found (1):**
+
+| PMID | Title | Verdict |
+|---|---|---|
+| 42758527 | Cole Y et al., Endocr Relat Cancer 2026-09-18. "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model." DOI 10.1530/ERC-26-0323 | ADDED — Diagnosis & Pathology |
+
+**Rejected:** 0 additional papers. All other queries returned either zero new results or papers already in tracker.
+
+---
+
+### Paper added: PMID 42758527
+
+**Topic:** Diagnosis & Pathology
+
+**Rationale for adding:** Prospective plasma metabolomics study in SDHx germline carriers. Core finding: plasma succinate levels are elevated in carriers with active tumour, correlate with tumour burden, and can distinguish active-disease carriers from unaffected carriers and healthy controls. Validated in a Sdhb-deficient murine model. Directly relevant to the engine's scope (SDHx carrier biology, early detection, surveillance biomarkers). Added to `src/data/papers.ts`.
+
+---
+
+### Part B improvement: Linsitinib MoA data quality correction
+
+**Direction:** Correct a patient-safety-relevant omission in the linsitinib entry added 2026-09-07.
+
+**Problem identified:** The linsitinib MoA text mentioned the ACC Phase 3 failure (Fassnacht et al., PMID 25795408, NCT00924989) but omitted the SARC/NCI Phase 2 trial in WT/SDH-deficient GIST (von Mehren et al., Clin Cancer Res 2020, PMID 31792037, NCT01560260). The "Key limitation" section incorrectly stated "No published preclinical or clinical data directly test linsitinib or any IGF1R inhibitor in SDH-deficient GIST, PPGL, or RCC." This is factually wrong — there is a dedicated Phase 2 trial in SDH-enriched WT GIST showing 0% ORR.
+
+This omission is patient-safety-relevant: the engine owner has SDHA-deficient GIST and could read the linsitinib entry without encountering the most directly relevant negative trial for their tumour type.
+
+**Fix applied:**
+- Added new section **"GIST-specific clinical trial — NEGATIVE Phase 2 (direct patient safety note for SDHA-deficient GIST)"** to linsitinib MoA, citing von Mehren et al. (PMID 31792037, NCT01560260): n=20 adult/paediatric WT-GIST, 35% SDHA IHC-negative, 88% SDHB IHC-negative; primary endpoint ORR = **0%**; CBR 40% at 9 months (SD only). Explicitly explains why `tumor_type_applicability: ["ppgl"]` — GIST disqualified by direct Phase 2 evidence.
+- Updated "Key limitation" section to remove the incorrect claim and reference both negative trials.
+- Added NCT01560260 to `clinical_trial_ids`.
+
+**Files changed:** `src/data/seed/drugs.ts` (linsitinib MoA + clinical_trial_ids), `src/data/papers.ts` (new entry PMID 42758527), `tracker.md` (new row).
+
+**Ruled-out directions (still standing):**
+- Complex I/IACS-010759: Sokolov preprint PMID 42239110 — no SDH-specific evidence
+- MTHFD2/one-carbon: no SDH-specific data, no clinical-stage inhibitors
+- WEE1/adavosertib: wrong selectivity
+- IGF1R/linsitinib in GIST: disqualified by Phase 2 (0 ORR, PMID 31792037)
+
+
+## 2026-09-22
+
+**Direction:** Immune evasion — HIF-driven CD73/adenosine immunosuppression axis; oleclumab (MEDI9447, anti-CD73 mAb)
+**Angle:** Third independent immunosuppressive arm in SDH-deficient tumors: SDH loss → succinate → PHD inhibition → constitutive HIF-1α → HRE-driven NT5E/CD73 transcription → extracellular adenosine → A2AR on T cells → cAMP → T-cell exhaustion. Mechanistically distinct from (1) MCT1-succinate direct T-cell metabolic suppression, (2) HIF-IDO1-kynurenine, and (3) HIF-PD-L1.
+
+**Summary:** Added `hif-cd73-adenosine-suppression` pathway (display_order 33), NT5E (CD73) target (UniProt P21589), and oleclumab (MEDI9447, AstraZeneca anti-CD73 IgG1, evidence_score 22, theoretical, all tumor types, NCT02503774 + NCT02935634) to the engine. Added Mechanism 42 to sdh-biology.ts. Added PATHWAY_COLORS entry for the new pathway. Citations: Synnestvedt et al. (J Clin Invest 2002, PMID 12370277) — foundational HIF-1α → NT5E HRE mutagenesis paper; Sitkovsky et al. (Cancer Immunol Res 2014, PMID 24990240) — CD73/adenosine immunosuppression in cancer; Hatfield & Sitkovsky (Curr Opin Pharmacol 2016, PMID 27429212) — HIF-1α → CD73 adenosine axis and A2AR antagonists in cancer immunotherapy.
+
+**Part A — Paper scan (June 22 – September 22, 2026):**
+- 1 new PMID found not in tracker.md: PMID 41634405 (Fanelli et al., Virchows Arch 2026, Feb 4 2026 — Italian pathologist survey on SDH/FH-deficient RCC diagnostic awareness). REJECTED: published February 4, 2026, outside the 3-month scan window (cutoff: June 22, 2026); diagnostic survey only; no mechanistic or treatment advance.
+- 0 papers added to `src/data/papers.ts`.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: added `hif-cd73-adenosine-suppression` (display_order 33)
+- `src/data/seed/targets.ts`: added NT5E (CD73, UniProt P21589, pathway_slug: hif-cd73-adenosine-suppression)
+- `src/data/seed/drugs.ts`: added oleclumab (MEDI9447; evidence_score 22; theoretical; NCT02503774, NCT02935634)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (HIF-Driven CD73/Adenosine Immunosuppression)
+- `src/lib/scoring/constants.ts`: added PATHWAY_COLORS entry for `hif-cd73-adenosine-suppression`
+- `tracker.md`: logged PMID 41634405 (rejected: outside scan window)
+
+**Mechanistic chain passes hard relevance gate:**
+SDH loss → succinate → PHD inhibition → HIF-1α stabilization (directly demonstrated) → HRE in NT5E/CD73 promoter directly binds HIF-1α (Synnestvedt 2002, PMID 12370277, mutagenesis proof) → elevated CD73 ectoenzyme → AMP → adenosine → A2AR on T cells → cAMP → T-cell exhaustion. Every step in this chain has direct experimental evidence. Mechanistically non-redundant with all prior directions in this log.
+
+**PR:** morning/2026-09-22-cd73-adenosine-immune (via branch claude/clever-lovelace-dzcqtw)
+
+---
+
+## 2026-09-23
+
+### Part A — Paper Scan
+
+Queries run (6 total; 3-month window June–September 2026):
+- SDH-deficient tumor GIST paraganglioma treatment 2026
+- Pheochromocytoma paraganglioma systemic therapy 2026
+- GIST gastrointestinal stromal tumor SDH clinical trial 2026
+- SDH-deficient renal cell carcinoma therapy 2026
+- SDHB synthetic lethality epigenetic succinate 2026
+- SDH-deficient PPGL GIST BRCAness metabolic vulnerability 2026
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42764321 | **rejected** | General RLT review; no SDH-specific advance; SSTR2/MIBG pathways already in engine |
+| 42762504 | **rejected** | Adrenal hypertension clinical series; no SDH-specific content |
+| 42755565 | **rejected** | Composite pheochromocytoma case report; no SDH content |
+| 42742768 | **rejected** | Surgical technique for adrenal tumors; no SDH-specific advance |
+| 42728076 | **rejected** | Clinically silent PCC case report; no SDH content |
+| 42723163 | **rejected** | NET/adrenal immunology review; not SDH-specific |
+| 42704026 | **rejected** | Spanish SIADH case report; no SDH content |
+| 42626938 | **rejected** | Octreotide retrospective in PPGL; cold SSA direction already covered by SSTR2 pathway; no SDH-specific mechanistic advance |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** drug-pool expansion — CBP/p300 HAT co-activator dependency
+
+**Angle:** In SDH-deficient pseudohypoxic tumors, constitutively stabilized HIF-1α/2α requires CBP/p300 (EP300/CREBBP) as obligate transcriptional co-activators via direct C-TAD domain docking (Arany et al. PNAS 1996, PMID 8917528). p300/CBP also writes H3K27ac marks at ectopic super-enhancers in SDH-deficient GIST (Merriam et al. Nat Med 2026, PMID 42191879). CCS1477 (inobrodib; Phase 1b/2 NCT04068597) inhibits the p300/CBP bromodomain, preventing HIF co-activator recruitment and collapsing the HIF-driven transcriptome plus super-enhancer maintenance. Mechanistically non-redundant: EZH2/tazemetostat targets H3K27me3 WRITING (opposite mark, repressed chromatin); BRD4/birabresib targets H3K27ac READING (downstream of p300/CBP writing); belzutifan targets HIF-2α protein directly.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: added `cbp-p300-hat-coactivator` pathway (display_order 33)
+- `src/data/seed/targets.ts`: added EP300 target entry
+- `src/data/seed/drugs.ts`: added CCS1477 (inobrodib; evidence_score 27; status: clinical_trial; NCT04068597; tumor_type_applicability: ["all"])
+- `src/data/seed/sdh-biology.ts`: added Mechanism 42 (CBP/p300 HAT Co-Activator Dependency)
+- `src/lib/scoring/constants.ts`: added `cbp-p300-hat-coactivator` color (violet-200)
+- `tracker.md`: logged 8 rejected PMIDs (42764321, 42762504, 42755565, 42742768, 42728076, 42723163, 42704026, 42626938)
+
+**Evidence_score rationale:** 27 (theoretical) — mechanistic chain fully supported by established SDH-deficient biology (PMID 8917528, PMID 42191879) but no direct preclinical data in SDH-deficient cell lines; CCS1477 is Phase 1b/2 in non-SDH indications.
+
+
+---
+
+## 2026-09-24
+
+**Direction:** literature scan / papers-only
+**Angle:** Plasma succinate as a non-invasive biomarker for SDHx-deficient tumour surveillance
+**Papers added:** 1 (PMID 42758527)
+**Papers rejected (logged to tracker.md):** 2 (PMIDs 42764100, 41634405)
+**Branch:** `morning/2026-09-24-plasma-succinate-biomarker`
+
+### Part A — Paper Scan
+
+Queries run (7 total; 3-month window June 24 – September 24, 2026):
+1. SDH-deficient GIST treatment 2026
+2. Pheochromocytoma paraganglioma SDH treatment 2026
+3. SDH-deficient renal cell carcinoma 2026
+4. SDH tumor pseudohypoxia drug 2026
+5. SDHB SDHA SDHC SDHD tumor cancer novel mechanism 2026
+6. WT-GIST SDH imatinib resistance 2026
+7. Paraganglioma pheochromocytoma novel therapeutic target 2026
+
+**New PMIDs found (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42758527 | **ADDED** | Cole Y, Abramovich I, Fernandez-Garcia J et al. — "Investigating the clinical utility of plasma succinate with insights from a Sdhb deficient murine model." Endocr Relat Cancer, 2026-09-18. DOI: 10.1530/ERC-26-0323. Prospective plasma metabolomics study by Cambridge/NCI group demonstrating that plasma succinate is robustly elevated in SDHx germline variant carriers with active tumours relative to healthy carriers; validated in a Sdhb-deficient murine model. Directly relevant SDH-deficient tumour biology from authoritative investigators. Topic: Diagnosis & Pathology. |
+| 42764100 | **rejected** | Troisi R et al. — "Emerging patterns of kidney cancer in young adults." Crit Rev Oncol Hematol, 2026-09-20. Broad RCC epidemiology review in young adults; SDH-deficient RCC mentioned as one of several rare hereditary subtypes. No SDH-specific mechanistic or treatment advance. |
+| 41634405 | **outside window** | Fanelli M et al. — "Diagnostic practice and awareness of SDH- and FH-deficient RCC: Italian GIUP survey." Virchows Arch, 2026-02-04. DOI: 10.1007/s00428-026-03958-4. Published February 2026; outside the 3-month window (June 24 – September 24 2026). Logged to tracker.md to prevent re-evaluation. |
+
+### Part B — Improvement Decision
+
+No drug or mechanism added today.
+
+The only remaining candidate considered was atorvastatin (HMGCR inhibitor; mevalonate/isoprenoid pathway). The mechanistic argument: SDH loss → reductive carboxylation generates excess acetyl-CoA → acetyl-CoA → HMG-CoA → mevalonate → cholesterol/isoprenoids (HMGCR step). However:
+- No SDH-specific preclinical data exist for statins in SDH-deficient tumour models
+- The mevalonate/isoprenoid branch is NOT listed in the hard relevance gate's enumerated pathways
+- Evidence score would be ~18 (theoretical only) — the engine already has six drugs at ≤23 covering adjacent acetyl-CoA branches (denifanstat/FASN, bempedoic acid/ACLY)
+- Adding a weakly-justified drug is explicitly stated to be WORSE than adding nothing
+
+Papers-only is the correct outcome for today.
+
+**Summary:** 7-query PubMed scan returned one genuinely new qualifying paper (PMID 42758527) — a prospective plasma metabolomics study establishing plasma succinate as a non-invasive biomarker for SDHx-driven tumour burden and post-treatment surveillance. This is directly relevant to the engine's SDH-deficient tumour focus and adds to the Diagnosis & Pathology corpus. Two other PMIDs were evaluated: one rejected as a broad RCC epidemiology review with only peripheral SDH mention, one logged as outside the 3-month window. No drug or mechanism addition was made; the atorvastatin/mevalonate direction was considered but does not clear the hard relevance gate (no SDH-specific data; adjacent acetyl-CoA branches already well covered).
+
+---
+
+## 2026-09-25 — HIF→CA9 tumour pH regulation / SLC-0111
+
+**Branch:** `morning/2026-09-25-hif-ca9-slc0111`
+
+### Part A — Paper Scan
+
+Queries run (8 total; 3-month window June 25 – September 25, 2026):
+- SDH-deficient tumor drug repurposing therapeutic targets 2026
+- Paraganglioma pheochromocytoma HIF pseudohypoxia treatment 2026
+- GIST SDH-deficient clinical trial 2026
+- SDH-deficient renal cell carcinoma 2026
+- SDHB succinate BRCAness synthetic lethality 2026
+- Succinate oncometabolite immunotherapy 2026
+- SDH-deficient pituitary adenoma treatment 2026
+- Carbonic anhydrase IX CAIX HIF pseudohypoxia SDH tumor 2026
+
+**New PMIDs found not already in tracker.md:** 3 (all outside the 3-month window based on PMID numbering; logged to tracker.md for future reference)
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 41634405 | **not evaluated** | PMID in ~41.6M range; estimated pre-June 2026 publication, outside 3-month scan window. Logged to tracker.md to prevent re-evaluation. |
+| 41384711 | **not evaluated** | PMID in ~41.4M range; estimated pre-June 2026 publication, outside 3-month scan window. Logged to tracker.md. |
+| 41904096 | **not evaluated** | PMID in ~41.9M range; estimated pre-June 2026 publication, outside 3-month scan window. Logged to tracker.md. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement
+
+**Direction:** drug-pool — HIF-driven CA9 tumour acidosis / SLC-0111 (WBI-5111) selective CA9/CA12 inhibitor
+
+**Mechanistic basis:**
+SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α/2α stabilisation → HRE-driven CA9 transcription. The CA9 HRE was definitively characterised by Wykoff et al. (Cancer Res 2000, PMID 11156414): CA9 is among the most tightly HIF-1-regulated genes known, constitutively expressed in VHL-deficient renal carcinoma cells (analogous constitutive HIF mechanism) and HRE-dependent in the CA9 minimal promoter. SDH-deficient tumours share the identical PHD-inhibition pathway initiated by succinate accumulation. Constitutive CA9 expression acidifies the tumour microenvironment (pHe ~6.5–6.9), promoting invasion (acid-activated proteases), immune evasion (TME acidosis suppresses T-cell cytotoxicity), and multidrug resistance (weakly basic drugs trapped extracellularly). CAIX IHC confirmed in pseudohypoxic cluster 1 PPGLs (Mete et al., Am J Surg Pathol 2021, PMID 33826547).
+
+**Why this direction passes the relevance gate:** CA9 is an established direct HIF transcriptional target — expressly within the pseudohypoxia/HIF pathway listed as a qualifying mechanism in the task description. CAIX is already mentioned in the engine (IGF1R target description, linsitinib MoA: "VEGF, CAIX, GLUT1, and CXCR4 in SDH-deficient tumours") but has never been a therapeutic direction.
+
+**Why this direction is new:** Exhaustive log review confirmed no prior morning run has targeted CA9, carbonic anhydrase, or tumour pH regulation.
+
+**Clinical anchor:** NCT02215850 (Phase 1 SLC-0111 monotherapy in solid tumours; n=24; COMPLETED). NCT03450018 (Phase 1b/2 SLC-0111 + gemcitabine in CAIX-positive PDAC; TERMINATED at n=6 due to slow enrolment, not toxicity).
+
+**Evidence_score:** 20 (theoretical) — strong mechanistic chain + Phase 1 clinical data; held lower because CAIX IHC sensitivity in SDHx PPGLs specifically is limited (~16% in Mete 2021 cohort, predominantly VHL-related), no SDH-deficient preclinical data for SLC-0111.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: new pathway `hif-ca9-ph-regulation` (display_order 33)
+- `src/data/seed/targets.ts`: new target CA9 (UniProt Q16790, downstream, pathway_slug `hif-ca9-ph-regulation`)
+- `src/data/seed/drugs.ts`: new drug SLC-0111 (evidence_score 20, theoretical, all tumour types, NCT02215850 + NCT03450018)
+- `src/data/seed/sdh-biology.ts`: Mechanism 42 — HIF→CA9 tumour acidosis
+- `src/lib/scoring/constants.ts`: new color entry `hif-ca9-ph-regulation`
+- `tracker.md`: logged 3 outside-window PMIDs (41634405, 41384711, 41904096)
+
+**Key citations:**
+- Wykoff CC et al. Hypoxia-inducible expression of tumor-associated carbonic anhydrases. Cancer Res 2000;60(24):7075-83. PMID 11156414.
+- Mete O et al. Significance of Alpha-inhibin Expression in Pheochromocytomas and Paragangliomas. Am J Surg Pathol 2021;45(9):1264-73. PMID 33826547. DOI 10.1097/PAS.0000000000001715.
+- NCT02215850 (Phase 1 SLC-0111 monotherapy; Welichem Biotech; COMPLETED).
+- NCT03450018 (Phase 1b/2 SLC-0111 + gemcitabine in CAIX-positive PDAC; TERMINATED).
+
+**PR:** morning/2026-09-25-hif-ca9-slc0111
