@@ -1626,3 +1626,40 @@ SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → per
 - `tracker.md`: logged all 8 evaluated papers (1 added, 7 rejected)
 
 **No prior log entries cover this direction** — p300/CBP and CCS1477 do not appear in any previous run. Birabresib (BET/BRD4, run 2026-07-14) and tazemetostat (EZH2, run 2026-06-23) cover adjacent epigenetic nodes but not the KAT3-family bromodomain coactivation step.
+
+---
+
+## 2026-09-30
+
+**Direction:** papers-only
+**Papers added:** 0
+**Papers rejected (already in tracker.md from prior sessions):** 4 (PMIDs 42544736, 42489911, 42416402, 42597314)
+
+### Part A — PubMed Scan
+
+14 queries run (3-month window ≥ 2026-07-01) across: SDH-deficient GIST treatment 2026, paraganglioma pheochromocytoma SDH therapy 2026, SDH-deficient RCC 2026, succinate oncometabolite HIF 2026, SDHB SDHA mutation BRCAness 2026, SDH synthetic lethality 2026, succinate immune evasion checkpoint 2026, SDH-deficient pituitary 2026, GIST WT SDH clinical trial 2026, pseudohypoxia HIF SDH tumor 2026, SDHA SDHB SDHC SDHD cancer 2026, succinate oncometabolite epigenetics 2026, PPGL paraganglioma new treatment 2026, SDH tumor immunotherapy 2026.
+
+4 PMIDs returned that were not previously in tracker.md context but were found already logged on lookup:
+- 42544736 (logged 2026-08-03, 2026-09-01): pediatric GIST case series n=4; clinical outcomes only; no new SDH-specific mechanism
+- 42489911 (logged 2026-07-25): German-language hereditary tumor syndrome review; not SDH-focused; no new insight
+- 42416402 (logged 2026-07-08, 2026-09-01): broad GIST precision oncology review; SDH-deficient a minor section; no new SDH-specific mechanism
+- 42597314 (logged 2026-08-24): Front Cardiovasc Med SDHB-PPGL cardiomyopathy case report; cardiovascular management only; no treatment advance
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Improvement Direction Evaluation
+
+Three candidate directions from the 2026-09-15 log were evaluated via PubMed search:
+
+1. **LAG-3 inhibition (relatlimab):** Searched "succinate LAG-3 T cell exhaustion tumor microenvironment SDH paraganglioma" and "succinate LAG-3 T cell exhaustion hypoxia immune evasion tumor" — both returned 0 results. These searches did not establish a primary-literature anchor for succinate-linked LAG-3 upregulation. Not supported by this scan; SDH applicability remains unresolved, rather than permanently excluded.
+
+2. **TIGIT inhibition (tiragolumab):** Searched "CD155 PVR HIF-1alpha hypoxia transcription tumor immune evasion" and "TIGIT CD155 PVR cancer immunotherapy hypoxia upregulation" — both returned 0 results. These searches did not establish a primary-literature anchor for HIF-1α-driven CD155/PVR transcriptional upregulation. Not supported by this scan; SDH applicability remains unresolved, rather than permanently excluded.
+
+3. **RXRα agonist (bexarotene):** Searched "bexarotene retinoid RXR neuroendocrine tumor pheochromocytoma paraganglioma" and "bexarotene neuroendocrine tumor PPGL pheochromocytoma paraganglioma treatment" — both returned 0 results. These searches did not identify SDH-specific evidence for bexarotene in PPGL or other SDH-deficient tumour types. Not supported by this scan; SDH applicability remains unresolved. A search miss does not establish that no published evidence exists or permanently exclude this direction.
+
+**No direction cleared the hard relevance gate.** Papers-only is the correct outcome per the overriding principle. Adding a weakly-justified drug is explicitly worse than adding nothing.
+
+**Directions not added in this run (including prior candidates):** MTHFD2/one-carbon and Complex I/IACS-010759 were carried forward from earlier evaluations and were not reassessed here. WEE1/adavosertib, LAG-3/relatlimab, TIGIT/tiragolumab, and RXRα/bexarotene are not supported by this scan; SDH applicability remains unresolved. The prior WEE1 ovarian-model selectivity finding does not establish response in SDH-deficient tumours, and zero hits from the listed searches do not permanently rule out the other directions.
+
+**Files changed:** `MORNING_LOG.md` (this entry only)
+**PR:** [Morning] Papers-only scan — no new qualifying papers or drug directions (2026-09-30)
