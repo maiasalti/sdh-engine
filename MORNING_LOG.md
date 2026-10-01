@@ -1651,15 +1651,15 @@ SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → per
 
 Three candidate directions from the 2026-09-15 log were evaluated via PubMed search:
 
-1. **LAG-3 inhibition (relatlimab):** Searched "succinate LAG-3 T cell exhaustion tumor microenvironment SDH paraganglioma" and "succinate LAG-3 T cell exhaustion hypoxia immune evasion tumor" — both returned 0 results. The succinate → LAG-3 upregulation link cannot be verified via primary literature. Direction abandoned.
+1. **LAG-3 inhibition (relatlimab):** Searched "succinate LAG-3 T cell exhaustion tumor microenvironment SDH paraganglioma" and "succinate LAG-3 T cell exhaustion hypoxia immune evasion tumor" — both returned 0 results. These searches did not establish a primary-literature anchor for succinate-linked LAG-3 upregulation. Not supported by this scan; SDH applicability remains unresolved, rather than permanently excluded.
 
-2. **TIGIT inhibition (tiragolumab):** Searched "CD155 PVR HIF-1alpha hypoxia transcription tumor immune evasion" and "TIGIT CD155 PVR cancer immunotherapy hypoxia upregulation" — both returned 0 results. The HIF-1α → CD155/PVR transcriptional upregulation link cannot be verified via primary literature. Direction abandoned.
+2. **TIGIT inhibition (tiragolumab):** Searched "CD155 PVR HIF-1alpha hypoxia transcription tumor immune evasion" and "TIGIT CD155 PVR cancer immunotherapy hypoxia upregulation" — both returned 0 results. These searches did not establish a primary-literature anchor for HIF-1α-driven CD155/PVR transcriptional upregulation. Not supported by this scan; SDH applicability remains unresolved, rather than permanently excluded.
 
-3. **RXRα agonist (bexarotene):** Searched "bexarotene retinoid RXR neuroendocrine tumor pheochromocytoma paraganglioma" and "bexarotene neuroendocrine tumor PPGL pheochromocytoma paraganglioma treatment" — both returned 0 results. No published data for bexarotene in PPGL or any SDH-deficient tumor type. Direction abandoned.
+3. **RXRα agonist (bexarotene):** Searched "bexarotene retinoid RXR neuroendocrine tumor pheochromocytoma paraganglioma" and "bexarotene neuroendocrine tumor PPGL pheochromocytoma paraganglioma treatment" — both returned 0 results. These searches did not identify SDH-specific evidence for bexarotene in PPGL or other SDH-deficient tumour types. Not supported by this scan; SDH applicability remains unresolved. A search miss does not establish that no published evidence exists or permanently exclude this direction.
 
 **No direction cleared the hard relevance gate.** Papers-only is the correct outcome per the overriding principle. Adding a weakly-justified drug is explicitly worse than adding nothing.
 
-**Permanently ruled-out directions (carried forward):** MTHFD2/one-carbon (no SDH-specific data, no clinical-stage inhibitors); Complex I/IACS-010759 (Sokolov PMID 42239110); WEE1/adavosertib (wrong selectivity); LAG-3/relatlimab (0 PubMed hits for succinate → LAG-3 link); TIGIT/tiragolumab (0 PubMed hits for HIF-1α → CD155 link); RXRα/bexarotene (0 PubMed hits for bexarotene in any SDH-deficient tumor type).
+**Directions not added in this run (including prior candidates):** MTHFD2/one-carbon and Complex I/IACS-010759 were carried forward from earlier evaluations and were not reassessed here. WEE1/adavosertib, LAG-3/relatlimab, TIGIT/tiragolumab, and RXRα/bexarotene are not supported by this scan; SDH applicability remains unresolved. The prior WEE1 ovarian-model selectivity finding does not establish response in SDH-deficient tumours, and zero hits from the listed searches do not permanently rule out the other directions.
 
 **Files changed:** `MORNING_LOG.md` (this entry only)
 **PR:** [Morning] Papers-only scan — no new qualifying papers or drug directions (2026-09-30)
