@@ -361,4 +361,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42758527",
     date: "2026-09",
   },
+  {
+    title:
+      "Succinate dehydrogenase (SDHB, SDHC, SDHD) gene variants significantly modify clinical outcomes in paraganglioma-pheochromocytoma but have a limited impact on head and neck paraganglioma.",
+    authors: "Bayley JP, Fishbein L, Akker S, et al.",
+    journal: "Genet Med",
+    year: 2026,
+    doi: "10.1016/j.gim.2026.102725",
+    topic: "Genetics & Syndromes",
+    description:
+      "The largest SDH genotype-phenotype study to date (N=2706 patients, 57 centres worldwide) demonstrates that variant type — missense versus protein-truncating — has a major tissue-specific differential impact on thoraco-abdominal PPGL clinical outcomes (metastasis risk, age of diagnosis) but little impact on head and neck paraganglioma. Specific novel findings include significantly earlier PPGL diagnosis in SDHB versus SDHD/SDHC carriers and elevated metastasis risk for paediatric HNPGL, with direct implications for SDHx variant-stratified surveillance protocols.",
+    pmid: "42813377",
+    date: "2026-09",
+  },
 ];

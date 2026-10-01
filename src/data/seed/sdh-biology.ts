@@ -898,6 +898,47 @@ No published data directly test alisertib in SDH-deficient GIST, PPGL, or RCC ce
 
 ---
 
+## Mechanism 51: Adenosine A2A/A2B Receptor Blockade — Etrumadenant
+
+### Context
+Mechanism 42 established the HIF→CD73(NT5E)→adenosine immunosuppressive axis and the oleclumab strategy of blocking CD73 enzyme activity to reduce adenosine production by tumor cells. Mechanism 51 addresses the downstream receptor node of the same pathway: ADORA2A and ADORA2B on tumor-infiltrating immune cells.
+
+### Mechanistic basis
+SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α stabilization → HRE-driven NT5E/CD73 transcription → elevated tumor-surface CD73 activity → AMP→adenosine conversion → adenosine accumulation in the TME → ADORA2A/ADORA2B engagement on CD8⁺ T cells, CD4⁺ T cells, NK cells, DCs, and MDSCs.
+
+ADORA2A signaling on T cells:
+- Gs-coupled adenylyl cyclase → intracellular cAMP elevation → PKA activation → CREB phosphorylation
+- CREB-mediated transcription suppresses effector gene programs: reduced IFN-γ, perforin, and granzyme B production
+- PKA phosphorylates and inhibits LCK/ZAP-70 in the TCR proximal signaling complex, blunting antigen-driven T-cell activation
+- Net result: CD8⁺ cytotoxic T-cell exhaustion; impaired tumor killing despite intact tumor antigen recognition
+
+ADORA2B signaling on dendritic cells and MDSCs:
+- Elevated cAMP limits DC maturation (reduced MHC-II, co-stimulatory molecule upregulation, IL-12 production) → impaired antigen presentation and T-cell priming even upstream of effector function
+- ADORA2B on MDSCs promotes their immunosuppressive activity in the TME
+
+Hatfield & Sitkovsky (Curr Opin Pharmacol 2016, PMID 27429212) reviewed the HIF-1α → CD73 → adenosine → A2AR axis as a key immune-evasion mechanism in hypoxic tumors, with dual A2AR/A2BR blockade providing broader immunostimulation than A2AR-selective agents. Leone & Emens (J Immunother Cancer 2018, PMID 29914571) highlighted the combination rationale of the CD39-CD73-A2A/A2B axis with PD-1/PD-L1 checkpoint blockade.
+
+### Mechanistic distinction from oleclumab (Mechanism 42)
+| Intervention | Target | Cell type targeted | Mechanism | Result |
+|---|---|---|---|---|
+| Oleclumab (Mechanism 42) | NT5E/CD73 | Tumor cell surface | Blocks AMP→adenosine hydrolysis | Reduces extracellular adenosine production |
+| Etrumadenant (Mechanism 51) | ADORA2A + ADORA2B | T-cells, NK cells, DCs | Blocks Gs→cAMP adenosine signal transduction | Prevents T-cell exhaustion regardless of adenosine concentration |
+
+The two interventions are complementary: oleclumab reduces the adenosine ligand; etrumadenant blocks the receptor that would respond to residual or CD73-independent adenosine. Their combination (upstream + downstream) is an established clinical investigation strategy (NCT03381274 tested oleclumab + AZD4635 together in NSCLC).
+
+### Drug: Etrumadenant (AB928)
+Etrumadenant is an oral, potent dual ADORA2A/ADORA2B antagonist developed by Arcus Biosciences. Phase 1 first-in-human (NCT03629756; n=48; multiple solid tumor types including RCC; COMPLETED 2021) established oral bioavailability, pharmacokinetics, target engagement (reduced plasma adenosine response), and tolerability. Phase 2 combination data (NCT04262856; front-line NSCLC; domvanalimab + zimberelimab ± etrumadenant; n=151; COMPLETED 2025) provide Phase 2 dosing, safety, and immune biomarker context.
+
+### Key limitation
+No published data test etrumadenant in SDH-deficient GIST, PPGL, or RCC models. ADORA2A expression in SDH-deficient tumor-infiltrating lymphocytes is unquantified. CD73 protein expression in SDH-deficient tumor tissue (the upstream adenosine source) remains unconfirmed at the IHC level — the same upstream uncertainty that limits oleclumab confidence applies here. All mechanistic steps are established in non-SDH-specific hypoxia and cancer model contexts only.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Adenosine A2A receptor | ADORA2A | Etrumadenant (AB928) | Phase 1 (NCT03629756) + Phase 2 (NCT04262856); both COMPLETED | None; rationale via HIF-1α→CD73→adenosine→ADORA2A T-cell exhaustion axis (PMID 12370277, PMID 29367423, PMID 29914571) |
+| Adenosine A2B receptor | ADORA2B | Etrumadenant (AB928) | Same trials | None; ADORA2B on DCs/MDSCs adds broader TME immunostimulation |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

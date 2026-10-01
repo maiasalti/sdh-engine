@@ -1663,3 +1663,54 @@ Three candidate directions from the 2026-09-15 log were evaluated via PubMed sea
 
 **Files changed:** `MORNING_LOG.md` (this entry only)
 **PR:** [Morning] Papers-only scan — no new qualifying papers or drug directions (2026-09-30)
+
+---
+
+## 2026-10-01
+
+### Part A — PubMed Scan
+
+**Search window:** 2026-07-01 to 2026-10-01 (10 queries: SDH-deficient GIST treatment 2026; paraganglioma pheochromocytoma SDH therapy 2026; SDH-deficient RCC 2026; succinate oncometabolite HIF 2026; SDHB SDHA SDHC SDHD cancer 2026; SDH synthetic lethality 2026; succinate immune evasion SDH checkpoint 2026; SDH deficient PPGL immunotherapy 2026; GIST WT SDH clinical outcome 2026; SDH pituitary adenoma 2026)
+
+**Papers added to `src/data/papers.ts`:** 1 (PMID 42813377)
+
+PMID 42813377 (Bayley JP, Fishbein L, Akker S, et al., Genet Med 2026-09-29, DOI 10.1016/j.gim.2026.102725): "Succinate dehydrogenase (SDHB, SDHC, SDHD) gene variants significantly modify clinical outcomes in paraganglioma-pheochromocytoma but have a limited impact on head and neck paraganglioma." N=2706 patients, 57 centres worldwide. Missense vs. protein-truncating variant (PTV) types differentially impact PPGL outcomes (metastasis risk, age of diagnosis) but not HNPGL. SDHB carriers diagnosed with PPGL significantly earlier than HNPGL; paediatric HNPGL elevated metastasis and sPP&pHNPGL risk. Added as Genetics & Syndromes; largest genotype-phenotype study to date; directly relevant to SDHx-variant-stratified surveillance.
+
+**Papers rejected (logged to tracker.md):** 3
+- PMID 42656897: SDHB/CDK1 IHC biomarker study; confirmatory diagnostic data; no new SDH-specific mechanistic or treatment advance.
+- PMID 42666236: CNA profiling in HNPGL; not SDH-deficiency-specific; no new SDH-specific mechanistic or treatment advance.
+- PMID 42553053: FDG-first imaging guideline study; confirmatory; no new SDH-specific mechanistic or treatment advance.
+
+### Part B — Improvement
+
+**Direction:** drug-pool / new drug target (downstream node in existing pathway)
+**Angle:** Adenosine A2A/A2B receptor blockade — etrumadenant (AB928) — targeting ADORA2A on T-cells downstream of the established HIF→CD73→adenosine immunosuppressive axis
+
+**Mechanistic chain (all steps previously established):**
+SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α stabilization → HRE in NT5E/CD73 promoter (Synnestvedt et al. J Clin Invest 2002, PMID 12370277) → constitutive tumor-surface CD73 expression → AMP→adenosine → ADORA2A + ADORA2B on infiltrating T cells and DCs → cAMP/PKA → T-cell effector program suppression; DC maturation impairment (Hatfield & Sitkovsky, Curr Opin Pharmacol 2016, PMID 27429212; Leone & Emens, J Immunother Cancer 2018, PMID 29914571).
+
+**Distinction from oleclumab (added 2026-09-10, Mechanism 42):**
+Oleclumab blocks NT5E/CD73 enzyme activity on *tumor cells* → reduces adenosine production. Etrumadenant blocks ADORA2A and ADORA2B on *T-cells and DCs* → prevents the adenosine-driven cAMP/PKA signaling that exhausts effector T-cells, regardless of extracellular adenosine concentration. Different molecular target (ADORA2A vs. NT5E), different drug class (oral small-molecule dual GPCR antagonist vs. IV anti-enzyme monoclonal antibody), different cellular compartment. The two are mechanistically complementary and are co-investigated clinically: NCT03381274 tested oleclumab + AZD4635 (same AstraZeneca A2AR compound) simultaneously in NSCLC.
+
+**Clinical anchors (verified on ClinicalTrials.gov 2026-10-01):**
+- NCT03629756 (Phase 1; Arcus Biosciences; multiple solid tumors including RCC; n=48; COMPLETED 2021): first-in-human Phase 1 dose escalation; established oral bioavailability, PK, target engagement, and tolerability for etrumadenant.
+- NCT04262856 (Phase 2; Arcus Biosciences; front-line NSCLC; domvanalimab + zimberelimab ± etrumadenant; n=151; COMPLETED 2025): Phase 2 combination safety and efficacy data with PD-1 + TIGIT blockade.
+
+**Evidence_score:** 22 (theoretical) — mechanistic chain fully established in hypoxia/cancer models (PMID 12370277, PMID 29367423, PMID 29914571, PMID 27429212); oral clinical-stage drug with Phase 1 + Phase 2 data; score held at 22 due to complete absence of SDH-deficient preclinical data and unconfirmed CD73 protein expression in SDH-deficient tumor tissue (upstream dependency shared with oleclumab).
+
+**Why this direction is new:** No prior morning run has added an A2AR/A2B receptor antagonist. Oleclumab (CD73 enzyme inhibitor) was added 2026-09-10 targeting the upstream NT5E node. Etrumadenant targets the downstream ADORA2A receptor node — a different gene product, different drug class, different cellular compartment — within the same immunosuppressive pathway. Both CD73 inhibitors and A2AR antagonists are established distinct drug categories in clinical oncology and are combined (not substituted) in the literature.
+
+**Files changed:**
+- `src/data/papers.ts`: added PMID 42813377 (Bayley JP et al., Genet Med 2026, Genetics & Syndromes)
+- `src/data/seed/targets.ts`: new target ADORA2A (UniProt P29274, pathway `hif-cd73-adenosine-immunosuppression`, downstream)
+- `src/data/seed/drugs.ts`: new drug etrumadenant (AB928, Arcus Biosciences; dual ADORA2A/ADORA2B antagonist; evidence_score 22; theoretical; all tumor types; NCT03629756, NCT04262856)
+- `src/data/seed/sdh-biology.ts`: Mechanism 51 — A2A/A2B receptor blockade (etrumadenant), distinction from oleclumab
+- `tracker.md`: logged 4 evaluated PMIDs (42813377 added, 42656897/42666236/42553053 rejected)
+
+**Key citations:**
+- Synnestvedt K et al. Ecto-5'-nucleotidase is an endogenous inhibitor of hypoxia-induced endothelial cell permeability. J Clin Invest 2002;110(11):1717-25. PMID 12370277.
+- Samanta D et al. PHGDH expression is required for mitochondrial redox homeostasis, breast cancer stem cell maintenance, and lung metastasis. Cancer Res 2016. [Note: Samanta D et al. PNAS 2018, PMID 29367423 for the HIF-1α→CD73/CD47/PD-L1 co-induction in tumor cells.]
+- Leone RD, Emens LA. Targeting adenosine for cancer immunotherapy. J Immunother Cancer 2018;6(1):57. PMID 29914571. DOI 10.1186/s40425-018-0360-8.
+- Hatfield SM, Sitkovsky MV. A2A adenosine receptor antagonists to weaken the hypoxia-HIF-1α driven immunosuppression and improve immunotherapies of cancer. Curr Opin Pharmacol 2016;29:90-6. PMID 27429212.
+
+**PR:** morning/2026-10-01-a2ar-etrumadenant
