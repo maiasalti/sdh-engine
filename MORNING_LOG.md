@@ -1663,3 +1663,30 @@ Three candidate directions from the 2026-09-15 log were evaluated via PubMed sea
 
 **Files changed:** `MORNING_LOG.md` (this entry only)
 **PR:** [Morning] Papers-only scan — no new qualifying papers or drug directions (2026-09-30)
+
+---
+
+## 2026-10-02
+
+**Direction:** Papers-only — add landmark genotype-phenotype study  
+**Angle:** Genetics & Syndromes / clinical variant stratification  
+
+**PubMed scan (2026-07-01 to 2026-10-02):**
+
+New papers found and evaluated:
+- PMID 42813377 (Bayley JP, Fishbein L, Akker S, et al. *Genet Med* 2026-09-29, DOI 10.1016/j.gim.2026.102725) — **added**: landmark 2706-patient, 57-centre international genotype-phenotype study; SDHB/C/D variant type (missense vs. protein-truncating) differentially influences PPGL outcomes but not HNPGL; protein-truncating variants carry higher penetrance and metastasis risk; SDHB patients diagnosed with PPGLs earlier than HNPGLs; paediatric HNPGL has elevated metastasis risk.
+
+All other PMIDs returned by searches (42611605, 42544736, 41985045, 42687764, 42489911, 42650014, 42416402, 42281449, 42526974, 42626917, 42758527) were already in tracker.md from prior runs.
+
+**Data quality audit:** Checked drugs.ts for suspected duplicates (oleclumab, CCS1477) — both appear exactly once; no duplicates exist.
+
+**Drug direction evaluation:**
+- LAG-3/relatlimab: 0 SDH-specific PubMed hits; no HIF/pseudohypoxia → LAG-3 mechanistic bridge found; status remains unresolved.
+- TIGIT/tiragolumab: same result; status remains unresolved.
+- Arginine auxotrophy/ASS1 silencing (ADI-PEG20): 0 PubMed results linking ASS1 methylation to GIST or PPGL; direction does not clear the gate.
+- No other direction identified with adequate SDH-specific mechanistic anchoring to justify a new drug entry.
+
+**Papers added to papers.ts:** PMID 42813377  
+**Drugs added:** none  
+**Summary:** Papers-only run; added landmark 2706-patient SDH genotype-phenotype study to papers.ts; no new drug entry cleared the HARD RELEVANCE GATE.  
+**PR:** morning/2026-10-02-genotype-phenotype-bayley
