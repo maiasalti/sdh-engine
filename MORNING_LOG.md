@@ -1714,3 +1714,30 @@ Oleclumab blocks NT5E/CD73 enzyme activity on *tumor cells* → reduces adenosin
 - Hatfield SM, Sitkovsky MV. A2A adenosine receptor antagonists to weaken the hypoxia-HIF-1α driven immunosuppression and improve immunotherapies of cancer. Curr Opin Pharmacol 2016;29:90-6. PMID 27429212.
 
 **PR:** morning/2026-10-01-a2ar-etrumadenant
+
+---
+
+## 2026-10-02
+
+**Direction:** Papers-only — genotype-phenotype study already added by PR #104  
+**Angle:** Genetics & Syndromes / clinical variant stratification  
+
+**PubMed scan (2026-07-01 to 2026-10-02):**
+
+New papers found and evaluated:
+- PMID 42813377 (Bayley JP, Fishbein L, Akker S, et al. *Genet Med* 2026-09-29, DOI 10.1016/j.gim.2026.102725) — **already added by PR #104 (in papers.ts and tracker.md); not added again**: 2706-patient, 57-centre international genotype-phenotype study; SDHB/C/D variant type (missense vs. protein-truncating) differentially influences PPGL outcomes but has little effect on HNPGL; combined PPGL and HNPGL was more common with SDHD variants, especially protein-truncating variants; missense variants showed broader clinical variability; SDHB patients were diagnosed with PPGLs earlier than HNPGLs; paediatric HNPGL showed elevated metastasis risk.
+
+All other PMIDs returned by searches (42611605, 42544736, 41985045, 42687764, 42489911, 42650014, 42416402, 42281449, 42526974, 42626917, 42758527) were already in tracker.md from prior runs.
+
+**Data quality audit:** Checked drugs.ts for suspected duplicates (oleclumab, CCS1477) — both appear exactly once; no duplicates exist.
+
+**Drug direction evaluation:**
+- LAG-3/relatlimab: 0 SDH-specific PubMed hits; no HIF/pseudohypoxia to LAG-3 mechanistic bridge found; status remains unresolved.
+- TIGIT/tiragolumab: same result; status remains unresolved.
+- Arginine auxotrophy/ASS1 silencing (ADI-PEG20): 0 PubMed results linking ASS1 methylation to GIST or PPGL; direction does not clear the gate.
+- No other direction identified with adequate SDH-specific mechanistic anchoring to justify a new drug entry.
+
+**Papers added to papers.ts:** none (PMID 42813377 was already added by PR #104)  
+**Drugs added:** none  
+**Summary:** Papers-only run; the one new paper (PMID 42813377) was already on main via PR #104; no new drug entry cleared the HARD RELEVANCE GATE.  
+**PR:** morning/2026-10-02-genotype-phenotype-bayley
