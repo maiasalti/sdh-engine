@@ -363,14 +363,14 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
-      "Succinate dehydrogenase (SDHB, SDHC, SDHD) gene variants significantly modify clinical outcomes in paraganglioma-pheochromocytoma but have a limited impact on head and neck paraganglioma",
+      "Succinate dehydrogenase (SDHB, SDHC, SDHD) gene variants significantly modify clinical outcomes in paraganglioma-pheochromocytoma but have a limited impact on head and neck paraganglioma.",
     authors: "Bayley JP, Fishbein L, Akker S, et al.",
     journal: "Genet Med",
     year: 2026,
     doi: "10.1016/j.gim.2026.102725",
     topic: "Genetics & Syndromes",
     description:
-      "Landmark 2706-patient, 57-centre international genotype-phenotype study showing that SDHB/C/D variant type (missense versus protein-truncating) differentially influences thoracic-abdominal PPGL outcomes but has limited impact on head-and-neck paraganglioma (HNPGL). Protein-truncating variants confer higher penetrance and greater metastasis risk for PPGL; missense variants show broader clinical variability. SDHB patients are diagnosed with PPGLs significantly earlier than HNPGLs; paediatric HNPGL carries elevated metastasis and synchronous-PPGL risk. Specific variants exhibit distinct clinical profiles beyond simple gene-level risk stratification. Findings implicate the degree of residual SDH enzyme activity as a determinant of pseudohypoxic phenotype severity — relevant to patient stratification and to understanding which variant subtypes are most likely to express the full CIMP, BRCAness, and HIF-driven biology that the drug entries in this engine target.",
+      "The largest SDH genotype-phenotype study to date (N=2706 patients, 57 centres worldwide) demonstrates that variant type — missense versus protein-truncating — has a major tissue-specific differential impact on thoraco-abdominal PPGL clinical outcomes (metastasis risk, age of diagnosis) but little impact on head and neck paraganglioma. Specific novel findings include significantly earlier PPGL diagnosis in SDHB versus SDHD/SDHC carriers and elevated metastasis risk for paediatric HNPGL, with direct implications for SDHx variant-stratified surveillance protocols.",
     pmid: "42813377",
     date: "2026-09",
   },
