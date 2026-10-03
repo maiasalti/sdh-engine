@@ -1684,9 +1684,9 @@ PMID 42813377 (Bayley JP, Fishbein L, Akker S, et al., Genet Med 2026-09-29, DOI
 ### Part B — Improvement
 
 **Direction:** drug-pool / new drug target (downstream node in existing pathway)
-**Angle:** Adenosine A2A/A2B receptor blockade — etrumadenant (AB928) — targeting ADORA2A on T-cells downstream of the established HIF→CD73→adenosine immunosuppressive axis
+**Angle:** Adenosine A2A/A2B receptor blockade — etrumadenant (AB928) — targeting ADORA2A on T-cells downstream of the HIF→CD73→adenosine immunosuppressive axis (supported in non-SDH hypoxia and cancer models; not tested in SDH-deficient systems)
 
-**Mechanistic chain (all steps previously established):**
+**Mechanistic chain (hypothesis: steps are drawn from non-SDH hypoxia and cancer models; none tested in SDH-deficient systems):**
 SDH loss → succinate → PHD2/PHD3 inhibition → constitutive HIF-1α stabilization → HRE in NT5E/CD73 promoter (Synnestvedt et al. J Clin Invest 2002, PMID 12370277) → constitutive tumor-surface CD73 expression → AMP→adenosine → ADORA2A + ADORA2B on infiltrating T cells and DCs → cAMP/PKA → T-cell effector program suppression; DC maturation impairment (Hatfield & Sitkovsky, Curr Opin Pharmacol 2016, PMID 27429212; Leone & Emens, J Immunother Cancer 2018, PMID 29914571).
 
 **Distinction from oleclumab (added 2026-09-10, Mechanism 42):**
@@ -1696,7 +1696,7 @@ Oleclumab blocks NT5E/CD73 enzyme activity on *tumor cells* → reduces adenosin
 - NCT03629756 (Phase 1; Arcus Biosciences; multiple solid tumors including RCC; n=48; COMPLETED 2021): first-in-human Phase 1 dose escalation; established oral bioavailability, PK, target engagement, and tolerability for etrumadenant.
 - NCT04262856 (Phase 2; Arcus Biosciences; front-line NSCLC; domvanalimab + zimberelimab ± etrumadenant; n=151; COMPLETED 2025): Phase 2 combination safety and efficacy data with PD-1 + TIGIT blockade.
 
-**Evidence_score:** 22 (theoretical) — mechanistic chain fully established in hypoxia/cancer models (PMID 12370277, PMID 29367423, PMID 29914571, PMID 27429212); oral clinical-stage drug with Phase 1 + Phase 2 data; score held at 22 due to complete absence of SDH-deficient preclinical data and unconfirmed CD73 protein expression in SDH-deficient tumor tissue (upstream dependency shared with oleclumab).
+**Evidence_score:** 22 (theoretical) — mechanistic chain supported in non-SDH hypoxia/cancer models only (PMID 12370277, PMID 29367423, PMID 29914571, PMID 27429212); oral clinical-stage drug with Phase 1 + Phase 2 data; score held at 22 due to complete absence of SDH-deficient preclinical data and unconfirmed CD73 protein expression in SDH-deficient tumor tissue (upstream dependency shared with oleclumab).
 
 **Why this direction is new:** No prior morning run has added an A2AR/A2B receptor antagonist. Oleclumab (CD73 enzyme inhibitor) was added 2026-09-10 targeting the upstream NT5E node. Etrumadenant targets the downstream ADORA2A receptor node — a different gene product, different drug class, different cellular compartment — within the same immunosuppressive pathway. Both CD73 inhibitors and A2AR antagonists are established distinct drug categories in clinical oncology and are combined (not substituted) in the literature.
 
@@ -1708,8 +1708,8 @@ Oleclumab blocks NT5E/CD73 enzyme activity on *tumor cells* → reduces adenosin
 - `tracker.md`: logged 4 evaluated PMIDs (42813377 added, 42656897/42666236/42553053 rejected)
 
 **Key citations:**
-- Synnestvedt K et al. Ecto-5'-nucleotidase is an endogenous inhibitor of hypoxia-induced endothelial cell permeability. J Clin Invest 2002;110(11):1717-25. PMID 12370277.
-- Samanta D et al. PHGDH expression is required for mitochondrial redox homeostasis, breast cancer stem cell maintenance, and lung metastasis. Cancer Res 2016. [Note: Samanta D et al. PNAS 2018, PMID 29367423 for the HIF-1α→CD73/CD47/PD-L1 co-induction in tumor cells.]
+- Synnestvedt K et al. Ecto-5'-nucleotidase (CD73) regulation by hypoxia-inducible factor-1 mediates permeability changes in intestinal epithelia. J Clin Invest 2002;110(7):993-1002. PMID 12370277.
+- Samanta D et al. Chemotherapy induces enrichment of CD47(+)/CD73(+)/PDL1(+) immune evasive triple-negative breast cancer cells. Proc Natl Acad Sci U S A 2018;115:E1239-E1248. PMID 29367423.
 - Leone RD, Emens LA. Targeting adenosine for cancer immunotherapy. J Immunother Cancer 2018;6(1):57. PMID 29914571. DOI 10.1186/s40425-018-0360-8.
 - Hatfield SM, Sitkovsky MV. A2A adenosine receptor antagonists to weaken the hypoxia-HIF-1α driven immunosuppression and improve immunotherapies of cancer. Curr Opin Pharmacol 2016;29:90-6. PMID 27429212.
 
