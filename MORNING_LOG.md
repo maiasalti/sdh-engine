@@ -1747,7 +1747,7 @@ All other PMIDs returned by searches (42611605, 42544736, 41985045, 42687764, 42
 ## 2026-10-03
 
 **Direction:** Part B — LAG-3 checkpoint / relatlimab (new immune exhaustion axis, distinct from all prior immunotherapy directions)  
-**Angle:** Succinate → T-cell exhaustion → LAG-3 upregulation → relatlimab (Opdualag)  
+**Angle:** Succinate → T-cell exhaustion → LAG-3 upregulation (inferred, untested) → relatlimab (Opdualag)  
 
 **PubMed scan (2026-07-01 to 2026-10-03):**
 
@@ -1759,15 +1759,15 @@ New papers evaluated:
 - PMID 42590786 — rejected: pediatric pheochromocytoma case report; no SDH-specific content
 - PMID 42526974 — rejected: lab medicine review of SDH in PPGL; not a new mechanistic advance
 - PMID 42416402 — rejected: broad GIST precision oncology review; SDH mentioned as one subtype only
-- PMID 41724335 (Pfefer T, O'Neill LA, Immunol Lett 2026-02-20) — outside 3-month scan window (Feb 2026); used as mechanistic anchor for Part B; documents succinate promotes T-cell exhaustion in TME; not added to papers.ts
+- PMID 41724335 (Pfefer T et al., Immunol Lett 2026-06, review) — outside the scan window (Jun 2026); used as mechanistic anchor for Part B; documents succinate promotes T-cell exhaustion in TME; not added to papers.ts
 
 **Part B — LAG-3/relatlimab rationale:**
 
-Building on the previously logged PMID 35977513 (Gudgeon et al., Cell Rep 2022 — extracellular succinate directly suppresses CD8⁺ T-cell cytolytic function in the TME), PMID 41724335 (Pfefer T, O'Neill LA, Immunol Lett 2026) extends this to T-cell exhaustion — "succinate can also promote T cell exhaustion whilst expanding cancer-associated fibroblasts." T-cell exhaustion programs upregulate co-inhibitory checkpoint receptors including LAG-3. This completes a mechanistic chain (SDH loss → succinate accumulation → T-cell exhaustion → LAG-3 upregulation) that provides the first SDH-specific mechanistic argument for LAG-3 blockade.
+Building on the previously logged PMID 35977513 (Gudgeon et al., Cell Rep 2022 — extracellular succinate directly suppresses CD8⁺ T-cell cytolytic function in the TME), PMID 41724335 (Pfefer T et al., Immunol Lett 2026 review) extends this to T-cell exhaustion — "succinate can also promote T cell exhaustion whilst expanding cancer-associated fibroblasts." T-cell exhaustion programs upregulate co-inhibitory checkpoint receptors including LAG-3. This outlines a hypothetical mechanistic chain (SDH loss → succinate accumulation → T-cell exhaustion → LAG-3 upregulation). The LAG-3 upregulation step is an inference that neither cited paper shows, and the chain is untested in SDH-deficient systems.
 
-LAG-3 and PD-1 are non-redundant, co-expressed checkpoint receptors on the most deeply exhausted TIL subset; dual LAG-3 + PD-1 blockade (relatlimab + nivolumab = Opdualag) was FDA-approved March 2022 for metastatic melanoma (NCT03470922, RELATIVITY-047; Lipson et al. NEJM 2022, PMID 35426658; median PFS 10.1 vs. 4.6 months vs. nivolumab alone; HR 0.75; p=0.006).
+LAG-3 and PD-1 are non-redundant, co-expressed checkpoint receptors on the most deeply exhausted TIL subset; dual LAG-3 + PD-1 blockade (relatlimab + nivolumab = Opdualag) was FDA-approved March 2022 for metastatic melanoma (NCT03470922, RELATIVITY-047; Tawbi et al. NEJM 2022, PMID 34986285; median PFS 10.1 vs. 4.6 months vs. nivolumab alone; HR 0.75; p=0.006).
 
-This direction clears the HARD RELEVANCE GATE: PMID 35977513 + PMID 41724335 together provide a citation-backed mechanistic link from SDH loss → succinate → T-cell exhaustion → LAG-3 — two independent papers from established immunometabolism groups (one in Cell Rep, one in Immunol Lett, the O'Neill lab). Evidence_score 20 (theoretical) reflects absence of any SDH-specific LAG-3 or relatlimab data.
+Gate status: borderline. PMID 35977513 (primary study) supports succinate-driven suppression of T-cell effector function; PMID 41724335 (a review) notes that succinate can promote T-cell exhaustion. Neither shows LAG-3 upregulation or any SDH-deficient tumour data, so this is a hypothesis only. Evidence_score 20 (theoretical) reflects the absence of any SDH-specific LAG-3 or relatlimab data.
 
 **Directions screened and rejected (forbidden repeats check):**
 - NAMPT/daporinad: already in drugs.ts (lines 365-382) with `nad-metabolism` pathway — not a new direction
@@ -1785,8 +1785,8 @@ This direction clears the HARD RELEVANCE GATE: PMID 35977513 + PMID 41724335 tog
 - `tracker.md`: logged 8 evaluated PMIDs (2 added, 5 rejected, 1 outside window/used as anchor)
 
 **Key citations:**
-- Gudgeon NH et al. The metabolite itaconate activates Akt and reduces DON-mediated cytotoxicity. Cell Rep 2022;40(4):111064. PMID 35977513. [succinate suppresses T-cell cytolytic function; direct TME mechanism]
-- Pfefer T, O'Neill LA. Succinate promotes T-cell exhaustion whilst expanding cancer-associated fibroblasts. Immunol Lett 2026;274:106980. PMID 41724335. [succinate promotes T-cell exhaustion; extends upstream mechanism]
-- Lipson EJ et al. Relatlimab–Nivolumab versus Nivolumab in Untreated Advanced Melanoma. N Engl J Med 2022;386(1):24-34. PMID 35426658. [RELATIVITY-047 pivotal trial; FDA registration basis for Opdualag]
+- Gudgeon N et al. Succinate uptake by T cells suppresses their effector function via inhibition of mitochondrial glucose oxidation. Cell Rep 2022;40:111193. PMID 35977513. [succinate suppresses T-cell cytolytic function; direct TME mechanism]
+- Pfefer T et al. Immunometabolites and cancer: the role of 2-hydroxyglutarate, succinate, fumarate and itaconate in tumour development and anti-tumour immunity (review). Immunol Lett 2026;279:107153. PMID 41724335. [succinate promotes T-cell exhaustion; extends upstream mechanism]
+- Tawbi HA et al. Relatlimab and Nivolumab versus Nivolumab in Untreated Advanced Melanoma. N Engl J Med 2022;386(1):24-34. PMID 34986285. [RELATIVITY-047 pivotal trial; FDA registration basis for Opdualag]
 
 **PR:** morning/2026-10-03-lag3-relatlimab
