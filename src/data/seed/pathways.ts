@@ -669,6 +669,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 39,
   },
   {
+    name: "HIF→CD47 Phagocytosis Evasion",
+    slug: "hif-cd47-phagocytosis-evasion",
+    description:
+      "SDH-deficient cells constitutively activate HIF-1α and HIF-2α via the pseudohypoxia pathway (succinate → PHD2/PHD3 inhibition → HIF-α stabilisation). Samanta et al. (PNAS 2018, PMID 29367423) demonstrated that HIF-1α simultaneously and directly co-induces three immune-checkpoint/evasion genes — CD73 (NT5E), CD47, and CD274 (PD-L1) — via canonical hypoxia-response elements (HREs) in their respective promoters. CD47 (Integrin-Associated Protein; UniProt Q08722) is a ubiquitously expressed 'don't eat me' signal: its extracellular domain engages SIRPα (CD172a) on tumour-associated macrophages (TAMs) and tumour-associated neutrophils, triggering SIRPα ITIM phosphorylation, SHP-1/SHP-2 phosphatase recruitment, and myosin IIA dephosphorylation — collectively preventing the cytoskeletal reorganisation required for phagocytosis. In SDH-deficient tumours, constitutive pseudohypoxic HIF-1α activity is predicted to drive constitutive CD47 overexpression on the tumour cell surface, delivering a chronic, oxygen-independent anti-phagocytic signal that shields tumour cells from macrophage and neutrophil innate immune surveillance. This is mechanistically distinct from all T-cell adaptive immune axes (PD-1, LAG-3), metabolic suppression of T-cells (adenosine, IDO1, succinate direct suppression), and the innate cGAS-STING pathway — it is the first myeloid phagocytosis-checkpoint direction in this engine.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive PHD2/PHD3 prolyl hydroxylase inhibition → constitutive VHL-independent HIF-1α/2α stabilisation → HIF-1α binding to HRE in CD47 promoter (Samanta et al. PNAS 2018, PMID 29367423) → constitutive CD47 mRNA and protein overexpression on tumour cell surface → CD47 extracellular domain engages SIRPα (CD172a) ITIM receptor on tumour-associated macrophages and tumour-associated neutrophils → SIRPα ITIM tyrosine phosphorylation → SHP-1 and SHP-2 phosphatase recruitment → myosin IIA dephosphorylation → impaired actin-myosin cytoskeletal reorganisation → anti-phagocytic 'don't eat me' signal → macrophage and neutrophil phagocytosis escape",
+    downstream_effects: [
+      "Constitutive HIF-1α binding to the CD47 gene HRE drives oxygen-independent CD47 overexpression in SDH-deficient pseudohypoxic tumour cells (mechanistic basis: PMID 29367423)",
+      "CD47-SIRPα ligation on tumour-associated macrophages (TAMs) delivers ITIM-mediated co-inhibitory signal → SHP-1/SHP-2 recruitment → myosin IIA dephosphorylation → impaired phagosome formation → phagocytosis escape",
+      "High CD47 expression correlates with poor prognosis and immune evasion in multiple solid tumour types; CD47 acts as a 'do not eat me' marker enabling tumour cell immune surveillance escape from innate myeloid cells",
+      "Magrolimab (Hu5F9-G4; Gilead) is an anti-CD47 IgG4 monoclonal antibody that blocks CD47-SIRPα interactions, eliminating the anti-phagocytic signal and permitting macrophage-mediated phagocytosis; Phase 1b data in solid tumours available (NCT02216409)",
+      "CD47 blockade combined with tumour-opsonising antibodies (rituximab, cetuximab, trastuzumab) produces synergistic macrophage phagocytosis via simultaneous SIRPα de-inhibition (magrolimab) and Fcγ receptor activation (Fc-bearing opsonins)",
+    ],
+    druggable: true,
+    display_order: 41,
+  },
+  {
     name: "Succinate → T-Cell Exhaustion / LAG-3 Checkpoint",
     slug: "succinate-lag3-exhaustion",
     description:

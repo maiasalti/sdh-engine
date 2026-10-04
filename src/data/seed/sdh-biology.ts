@@ -976,6 +976,48 @@ No published data test relatlimab or any anti-LAG-3 agent in SDH-deficient GIST,
 
 ---
 
+## Mechanism 53: HIF→CD47 Phagocytosis Evasion — Macrophage 'Don't Eat Me' Checkpoint — Magrolimab
+
+### Overview
+SDH loss creates constitutive pseudohypoxia — succinate accumulation inhibits PHD2/PHD3, locking HIF-1α and HIF-2α in their active, transcriptionally competent states independent of oxygen. Among the HIF-1α target genes with confirmed hypoxia-response elements (HREs) is CD47 (Integrin-Associated Protein; IAP; UniProt Q08722). Samanta et al. (PNAS 2018, PMID 29367423) demonstrated that HIF-1α simultaneously co-induces three immunosuppression genes — CD47, CD73 (NT5E), and PD-L1 (CD274) — via direct HRE binding in cancer cells under hypoxia, establishing the 'triple HIF immunosuppression axis'. In SDH-deficient tumours, constitutive pseudohypoxia is predicted to drive constitutive overexpression of all three — including CD47, the 'don't eat me' myeloid phagocytosis checkpoint. This represents the first macrophage innate immune evasion axis described for SDH-deficient tumours; all prior immunosuppression entries in this engine target adaptive T-cell axes (PD-1, LAG-3) or T-cell metabolic suppression (adenosine/CD73, IDO1, succinate direct suppression).
+
+### Upstream mechanism (SDH-specific; theoretical extrapolation)
+SDH loss → succinate overproduction → constitutive PHD2/PHD3 inhibition → VHL-independent HIF-1α/2α stabilisation → HIF-1α binding to the HRE in the CD47 promoter (Samanta et al. PNAS 2018, PMID 29367423) → constitutive, oxygen-independent CD47 mRNA and protein overexpression on tumour cell surface → CD47 extracellular domain engages SIRPα (SIRPA/CD172a) on tumour-associated macrophages and tumour-associated neutrophils → SIRPα ITIM tyrosine phosphorylation → SHP-1 (PTPN6) and SHP-2 (PTPN11) phosphatase recruitment and activation → myosin IIA dephosphorylation → impaired phagosome cytoskeletal reorganisation → macrophage/neutrophil phagocytosis escape ('don't eat me' signal).
+
+The key primary citation — PMID 29367423 (Samanta et al., PNAS 2018) — is already in this engine as the mechanistic anchor for the HIF→CD73 (Mechanism 42/oleclumab) and HIF→PD-L1 axes. The same paper establishes HIF-1α→CD47 induction in cancer cells: CD47 expression was upregulated under hypoxia in an HIF-1α-dependent manner (silencing HIF-1α attenuated hypoxic CD47 induction), and anti-CD47 antibody treatment restored phagocytosis in co-culture assays. This paper demonstrates all three arms of the HIF-driven immunosuppression triad. CD47 is the third arm — the myeloid arm — previously uncovered in this engine.
+
+### CD47-SIRPα biochemical signaling
+SIRPα is an Ig superfamily receptor expressed on macrophages, monocytes, neutrophils, and dendritic cells bearing four cytoplasmic immunoreceptor tyrosine-based inhibitory motifs (ITIMs). CD47 binding induces ITIM phosphorylation (by Src-family kinases), creating docking sites for SHP-1 (PTPN6) and SHP-2 (PTPN11). The recruited phosphatases dephosphorylate myosin IIA regulatory light chain (MYL9/MLC2) — the motor protein that drives actin-based membrane protrusion and contractile force generation necessary for phagosome cup formation and closure. In practical terms: macrophages physically cannot engulf cells displaying high CD47 because the cytoskeletal machinery required is pharmacologically shut down at the myosin IIA regulatory node.
+
+### Mechanistic distinction from existing engine immunosuppression entries
+| Mechanism | Target | Cell type | Signalling node | Analogy |
+|---|---|---|---|---|
+| HIF→PD-L1 axis | PD-L1/CD274 | CD8⁺ T cells | PD-1 ITIM → SHP-2 → TCR inhibition | Adaptive checkpoint |
+| Succinate→LAG-3 (Mechanism 52) | LAG-3/CD223 | CD8⁺ T cells | LAG-3 → co-inhibitory signalling | Adaptive checkpoint |
+| HIF→CD73→adenosine (Mechanism 42) | NT5E/CD73 → ADORA2A | CD8⁺/CD4⁺ T cells, NK cells | Gs→cAMP→PKA T-cell suppression | Metabolic checkpoint |
+| IDO1/kynurenine axis | IDO1 | T cells, Tregs | tryptophan depletion → Treg expansion | Metabolic checkpoint |
+| cGAS-STING (existing) | STING | Innate cells | type I IFN sensing | Innate sensing |
+| **HIF→CD47 (Mechanism 53)** | **CD47/IAP** | **Macrophages, neutrophils** | **SIRPα ITIM → SHP-1/2 → myosin IIA** | **Innate phagocytosis checkpoint** |
+
+Mechanism 53 is the only myeloid innate phagocytosis-checkpoint axis in the engine.
+
+### Drug: Magrolimab (Hu5F9-G4)
+Magrolimab (Hu5F9-G4; Gilead Sciences, formerly Forty Seven Inc.) is a humanised IgG4 kappa monoclonal antibody that binds the F-strand/C-loop face of the CD47 extracellular domain — the precise interface used for SIRPα engagement — and sterically blocks CD47-SIRPα ligation. IgG4 subclass was chosen to minimise direct Fcγ receptor-mediated depletion of CD47-expressing normal cells (including red blood cells), while relying on Fab-mediated SIRPα de-inhibition to restore phagocytosis.
+
+On-target anaemia (phagocytosis of aged CD47-expressing RBCs) is the primary and mechanistically expected toxicity; it is managed with a 1 mg/kg priming dose to clear senescent RBCs before escalating to the 30–45 mg/kg therapeutic dose range. This priming-dose strategy has been validated in clinical trials and is a known manageable adverse effect profile.
+
+**Clinical data:**
+- NCT02216409 (Phase 1b; Stanford University / Forty Seven Inc.; solid tumours including colorectal, ovarian, NSCLC, bladder, breast cancer; n=62 Phase 1b expansion; COMPLETED): first-in-human Phase 1b establishing pharmacokinetics, anaemia management protocol (priming dose strategy), target engagement (increased macrophage phagocytosis), and preliminary antitumour activity signal in solid tumours.
+
+**Key limitation:**
+No published data test magrolimab or any anti-CD47 agent in SDH-deficient GIST, PPGL, RCC, or pituitary adenoma. CD47 protein expression in SDH-deficient tumour tissue at the IHC level has not been reported. PMID 29367423 establishes HIF-1α→CD47 induction in non-SDH cancer cells under hypoxia; the extrapolation to constitutive pseudohypoxic CD47 overexpression in SDH-deficient tumours is mechanistically robust but unvalidated by isogenic SDH-null experiments. Required next steps: CD47 IHC on SDH-deficient GIST/PPGL tissue microarrays; CD47 qPCR and flow cytometry in SDH-null vs. SDH-intact isogenic cell lines; macrophage phagocytosis co-culture assay measuring magrolimab-mediated restoration of tumour cell engulfment in SDH-deficient cancer cells.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CD47 (Integrin-Associated Protein) | CD47 | Magrolimab (Hu5F9-G4) | Phase 1b (NCT02216409, solid tumours; COMPLETED) | None; rationale via HIF-1α→CD47 HRE axis (PMID 29367423) and constitutive SDH-deficient pseudohypoxia |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

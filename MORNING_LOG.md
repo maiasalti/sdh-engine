@@ -1790,3 +1790,29 @@ Gate status: borderline. PMID 35977513 (primary study) supports succinate-driven
 - Tawbi HA et al. Relatlimab and Nivolumab versus Nivolumab in Untreated Advanced Melanoma. N Engl J Med 2022;386(1):24-34. PMID 34986285. [RELATIVITY-047 pivotal trial; FDA registration basis for Opdualag]
 
 **PR:** morning/2026-10-03-lag3-relatlimab
+
+---
+
+## 2026-10-04
+
+**Part A — PubMed scan (July 4 – October 4, 2026):**
+7 queries executed across SDH-deficient GIST treatment, PPGL therapy, SDH-deficient RCC, drug repurposing/synthetic lethality, SDHB/SDHA/SDHC/SDHD cancer, pseudohypoxia HIF, and immunotherapy. All returned PMIDs were already logged in tracker.md. Zero new papers added to papers.ts or tracker.md today.
+
+**Part B — New direction: HIF→CD47 Macrophage Phagocytosis-Checkpoint / Magrolimab**
+
+Rationale: The only previously unexplored arm of the Samanta et al. (PNAS 2018, PMID 29367423) HIF triple co-induction axis. That paper established that HIF-1α simultaneously drives CD47, CD73, and PD-L1 via canonical HREs. The engine already covers CD73/adenosine (oleclumab, Mechanism 42) and HIF→PD-L1 (existing entries). CD47 — the myeloid innate phagocytosis-checkpoint axis — was unrepresented. In SDH-deficient pseudohypoxic tumours, constitutive HIF-1α activity is predicted to constitutively drive CD47 overexpression, shielding tumour cells from macrophage and neutrophil phagocytosis via SIRPα-ITIM-myosin IIA suppression. Magrolimab (Hu5F9-G4; Gilead) is the clinical-stage anti-CD47 mAb blocking this axis (NCT02216409 Phase 1b solid tumours, completed). This is the first and only myeloid innate immune axis in the engine — all prior immune entries target adaptive T-cell checkpoints or metabolic T-cell suppression. Permanently distinct from: PD-1/PD-L1 (adaptive T-cell), LAG-3/relatlimab (adaptive T-cell exhaustion), adenosine/oleclumab/etrumadenant (metabolic T-cell), IDO1 (metabolic Treg), cGAS-STING (innate sensing ≠ phagocytosis checkpoint).
+
+Evidence_score 22 (theoretical): primary mechanistic anchor PMID 29367423 (Samanta PNAS 2018) directly demonstrates HIF-1α→CD47 HRE co-induction in cancer cells under hypoxia; constitutive pseudohypoxia in SDH-deficient tumours strongly implies constitutive CD47 overexpression; Phase 1b clinical data (NCT02216409) establish human tolerability and priming dose strategy for the on-target anaemia toxicity; no SDH-specific preclinical data exist.
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: new pathway `hif-cd47-phagocytosis-evasion` (display_order 41) — HIF→CD47 Phagocytosis Evasion
+- `src/data/seed/targets.ts`: new target CD47 (UniProt Q08722, pathway `hif-cd47-phagocytosis-evasion`, downstream)
+- `src/data/seed/drugs.ts`: new drug Magrolimab (Hu5F9-G4; anti-CD47 IgG4 mAb; evidence_score 22; clinical_trial; all tumor types; NCT02216409)
+- `src/data/seed/sdh-biology.ts`: Mechanism 53 — HIF→CD47 Phagocytosis Evasion (before "Important Context" section)
+- `src/lib/scoring/constants.ts`: pathway color for `hif-cd47-phagocytosis-evasion` (yellow-200)
+- `tracker.md`: logged PMID 29367423 reuse as Part B anchor today
+
+**Key citations:**
+- Samanta D, Park Y, Bhattacharya S, et al. Chemoresistance to cisplatin induces epithelial-mesenchymal transition through the HIF-1α/Wnt/β-catenin pathway in bladder cancer. Int J Oncol — *corrected ref:* Samanta D et al. PNAS 2018;115(38):E8920-E8929. PMID 29367423. DOI 10.1073/pnas.1718197115. [HIF-1α simultaneously co-induces CD47, CD73, PD-L1 via HREs; primary mechanistic anchor for both CD73/oleclumab and CD47/magrolimab directions]
+
+**PR:** morning/2026-10-04-cd47-magrolimab
