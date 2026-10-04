@@ -374,4 +374,30 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42813377",
     date: "2026-09",
   },
+  {
+    title:
+      "Molecular clusters and precision medicine in pheochromocytomas and paragangliomas.",
+    authors: "Almeida MQ, Dahia PLM, Robledo M.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0258",
+    topic: "Review / Overview",
+    description:
+      "Comprehensive review of the molecular cluster framework for pheochromocytomas and paragangliomas (PPGLs), covering cluster 1 (pseudohypoxia/SDHx/VHL/EPAS1), cluster 2 (kinase signaling/RET/NF1/TMEM127/MAX), and cluster 3 (Wnt/cortical admixture), with discussion of precision medicine opportunities — including PRRT, targeted therapies, and emerging immunotherapy approaches — aligned to cluster biology.",
+    pmid: "42626933",
+    date: "2026-09",
+  },
+  {
+    title:
+      "Pediatric Gastric GIST With SDHA Truncation Despite Retained SDHB Staining: A Case Report.",
+    authors: "Tanimura R, Korogi M, Otaka R, Jones RL.",
+    journal: "J Pediatr Hematol Oncol",
+    year: 2026,
+    doi: "10.1097/MPH.0000000000003262",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Case report of a pediatric gastric GIST carrying a germline SDHA truncating variant in which SDHB immunohistochemistry was retained — a diagnostically important pitfall because retained SDHB IHC is typically used as a surrogate to exclude SDH deficiency. Demonstrates that SDHA truncation can escape the standard SDHB IHC screen, with implications for molecular testing protocols in pediatric GIST.",
+    pmid: "42611605",
+    date: "2026-08",
+  },
 ];

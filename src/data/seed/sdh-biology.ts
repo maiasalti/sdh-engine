@@ -939,6 +939,43 @@ No published data test etrumadenant in SDH-deficient GIST, PPGL, or RCC models. 
 
 ---
 
+## Mechanism 52: Succinate-Driven T-Cell Exhaustion / LAG-3 Checkpoint Axis — Relatlimab
+
+### Overview
+SDH loss causes constitutive accumulation of succinate in the tumor microenvironment (TME). This extracellular succinate acts as an immunosuppressive oncometabolite that directly suppresses T-cell cytolytic function and can promote T-cell exhaustion, which is hypothesised (not shown in the cited work) to upregulate co-inhibitory checkpoint receptors including LAG-3 (Lymphocyte Activation Gene 3; CD223) on tumor-infiltrating lymphocytes (TILs). LAG-3 is the defining marker of the most deeply exhausted TIL subset; dual blockade of LAG-3 and PD-1 (relatlimab + nivolumab; Opdualag) produces synergistic T-cell reinvigoration clinically validated in melanoma. This axis is mechanistically distinct from all other immune checkpoints and immunosuppression pathways already represented in this engine.
+
+### Upstream mechanism (SDH-specific; theoretical extrapolation)
+SDH loss → succinate overproduction from blocked ETC complex II → constitutive extracellular succinate accumulation in the TME → direct T-cell suppression (Gudgeon et al. Cell Rep 2022, PMID 35977513) and T-cell exhaustion induction (Pfefer T et al., Immunol Lett 2026 review, PMID 41724335) → (inferred, untested in SDH-deficient systems) LAG-3, PD-1, TIM-3 upregulation on TILs → co-inhibitory checkpoint signaling → T-cell functional paralysis.
+
+Key supporting evidence:
+- PMID 35977513 (Gudgeon et al., Cell Rep 2022): Extracellular succinate at TME-relevant concentrations directly suppresses CD8⁺ T-cell cytolytic function in vitro and in vivo — the first direct demonstration of succinate as an immunosuppressive oncometabolite independent of its epigenetic (TET/KDM4 inhibition) roles.
+- PMID 41724335 (Pfefer T et al., Immunol Lett 2026-06, review): Succinate promotes T-cell exhaustion in the TME and drives expansion of cancer-associated fibroblasts — extending succinate immunosuppression from functional suppression to T-cell exhaustion (reported in a review); LAG-3 upregulation is an inference.
+
+### LAG-3 biology
+LAG-3 (UniProt P18627) is a type I transmembrane protein structurally homologous to CD4. Its extracellular domain binds MHC class II molecules with ~100-fold higher affinity than CD4, delivering a co-inhibitory signal that suppresses T-cell proliferation, cytokine production (IFN-γ, TNF-α), and cytolytic activity. Co-expression of LAG-3 + PD-1 defines the most functionally impaired, deeply exhausted TIL subset across solid tumors. LAG-3 and PD-1 operate through non-redundant signaling mechanisms; dual blockade produces additive-to-synergistic T-cell reinvigoration.
+
+### Drug: Relatlimab (Opdualag)
+Relatlimab (BMS-986016; Bristol-Myers Squibb) is a fully human IgG4 anti-LAG-3 monoclonal antibody. Opdualag — the fixed-dose combination of relatlimab 160 mg + nivolumab 480 mg — was FDA-approved in March 2022 for unresectable or metastatic melanoma, based on RELATIVITY-047 (NCT03470922):
+
+- Tawbi HA et al. (NEJM 2022, PMID 34986285): Opdualag vs. nivolumab alone in 714 patients with untreated metastatic melanoma; median PFS 10.1 vs. 4.6 months (HR 0.75, p=0.006); OS not yet mature at time of publication. This was the pivotal Phase 2/3 registration trial establishing LAG-3 as a clinically valid non-redundant checkpoint target.
+
+Relatlimab is the first and (as of October 2026) only FDA-approved anti-LAG-3 agent globally.
+
+### Distinction from existing engine immunotherapy entries
+- **PD-1/PD-L1 axis** (existing entries: nivolumab, pembrolizumab, etc.): HIF-1α drives CD274 (PD-L1) transcription → T-cell suppression via PD-1/PD-L1. Relatlimab targets LAG-3, a co-inhibitory receptor parallel to and non-redundant with PD-1 on exhausted TILs.
+- **Oleclumab** (existing entry): anti-CD73 IgG1; blocks AMP→adenosine production. Entirely different TME immunosuppression axis.
+- **Etrumadenant** (Mechanism 51): dual ADORA2A/ADORA2B antagonist; blocks adenosine signaling on T cells. Different axis; different target class.
+- **IDO1/epacadostat** (existing entry): tryptophan→kynurenine axis; metabolic checkpoint distinct from LAG-3.
+
+### Key limitation
+No published data test relatlimab or any anti-LAG-3 agent in SDH-deficient GIST, PPGL, RCC, or pituitary adenoma. LAG-3 IHC on SDH-deficient patient tumor TILs has not been reported. The succinate-to-exhaustion-to-LAG-3 chain is supported by PMID 35977513 and PMID 41724335 but not demonstrated with SDH-null isogenic models. Required next step: LAG-3 IHC on SDH-deficient GIST/PPGL tissue microarray; RNA-seq for LAG3 in SDH-null vs. SDH-intact cell lines; co-culture assay measuring LAG-3 upregulation on T cells after succinate treatment.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| LAG-3 (Lymphocyte Activation Gene 3) | LAG3 | Relatlimab (Opdualag) | FDA-approved (NCT03470922, melanoma) | None; rationale via succinate-T-cell-exhaustion axis (PMID 35977513, PMID 41724335) |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
