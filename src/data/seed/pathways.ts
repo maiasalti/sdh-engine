@@ -672,12 +672,12 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     name: "Succinate → T-Cell Exhaustion / LAG-3 Checkpoint",
     slug: "succinate-lag3-exhaustion",
     description:
-      "Extracellular succinate accumulation in the SDH-deficient tumor microenvironment (TME) directly suppresses T-cell function and promotes T-cell exhaustion, driving upregulation of inhibitory checkpoint receptors including LAG-3 (Lymphocyte Activation Gene 3) on tumor-infiltrating CD8⁺ T cells. LAG-3 binds MHC-II on antigen-presenting cells with higher affinity than CD4, and ligation of LAG-3 on exhausted TILs delivers a co-inhibitory signal that arrests T-cell effector programs. Relatlimab, an FDA-approved anti-LAG-3 monoclonal antibody (Opdualag, with nivolumab), targets this exhaustion-driven checkpoint.",
+      "Extracellular succinate accumulation in the SDH-deficient tumor microenvironment (TME) directly suppresses T-cell function and can promote T-cell exhaustion, which is hypothesised (not shown in the cited work) to drive upregulation of inhibitory checkpoint receptors including LAG-3 (Lymphocyte Activation Gene 3) on tumor-infiltrating CD8⁺ T cells. LAG-3 binds MHC-II on antigen-presenting cells with higher affinity than CD4, and ligation of LAG-3 on exhausted TILs delivers a co-inhibitory signal that arrests T-cell effector programs. Relatlimab, an FDA-approved anti-LAG-3 monoclonal antibody (Opdualag, with nivolumab), targets this exhaustion-driven checkpoint.",
     upstream_event:
-      "SDH loss → succinate accumulation → T-cell functional suppression and exhaustion in immunosuppressive TME (Gudgeon et al. Cell Rep 2022, PMID 35977513; Pfefer T, O'Neill LA, Immunol Lett 2026, PMID 41724335) → LAG-3 upregulation on exhausted TILs",
+      "SDH loss → succinate accumulation → T-cell functional suppression and exhaustion in immunosuppressive TME (Gudgeon et al. Cell Rep 2022, PMID 35977513; Pfefer T et al., Immunol Lett 2026 review, PMID 41724335) → (inferred, untested) LAG-3 upregulation on exhausted TILs",
     downstream_effects: [
       "Extracellular succinate directly suppresses CD8⁺ T-cell cytolytic function in the TME (PMID 35977513)",
-      "Succinate promotes T-cell exhaustion and upregulates inhibitory checkpoint receptor expression including LAG-3 (PMID 41724335)",
+      "Succinate can promote T-cell exhaustion (PMID 41724335, review); LAG-3 upregulation in this setting is an inference, not shown in the cited work",
       "LAG-3 on exhausted TILs binds MHC-II on tumor cells and APCs, delivering co-inhibitory signals that reinforce the exhausted phenotype and impair TCR-proximal signaling",
       "Anti-LAG-3 blockade with relatlimab restores T-cell effector function in combination with PD-1 blockade (NCT03470922, RELATIVITY-047)",
     ],
