@@ -701,4 +701,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 40,
   },
+  {
+    name: "HIF-1α → TGF-β Immunosuppression",
+    slug: "hif-tgfb-immunosuppression",
+    description:
+      "Constitutive HIF-1α/AP-1 activation in SDH-deficient tumors — driven by succinate-mediated PHD inhibition — directly upregulates TGF-β1 gene transcription. Selnø et al. (Aging 2020, PMID 33295886) established that in human cancer cells (breast, colorectal, AML), HIF-1 and AP-1 are master regulators of TGF-β1 expression via an autocrine TGF-β1 → Smad3 loop. The resulting TGF-β1 overproduction suppresses anti-tumor immunity (Treg induction, M2 macrophage polarization, NK cell suppression, T-cell anergy), promotes epithelial-mesenchymal transition relevant to the SDHB-deficient metastatic phenotype (Letouzé et al., Cancer Cell 2013, PMID 23707781), and drives downstream galectin-9 (LGALS9) upregulation that engages TIM-3 on exhausted T cells.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → HIF-1α/AP-1 constitutive activation → TGF-β1 transcriptional upregulation (PMID 33295886)",
+    downstream_effects: [
+      "TGF-β1 overproduction in the SDH-deficient tumor microenvironment",
+      "FOXP3+ Treg induction → suppression of cytotoxic CD8+ T cells",
+      "Macrophage M2 polarization → immunosuppressive TAM phenotype",
+      "NK cell suppression via NKG2D ligand downregulation",
+      "TGF-β/Smad3-driven galectin-9 (LGALS9) upregulation → TIM-3 engagement → T-cell exhaustion",
+      "EMT-associated mesenchymal/migratory phenotype in SDHB-deficient cells (Letouzé et al. 2013)",
+    ],
+    druggable: true,
+    display_order: 42,
+  },
 ];

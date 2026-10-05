@@ -1816,3 +1816,33 @@ Evidence_score 22 (theoretical): primary mechanistic anchor PMID 29367423 (Saman
 - Samanta D et al. Chemotherapy induces enrichment of CD47(+)/CD73(+)/PDL1(+) immune evasive triple-negative breast cancer cells. PNAS 2018;115:E1239-E1248. PMID 29367423. DOI 10.1073/pnas.1718197115. [HIF-1α-dependent co-induction of CD47, CD73, PD-L1 in chemotherapy-enriched TNBC cells (a non-SDH model); primary mechanistic anchor for both CD73/oleclumab and CD47/magrolimab directions]
 
 **PR:** morning/2026-10-04-cd47-magrolimab
+
+---
+
+## 2026-10-05
+
+**Part A — PubMed scan (July 5 – October 5, 2026):**
+3 queries executed across SDH-deficient tumours/GIST/PPGL treatment and drug repurposing. 3 PMIDs evaluated; zero added to papers.ts. All logged in tracker.md:
+- PMID 42544736 — rejected: 4-patient SDH-deficient GIST case series; no new mechanistic insight
+- PMID 42489911 — rejected: German-language review; no new SDH-specific mechanistic advance
+- PMID 33295886 — outside the scan window (Dec 2020); evaluated because it is the primary mechanistic anchor for Part B; not added to papers.ts
+
+**Part B — New direction: HIF-1α → TGF-β1 Immunosuppression / NIS793 (pan-TGF-β neutralizing antibody)**
+
+Rationale: SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → constitutive HIF-1α/2α stabilization. Selnø et al. (Aging 2020, PMID 33295886) established that in human cancer cell lines, HIF-1 and AP-1 are the master transcriptional regulators of TGF-β1 expression, and that autocrine TGF-β1 → Smad3 signaling then drives galectin-9 (LGALS9) upregulation — the primary TIM-3 ligand — completing an immunosuppressive amplification loop. In SDH-deficient tumours with constitutive HIF-1α activity (i.e., all SDH-deficient histotypes), this predicts chronic TGF-β1 overproduction in the TME independent of oxygen tension. A second anchor: Letouzé et al. (Cancer Cell 2013, PMID 23707781) reported that TGF-β signaling drives EMT in SDHB-deficient cells, providing SDH-specific in-tumour TGF-β biology. Downstream consequences: FOXP3+ Treg induction, M2 macrophage polarization (immunosuppressive TAM phenotype), NK cell NKG2D suppression, CD8+ T-cell anergy, and galectin-9/TIM-3 exhaustion loop. This is the TGF-β arm of the HIF-driven immunosuppressive TME — entirely distinct from all prior immune entries (PD-L1, LAG-3, CD47, CD73/adenosine, IDO1, cGAS-STING). NIS793 (Novartis) is a fully human IgG2 mAb neutralizing all three TGF-β isoforms (TGF-β1/2/3); NCT02947165 (Phase 1/Ib, NIS793 ± PDR001 sparalizumab in advanced malignancies including RCC; COMPLETED; dose-expansion cohorts included solid tumours) is the clinical anchor.
+
+Evidence_score 22 (theoretical): mechanistic chain is supported in non-SDH human cancer models (PMID 33295886) with partial SDH-specific TGF-β evidence (PMID 23707781); NIS793 has Phase 1/Ib human tolerability data; no SDH-specific preclinical NIS793 experiment exists.
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: new pathway `hif-tgfb-immunosuppression` (display_order 42) — HIF-1α → TGF-β Immunosuppression
+- `src/data/seed/targets.ts`: new targets TGFB1 (UniProt P01137), TGFB2 (P61812), TGFB3 (P10600) — all pathway `hif-tgfb-immunosuppression`, downstream
+- `src/data/seed/drugs.ts`: new drug NIS793 (Novartis pan-TGF-β neutralizing antibody; evidence_score 22; theoretical; all tumor types; NCT02947165)
+- `src/data/seed/sdh-biology.ts`: Mechanism 54 — HIF-1α → TGF-β1 Immunosuppression / NIS793 (before "Important Context" section)
+- `src/lib/scoring/constants.ts`: pathway color for `hif-tgfb-immunosuppression` (pink-200)
+- `tracker.md`: logged 3 evaluated PMIDs (all rejected or outside window)
+
+**Key citations:**
+- Selnø ATH et al. Transforming growth factor type beta and programmed cell death ligand 1 are cell-autonomously regulated by HIF-1 and AP-1 through a common transcriptional module. Aging 2020;12(22):22375-22406. PMID 33295886. DOI 10.18632/aging.202343. [HIF-1 and AP-1 as master transcriptional regulators of TGF-β1 and galectin-9 expression in cancer cells; primary mechanistic anchor]
+- Letouzé E et al. SDH mutations establish a hypermethylator phenotype in paraganglioma. Cancer Cell 2013;23(6):739-752. PMID 23707781. [TGF-β drives EMT in SDHB-deficient cells; SDH-specific TGF-β biology anchor]
+
+**PR:** morning/2026-10-05-ccs1477-dedup

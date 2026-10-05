@@ -84,4 +84,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "aurora-kinase-hif-feedback": "bg-violet-200 text-violet-900 dark:bg-violet-800 dark:text-violet-100",
   "succinate-lag3-exhaustion": "bg-rose-200 text-rose-900 dark:bg-rose-800 dark:text-rose-100",
   "hif-cd47-phagocytosis-evasion": "bg-yellow-200 text-yellow-900 dark:bg-yellow-800 dark:text-yellow-100",
+  "hif-tgfb-immunosuppression": "bg-pink-200 text-pink-900 dark:bg-pink-800 dark:text-pink-100",
 };

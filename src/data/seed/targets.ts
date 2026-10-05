@@ -549,4 +549,31 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "ADORA2A (UniProt P29274) encodes the adenosine A2A receptor, a Gs-coupled G-protein-coupled receptor (GPCR) expressed at high density on CD8⁺ cytotoxic T cells, CD4⁺ helper T cells, NK cells, and regulatory T cells (Tregs). Adenosine binding to ADORA2A activates Gs → adenylyl cyclase → elevated intracellular cAMP → protein kinase A (PKA) activation → phosphorylation of CREB and suppression of NF-κB/AP-1-driven effector transcription → reduced IFN-γ, perforin, and granzyme B production; impaired TCR signaling; and blunted cytotoxic T-cell killing. Simultaneously, ADORA2A signaling on Tregs potentiates FoxP3+ Treg immunosuppressive function. In the tumor microenvironment (TME), this constitutes a major adenosine-mediated T-cell exhaustion checkpoint.\n\nIn SDH-deficient tumors, the SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HIF-1α transcriptional activation of NT5E (CD73) → elevated tumor-surface CD73 enzymatic activity → AMP→adenosine conversion → elevated extracellular adenosine → ADORA2A engagement on infiltrating T cells creates a constitutive, pseudohypoxia-driven adenosine immunosuppression loop. This loop operates downstream of the HIF→CD73 axis (Mechanism 42; supported in non-SDH models only); CD73 blockade (oleclumab) targets the upstream enzyme that makes adenosine, while ADORA2A blockade targets the receptor that transduces the adenosine signal on T-cells — two mechanistically distinct points of therapeutic intervention in the same pathway.\n\nEtrumadenant (AB928; Arcus Biosciences) is a potent, orally bioavailable dual ADORA2A/ADORA2B antagonist that directly blocks adenosine receptor signaling on immune cells. It does not reduce adenosine production (as oleclumab does) but prevents the immunosuppressive cAMP response in T-cells and NK cells regardless of extracellular adenosine concentration — a mechanistically complementary and potentially combinable intervention. Phase 1 first-in-human data (NCT03629756; multiple solid tumors; n=48; completed) and Phase 2 activity (NCT04262856; NSCLC; n=151; completed) establish clinical pharmacology and tolerability.",
   },
+  {
+    gene_symbol: "TGFB1",
+    name: "Transforming growth factor beta-1",
+    uniprot_id: "P01137",
+    pathway_slug: "hif-tgfb-immunosuppression",
+    target_type: "downstream",
+    description:
+      "Pleiotropic immunosuppressive cytokine whose gene is transcriptionally activated by HIF-1 and AP-1 in human cancer cells (Selnø et al. Aging 2020, PMID 33295886). In SDH-deficient tumors, constitutive HIF-1α stabilization via succinate-mediated PHD inhibition creates chronic TGF-β1 upregulation in the TME, driving Treg induction, M2 macrophage polarization, NK cell suppression, CD8+ T-cell anergy, and — via autocrine TGF-β1→Smad3→galectin-9 — TIM-3 engagement on exhausted T cells (PMID 33295886). TGF-β1 is also a canonical EMT-inducing cytokine relevant to the constitutive EMT phenotype of SDHB-deficient metastatic tumor cells (Letouzé et al. Cancer Cell 2013, PMID 23707781). Primary target of NIS793 (pan-TGF-β1/2/3 neutralizing antibody, Novartis; NCT02947165).",
+  },
+  {
+    gene_symbol: "TGFB2",
+    name: "Transforming growth factor beta-2",
+    uniprot_id: "P61812",
+    pathway_slug: "hif-tgfb-immunosuppression",
+    target_type: "downstream",
+    description:
+      "Second TGF-β isoform co-targeted by NIS793 (pan-isoform neutralizing antibody). TGF-β2 contributes to tumor immunosuppression via the same SMAD2/3 signaling pathway as TGF-β1. Pan-isoform blockade with NIS793 prevents escape via residual TGF-β2 activity that would occur with isoform-selective antibodies such as fresolimumab (anti-TGF-β1/3 only). Co-neutralized by NIS793 alongside TGF-β1 and TGF-β3.",
+  },
+  {
+    gene_symbol: "TGFB3",
+    name: "Transforming growth factor beta-3",
+    uniprot_id: "P10600",
+    pathway_slug: "hif-tgfb-immunosuppression",
+    target_type: "downstream",
+    description:
+      "Third TGF-β isoform included in the NIS793 pan-neutralization spectrum. TGF-β3 participates in immunosuppressive signaling and EMT induction. Co-targeted by NIS793 alongside TGF-β1 and TGF-β2. Fresolimumab (GC1008; Genzyme) targets TGF-β1 and TGF-β3 but not TGF-β2, and was evaluated in Phase 1 RCC (NCT00356460; COMPLETED 2009), providing early clinical proof-of-concept for TGF-β isoform neutralization in SDH-relevant tumor types.",
+  },
 ];

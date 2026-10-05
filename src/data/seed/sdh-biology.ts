@@ -1018,6 +1018,38 @@ No published data test magrolimab or any anti-CD47 agent in SDH-deficient GIST, 
 
 ---
 
+## Mechanism 54: HIF-1α → TGF-β1 Immunosuppression — NIS793 (Pan-TGF-β Neutralizing Antibody)
+
+### Overview
+Constitutive HIF-1α stabilization in SDH-deficient tumors — driven by succinate-mediated PHD inhibition — transcriptionally upregulates TGF-β1 expression in tumor cells. Selnø et al. (Aging 2020, PMID 33295886) established that in human cancer cells (breast, colorectal, AML), HIF-1 and AP-1 are the master transcriptional regulators of TGF-β1 expression, and that autocrine TGF-β1 → Smad3 signaling then drives galectin-9 (LGALS9) upregulation — the primary TIM-3 ligand — completing an immunosuppressive amplification loop. In SDH-deficient tumors, the SDH loss → succinate → PHD inhibition → HIF-1α constitutive stabilization axis creates a tonic HIF-1 signal that chronically drives TGF-β1 production in the tumor microenvironment. NIS793 (Novartis), a fully human pan-TGF-β neutralizing antibody, directly blocks all three TGF-β isoforms to reverse this immunosuppression.
+
+### SDH-specific mechanistic chain
+SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → VHL-independent HIF-1α/2α constitutive stabilization → HIF-1 and AP-1 co-activate TGF-β1 gene transcription in SDH-deficient tumor cells (Selnø et al. Aging 2020, PMID 33295886) → elevated TGF-β1 secretion into the tumor microenvironment → (1) SMAD2/3 signaling in CD4+ T cells → FOXP3+ Treg induction; (2) macrophage M2 polarization → immunosuppressive TAM phenotype (IL-10 high, anti-tumor cytokine low); (3) NK cell suppression via NKG2D ligand downregulation; (4) CD8+ T-cell anergy and impaired cytolytic function; (5) autocrine TGF-β1 → Smad3 signaling → galectin-9 (LGALS9) upregulation → TIM-3 engagement on exhausted T cells (Selnø et al., PMID 33295886); (6) TGF-β / EMT in SDHB-deficient cells — Letouzé et al. (Cancer Cell 2013, PMID 23707781) showed constitutive EMT features in SDHB-deficient cells, and TGF-β is the canonical EMT-inducing cytokine.
+
+### Distinction from existing immune entries
+This is the first TGF-β-targeting entry in the engine. It differs from all existing immune axes:
+- **PD-L1/PD-1 (pembrolizumab)**: HIF-1α drives PD-L1 expression on tumor cells → T-cell PD-1 ligation. NIS793 reverses Treg induction and M2 polarization that PD-1 blockade does not address.
+- **LAG-3 (relatlimab)**: co-inhibitory receptor on exhausted TILs. TGF-β drives exhaustion upstream of checkpoint receptor expression; NIS793 targets the upstream immunosuppressive cytokine.
+- **CD47/magrolimab (Mechanism 53)**: myeloid phagocytosis checkpoint (SIRPα/myosin axis). Entirely different cell type and molecular mechanism.
+- **CD73/oleclumab, ADORA2A/etrumadenant**: adenosine/cAMP immunosuppression axis. Mechanistically orthogonal to TGF-β/Smad signaling.
+- **IDO1/epacadostat**: tryptophan→kynurenine metabolic depletion. Different cytokine, different receptor system.
+
+### Drug: NIS793 (Novartis)
+NIS793 is a fully human IgG2 monoclonal antibody that binds and neutralizes all three TGF-β isoforms (TGF-β1, TGF-β2, TGF-β3), preventing ligand binding to the TGF-βRI/TGF-βRII receptor complex and blocking downstream SMAD2/3 phosphorylation and nuclear translocation. Pan-isoform neutralization prevents escape via TGF-β2 that would occur with isoform-selective agents.
+
+**Clinical anchor:** NCT02947165 (Novartis; Phase 1/Ib; NIS793 monotherapy and NIS793 + PDR001 [spartalizumab, anti-PD-1] in advanced malignancies including RCC; n=120; COMPLETED). The NIS793 + PDR001 combination is mechanistically motivated: TGF-β blockade reverses the upstream immunosuppression that limits PD-1/PD-L1 checkpoint efficacy. No SDH-genotype-stratified efficacy data are available.
+
+**Older TGF-β clinical context:** Fresolimumab (GC1008; anti-TGF-β1/β3; Genzyme) was evaluated in Phase 1 RCC (NCT00356460; n=18; COMPLETED 2009), establishing that systemic TGF-β neutralization is tolerated in RCC patients.
+
+### Key limitation
+No published data test NIS793 or any pan-TGF-β neutralizing antibody in SDH-deficient GIST, PPGL, or RCC cell lines or xenograft models. The HIF-1α → TGF-β1 mechanism (PMID 33295886) was characterized in non-SDH cancer cells; constitutive pseudohypoxic TGF-β1 overexpression in SDH-null isogenic models has not been directly measured. Evidence_score 22 (theoretical): mechanistic chain is citation-anchored (SDH→HIF-1α and HIF-1→TGF-β1 both established), and NIS793 has completed Phase 1 clinical evaluation, but SDH-specific TGF-β experimental data are absent.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| TGF-β1/2/3 (pan-isoform) | TGFB1, TGFB2, TGFB3 | NIS793 (Novartis) | Phase 1/Ib (NCT02947165; COMPLETED) | None; rationale via HIF-1→TGF-β1 transcription (PMID 33295886) + TGF-β/EMT in SDHB-deficient cells (PMID 23707781) |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
