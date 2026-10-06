@@ -1816,3 +1816,42 @@ Evidence_score 22 (theoretical): primary mechanistic anchor PMID 29367423 (Saman
 - Samanta D et al. Chemotherapy induces enrichment of CD47(+)/CD73(+)/PDL1(+) immune evasive triple-negative breast cancer cells. PNAS 2018;115:E1239-E1248. PMID 29367423. DOI 10.1073/pnas.1718197115. [HIF-1α-dependent co-induction of CD47, CD73, PD-L1 in chemotherapy-enriched TNBC cells (a non-SDH model); primary mechanistic anchor for both CD73/oleclumab and CD47/magrolimab directions]
 
 **PR:** morning/2026-10-04-cd47-magrolimab
+
+---
+
+## 2026-10-06
+
+**Direction:** none (territory exhausted; proposals below)
+**Angle:** N/A
+
+**Part A — PubMed scan (2026-07-01 to 2026-10-06):**
+10 queries executed: "SDH-deficient GIST treatment 2026", "SDHB SDHC SDHD SDHA pheochromocytoma paraganglioma therapy 2026", "SDH-deficient renal cell carcinoma treatment 2026", "succinate dehydrogenase cancer drug repurposing 2026", "pseudohypoxia HIF SDH cancer 2026", "succinate oncometabolite cancer 2026", "SDH-deficient GIST immunotherapy 2026", "paraganglioma synthetic lethality 2026", "SDHA SDHB mutation treatment 2026", "succinate HIF cancer immunotherapy 2026". All returned PMIDs were already logged in tracker.md. Zero new papers added to papers.ts or tracker.md today.
+
+**Part B — No new direction:**
+
+The engine now has 65 drugs across 40+ distinct SDH-specific pathways. All plausibly mechanistically anchored directions that satisfy the HARD RELEVANCE GATE have been addressed. Systematic check of remaining candidates:
+
+- **Pathway colors**: `succinate-lag3-exhaustion` (Oct 3) and `hif-cd47-phagocytosis-evasion` (Oct 4) confirmed present in `src/lib/scoring/constants.ts` (lines 85-86) — no data quality gap.
+- **PKMYT1/lunresertib**: candidate (see below); not added today — the PKMYT1 vs. WEE1 distinction in HRD lethality context requires owner review before committing.
+- **TGF-β/galunisertib**: candidate (see below); not added today — HIF→TGF-β1 arm is a reasonable extension of the TME coverage but needs owner review.
+- **PHGDH/NCT-502**: candidate (see below); overlaps with the existing `one-carbon-folate-nucleotide-synthesis` pathway (LY3410738); needs owner guidance on whether upstream extension is warranted.
+- All other angles surveyed are either already in the engine, definitively disqualified (WEE1/adavosertib, Complex I/IACS-010759, ferroptosis), or lack a direct SDH-specific mechanistic anchor with published evidence.
+
+Applying the "never pad" rule: no drug added today.
+
+**Candidate directions for owner review:**
+
+1. **PKMYT1 inhibitor — lunresertib (RP-3500, Repare Therapeutics)**  
+   Mechanistic chain: SDH loss → KDM4B/H3K9me3 suppression → BRCA1 silencing = BRCAness/HRD → replication-stress-dependent CDK1 overactivation → PKMYT1 dependency. PKMYT1 controls the CDC25B phosphatase that activates CDK1 at the G2→M transition; inhibition in HRD cells with stalled forks causes catastrophic mitotic entry. Mechanistically **distinct** from the disqualified WEE1/adavosertib (which kills HR-proficient cells; HRD cells are resistant to WEE1 inhibition because CDK2-mediated origin firing, not CDK1, is the lethality route). Lunresertib showed Phase 1 signals in CCNE1-amplified and HRD solid tumors (NCT04413844). Owner validation needed: does the SDH-HRD phenotype specifically sensitise to PKMYT1 (CDK1 axis) vs. WEE1 (CDK2 axis)?
+
+2. **TGF-β type I receptor inhibitor — galunisertib (LY2157299, Lilly)**  
+   Mechanistic chain: SDH loss → constitutive HIF-1α → HIF-1α transcribes TGF-β1 via 5'-HRE → TGF-β–driven immunosuppression + CAF expansion. This is the remaining unrepresented arm of the TME immunosuppression axis: PD-L1 (covered), CD73/adenosine (covered), LAG-3 (covered), CD47/myeloid (covered). TGF-β uniquely drives both adaptive immune exclusion and CAF differentiation (relevant to the PMID 41724335 observation that succinate expands CAFs). Galunisertib has Phase 2 data in HCC and pancreatic cancer. Owner validation needed: is there published evidence specifically linking SDH-deficient tumor specimens to elevated TGF-β1 expression vs. SDH-sufficient controls?
+
+3. **PHGDH inhibitor — NCT-502 (Nuvation Bio) or BI 4916**  
+   Mechanistic chain: SDH loss → broken TCA cycle → serine/one-carbon pathway upregulated to supply NADH and nucleotide precursors → dependency on phosphoglycerate dehydrogenase (PHGDH) at the entry to the serine synthesis pathway. The engine covers the downstream node (MTHFD2 via LY3410738); PHGDH targets the entry point. PHGDH inhibition would cut off serine synthesis from glycolysis, which is predicted to be particularly lethal in cells that cannot run a complete TCA cycle. Owner validation needed: is PHGDH upregulation specifically documented in SDH-deficient models, and is this genuinely distinct from the existing LY3410738 coverage or merely redundant?
+
+**Changes made to data files:**
+- None. No new papers, drugs, pathways, targets, or biology entries added.
+- `tracker.md`: no new PMIDs evaluated today (all scan returns were already logged).
+
+**PR:** morning/2026-10-06-no-new-direction
