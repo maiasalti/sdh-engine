@@ -1048,23 +1048,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02724020"],
   },
-  {
-    name: "LY3410738",
-    brand_names: [],
-    chembl_id: null,
-    pubchem_cid: null,
-    drug_class: "MTHFD2/MTHFD1L inhibitor",
-    mechanism_of_action:
-      "LY3410738 (Eli Lilly) is a potent, selective small-molecule dual inhibitor of MTHFD2 (mitochondrial methylenetetrahydrofolate dehydrogenase/cyclohydrolase) and MTHFD1L (the cytoplasmic monofunctional formate-THF ligase paralogue). MTHFD2 is the rate-limiting enzyme of the mitochondrial one-carbon folate cycle, generating 10-formyl-THF for purine synthesis (via GART/ATIC) and 5,10-methylene-THF for thymidylate synthesis (via TYMS). Inhibiting MTHFD2 simultaneously depletes both the purine and thymidylate branches of nucleotide synthesis — a pan-nucleotide stress effect distinct from DHODH inhibitors (pyrimidine-only) or PARP inhibitors (DNA repair rather than nucleotide synthesis).\n\nThe SDH-specific rationale arises from two convergent mechanisms identified in recent work: (1) SDH loss truncates the TCA cycle, depleting OAA and aspartate — key substrates for de novo pyrimidine synthesis; (2) accumulated succinate directly inhibits ATCase (the CAD complex), the first committed enzyme of pyrimidine synthesis (Hart et al. 2025, PMID 42082831). The resulting nucleotide stress triggers the Integrated Stress Response (ISR; GCN2/HRI → p-eIF2α → ATF4 selective translation), and ATF4 transcriptionally upregulates MTHFD2 as a compensatory adaptation to folate-dependent nucleotide synthesis. SDH-deficient cells thus develop a selective one-carbon/MTHFD2 dependency that normal cells with intact TCA do not share to the same degree. Inhibiting MTHFD2 with LY3410738 would collapse this compensatory route, compounding the nucleotide depletion already imposed by SDH loss — a synthetic metabolic vulnerability.\n\nLY3410738 is in active preclinical development (Eli Lilly oncology pipeline). No dedicated clinical trial for this compound has been identified; the previously cited NCT04893525 was confirmed to be the EMED Study (buprenorphine/naloxone microdosing for opioid use disorder, University of British Columbia) and is entirely unrelated.",
-    fda_approved: false,
-    approved_indications: [],
-    pathway_slugs: ["one-carbon-folate-nucleotide-synthesis", "pyrimidine-synthesis-vulnerability"],
-    target_gene_symbols: ["MTHFD2"],
-    evidence_score: 20,
-    status: "theoretical",
-    tumor_type_applicability: ["all"],
-    clinical_trial_ids: [],
-  },
+
   {
     name: "CX-5461",
     brand_names: [],
