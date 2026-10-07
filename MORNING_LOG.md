@@ -434,6 +434,8 @@ Evidence_score rationale (capivasertib 32): strong mechanistic chain (direct lit
 
 **Negative trial logged (not added):** PMID 37945488 (Kotecha RR et al., Eur Urol Oncol 2023, DOI: 10.1016/j.euo.2023.10.017): Phase 2 trial NCT04068831, talazoparib+avelumab in genomically defined metastatic RCC; cohort 2 included n=1 SDH-deficient patient (with FH-deficient and RMC); ORR 0/8, median PFS 1.2 months; conclusion "did not show clinical benefit." Talazoparib NOT added as a candidate drug. Logged to tracker.md to prevent future re-evaluation.
 
+> Correction (2026-10-07): the following is a historical record, not a current recommendation. The LY3410738/MTHFD2 pairing and any claim that no clinical trial exists are incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686; NCT04603001). Its seed candidate was withdrawn.
+
 **Previously logged directions NOT re-evaluated:** MTHFD2/one-carbon (no SDH-specific data; LY3410738/NCT04893525 exists but no SDH-specific trial); Complex I definitively ruled out (Sokolov preprint PMID 42239110).
 
 **Files changed:** `src/data/seed/drugs.ts` (temozolomide: clinical_trial_ids [] → ["NCT03556384"], tumor_type_applicability ["ppgl"] → ["ppgl", "gist"]; cabozantinib: clinical_trial_ids ["NCT02302833","NCT04400474"] → ["NCT02302833","NCT04400474","NCT03635892"]), `tracker.md` (3 new rows: 41751859, 41635891, 37945488), `MORNING_LOG.md` (this entry).
@@ -1058,6 +1060,8 @@ Queries run (11 total; 3-month window 2026-06-13 to 2026-09-13):
 
 ---
 
+> Correction (2026-10-07): the following is a historical record, not a current recommendation. The LY3410738/MTHFD2 pairing and any claim that no clinical trial exists are incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686; NCT04603001). Its seed candidate was withdrawn.
+
 ### Part B — Drug Pool Addition: LY3410738 (MTHFD2 inhibitor)
 
 **Direction chosen:** One-carbon folate / nucleotide synthesis dependency via MTHFD2
@@ -1066,11 +1070,17 @@ Queries run (11 total; 3-month window 2026-06-13 to 2026-09-13):
 
 SDH loss truncates TCA → OAA/aspartate depletion. Accumulated succinate also directly inhibits ATCase (CAD complex), the first enzyme of de novo pyrimidine synthesis — confirmed by Hart et al. 2025 (PMID 42082831). The combined nucleotide stress triggers the Integrated Stress Response (ISR: GCN2/HRI → p-eIF2α → ATF4 selective translation). ATF4 transcriptionally upregulates MTHFD2 as a compensatory adaptation, routing nucleotide synthesis through the mitochondrial one-carbon folate cycle. MTHFD2 generates 10-formyl-THF (purines via GART/ATIC) and 5,10-methylene-THF (thymidylate via TYMS), creating a broad one-carbon dependency.
 
+> Correction (2026-10-07): the following is a historical record, not a current recommendation. The LY3410738/MTHFD2 pairing and any claim that no clinical trial exists are incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686; NCT04603001). Its seed candidate was withdrawn.
+
 LY3410738 (Eli Lilly dual MTHFD2/MTHFD1L inhibitor) inhibits this compensatory axis, simultaneously depleting both purine and thymidylate branches — compounding the nucleotide stress already imposed by SDH loss.
 
 **Why this is distinct from existing DHODH entry (Mechanism 17):**
 - DHODH/brequinar: pyrimidine de novo synthesis enzyme (UMP branch only)
+> Correction (2026-10-07): the following is a historical record, not a current recommendation. The LY3410738/MTHFD2 pairing and any claim that no clinical trial exists are incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686; NCT04603001). Its seed candidate was withdrawn.
+
 - MTHFD2/LY3410738: folate cofactor supply for BOTH purines (10-formyl-THF) AND thymidylate (5,10-methylene-THF) — additive stress, entirely different enzymatic node
+
+> Correction (2026-10-07): the following is a historical record, not a current recommendation. The LY3410738/MTHFD2 pairing and any claim that no clinical trial exists are incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686; NCT04603001). Its seed candidate was withdrawn.
 
 **Evidence score:** 20 (theoretical) — mechanistic chain via Hart PMID 42082831 (succinate-ATCase); no SDH-specific MTHFD2 data published yet; no LY3410738 clinical trial identified (NCT04893525 confirmed to be a buprenorphine/naloxone opioid use disorder study — NOT an MTHFD2 trial)
 
@@ -1080,7 +1090,11 @@ LY3410738 (Eli Lilly dual MTHFD2/MTHFD1L inhibitor) inhibits this compensatory a
 - `src/data/papers.ts`: added PMID 42732958 (Kasahara K, Endocr J 2026, somatic SDHD LOH carotid body tumor)
 - `src/data/seed/pathways.ts`: added `one-carbon-folate-nucleotide-synthesis` pathway (display_order 33)
 - `src/data/seed/targets.ts`: added MTHFD2 target (UniProt P13995, pathway_slug one-carbon-folate-nucleotide-synthesis, target_type metabolic)
+> Correction (2026-10-07): the following is a historical record, not a current recommendation. The LY3410738/MTHFD2 pairing and any claim that no clinical trial exists are incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686; NCT04603001). Its seed candidate was withdrawn.
+
 - `src/data/seed/drugs.ts`: added LY3410738 (evidence_score 20, status theoretical, `clinical_trial_ids: []`)
+> Correction (2026-10-07): the following is a historical record, not a current recommendation. The LY3410738/MTHFD2 pairing and any claim that no clinical trial exists are incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686; NCT04603001). Its seed candidate was withdrawn.
+
 - `src/data/seed/sdh-biology.ts`: added Mechanism 42 (MTHFD2/LY3410738 one-carbon folate nucleotide synthesis)
 - `src/lib/scoring/constants.ts`: added `one-carbon-folate-nucleotide-synthesis` color (bg-violet-200)
 - `tracker.md`: logged PMID 42732958 (added)
