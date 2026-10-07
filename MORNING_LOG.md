@@ -1816,3 +1816,37 @@ Evidence_score 22 (theoretical): primary mechanistic anchor PMID 29367423 (Saman
 - Samanta D et al. Chemotherapy induces enrichment of CD47(+)/CD73(+)/PDL1(+) immune evasive triple-negative breast cancer cells. PNAS 2018;115:E1239-E1248. PMID 29367423. DOI 10.1073/pnas.1718197115. [HIF-1α-dependent co-induction of CD47, CD73, PD-L1 in chemotherapy-enriched TNBC cells (a non-SDH model); primary mechanistic anchor for both CD73/oleclumab and CD47/magrolimab directions]
 
 **PR:** morning/2026-10-04-cd47-magrolimab
+
+---
+
+## 2026-10-06
+
+**Direction:** none added; candidate SDH applicability remains unresolved.
+**Angle:** N/A
+
+**Part A - Routine-reported PubMed scan (2026-07-01 to 2026-10-06):**
+The morning routine reports ten queries covering SDH-deficient GIST, PPGL/PCC, renal cell carcinoma, succinate, pseudohypoxia/HIF, repurposing, immunotherapy, synthetic lethality and SDHx mutations. It reports that returned PMIDs were already in tracker.md. This PR adds no papers or tracker entries. The query output was not retained in this PR, so the reported scan does not establish that no new relevant papers exist.
+
+**Part B - No new direction:**
+No drug, pathway, target or biology entry was added. This is a limited scan result, not evidence that the research territory is exhausted or that other directions are permanently disqualified.
+
+The `succinate-lag3-exhaustion` and `hif-cd47-phagocytosis-evasion` pathway colors are present in `src/lib/scoring/constants.ts`.
+
+**Candidate research questions (not validated SDH treatment proposals):**
+
+1. **PKMYT1 / lunresertib (RP-6306)**
+   Lunresertib is a PKMYT1 inhibitor, not RP-3500 (camonsertib, an ATR inhibitor). The MYTHIC phase 1/1b trial is NCT04855656 and includes biomarker-selected solid tumors with CCNE1 amplification or FBXW7/PPP2R1A alterations. These non-SDH clinical findings do not establish an SDH-HRD-to-PKMYT1 dependency. The proposed SDH-specific CDK1 vulnerability is untested in this scan. The earlier blanket assertion that HRD cells resist WEE1 inhibition is not supported here and has been removed. Source: https://clinicaltrials.gov/study/NCT04855656 .
+
+2. **TGF-beta receptor I / galunisertib (LY2157299)**
+   Galunisertib is a TGF-beta receptor I inhibitor studied in non-SDH HCC (https://pubmed.ncbi.nlm.nih.gov/31295152/). This does not establish SDH applicability.
+   Candidate question: does SDH loss produce a TGF-beta-dependent immune-exclusion or fibroblast phenotype that is sensitive to receptor inhibition? The proposed SDH-to-HIF-to-TGF-beta chain is an inference, not a demonstrated SDH-specific mechanism in this scan. Neither a direct HIF response element nor elevated TGF-beta1 in SDH-deficient specimens was verified here. PMID 41724335 is a broad immunometabolite review, not a primary SDH-specific CAF experiment, and is not sufficient proof of this proposal. Source: https://pubmed.ncbi.nlm.nih.gov/41724335/ .
+
+3. **PHGDH / NCT-502**
+   NCT-502 is an experimental PHGDH probe described in medicinal-chemistry work (PMID 29555419); the Nuvation Bio attribution has been removed. A broken TCA cycle alone does not demonstrate PHGDH upregulation or selective lethality in SDH-deficient tumors. Both remain research questions, not established dependencies. Source: https://pubmed.ncbi.nlm.nih.gov/29555419/ .
+   The prior comparison to LY3410738 as an MTHFD2 inhibitor was incorrect. LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686). Existing seed entries that assign it to MTHFD2/MTHFD1L need a separate data correction; this log-only PR does not correct those older entries. Sources: https://pubmed.ncbi.nlm.nih.gov/41026608/ ; https://clinicaltrials.gov/study/NCT04521686/ .
+
+**Changes made to data files:**
+- None. No papers, drugs, pathways, targets or biology entries added.
+- `tracker.md`: unchanged.
+
+**PR branch:** claude/clever-lovelace-dqyuax
