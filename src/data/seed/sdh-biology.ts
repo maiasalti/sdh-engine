@@ -1001,6 +1001,53 @@ No published data test magrolimab or any anti-CD47 agent in SDH-deficient GIST, 
 
 ---
 
+## Mechanism 54: IDO1–Kynurenine–Treg–CTLA-4 — Immunosuppressive Treg Axis — Ipilimumab
+
+### Overview
+SDH loss drives constitutive HIF-1α/2α stabilization (via the pseudohypoxia pathway). HIF-1α transcriptionally activates IDO1 (indoleamine 2,3-dioxygenase 1) expression — confirmed in SDHB-mutant PPGL by multi-omics profiling (Zhou et al. 2025, PMID 42230482; the same paper anchoring the existing epacadostat/IDO1 entry in this engine). IDO1 converts tryptophan → N-formylkynurenine → kynurenine within the tumor microenvironment. Kynurenine acts as an endogenous aryl hydrocarbon receptor (AhR) ligand; AhR activation in naïve CD4⁺ T cells — cooperatively with TGF-β — drives transcription of FoxP3 and converts naïve T cells into FoxP3⁺ regulatory T cells (Tregs). Intratumoral Tregs constitutively overexpress CTLA-4 (CD152) at 50–100× higher surface density than effector T cells, enabling Tregs to outcompete CD28 co-stimulation on antigen-presenting cells and deprive CD8⁺ effector T cells of survival and activation signals.
+
+Ipilimumab (Yervoy; BMS-734016; Bristol-Myers Squibb; IgG1κ) binds CTLA-4 on intratumoral Tregs, and its functional IgG1 Fc domain engages FcγRIII (CD16) on tumor-associated macrophages and NK cells → antibody-dependent cellular cytotoxicity (ADCC) → selective depletion of the CTLA-4-high intratumoral Treg population → restored effector T-cell co-stimulation. This is mechanistically distinct from pembrolizumab (rescues CD8⁺ T cells via PD-1 blockade, not Treg depletion) and from epacadostat (blocks IDO1 enzyme upstream, before kynurenine forms). Ipilimumab and epacadostat target the same IDO1 axis at different levels — epacadostat upstream (prevents kynurenine synthesis), ipilimumab downstream (depletes kynurenine-driven Tregs) — analogous to the oleclumab/etrumadenant pair in the adenosine axis.
+
+### Mechanistic chain (SDH-specific evidence and well-established biology)
+1. SDH loss → succinate accumulation (established; Complex II structural defect)
+2. Succinate → PHD2/PHD3 competitive inhibition → HIF-1α/2α stabilization (established; pseudohypoxia)
+3. HIF-1α → IDO1 transcriptional activation via HREs → IDO1 protein overexpression (confirmed in SDHB-PPGL: PMID 42230482; also PMID 34619935 for HIF-IDO1 HRE mechanism)
+4. IDO1 → tryptophan → kynurenine conversion in TME (established enzyme biochemistry)
+5. Kynurenine → AhR agonism in T cells → AhR + TGF-β → FoxP3⁺ Treg induction (established in multiple tumor types: Mezrich et al. J Immunol 2010; Quintana et al. Nature 2008)
+6. Intratumoral FoxP3⁺ Tregs constitutively overexpress CTLA-4 → CTLA-4 outcompetes CD28 for B7-1/B7-2 (established Treg immunobiology)
+7. Ipilimumab (IgG1κ) → CTLA-4 binding on Tregs → FcγRIII-mediated ADCC by TAMs/NK cells → Treg depletion (Mechanism validated in melanoma and RCC: Arce Vargas et al. Cancer Cell 2018, PMID 29656894)
+8. Treg depletion → restored CD8⁺ effector T-cell co-stimulation and cytolytic activity
+
+Steps 1–2: mechanistic bedrock of this engine. Step 3: directly confirmed at the SDH-specific level. Steps 4–8: well-established tumor immunology; not yet demonstrated in SDH-deficient models specifically.
+
+### Distinction from WEE1 inhibitor (explicitly ruled out; preserved for reference)
+CTLA-4 is NOT WEE1 — this mechanism has no connection to the G2/M replication checkpoint. The WEE1 inhibitor direction was explicitly ruled out at Mechanism 14/BRCAness: "Adavosertib (MK-1775) kills BRCA-WT/HR-proficient cells via mitotic catastrophe but HR-deficient cells are RESISTANT (Cell Death Dis 2025, PMID 41354716 — the opposite of the needed selectivity), so WEE1 is not the right G2/M checkpoint target for BRCAness tumors."
+
+### Mechanistic comparison to existing immunosuppression entries in this engine
+| Mechanism | Entry | Target | Level in IDO1 axis | Mechanism |
+|---|---|---|---|---|
+| 11 | Epacadostat | IDO1 enzyme | Upstream (prevents kynurenine synthesis) | Enzymatic inhibition |
+| 54 | Ipilimumab | CTLA-4 on Tregs | Downstream (depletes kynurenine-driven Tregs) | FcγRIII-ADCC |
+| 22 | Pembrolizumab | PD-1 on effectors | PD-1/PD-L1 axis (not IDO1 axis) | Checkpoint blockade |
+| 51 | Etrumadenant | ADORA2A/ADORA2B | Adenosine axis (not IDO1 axis) | Receptor blockade |
+| 52 | Relatlimab | LAG-3 on exhausted TILs | Succinate exhaustion axis (not IDO1 axis) | Checkpoint blockade |
+| 53 | Magrolimab | CD47 on tumor cells | HIF→CD47 myeloid phagocytosis axis | ADCC/phagocytosis |
+
+### Drug: Ipilimumab (Yervoy)
+Ipilimumab (IgG1κ; MW ~148 kDa; half-life ~14.7 days) was the first checkpoint inhibitor to receive FDA approval (2011, unresectable/metastatic melanoma). Additional FDA-approved indications include adjuvant melanoma (2015), advanced RCC with nivolumab (2018), MSI-H/dMMR colorectal with nivolumab (2022), HCC with nivolumab (2020), and NSCLC with nivolumab (2020).
+
+**Evidence of clinical activity in SDH-relevant tumors:**
+- DART trial (NCT02834013; NCI-sponsored; Phase 2 basket; ipilimumab 1 mg/kg + nivolumab 240 mg q4w; n=798 across ≥20 cohorts): explicitly included GIST and paraganglioma as named cohorts — making this the only published checkpoint-combination clinical dataset with dedicated SDH-deficient tumor arms. Morse MA et al. (JAMA Oncol 2021, PMID 33792630) reported per-cohort ORR data.
+
+**Key limitation:**
+No published data test ipilimumab monotherapy in SDH-deficient tumor models specifically targeting the IDO1→Treg→CTLA-4 axis. PMID 42230482 confirms IDO1 upregulation in SDHB-PPGL but does not quantify intratumoral FoxP3⁺ Treg density or CTLA-4 expression by IHC/flow cytometry. Required validating experiments: FoxP3/CTLA-4 dual-IHC on SDH-deficient GIST/PPGL tissue microarrays; Treg:CD8 ratio quantification; IDO1 IHC correlation with FoxP3⁺ Treg density; kynurenine measurement in SDH-deficient tumor interstitial fluid.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| CTLA-4 (CD152) | CTLA4 | Ipilimumab (Yervoy) | FDA-approved (melanoma, RCC, CRC, HCC, NSCLC); DART trial includes GIST/PPGL cohorts (NCT02834013) | HIF→IDO1 confirmed in SDHB-PPGL (PMID 42230482); no direct SDH-specific Treg/CTLA-4 data |
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

@@ -697,4 +697,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 40,
   },
+  {
+    name: "IDO1–Kynurenine–Treg–CTLA-4 Immunosuppression Axis",
+    slug: "ido1-kynurenine-treg-ctla4",
+    description:
+      "SDH-deficient tumors constitutively stabilize HIF-1α via the pseudohypoxia pathway (succinate → PHD2/PHD3 inhibition → HIF-α stabilization). HIF-1α transcriptionally drives IDO1 (indoleamine 2,3-dioxygenase 1) expression via canonical HREs — confirmed in SDHB-driven PPGL by multi-omics profiling (Zhou et al. 2025, PMID 42230482). IDO1 converts tryptophan → kynurenine within the tumor microenvironment. Kynurenine activates the aryl hydrocarbon receptor (AhR) in naïve CD4⁺ T cells, which, together with TGF-β, drives their differentiation into FoxP3⁺ regulatory T cells (Tregs). Intratumoral Tregs constitutively overexpress CTLA-4 at densities far exceeding effector T cells. Ipilimumab (anti-CTLA-4, IgG1κ with a functional Fc) binds CTLA-4 on intratumoral Tregs and mediates antibody-dependent cellular cytotoxicity (ADCC) via FcγRIII on tumor-associated macrophages and NK cells — depleting the Treg population and releasing suppression of CD8⁺ effector T cells. This mechanism is mechanistically downstream of (and distinct from) epacadostat, which blocks IDO1 enzymatic activity upstream; ipilimumab acts on the kynurenine-driven Treg arm downstream. The DART trial (NCT02834013, NCI) explicitly included GIST and paraganglioma cohorts for ipilimumab + nivolumab combination.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive PHD2/PHD3 inhibition → constitutive VHL-independent HIF-1α stabilization → HIF-1α binding to HRE in IDO1 promoter → constitutive IDO1 mRNA and protein expression in SDH-deficient tumor cells (Zhou et al. 2025, PMID 42230482 in SDHB PPGL) → IDO1 converts tryptophan → kynurenine within TME → kynurenine activates AhR in naïve CD4⁺ T cells → AhR + TGF-β drives FoxP3⁺ Treg differentiation → intratumoral Treg accumulation → Tregs constitutively overexpress CTLA-4 → CTLA-4 outcompetes CD28 for B7-1/B7-2 (CD80/CD86) on APCs → Treg-mediated suppression of effector T-cell co-stimulation and cytolytic activity",
+    downstream_effects: [
+      "Constitutive HIF-1α binding to IDO1 gene HREs drives tryptophan catabolism and kynurenine overproduction in the SDH-deficient TME (mechanistic basis: PMID 42230482 confirming IDO1 upregulation in SDHB-PPGL; existing epacadostat entry in engine targets this same axis upstream)",
+      "Kynurenine-driven AhR activation in naïve CD4⁺ T cells — together with TGF-β — induces FoxP3⁺ Treg differentiation and expansion in the immunosuppressive TME",
+      "Intratumoral Tregs constitutively overexpress CTLA-4 at 50–100× higher surface density than effector T cells; CTLA-4 outcompetes CD28 for B7-1/B7-2 ligands on antigen-presenting cells, depriving effector T cells of co-stimulatory signaling",
+      "Ipilimumab (Yervoy; BMS-734016; anti-CTLA-4; IgG1κ) binds CTLA-4 on intratumoral Tregs and mediates ADCC via FcγRIII (CD16) on tumor-associated macrophages and NK cells → Treg depletion → restoration of effector T-cell co-stimulation and cytolytic activity; this Fc-dependent Treg-depleting mechanism is distinct from pembrolizumab (PD-1 effector-T-cell rescue) and mechanistically complementary",
+      "DART trial (NCT02834013, NCI; Phase 2 basket) tested nivolumab + ipilimumab across rare solid tumours including explicit GIST and paraganglioma cohorts — the only checkpoint combination dataset with clinical SDH-deficient tumor arms",
+    ],
+    druggable: true,
+    display_order: 42,
+  },
 ];

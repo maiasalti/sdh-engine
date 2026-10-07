@@ -1864,3 +1864,68 @@ The `succinate-lag3-exhaustion` and `hif-cd47-phagocytosis-evasion` pathway colo
 - `tracker.md`: unchanged.
 
 **PR branch:** claude/clever-lovelace-dqyuax
+
+---
+
+## 2026-10-07 — IDO1–Kynurenine–Treg–CTLA-4 Immunosuppression Axis — Ipilimumab
+
+**Direction:** drug-pool
+**Angle:** CTLA-4/ipilimumab — depleting kynurenine-driven intratumoral FoxP3⁺ Tregs via FcγRIII-ADCC
+
+### Part A — PubMed Scan
+
+Queries run (10 total; 3-month window 2026-07-07 to 2026-10-07): SDH-deficient GIST treatment 2026, paraganglioma pheochromocytoma SDH therapy 2026, succinate oncometabolite HIF 2026, SDH-deficient RCC treatment 2026, SDH synthetic lethality BRCAness 2026, SDHB SDHA SDHD SDHC cancer 2026, succinate immune evasion checkpoint immunotherapy 2026, pseudohypoxia HIF SDH tumor 2026, SDH-deficient pituitary adenoma 2026, WT GIST SDH clinical outcome 2026.
+
+**New PMIDs evaluated (not in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42764321 | rejected | Future-directions review of RLT in PPGL; no new SDH-specific mechanistic advance beyond existing SSTR2/MIBG entries |
+| 42831206 | rejected | Metastasectomy + RLT single case report in pheochromocytoma; no SDH-specific content |
+| 42723163 | rejected | Broad immunological review of neuroendocrine tumors and adrenal cortical carcinoma; no SDH-specific mechanistic advance |
+| 42505404 | rejected | Broad pseudohypoxia/angiogenesis review; VEGF/HIF axis already covered by existing engine entries; no new SDH-specific druggable target |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Drug Pool Addition: Ipilimumab (CTLA-4)
+
+**Direction:** IDO1–Kynurenine–FoxP3⁺ Treg–CTLA-4 immunosuppressive axis; ipilimumab (Yervoy, IgG1κ, FDA-approved) depletes intratumoral Tregs via FcγRIII-ADCC.
+
+**Mechanistic chain (SDH-specific evidence + well-established tumor immunology):**
+SDH loss → succinate accumulation → PHD2/PHD3 competitive inhibition → VHL-independent HIF-1α stabilization → HIF-1α transcriptional activation of IDO1 via HREs **CONFIRMED IN SDHB-MUTANT PPGL** by Zhou et al. multi-omics profiling (2025, PMID 42230482; the same paper anchoring the existing epacadostat entry in this engine) → IDO1 converts tryptophan → kynurenine → kynurenine activates AhR in naïve CD4⁺ T cells → AhR + TGF-β drives FoxP3⁺ Treg differentiation and intratumoral Treg accumulation → Tregs constitutively overexpress CTLA-4 (50–100× above effector T cells) → CTLA-4 outcompetes CD28 for B7-1/B7-2 (suppresses effector T-cell co-stimulation) + removes B7 ligands by trans-endocytosis → ipilimumab (IgG1κ) binds CTLA-4 on intratumoral Tregs → FcγRIII (CD16) on TAMs and NK cells → ADCC → intratumoral Treg depletion → restored CD8⁺ effector T-cell activation.
+
+**Why this direction passes the HARD RELEVANCE GATE:**
+1. SDH-specific IDO1 upregulation is directly confirmed (not extrapolated): Zhou et al. 2025 (PMID 42230482) identified IDO1 in the multi-omics signature of SDHB-driven PPGL.
+2. The kynurenine→AhR→FoxP3⁺ Treg differentiation step is well-established across multiple tumor types.
+3. CTLA-4-high Tregs and ipilimumab's Fc-dependent Treg-depleting mechanism are established (Arce Vargas et al., Cancer Cell 2018, PMID 29656894).
+4. DART trial (NCT02834013, NCI) explicitly included GIST and paraganglioma cohorts for ipilimumab + nivolumab.
+
+**Why this is genuinely new (not a repeat of any prior direction):**
+- Epacadostat (existing entry, Mechanism 11) blocks IDO1 enzyme activity **upstream** — prevents kynurenine synthesis. Ipilimumab acts **downstream** on kynurenine-driven Tregs. These are non-redundant, complementary interventions at different levels of the same axis (analogous to oleclumab vs. etrumadenant in the adenosine axis).
+- Pembrolizumab (existing entry): rescues CD8⁺ effector T cells via PD-1 blockade; does not deplete Tregs; distinct mechanism.
+- Relatlimab (last run): targets LAG-3 on exhausted effector T cells (succinate-exhaustion axis); distinct mechanism and target.
+- Magrolimab (2026-10-04): targets CD47 on tumor cells (myeloid innate phagocytosis checkpoint); completely different pathway.
+
+**Evidence_score:** 30 (theoretical) — the highest-confidence theoretical entry added this month. Anchored by direct SDH-specific IDO1 confirmation (PMID 42230482) at the first downstream immunosuppressive step; remaining chain (kynurenine→Treg→CTLA-4) is well-established but untested in SDH-deficient models. Score placed above relatlimab (20) and etrumadenant (22) because PMID 42230482 confirms the specific upstream pathway activation in SDH-deficient tumors (not just extrapolated from non-SDH hypoxia models). Score set below confirmed clinical entries because no SDH-specific Treg/CTLA-4 data exist.
+
+**Key citations:**
+- Zhou et al. (2025, PMID 42230482): Multi-omics profiling of SDHB-mutant PPGL confirms IDO1 upregulation. Already in engine as primary anchor for epacadostat entry.
+- Arce Vargas F et al. (Cancer Cell 2018, PMID 29656894): Ipilimumab depletes CTLA-4-high intratumoral Tregs in human tumors via Fc-dependent mechanism (not to be added to papers.ts: 2018, outside scan window; used as mechanistic citation only).
+- Morse MA et al. (JAMA Oncol 2021, PMID 33792630): DART trial NCT02834013 — dual checkpoint blockade across rare solid tumors including explicit GIST and paraganglioma cohorts.
+
+**Ruled-out directions (carried forward from prior runs):**
+- WEE1/adavosertib: explicitly ruled out (Cell Death Dis 2025, PMID 41354716 — HR-deficient cells RESISTANT; wrong selectivity).
+- MTHFD2/one-carbon: no SDH-specific data, no clinical-stage inhibitors.
+- Complex I/IACS-010759: Sokolov preprint PMID 42239110 — Complex I suppressed as adaptation in SDH-deficient cells.
+- TIGIT/CD155: 0 PubMed hits for HIF-1α→CD155 transcriptional link (not established).
+- PKMYT1/lunresertib, TGF-beta/galunisertib, PHGDH/NCT-502: all ruled out in 2026-10-06 entry.
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: new pathway `ido1-kynurenine-treg-ctla4` (display_order 42)
+- `src/data/seed/targets.ts`: new target CTLA4 (UniProt P16410, pathway `ido1-kynurenine-treg-ctla4`, downstream)
+- `src/data/seed/drugs.ts`: new drug Ipilimumab (Yervoy; anti-CTLA-4 IgG1κ; FDA-approved; evidence_score 30; theoretical; all tumor types; NCT02834013)
+- `src/data/seed/sdh-biology.ts`: Mechanism 54 — IDO1–Kynurenine–Treg–CTLA-4 axis (before "Important Context" section)
+- `src/lib/scoring/constants.ts`: pathway color for `ido1-kynurenine-treg-ctla4` (pink-200)
+- `tracker.md`: logged 5 new entries (4 rejected PMIDs: 42764321, 42831206, 42723163, 42505404; 1 PMID 42230482 reuse note)
+
+**PR:** morning/2026-10-07-ctla4-ipilimumab
