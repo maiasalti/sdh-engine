@@ -1190,4 +1190,24 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT03470922"],
   },
+  {
+    name: "Ipilimumab",
+    brand_names: ["Yervoy"],
+    chembl_id: "CHEMBL1789844",
+    pubchem_cid: null,
+    drug_class: "CTLA-4 checkpoint inhibitor (anti-CTLA-4 IgG1κ monoclonal antibody)",
+    mechanism_of_action:
+      "Ipilimumab (Yervoy) is a human IgG1 kappa CTLA-4-blocking monoclonal antibody. SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of metastatic PPGL multi-omics, including aberrant kynurenine metabolism and immunosuppression, not primary confirmation of HIF-driven IDO1 overexpression or a CTLA-4/Treg dependency in SDHB tumors. The proposed SDH -> kynurenine -> Treg -> CTLA-4 chain needs direct validation. Ipilimumab blocks CTLA-4 interactions with CD80/CD86, augmenting T-cell activation; reduced Treg function may contribute (Yervoy prescribing information). Fc-dependent Treg depletion is supported in human-Fc-receptor mouse models (Arce Vargas et al., PMID 29576375), but human tumor studies found no significant FOXP3+ Treg depletion (Sharma et al., PMID 30054281). It must not be described as a proven dominant human mechanism or demonstrated in SDH-deficient tumors. DART (NCT02834013) includes GIST and pheochromocytoma/paraganglioma cohorts, but histology-based eligibility is not a dedicated SDH-deficient cohort or proof of benefit in that molecular subgroup. Final overall DART results are Patel et al., 2026, PMID 41997295; combination outcomes do not establish ipilimumab monotherapy efficacy. Serious or fatal immune-mediated adverse reactions are possible. Source: https://packageinserts.bms.com/pi/pi_yervoy.pdf .",
+    fda_approved: true,
+    approved_indications: [
+      "Unresectable or metastatic melanoma; selected adjuvant melanoma",
+      "With nivolumab: selected advanced RCC, MSI-H/dMMR metastatic colorectal cancer, HCC, metastatic NSCLC, malignant pleural mesothelioma and esophageal squamous cell carcinoma (see current label for patient selection and regimens)",
+    ],
+    pathway_slugs: ["ido1-kynurenine-treg-ctla4", "succinate-immune-evasion"],
+    target_gene_symbols: ["CTLA4"],
+    evidence_score: 20,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT02834013"],
+  },
 ];

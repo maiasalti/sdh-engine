@@ -1001,6 +1001,24 @@ No published data test magrolimab or any anti-CD47 agent in SDH-deficient GIST, 
 
 ---
 
+## Mechanism 54: CTLA-4 blockade / ipilimumab (SDH research hypothesis)
+
+SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of metastatic PPGL multi-omics, including aberrant kynurenine metabolism and immunosuppression, not primary confirmation of HIF-driven IDO1 overexpression or a CTLA-4/Treg dependency in SDHB tumors. The proposed SDH -> kynurenine -> Treg -> CTLA-4 chain needs direct validation. Ipilimumab blocks CTLA-4 interactions with CD80/CD86, augmenting T-cell activation; reduced Treg function may contribute (Yervoy prescribing information). Fc-dependent Treg depletion is supported in human-Fc-receptor mouse models (Arce Vargas et al., PMID 29576375), but human tumor studies found no significant FOXP3+ Treg depletion (Sharma et al., PMID 30054281). It must not be described as a proven dominant human mechanism or demonstrated in SDH-deficient tumors. DART (NCT02834013) includes GIST and pheochromocytoma/paraganglioma cohorts, but histology-based eligibility is not a dedicated SDH-deficient cohort or proof of benefit in that molecular subgroup. Final overall DART results are Patel et al., 2026, PMID 41997295; combination outcomes do not establish ipilimumab monotherapy efficacy.
+
+**Evidence score:** 20 (theoretical, editorial scoring; not a clinical probability). No SDH-specific response or Treg-depletion claim is made. Synergy with IDO1 inhibition is untested, not established.
+
+**Required validation:** genotype-confirmed SDH models/tissue; IDO1/kynurenine and FoxP3/CTLA-4 measurements; functional response to CTLA-4 blockade and safety assessment.
+
+**Sources:**
+- https://pubmed.ncbi.nlm.nih.gov/42230482/
+- https://pubmed.ncbi.nlm.nih.gov/29576375/
+- https://pubmed.ncbi.nlm.nih.gov/30054281/
+- https://pubmed.ncbi.nlm.nih.gov/41997295/
+- https://clinicaltrials.gov/study/NCT02834013
+- https://packageinserts.bms.com/pi/pi_yervoy.pdf
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

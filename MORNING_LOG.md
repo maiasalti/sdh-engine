@@ -1864,3 +1864,18 @@ The `succinate-lag3-exhaustion` and `hif-cd47-phagocytosis-evasion` pathway colo
 - `tracker.md`: unchanged.
 
 **PR branch:** claude/clever-lovelace-dqyuax
+
+---
+
+## 2026-10-07
+
+**Direction:** CTLA-4/ipilimumab, theoretical SDH research hypothesis, not a validated treatment recommendation.
+
+SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of metastatic PPGL multi-omics, including aberrant kynurenine metabolism and immunosuppression, not primary confirmation of HIF-driven IDO1 overexpression or a CTLA-4/Treg dependency in SDHB tumors. The proposed SDH -> kynurenine -> Treg -> CTLA-4 chain needs direct validation. Ipilimumab blocks CTLA-4 interactions with CD80/CD86, augmenting T-cell activation; reduced Treg function may contribute (Yervoy prescribing information). Fc-dependent Treg depletion is supported in human-Fc-receptor mouse models (Arce Vargas et al., PMID 29576375), but human tumor studies found no significant FOXP3+ Treg depletion (Sharma et al., PMID 30054281). It must not be described as a proven dominant human mechanism or demonstrated in SDH-deficient tumors. DART (NCT02834013) includes GIST and pheochromocytoma/paraganglioma cohorts, but histology-based eligibility is not a dedicated SDH-deficient cohort or proof of benefit in that molecular subgroup. Final overall DART results are Patel et al., 2026, PMID 41997295; combination outcomes do not establish ipilimumab monotherapy efficacy.
+
+**Review corrections:** removed unrelated PMIDs 34619935, 29656894 and 33792630; corrected Arce Vargas to PMID 29576375 and DART final results to PMID 41997295. Corrected the Zhou review title/year and downgraded the unsupported primary-evidence claim. Removed claims of guaranteed Treg depletion, exclusive SDH trial arms, synergy and permanently ruled-out alternatives. The October 6 candidates remain unresolved hypotheses, not disproven directions. No exhaustive absence-of-evidence claim is made.
+
+**Evidence score:** 20 (theoretical, editorial score, not a clinical probability).
+**Files:** drugs.ts, pathways.ts, targets.ts, sdh-biology.ts, scoring constants, tracker.md and this log. No new papers.ts entry.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42230482/ ; https://pubmed.ncbi.nlm.nih.gov/29576375/ ; https://pubmed.ncbi.nlm.nih.gov/30054281/ ; https://pubmed.ncbi.nlm.nih.gov/41997295/ ; https://clinicaltrials.gov/study/NCT02834013 ; https://packageinserts.bms.com/pi/pi_yervoy.pdf .
+**PR:** morning/2026-10-07-ctla4-ipilimumab

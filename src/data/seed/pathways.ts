@@ -697,4 +697,19 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 40,
   },
+  {
+    name: "IDO1–Kynurenine–Treg–CTLA-4 Immunosuppression Axis",
+    slug: "ido1-kynurenine-treg-ctla4",
+    description:
+      "SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of metastatic PPGL multi-omics, including aberrant kynurenine metabolism and immunosuppression, not primary confirmation of HIF-driven IDO1 overexpression or a CTLA-4/Treg dependency in SDHB tumors. The proposed SDH -> kynurenine -> Treg -> CTLA-4 chain needs direct validation. Ipilimumab blocks CTLA-4 interactions with CD80/CD86, augmenting T-cell activation; reduced Treg function may contribute (Yervoy prescribing information). Fc-dependent Treg depletion is supported in human-Fc-receptor mouse models (Arce Vargas et al., PMID 29576375), but human tumor studies found no significant FOXP3+ Treg depletion (Sharma et al., PMID 30054281). It must not be described as a proven dominant human mechanism or demonstrated in SDH-deficient tumors. DART (NCT02834013) includes GIST and pheochromocytoma/paraganglioma cohorts, but histology-based eligibility is not a dedicated SDH-deficient cohort or proof of benefit in that molecular subgroup. Final overall DART results are Patel et al., 2026, PMID 41997295; combination outcomes do not establish ipilimumab monotherapy efficacy.",
+    upstream_event:
+      "Hypothesis: SDH-associated metabolic and immune changes may affect kynurenine/Treg/CTLA-4 signaling; no direct SDH-specific CTLA-4 dependency is established here.",
+    downstream_effects: [
+      "CTLA-4 blockade can augment effector T-cell activation; SDH-specific sensitivity remains unresolved",
+      "Fc-mediated Treg depletion is model-dependent and not established as a dominant human mechanism",
+      "DART is a rare-tumor combination trial, not proof of SDH-specific benefit",
+    ],
+    druggable: true,
+    display_order: 42,
+  },
 ];
