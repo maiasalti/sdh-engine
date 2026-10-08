@@ -400,4 +400,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42611605",
     date: "2026-08",
   },
+  {
+    title:
+      "Effects of a GLP-1 agonist and anti-diabetic therapies on pheochromocytoma/paraganglioma growth",
+    authors: "Wang K, Stempfle P, Hamati J, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0283",
+    topic: "Treatment & Trials",
+    description:
+      "Patient-derived primary cultures from 54 PPGLs (including cluster 1 SDHx/pseudohypoxic tumors and cluster 2 RET/MEN2 tumors) reveal cluster-dependent drug effects: the GLP-1 receptor agonist semaglutide exerts significant anti-tumor activity in cluster 1 (pseudohypoxic/SDHx) cultures but tumor-promoting effects in cluster 2 (RET/MEN2) cultures, underscoring that anti-diabetic therapy responses in PPGLs are cluster-dependent and molecularly heterogeneous.",
+    pmid: "42847129",
+    date: "2026-10",
+  },
 ];
