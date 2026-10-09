@@ -1895,3 +1895,30 @@ Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors
 **Files changed:** papers.ts, tracker.md and this log only. No drugs, pathways, targets or scoring constants changed.
 **Source:** https://pubmed.ncbi.nlm.nih.gov/42847129/ .
 **PR branch:** morning/2026-10-08-glp1ra-paper-mthfd2-cleanup
+
+---
+
+## 2026-10-09
+
+**Direction:** none
+**Angle:** —
+**Papers added:** 0
+**Tracker entries added:** 0
+
+**Paper scan:** 6 PubMed queries (window 2026-07-09 to 2026-10-09) covering SDH-deficient GIST treatment, PPGL/PCC therapy, SDH-deficient RCC/sarcoma, succinate accumulation and HIF/pseudohypoxia mechanisms, epigenetic/CIMP drug repurposing, and targeted therapy in SDH-mutant tumors. All PMIDs returned across all queries were already present in tracker.md. Zero new papers evaluated, zero rejected.
+
+**Part B assessment:** The engine now covers 53+ mechanisms and 40+ drugs spanning every established SDH-deficient mechanistic axis (pseudohypoxia/HIF, CIMP/epigenetic, BRCAness/DNA repair, metabolic dependencies, immune evasion axes A2AR/ADORA2A, CD73, CD47, LAG-3, CTLA-4, radioligand DOTATATE, kinase/angiogenesis VEGFR/FGFR/IGF1R, CXCR4/metastasis, tumour pH/CA9, cGAS-STING, cell cycle CBP/p300). The three candidate directions flagged in the 2026-10-06 log were re-assessed today:
+
+- **PKMYT1/lunresertib**: Likely antagonistic in BRCAness-positive SDH-deficient tumors. PKMYT1 inhibition forces premature mitotic entry in cells with unreplicated or damaged DNA — the same G2/M checkpoint override mechanism as WEE1/adavosertib. HR-deficient cells are RESISTANT (not sensitized) to WEE1 inhibition (PMID 41354716). The BRCAness phenotype of SDH-deficient tumors makes this mechanism potentially harmful rather than beneficial. Does not clear the gate.
+- **TGF-β/galunisertib**: No verified direct mechanistic link between SDH loss, succinate accumulation, or pseudohypoxia and TGF-β pathway activation in SDH-deficient tumors specifically. The angiogenic/fibrotic TGF-β role in general cancer contexts is not SDH-specific. No mechanistic citation supports this combination. Does not clear the gate.
+- **PHGDH/NCT-502**: NCT-502 is a research probe without clinical-stage status. No published data link SDH loss to serine synthesis pathway dependence in SDH-deficient tumors specifically. The hypothesis that mitochondrial dysfunction drives serine auxotrophy is speculative in this context. Does not clear the gate.
+
+No direction clears the hard relevance gate today.
+
+**Candidate directions for owner evaluation:**
+1. **EZH2/tazemetostat** — SDH loss causes genome-wide H3K27me3 redistribution (succinate inhibits KDM6A/6B demethylases as well as KDM4 family); EZH2 writes H3K27me3; tazemetostat is FDA-approved in epithelioid sarcoma (another SDH-adjacent tumor). A mechanistic SDH→succinate→KDM6A inhibition→H3K27me3 excess→EZH2 dependence chain is plausible. Requires: direct KDM6A inhibition by succinate at physiological concentrations in SDH-deficient cells, or published H3K27me3 redistribution data specific to SDH-mutant GIST/PPGL. Would need evidence this is distinct from DNMT-mediated CIMP already covered.
+2. **SLC7A11 (xCT)/sulfasalazine or erastin analogue** — Ferroptosis sensitivity. SDH-deficient cells rely on the malate-aspartate shuttle; SDH loss may impair GSH synthesis indirectly (glutamate export via xCT competes with import needed for GSH). Published evidence that SDH-mutant tumors are ferroptosis-sensitive (or that succinate accumulation impairs GPX4 function) would be required. This is distinct from the glutaminolysis angle (CB-839) currently in the engine.
+3. **SSTR2/octreotide-LAR or lanreotide** — SDH-deficient PPGLs frequently overexpress somatostatin receptors (SSTR2/SSTR5); PRRT (lutetium DOTATATE) is already in the engine, but cold somatostatin analogues can achieve disease stabilization in SSTR2+ PPGLs and are already in clinical use for carcinoid. This is lower mechanistic novelty (the radioligand angle is covered) but has direct clinical evidence in PPGL. Depends on owner's priority — novelty vs. clinical utility.
+
+**Files changed:** MORNING_LOG.md only.
+**PR branch:** morning/2026-10-09-none
