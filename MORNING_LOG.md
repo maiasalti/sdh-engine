@@ -1884,36 +1884,14 @@ SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of
 
 ## 2026-10-08
 
-**Part A — Paper scan (July 8 – October 8, 2026):**
+**Paper added:** PMID 42847129, Wang K, Stempfle P, Hamati J, et al. Effects of a GLP-1 agonist and anti-diabetic therapies on pheochromocytoma/paraganglioma growth. Endocr Relat Cancer, 2026-10-07. DOI 10.1530/ERC-26-0283.
 
-One new paper verified and added:
+Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors and 18 cluster 2/3 tumors (4 with RET pathogenic variants). Semaglutide showed significant anti-tumor effects in cluster 1 cultures; high-dose semaglutide promoted growth in 3 tumors with germline RET variants (MEN2), but not in one with a somatic RET variant. Cluster 1 is not an SDH-only subgroup, and these culture findings do not establish clinical efficacy in SDH-deficient tumors. Clinical correlations from 67 PROSPHEO participants were observational; prospective confirmation is required. No drug candidate or treatment recommendation is added.
 
-- **PMID 42847129** | Wang K, Stempfle P, Hamati J, et al. "Effects of a GLP-1 agonist and anti-diabetic therapies on pheochromocytoma/paraganglioma growth." *Endocr Relat Cancer* 2026-10-07. DOI: 10.1530/ERC-26-0283.
-  - Patient-derived primary cultures from 54 PPGLs (cluster 1 SDHx/pseudohypoxic and cluster 2 RET/MEN2). Semaglutide (GLP-1RA) shows significant anti-tumor effects in cluster 1 cultures, but tumor-promoting effects in cluster 2 cultures. Cluster-dependent responses underscore the importance of molecular subtype in PPGL drug testing.
-  - **Not added as a drug:** semaglutide's apparent cluster 1 effect may be VHL-driven rather than SDH-specific; subgroup n=8 is too small to support drug addition; no established mechanistic link to SDH loss pathways (pseudohypoxia/HIF, succinate, epigenetics, BRCAness).
+**Review correction:** the original draft generalized growth promotion to all cluster-2/RET tumors. The abstract limits this finding to high-dose semaglutide in 3 germline-RET cultures and reports no promotion in one somatic-RET culture. No claim is made that cluster-1 activity is SDH-specific or that VHL caused the effect.
 
-All other PMIDs returned by 12 queries were already in tracker.md.
+**MTHFD2 hypothesis retained:** the draft proposed deleting the pathway, target, biology note and color token because no drug was assigned. That is not evidence that the hypothesis is disproven. Those removals were reversed. The existing unvalidated-hypothesis warnings and LY3410738 identity correction remain intact; no replacement drug is nominated.
 
-**Part B — Data quality cleanup: remove orphaned MTHFD2/one-carbon-folate entries**
-
-The October 7 PR (#109) correctly removed the LY3410738 drug entry (which had been mis-assigned as an MTHFD2 inhibitor). However, the orphaned pathway, target, sdh-biology section, and scoring-constants color entry that referenced `one-carbon-folate-nucleotide-synthesis` remained — each carrying explicit "unvalidated hypothesis" and "no replacement drug" warnings. With no drug pointing to them, they are dead-end UI entries. Removed today:
-
-- `pathways.ts`: deleted `one-carbon-folate-nucleotide-synthesis` pathway entry (`druggable: false`, display_order 34).
-- `targets.ts`: deleted MTHFD2 / P13995 target entry (`pathway_slug: "one-carbon-folate-nucleotide-synthesis"`).
-- `sdh-biology.ts`: removed Section 44 ("One-Carbon Folate Nucleotide Synthesis Dependency (MTHFD2; unvalidated hypothesis)"); renumbered former Section 45 (G-quadruplex) to Section 44.
-- `src/lib/scoring/constants.ts`: removed `"one-carbon-folate-nucleotide-synthesis"` color token.
-
-No drugs changed. No new drugs added.
-
-**Forbidden directions not to repeat (cumulative; add new ones each run):**
-EZH2, autophagy/HCQ, NAMPT/daporinad, FGFR/neddylation/pevonedistat, polyamine/DENSPM, succinate-immune-evasion/AZD3965/epacadostat, ATRX/ceralasertib, BRD4/birabresib, SDH-HRD/olaparib/niraparib, FASN/denifanstat, survivin/Ym155, DHODH/brequinar/teriflunomide, POLQ/ART558, SSTR2/177Lu-DOTATATE/[212Pb]VMT-α-NET, HIF-MET/cabozantinib, eflornithine/DFMO, tumor type metadata, NCT linkage, HIF-PD-L1/pembrolizumab, alpha-particle PRRT, CDKN2A/palbociclib, belzutifan PPGL upgrade, CB-839/telaglenastat upgrade, sunitinib FIRSTMAPPP upgrade, metformin Complex I fix, panobinostat/enasidenib target fixes, TMZ/bevacizumab upgrade, everolimus upgrade, CHK1/prexasertib, TERT/imetelstat, MIBG/Iobenguane/[211At]MABG, DNA-PK/elimusertib, cGAS-STING, CXCR4/plerixafor, HSP90/ganetespib, cuproptosis/elesclomol, ACLY/bempedoic acid, IGF2/linsitinib, CD73/oleclumab, one-carbon-folate (MTHFD2) — also cleaned up orphaned data today, G4/CX-5461, CDK9/KB-0742, p300/CCS1477, CA9/SLC-0111, Aurora A/alisertib, CD47/magrolimab, LAG-3/relatlimab, CTLA-4/ipilimumab, A2AR/etrumadenant
-
-**Changes made to data files:**
-- `src/data/papers.ts`: added PMID 42847129 (Wang K et al., GLP-1RA in PPGL).
-- `src/data/seed/pathways.ts`: removed `one-carbon-folate-nucleotide-synthesis` pathway.
-- `src/data/seed/targets.ts`: removed MTHFD2 / P13995 target.
-- `src/data/seed/sdh-biology.ts`: removed Section 44 (MTHFD2 hypothesis); renumbered G4 section.
-- `src/lib/scoring/constants.ts`: removed `one-carbon-folate-nucleotide-synthesis` color token.
-- `tracker.md`: added PMID 42847129.
-
+**Files changed:** papers.ts, tracker.md and this log only. No drugs, pathways, targets or scoring constants changed.
+**Source:** https://pubmed.ncbi.nlm.nih.gov/42847129/ .
 **PR branch:** morning/2026-10-08-glp1ra-paper-mthfd2-cleanup
