@@ -1879,3 +1879,19 @@ SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of
 **Files:** drugs.ts, pathways.ts, targets.ts, sdh-biology.ts, scoring constants, tracker.md and this log. No new papers.ts entry.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/42230482/ ; https://pubmed.ncbi.nlm.nih.gov/29576375/ ; https://pubmed.ncbi.nlm.nih.gov/30054281/ ; https://pubmed.ncbi.nlm.nih.gov/41997295/ ; https://clinicaltrials.gov/study/NCT02834013 ; https://packageinserts.bms.com/pi/pi_yervoy.pdf .
 **PR:** morning/2026-10-07-ctla4-ipilimumab
+
+---
+
+## 2026-10-08
+
+**Paper added:** PMID 42847129, Wang K, Stempfle P, Hamati J, et al. Effects of a GLP-1 agonist and anti-diabetic therapies on pheochromocytoma/paraganglioma growth. Endocr Relat Cancer, 2026-10-07. DOI 10.1530/ERC-26-0283.
+
+Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors and 18 cluster 2/3 tumors (4 with RET pathogenic variants). Semaglutide showed significant anti-tumor effects in cluster 1 cultures; high-dose semaglutide promoted growth in 3 tumors with germline RET variants (MEN2), but not in one with a somatic RET variant. Cluster 1 is not an SDH-only subgroup, and these culture findings do not establish clinical efficacy in SDH-deficient tumors. Clinical correlations from 67 PROSPHEO participants were observational; prospective confirmation is required. No drug candidate or treatment recommendation is added.
+
+**Review correction:** the original draft generalized growth promotion to all cluster-2/RET tumors. The abstract limits this finding to high-dose semaglutide in 3 germline-RET cultures and reports no promotion in one somatic-RET culture. No claim is made that cluster-1 activity is SDH-specific or that VHL caused the effect.
+
+**MTHFD2 hypothesis retained:** the draft proposed deleting the pathway, target, biology note and color token because no drug was assigned. That is not evidence that the hypothesis is disproven. Those removals were reversed. The existing unvalidated-hypothesis warnings and LY3410738 identity correction remain intact; no replacement drug is nominated.
+
+**Files changed:** papers.ts, tracker.md and this log only. No drugs, pathways, targets or scoring constants changed.
+**Source:** https://pubmed.ncbi.nlm.nih.gov/42847129/ .
+**PR branch:** morning/2026-10-08-glp1ra-paper-mthfd2-cleanup

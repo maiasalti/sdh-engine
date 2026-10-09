@@ -400,4 +400,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42611605",
     date: "2026-08",
   },
+  {
+    title:
+      "Effects of a GLP-1 agonist and anti-diabetic therapies on pheochromocytoma/paraganglioma growth",
+    authors: "Wang K, Stempfle P, Hamati J, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0283",
+    topic: "Treatment & Trials",
+    description:
+      "Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors and 18 cluster 2/3 tumors (4 with RET pathogenic variants). Semaglutide showed significant anti-tumor effects in cluster 1 cultures; high-dose semaglutide promoted growth in 3 tumors with germline RET variants (MEN2), but not in one with a somatic RET variant. Cluster 1 is not an SDH-only subgroup, and these culture findings do not establish clinical efficacy in SDH-deficient tumors. Clinical correlations from 67 PROSPHEO participants were observational; prospective confirmation is required. No drug candidate or treatment recommendation is added.",
+    pmid: "42847129",
+    date: "2026-10",
+  },
 ];
