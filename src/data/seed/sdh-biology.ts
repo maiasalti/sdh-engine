@@ -692,7 +692,19 @@ NCT02724020 (Phase 2, Millennium/Takeda; n=96; 36 sites; completed 2020): head-t
 |---|---|---|---|---|
 | mTOR kinase (mTORC1 + mTORC2) | MTOR | Sapanisertib (TAK-228) | Phase 2 in RCC vs everolimus (NCT02724020; completed); Phase 2 in mTOR-mutant solid tumors (NCT06385496; active) | None; rationale via constitutive PI3K/AKT/mTOR activation in SDH/VHL pseudohypoxic cluster (PMID 23940289) + AKT-Ser473 reactivation feedback limitation of everolimus |
 
-### 44. G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality via CX-5461
+### 44. One-Carbon Folate Nucleotide Synthesis Dependency (MTHFD2; unvalidated hypothesis)
+
+**Drug-identity correction (2026-10-07):** The previous version incorrectly paired LY3410738 with MTHFD2/MTHFD1L. LY3410738 is a mutant IDH1/IDH2 inhibitor. It has phase I clinical data in IDH-mutant tumors, not evidence of MTHFD2 inhibition or SDH-specific benefit. Its drug entry and false pathway/target links have been removed rather than reassigned to an unsupported SDH mechanism.
+
+**Research status:** The proposed SDH loss -> metabolic stress -> one-carbon adaptation -> MTHFD2 dependency is an unvalidated hypothesis. The sources checked for this correction do not establish SDH-specific MTHFD2 upregulation or selective inhibitor sensitivity. No replacement MTHFD2 drug is nominated here.
+
+**Verified identity sources:**
+- https://pubmed.ncbi.nlm.nih.gov/41026608/ (phase I publication: dual mutant-IDH1/IDH2 inhibitor)
+- https://clinicaltrials.gov/study/NCT04521686 (IDH-mutant solid-tumor trial)
+- https://clinicaltrials.gov/study/NCT04603001 (IDH-mutant hematologic trial)
+- https://trials.lilly.com/en-US/trial/257016 (manufacturer trial page: IDH1/IDH2-mutant cancers)
+
+### 45. G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality via CX-5461
 
 **Pathway:** g4-quadruplex-brcas-lethality
 **Drug:** CX-5461 — G-quadruplex DNA stabilizer (Senhwa Biosciences)
