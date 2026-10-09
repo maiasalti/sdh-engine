@@ -409,7 +409,7 @@ export const PAPERS: CuratedPaper[] = [
     doi: "10.1530/ERC-26-0283",
     topic: "Treatment & Trials",
     description:
-      "Patient-derived primary cultures from 54 PPGLs (including cluster 1 SDHx/pseudohypoxic tumors and cluster 2 RET/MEN2 tumors) reveal cluster-dependent drug effects: the GLP-1 receptor agonist semaglutide exerts significant anti-tumor activity in cluster 1 (pseudohypoxic/SDHx) cultures but tumor-promoting effects in cluster 2 (RET/MEN2) cultures, underscoring that anti-diabetic therapy responses in PPGLs are cluster-dependent and molecularly heterogeneous.",
+      "Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors and 18 cluster 2/3 tumors (4 with RET pathogenic variants). Semaglutide showed significant anti-tumor effects in cluster 1 cultures; high-dose semaglutide promoted growth in 3 tumors with germline RET variants (MEN2), but not in one with a somatic RET variant. Cluster 1 is not an SDH-only subgroup, and these culture findings do not establish clinical efficacy in SDH-deficient tumors. Clinical correlations from 67 PROSPHEO participants were observational; prospective confirmation is required. No drug candidate or treatment recommendation is added.",
     pmid: "42847129",
     date: "2026-10",
   },
