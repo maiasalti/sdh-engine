@@ -1921,3 +1921,35 @@ Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors
 **Source checked:** https://pubmed.ncbi.nlm.nih.gov/41354716/ .
 **Files changed:** MORNING_LOG.md only.
 **PR branch:** morning/2026-10-09-none
+
+---
+
+## 2026-10-10
+
+**Paper added:**
+PMID 42847134 — Zhou SX, Maher LJ. Potential for pathogenic protein acylation in succinate dehydrogenase-deficient pheochromocytoma and paraganglioma. Endocr Relat Cancer 2026-10-07. DOI 10.1530/ERC-26-0243.
+
+Perspective-with-cell-model study from Mayo Clinic documenting that SDH loss in chromaffin/PPGL cells elevates succinyl-CoA and acetyl-CoA above normal, driving proteome-wide lysine succinylation and acetylation of mitochondrial and nuclear proteins (non-enzymatic PTMs). This PTM axis is mechanistically distinct from the canonical succinate → TET/KDM inhibition → epigenetic hypermethylation or succinate → HIF stabilisation axes already in the engine. Proposes succinylated protein networks as a new class of candidate diagnostic biomarkers and therapeutic targets in metastatic SDH-deficient PPGL. Added to papers.ts (Tumor Biology).
+
+**PubMed scan summary (2026-07-10 to 2026-10-10):**
+7 PubMed queries executed across SDH-deficient GIST, PPGL, RCC, succinate biology, PHGDH, and SDH-adjacent metabolism terms. All PMIDs returned were cross-checked against tracker.md (279 prior entries). 7 new PMIDs entered tracker.md today:
+
+| PMID | Decision |
+|---|---|
+| 42847134 | added to papers.ts (protein acylation in SDH-deficient PPGL) |
+| 42844857 | rejected: endovascular technique case report |
+| 42806167 | rejected: cardiac regeneration model (opposite direction) |
+| 42624032 | rejected: colorectal cancer PHGDH context; no SDH link |
+| 42804747 | rejected: neuroblastoma PHGDH + statin; no SDH link |
+| 42778596 | rejected: pancreatic cancer serine cross-talk; no SDH link |
+| 42724467 | rejected: broad PHGDH review; no SDH link |
+
+Previously tracked PMIDs re-encountered today (already in tracker.md): 42687764, 42626917, 42573142, 42503923, 42544736, 42489911, 42820462, 42847129.
+
+**Direction (Part B):** none
+
+Extensive search covering PKMYT1/lunresertib, TGF-beta/galunisertib, PHGDH/serine synthesis, BCL-2/venetoclax, MDM2, NAMPT, DHODH (already in engine), ferroptosis/SLC7A11 (previously attempted as unmerged branch), and STAT3. None of these cleared the hard relevance gate: no published paper directly demonstrates selective activity, synthetic lethality, or SDH-specific dependence in an SDH-deficient cell model or patient cohort for any of these unassigned candidates. PKMYT1, TGF-beta, and PHGDH remain open research leads as noted in the 2026-10-09 entry. The engine now has 65+ drug entries across all SDH-specific vulnerability axes; well-supported new drug territory is genuinely narrow.
+
+**Files changed:** papers.ts, tracker.md, MORNING_LOG.md. No drugs, pathways, targets, scoring constants, or biology entries changed.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42847134/ ; https://doi.org/10.1530/ERC-26-0243 .
+**PR branch:** morning/2026-10-10-protein-acylation-paper
