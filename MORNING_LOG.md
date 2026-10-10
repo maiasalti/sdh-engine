@@ -1895,3 +1895,29 @@ Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors
 **Files changed:** papers.ts, tracker.md and this log only. No drugs, pathways, targets or scoring constants changed.
 **Source:** https://pubmed.ncbi.nlm.nih.gov/42847129/ .
 **PR branch:** morning/2026-10-08-glp1ra-paper-mthfd2-cleanup
+
+---
+
+## 2026-10-09
+
+**Direction:** none
+**Papers added:** 0
+**Tracker entries added:** 0
+
+**Reported scan:** the morning routine reported six PubMed queries for 2026-07-09 to 2026-10-09 and no untracked papers. Query strings and result lists were not preserved in this PR, so this review does not independently establish exhaustive coverage. No new paper or drug entry is added.
+
+**Candidate assessment:** no new SDH-specific direction was established by the evidence supplied in this PR. This is not a finding that the engine covers every mechanism or that remaining hypotheses are disproven.
+
+- **PKMYT1/lunresertib:** SDH applicability remains unresolved. PMID 41354716 studied PLK1 inhibition with volasertib and WEE1 inhibition with adavosertib in high-grade serous ovarian cancer models, not PKMYT1 inhibition or SDH-deficient tumors. BRCA-mutant/HR-deficient models in that study were resistant to those two agents. This does not establish class-wide resistance, PKMYT1 antagonism, or harm in SDH-deficient tumors. Direct PKMYT1 and SDH-model evidence is needed before adding this pairing.
+- **TGF-beta/galunisertib:** no direct SDH-specific mechanistic source was supplied for this pairing. Keep as an untested lead; absence of a citation in this scan is not proof that no relevant published data exist.
+- **PHGDH/NCT-502:** no direct SDH-specific dependence data or verified clinical-stage source was supplied. Keep as an untested lead rather than a treatment candidate; verify compound identity, development status and mechanism before adding an entry.
+
+**Research leads retained for further evaluation, not treatment recommendations:**
+1. **EZH2/tazemetostat:** investigate whether SDH loss creates an EZH2 dependency. The proposed succinate/KDM6A-KDM6B/H3K27me3 chain and relevance to SDH-mutant GIST or PPGL are not established by citations supplied here. Verify tumor-specific evidence and current drug status before an entry; epithelioid sarcoma must not be presented as an SDH-deficient tumor type by analogy.
+2. **SLC7A11/ferroptosis:** investigate whether SDH-deficient tumor models show a reproducible vulnerability. No source supplied here establishes SLC7A11 upregulation, GPX4 impairment, malate-aspartate-shuttle dependence or benefit from sulfasalazine/erastin analogues in these tumors.
+3. **SSTR2/somatostatin analogues:** evaluate evidence for non-radiolabeled octreotide or lanreotide separately from PRRT. Receptor expression or PRRT evidence alone does not establish disease stabilization with these drugs; verify PPGL clinical results and SDH subgroup applicability before adding an entry.
+
+**Review correction:** removed unsupported claims of exhaustive engine coverage, likely harm from PKMYT1 inhibition, and established SDH-specific mechanisms or clinical benefit for the proposed leads. No existing research hypothesis is deleted.
+**Source checked:** https://pubmed.ncbi.nlm.nih.gov/41354716/ .
+**Files changed:** MORNING_LOG.md only.
+**PR branch:** morning/2026-10-09-none
