@@ -1901,24 +1901,23 @@ Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors
 ## 2026-10-09
 
 **Direction:** none
-**Angle:** —
 **Papers added:** 0
 **Tracker entries added:** 0
 
-**Paper scan:** 6 PubMed queries (window 2026-07-09 to 2026-10-09) covering SDH-deficient GIST treatment, PPGL/PCC therapy, SDH-deficient RCC/sarcoma, succinate accumulation and HIF/pseudohypoxia mechanisms, epigenetic/CIMP drug repurposing, and targeted therapy in SDH-mutant tumors. All PMIDs returned across all queries were already present in tracker.md. Zero new papers evaluated, zero rejected.
+**Reported scan:** the morning routine reported six PubMed queries for 2026-07-09 to 2026-10-09 and no untracked papers. Query strings and result lists were not preserved in this PR, so this review does not independently establish exhaustive coverage. No new paper or drug entry is added.
 
-**Part B assessment:** The engine now covers 53+ mechanisms and 40+ drugs spanning every established SDH-deficient mechanistic axis (pseudohypoxia/HIF, CIMP/epigenetic, BRCAness/DNA repair, metabolic dependencies, immune evasion axes A2AR/ADORA2A, CD73, CD47, LAG-3, CTLA-4, radioligand DOTATATE, kinase/angiogenesis VEGFR/FGFR/IGF1R, CXCR4/metastasis, tumour pH/CA9, cGAS-STING, cell cycle CBP/p300). The three candidate directions flagged in the 2026-10-06 log were re-assessed today:
+**Candidate assessment:** no new SDH-specific direction was established by the evidence supplied in this PR. This is not a finding that the engine covers every mechanism or that remaining hypotheses are disproven.
 
-- **PKMYT1/lunresertib**: Likely antagonistic in BRCAness-positive SDH-deficient tumors. PKMYT1 inhibition forces premature mitotic entry in cells with unreplicated or damaged DNA — the same G2/M checkpoint override mechanism as WEE1/adavosertib. HR-deficient cells are RESISTANT (not sensitized) to WEE1 inhibition (PMID 41354716). The BRCAness phenotype of SDH-deficient tumors makes this mechanism potentially harmful rather than beneficial. Does not clear the gate.
-- **TGF-β/galunisertib**: No verified direct mechanistic link between SDH loss, succinate accumulation, or pseudohypoxia and TGF-β pathway activation in SDH-deficient tumors specifically. The angiogenic/fibrotic TGF-β role in general cancer contexts is not SDH-specific. No mechanistic citation supports this combination. Does not clear the gate.
-- **PHGDH/NCT-502**: NCT-502 is a research probe without clinical-stage status. No published data link SDH loss to serine synthesis pathway dependence in SDH-deficient tumors specifically. The hypothesis that mitochondrial dysfunction drives serine auxotrophy is speculative in this context. Does not clear the gate.
+- **PKMYT1/lunresertib:** SDH applicability remains unresolved. PMID 41354716 studied PLK1 inhibition with volasertib and WEE1 inhibition with adavosertib in high-grade serous ovarian cancer models, not PKMYT1 inhibition or SDH-deficient tumors. BRCA-mutant/HR-deficient models in that study were resistant to those two agents. This does not establish class-wide resistance, PKMYT1 antagonism, or harm in SDH-deficient tumors. Direct PKMYT1 and SDH-model evidence is needed before adding this pairing.
+- **TGF-beta/galunisertib:** no direct SDH-specific mechanistic source was supplied for this pairing. Keep as an untested lead; absence of a citation in this scan is not proof that no relevant published data exist.
+- **PHGDH/NCT-502:** no direct SDH-specific dependence data or verified clinical-stage source was supplied. Keep as an untested lead rather than a treatment candidate; verify compound identity, development status and mechanism before adding an entry.
 
-No direction clears the hard relevance gate today.
+**Research leads retained for further evaluation, not treatment recommendations:**
+1. **EZH2/tazemetostat:** investigate whether SDH loss creates an EZH2 dependency. The proposed succinate/KDM6A-KDM6B/H3K27me3 chain and relevance to SDH-mutant GIST or PPGL are not established by citations supplied here. Verify tumor-specific evidence and current drug status before an entry; epithelioid sarcoma must not be presented as an SDH-deficient tumor type by analogy.
+2. **SLC7A11/ferroptosis:** investigate whether SDH-deficient tumor models show a reproducible vulnerability. No source supplied here establishes SLC7A11 upregulation, GPX4 impairment, malate-aspartate-shuttle dependence or benefit from sulfasalazine/erastin analogues in these tumors.
+3. **SSTR2/somatostatin analogues:** evaluate evidence for non-radiolabeled octreotide or lanreotide separately from PRRT. Receptor expression or PRRT evidence alone does not establish disease stabilization with these drugs; verify PPGL clinical results and SDH subgroup applicability before adding an entry.
 
-**Candidate directions for owner evaluation:**
-1. **EZH2/tazemetostat** — SDH loss causes genome-wide H3K27me3 redistribution (succinate inhibits KDM6A/6B demethylases as well as KDM4 family); EZH2 writes H3K27me3; tazemetostat is FDA-approved in epithelioid sarcoma (another SDH-adjacent tumor). A mechanistic SDH→succinate→KDM6A inhibition→H3K27me3 excess→EZH2 dependence chain is plausible. Requires: direct KDM6A inhibition by succinate at physiological concentrations in SDH-deficient cells, or published H3K27me3 redistribution data specific to SDH-mutant GIST/PPGL. Would need evidence this is distinct from DNMT-mediated CIMP already covered.
-2. **SLC7A11 (xCT)/sulfasalazine or erastin analogue** — Ferroptosis sensitivity. SDH-deficient cells rely on the malate-aspartate shuttle; SDH loss may impair GSH synthesis indirectly (glutamate export via xCT competes with import needed for GSH). Published evidence that SDH-mutant tumors are ferroptosis-sensitive (or that succinate accumulation impairs GPX4 function) would be required. This is distinct from the glutaminolysis angle (CB-839) currently in the engine.
-3. **SSTR2/octreotide-LAR or lanreotide** — SDH-deficient PPGLs frequently overexpress somatostatin receptors (SSTR2/SSTR5); PRRT (lutetium DOTATATE) is already in the engine, but cold somatostatin analogues can achieve disease stabilization in SSTR2+ PPGLs and are already in clinical use for carcinoid. This is lower mechanistic novelty (the radioligand angle is covered) but has direct clinical evidence in PPGL. Depends on owner's priority — novelty vs. clinical utility.
-
+**Review correction:** removed unsupported claims of exhaustive engine coverage, likely harm from PKMYT1 inhibition, and established SDH-specific mechanisms or clinical benefit for the proposed leads. No existing research hypothesis is deleted.
+**Source checked:** https://pubmed.ncbi.nlm.nih.gov/41354716/ .
 **Files changed:** MORNING_LOG.md only.
 **PR branch:** morning/2026-10-09-none
