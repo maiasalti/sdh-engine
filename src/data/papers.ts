@@ -413,4 +413,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42847129",
     date: "2026-10",
   },
+  {
+    title:
+      "Potential for pathogenic protein acylation in succinate dehydrogenase-deficient pheochromocytoma and paraganglioma",
+    authors: "Zhou SX, Maher LJ.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0243",
+    topic: "Tumor Biology",
+    description:
+      "Discusses how lysine acylation by acetyl-CoA and succinyl-CoA links the metabolome and proteome, and why SDH-loss chromaffin-cell models offer an opportunity to investigate protein acylation in pheochromocytoma/paraganglioma. Explores possible diagnostic and therapeutic research directions; the abstract does not establish a validated biomarker, treatment benefit, quantified metabolite increase or proteome-wide acylation result in SDH-deficient PPGL.",
+    pmid: "42847134",
+    date: "2026-10",
+  },
 ];
