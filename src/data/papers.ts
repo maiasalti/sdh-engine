@@ -422,7 +422,7 @@ export const PAPERS: CuratedPaper[] = [
     doi: "10.1530/ERC-26-0243",
     topic: "Tumor Biology",
     description:
-      "Perspective-with-cell-model study exploring proteome-wide lysine acylation in SDH-deficient pheochromocytoma/paraganglioma (PPGL). SDH loss elevates succinyl-CoA and acetyl-CoA, driving non-enzymatic succinylation and acetylation of hundreds of mitochondrial and nuclear proteins — a PTM-based consequence of SDH loss that is distinct from the canonical succinate → HIF / TET axes. Identifies succinylated protein networks as a new class of candidate diagnostic biomarkers and therapeutic targets in metastatic SDH-deficient PPGL, where effective systemic options remain limited.",
+      "Discusses how lysine acylation by acetyl-CoA and succinyl-CoA links the metabolome and proteome, and why SDH-loss chromaffin-cell models offer an opportunity to investigate protein acylation in pheochromocytoma/paraganglioma. Explores possible diagnostic and therapeutic research directions; the abstract does not establish a validated biomarker, treatment benefit, quantified metabolite increase or proteome-wide acylation result in SDH-deficient PPGL.",
     pmid: "42847134",
     date: "2026-10",
   },
