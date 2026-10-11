@@ -1938,7 +1938,7 @@ The routine reported 7 PubMed queries executed across SDH-deficient GIST, PPGL, 
 |---|---|
 | 42847134 | added to papers.ts (protein acylation in SDH-deficient PPGL) |
 | 42844857 | rejected: endovascular technique case report |
-| 42806167 | rejected: cardiac regeneration model (opposite direction) |
+| 42806167 | not added: cardiac regeneration model, not SDH-deficient tumor treatment evidence |
 | 42624032 | rejected: colorectal cancer PHGDH context; no SDH link |
 | 42804747 | rejected: neuroblastoma PHGDH + statin; no SDH link |
 | 42778596 | rejected: pancreatic cancer serine cross-talk; no SDH link |
