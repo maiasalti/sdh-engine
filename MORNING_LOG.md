@@ -1921,3 +1921,35 @@ Fresh patient-derived primary cultures from 54 PPGLs included 8 cluster 1 tumors
 **Source checked:** https://pubmed.ncbi.nlm.nih.gov/41354716/ .
 **Files changed:** MORNING_LOG.md only.
 **PR branch:** morning/2026-10-09-none
+
+---
+
+## 2026-10-10
+
+**Paper added:**
+PMID 42847134 — Zhou SX, Maher LJ. Potential for pathogenic protein acylation in succinate dehydrogenase-deficient pheochromocytoma and paraganglioma. Endocr Relat Cancer 2026-10-07. DOI 10.1530/ERC-26-0243.
+
+Discusses how lysine acylation by acetyl-CoA and succinyl-CoA links the metabolome and proteome, and why SDH-loss chromaffin-cell models offer an opportunity to investigate protein acylation in pheochromocytoma/paraganglioma. Explores possible diagnostic and therapeutic research directions; the abstract does not establish a validated biomarker, treatment benefit, quantified metabolite increase or proteome-wide acylation result in SDH-deficient PPGL. Added to papers.ts (Tumor Biology).
+
+**PubMed scan summary (2026-07-10 to 2026-10-10):**
+The routine reported 7 PubMed queries executed across SDH-deficient GIST, PPGL, RCC, succinate biology, PHGDH, and SDH-adjacent metabolism terms. The routine reported that returned PMIDs were cross-checked against tracker.md (279 prior entries). 7 new PMIDs entered tracker.md today:
+
+| PMID | Decision |
+|---|---|
+| 42847134 | added to papers.ts (protein acylation in SDH-deficient PPGL) |
+| 42844857 | rejected: endovascular technique case report |
+| 42806167 | not added: cardiac regeneration model, not SDH-deficient tumor treatment evidence |
+| 42624032 | rejected: colorectal cancer PHGDH context; no SDH link |
+| 42804747 | rejected: neuroblastoma PHGDH + statin; no SDH link |
+| 42778596 | rejected: pancreatic cancer serine cross-talk; no SDH link |
+| 42724467 | rejected: broad PHGDH review; no SDH link |
+
+Previously tracked PMIDs re-encountered today (already in tracker.md): 42687764, 42626917, 42573142, 42503923, 42544736, 42489911, 42820462, 42847129.
+
+**Direction (Part B):** none
+
+The routine reported searches covering PKMYT1/lunresertib, TGF-beta/galunisertib, PHGDH/serine synthesis, BCL-2/venetoclax, MDM2, NAMPT, DHODH, ferroptosis/SLC7A11 and STAT3. No new drug direction was established by the sources supplied in this PR. This does not establish that no relevant published data exist or that engine coverage is exhaustive. PKMYT1, TGF-beta and PHGDH remain unresolved research leads. No treatment recommendation is added.
+
+**Files changed:** papers.ts, tracker.md, MORNING_LOG.md. No drugs, pathways, targets, scoring constants, or biology entries changed.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42847134/ ; https://doi.org/10.1530/ERC-26-0243 .
+**PR branch:** morning/2026-10-10-protein-acylation-paper
