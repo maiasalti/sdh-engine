@@ -1953,3 +1953,37 @@ The routine reported searches covering PKMYT1/lunresertib, TGF-beta/galunisertib
 **Files changed:** papers.ts, tracker.md, MORNING_LOG.md. No drugs, pathways, targets, scoring constants, or biology entries changed.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/42847134/ ; https://doi.org/10.1530/ERC-26-0243 .
 **PR branch:** morning/2026-10-10-protein-acylation-paper
+
+---
+
+## 2026-10-11
+
+**Direction:** none
+
+**PubMed scan (2026-07-11 to 2026-10-11):**
+Queries run: SDH-deficient GIST/PPGL/succinate dehydrogenase 2026; SDHA/SDHB/GIST 2026; paraganglioma/pheochromocytoma treatment 2026; succinate oncometabolite epigenetics 2026; EZH2/SDH tumor 2026; SDH-deficient RCC treatment/immunotherapy 2026; somatostatin analogue/octreotide/lanreotide PPGL antiproliferative SDH; PKMYT1/lunresertib/SDH synthetic lethality.
+
+2 new PMIDs surfaced, both rejected:
+
+| PMID | Decision |
+|---|---|
+| 42859296 | rejected: 5-FU + vorinostat preclinical PPGL study; non-SDH-deficient PC12 model; SDH genotype unreported in primary cultures; 5-FU and vorinostat HDAC inhibition lack verified SDH-specific mechanistic rationale |
+| 42816107 | rejected: BMJ case report of variceal bleeding management in pheochromocytoma; no SDH-specific biology or drug advance |
+
+Previously-tracked PMIDs re-encountered this scan (already in tracker.md): 42831206, 42820462, 42590786, 42626917, 42621358, 42587830.
+
+**Part B direction assessment:**
+All unresolved leads from prior runs re-evaluated:
+- **PKMYT1/lunresertib**: 0 PubMed results for SDH-specific synthetic lethality. No actionable source.
+- **TGF-beta/galunisertib**: No direct SDH-specific mechanistic source verified in this or prior scans.
+- **PHGDH/NCT-502**: No SDH-specific dependence data. Prior scans returned only off-target cancer types (colorectal, neuroblastoma).
+- **EZH2/tazemetostat**: Already in the engine (added 2026-06-23). Synergy with SDH-specific H3K27me3 elevation (via succinate blocking KDM6B) is mechanistically plausible but tazemetostat entry already exists; no new improvement warranted without new data.
+- **SSTR2/somatostatin analogues**: 0 PubMed results for SDH-specific antiproliferative evidence; octreotide/lanreotide evidence in PPGL does not establish SDH-genotype-specific benefit beyond symptom control.
+- **LY3410738/MTHFD2 correction**: Already completed in the 2026-10-07 run. drugs.ts no longer contains the incorrect LY3410738 entry; pathway and target entries for MTHFD2/one-carbon-folate-nucleotide-synthesis are retained with appropriate unvalidated-hypothesis warnings.
+
+No drug direction passes the relevance gate today. The literature space for SDH-specific content within the rolling scan window remains exhausted.
+
+**Papers added:** 0
+**Tracker entries added:** 2 (both rejected)
+**Files changed:** tracker.md, MORNING_LOG.md only.
+**PR branch:** morning/2026-10-11-scan-no-direction
