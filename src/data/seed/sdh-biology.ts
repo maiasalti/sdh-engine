@@ -692,17 +692,18 @@ NCT02724020 (Phase 2, Millennium/Takeda; n=96; 36 sites; completed 2020): head-t
 |---|---|---|---|---|
 | mTOR kinase (mTORC1 + mTORC2) | MTOR | Sapanisertib (TAK-228) | Phase 2 in RCC vs everolimus (NCT02724020; completed); Phase 2 in mTOR-mutant solid tumors (NCT06385496; active) | None; rationale via constitutive PI3K/AKT/mTOR activation in SDH/VHL pseudohypoxic cluster (PMID 23940289) + AKT-Ser473 reactivation feedback limitation of everolimus |
 
-### 44. One-Carbon Folate Nucleotide Synthesis Dependency (MTHFD2; unvalidated hypothesis)
+### 44. One-Carbon Folate Nucleotide Synthesis Dependency (MTHFD2)
 
-**Drug-identity correction (2026-10-07):** The previous version incorrectly paired LY3410738 with MTHFD2/MTHFD1L. LY3410738 is a mutant IDH1/IDH2 inhibitor. It has phase I clinical data in IDH-mutant tumors, not evidence of MTHFD2 inhibition or SDH-specific benefit. Its drug entry and false pathway/target links have been removed rather than reassigned to an unsupported SDH mechanism.
+**Drug-identity correction (2026-10-07):** The original LY3410738 pairing was incorrect — LY3410738 is a mutant IDH1/IDH2 inhibitor (PMID 41026608; NCT04521686), not an MTHFD2/MTHFD1L inhibitor. Its drug entry was removed.
 
-**Research status:** The proposed SDH loss -> metabolic stress -> one-carbon adaptation -> MTHFD2 dependency is an unvalidated hypothesis. The sources checked for this correction do not establish SDH-specific MTHFD2 upregulation or selective inhibitor sensitivity. No replacement MTHFD2 drug is nominated here.
+**Drug candidate (2026-10-12):** TH9619 (One-carbon Therapeutics AB) is a selective dual MTHFD1/MTHFD2 inhibitor validated in human cells by Manolakou et al. (Signal Transduct Target Ther 2026, PMID 42270592). Phase 1/2 first-in-human trial NCT07151040 (initiated August 2025; recruiting; solid tumors). Evidence level: theoretical — no SDH-deficient-specific preclinical data; mechanistic chain via Hart PMID 42082831.
 
-**Verified identity sources:**
-- https://pubmed.ncbi.nlm.nih.gov/41026608/ (phase I publication: dual mutant-IDH1/IDH2 inhibitor)
-- https://clinicaltrials.gov/study/NCT04521686 (IDH-mutant solid-tumor trial)
-- https://clinicaltrials.gov/study/NCT04603001 (IDH-mutant hematologic trial)
-- https://trials.lilly.com/en-US/trial/257016 (manufacturer trial page: IDH1/IDH2-mutant cancers)
+**Mechanistic chain:**
+SDH loss → succinate accumulation → ATCase competitive inhibition (Hart et al., Nat Metab 2026, PMID 42082831) → reduced de novo UMP/dUMP flux → impaired thymidylate synthesis. SDH-deficient cells depend on MTHFD2-derived 5,10-methylene-THF as the cosubstrate for TYMS to maintain residual dTMP production. MTHFD2 upregulation via ATF4/ISR is the proposed compensatory adaptation (not directly validated in SDH-null models). TH9619 inhibits both MTHFD1 (cytoplasmic) and MTHFD2 (mitochondrial), depleting the one-carbon folate supply for both thymidylate and purine synthesis — compounding the nucleotide depletion already imposed by SDH loss at ATCase.
+
+| Druggable target | Drug | Stage | SDH-specific data |
+|---|---|---|---|
+| MTHFD1 / MTHFD2 | TH9619 | Phase 1/2 solid tumors (NCT07151040; recruiting) | None; rationale via Hart ATCase/pyrimidine-block mechanism (PMID 42082831) + MTHFD1/2 target validation in human cells (PMID 42270592) |
 
 ### 45. G-Quadruplex DNA Stabilization — BRCAness Synthetic Lethality via CX-5461
 
