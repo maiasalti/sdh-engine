@@ -1953,3 +1953,22 @@ The routine reported searches covering PKMYT1/lunresertib, TGF-beta/galunisertib
 **Files changed:** papers.ts, tracker.md, MORNING_LOG.md. No drugs, pathways, targets, scoring constants, or biology entries changed.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/42847134/ ; https://doi.org/10.1530/ERC-26-0243 .
 **PR branch:** morning/2026-10-10-protein-acylation-paper
+
+---
+
+## 2026-10-11
+
+**Direction:** none
+**Papers added:** 0
+**Tracker entries added:** 2
+
+**Reported scan (2026-07-11 to 2026-10-11):** the routine reported queries on SDH-deficient GIST/PPGL/RCC, succinate biology, EZH2, somatostatin analogues, PKMYT1 and TGF-beta. Two previously untracked papers were evaluated. No claim of exhaustive literature coverage is made.
+
+- **PMID 42859296:** 5-fluorouracil plus vorinostat showed synergistic growth inhibition in PC-12 cells, four human PPGL primary cultures and a mouse xenograft model. The abstract does not report SDH genotype or establish selective activity in SDH-deficient tumors. Not added as an SDH-specific treatment entry; this is not proof that these drugs lack any SDH-related rationale or that the PPGL finding is irrelevant.
+- **PMID 42816107:** case report of octreotide for acute variceal bleeding in a patient with phaeochromocytoma. Not added as tumor-treatment evidence; the report concerns bleeding management rather than antitumor efficacy.
+
+**Unresolved research leads:** no new SDH-specific drug direction was established by the sources supplied in this PR. PKMYT1/lunresertib, TGF-beta/galunisertib, PHGDH and non-radiolabeled somatostatin analogues remain leads requiring direct source verification, not disproven mechanisms. EZH2/tazemetostat is already represented in the engine; this scan does not establish a new evidence upgrade. The LY3410738 identity correction and retention of the unvalidated MTHFD2 hypothesis are unchanged. No claim about class-wide harm, a confirmed KDM6B mechanism or genotype-specific clinical benefit is added.
+
+**Files changed:** tracker.md and MORNING_LOG.md only. Historical entries unchanged. No drugs, pathways, targets, scoring constants or biology entries changed.
+**Sources checked:** https://pubmed.ncbi.nlm.nih.gov/42859296/ ; https://pubmed.ncbi.nlm.nih.gov/42816107/ .
+**PR branch:** morning/2026-10-11-scan-no-direction
