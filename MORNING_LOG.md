@@ -1959,31 +1959,16 @@ The routine reported searches covering PKMYT1/lunresertib, TGF-beta/galunisertib
 ## 2026-10-11
 
 **Direction:** none
-
-**PubMed scan (2026-07-11 to 2026-10-11):**
-Queries run: SDH-deficient GIST/PPGL/succinate dehydrogenase 2026; SDHA/SDHB/GIST 2026; paraganglioma/pheochromocytoma treatment 2026; succinate oncometabolite epigenetics 2026; EZH2/SDH tumor 2026; SDH-deficient RCC treatment/immunotherapy 2026; somatostatin analogue/octreotide/lanreotide PPGL antiproliferative SDH; PKMYT1/lunresertib/SDH synthetic lethality.
-
-2 new PMIDs surfaced, both rejected:
-
-| PMID | Decision |
-|---|---|
-| 42859296 | rejected: 5-FU + vorinostat preclinical PPGL study; non-SDH-deficient PC12 model; SDH genotype unreported in primary cultures; 5-FU and vorinostat HDAC inhibition lack verified SDH-specific mechanistic rationale |
-| 42816107 | rejected: BMJ case report of variceal bleeding management in pheochromocytoma; no SDH-specific biology or drug advance |
-
-Previously-tracked PMIDs re-encountered this scan (already in tracker.md): 42831206, 42820462, 42590786, 42626917, 42621358, 42587830.
-
-**Part B direction assessment:**
-All unresolved leads from prior runs re-evaluated:
-- **PKMYT1/lunresertib**: 0 PubMed results for SDH-specific synthetic lethality. No actionable source.
-- **TGF-beta/galunisertib**: No direct SDH-specific mechanistic source verified in this or prior scans.
-- **PHGDH/NCT-502**: No SDH-specific dependence data. Prior scans returned only off-target cancer types (colorectal, neuroblastoma).
-- **EZH2/tazemetostat**: Already in the engine (added 2026-06-23). Synergy with SDH-specific H3K27me3 elevation (via succinate blocking KDM6B) is mechanistically plausible but tazemetostat entry already exists; no new improvement warranted without new data.
-- **SSTR2/somatostatin analogues**: 0 PubMed results for SDH-specific antiproliferative evidence; octreotide/lanreotide evidence in PPGL does not establish SDH-genotype-specific benefit beyond symptom control.
-- **LY3410738/MTHFD2 correction**: Already completed in the 2026-10-07 run. drugs.ts no longer contains the incorrect LY3410738 entry; pathway and target entries for MTHFD2/one-carbon-folate-nucleotide-synthesis are retained with appropriate unvalidated-hypothesis warnings.
-
-No drug direction passes the relevance gate today. The literature space for SDH-specific content within the rolling scan window remains exhausted.
-
 **Papers added:** 0
-**Tracker entries added:** 2 (both rejected)
-**Files changed:** tracker.md, MORNING_LOG.md only.
+**Tracker entries added:** 2
+
+**Reported scan (2026-07-11 to 2026-10-11):** the routine reported queries on SDH-deficient GIST/PPGL/RCC, succinate biology, EZH2, somatostatin analogues, PKMYT1 and TGF-beta. Two previously untracked papers were evaluated. No claim of exhaustive literature coverage is made.
+
+- **PMID 42859296:** 5-fluorouracil plus vorinostat showed synergistic growth inhibition in PC-12 cells, four human PPGL primary cultures and a mouse xenograft model. The abstract does not report SDH genotype or establish selective activity in SDH-deficient tumors. Not added as an SDH-specific treatment entry; this is not proof that these drugs lack any SDH-related rationale or that the PPGL finding is irrelevant.
+- **PMID 42816107:** case report of octreotide for acute variceal bleeding in a patient with phaeochromocytoma. Not added as tumor-treatment evidence; the report concerns bleeding management rather than antitumor efficacy.
+
+**Unresolved research leads:** no new SDH-specific drug direction was established by the sources supplied in this PR. PKMYT1/lunresertib, TGF-beta/galunisertib, PHGDH and non-radiolabeled somatostatin analogues remain leads requiring direct source verification, not disproven mechanisms. EZH2/tazemetostat is already represented in the engine; this scan does not establish a new evidence upgrade. The LY3410738 identity correction and retention of the unvalidated MTHFD2 hypothesis are unchanged. No claim about class-wide harm, a confirmed KDM6B mechanism or genotype-specific clinical benefit is added.
+
+**Files changed:** tracker.md and MORNING_LOG.md only. Historical entries unchanged. No drugs, pathways, targets, scoring constants or biology entries changed.
+**Sources checked:** https://pubmed.ncbi.nlm.nih.gov/42859296/ ; https://pubmed.ncbi.nlm.nih.gov/42816107/ .
 **PR branch:** morning/2026-10-11-scan-no-direction
