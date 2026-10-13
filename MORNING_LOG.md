@@ -1990,3 +1990,21 @@ Hart PMID 42082831 supports SDH-loss/succinate-mediated ATCase inhibition and py
 **Files changed:** drugs.ts, pathways.ts, sdh-biology.ts, tracker.md and this log.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/37012496/ ; https://pubmed.ncbi.nlm.nih.gov/42270592/ ; https://pubmed.ncbi.nlm.nih.gov/42082831/ ; https://clinicaltrials.gov/study/NCT07151040 .
 **PR branch:** morning/2026-10-12-th9619-mthfd2-inhibitor
+
+---
+
+## 2026-10-13
+
+**Direction:** drug-pool — tiragolumab (anti-TIGIT); HIF→CD155/PVR→TIGIT T-cell exhaustion axis
+**Papers added:** 0
+**Tracker entries added:** 1
+
+Rolling PubMed scan returned 19 PMIDs across 6 queries; all were already in tracker.md. Zero new papers added to papers.ts.
+
+One new paper logged to tracker as rejected: PMID 42160101 (Eskandari T et al., Iranian Biomedical Journal 2026, DOI 10.22034/IBJ.30.1.90). The paper shows that pharmacological HIF-1α blockade with silibinin caused significant CD155 mRNA suppression in HL-60 AML cells. This is indirect functional evidence linking HIF-1α activity to CD155/PVR expression — not direct HRE-binding proof, and not from an SDH-deficient tumor model. Used only as mechanistic rationale for the TIGIT axis (evidence_score 20 theoretical). Rejected from the papers seed.
+
+Direction rationale: SDH loss → succinate → constitutive HIF-1α stabilisation (pseudohypoxia) → predicted CD155/PVR upregulation on tumor cells → TIGIT ligation on TILs and NK cells → T-cell and NK-cell exhaustion. The PMID 42160101 indirect functional evidence anchors the HIF-1α→CD155 step. Evidence level (evidence_score 20 theoretical) is comparable to relatlimab (LAG-3, 2026-09-09) and ipilimumab (CTLA-4, 2026-09-15). Tiragolumab Phase 3 SKYSCRAPER-01 (NCT04294810, NSCLC) did not meet co-primary endpoints; no SDH-specific data exist. All caveats documented. SDH-specific CD155 overexpression and TIGIT checkpoint relevance in SDH-deficient cancers remain unvalidated.
+
+**Files changed:** drugs.ts, pathways.ts, targets.ts, sdh-biology.ts, scoring/constants.ts, tracker.md and this log.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42160101/ ; https://clinicaltrials.gov/study/NCT04294810 .
+**PR branch:** morning/2026-10-13-tiragolumab-tigit-cd155

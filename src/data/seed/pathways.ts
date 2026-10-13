@@ -712,4 +712,20 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 42,
   },
+  {
+    name: "HIF-Driven CD155/PVR → TIGIT T-Cell Exhaustion",
+    slug: "hif-cd155-tigit-exhaustion",
+    description:
+      "SDH loss → succinate accumulation → constitutive PHD2/PHD3 inhibition → HIF-1α/2α stabilisation (pseudohypoxia) → transcriptional upregulation of CD155/PVR (Poliovirus Receptor) on tumor cells → TIGIT (T-cell immunoreceptor with Ig and ITIM domains) ligation on tumor-infiltrating T cells and NK cells → co-inhibitory signaling → T-cell functional exhaustion and NK-cell suppression. CD155 expression is reported to be regulated by HIF-1α: Eskandari T et al. (Iranian Biomedical Journal 2026, PMID 42160101) showed that pharmacological HIF-1α blockade with silibinin caused significant CD155 mRNA suppression in HL-60 AML cells, providing indirect functional evidence linking HIF-1α activity to CD155 expression. Direct HRE-promoter-binding evidence for CD155 and SDH-specific CD155 overexpression have not been demonstrated. Tiragolumab (MTIG7192A; Roche) is an anti-TIGIT IgG1 monoclonal antibody; Phase 3 SKYSCRAPER-01 (NCT04294810, NSCLC) did not meet its co-primary endpoints (Cho BC et al., ESMO 2022, LBA9). No SDH-specific response data for tiragolumab have been reported.",
+    upstream_event:
+      "SDH loss → succinate → constitutive HIF-1α stabilisation → CD155/PVR upregulation on tumor cells (Eskandari T et al., Iranian Biomedical Journal 2026, PMID 42160101; indirect functional evidence in HL-60 AML cells; not shown in SDH-deficient tumor models) → TIGIT ligation on TILs and NK cells",
+    downstream_effects: [
+      "HIF-1α activity promotes CD155/PVR expression on tumor cells (PMID 42160101; indirect functional evidence in HL-60 AML cells; not demonstrated in SDH-deficient models or with direct HRE-binding evidence)",
+      "CD155 ligation of TIGIT on CD8⁺ TILs and NK cells delivers an ITIM-mediated co-inhibitory signal (SHIP-1/SHIP-2 activation) suppressing T-cell proliferation, IFN-γ production, and cytolytic function",
+      "TIGIT engagement on Treg cells stabilises Foxp3, augmenting Treg-mediated immunosuppression in the TME",
+      "Anti-TIGIT blockade with tiragolumab blocks the TIGIT-CD155 interaction; Phase 3 SKYSCRAPER-01 (NCT04294810, NSCLC) did not meet its co-primary endpoints; SDH-specific efficacy is untested",
+    ],
+    druggable: true,
+    display_order: 43,
+  },
 ];

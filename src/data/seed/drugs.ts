@@ -1211,6 +1211,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: ["NCT02834013"],
   },
   {
+    name: "Tiragolumab",
+    brand_names: ["MTIG7192A"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Anti-TIGIT monoclonal antibody (TIGIT checkpoint inhibitor)",
+    mechanism_of_action:
+      "Tiragolumab (MTIG7192A; Roche) is a human IgG1 anti-TIGIT monoclonal antibody that binds TIGIT (T-cell immunoreceptor with Ig and ITIM domains) on T cells and NK cells, blocking its interaction with CD155/PVR (Poliovirus Receptor) on tumor cells and antigen-presenting cells. TIGIT ligation by CD155 delivers an ITIM-mediated co-inhibitory signal via SHIP-1/SHIP-2 phosphatase recruitment, suppressing T-cell and NK-cell effector programs; TIGIT blockade aims to restore anti-tumor immunity. SDH-specific rationale: SDH loss → succinate → constitutive PHD2/PHD3 inhibition → HIF-1α/2α stabilisation (pseudohypoxia) → predicted CD155/PVR upregulation on SDH-deficient tumor cells → TIGIT ligation → T-cell exhaustion. Supporting evidence: Eskandari T et al. (Iranian Biomedical Journal 2026, PMID 42160101) showed that pharmacological HIF-1α blockade with silibinin caused significant CD155 mRNA suppression in HL-60 AML cells — indirect functional evidence linking HIF-1α activity to CD155 expression. This is an extrapolation: the cited study used AML cells with a pharmacological HIF-1α inhibitor, not SDH-deficient tumor models; direct HRE-binding or chromatin evidence for HIF-1α-driven CD155 transcription in SDH-deficient GIST, PPGL, or RCC has not been reported. SKYSCRAPER-01 (NCT04294810) is a Phase 3 randomised trial of tiragolumab + atezolizumab vs. atezolizumab + placebo in first-line PD-L1-high unresectable or metastatic NSCLC; the trial did not meet its co-primary endpoints of PFS or OS in the overall population (Cho BC et al., ESMO 2022, LBA9). No SDH-specific response or SDH-deficient tumor data have been reported for tiragolumab. This entry is a research hypothesis, not a treatment recommendation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["hif-cd155-tigit-exhaustion", "succinate-immune-evasion"],
+    target_gene_symbols: ["TIGIT"],
+    evidence_score: 20,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT04294810"],
+  },
+  {
     name: "TH9619",
     brand_names: [],
     chembl_id: null,
