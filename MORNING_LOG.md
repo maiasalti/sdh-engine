@@ -1977,35 +1977,16 @@ The routine reported searches covering PKMYT1/lunresertib, TGF-beta/galunisertib
 
 ## 2026-10-12
 
-**Direction:** Drug pool addition — TH9619 (MTHFD1/MTHFD2 dual inhibitor)
+**Direction:** TH9619 research candidate; SDH applicability unvalidated
 **Papers added:** 0
-**Tracker entries added:** 4 (42582009, 41922306, 41043588, 42270592)
+**Tracker entries added:** 4
 
-### Part A — PubMed Scan
+The routine reported a rolling PubMed scan and four newly tracked records: PMID 42582009 (ccRCC preprint), PMID 41922306 (ccRCC study outside the scan window), PMID 41043588 (HIF2A-related PPGL outside the window), and PMID 42270592 (RA T-cell/arthritis study outside the window). None was added to papers.ts. These selection decisions do not establish exhaustive literature coverage or disprove SDH applicability.
 
-Scan window: 2026-07-12 to 2026-10-12. Queries: SDH-deficient GIST (2026); paraganglioma/pheochromocytoma SDH therapy (2026); succinate dehydrogenase cancer epigenetics hypermethylation (2026); SDH-deficient RCC treatment (2026); succinate BRCAness PARP inhibitor (2026); pseudohypoxia HIF-2α belzutifan (2026); SDHB metastatic PPGL clinical trial (2026); succinate KDM4 demethylase (2026); 5-FU vorinostat PPGL (2026); neddylation UBE2F SDH (2026); FGFR rogaratinib SDH-deficient (2026); MTHFD2 one-carbon (2026); polyamine ODC1 SDH (2026); reductive carboxylation IDH (2026); SDH pituitary neuroendocrine (2026); succinate oncometabolite immune evasion (2026); VEGF SDH-deficient PPGL GIST (2026); SDHA SDHB SDHC SDHD cancer epigenetic treatment (2026); PKMYT1 lunresertib BRCA HRD (2025–2026); TGF-beta SDH PPGL immunosuppression (2025–2026); DHODH SDH pyrimidine cancer (2025–2026); 5-FU thymidylate SDH pyrimidine synthesis (2025–2026).
+TH9619 is a real MTHFD1/2 biochemical inhibitor and is listed in recruiting first-in-human Phase 1/2 study NCT07151040 for advanced cancer. The trial record gives an actual start of August 22, 2025; clinical entry does not establish efficacy. The primary cancer-mechanism study, PMID 37012496, found that TH9619 inhibits MTHFD1 and nuclear MTHFD2 but not mitochondrial MTHFD2 in its cell models. Continued mitochondrial formate release feeds a folate trap, causing thymidylate depletion. The draft's simple mitochondrial one-carbon blockade was corrected.
 
-New PMIDs evaluated and rejected (all previously unseen):
-- **PMID 42582009** (bioRxiv 2026-07-27): LOX/HIF-2α in ccRCC — bioRxiv preprint; ccRCC/VHL context, not SDH-deficient; LOX-HUWE1 axis not validated in SDH models.
-- **PMID 41922306** (Signal Transduct Target Ther 2026-04-01): Glucocorticoids/H4K12la/belzutifan in ccRCC — outside 3-month scan window (April 2026); ccRCC/VHL context.
-- **PMID 41043588** (Endocr Pract 2025-10-01): Belzutifan for HIF2A-related PPGL — outside 3-month scan window (October 2025); EPAS1 gain-of-function PPGL, not SDHx.
-- **PMID 42270592** (Signal Transduct Target Ther 2026-06-10): TH9619/MTHFD2 in RA T cells — outside 3-month scan window (June 2026); RA context, not cancer; used as mechanistic anchor for Part B (not added to papers.ts).
+Hart PMID 42082831 supports SDH-loss/succinate-mediated ATCase inhibition and pyrimidine insufficiency, not MTHFD2 dependency or TH9619 sensitivity. The RA study PMID 42270592 does not establish SDH-cancer benefit. SDH-specific one-carbon adaptation, TH9619 selectivity and proposed DHODH synergy remain untested in the evidence checked. The existing unvalidated-hypothesis warnings and LY3410738 identity correction are preserved; the pathway remains marked unvalidated/not druggable. TH9619 is recorded with the draft's low theoretical score (22), not as a validated SDH treatment. Only the existing MTHFD2 target is linked; MTHFD1 is described in the mechanism but no new target record is added.
 
-No papers qualify for papers.ts.
-
-### Part B — Drug Pool Addition: TH9619 (MTHFD1/MTHFD2 inhibitor)
-
-**Context:** The one-carbon-folate-nucleotide-synthesis pathway has been in the engine since 2026-09-14 (pathway, target, biology, color token). The original drug entry (LY3410738) was withdrawn on 2026-10-07 because LY3410738 is an IDH1/IDH2 inhibitor, not MTHFD2. Today's ClinicalTrials search found NCT07151040 — a Phase 1/2 first-in-human trial for TH9619, a selective dual MTHFD1/MTHFD2 inhibitor developed by One-carbon Therapeutics AB (Thomas Helleday group, Karolinska). The trial is currently RECRUITING (initiated August 2025). PMID 42270592 (Manolakou et al., June 2026) validates TH9619 as a selective MTHFD1/2 inhibitor with a proteomic profile distinct from methotrexate/antifolate therapy, confirming MTHFD1/2-specific target engagement in human cells.
-
-**Mechanistic rationale:**
-- SDH loss → succinate accumulation → ATCase competitive inhibition (Hart et al., Nat Metab 2026, PMID 42082831) → impaired de novo pyrimidine synthesis flux → reduced dUMP substrate for TYMS
-- SDH-deficient cells depend on MTHFD2-derived 5,10-methylene-THF as cosubstrate for residual TYMS-mediated thymidylate synthesis
-- MTHFD2 upregulation via ATF4/ISR is proposed as a compensatory adaptation (logical inference from Hart mechanism; not directly measured in SDH-null cell lines)
-- TH9619 inhibits both MTHFD1 (cytoplasmic) and MTHFD2 (mitochondrial), depleting methylene-THF for TYMS and 10-formyl-THF for purine synthesis — compounding the nucleotide depletion imposed by SDH loss at ATCase
-- Mechanistically orthogonal to DHODH inhibitors (brequinar, teriflunomide): TH9619 targets the folate cosubstrate arm; DHODH inhibitors block the pyrimidine ring-synthesis arm; they may synergize
-
-**Evidence score:** 22 (theoretical) — mechanistic chain via Hart PMID 42082831; MTHFD1/2 target validated in human cells (PMID 42270592); Phase 1/2 solid tumor trial (NCT07151040); no SDH-specific preclinical data.
-
-**Files changed:** `src/data/seed/drugs.ts` (added TH9619), `src/data/seed/pathways.ts` (updated one-carbon-folate-nucleotide-synthesis: druggable true, updated description/upstream_event/downstream_effects), `src/data/seed/sdh-biology.ts` (updated Mechanism 44 with TH9619), `tracker.md` (4 new PMID rows), `MORNING_LOG.md` (this entry).
-**Sources:** https://clinicaltrials.gov/study/NCT07151040 ; https://pubmed.ncbi.nlm.nih.gov/42270592/ ; https://pubmed.ncbi.nlm.nih.gov/42082831/ .
+**Files changed:** drugs.ts, pathways.ts, sdh-biology.ts, tracker.md and this log.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/37012496/ ; https://pubmed.ncbi.nlm.nih.gov/42270592/ ; https://pubmed.ncbi.nlm.nih.gov/42082831/ ; https://clinicaltrials.gov/study/NCT07151040 .
 **PR branch:** morning/2026-10-12-th9619-mthfd2-inhibitor
