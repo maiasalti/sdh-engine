@@ -1972,3 +1972,21 @@ The routine reported searches covering PKMYT1/lunresertib, TGF-beta/galunisertib
 **Files changed:** tracker.md and MORNING_LOG.md only. Historical entries unchanged. No drugs, pathways, targets, scoring constants or biology entries changed.
 **Sources checked:** https://pubmed.ncbi.nlm.nih.gov/42859296/ ; https://pubmed.ncbi.nlm.nih.gov/42816107/ .
 **PR branch:** morning/2026-10-11-scan-no-direction
+
+---
+
+## 2026-10-12
+
+**Direction:** TH9619 research candidate; SDH applicability unvalidated
+**Papers added:** 0
+**Tracker entries added:** 4
+
+The routine reported a rolling PubMed scan and four newly tracked records: PMID 42582009 (ccRCC preprint), PMID 41922306 (ccRCC study outside the scan window), PMID 41043588 (HIF2A-related PPGL outside the window), and PMID 42270592 (RA T-cell/arthritis study outside the window). None was added to papers.ts. These selection decisions do not establish exhaustive literature coverage or disprove SDH applicability.
+
+TH9619 is a real MTHFD1/2 biochemical inhibitor and is listed in recruiting first-in-human Phase 1/2 study NCT07151040 for advanced cancer. The trial record gives an actual start of August 22, 2025; clinical entry does not establish efficacy. The primary cancer-mechanism study, PMID 37012496, found that TH9619 inhibits MTHFD1 and nuclear MTHFD2 but not mitochondrial MTHFD2 in its cell models. Continued mitochondrial formate release feeds a folate trap, causing thymidylate depletion. The draft's simple mitochondrial one-carbon blockade was corrected.
+
+Hart PMID 42082831 supports SDH-loss/succinate-mediated ATCase inhibition and pyrimidine insufficiency, not MTHFD2 dependency or TH9619 sensitivity. The RA study PMID 42270592 does not establish SDH-cancer benefit. SDH-specific one-carbon adaptation, TH9619 selectivity and proposed DHODH synergy remain untested in the evidence checked. The existing unvalidated-hypothesis warnings and LY3410738 identity correction are preserved; the pathway remains marked unvalidated/not druggable. TH9619 is recorded with the draft's low theoretical score (22), not as a validated SDH treatment. Only the existing MTHFD2 target is linked; MTHFD1 is described in the mechanism but no new target record is added.
+
+**Files changed:** drugs.ts, pathways.ts, sdh-biology.ts, tracker.md and this log.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/37012496/ ; https://pubmed.ncbi.nlm.nih.gov/42270592/ ; https://pubmed.ncbi.nlm.nih.gov/42082831/ ; https://clinicaltrials.gov/study/NCT07151040 .
+**PR branch:** morning/2026-10-12-th9619-mthfd2-inhibitor

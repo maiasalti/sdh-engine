@@ -1210,4 +1210,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02834013"],
   },
+  {
+    name: "TH9619",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "MTHFD1/2 enzyme inhibitor; cellular folate-trapping mechanism",
+    mechanism_of_action:
+      "TH9619 inhibits the dehydrogenase/cyclohydrolase activities of MTHFD1 and MTHFD2 in biochemical assays. In cancer-cell models, Green et al. (Nat Metab 2023, PMID 37012496) found inhibition of MTHFD1 and nuclear MTHFD2, but not mitochondrial MTHFD2. Continued mitochondrial formate release combined with MTHFD1 inhibition caused accumulation of 10-formyl-THF (folate trapping), thymidylate depletion and cell death in MTHFD2-expressing cancer cells; physiological hypoxanthine enhanced this effect. This is not a simple blockade of mitochondrial one-carbon output. Manolakou et al. (PMID 42270592) reported TH9619 activity in rheumatoid-arthritis T cells and arthritis models, not SDH-deficient cancer. ClinicalTrials.gov lists NCT07151040 as a recruiting first-in-human Phase 1/2 study in advanced cancer, with actual start August 22, 2025; enrollment does not establish efficacy or SDH-specific benefit. SDH applicability is an unvalidated hypothesis: Hart et al. (PMID 42082831) established succinate-mediated ATCase inhibition and pyrimidine insufficiency in SDH-deficiency models, not MTHFD2 upregulation, one-carbon dependency or selective TH9619 sensitivity. No SDH-specific TH9619 result was verified in this review. The inferred combination with SDH-driven nucleotide stress and any synergy with DHODH inhibitors require direct testing. This entry is a research lead, not a treatment recommendation.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["one-carbon-folate-nucleotide-synthesis"],
+    target_gene_symbols: ["MTHFD2"],
+    evidence_score: 22,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT07151040"],
+  },
 ];

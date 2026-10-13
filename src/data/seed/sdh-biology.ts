@@ -696,7 +696,9 @@ NCT02724020 (Phase 2, Millennium/Takeda; n=96; 36 sites; completed 2020): head-t
 
 **Drug-identity correction (2026-10-07):** The previous version incorrectly paired LY3410738 with MTHFD2/MTHFD1L. LY3410738 is a mutant IDH1/IDH2 inhibitor. It has phase I clinical data in IDH-mutant tumors, not evidence of MTHFD2 inhibition or SDH-specific benefit. Its drug entry and false pathway/target links have been removed rather than reassigned to an unsupported SDH mechanism.
 
-**Research status:** The proposed SDH loss -> metabolic stress -> one-carbon adaptation -> MTHFD2 dependency is an unvalidated hypothesis. The sources checked for this correction do not establish SDH-specific MTHFD2 upregulation or selective inhibitor sensitivity. No replacement MTHFD2 drug is nominated here.
+**Research status:** The proposed SDH loss -> metabolic stress -> one-carbon adaptation -> MTHFD2 dependency is an unvalidated hypothesis. The sources checked for this correction do not establish SDH-specific MTHFD2 upregulation or selective inhibitor sensitivity. TH9619 is retained as an unvalidated research candidate, not proof of SDH-specific MTHFD2 dependency. In the primary cancer study (PMID 37012496), TH9619 inhibited MTHFD1 and nuclear MTHFD2 but did not inhibit mitochondrial MTHFD2; continued formate output supported folate trapping and thymidylate depletion. NCT07151040 is a recruiting first-in-human study in advanced cancer. Hart PMID 42082831 establishes SDH-associated pyrimidine stress, not TH9619 sensitivity or ATF4/MTHFD2 upregulation. The RA study (PMID 42270592) does not establish cancer efficacy. No treatment recommendation or DHODH synergy is established here.
+
+**TH9619 sources:** https://pubmed.ncbi.nlm.nih.gov/37012496/ ; https://pubmed.ncbi.nlm.nih.gov/42270592/ ; https://pubmed.ncbi.nlm.nih.gov/42082831/ ; https://clinicaltrials.gov/study/NCT07151040 .
 
 **Verified identity sources:**
 - https://pubmed.ncbi.nlm.nih.gov/41026608/ (phase I publication: dual mutant-IDH1/IDH2 inhibitor)

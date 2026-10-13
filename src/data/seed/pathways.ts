@@ -568,7 +568,7 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     name: "One-Carbon Folate / Nucleotide Synthesis Dependency (MTHFD2)",
     slug: "one-carbon-folate-nucleotide-synthesis",
     description:
-      "Unvalidated research hypothesis: metabolic stress after SDH loss may create a one-carbon metabolism vulnerability. SDH-specific MTHFD2 dependency is not established by the sources checked for the October 7 drug-identity correction. The former LY3410738 pairing was incorrect: LY3410738 inhibits mutant IDH1/IDH2, not MTHFD2/MTHFD1L (PMID 41026608; NCT04521686). No replacement MTHFD2 drug has been verified for this entry.",
+      "Unvalidated research hypothesis: metabolic stress after SDH loss may create a one-carbon metabolism vulnerability. SDH-specific MTHFD2 dependency is not established by the sources checked for the October 7 drug-identity correction. The former LY3410738 pairing was incorrect: LY3410738 inhibits mutant IDH1/IDH2, not MTHFD2/MTHFD1L (PMID 41026608; NCT04521686). TH9619 is a verified MTHFD1/2 biochemical inhibitor and clinical-stage research lead, but cellular mitochondrial MTHFD2 inhibition was not observed in the primary cancer study (PMID 37012496). SDH-specific TH9619 sensitivity remains unvalidated; drug identity is not proof of this dependency.",
     upstream_event:
       "Hypothesis only: SDH loss and metabolic stress may alter one-carbon metabolism; the proposed MTHFD2 dependency requires direct SDH-specific validation.",
     downstream_effects: [
