@@ -568,16 +568,14 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     name: "One-Carbon Folate / Nucleotide Synthesis Dependency (MTHFD2)",
     slug: "one-carbon-folate-nucleotide-synthesis",
     description:
-      "SDH loss impairs de novo pyrimidine synthesis via ATCase inhibition by accumulated succinate (Hart et al., Nat Metab 2026, PMID 42082831), reducing dUMP substrate available for thymidylate synthase (TYMS). SDH-deficient cells become dependent on MTHFD2-derived 5,10-methylene-THF as the cosubstrate input for the remaining TYMS activity. TH9619 (One-carbon Therapeutics AB), a selective dual MTHFD1/MTHFD2 inhibitor validated in human cells (Manolakou et al., PMID 42270592), is the assigned drug candidate; Phase 1/2 first-in-human trial NCT07151040 is recruiting in solid tumors. Theoretical evidence level: no SDH-deficient-specific preclinical data. The former LY3410738 pairing was incorrect (LY3410738 is a mutant IDH1/IDH2 inhibitor; PMID 41026608).",
+      "Unvalidated research hypothesis: metabolic stress after SDH loss may create a one-carbon metabolism vulnerability. SDH-specific MTHFD2 dependency is not established by the sources checked for the October 7 drug-identity correction. The former LY3410738 pairing was incorrect: LY3410738 inhibits mutant IDH1/IDH2, not MTHFD2/MTHFD1L (PMID 41026608; NCT04521686). TH9619 is a verified MTHFD1/2 biochemical inhibitor and clinical-stage research lead, but cellular mitochondrial MTHFD2 inhibition was not observed in the primary cancer study (PMID 37012496). SDH-specific TH9619 sensitivity remains unvalidated; drug identity is not proof of this dependency.",
     upstream_event:
-      "SDH loss → succinate accumulation → ATCase (CPSII) competitive inhibition → impaired de novo pyrimidine synthesis flux (Hart Nat Metab 2026, PMID 42082831) → cells depend on MTHFD2-derived methylene-THF for residual TYMS-mediated thymidylate synthesis",
+      "Hypothesis only: SDH loss and metabolic stress may alter one-carbon metabolism; the proposed MTHFD2 dependency requires direct SDH-specific validation.",
     downstream_effects: [
-      "MTHFD2 provides 5,10-methylene-THF to TYMS for de novo thymidylate (dTMP) synthesis; MTHFD1 provides 10-formyl-THF for de novo purine synthesis",
-      "TH9619 inhibits both MTHFD1 and MTHFD2, depleting methylene-THF supply to TYMS and 10-formyl-THF supply for purine synthesis",
-      "In SDH-deficient cells already impaired at ATCase, TH9619 imposes a second hit on the thymidylate supply chain, compounding nucleotide depletion",
-      "MTHFD2 upregulation via ATF4/ISR as compensatory adaptation to SDH-driven nucleotide stress — proposed mechanism, not directly validated in SDH-null cell lines",
+      "SDH-specific MTHFD2 upregulation and selective inhibitor sensitivity remain unresolved",
+      "LY3410738 must not be used as an MTHFD2 inhibitor or evidence for this pathway",
     ],
-    druggable: true,
+    druggable: false,
     display_order: 34,
   },
   {
