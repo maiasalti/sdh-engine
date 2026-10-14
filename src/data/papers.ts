@@ -426,4 +426,29 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42847134",
     date: "2026-10",
   },
+  {
+    title:
+      "Tyrosine Kinase Inhibitors in Metastatic Pheochromocytomas and Paragangliomas: An Updated Systematic Review and Meta-Analysis.",
+    authors: "Xu X, Liu Q, Xu S, Ikram AH, Ndikuriyo HP, Wang Y, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0201",
+    topic: "Treatment & Trials",
+    description:
+      "Meta-analysis of 11 studies (246 mPPGL patients) reporting pooled ORR 27.7%, DCR 84.2%, median PFS 13.4 months, and median OS 26.7 months for TKIs in metastatic PPGL. Subgroup analysis by SDHB mutation status found numerically higher ORR in SDHB-mutant patients (36.8% vs 20.1%, P=0.06) and DCR (92.2% vs 78.5%, P=0.269), consistent with TKI sensitivity in the pseudohypoxic SDH-deficient subtype. Non-sunitinib TKIs significantly outperformed sunitinib in both ORR (36.9% vs 21.2%, P=0.04) and DCR (94.5% vs 72.6%, P=0.001), providing meta-analytic support for preferring non-sunitinib TKIs such as cabozantinib in this setting.",
+    pmid: "42873233",
+    date: "2026-10",
+  },
+  {
+    title: "Tumor risks and surveillance outcomes in SDHA variant carriers.",
+    authors: "Ellis K, Christensen D, Beiringer J, Naumer A, Vagher J, Wiggins R, McCrary H, Buchmann L.",
+    journal: "Endocrine Oncology",
+    year: 2026,
+    doi: "10.1530/EO-26-0048",
+    topic: "Genetics & Syndromes",
+    description:
+      "Single-institution retrospective cohort of 106 SDHA germline variant carriers followed for up to 10 years at a high-risk cancer clinic. Overall tumor penetrance was 15%; when tumors did develop, 47% demonstrated malignant behavior (3/3 extra-adrenal PPGLs, 4/5 GISTs). Zero new SDHA-associated tumors were identified through screening among carriers without personal or family history. Findings support a modified surveillance approach for unaffected SDHA carriers while highlighting that SDHA status carries clinical significance for treatment decisions given elevated malignancy rates when tumors arise.",
+    pmid: "42762005",
+    date: "2026-09",
+  },
 ];
