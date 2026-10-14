@@ -1021,21 +1021,21 @@ SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of
 
 ---
 
-## Mechanism 55: HIF-Driven CD155/PVR → TIGIT T-Cell Exhaustion
+## Mechanism 55: CD155/PVR-TIGIT Immune Evasion (unvalidated SDH hypothesis)
 
-SDH loss → succinate accumulation → constitutive PHD2/PHD3 inhibition → HIF-1α/2α stabilisation (pseudohypoxia) → transcriptional upregulation of CD155/PVR (Poliovirus Receptor) on tumor cells → TIGIT (T-cell immunoreceptor with Ig and ITIM domains) ligation on tumor-infiltrating T cells and NK cells → ITIM-mediated co-inhibitory signaling (SHIP-1/SHIP-2 activation) → T-cell and NK-cell functional exhaustion. CD155 is the principal ligand for TIGIT; it also engages CD226 (DNAM-1; activating) and CD96 (TACTILE; co-inhibitory), but TIGIT outcompetes CD226 for CD155 binding and delivers a dominant inhibitory signal, tilting the balance toward immune evasion.
+Unvalidated SDH research hypothesis: succinate-associated pseudohypoxia might alter CD155/PVR expression and TIGIT checkpoint activity. Neither this chain nor selective benefit from TIGIT blockade is established in SDH-deficient cancers by the sources reviewed. No SDH-specific tiragolumab result was verified in this review. This is a research lead, not a treatment recommendation.
 
-Supporting evidence: Eskandari T et al. (Iranian Biomedical Journal 2026, PMID 42160101) reported that pharmacological HIF-1α blockade with silibinin caused significant CD155 mRNA suppression in HL-60 AML cells. This is indirect functional evidence: the cited study used a pharmacological HIF-1α inhibitor (silibinin) in AML cells, not SDH-deficient tumor models; direct HIF-1α HRE-promoter-binding or chromatin-level evidence for CD155 transcriptional regulation, and SDH-specific CD155 overexpression in GIST, PPGL, or RCC, have not been reported. The mechanistic chain from SDH loss to TIGIT checkpoint engagement is an extrapolation from the pseudohypoxia-HIF mechanism and general TIGIT/CD155 biology.
+Eskandari et al. (PMID 42160101, Effect of HIF-1α and LDHA Blockade on Gene Expression of Tumor Immune Evasion in Myeloid Leukemia Cell Lines) treated HL-60 and K-562 leukemia cells with silibinin or sodium oxamate for 48 hours. Silibinin reduced CD155 mRNA in HL-60 but not K-562; sodium oxamate did not significantly change CD155 expression. The authors call these pharmacologically induced associations, not direct evidence of HIF-1α or LDHA pathway blockade. They do not establish CD155 protein changes, immune-cell function, direct HIF-promoter binding or an SDH-specific dependency.
 
-Tiragolumab (MTIG7192A; Roche) is a human IgG1 anti-TIGIT monoclonal antibody. Phase 3 SKYSCRAPER-01 (NCT04294810; tiragolumab + atezolizumab vs. atezolizumab + placebo in first-line PD-L1-high unresectable or metastatic NSCLC) did not meet its co-primary endpoints of PFS or OS in the overall population (Cho BC et al., ESMO 2022, LBA9). Phase 2 signals in PD-L1-high (TC3/IC3) NSCLC were not confirmed in Phase 3. No SDH-specific, GIST, PPGL, or RCC data for tiragolumab have been reported.
+Tiragolumab is an investigational human IgG1 antibody that binds TIGIT and blocks its interaction with CD155/PVR (RCSB 8JEO). This establishes drug identity, not SDH-specific checkpoint relevance.
 
-**Evidence score:** 20 (theoretical; evidence level comparable to relatlimab/LAG-3 and ipilimumab/CTLA-4 entries). HIF-1α-driven CD155 upregulation in SDH-deficient tumors is not demonstrated; TIGIT checkpoint relevance in SDH-deficient cancers is unvalidated.
+Completed Phase 3 SKYSCRAPER-01 (NCT04294810) tested tiragolumab plus atezolizumab against placebo plus atezolizumab in previously untreated PD-L1-high advanced NSCLC. The final publication (PMID 42507968, J Clin Oncol 2026) reported no statistically significant progression-free or overall survival benefit under the study criteria. Combination results do not establish tiragolumab monotherapy benefit or SDH-specific efficacy.
 
-**Required validation:** SDH-deficient tumor models or patient samples showing HIF-1α-dependent CD155 upregulation; direct HRE-binding or chromatin evidence; functional demonstration of TIGIT-CD155 interaction in SDH-deficient TME; clinical response data in genotype-confirmed SDH-deficient cohorts.
+**Evidence score:** 20 (theoretical).
 
-**Sources:**
-- https://pubmed.ncbi.nlm.nih.gov/42160101/
-- https://clinicaltrials.gov/study/NCT04294810
+**Required validation:** SDH-genotyped tumor samples and models, HIF/CD155 causality, ligand protein expression, immune-cell function and genotype-specific clinical outcomes.
+
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42160101/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC13535869/ ; https://pubmed.ncbi.nlm.nih.gov/42507968/ ; https://clinicaltrials.gov/study/NCT04294810 ; https://www.rcsb.org/structure/8JEO ; https://db.antibodysociety.org/db0/1038 .
 
 ---
 
