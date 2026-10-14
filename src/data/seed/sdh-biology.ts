@@ -1021,6 +1021,24 @@ SDH applicability is hypothetical. PMID 42230482 is Zhou et al.'s 2026 review of
 
 ---
 
+## Mechanism 55: CD155/PVR-TIGIT Immune Evasion (unvalidated SDH hypothesis)
+
+Unvalidated SDH research hypothesis: succinate-associated pseudohypoxia might alter CD155/PVR expression and TIGIT checkpoint activity. Neither this chain nor selective benefit from TIGIT blockade is established in SDH-deficient cancers by the sources reviewed. No SDH-specific tiragolumab result was verified in this review. This is a research lead, not a treatment recommendation.
+
+Eskandari et al. (PMID 42160101, Effect of HIF-1α and LDHA Blockade on Gene Expression of Tumor Immune Evasion in Myeloid Leukemia Cell Lines) treated HL-60 and K-562 leukemia cells with silibinin or sodium oxamate for 48 hours. Silibinin reduced CD155 mRNA in HL-60 but not K-562; sodium oxamate did not significantly change CD155 expression. The authors call these pharmacologically induced associations, not direct evidence of HIF-1α or LDHA pathway blockade. They do not establish CD155 protein changes, immune-cell function, direct HIF-promoter binding or an SDH-specific dependency.
+
+Tiragolumab is an investigational human IgG1 antibody that binds TIGIT and blocks its interaction with CD155/PVR (RCSB 8JEO). This establishes drug identity, not SDH-specific checkpoint relevance.
+
+Completed Phase 3 SKYSCRAPER-01 (NCT04294810) tested tiragolumab plus atezolizumab against placebo plus atezolizumab in previously untreated PD-L1-high advanced NSCLC. The final publication (PMID 42507968, J Clin Oncol 2026) reported no statistically significant progression-free or overall survival benefit under the study criteria. Combination results do not establish tiragolumab monotherapy benefit or SDH-specific efficacy.
+
+**Evidence score:** 20 (theoretical).
+
+**Required validation:** SDH-genotyped tumor samples and models, HIF/CD155 causality, ligand protein expression, immune-cell function and genotype-specific clinical outcomes.
+
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42160101/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC13535869/ ; https://pubmed.ncbi.nlm.nih.gov/42507968/ ; https://clinicaltrials.gov/study/NCT04294810 ; https://www.rcsb.org/structure/8JEO ; https://db.antibodysociety.org/db0/1038 .
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

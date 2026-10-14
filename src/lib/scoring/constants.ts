@@ -85,4 +85,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "succinate-lag3-exhaustion": "bg-rose-200 text-rose-900 dark:bg-rose-800 dark:text-rose-100",
   "hif-cd47-phagocytosis-evasion": "bg-yellow-200 text-yellow-900 dark:bg-yellow-800 dark:text-yellow-100",
   "ido1-kynurenine-treg-ctla4": "bg-pink-200 text-pink-900 dark:bg-pink-800 dark:text-pink-100",
+  "hif-cd155-tigit-exhaustion": "bg-purple-200 text-purple-900 dark:bg-purple-800 dark:text-purple-100",
 };
