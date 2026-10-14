@@ -1995,16 +1995,20 @@ Hart PMID 42082831 supports SDH-loss/succinate-mediated ATCase inhibition and py
 
 ## 2026-10-13
 
-**Direction:** drug-pool — tiragolumab (anti-TIGIT); HIF→CD155/PVR→TIGIT T-cell exhaustion axis
+**Direction:** tiragolumab/TIGIT research lead; SDH applicability unvalidated
 **Papers added:** 0
 **Tracker entries added:** 1
 
-Rolling PubMed scan returned 19 PMIDs across 6 queries; all were already in tracker.md. Zero new papers added to papers.ts.
+The routine reported 19 PubMed matches across six queries already in the tracker. No papers.ts additions were made; this reported scan is not evidence of exhaustive literature coverage.
 
-One new paper logged to tracker as rejected: PMID 42160101 (Eskandari T et al., Iranian Biomedical Journal 2026, DOI 10.22034/IBJ.30.1.90). The paper shows that pharmacological HIF-1α blockade with silibinin caused significant CD155 mRNA suppression in HL-60 AML cells. This is indirect functional evidence linking HIF-1α activity to CD155/PVR expression — not direct HRE-binding proof, and not from an SDH-deficient tumor model. Used only as mechanistic rationale for the TIGIT axis (evidence_score 20 theoretical). Rejected from the papers seed.
+Eskandari et al. (PMID 42160101, Effect of HIF-1α and LDHA Blockade on Gene Expression of Tumor Immune Evasion in Myeloid Leukemia Cell Lines) treated HL-60 and K-562 leukemia cells with silibinin or sodium oxamate for 48 hours. Silibinin reduced CD155 mRNA in HL-60 but not K-562; sodium oxamate did not significantly change CD155 expression. The authors call these pharmacologically induced associations, not direct evidence of HIF-1α or LDHA pathway blockade. They do not establish CD155 protein changes, immune-cell function, direct HIF-promoter binding or an SDH-specific dependency.
 
-Direction rationale: SDH loss → succinate → constitutive HIF-1α stabilisation (pseudohypoxia) → predicted CD155/PVR upregulation on tumor cells → TIGIT ligation on TILs and NK cells → T-cell and NK-cell exhaustion. The PMID 42160101 indirect functional evidence anchors the HIF-1α→CD155 step. Evidence level (evidence_score 20 theoretical) is comparable to relatlimab (LAG-3, 2026-09-09) and ipilimumab (CTLA-4, 2026-09-15). Tiragolumab Phase 3 SKYSCRAPER-01 (NCT04294810, NSCLC) did not meet co-primary endpoints; no SDH-specific data exist. All caveats documented. SDH-specific CD155 overexpression and TIGIT checkpoint relevance in SDH-deficient cancers remain unvalidated.
+Unvalidated SDH research hypothesis: succinate-associated pseudohypoxia might alter CD155/PVR expression and TIGIT checkpoint activity. Neither this chain nor selective benefit from TIGIT blockade is established in SDH-deficient cancers by the sources reviewed. No SDH-specific tiragolumab result was verified in this review. This is a research lead, not a treatment recommendation.
+
+Completed Phase 3 SKYSCRAPER-01 (NCT04294810) tested tiragolumab plus atezolizumab against placebo plus atezolizumab in previously untreated PD-L1-high advanced NSCLC. The final publication (PMID 42507968, J Clin Oncol 2026) reported no statistically significant progression-free or overall survival benefit under the study criteria. Combination results do not establish tiragolumab monotherapy benefit or SDH-specific efficacy.
+
+The review corrected the tracker title, causal overstatement and outdated trial citation. The new target record is TIGIT, the antibody target, rather than its ligand PVR/CD155; the drug link now resolves. The pathway remains not druggable/unvalidated. The draft score of 20 and theoretical status are retained as research classification, not evidence of efficacy.
 
 **Files changed:** drugs.ts, pathways.ts, targets.ts, sdh-biology.ts, scoring/constants.ts, tracker.md and this log.
-**Sources:** https://pubmed.ncbi.nlm.nih.gov/42160101/ ; https://clinicaltrials.gov/study/NCT04294810 .
-**PR branch:** morning/2026-10-13-tiragolumab-tigit-cd155
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42160101/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC13535869/ ; https://pubmed.ncbi.nlm.nih.gov/42507968/ ; https://clinicaltrials.gov/study/NCT04294810 ; https://www.rcsb.org/structure/8JEO ; https://db.antibodysociety.org/db0/1038 .
+**PR branch:** claude/clever-lovelace-ms2e17
