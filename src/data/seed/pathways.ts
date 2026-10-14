@@ -713,19 +713,16 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     display_order: 42,
   },
   {
-    name: "HIF-Driven CD155/PVR → TIGIT T-Cell Exhaustion",
+    name: "CD155/PVR-TIGIT Immune Evasion (unvalidated SDH hypothesis)",
     slug: "hif-cd155-tigit-exhaustion",
-    description:
-      "SDH loss → succinate accumulation → constitutive PHD2/PHD3 inhibition → HIF-1α/2α stabilisation (pseudohypoxia) → transcriptional upregulation of CD155/PVR (Poliovirus Receptor) on tumor cells → TIGIT (T-cell immunoreceptor with Ig and ITIM domains) ligation on tumor-infiltrating T cells and NK cells → co-inhibitory signaling → T-cell functional exhaustion and NK-cell suppression. CD155 expression is reported to be regulated by HIF-1α: Eskandari T et al. (Iranian Biomedical Journal 2026, PMID 42160101) showed that pharmacological HIF-1α blockade with silibinin caused significant CD155 mRNA suppression in HL-60 AML cells, providing indirect functional evidence linking HIF-1α activity to CD155 expression. Direct HRE-promoter-binding evidence for CD155 and SDH-specific CD155 overexpression have not been demonstrated. Tiragolumab (MTIG7192A; Roche) is an anti-TIGIT IgG1 monoclonal antibody; Phase 3 SKYSCRAPER-01 (NCT04294810, NSCLC) did not meet its co-primary endpoints (Cho BC et al., ESMO 2022, LBA9). No SDH-specific response data for tiragolumab have been reported.",
-    upstream_event:
-      "SDH loss → succinate → constitutive HIF-1α stabilisation → CD155/PVR upregulation on tumor cells (Eskandari T et al., Iranian Biomedical Journal 2026, PMID 42160101; indirect functional evidence in HL-60 AML cells; not shown in SDH-deficient tumor models) → TIGIT ligation on TILs and NK cells",
+    description: "Unvalidated SDH research hypothesis: succinate-associated pseudohypoxia might alter CD155/PVR expression and TIGIT checkpoint activity. Neither this chain nor selective benefit from TIGIT blockade is established in SDH-deficient cancers by the sources reviewed. No SDH-specific tiragolumab result was verified in this review. This is a research lead, not a treatment recommendation. Eskandari et al. (PMID 42160101, Effect of HIF-1\u03b1 and LDHA Blockade on Gene Expression of Tumor Immune Evasion in Myeloid Leukemia Cell Lines) treated HL-60 and K-562 leukemia cells with silibinin or sodium oxamate for 48 hours. Silibinin reduced CD155 mRNA in HL-60 but not K-562; sodium oxamate did not significantly change CD155 expression. The authors call these pharmacologically induced associations, not direct evidence of HIF-1\u03b1 or LDHA pathway blockade. They do not establish CD155 protein changes, immune-cell function, direct HIF-promoter binding or an SDH-specific dependency. Completed Phase 3 SKYSCRAPER-01 (NCT04294810) tested tiragolumab plus atezolizumab against placebo plus atezolizumab in previously untreated PD-L1-high advanced NSCLC. The final publication (PMID 42507968, J Clin Oncol 2026) reported no statistically significant progression-free or overall survival benefit under the study criteria. Combination results do not establish tiragolumab monotherapy benefit or SDH-specific efficacy.",
+    upstream_event: "Hypothesis only: SDH-associated pseudohypoxia may alter CD155/PVR expression; causality and TIGIT dependency require direct SDH-specific testing.",
     downstream_effects: [
-      "HIF-1α activity promotes CD155/PVR expression on tumor cells (PMID 42160101; indirect functional evidence in HL-60 AML cells; not demonstrated in SDH-deficient models or with direct HRE-binding evidence)",
-      "CD155 ligation of TIGIT on CD8⁺ TILs and NK cells delivers an ITIM-mediated co-inhibitory signal (SHIP-1/SHIP-2 activation) suppressing T-cell proliferation, IFN-γ production, and cytolytic function",
-      "TIGIT engagement on Treg cells stabilises Foxp3, augmenting Treg-mediated immunosuppression in the TME",
-      "Anti-TIGIT blockade with tiragolumab blocks the TIGIT-CD155 interaction; Phase 3 SKYSCRAPER-01 (NCT04294810, NSCLC) did not meet its co-primary endpoints; SDH-specific efficacy is untested",
+      "TIGIT is an inhibitory receptor that interacts with CD155/PVR; tiragolumab binds TIGIT and blocks this interaction (RCSB 8JEO)",
+      "Leukemia-cell CD155 mRNA changes after silibinin do not establish HIF-driven CD155 expression or immune exhaustion in SDH tumors",
+      "SDH-specific ligand expression, functional immune effects and benefit from TIGIT blockade remain unresolved",
     ],
-    druggable: true,
+    druggable: false,
     display_order: 43,
   },
 ];
