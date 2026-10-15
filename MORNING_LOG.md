@@ -2017,43 +2017,18 @@ The review corrected the tracker title, causal overstatement and outdated trial 
 
 ## 2026-10-14
 
-**Direction:** Evidence upgrade — cabozantinib (meta-analytic support for non-sunitinib TKI superiority in SDHB-mutant mPPGL; evidence_score 62→65)
+**Direction:** Pooled TKI evidence update and SDHA surveillance cohort. Cabozantinib evidence_score retained at 62 after review, rather than the proposed 65.
 **Papers added:** 2
-**Tracker entries added:** 7
+**Tracker entries added:** 6 (2 additions and 4 rejections).
 
-**PubMed scan summary (2026-07-14 to 2026-10-14):**
-Eight queries executed across SDH-deficient GIST, PPGL, and RCC, succinate epigenetics, pseudohypoxia/HIF, SDHA/SDHB mutations, belzutifan/HIF-2α, and BRCAness/HRD terms. Searches 5 (SDHA SDHB mutation tumor treatment) and 8 (BRCAness homologous recombination SDH) returned zero results. The large GIST/paraganglioma/belzutifan query returned 441 total results.
+PMID 42873233 (Xu et al., Endocr Relat Cancer 2026-10-14) pools 11 studies, including 4 observational and 7 interventional studies, and 246 mPPGL patients. Pooled ORR is 27.7%, DCR 84.2%, median PFS 13.4 months and median OS 26.7 months. SDHB-related mPPGL had numerically higher ORR (36.8% vs 20.1%, P=0.06) and DCR (92.2% vs 78.5%, P=0.269), neither statistically significant. The non-sunitinib subgroup had higher pooled ORR (36.9% vs 21.2%, P=0.04) and DCR (94.5% vs 72.6%, P=0.001). This is not a randomized cabozantinib-versus-sunitinib comparison or evidence of cabozantinib superiority in SDH-deficient disease. The analysis supports general TKI activity in mPPGL, not validation of a particular SDH-HIF-MET/AXL mechanism or SDHB predictive biomarker. No cabozantinib-specific SDH efficacy upgrade is justified by these pooled subgroup results alone.
 
-New PMIDs evaluated and entered into tracker.md today (7 rows, rows 295–301):
+PMID 42762005 (Ellis et al., Endocrine Oncology 2026-09-11) describes 106 SDHA pathogenic/likely pathogenic germline variant carriers in a single clinic cohort identified during 2015-2025. About 15% had a personal tumor history, not an estimated lifetime penetrance of 15%. Seven of 15 characterized tumors (47%) were malignant/metastatic: 3/3 extra-adrenal PGLs, 4/5 GISTs and 0/7 head/neck PGLs. No previously unidentified tumors were detected by screening, but surveillance uptake and follow-up were incomplete; only 35 of 83 unaffected carriers recommended surveillance had completed at least one screening imaging study. The full paper contains inconsistent aggregate screening counts, so its negative screening result should not be generalized to all 106 carriers or ten years of follow-up for each person. Findings inform individualized clinician-led surveillance discussions, not blanket cessation of screening.
 
-| PMID | Decision |
-|---|---|
-| 42873233 | added to papers.ts (TKI meta-analysis in mPPGL; SDHB subgroup analysis; non-sunitinib TKI superiority) |
-| 42762005 | added to papers.ts (SDHA carrier surveillance cohort n=106; 47% malignant behavior in affected carriers) |
-| 42872468 | rejected: GIST second-line review; KIT/PDGFRA focus; no SDH-specific advance |
-| 42874048 | rejected: ECMO case report for PCC-induced cardiac arrest; no antitumor advance |
-| 42836261 | rejected: lung cancer drug resistance; succinate mentioned generally; not SDH-deficient specific |
-| 42762607 | rejected: macrophage reprogramming in breast cancer; not SDH-deficient specific |
+New tracker records: 42873233 and 42762005 added to papers.ts; 42872468 (GIST second-line review), 42874048 (PCC cardiac-arrest ECMO case), 42836261 (lung-cancer resistance review), and 42762607 (breast-cancer macrophage review) not added. The rejection reasons are scoped to the abstracts reviewed, not an exhaustive claim about their full texts.
 
-Previously tracked PMIDs re-encountered (already in tracker.md): 42650014, 42611605, 42758527, 42544736, 42489911, 42813377, 42626917, 42526974, 42503923, 42759926, 42764100, 41634405, 42687764, 42573142, 42621358, 42587830, 42484783.
-
-PMIDs outside the 3-month scan window (not evaluated): 42080818 (April 2026), 41985045 (April 2026), 42336245 (June 2026, minor date overlap).
-
-**Direction (Part B): Evidence upgrade for cabozantinib**
-
-A systematic review and meta-analysis (Xu et al., Endocr Relat Cancer 2026-10-14, PMID 42873233) pooled 11 studies and 246 metastatic PPGL patients treated with TKIs. Key findings:
-- Pooled ORR 27.7%, DCR 84.2%, median PFS 13.4 months, OS 26.7 months across all TKIs.
-- SDHB-mutant mPPGL subgroup: ORR 36.8% vs non-SDHB 20.1% (P=0.06); DCR 92.2% vs 78.5% (P=0.269). The SDHB-mutant signal is directionally consistent with pseudohypoxic RTK upregulation driving TKI sensitivity but does not reach conventional significance.
-- Non-sunitinib TKIs significantly outperformed sunitinib: ORR 36.9% vs 21.2% (P=0.04); DCR 94.5% vs 72.6% (P=0.001). This finding validates the preference for agents like cabozantinib over sunitinib in metastatic SDH-deficient PPGL.
-
-The cabozantinib entry is the appropriate recipient of this upgrade: it is the only non-sunitinib TKI in the engine with dedicated SDH-enriched PPGL trial data (Natalie trial, NCT02302833, PMID 38608693; ORR 25%, PFS 16.6 months). The meta-analysis adds a second, pooled level of evidence confirming that the TKI class to which cabozantinib belongs outperforms sunitinib and that SDHB-mutant tumors trend toward better responses. The evidence_score is adjusted from 62 to 65. No new drug, pathway, target, or biology mechanism is added; this is solely an evidence upgrade for an existing entry.
-
-Mechanistic validity: the SDH-deficiency → pseudohypoxia → HIF-1α → MET/AXL/VEGFR upregulation chain that forms the cabozantinib rationale (already documented in the engine) is unchanged. The meta-analysis provides independent clinical validation consistent with this chain.
-
-**Papers added to papers.ts:**
-1. PMID 42873233 — Xu X et al. TKI meta-analysis in mPPGL. Endocr Relat Cancer 2026-10-14. DOI 10.1530/ERC-26-0201. (Treatment & Trials)
-2. PMID 42762005 — Ellis K et al. SDHA variant carrier surveillance cohort, n=106, 10 years. Endocrine Oncology 2026-09-11. DOI 10.1530/EO-26-0048. (Genetics & Syndromes)
+The existing Natalie trial entry remains the cabozantinib-specific clinical basis (PMID 38608693; 17 enrolled, ORR 4/16). Its abstract's statement that up to 50% of metastatic PPGLs generally are SDHB-associated was previously presented as trial composition; this is corrected because the abstract does not establish that enrollment proportion. No new drug, pathway, target or mechanism is added.
 
 **Files changed:** papers.ts, drugs.ts, tracker.md, MORNING_LOG.md.
-**Sources:** https://pubmed.ncbi.nlm.nih.gov/42873233/ ; https://doi.org/10.1530/ERC-26-0201 ; https://pubmed.ncbi.nlm.nih.gov/42762005/ ; https://doi.org/10.1530/EO-26-0048 .
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42873233/ ; https://pubmed.ncbi.nlm.nih.gov/42762005/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC13588288/ ; https://pubmed.ncbi.nlm.nih.gov/38608693/ . PubMed records and SDHA full text were retrieved through NCBI; TKI full text was unavailable at review, so conclusions are limited to its indexed abstract.
 **PR branch:** morning/2026-10-14-cabozantinib-evidence-upgrade
