@@ -451,4 +451,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42762005",
     date: "2026-09",
   },
+  {
+    title:
+      "A multistakeholder call for belzutifan biomarker data in advanced pheochromocytoma and paraganglioma.",
+    authors: "Toledo RA, Arenillas C, Dahia PLM, et al.",
+    journal: "Trends Endocrinol Metab",
+    year: 2026,
+    doi: "10.1016/j.tem.2026.06.007",
+    topic: "Treatment & Trials",
+    description:
+      "Multistakeholder commentary from established PPGL researchers (Toledo, Dahia) calling for clinical-trial genomic-correlate and outcome data from the belzutifan PPGL FDA approval (LITESPARK-015), specifically to clarify whether efficacy differs across the molecularly heterogeneous PPGL landscape — SDHx-driven pseudohypoxia, VHL-inactivated, and EPAS1 gain-of-function subtypes. Identifies the unresolved question of SDH-genotype-specific belzutifan benefit and articulates the field consensus that biomarker studies in belzutifan-treated PPGL are urgently needed.",
+    pmid: "42481355",
+    date: "2026-07",
+  },
 ];
