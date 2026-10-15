@@ -2012,3 +2012,23 @@ The review corrected the tracker title, causal overstatement and outdated trial 
 **Files changed:** drugs.ts, pathways.ts, targets.ts, sdh-biology.ts, scoring/constants.ts, tracker.md and this log.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/42160101/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC13535869/ ; https://pubmed.ncbi.nlm.nih.gov/42507968/ ; https://clinicaltrials.gov/study/NCT04294810 ; https://www.rcsb.org/structure/8JEO ; https://db.antibodysociety.org/db0/1038 .
 **PR branch:** claude/clever-lovelace-ms2e17
+
+---
+
+## 2026-10-14
+
+**Direction:** Pooled TKI evidence update and SDHA surveillance cohort. Cabozantinib evidence_score retained at 62 after review, rather than the proposed 65.
+**Papers added:** 2
+**Tracker entries added:** 6 (2 additions and 4 rejections).
+
+PMID 42873233 (Xu et al., Endocr Relat Cancer 2026-10-14) pools 11 studies, including 4 observational and 7 interventional studies, and 246 mPPGL patients. Pooled ORR is 27.7%, DCR 84.2%, median PFS 13.4 months and median OS 26.7 months. SDHB-related mPPGL had numerically higher ORR (36.8% vs 20.1%, P=0.06) and DCR (92.2% vs 78.5%, P=0.269), neither statistically significant. The non-sunitinib subgroup had higher pooled ORR (36.9% vs 21.2%, P=0.04) and DCR (94.5% vs 72.6%, P=0.001). This is not a randomized cabozantinib-versus-sunitinib comparison or evidence of cabozantinib superiority in SDH-deficient disease. The analysis supports general TKI activity in mPPGL, not validation of a particular SDH-HIF-MET/AXL mechanism or SDHB predictive biomarker. No cabozantinib-specific SDH efficacy upgrade is justified by these pooled subgroup results alone.
+
+PMID 42762005 (Ellis et al., Endocrine Oncology 2026-09-11) describes 106 SDHA pathogenic/likely pathogenic germline variant carriers in a single clinic cohort identified during 2015-2025. About 15% had a personal tumor history, not an estimated lifetime penetrance of 15%. Seven of 15 characterized tumors (47%) were malignant/metastatic: 3/3 extra-adrenal PGLs, 4/5 GISTs and 0/7 head/neck PGLs. No previously unidentified tumors were detected by screening, but surveillance uptake and follow-up were incomplete; only 35 of 83 unaffected carriers recommended surveillance had completed at least one screening imaging study. The full paper contains inconsistent aggregate screening counts, so its negative screening result should not be generalized to all 106 carriers or ten years of follow-up for each person. Findings inform individualized clinician-led surveillance discussions, not blanket cessation of screening.
+
+New tracker records: 42873233 and 42762005 added to papers.ts; 42872468 (GIST second-line review), 42874048 (PCC cardiac-arrest ECMO case), 42836261 (lung-cancer resistance review), and 42762607 (breast-cancer macrophage review) not added. The rejection reasons are scoped to the abstracts reviewed, not an exhaustive claim about their full texts.
+
+The existing Natalie trial entry remains the cabozantinib-specific clinical basis (PMID 38608693; 17 enrolled, ORR 4/16). Its abstract's statement that up to 50% of metastatic PPGLs generally are SDHB-associated was previously presented as trial composition; this is corrected because the abstract does not establish that enrollment proportion. No new drug, pathway, target or mechanism is added.
+
+**Files changed:** papers.ts, drugs.ts, tracker.md, MORNING_LOG.md.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42873233/ ; https://pubmed.ncbi.nlm.nih.gov/42762005/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC13588288/ ; https://pubmed.ncbi.nlm.nih.gov/38608693/ . PubMed records and SDHA full text were retrieved through NCBI; TKI full text was unavailable at review, so conclusions are limited to its indexed abstract.
+**PR branch:** morning/2026-10-14-cabozantinib-evidence-upgrade

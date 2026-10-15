@@ -426,4 +426,29 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42847134",
     date: "2026-10",
   },
+  {
+    title:
+      "Tyrosine Kinase Inhibitors in Metastatic Pheochromocytomas and Paragangliomas: An Updated Systematic Review and Meta-Analysis.",
+    authors: "Xu X, Liu Q, Xu S, Ikram AH, Ndikuriyo HP, Wang Y, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0201",
+    topic: "Treatment & Trials",
+    description:
+      "Meta-analysis of 11 studies (4 observational and 7 interventional; 246 mPPGL patients) with pooled ORR 27.7%, DCR 84.2%, median PFS 13.4 months and median OS 26.7 months. SDHB-related disease had numerically higher ORR (36.8% vs 20.1%, P=0.06) and DCR (92.2% vs 78.5%, P=0.269), neither statistically significant. Pooled non-sunitinib TKIs had higher ORR (36.9% vs 21.2%, P=0.04) and DCR (94.5% vs 72.6%, P=0.001) than sunitinib. These subgroup comparisons across studies and agents do not establish cabozantinib superiority over sunitinib, superiority in SDH-deficient patients, or an SDHB predictive biomarker. They support TKI activity in metastatic PPGL generally.",
+    pmid: "42873233",
+    date: "2026-10",
+  },
+  {
+    title: "Tumor risks and surveillance outcomes in SDHA variant carriers.",
+    authors: "Ellis K, Christensen D, Beiringer J, Naumer A, Vagher J, Wiggins R, McCrary H, Buchmann L.",
+    journal: "Endocrine Oncology",
+    year: 2026,
+    doi: "10.1530/EO-26-0048",
+    topic: "Genetics & Syndromes",
+    description:
+      "Single-institution cohort of 106 SDHA pathogenic/likely pathogenic germline variant carriers identified during 2015-2025. Approximately 15% had a personal history of an SDHA-associated tumor; this clinic-cohort proportion is not a population lifetime penetrance estimate. Seven of 15 characterized tumors (47%) were metastatic or showed malignant behavior: 3/3 extra-adrenal PGLs, 4/5 GISTs and 0/7 head/neck PGLs. Screening found no previously unidentified SDHA-associated tumors during the observation period, but surveillance uptake and follow-up were incomplete; the paper reports only 35 of 83 unaffected carriers recommended surveillance had completed at least one screening imaging study. These findings inform individualized clinician-led screening discussions, not a general recommendation to stop surveillance or a reliable estimate of lifetime tumor risk.",
+    pmid: "42762005",
+    date: "2026-09",
+  },
 ];
