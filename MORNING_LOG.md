@@ -2037,21 +2037,17 @@ The existing Natalie trial entry remains the cabozantinib-specific clinical basi
 
 ## 2026-10-15
 
-**Direction:** papers-only; no new drug direction
-**Papers added:** 1 (PMID 42481355)
-**Tracker entries added:** 2 (1 addition, 1 rejection)
+**Direction:** papers-only; no new drug direction.
+**Papers added:** 1 (PMID 42481355).
+**Tracker entries appended:** 2 (1 addition, 1 rejection).
 
-PubMed scan across eight query sets (SDH-deficient GIST treatment; PPGL/SDHB therapy; SDH-deficient RCC; succinate pseudohypoxia biology; HIF-2α inhibitor PPGL outcomes; SDH DNA repair/BRCAness; PPGL radioligand/PRRT; PPGL immune TME) for 2026-07-15 to 2026-10-15 returned two previously untracked papers within the scan window.
+PMID 42481355 (Toledo RA, Arenillas C, Dahia PLM and supporting authors; Trends Endocrinol Metab, electronic publication 2026-07-21; DOI 10.1016/j.tem.2026.06.007) is a multistakeholder commentary calling for clinical-trial genomic correlates and outcome data to clarify belzutifan efficacy across molecularly heterogeneous advanced PPGL. The indexed abstract supports this general biomarker-data gap. It does not report new efficacy data, validate an SDH-genotype-specific predictive biomarker, or establish a field-wide consensus. Full text was not available during review, so detailed subtype and trial-specific assertions from the initial draft were removed. Added to papers.ts as Treatment & Trials without changing drug scores or applicability.
 
-**PMID 42481355** (Toledo RA, Arenillas C, Dahia PLM et al., Trends Endocrinol Metab 2026-07-21; DOI 10.1016/j.tem.2026.06.007). Multistakeholder commentary calling for clinical-trial genomic-correlate and outcome data from belzutifan's PPGL FDA approval (LITESPARK-015), specifically to clarify whether efficacy differs across the molecularly heterogeneous PPGL landscape — SDHx-driven pseudohypoxia, VHL-inactivated, and EPAS1 gain-of-function subtypes. Senior authors (Dahia, Toledo) are established SDH/PPGL field researchers. The commentary directly identifies the unresolved question about SDH-genotype-specific belzutifan benefit that is reflected in the engine's belzutifan evidence_score and tumor_type_applicability, and articulates the field consensus that biomarker studies in belzutifan-treated PPGL are urgently needed. Added to papers.ts as Treatment & Trials.
+PMID 42544736 (Elfarraj H et al., Pediatr Blood Cancer, electronic publication 2026-08-03; DOI 10.1002/1545-5017.70453) describes four pediatric GIST patients managed over 19 years. Two females had SDH-deficient tumors and one had metastatic relapse. An SDH-intact male responded to sunitinib after imatinib resistance; this is not evidence of SDH-deficient treatment response. Not added to papers.ts because no new SDH-specific mechanistic or treatment advance was identified in the indexed abstract. Logged to tracker.
 
-**PMID 42544736** (Elfarraj H et al., Pediatr Blood Cancer 2026-08-03; DOI 10.1002/1545-5017.70453). Four-patient pediatric GIST case series (King Hussein Cancer Center, Jordan). Two SDH-deficient patients (both female); one had metastatic relapse illustrating the recurrent clinical course. Two SDH-intact patients (one male who responded to sunitinib). No new SDH-specific mechanistic or treatment advance; small series with no novel biology or therapeutic result. Rejected from papers.ts; logged to tracker.
+The original routine reported eight PubMed query sets and reconsidered TGF-beta, PKMYT1 and MDM2 leads without adding a drug. Those search results do not establish exhaustive absence of SDH-specific evidence or exclude any alteration in all SDH-deficient tumors. Assertions about galunisertib discontinuation/cardiac safety, current bintrafusp trial status, universal CCNE1 absence and MDM2 literature absence were not independently supported in this run and have been removed. These remain unresolved research leads, not validated SDH dependencies or permanently excluded options.
 
-No Part B drug direction added today. After exhaustive review:
-
-- **TGF-β/galunisertib:** two prior scans (2026-10-09, 2026-10-10) found no direct SDH-specific mechanistic evidence. The mechanistic basis (constitutive HIF-1α → TGF-β1/TGF-β2 upregulation via HREs → Treg induction, M2 macrophage polarization, angiogenesis) is plausible but indirect; no SDH-specific preclinical or clinical data establish selective TGF-β dependence in SDH-deficient tumors. Galunisertib (LY2157299) was discontinued by Lilly due to cardiac safety at higher doses; bintrafusp alfa (TGF-β/PD-L1 bifunctional) is in early-phase trials for non-SDH cancers only. Remain an unresolved research lead.
-- **PKMYT1/lunresertib (RP-6306):** two prior scans found no SDH-specific evidence. PKMYT1 synthetic lethality is primarily established in CCNE1-amplified tumors; SDH-deficient cells do not harbor CCNE1 amplification as a driver mechanism. Remains an unresolved research lead.
-- **MDM2/navtemadlin:** one prior scan (2026-10-10) found no SDH-specific evidence. p53 is typically wild-type in SDH-deficient tumors; no published data characterize MDM2 overexpression specifically in SDH-deficient tumors versus normal tissue. Remains an unresolved research lead.
+Review checked both NCBI PubMed records, paper identities, metadata and indexed abstracts. No new drug, pathway, target, mechanism, evidence score or scoring constant is added.
 
 **Files changed:** papers.ts, tracker.md, MORNING_LOG.md.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/42481355/ ; https://pubmed.ncbi.nlm.nih.gov/42544736/ .
