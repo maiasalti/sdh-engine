@@ -460,7 +460,7 @@ export const PAPERS: CuratedPaper[] = [
     doi: "10.1016/j.tem.2026.06.007",
     topic: "Treatment & Trials",
     description:
-      "Multistakeholder commentary from established PPGL researchers (Toledo, Dahia) calling for clinical-trial genomic-correlate and outcome data from the belzutifan PPGL FDA approval (LITESPARK-015), specifically to clarify whether efficacy differs across the molecularly heterogeneous PPGL landscape — SDHx-driven pseudohypoxia, VHL-inactivated, and EPAS1 gain-of-function subtypes. Identifies the unresolved question of SDH-genotype-specific belzutifan benefit and articulates the field consensus that biomarker studies in belzutifan-treated PPGL are urgently needed.",
+      "Multistakeholder commentary calling for clinical-trial genomic correlates and outcome data to clarify belzutifan efficacy across molecularly heterogeneous advanced pheochromocytomas and paragangliomas. This is a call for biomarker data, not a new efficacy study or a validated predictor of response; it does not establish SDH-genotype-specific benefit or justify a drug evidence-score change.",
     pmid: "42481355",
     date: "2026-07",
   },
