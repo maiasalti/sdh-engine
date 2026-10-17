@@ -1244,4 +1244,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT07151040"],
   },
+  {
+    name: "Auranofin",
+    brand_names: ["Ridaura"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Thioredoxin reductase 1 (TXNRD1) inhibitor / Gold(I) phosphine compound",
+    mechanism_of_action:
+      "Auranofin (Ridaura; FDA-approved 1985 for rheumatoid arthritis) is an orally bioavailable gold(I) compound. In cancer cells, its primary mechanistic target is TXNRD1: auranofin forms an irreversible covalent adduct with the penultimate selenocysteine (Sec498) in TXNRD1's C-terminal active site, blocking NADPH-dependent regeneration of reduced thioredoxin (TXN). Loss of reduced TXN impairs peroxiredoxin (PRDX) catalytic cycles, accumulates H₂O₂, and causes lethal oxidative stress amplification.\n\nMechanistic rationale for SDH-deficient tumours (SDHB/C/D-specific):\nGuzy et al. (Mol Cell Biol 2008, PMID 17967865) directly demonstrated that SDHB knockdown — but not SDHA knockdown — causes normoxic elevation of ROS (superoxide and H₂O₂) and drives ROS-dependent HIF activation and tumorigenesis; SDHA loss causes bioenergetic deficiency without the same ROS signature. SDHB/C/D-deficient tumours (PPGL, SDH-deficient RCC, SDHB-deficient GIST) have constitutively elevated oxidative stress. This ROS activates the KEAP1/NRF2 antioxidant response, driving TXNRD1 transcription via ARE elements. SDHB/C/D-deficient cells are therefore predicted to be more dependent on the TXNRD1/TXN axis for redox homeostasis, creating a vulnerability to auranofin-mediated TXNRD1 inhibition.\n\nExternal validation in high-ROS cancer models:\nRaninga et al. (Mol Ther 2022, PMID 36560881) showed NRF2-enriched, TrxR1-elevated, MYC-high ovarian cancer cells are selectively killed by auranofin in vitro and in PDX models; notably, auranofin plus GLS1 inhibition (CB-839/telaglenastat, already in this engine) was synergistic. Dai et al. (Cancer Res 2013, PMID 23824739) demonstrated auranofin → TXNRD1 inhibition → ROS → JNK → apoptosis in NSCLC cells.\n\nClinical context:\nNCT02261337 (Phase 2; recurrent epithelial ovarian cancer; auranofin monotherapy; COMPLETED): established oral tolerability and pharmacodynamic TXNRD1 target engagement in solid-tumour patients. No SDH-specific preclinical or clinical data exist for auranofin; evidence score 22 reflects a two-anchor mechanistic chain without direct SDH-deficient model validation.\n\nMechanistic distinction from elesclomol:\nElesclomol targets cuproptosis (FASN→mtFAS→lipoylated proteins→FDX1/Cu⁺). Auranofin targets the thioredoxin/peroxiredoxin antioxidant axis (TXNRD1 inhibition → PRDX failure → ROS amplification). Both exploit elevated ROS in SDHB/C/D-deficient cells but at completely separate molecular nodes.",
+    fda_approved: true,
+    approved_indications: ["Rheumatoid arthritis"],
+    pathway_slugs: ["sdhb-ros-txnrd1-antioxidant"],
+    target_gene_symbols: ["TXNRD1"],
+    evidence_score: 22,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT02261337"],
+  },
 ];

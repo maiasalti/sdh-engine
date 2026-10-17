@@ -725,4 +725,20 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: false,
     display_order: 43,
   },
+  {
+    name: "SDHB/C/D Loss → Elevated ROS → Thioredoxin System Dependency",
+    slug: "sdhb-ros-txnrd1-antioxidant",
+    description:
+      "SDHB (and by extension SDHC/SDHD) loss disrupts electron flow through mitochondrial Complex II, causing normoxic superoxide and H₂O₂ elevation directly demonstrated in SDHB-knockdown cancer cells (Guzy et al., Mol Cell Biol 2008, PMID 17967865). In contrast, isolated SDHA loss causes bioenergetic deficiency without the same ROS signature. Elevated ROS activates the NRF2/KEAP1 antioxidant response, upregulating the thioredoxin system — specifically TXNRD1 (thioredoxin reductase 1) and peroxiredoxins — to maintain redox homeostasis. SDHB/C/D-deficient cells are therefore more dependent on TXNRD1 as a survival enzyme. Auranofin (Ridaura; FDA-approved for rheumatoid arthritis) irreversibly inhibits TXNRD1 by reacting with the selenocysteine (Sec498) in the enzyme's C-terminal active site, blocking regeneration of reduced thioredoxin (TXN) from its oxidised form, impairing the entire peroxiredoxin ROS-scavenging axis, and causing selective apoptosis in cancer cells with elevated intrinsic oxidative stress.",
+    upstream_event:
+      "SDHB/C/D loss → disrupted Complex II electron flow → normoxic superoxide/H₂O₂ elevation (Guzy et al. Mol Cell Biol 2008, PMID 17967865) → KEAP1 cysteine oxidation → NRF2 nuclear translocation → constitutive TXNRD1 upregulation via ARE elements",
+    downstream_effects: [
+      "SDHB/C/D-deficient cancer cells have elevated normoxic ROS that drives HIF activation in a ROS-dependent manner, distinct from the succinate-PHD inhibition pathway (PMID 17967865); SDHA loss does not produce the same ROS signature",
+      "NRF2-activated, TrxR1-elevated cancer cells are selectively killed by auranofin in vitro and in patient-derived xenograft models (Raninga et al. Mol Ther 2022, PMID 36560881)",
+      "Auranofin plus GLS1 inhibition (CB-839/telaglenastat, already in engine) is synergistic in NRF2-high cancer models (PMID 36560881), suggesting a potential combination strategy in SDHB/C/D-deficient PPGL and RCC",
+      "Mechanistically distinct from elesclomol/cuproptosis (FASN→mtFAS→lipoylated-proteins→FDX1 pathway) and from all HIF/immune/DNA-repair mechanisms in the engine",
+    ],
+    druggable: true,
+    display_order: 44,
+  },
 ];
