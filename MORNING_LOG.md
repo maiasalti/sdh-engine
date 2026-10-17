@@ -2052,3 +2052,20 @@ Review checked both NCBI PubMed records, paper identities, metadata and indexed 
 **Files changed:** papers.ts, tracker.md, MORNING_LOG.md.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/42481355/ ; https://pubmed.ncbi.nlm.nih.gov/42544736/ .
 **PR branch:** morning/2026-10-15-belzutifan-biomarker-paper
+---
+
+## 2026-10-16
+
+**Direction:** YM155 (Sepantronium Bromide) MoA accuracy correction — establish KDM4/DNA repair impairment as primary SDH-selective mechanism (PMID 41711310); evidence_score upgraded 31→35.
+**Papers added:** 0
+**Tracker entries added:** 2 (0 additions, 2 rejections: PMIDs 42752283, 42648700).
+
+YM155 was added to drugs.ts on 2026-07-20 with the framing that PMID 41711310 (Guo et al., Endocr Relat Cancer 2026-03; DOI 10.1530/ERC-25-0397) provided evidence "consistent with the dual BRCAness/Survivin-dependency model." This understated the paper's actual contribution. PMID 41711310 directly established — not merely suggested — that the SDH-selective mechanism of YM155 operates via KDM4A/KDM4B inhibition and impaired DNA repair, not primarily via HIF-1α-driven survivin elevation. The study used isogenic SDHB-KO vs SDHB-WT UOK269 RCC cells, primary human pheochromocytoma cells, mouse MPC cells, and primary SDHB-deficient mouse kidney cells. It further demonstrated that genetic KDM4 inhibition alone — independently of SDH loss — was sufficient to recapitulate the SDH-specific YM155 sensitivity, directly proving KDM4-mediated repair impairment as the mechanistic basis. Two independent chemical SDH inhibitors confirmed the SDH-dependency. This is mechanistic validation, not supporting correlation.
+
+The corrected MoA in drugs.ts now accurately describes the KDM4/repair axis as the primary established SDH-selective mechanism and frames the survivin/apoptosis-evasion axis (HIF-1α→BIRC5) as an orthogonal reinforcing mechanism. The Mechanism 16 paragraph in sdh-biology.ts was correspondingly corrected to state that the mechanism was "directly established" rather than "consistent with." The evidence_score was raised from 31 to 35, consistent with strong preclinical evidence with direct SDH-specific isogenic validation in multiple models including primary human tumor cells.
+
+No new papers passed the hard relevance gate in today's scan. PubMed searches for SDH-deficient cancers (succinate, KDM4, synthetic lethality, DNA repair, HIF, BIRC5; last 3 months) returned previously tracked PMIDs and two new papers (42752283, 42648700) that did not meet the SDH-specific pathway relevance requirement.
+
+**Files changed:** drugs.ts, sdh-biology.ts, tracker.md, MORNING_LOG.md.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/41711310/ ; DOI 10.1530/ERC-25-0397 .
+**PR branch:** morning/2026-10-16-ym155-kdm4-mechanism-upgrade
