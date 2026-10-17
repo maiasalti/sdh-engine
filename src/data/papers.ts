@@ -451,4 +451,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42762005",
     date: "2026-09",
   },
+  {
+    title:
+      "A multistakeholder call for belzutifan biomarker data in advanced pheochromocytoma and paraganglioma.",
+    authors: "Toledo RA, Arenillas C, Dahia PLM, et al.",
+    journal: "Trends Endocrinol Metab",
+    year: 2026,
+    doi: "10.1016/j.tem.2026.06.007",
+    topic: "Treatment & Trials",
+    description:
+      "Multistakeholder commentary calling for clinical-trial genomic correlates and outcome data to clarify belzutifan efficacy across molecularly heterogeneous advanced pheochromocytomas and paragangliomas. This is a call for biomarker data, not a new efficacy study or a validated predictor of response; it does not establish SDH-genotype-specific benefit or justify a drug evidence-score change.",
+    pmid: "42481355",
+    date: "2026-07",
+  },
 ];

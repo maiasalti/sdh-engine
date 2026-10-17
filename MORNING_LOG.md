@@ -2035,6 +2035,25 @@ The existing Natalie trial entry remains the cabozantinib-specific clinical basi
 
 ---
 
+## 2026-10-15
+
+**Direction:** papers-only; no new drug direction.
+**Papers added:** 1 (PMID 42481355).
+**Tracker entries appended:** 2 (1 addition, 1 rejection).
+
+PMID 42481355 (Toledo RA, Arenillas C, Dahia PLM and supporting authors; Trends Endocrinol Metab, electronic publication 2026-07-21; DOI 10.1016/j.tem.2026.06.007) is a multistakeholder commentary calling for clinical-trial genomic correlates and outcome data to clarify belzutifan efficacy across molecularly heterogeneous advanced PPGL. The indexed abstract supports this general biomarker-data gap. It does not report new efficacy data, validate an SDH-genotype-specific predictive biomarker, or establish a field-wide consensus. Full text was not available during review, so detailed subtype and trial-specific assertions from the initial draft were removed. Added to papers.ts as Treatment & Trials without changing drug scores or applicability.
+
+PMID 42544736 (Elfarraj H et al., Pediatr Blood Cancer, electronic publication 2026-08-03; DOI 10.1002/1545-5017.70453) describes four pediatric GIST patients managed over 19 years. Two females had SDH-deficient tumors and one had metastatic relapse. An SDH-intact male responded to sunitinib after imatinib resistance; this is not evidence of SDH-deficient treatment response. Not added to papers.ts because no new SDH-specific mechanistic or treatment advance was identified in the indexed abstract. Logged to tracker.
+
+The original routine reported eight PubMed query sets and reconsidered TGF-beta, PKMYT1 and MDM2 leads without adding a drug. Those search results do not establish exhaustive absence of SDH-specific evidence or exclude any alteration in all SDH-deficient tumors. Assertions about galunisertib discontinuation/cardiac safety, current bintrafusp trial status, universal CCNE1 absence and MDM2 literature absence were not independently supported in this run and have been removed. These remain unresolved research leads, not validated SDH dependencies or permanently excluded options.
+
+Review checked both NCBI PubMed records, paper identities, metadata and indexed abstracts. No new drug, pathway, target, mechanism, evidence score or scoring constant is added.
+
+**Files changed:** papers.ts, tracker.md, MORNING_LOG.md.
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/42481355/ ; https://pubmed.ncbi.nlm.nih.gov/42544736/ .
+**PR branch:** morning/2026-10-15-belzutifan-biomarker-paper
+---
+
 ## 2026-10-16
 
 **Direction:** YM155 (Sepantronium Bromide) MoA accuracy correction — establish KDM4/DNA repair impairment as primary SDH-selective mechanism (PMID 41711310); evidence_score upgraded 31→35.
