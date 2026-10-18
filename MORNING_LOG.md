@@ -2069,3 +2069,42 @@ No new papers passed the hard relevance gate in today's scan. PubMed searches fo
 **Files changed:** drugs.ts, sdh-biology.ts, tracker.md, MORNING_LOG.md.
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/41711310/ ; DOI 10.1530/ERC-25-0397 .
 **PR branch:** morning/2026-10-16-ym155-kdm4-mechanism-upgrade
+---
+
+## 2026-10-17 — Add auranofin (TXNRD1/thioredoxin system) — SDHB/C/D elevated ROS axis
+
+### Part A: Paper Scan
+
+PubMed searches conducted for SDH-deficient cancer papers published in the last ~3 months (July–October 2026). Search terms included: SDH-deficient + succinate, pseudohypoxia, HIF, synthetic lethality, DNA repair, GIST treatment, PPGL/paraganglioma, metabolic, TXNRD1/thioredoxin, NRF2.
+
+**Paper added (1):**
+
+- **PMID 42635851** — Purnaghshband H, Tuzlali E et al., "Comprehensive Genomic Analysis in Hereditary Adrenal and Extra-Adrenal Paragangliomas," *Endocrine Pathology* 2026-08. DOI: 10.1007/s12022-026-09930-2. Added to `papers.ts` (topic: Genetics & Syndromes). 110-patient multi-ethnic PPGL cohort; WGS resolved pathogenic variants in 6/7 panel-sequencing-negative SDH-deficient tumours; OGM characterised a complex SDHA inverted tandem duplication that WGS alone could not resolve; establishes tiered diagnostic approach (germline panel → SDHB IHC → WGS → OGM).
+
+**Papers evaluated but rejected (5):**
+
+- 42642458: Pituitary Society consensus on genetic testing (Nat Rev Endocrinol 2026); SDHx is one of ~9 predisposition gene categories; SDH contribution too peripheral.
+- 42621358, 42437144, 42762362: Returned by PubMed search but not SDH-deficient tumor-specific or no new SDH-specific mechanistic/treatment advance.
+- 36560881, 17967865, 23824739: Outside 3-month window; used as mechanistic anchors for Part B (logged in tracker).
+
+### Part B: Improvement — Auranofin (TXNRD1 inhibitor) via SDHB/C/D → Elevated ROS → Thioredoxin System Dependency
+
+**New direction:** SDHB/C/D-deficient tumours have constitutively elevated normoxic ROS (directly demonstrated for SDHB knockdown in PMID 17967865), activating the NRF2/ARE antioxidant response and driving TXNRD1 upregulation. This creates a dependency on the TXNRD1/TXN/PRDX redox homeostasis axis. Auranofin (Ridaura; FDA-approved for RA) irreversibly inhibits TXNRD1 via Sec498 covalent adduct, causing PRDX failure and lethal ROS amplification selectively in NRF2-high, TrxR1-elevated cancer cells.
+
+**Mechanistic anchors:**
+- PMID 17967865 (Guzy et al., Mol Cell Biol 2008): SDHB KD but not SDHA KD → normoxic ROS → ROS-dependent HIF activation and tumorigenesis. Directly establishes SDHB/C/D → ROS subunit specificity.
+- PMID 36560881 (Raninga et al., Mol Ther 2022): NRF2-high/TrxR1-elevated ovarian cancer cells selectively killed by auranofin in vitro and PDX; auranofin + telaglenastat (GLS1 inhibitor, already in engine) synergistic.
+- PMID 23824739 (Dai et al., Cancer Res 2013): Auranofin → TXNRD1 inhibition → ROS → JNK → apoptosis in NSCLC.
+- NCT02261337 (Phase 2; completed): Auranofin in recurrent ovarian cancer; established TXNRD1 target engagement and oral tolerability in solid-tumour patients.
+
+**SDHA subtype note:** PMID 17967865 shows ROS elevation is SDHB-loss-specific (not SDHA loss). Auranofin is therefore most applicable to PPGL, SDH-deficient RCC, and SDHB-driven GIST rather than SDHA-deficient GIST (owner's subtype). tumor_type_applicability kept as ["all"] but MoA notes this distinction.
+
+**Distinction from elesclomol:** Elesclomol targets cuproptosis (FASN→mtFAS→lipoylated proteins→FDX1/Cu⁺). Auranofin targets the thioredoxin/peroxiredoxin axis (TXNRD1 inhibition → PRDX failure → ROS amplification). Both exploit SDHB/C/D-elevated ROS but at entirely separate molecular nodes.
+
+**Evidence score:** 22 (theoretical). Two-anchor mechanistic chain; no direct SDH-deficient auranofin preclinical or clinical data.
+
+**Files changed:** `src/data/papers.ts`, `src/data/seed/drugs.ts`, `src/data/seed/pathways.ts`, `src/data/seed/targets.ts`, `src/data/seed/sdh-biology.ts` (Mechanism 56), `src/lib/scoring/constants.ts`, `tracker.md`, `MORNING_LOG.md`.
+
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/17967865/ ; https://pubmed.ncbi.nlm.nih.gov/36560881/ ; https://pubmed.ncbi.nlm.nih.gov/23824739/ ; https://clinicaltrials.gov/study/NCT02261337 .
+
+**PR branch:** morning/2026-10-17-auranofin-txnrd1-ros

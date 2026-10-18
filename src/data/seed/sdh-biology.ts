@@ -1039,6 +1039,34 @@ Completed Phase 3 SKYSCRAPER-01 (NCT04294810) tested tiragolumab plus atezolizum
 
 ---
 
+## Mechanism 56: SDHB/C/D Loss → Elevated ROS → Thioredoxin System Dependency — Auranofin
+
+**Subunit specificity (SDHB/C/D, not SDHA):**
+Guzy et al. (Mol Cell Biol 2008, PMID 17967865) used shRNA knockdown of individual SDH subunits in cancer cells and showed that SDHB knockdown — but not SDHA knockdown — caused normoxic elevation of reactive oxygen species (ROS: superoxide and H₂O₂) and drove ROS-dependent HIF-1α stabilisation and tumorigenesis in xenograft models. SDHA loss produces bioenergetic insufficiency (reduced succinate oxidation and ubiquinol production) without the same acute ROS elevation phenotype. This distinction predicts that the TXNRD1 vulnerability described below is strongest in SDHB/C/D-deficient tumours (PPGL, SDH-deficient RCC, SDHB-driven GIST) rather than SDHA-deficient tumours.
+
+**Pathway chain:**
+SDHB/C/D loss → disrupted electron flow through the ubiquinone-binding site of Complex II → normoxic superoxide and H₂O₂ elevation (directly demonstrated, PMID 17967865) → KEAP1 cysteine-oxidation → NRF2 nuclear translocation → transcription of antioxidant response element (ARE)-driven genes, including TXNRD1 → constitutive upregulation of thioredoxin reductase 1 (TXNRD1) → dependency of SDHB/C/D-deficient cells on the TXNRD1/TXN/PRDX axis for redox homeostasis.
+
+**TXNRD1 target biology:**
+TXNRD1 (UniProt P35354) is a homodimeric selenoprotein that uses NADPH to regenerate reduced thioredoxin (TXN) from its oxidised form. Reduced TXN in turn regenerates the active (reduced) form of peroxiredoxins (PRDXs), which catalytically scavenge H₂O₂. Auranofin (Ridaura; FDA-approved 1985 for RA) forms an irreversible covalent adduct with the penultimate selenocysteine (Sec498) in TXNRD1's C-terminal active site, blocking this NADPH-dependent reaction. Loss of reduced TXN accumulates H₂O₂ and drives lethal oxidative stress amplification selectively in cells that depend on this axis.
+
+**External validation (non-SDH-specific):**
+Raninga et al. (Mol Ther 2022, PMID 36560881) demonstrated that NRF2-enriched, TrxR1-elevated, MYC-high ovarian cancer cells are selectively killed by auranofin in vitro and in PDX models. Crucially, auranofin combined with GLS1 inhibition (CB-839/telaglenastat, already present in this engine) was synergistic. Dai et al. (Cancer Res 2013, PMID 23824739) confirmed auranofin → TXNRD1 inhibition → ROS accumulation → JNK pathway activation → apoptosis in NSCLC cells.
+
+**Clinical anchor:**
+NCT02261337 (Phase 2; recurrent epithelial ovarian cancer; auranofin monotherapy; COMPLETED) established oral tolerability and pharmacodynamic TXNRD1 target engagement in a solid-tumour patient population.
+
+**Mechanistic distinction from elesclomol (cuproptosis):**
+Elesclomol copper-shuttles into mitochondria and drives cuproptosis via FASN→mtFAS→lipoylated proteins→FDX1/Cu⁺ aggregation. Auranofin acts in the cytoplasm and peroxisome on the TXNRD1/TXN/PRDX axis. Both exploit elevated ROS in SDHB/C/D-deficient cells, but at completely separate molecular nodes with non-overlapping resistance mechanisms.
+
+**Evidence score:** 22 (theoretical). Two-anchor mechanistic chain: SDHB KD → ROS (PMID 17967865) + NRF2/TrxR1-high → auranofin selective killing (PMID 36560881). No direct SDH-deficient preclinical or clinical auranofin data exist. The SDHB/C/D → ROS → NRF2 → TXNRD1 upregulation link is inferred, not directly measured.
+
+**Required validation:** TXNRD1 protein expression measured by IHC/proteomics in SDH-genotyped tumour samples; auranofin sensitivity testing in SDH-deficient cell lines (e.g. FU-GIST-T1, NCI-H841) and patient-derived organoids; NRF2 target-gene profiling across SDH subunit subtypes.
+
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/17967865/ ; https://pubmed.ncbi.nlm.nih.gov/36560881/ ; https://pubmed.ncbi.nlm.nih.gov/23824739/ ; https://clinicaltrials.gov/study/NCT02261337 .
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

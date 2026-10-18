@@ -464,4 +464,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42481355",
     date: "2026-07",
   },
+  {
+    title:
+      "Comprehensive Genomic Analysis in Hereditary Adrenal and Extra-Adrenal Paragangliomas.",
+    authors: "Purnaghshband H, Tuzlali E, et al., Mete O, Kim RH.",
+    journal: "Endocrine Pathology",
+    year: 2026,
+    doi: "10.1007/s12022-026-09930-2",
+    topic: "Genetics & Syndromes",
+    description:
+      "110-patient multi-ethnic PPGL cohort (Princess Margaret Cancer Centre/UHN, Toronto). Whole-genome sequencing (WGS) resolved pathogenic/likely pathogenic variants in 6/7 SDH-deficient tumours that had been panel-sequencing-negative. In one case, optical genome mapping (OGM) characterised a complex SDHA inverted tandem duplication that WGS alone could not resolve, validating OGM as a third-tier molecular diagnostic. The study establishes a tiered approach — germline panel → SDHB IHC → WGS → OGM — for panel-negative but IHC-negative PPGL. The abstract does not report clinical outcomes, treatment data, or therapy implications beyond diagnostic yield.",
+    pmid: "42635851",
+    date: "2026-08",
+  },
 ];
