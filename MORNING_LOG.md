@@ -2108,3 +2108,50 @@ PubMed searches conducted for SDH-deficient cancer papers published in the last 
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/17967865/ ; https://pubmed.ncbi.nlm.nih.gov/36560881/ ; https://pubmed.ncbi.nlm.nih.gov/23824739/ ; https://clinicaltrials.gov/study/NCT02261337 .
 
 **PR branch:** morning/2026-10-17-auranofin-txnrd1-ros
+
+---
+
+## 2026-10-18 — Add decitabine (DNMT1 inhibitor) via succinate → TET2/3 inhibition → CIMP axis
+
+### Part A: Paper Scan
+
+PubMed searches conducted for SDH-deficient cancer papers published in the last ~3 months (July–October 2026). Search terms included: SDH-deficient + succinate, paraganglioma, GIST, PPGL, SDHB, splice variant, belzutifan, DNA methylation, CIMP, DNMT, TET2.
+
+**Papers added (3):**
+
+- **PMID 42711465** — Köhler A, Baumann AA, Lewis N et al., "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B," *NPJ Precis Oncol* 2026-09-08. DOI: 10.1038/s41698-026-01685-7. Added to `papers.ts` (topic: Genetics & Syndromes). 48 SpliceAI-prioritised SDHB germline variants evaluated by minigene assay + targeted RNA-seq in HEK293T; reclassified 13/26 variants (50%), mean ACMG score change 2.7 points; 12 VUS → likely benign downgrades. Establishes scalable RNA-based SDHB variant classification framework.
+
+- **PMID 42573142** — Jimenez C, Waguespack SG, Kaplan J, Habra MA, Varghese J, "Belzutifan, A Hypoxia-Inducible Factor 2-Alpha Inhibitor, for Patients with Advanced Pheochromocytoma and Paraganglioma," *J Clin Endocrinol Metab* 2026-08-10. DOI: 10.1210/clinem/dgag324. Added to `papers.ts` (topic: Treatment & Trials). Clinical review of belzutifan in pseudohypoxia-driven PPGL (Cluster 1, including SDHx). LITESPARK-015: DCR 85%, ORR 26%; mechanism-based AEs (grade 1–3 anemia predominant); first oral and second FDA-approved therapy for mPPGL. No SDH-genotype-specific efficacy correlates yet established.
+
+- **PMID 41986136** — Lian X, Shen L, Song J et al., "Clinical characteristics and prognosis of SDHD pathogenic variant carriers: a systematic review and meta-analysis," *J Med Genet* 2026-07-23. DOI: 10.1136/jmg-2025-111235. Added to `papers.ts` (topic: Genetics & Syndromes). Pooled age-specific penetrance in SDHD carriers: 20% at age 20 → 58% at age 40 → 82% at age 60; 75% multifocal disease, 3% metastatic, 1% mortality among affected carriers. Provides surveillance counselling evidence base.
+
+**Papers evaluated but rejected (3):**
+
+- 41985045 (Ornstead MJ et al., IJSP 2026-04-15): SDHB IHC staining patterns; outside 3-month scan window (April 2026).
+- 42503923 (Hu ML et al., Zhonghua Yi Xue Za Zhi 2026-07-28): Pediatric PPGL genotype-phenotype (n=93), Chinese-language; confirmatory data, no new SDH-specific mechanistic or treatment advance.
+- 42666297 (Hawkins L et al., Front Oncol 2026-08-14): AZD7648 + AZD1390 + radiation in uveal melanoma spheroids; not SDH-specific.
+
+### Part B: Improvement — Decitabine (DNMT1 inhibitor) via Succinate → TET2/3 Inhibition → CIMP
+
+**Direction confirmed open:** Searched MORNING_LOG.md exhaustively; DNMT inhibition targeting succinate-driven CIMP has never been implemented. Distinct from tazemetostat (H3K27me3/EZH2), CCS1477 (CBP/p300 acetylation), and all DNA repair entries.
+
+**New direction:** SDH loss → succinate accumulation → competitive inhibition of TET2 and TET3 (2-OG-dependent DNA demethylases) → CIMP (CpG island methylator phenotype) → DNMT1 perpetuates hypermethylation without opposing demethylation → decitabine (DNMT1 trap) reverses CIMP.
+
+**Primary mechanistic anchor:**
+- PMID 23707781 (Letouzé E et al., Cancer Cell 2013, DOI 10.1016/j.ccr.2013.04.018): SDHx-mutated PPGL form a distinct CIMP methylation cluster; succinate in SDH-deficient chromaffin cells inhibits 2-OG-dependent demethylases; **decitabine treatment directly reversed the SDH-deficiency-driven migratory phenotype** in SDH-deficient mouse chromaffin cells; SDHB-mutated tumours most severely hypermethylated. This is the only published direct experimental evidence that DNMT inhibition counteracts SDH-loss epigenetics.
+
+**Mechanistic distinctions:**
+- vs. EZH2/tazemetostat (`epigenetic-dysregulation`): H3K27me3 on histones via PRC2; different enzyme, different mark, different genomic targets.
+- vs. KDM4A/B (`sdh-driven-hrd`): succinate also inhibits 2-OG KDMs at DSBs, affecting H3K9me3 and impairing HR repair; that is a histone mark at DSBs, not promoter CpG methylation.
+- vs. CBP/p300 (`cbp-p300-hat-coactivator`): histone acetylation.
+- Decitabine is non-redundant: DNA methylation layer, DNMT1 enzyme, CpG island promoters.
+
+**Evidence score:** 22 (theoretical). Direct SDH-deficient cell model experiment (PMID 23707781) establishes mechanism; FDA-approved drug with known tolerability; no SDH-specific clinical data.
+
+**SDHA note:** CIMP is most severe in SDHB-mutated tumours; SDHA-deficient GIST (owner's subtype) may show less severe CIMP, though all SDHx loss produces succinate accumulation and some degree of TET inhibition.
+
+**Files changed:** `src/data/papers.ts` (+3 papers), `src/data/seed/drugs.ts` (+decitabine), `src/data/seed/pathways.ts` (+succinate-tet-cimp-dnmt, display_order 45), `src/data/seed/targets.ts` (+DNMT1), `src/data/seed/sdh-biology.ts` (Mechanism 57), `src/lib/scoring/constants.ts` (+succinate-tet-cimp-dnmt color), `tracker.md` (+7 entries), `MORNING_LOG.md`.
+
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/23707781/ ; https://doi.org/10.1016/j.ccr.2013.04.018 .
+
+**PR branch:** morning/2026-10-18-decitabine-cimp-dnmt

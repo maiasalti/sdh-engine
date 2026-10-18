@@ -576,4 +576,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "Cytoplasmic selenoprotein that regenerates reduced thioredoxin (TXN) from its oxidised form using NADPH, sustaining the peroxiredoxin (PRDX) hydrogen peroxide scavenging system. NRF2 transcriptionally activates TXNRD1 via antioxidant response elements (AREs) in its promoter. In SDHB/C/D-deficient cells with elevated baseline ROS (PMID 17967865) and activated NRF2, TXNRD1 expression is predicted to be constitutively elevated, creating heightened dependency on TXNRD1 for redox homeostasis. Auranofin (Ridaura) inhibits TXNRD1 by forming a covalent adduct with the penultimate selenocysteine (Sec498) in the enzyme's C-terminal CX\u2082SecG active site, accumulating oxidised TXN and collapsing the peroxiredoxin-thioredoxin ROS-scavenging axis.",
   },
+  {
+    gene_symbol: "DNMT1",
+    name: "DNA methyltransferase 1",
+    uniprot_id: "P26358",
+    pathway_slug: "succinate-tet-cimp-dnmt",
+    target_type: "downstream",
+    description:
+      "DNMT1 is the principal maintenance DNA methyltransferase, responsible for copying parental CpG methylation patterns to daughter strands during replication. In SDH-deficient tumours, succinate-mediated competitive inhibition of TET2/TET3 (2-OG-dependent demethylases) suppresses active DNA demethylation, allowing DNMT1 to act unopposed and perpetuate CpG island hypermethylation (CIMP) through successive cell cycles. Decitabine (5-aza-2'-deoxycytidine; Dacogen; FDA-approved for MDS/AML) is incorporated into DNA during S-phase as a false substrate, trapping DNMT1 in a covalent adduct, depleting functional enzyme, and allowing passive demethylation over subsequent divisions. Letouz\u00e9 et al. (Cancer Cell 2013, PMID 23707781) demonstrated directly that decitabine treatment reversed the SDH-deficiency-driven migratory phenotype in SDH-deficient mouse chromaffin cells.",
+  },
 ];
