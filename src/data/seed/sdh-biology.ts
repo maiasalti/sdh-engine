@@ -1099,6 +1099,20 @@ DNMT1 (UniProt P26358) is the principal maintenance methyltransferase: after eac
 
 ---
 
+## Mechanism 58: SDH Loss → Enhanced Tumour Antigen Presentation and T-Cell Susceptibility
+
+**Summary:** SDH loss drives not only immunosuppressive pathways (HIF-PD-L1, succinate T-cell suppression, CD73-adenosine, CD47-phagocytosis evasion — Mechanisms 22, 16, 42, 53) but also, paradoxically, increases tumour antigen presentation and intrinsic susceptibility to T-cell-mediated killing. This creates a complex immunological landscape in which SDH-deficient tumours are simultaneously immunosuppressive through TME remodelling and immunogenic through upregulated antigen-processing machinery.
+
+**Mechanistic basis:**
+SDH loss → succinate accumulation → TET2/3 inhibition → CIMP (Letouzé 2013, PMID 23707781). The CIMP is broad but not uniform: while tumour suppressor promoters (CDKN2A) and CTCF insulators are hypermethylated, certain antigen-processing/presentation loci (encoding TAP1, TAP2, B2M, HLA-A/B/C) may be relatively protected or undergo secondary demethylation through compensatory mechanisms. Additionally, the oxidative stress, DNA damage accumulation, and metabolic dysfunction in SDH-deficient cells (especially SDHB/C/D-driven elevated ROS — Mechanism 38) activate NF-κB and ATM-dependent pathways that upregulate antigen presentation machinery and MHC-I surface expression. These converging signals create higher MHC-I density and more efficient antigen cross-presentation, increasing recognition and killing by infiltrating CD8⁺ T cells when checkpoint suppression is relieved.
+
+**Clinical implication:**
+This mechanism provides mechanistic grounding for why checkpoint inhibitors (pembrolizumab, ipilimumab, relatlimab, tiragolumab — existing engine entries) might achieve meaningful responses in SDH-deficient tumours despite a deeply immunosuppressive TME: relieving checkpoint suppression on T cells that already face enhanced antigen presentation gives effector T cells an intrinsically more targetable tumour cell. Combination immunotherapy strategies — simultaneously blocking multiple suppressive axes (PD-1, LAG-3, CD73, CD47) while exploiting enhanced antigen presentation — are mechanistically well-grounded in this biology.
+
+**Source:** Yamamoto A, Sumii Y, Reddy P. Mitochondrial Complex II in the regulation of immunopathology. Trends Immunol 2026;47(8):XXX. PMID 42613239. DOI 10.1016/j.it.2026.07.013. (Review; primary experiments supporting the antigen presentation finding are cited within.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

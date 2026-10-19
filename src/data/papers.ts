@@ -516,4 +516,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "41986136",
     date: "2026-07",
   },
+  {
+    title:
+      "Mitochondrial Complex II in the regulation of immunopathology.",
+    authors: "Yamamoto A, Sumii Y, Reddy P.",
+    journal: "Trends Immunol",
+    year: 2026,
+    doi: "10.1016/j.it.2026.07.013",
+    topic: "Tumor Biology",
+    description:
+      "Review covering how SDH (Mitochondrial Complex II) governs immunopathology via its control of succinate signalling, redox state, and chromatin regulation. In immune cells, SDH loss activates the succinate–HIF-1α–IL-1β macrophage axis and suppresses T-cell cytotoxicity. In target tissues, SDHA loss promotes succinate-driven epigenetic reprogramming and inflammatory memory. Critically for therapeutic targeting: SDH loss in tumours increases antigen presentation and tumour susceptibility to T-cell killing — providing a mechanistic basis for immunotherapy strategies in pseudohypoxic, SDH-deficient cancers.",
+    pmid: "42613239",
+    date: "2026-08",
+  },
 ];
