@@ -477,4 +477,43 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42635851",
     date: "2026-08",
   },
+  {
+    title:
+      "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B.",
+    authors: "Köhler A, Baumann AA, Lewis N, Richter A, Richter S, William D, et al.",
+    journal: "NPJ Precis Oncol",
+    year: 2026,
+    doi: "10.1038/s41698-026-01685-7",
+    topic: "Genetics & Syndromes",
+    description:
+      "Dresden group evaluated 48 SpliceAI-prioritised SDHB germline variants using a minigene spanning exons 2–5 with targeted RNA sequencing in HEK293T cells. 19 variants (38%) showed ≥90% wildtype splicing; 17 (34%) showed ≥90% aberrant splicing; 73 aberrant transcripts identified (average 2.3 per variant). Integration of minigene RNA evidence changed ACMG classification scores by a mean of 2.7 points and reclassified 13 of 26 classified variants (50%), including 12 VUS → likely benign downgrades and 1 likely pathogenic → VUS downgrade. Establishes scalable RNA-based framework for SDHB variant classification in the clinic.",
+    pmid: "42711465",
+    date: "2026-09",
+  },
+  {
+    title:
+      "Belzutifan, A Hypoxia-Inducible Factor 2-Alpha Inhibitor, for Patients with Advanced Pheochromocytoma and Paraganglioma.",
+    authors: "Jimenez C, Waguespack SG, Kaplan J, Habra MA, Varghese J.",
+    journal: "J Clin Endocrinol Metab",
+    year: 2026,
+    doi: "10.1210/clinem/dgag324",
+    topic: "Treatment & Trials",
+    description:
+      "MD Anderson clinical review of belzutifan — the first oral and second FDA-approved therapy for metastatic PPGL — in the context of pseudohypoxia-driven (Cluster 1) tumours including SDHx-mutated disease. Summarises LITESPARK-015 Phase 2 data: disease control rate 85%, overall response rate 26%. Safety profile is dominated by predictable mechanism-based adverse events (grade 1–3 anemia most common). Molecular correlates of response remain to be determined; the review calls for biomarker studies to define SDH-genotype-specific benefit.",
+    pmid: "42573142",
+    date: "2026-08",
+  },
+  {
+    title:
+      "Clinical characteristics and prognosis of SDHD pathogenic variant carriers: a systematic review and meta-analysis.",
+    authors: "Lian X, Shen L, Song J, Pang M, Zhong Y, Zhang H, Xing Y, Tung TH, Shen B.",
+    journal: "J Med Genet",
+    year: 2026,
+    doi: "10.1136/jmg-2025-111235",
+    topic: "Genetics & Syndromes",
+    description:
+      "Systematic review and meta-analysis quantifying age-specific penetrance and clinical outcomes in SDHD germline pathogenic variant carriers. Pooled age-specific penetrance increases from 20% (95% CI 16–25%) at age 20 to 58% at age 40 and 82% (95% CI 75–90%) at age 60. Among carriers with tumours: 75% have multifocal disease, 3% have metastatic disease, and 1% mortality. Provides evidence-based penetrance estimates for lifelong surveillance counselling in SDHD carriers; limitations include scarcity of data linking specific SDHD variants to metastatic phenotype.",
+    pmid: "41986136",
+    date: "2026-07",
+  },
 ];

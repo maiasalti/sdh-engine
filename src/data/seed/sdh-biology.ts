@@ -1067,6 +1067,38 @@ Elesclomol copper-shuttles into mitochondria and drives cuproptosis via FASN→m
 
 ---
 
+## Mechanism 57: SDH Loss → Succinate → TET2/3 Inhibition → CIMP → DNMT1 Inhibitor Vulnerability (Decitabine)
+
+**Pathway slug:** \`succinate-tet-cimp-dnmt\`
+
+**Core biology:**
+SDH loss causes intracellular succinate accumulation. Succinate is a competitive inhibitor of 2-oxoglutarate (2-OG)-dependent dioxygenases, a superfamily that includes TET2 and TET3 — the enzymes responsible for oxidising 5-methylcytosine (5mC) to 5-hydroxymethylcytosine (5hmC) as the committed first step in active DNA demethylation. By blocking TET2/TET3, elevated succinate impairs active demethylation, allowing DNMT1-mediated maintenance methylation to act unopposed through successive replication cycles. Over time this produces a CpG island methylator phenotype (CIMP): systematic promoter hypermethylation silencing neuroendocrine differentiation genes, tumour suppressors, and immune-recognition machinery.
+
+**Direct experimental evidence (landmark anchor):**
+Letouzé et al. (Cancer Cell 2013, PMID 23707781, DOI 10.1016/j.ccr.2013.04.018) — "SDH mutations establish a hypermethylator phenotype in paraganglioma":
+- Methylome analysis of a large PPGL cohort identified three stable DNA methylation clusters; SDHx-mutated tumours occupied a distinct CIMP cluster with the most extensive hypermethylation, associated with downregulation of neuroendocrine differentiation genes.
+- Succinate accumulation in SDH-deficient mouse chromaffin cells caused DNA hypermethylation by direct inhibition of 2-OG-dependent histone and DNA demethylases, establishing a migratory phenotype in these cells.
+- **Decitabine treatment reversed the SDH-deficiency-driven migratory phenotype** in SDH-deficient chromaffin cells — direct experimental evidence that DNMT inhibition counteracts SDH-loss epigenetics in a disease-relevant model.
+- SDHB-mutated tumours showed the most severe epigenetic silencing, potentially explaining their higher malignant risk relative to SDHC/SDHD-mutated tumours.
+- FH-mutated tumours (fumarate-driven, the analogous 2-OG inhibitor) also clustered into the hypermethylated group, confirming that oncometabolite-driven 2-OG inhibition is the unifying CIMP mechanism.
+
+**Pharmacological target: DNMT1**
+DNMT1 (UniProt P26358) is the principal maintenance methyltransferase: after each replication fork it copies the parental-strand CpG methylation pattern to the newly synthesised daughter strand. In the SDH-deficient CIMP context — where TET2/TET3 active demethylation is suppressed — DNMT1 acts unopposed and becomes the critical enzyme perpetuating hypermethylation. Decitabine (5-aza-2'-deoxycytidine; Dacogen; FDA-approved 2006 for MDS/AML) is incorporated into DNA as a false substrate, traps DNMT1 in a covalent adduct, depletes functional enzyme, and allows passive demethylation over subsequent cell divisions.
+
+**Mechanistic distinctions from related engine entries:**
+- EZH2/tazemetostat (\`epigenetic-dysregulation\`): targets histone H3K27me3 via the PRC2 complex; different mark, different enzyme, different genomic targets; EZH2 upregulation in SDH-deficient tumours is driven by HIF and is mechanistically distinct from TET inhibition.
+- KDM4A/KDM4B/H3K9me3 (\`sdh-driven-hrd\`): succinate also inhibits these 2-OG KDMs, reducing H3K9me3 demethylation at DSB flanks and impairing DNA repair (BRCAness); this is a histone methyl mark at DSBs, not promoter CpG methylation.
+- CBP/p300/CCS1477 (\`cbp-p300-hat-coactivator\`): targets histone H3K27 acetylation at super-enhancers; coactivator function.
+- Decitabine targets DNMT1 and the DNA methylation layer exclusively — non-redundant with all three above.
+
+**Evidence score:** 22 (theoretical). One direct SDH-deficient model experiment (PMID 23707781); no clinical PPGL or GIST data exist. The mechanistic chain — SDH loss → succinate → TET2/3 inhibition → CIMP → DNMT1 perpetuation — is mechanistically clean and each step is supported. Score limited by absence of direct SDH-deficient preclinical drug-sensitivity data and lack of clinical data.
+
+**Required validation:** TET2/TET3 activity and 5hmC levels in SDH-genotyped PPGL/GIST patient tumours; DNMT1 inhibition sensitivity in SDH-deficient cell lines (FU-GIST-T1, chromaffin-derived); combination with immune checkpoint inhibitors (testing whether decitabine-driven demethylation restores antigen-presentation gene expression in CIMP-high SDH-deficient tumours); dose optimisation for epigenetic (not cytotoxic) effect.
+
+**Sources:** https://pubmed.ncbi.nlm.nih.gov/23707781/ ; https://doi.org/10.1016/j.ccr.2013.04.018 .
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

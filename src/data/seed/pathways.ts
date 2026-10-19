@@ -741,4 +741,20 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 44,
   },
+  {
+    name: "Succinate → TET2/3 Inhibition → CIMP → DNMT Inhibitor Reversal",
+    slug: "succinate-tet-cimp-dnmt",
+    description:
+      "SDH loss causes succinate accumulation that competitively inhibits TET2 and TET3 (2-oxoglutarate-dependent dioxygenases responsible for 5-methylcytosine oxidation and active DNA demethylation), producing a CpG island methylator phenotype (CIMP) with genome-wide promoter hypermethylation and silencing of differentiation and tumour-suppressor genes. Letouzé et al. (Cancer Cell 2013, PMID 23707781) demonstrated this directly in SDH-deficient mouse chromaffin cells and a large PPGL cohort: SDHx-mutated tumours clustered into a distinct CIMP methylation group; succinate-driven TET inhibition established a migratory phenotype that was reversed by decitabine treatment.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive inhibition of TET2/TET3 (2-OG-dependent dioxygenases) → failure of 5-methylcytosine oxidation to 5-hydroxymethylcytosine → impaired active DNA demethylation → DNMT1-perpetuated CpG island methylator phenotype (CIMP) (Letouzé et al. Cancer Cell 2013, PMID 23707781)",
+    downstream_effects: [
+      "SDHx-mutated PPGL cluster into a distinct CIMP methylation group separate from VHL-mutated and RET/NF1-mutated tumours; SDHB-mutated tumours show the most severe epigenetic silencing, potentially explaining their higher malignant risk (PMID 23707781)",
+      "Decitabine treatment reversed the SDH-deficiency-driven migratory phenotype in SDH-deficient mouse chromaffin cells — direct experimental proof that DNMT inhibition can counteract SDH-loss-driven epigenetics in a disease-relevant model (PMID 23707781)",
+      "Distinct from H3K27me3/EZH2 (PRC2 complex; already in engine as epigenetic-dysregulation), H3K9me3/KDM4 (sdh-driven-hrd), and H3K27ac/CBP/p300 (cbp-p300-hat-coactivator) axes; DNMT inhibition targets the DNA methylation layer non-redundantly",
+      "Re-expression of silenced differentiation and antigen-presentation genes may synergise with immune checkpoint blockade in CIMP-high SDH-deficient tumours",
+    ],
+    druggable: true,
+    display_order: 45,
+  },
 ];

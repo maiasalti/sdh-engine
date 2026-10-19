@@ -1261,4 +1261,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02261337"],
   },
+  {
+    name: "Decitabine",
+    brand_names: ["Dacogen"],
+    chembl_id: "CHEMBL1201129",
+    pubchem_cid: null,
+    drug_class: "DNA methyltransferase 1 (DNMT1) inhibitor; hypomethylating agent; nucleoside analogue",
+    mechanism_of_action:
+      "Decitabine (5-aza-2'-deoxycytidine; Dacogen; FDA-approved 2006 for MDS and AML) is incorporated into DNA during S-phase in place of deoxycytidine. The incorporated analogue traps DNMT1 in a covalent complex at the modified cytosine, preventing methyl transfer and depleting functional DNMT1, thereby allowing passive demethylation of CpG islands over subsequent replication cycles.\n\nMechanistic rationale for SDH-deficient tumours:\nSDH loss causes succinate accumulation. Succinate competitively inhibits TET2 and TET3, which are 2-oxoglutarate (2-OG)-dependent dioxygenases that oxidise 5-methylcytosine (5mC) to 5-hydroxymethylcytosine (5hmC) as the first step in active DNA demethylation. With TET2/TET3 suppressed, DNMT1-mediated maintenance methylation acts unopposed, progressively establishing a CpG island methylator phenotype (CIMP). Letouzé et al. (Cancer Cell 2013, PMID 23707781, DOI 10.1016/j.ccr.2013.04.018) demonstrated this mechanism directly: SDHx-mutated PPGL clustered into a distinct CIMP methylation group in a large cohort; succinate accumulation in SDH-deficient mouse chromaffin cells inhibited 2-OG-dependent demethylases and established a migratory phenotype; and critically, **decitabine treatment reversed this SDH-deficiency-driven migratory phenotype** — the only published direct experimental evidence that DNMT inhibition counteracts SDH-loss epigenetics in a disease-relevant model. SDHB-mutated tumours showed the most severe CIMP, potentially explaining their higher malignant risk.\n\nDistinctions from related engine entries:\nTazemetostat (EZH2 inhibitor) targets histone H3K27me3 via PRC2 — a different mark, different enzyme, different layer. CCS1477 (CBP/p300 inhibitor) targets histone H3K27 acetylation. Decitabine targets DNMT1 and the DNA methylation layer exclusively, offering a non-redundant epigenetic strategy.\n\nEvidence score: 22 (theoretical). One direct SDH-deficient model experiment (PMID 23707781); no clinical PPGL or GIST data exist for decitabine. The mechanistic chain — SDH loss → succinate → TET2/3 inhibition → CIMP → DNMT1 dependency — is mechanistically clean and each step is supported by published data.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/23707781/ ; https://doi.org/10.1016/j.ccr.2013.04.018",
+    fda_approved: true,
+    approved_indications: ["Myelodysplastic syndromes (MDS)", "Acute myeloid leukaemia (AML)"],
+    pathway_slugs: ["succinate-tet-cimp-dnmt"],
+    target_gene_symbols: ["DNMT1"],
+    evidence_score: 22,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: [],
+  },
 ];
