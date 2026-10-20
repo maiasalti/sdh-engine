@@ -1113,6 +1113,35 @@ This mechanism provides mechanistic grounding for why checkpoint inhibitors (pem
 
 ---
 
+## Mechanism 59: SDH-Loss Impairs CoQ-Ubiquinol Lipid ROS Scavenging → SLC7A11/GPX4-Axis Dependency → Ferroptosis Sensitization
+
+**Summary:** Active SDH (Complex II) is a direct enzymatic source of ubiquinol (CoQH₂) — the reduced form of coenzyme Q — which scavenges lipid hydroperoxides on mitochondrial and plasma membranes as a membrane-embedded radical-trapping antioxidant. SDH-deficient tumours cannot generate ubiquinol via Complex II oxidoreduction, creating a selective dependency on the SLC7A11 (system Xc-) / GSH / GPX4 axis for lipid ROS detoxification. Inhibiting SLC7A11 with sulfasalazine collapses this compensatory axis and selectively sensitizes SDH-deficient cells to ferroptotic death.
+
+**Mechanistic basis:**
+1. **CoQ-ubiquinol generation requires active SDH.** Each catalytic cycle of SDH oxidises succinate to fumarate (TCA cycle) while simultaneously reducing ubiquinone (CoQ) to ubiquinol (CoQH₂) at the Qp site of SDHC/SDHD (ETC function). CoQH₂ is a potent lipophilic radical-trapping antioxidant that intercepts lipid peroxyl radicals (LOO•) on mitochondrial inner and plasma membranes, preventing chain-propagation of lipid peroxidation (Jain C et al., Cell Metab 2026, PMID 42202783).
+2. **SDH loss eliminates this CoQ-reduction activity.** In SDH-deficient tumours (SDHA/B/C/D mutations), Complex II is inactive. CoQ is not reduced to CoQH₂ via this route. The membrane-embedded lipid-hydroperoxide scavenging capacity is therefore impaired relative to SDH-proficient cells.
+3. **Compensatory dependency on the SLC7A11/GSH/GPX4 axis.** In normal cells, lipid ROS detoxification is shared between CoQH₂ (membrane-based) and the SLC7A11/GSH/GPX4 axis (soluble cytoplasmic/mitochondrial). When CoQH₂ generation is lost, SDH-deficient cells become over-reliant on SLC7A11 importing cystine → cysteine → GSH → GPX4-mediated reduction of phospholipid hydroperoxides (Sun LJ & DeNicola GM, Cell Metab 2026, PMID 42551410).
+4. **SDHB/C/D-loss compounds the dependency via elevated ROS.** Guzy et al. (2008, PMID 17967865) showed that SDHB-deficient cells exhibit elevated normoxic mitochondrial ROS compared with SDHA-deficient cells. Elevated basal ROS increases the lipid peroxide load that GPX4/SLC7A11 must handle. SDHB/C/D-deficient tumours (most PPGL, ~half of SDH-deficient RCC) therefore face the worst-case scenario: impaired CoQH₂ scavenging AND elevated upstream ROS production. SDHA-deficient GIST loses CoQH₂ scavenging without the ROS elevation, predicting ferroptosis sensitization of intermediate magnitude.
+5. **Sulfasalazine blocks SLC7A11.** Sulfasalazine (FDA-approved for RA/IBD, ChEMBL421) is a well-characterised system Xc- inhibitor that blocks SLC7A11-mediated cystine import, depleting the GSH precursor pool and impairing GPX4. Removing this compensatory axis in SDH-deficient cells — which cannot fall back on CoQH₂ scavenging — selectively triggers ferroptotic death (PMID 42551410 and NCT02071498 clinical exploration).
+
+**Why non-redundant with prior mechanisms:**
+- Mechanism 56 (auranofin/TXNRD1): Auranofin inhibits thioredoxin reductase-1 (TXNRD1), disrupting H₂O₂ detoxification via the TXN/peroxiredoxin system in the cytoplasm and mitochondrial matrix. Sulfasalazine targets a structurally unrelated transporter (SLC7A11) that feeds the GPX4-dependent lipid hydroperoxide branch. Different enzyme families, different ROS species (H₂O₂ vs. lipid hydroperoxides), non-overlapping resistance mechanisms.
+- Mechanism 11 (NAD⁺/NAMPT): Targets NAD⁺ biosynthesis and energetic/poly-ADP-ribosylation deficits — unrelated to lipid ROS.
+- Mechanism 6 (oxidative stress broadly): The CoQ-ubiquinol insight provides a mechanistic chain that was absent from Mechanism 6 — it specifies the exact lipid-ROS scavenging pathway impaired by SDH loss and the compensatory dependency exploitable with sulfasalazine.
+
+**Applicability by subtype:**
+- PPGL/PCC (SDHB/C/D, "ppgl"): Strongest prediction — CoQH₂ impaired + elevated ROS; highest ferroptosis sensitization.
+- SDH-deficient RCC ("rcc"): SDHB-deficient predominates; similar logic to PPGL.
+- SDHA-deficient GIST ("gist"): CoQH₂ impaired without ROS elevation; intermediate sensitization predicted.
+- All SDH-deficient tumours share CoQ-ubiquinol impairment.
+
+**Sources:**
+- Jain C, Bhatt DL, Chen Y, et al. Succinate dehydrogenase generates the antioxidant ubiquinol to resist ferroptosis. Cell Metab 2026. PMID 42202783. (Mechanistic anchor — outside scan window, May 2026.)
+- Sun LJ, DeNicola GM. A mitochondrial antioxidant axis fuels iron addiction in colorectal cancer. Cell Metab 2026. PMID 42551410. DOI 10.1016/j.cmet.2026.06.011. (Commentary/extension — within scan window, August 2026; in papers.ts.)
+- Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865. (SDHB/SDHA differential ROS.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

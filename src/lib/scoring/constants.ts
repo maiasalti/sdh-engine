@@ -88,4 +88,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-cd155-tigit-exhaustion": "bg-purple-200 text-purple-900 dark:bg-purple-800 dark:text-purple-100",
   "sdhb-ros-txnrd1-antioxidant": "bg-stone-200 text-stone-900 dark:bg-stone-700 dark:text-stone-100",
   "succinate-tet-cimp-dnmt": "bg-teal-300 text-teal-950 dark:bg-teal-700 dark:text-teal-50",
+  "sdh-coq-ferroptosis-sensitization": "bg-amber-300 text-amber-950 dark:bg-amber-700 dark:text-amber-50",
 };

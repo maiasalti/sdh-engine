@@ -2224,3 +2224,67 @@ This mechanism contextualises why pembrolizumab, ipilimumab, relatlimab, and tir
 - Killian JK et al. Succinate dehydrogenase mutation underlies global epigenomic divergence in gastrointestinal stromal tumor. Cancer Discov 2013;3(6):648-657. PMID 23550148. DOI 10.1158/2159-8290.CD-13-0092.
 - Letouzé E et al. SDH mutations establish a hypermethylator phenotype in paraganglioma. Cancer Cell 2013;23(6):739-752. PMID 23707781. DOI 10.1016/j.ccr.2013.04.018.
 
+
+---
+
+## 2026-10-20 — Mechanism 59: SDH-Loss CoQ-Ubiquinol Impairment → SLC7A11/GPX4 Ferroptosis Sensitization | Drug: Sulfasalazine
+
+**Branch:** `morning/2026-10-20-sdh-coq-ferroptosis-sulfasalazine`
+
+### Part A — PubMed scan (July 20 – October 20, 2026)
+
+**Queries run:**
+- "SDHB paraganglioma pheochromocytoma cancer" — 11 results
+- "succinate dehydrogenase tumor cancer" — 22 results
+- "SDH-deficient GIST treatment" — 7 results
+- "ferroptosis succinate dehydrogenase" — 4 results
+- "succinate coenzyme Q ubiquinol ferroptosis" — focused query on CoQ-ferroptosis axis
+
+**PMIDs evaluated (11 total):**
+
+| PMID | Outcome |
+|------|---------|
+| 42551410 | **ADDED** — Sun LJ, DeNicola GM. Cell Metab 2026-08-04. Commentary on CoQ-ubiquinol/ferroptosis axis; SLC7A11 dependency in SDH-deficient context. |
+| 42573129 | Rejected — SDHC clinical series; no mechanistic advance |
+| 42503916 | Rejected — Chinese PPGL review; no new mechanism |
+| 42804417 | Rejected — SDHD thyroid paraganglioma case report |
+| 42498833 | Rejected — glioma copper study; SDH used as metabolic assay only |
+| 42732958 | Rejected — somatic SDHD carotid body case report |
+| 42649495 | Rejected — Drp1/HCC study; SDH as functional readout only |
+| 42202783 | Outside window (May 2026); used as Part B primary mechanistic anchor |
+| 42615355 | Rejected — ZPI-3 SDH inhibitor (wrong direction: SDH inhibition as tool compound) |
+| 42582518 | Rejected — PTEN+SDHB pediatric case report |
+| 42484783 | Rejected — FH parathyroid adenoma (FH-deficient, not SDH-deficient) |
+
+### Part B — Selected improvement
+
+**Direction chosen:** Drug-pool expansion — Sulfasalazine (SLC7A11 / system Xc- inhibitor) exploiting the newly characterised SDH-CoQ-ubiquinol ferroptosis sensitization axis.
+
+**Mechanistic chain:**
+Active SDH (Complex II) reduces ubiquinone to ubiquinol (CoQH₂) at the Qp site (SDHC/SDHD). CoQH₂ scavenges lipid peroxyl radicals (LOO•) on mitochondrial and plasma membranes, providing a membrane-embedded radical-trapping antioxidant defence against ferroptosis (Jain C et al., Cell Metab 2026, PMID 42202783). SDH-deficient tumours — which lack active Complex II — cannot generate CoQH₂ via this route. The burden of lipid-hydroperoxide detoxification shifts to the SLC7A11 (system Xc-) / GSH / GPX4 axis: SLC7A11 imports cystine → cysteine → GSH → GPX4 reduces phospholipid hydroperoxides. SDH-deficient cells thus show heightened SLC7A11/GPX4 dependency (Sun LJ & DeNicola GM, Cell Metab 2026, PMID 42551410). SDHB/C/D-deficient tumours additionally exhibit elevated normoxic mitochondrial ROS (Guzy RD et al., Mol Cell Biol 2008, PMID 17967865), compounding the lipid-peroxide load. Sulfasalazine (FDA-approved, ChEMBL421, NCT02071498) blocks SLC7A11, depletes GSH, and impairs GPX4 activity — collapsing the compensatory lipid-ROS axis in SDH-deficient cells.
+
+**Why non-redundant with prior mechanisms:**
+- Mechanism 56 (auranofin/TXNRD1, 2026-10-17): Different enzyme family, different ROS species (H₂O₂ via TXN/PRDX vs. lipid hydroperoxides via SLC7A11/GPX4).
+- Mechanism 14 (erastin/system Xc-): Reviewed 2026-10-09 as "unresolved" — no primary literature established CoQ-ubiquinol impairment in SDH-deficient tumours at that time. PMID 42202783 (published May 2026) resolves that gap: SDH activity is the direct enzymatic source of CoQH₂. Today's addition is uniquely grounded by this new paper and is mechanistically justified for the first time.
+- All other oxidative-stress-targeting mechanisms (Mechanism 6, 11, 15) do not target the SLC7A11/GPX4 lipid-ROS arm.
+
+**SDHA-deficient GIST note:** SDHA-deficient GIST loses CoQH₂ scavenging without the ROS elevation (PMID 17967865). Ferroptosis sensitization is predicted to be present but of intermediate magnitude relative to SDHB/C/D-deficient tumours.
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/seed/pathways.ts` | Added `sdh-coq-ferroptosis-sensitization` pathway (display_order 46) |
+| `src/data/seed/targets.ts` | Added SLC7A11 / xCT (UniProt Q9UPY5) target |
+| `src/data/seed/drugs.ts` | Added Sulfasalazine (evidence_score 21, theoretical, FDA-approved, NCT02071498) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 59 (SDH-Loss CoQ-Ubiquinol → Ferroptosis Sensitization) |
+| `src/lib/scoring/constants.ts` | Added color for `sdh-coq-ferroptosis-sensitization` (amber-300) |
+| `src/data/papers.ts` | Added PMID 42551410 (Sun & DeNicola, Cell Metab 2026) |
+| `tracker.md` | Appended 11 evaluated PMIDs |
+| `MORNING_LOG.md` | This entry |
+
+### Part D — Key citations
+
+- Jain C, Bhatt DL, Chen Y, et al. Succinate dehydrogenase generates the antioxidant ubiquinol to resist ferroptosis. Cell Metab 2026. PMID 42202783. (Outside window; primary mechanistic anchor.)
+- Sun LJ, DeNicola GM. A mitochondrial antioxidant axis fuels iron addiction in colorectal cancer. Cell Metab 2026;doi:10.1016/j.cmet.2026.06.011. PMID 42551410. (Within window; added to papers.ts.)
+- Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865.

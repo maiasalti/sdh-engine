@@ -757,4 +757,20 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 45,
   },
+  {
+    name: "SDH-Loss CoQ Oxidation → Ferroptosis Sensitization",
+    slug: "sdh-coq-ferroptosis-sensitization",
+    description:
+      "Active SDH (Complex II) reduces coenzyme Q (CoQ/ubiquinone) to ubiquinol (CoQH₂), which redistributes to mitochondrial and plasma membranes to scavenge lipid reactive oxygen species (ROS) as a radical-trapping antioxidant — a key ferroptosis-resistance mechanism directly demonstrated by Jain et al. (Cell Metab 2026, PMID 42202783). SDH-DEFICIENT tumours cannot sustain this CoQ-reduction step, leaving the mitochondrial and plasma membrane CoQ pool more oxidised (ubiquinone-dominant), impairing ubiquinol-mediated lipid peroxide scavenging. These cells become more dependent on the complementary lipid ROS detox arm: SLC7A11 (xCT) imports cystine → intracellular cysteine → reduced glutathione (GSH) → GPX4 reduces lipid hydroperoxides → ferroptosis suppression. Blocking SLC7A11 with sulfasalazine removes this compensatory defence and triggers ferroptotic cell death selectively amplified in SDH-deficient cells whose CoQ-ubiquinol lipid ROS shield is already absent.",
+    upstream_event:
+      "SDH loss → inactive Complex II → CoQ not reduced to ubiquinol → mitochondrial and plasma membrane ubiquinol pool depleted → impaired lipid ROS radical-trapping (Jain C et al., Cell Metab 2026, PMID 42202783; Sun LJ & DeNicola GM, Cell Metab 2026, PMID 42551410); in SDHB/C/D-deficient tumours additionally: elevated normoxic ROS (Guzy RD et al., Mol Cell Biol 2008, PMID 17967865) further compounds lipid peroxide load",
+    downstream_effects: [
+      "SDH-deficient cells shift lipid ROS detox burden to the SLC7A11/GSH/GPX4 axis; SLC7A11 inhibition (sulfasalazine) blocks cystine import → GSH depletion → GPX4 failure → lipid peroxide accumulation → ferroptosis",
+      "SDHB/C/D-deficient tumours (PPGL, SDH-deficient RCC, SDHB-deficient GIST) predicted to show the strongest ferroptosis sensitization: double impairment of lipid ROS defence (elevated lipid peroxides from SDHB/C/D-specific ROS + impaired CoQ-ubiquinol scavenging from SDH loss)",
+      "SDHA-deficient GIST also loses CoQ-ubiquinol lipid ROS scavenging (SDH inactive) but without the SDHB/C/D-specific ROS elevation; SLC7A11 dependency still predicted, though with lower baseline lipid peroxide stress",
+      "Mechanistically distinct from auranofin/TXNRD1 (thioredoxin reductase arm, Mechanism 56): auranofin targets the TXN/PRDX cytoplasmic H₂O₂ arm; sulfasalazine targets SLC7A11/GSH/GPX4 lipid peroxide arm — two independent redox defence axes",
+    ],
+    druggable: true,
+    display_order: 46,
+  },
 ];

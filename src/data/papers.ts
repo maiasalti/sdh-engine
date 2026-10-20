@@ -529,4 +529,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42613239",
     date: "2026-08",
   },
+  {
+    title:
+      "A mitochondrial antioxidant axis fuels iron addiction in colorectal cancer.",
+    authors: "Sun LJ, DeNicola GM.",
+    journal: "Cell Metab",
+    year: 2026,
+    doi: "10.1016/j.cmet.2026.06.011",
+    topic: "Tumor Biology",
+    description:
+      "Commentary contextualising the finding that active succinate dehydrogenase reduces coenzyme Q to ubiquinol (CoQH₂), which scavenges lipid hydroperoxides on mitochondrial membranes as a membrane-embedded radical-trapping antioxidant. SDH-deficient tumours that lack this CoQH₂ generation become selectively dependent on the SLC7A11/GSH/GPX4 axis for lipid ROS detoxification and are sensitized to ferroptosis when SLC7A11 is inhibited by sulfasalazine.",
+    pmid: "42551410",
+    date: "2026-08",
+  },
 ];
