@@ -2155,3 +2155,72 @@ PubMed searches conducted for SDH-deficient cancer papers published in the last 
 **Sources:** https://pubmed.ncbi.nlm.nih.gov/23707781/ ; https://doi.org/10.1016/j.ccr.2013.04.018 .
 
 **PR branch:** morning/2026-10-18-decitabine-cimp-dnmt
+
+## 2026-10-19 — Decitabine duplicate fix + SDH-enhanced antigen presentation (Mechanism 58)
+
+**Branch:** `morning/2026-10-19-decitabine-dedup-antigen-presentation`
+
+### Part A — Paper Scan
+
+Queries run (9 total; 3-month window July 19 – October 19, 2026):
+- SDH-deficient GIST gastrointestinal stromal tumor succinate dehydrogenase treatment 2026
+- Pheochromocytoma paraganglioma SDH succinate dehydrogenase therapy clinical 2026
+- SDH-deficient renal cell carcinoma succinate dehydrogenase treatment 2026
+- SDHB SDHA SDHC SDHD mutation cancer drug synthetic lethality 2026
+- Succinate oncometabolite pseudohypoxia HIF epigenetic methylation cancer 2026
+- Paraganglioma pheochromocytoma novel treatment 2026
+- Succinate dehydrogenase tumor cancer epigenetics 2026
+- SDHx germline hereditary tumor surveillance genetics 2026
+- SDH complex II immunology tumor antigen presentation T cell 2026
+
+**New PMIDs evaluated (not previously in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42613239 | **ADDED** | Yamamoto A, Sumii Y, Reddy P. "Mitochondrial Complex II in the regulation of immunopathology." Trends Immunol 2026-08-18. DOI 10.1016/j.it.2026.07.013. Review from Baylor College of Medicine. Directly covers SDH/Complex II immune biology including the key finding that SDH loss in tumours increases antigen presentation and T-cell susceptibility. Basis for Mechanism 58. Added as Tumor Biology. |
+
+All other returned PMIDs (42544736, 42650014, 42859296, 42847129, 42820462, 42764321, 42626917, 42621358, 42758527) were already in tracker.md from prior sessions.
+
+**Papers added to `src/data/papers.ts`:** 1 (PMID 42613239)
+
+---
+
+### Part B — Improvement
+
+**Direction:** data-quality-fix + biology-enrichment
+
+#### Fix A: Decitabine duplicate removed
+
+**Problem:** Two distinct Decitabine entries existed in `src/data/seed/drugs.ts` after the 2026-10-18 run. The 2026-07-31 run had added Decitabine under pathway `epigenetic-dysregulation` (evidence_score 62, status "preclinical", pubchem_cid "451668", targets DNMT1+DNMT3A). The 2026-10-18 run incorrectly concluded no DNMT inhibitor existed and added a second Decitabine entry under pathway `succinate-tet-cimp-dnmt` (evidence_score 22, status "theoretical", pubchem_cid null, target DNMT1 only). The inconsistency in evidence_score (62 vs 22) is patient-safety-relevant: 62 overestimates confidence for a drug with no SDH-specific clinical data.
+
+**Fix applied:**
+- Removed the 2026-07-31 Decitabine entry (evidence_score 62, pathway `epigenetic-dysregulation`)
+- Kept the 2026-10-18 Decitabine entry (evidence_score 22, pathway `succinate-tet-cimp-dnmt`) as the canonical entry — more accurate mechanistic framing, more appropriate score
+- Fixed pubchem_cid from null → "451668" in the canonical entry
+- Added Killian et al. (Cancer Discov 2013, PMID 23550148) GIST-specific CIMP data to the canonical entry's MoA: ~85,000 hypermethylated CpG loci in SDH-deficient GIST vs ~8,400 in KIT-mutant GIST — directly confirming DNMT1 vulnerability in SDHA-deficient GIST (the engine owner's tumour type)
+
+#### Fix B: SDH-enhanced antigen presentation — Mechanism 58 (sdh-biology.ts)
+
+**Direction:** biology-enrichment
+
+**Rationale:** PMID 42613239 (Yamamoto et al., Trends Immunol 2026) documents a mechanistic paradox that is unrepresented in sdh-biology.ts: while SDH-deficient tumours establish a deeply immunosuppressive TME (Mechanisms 22, 16, 42, 43, 51, 52, 53), they simultaneously show increased antigen presentation and intrinsic susceptibility to T-cell killing. This dual immunological nature — suppressive TME + immunogenic tumour cell — is mechanistically important for understanding why checkpoint inhibitors can achieve responses despite the multiple immunosuppressive signals documented elsewhere in the engine. The new mechanism also provides rationale for combination approaches targeting multiple suppressive axes simultaneously.
+
+**Mechanism chain documented in Mechanism 58 (sdh-biology.ts):**
+SDH loss → succinate accumulation → (a) TET2/3 inhibition → CIMP (partial: antigen-processing loci protected or secondarily demethylated) + (b) SDHB/C/D-driven ROS/DNA damage → NF-κB/ATM activation → upregulation of antigen-processing machinery (TAP1/TAP2/B2M/HLA) → higher MHC-I surface density → enhanced T-cell recognition and killing when checkpoint suppression is relieved.
+
+**Confirmed new to engine:** No prior mechanism entry documents SDH-enhanced antigen presentation. All prior immune mechanisms (16, 22, 42, 43, 51, 52, 53) document immunosuppressive arms only.
+
+**Therapeutic implication documented:**
+This mechanism contextualises why pembrolizumab, ipilimumab, relatlimab, and tiragolumab (all existing engine entries) have mechanistic rationale beyond just relieving suppression — the underlying tumour cell is intrinsically more targetable by CD8⁺ T cells once the suppressive TME is disrupted.
+
+**Mechanistic anchor:** PMID 42613239 (Yamamoto et al., Trends Immunol 2026-08). This is a review; the underlying primary data are cited within.
+
+**No new drug added:** This mechanism reinforces existing immunotherapy entries rather than opening a new pharmacological direction. A specific antigen-presentation-enhancing agent (e.g., a HDAC inhibitor for MHC-I upregulation) was considered but excluded — panobinostat (pan-HDAC) is already in the engine, and no SDH-specific antigen-presentation-enhancing data exist for HDAC inhibitors not already covered.
+
+**Files changed:** `src/data/papers.ts` (+1 paper: PMID 42613239), `src/data/seed/drugs.ts` (duplicate Decitabine removed; canonical Decitabine pubchem_cid fixed; Killian 2013 GIST CIMP added to MoA), `src/data/seed/sdh-biology.ts` (Mechanism 58 added — SDH-enhanced antigen presentation), `tracker.md` (+2 rows: PMID 42613239 added; PMID 23550148 used as anchor), `MORNING_LOG.md` (this entry).
+
+**Key citations:**
+- Yamamoto A et al. Mitochondrial Complex II in the regulation of immunopathology. Trends Immunol 2026;47(8). PMID 42613239. DOI 10.1016/j.it.2026.07.013.
+- Killian JK et al. Succinate dehydrogenase mutation underlies global epigenomic divergence in gastrointestinal stromal tumor. Cancer Discov 2013;3(6):648-657. PMID 23550148. DOI 10.1158/2159-8290.CD-13-0092.
+- Letouzé E et al. SDH mutations establish a hypermethylator phenotype in paraganglioma. Cancer Cell 2013;23(6):739-752. PMID 23707781. DOI 10.1016/j.ccr.2013.04.018.
+
