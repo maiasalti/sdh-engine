@@ -1261,4 +1261,25 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
   },
+  {
+    name: "Sulfasalazine",
+    brand_names: ["Azulfidine", "Salazopyrin"],
+    chembl_id: "CHEMBL421",
+    pubchem_cid: "5353980",
+    drug_class: "SLC7A11/xCT inhibitor; anti-inflammatory sulfonamide prodrug",
+    mechanism_of_action:
+      "Sulfasalazine (Azulfidine; FDA-approved for rheumatoid arthritis, ulcerative colitis, and Crohn's disease) inhibits the system Xc- cystine-glutamate antiporter by blocking its functional light chain SLC7A11 (xCT). Preventing cystine import depletes intracellular cysteine and therefore reduced glutathione (GSH), which is the obligate co-substrate for GPX4 (glutathione peroxidase 4). Without sufficient GSH, GPX4 cannot reduce phospholipid hydroperoxides, causing lipid peroxide accumulation and triggering ferroptosis — an iron-dependent, non-apoptotic form of cell death.\n\nMechanistic rationale for SDH-deficient tumours (two-anchor chain):\n\n1. SDH loss → impaired CoQ-ubiquinol lipid ROS scavenging:\nJain C et al. (Cell Metab 2026, PMID 42202783, DOI 10.1016/j.cmet.2026.04.020) established using multi-omics profiling, CRISPR screening, and in vivo models that active SDH/Complex II reduces CoQ to ubiquinol, which redistributes to mitochondrial and plasma membranes to scavenge lipid ROS as a radical-trapping antioxidant — functioning as a constitutive ferroptosis-resistance mechanism in CRC. Sun LJ & DeNicola GM (Cell Metab 2026, PMID 42551410, DOI 10.1016/j.cmet.2026.06.011) subsequently contextualised these findings within the broader mitochondrial antioxidant literature. SDH-DEFICIENT tumours cannot reduce CoQ (Complex II is inactive) → ubiquinol-mediated lipid ROS scavenging is constitutively impaired → cells become structurally dependent on the SLC7A11/GSH/GPX4 axis as the primary remaining lipid ROS defence.\n\n2. SDHB/C/D loss independently elevates normoxic ROS:\nGuzy RD et al. (Mol Cell Biol 2008, PMID 17967865) directly demonstrated in isogenic models that SDHB knockdown — but not SDHA knockdown — elevates normoxic superoxide and H₂O₂, further increasing the lipid peroxide substrate load. This compounds the SDH-CoQ-lipid ROS impairment in SDHB/C/D-deficient tumours.\n\nCombined: SDH-deficient cells (especially SDHB/C/D-deficient) have both elevated lipid peroxide generation and impaired CoQ-ubiquinol scavenging → heightened structural dependence on SLC7A11/GSH/GPX4 → selective ferroptosis sensitivity to sulfasalazine-mediated SLC7A11 inhibition.\n\nMechanistic distinction from auranofin (TXNRD1, Mechanism 56):\nAuranofin targets the thioredoxin reductase 1 (TXNRD1) / thioredoxin (TXN) / peroxiredoxin (PRDX) arm, which handles cytoplasmic H₂O₂. Sulfasalazine targets the SLC7A11/GSH/GPX4 arm, which handles lipid hydroperoxides. Two independent lipid vs. hydrogen peroxide detox axes — non-redundant at the molecular target, drug class, and cellular mechanism level.\n\nSDHA subtype note:\nPMID 17967865 establishes the SDHB/C/D-specific ROS elevation; SDHA-deficient GIST (the engine owner's tumour type) loses CoQ-ubiquinol lipid ROS scavenging but without the additional SDHB/C/D-driven ROS elevation. The SLC7A11 dependency is still predicted but potentially less acute in SDHA-deficient cells.\n\nClinical anchor:\nNCT02071498 (Phase 2; sulfasalazine in head and neck squamous cell carcinoma; n=29; COMPLETED 2017): established oral tolerability and SLC7A11 target engagement in solid-tumour patients. No SDH-specific preclinical or clinical data exist.\n\nEvidence score: 21 (theoretical). Two-anchor mechanistic chain (PMID 42202783 inverse inference + PMID 17967865 direct SDHB/C/D ROS data). No direct SDH-deficient model data for sulfasalazine; SLC7A11 upregulation and SDH-specific GPX4 dependency are predicted, not measured, in SDH-deficient cell lines. Score capped at 21 due to the indirect nature of the mechanistic inference (PMID 42202783 demonstrates the CoQ-lipid ROS axis in CRC cells with active SDH; the SDH-deficient inverse is a mechanistically sound but untested prediction).\n\nSources: https://pubmed.ncbi.nlm.nih.gov/42202783/ ; https://doi.org/10.1016/j.cmet.2026.04.020 ; https://pubmed.ncbi.nlm.nih.gov/42551410/ ; https://doi.org/10.1016/j.cmet.2026.06.011 ; https://pubmed.ncbi.nlm.nih.gov/17967865/ ; https://clinicaltrials.gov/study/NCT02071498",
+    fda_approved: true,
+    approved_indications: [
+      "Rheumatoid arthritis",
+      "Ulcerative colitis",
+      "Crohn's disease",
+    ],
+    pathway_slugs: ["sdh-coq-ferroptosis-sensitization"],
+    target_gene_symbols: ["SLC7A11"],
+    evidence_score: 21,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT02071498"],
+  },
 ];

@@ -585,4 +585,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "DNMT1 is the principal maintenance DNA methyltransferase, responsible for copying parental CpG methylation patterns to daughter strands during replication. In SDH-deficient tumours, succinate-mediated competitive inhibition of TET2/TET3 (2-OG-dependent demethylases) suppresses active DNA demethylation, allowing DNMT1 to act unopposed and perpetuate CpG island hypermethylation (CIMP) through successive cell cycles. Decitabine (5-aza-2'-deoxycytidine; Dacogen; FDA-approved for MDS/AML) is incorporated into DNA during S-phase as a false substrate, trapping DNMT1 in a covalent adduct, depleting functional enzyme, and allowing passive demethylation over subsequent divisions. Letouz\u00e9 et al. (Cancer Cell 2013, PMID 23707781) demonstrated directly that decitabine treatment reversed the SDH-deficiency-driven migratory phenotype in SDH-deficient mouse chromaffin cells.",
   },
+  {
+    gene_symbol: "SLC7A11",
+    name: "Cystine-glutamate transporter (xCT; system Xc- light chain)",
+    uniprot_id: "Q9UPY5",
+    pathway_slug: "sdh-coq-ferroptosis-sensitization",
+    target_type: "downstream",
+    description:
+      "SLC7A11 (xCT; UniProt Q9UPY5) is the light chain of the heterodimeric system Xc- cystine-glutamate antiporter (paired with SLC3A2/4F2hc). It mediates electroneutral 1:1 exchange of extracellular cystine for intracellular glutamate, providing the rate-limiting cysteine supply for reduced glutathione (GSH) biosynthesis. GSH is the essential co-substrate for GPX4 (glutathione peroxidase 4), the sole enzymatic reducer of phospholipid hydroperoxides \u2014 the defining step in ferroptosis prevention. SLC7A11 inhibition (by sulfasalazine, erastin, or IKE) blocks cystine import \u2192 depletes intracellular cysteine \u2192 impairs GSH synthesis \u2192 GPX4 cannot reduce lipid hydroperoxides \u2192 lipid peroxide accumulation \u2192 iron-dependent ferroptotic cell death.\n\nIn SDH-deficient tumours, the CoQ-ubiquinol radical-trapping arm of lipid ROS defence is constitutively impaired (SDH cannot reduce CoQ \u2192 less ubiquinol on membranes; Jain C et al., Cell Metab 2026, PMID 42202783), forcing cells to rely on the SLC7A11/GSH/GPX4 axis as their primary lipid ROS defence. This creates a therapeutic dependency: SLC7A11 inhibition removes the compensatory defence in cells whose CoQ-mediated protection is already absent due to SDH loss.",
+  },
 ];
