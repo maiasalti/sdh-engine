@@ -1142,6 +1142,44 @@ This mechanism provides mechanistic grounding for why checkpoint inhibitors (pem
 
 ---
 
+## Mechanism 60: SDH Loss → Reductive Carboxylation → ASCT2/SLC1A5 Glutamine Import Dependency — Upstream of GLS1; Synergistic Vulnerability with SLC7A11 Inhibition
+
+**Pathway slug:** `glutamine-dependency`
+
+**Core biology:**
+SDH (Complex II) inactivation truncates the TCA cycle at the succinate → fumarate step, eliminating the forward-TCA route to citrate synthesis. SDH-deficient cells compensate via reductive carboxylation: glutamine-derived α-KG is reduced by reverse IDH2 (NADPH-dependent) to isocitrate and then citrate; this reductively generated citrate is exported to the cytoplasm via SLC25A1 and cleaved by ACLY into acetyl-CoA for lipid biosynthesis. This pathway was established by 13C isotopic tracing in ETC-deficient cell lines by Mullen et al. (Nature 2012, PMID 22101431, DOI 10.1038/nature10642) — the mechanistic anchor for the entire glutamine-dependency pathway in this engine.
+
+Reductive carboxylation runs on glutamine as its sole exogenous carbon input. Before glutamine can be acted upon by GLS1 (telaglenastat's target), ASCT2 (SLC16A1 molecular anaplerosis, MTHFD2 one-carbon metabolism) must first import it across the plasma membrane. SLC1A5/ASCT2 (Alanine-Serine-Cysteine Transporter 2; UniProt Q15758) is the primary Na⁺-coupled glutamine transporter on the surface of solid tumour cells, with a Km of ~0.2–0.3 mM at physiological concentrations. It is the obligate entry gate for all downstream glutamine metabolism — including GLS1-mediated conversion to glutamate and α-KG, GSH biosynthesis (glutamine → glutamate, the first step), nucleotide synthesis, and asparagine synthesis.
+
+**Mechanistic distinction from the telaglenastat/GLS1 entry (already in engine):**
+- GLS1 (telaglenastat/CB-839 target): intracellular enzyme catalysing glutamine → glutamate. Inhibition blocks the committed first metabolic step but does not prevent glutamine's entry or other non-GLS1 uses.
+- SLC1A5/ASCT2: plasma-membrane transporter controlling glutamine import. Upstream of GLS1 and of every other glutamine-consuming pathway. Inhibition starves cells of glutamine before any metabolic commitment occurs, with broader coverage of the dependency.
+
+**2026 combination discovery: ASCT2 inhibition → NRF2 → SLC7A11/xCT upregulation (adaptive resistance overcome by sulfasalazine)**
+
+Wei et al. (Cancer Sci 2026, PMID 42460777, DOI 10.1111/cas.70437) demonstrated in prostate cancer models that ASCT2/SLC1A5 inhibition (research compound V-9302) induces ROS accumulation → NRF2 nuclear translocation → transcriptional upregulation of SLC7A11/xCT and other antioxidant NRF2-target genes as an adaptive survival mechanism. The compensatory SLC7A11 upregulation provides an alternative route for glutathione maintenance, partially rescuing cells from ASCT2 inhibition. Combined V-9302 + erastin (SLC7A11 inhibitor) blocked this compensation, producing synergistic tumour suppression in xenograft models.
+
+This finding has a direct structural implication for SDH-deficient tumours:
+1. SDHB/C/D-deficient cells have constitutively elevated normoxic ROS (Guzy et al. Mol Cell Biol 2008, PMID 17967865), which chronically activates NRF2 — the adaptive response arm that ASCT2 inhibition would normally induce is already partially pre-activated in SDH-deficient cells.
+2. SDH-deficient cells are already dependent on SLC7A11/GPX4 for lipid ROS defence (Mechanism 59), meaning the compensatory SLC7A11 upregulation triggered by ASCT2 inhibition occurs in a cell type that cannot easily afford to further stress the ferroptosis resistance axis.
+3. Sulfasalazine (SLC7A11 inhibitor, FDA-approved, already in this engine) directly blocks this NRF2-driven compensatory upregulation at the xCT transporter level.
+4. The combination of ASCT2 inhibition + sulfasalazine (SLC7A11 inhibition) is therefore mechanistically predicted to be particularly potent in SDH-deficient tumours, blocking both the primary glutamine supply (ASCT2) and the adaptive ferroptosis-resistance compensation (SLC7A11).
+
+**Clinical development status:**
+No FDA-approved SLC1A5/ASCT2 inhibitor exists as of October 2026. V-9302 (NextPoint Therapeutics) is a research compound that demonstrated ASCT2 inhibition in cell and xenograft models but has not entered clinical trials. This mechanism is documented as a research lead — the combination rationale with existing engine drugs (sulfasalazine/SLC7A11; telaglenastat/GLS1) is strong, and SLC1A5 is prepared as a target entry for future drug addition.
+
+**Applicability by subtype:**
+- SDHB/C/D-deficient (PPGL, SDH-deficient RCC): strongest prediction — elevated ROS and NRF2 pre-activation means ASCT2 inhibition → NRF2→xCT compensation is already partially engaged; combination with sulfasalazine directly exploits this.
+- SDHA-deficient GIST: glutamine dependency via reductive carboxylation still applies; ROS-driven NRF2 pre-activation is less marked.
+- All SDH-deficient subtypes: reductive carboxylation dependency on glutamine is a shared feature.
+
+**Sources:**
+- Mullen AR, Wheaton WW, Jin ES, et al. Reductive carboxylation supports growth in tumour cells with defective mitochondria. Nature 2012;481:385–388. PMID 22101431. DOI 10.1038/nature10642. (Foundational reductive carboxylation anchor — already in engine.)
+- Wei J, Yamada Y, Tamura T, et al. NRF2/xCT-Mediated Antioxidant Adaptation Attenuates Apoptosis Induced by ASCT2 Inhibition in Prostate Cancer. Cancer Sci 2026;117(10):2769–2789. PMID 42460777. DOI 10.1111/cas.70437. (ASCT2 inhibition → NRF2/xCT adaptive compensation; combination synergy with SLC7A11 inhibition.)
+- Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718–731. PMID 17967865. (SDHB/C/D-specific elevated ROS and constitutive NRF2 pre-activation.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
