@@ -1144,12 +1144,12 @@ This mechanism provides mechanistic grounding for why checkpoint inhibitors (pem
 
 ## Mechanism 60: SDH Loss → Reductive Carboxylation → ASCT2/SLC1A5 Glutamine Import Dependency — Upstream of GLS1; Synergistic Vulnerability with SLC7A11 Inhibition
 
-**Pathway slug:** `glutamine-dependency`
+**Pathway slug:** \`glutamine-dependency\`
 
 **Core biology:**
 SDH (Complex II) inactivation truncates the TCA cycle at the succinate → fumarate step, eliminating the forward-TCA route to citrate synthesis. SDH-deficient cells compensate via reductive carboxylation: glutamine-derived α-KG is reduced by reverse IDH2 (NADPH-dependent) to isocitrate and then citrate; this reductively generated citrate is exported to the cytoplasm via SLC25A1 and cleaved by ACLY into acetyl-CoA for lipid biosynthesis. This pathway was established by 13C isotopic tracing in ETC-deficient cell lines by Mullen et al. (Nature 2012, PMID 22101431, DOI 10.1038/nature10642) — the mechanistic anchor for the entire glutamine-dependency pathway in this engine.
 
-Reductive carboxylation runs on glutamine as its sole exogenous carbon input. Before glutamine can be acted upon by GLS1 (telaglenastat's target), ASCT2 (SLC16A1 molecular anaplerosis, MTHFD2 one-carbon metabolism) must first import it across the plasma membrane. SLC1A5/ASCT2 (Alanine-Serine-Cysteine Transporter 2; UniProt Q15758) is the primary Na⁺-coupled glutamine transporter on the surface of solid tumour cells, with a Km of ~0.2–0.3 mM at physiological concentrations. It is the obligate entry gate for all downstream glutamine metabolism — including GLS1-mediated conversion to glutamate and α-KG, GSH biosynthesis (glutamine → glutamate, the first step), nucleotide synthesis, and asparagine synthesis.
+Reductive carboxylation runs on glutamine as its sole exogenous carbon input. Before glutamine can be acted upon by GLS1 (telaglenastat's target), ASCT2 (SLC1A5) must first import it across the plasma membrane. SLC1A5/ASCT2 (Alanine-Serine-Cysteine Transporter 2; UniProt Q15758) is the primary Na⁺-coupled glutamine transporter on the surface of solid tumour cells, with a Km of ~0.2–0.3 mM at physiological concentrations. It is the obligate entry gate for all downstream glutamine metabolism — including GLS1-mediated conversion to glutamate and α-KG, GSH biosynthesis (glutamine → glutamate, the first step), nucleotide synthesis, and asparagine synthesis.
 
 **Mechanistic distinction from the telaglenastat/GLS1 entry (already in engine):**
 - GLS1 (telaglenastat/CB-839 target): intracellular enzyme catalysing glutamine → glutamate. Inhibition blocks the committed first metabolic step but does not prevent glutamine's entry or other non-GLS1 uses.
