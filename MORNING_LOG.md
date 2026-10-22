@@ -2288,3 +2288,52 @@ Active SDH (Complex II) reduces ubiquinone to ubiquinol (CoQH₂) at the Qp site
 - Jain C, Bhatt DL, Chen Y, et al. Succinate dehydrogenase generates the antioxidant ubiquinol to resist ferroptosis. Cell Metab 2026. PMID 42202783. (Outside window; primary mechanistic anchor.)
 - Sun LJ, DeNicola GM. A mitochondrial antioxidant axis fuels iron addiction in colorectal cancer. Cell Metab 2026;doi:10.1016/j.cmet.2026.06.011. PMID 42551410. (Within window; added to papers.ts.)
 - Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865.
+
+---
+## 2026-10-21
+
+**Angle:** ASCT2/SLC1A5 glutamine import — upstream of telaglenastat/GLS1; combination vulnerability with sulfasalazine/SLC7A11 (Mechanism 59, added 2026-10-20)
+
+### Part A — PubMed scan
+
+Window: 2026-07-21 – 2026-10-21. Search terms: SDH-deficient cancer biology, SDHB/SDHD paraganglioma pheochromocytoma treatment, SLC1A5 ASCT2 glutamine cancer, SDH deficiency reductive carboxylation.
+
+**Papers added to papers.ts:** 0
+
+All evaluated papers failed the SDH-relevance gate. Details:
+
+| PMID | DOI | Title / Authors | Decision |
+|------|-----|-----------------|----------|
+| 42460777 | 10.1111/cas.70437 | NRF2/xCT adaptation to ASCT2 inhibition in prostate cancer (Wei J, Cancer Sci 2026) | Rejected: prostate cancer context; used as mechanistic anchor for Mechanism 60 |
+| 42577287 | 10.3389/fimmu.2026.1734500 | IL6-centered immunometabolic circuit in multiple myeloma (Lang D, Front Immunol 2026) | Rejected: multiple myeloma; mentions ASCT2/V-9302 but not SDH-deficient biology |
+| 42893982 | 10.1038/s41419-026-09123-z | SLC1A5 targeting overcomes PARPi resistance in ovarian cancer (Han F, Cell Death Dis 2026) | Rejected: ovarian cancer PARPi context; not SDH-deficient tumour biology |
+| 42806167 | 10.1038/s44161-026-00881-9 | Metabolic-epigenetic switch in cardiac repair after SDH inhibition (Fan Y, Nat Cardiovasc Res 2026) | Rejected: cardiac regeneration model; SDH inhibition as tool, not SDH-deficient cancer |
+
+### Part B — Improvement
+
+**Direction:** Mechanism 60 — ASCT2/SLC1A5 glutamine import biology (no new drug; research target documentation)
+
+**Rationale for no drug addition:** No FDA-approved or verified clinical-stage SLC1A5/ASCT2 inhibitor exists as of October 2026. V-9302 (NextPoint Therapeutics) is a research compound only with 0 verified clinical trials on ClinicalTrials.gov. Adding V-9302 without a verified NCT would violate the engine's evidence standards ("Never pad — adding a weakly-justified drug is WORSE than adding nothing").
+
+**What was added:**
+
+Mechanism 60 documents the ASCT2/SLC1A5 glutamine import gate as the step immediately upstream of GLS1 (telaglenastat's target). SDH loss truncates the TCA cycle, forcing reductive carboxylation as the primary route to cytoplasmic acetyl-CoA — and the first step of reductive carboxylation is glutamine import via SLC1A5 (Mullen et al. Nature 2012, PMID 22101431).
+
+The 2026 finding by Wei et al. (Cancer Sci 2026, PMID 42460777) adds a critical combination rationale: ASCT2 inhibition induces ROS accumulation → NRF2 nuclear translocation → SLC7A11/xCT upregulation as adaptive resistance. In SDHB/C/D-deficient tumours, NRF2 is already constitutively active (PMID 17967865), making this compensatory arm pre-engaged. The combination of ASCT2 inhibition + sulfasalazine (SLC7A11 inhibitor, Mechanism 59) would simultaneously block the primary glutamine supply and the adaptive xCT arm — synergistic in both SDH-wild-type xenografts (Wei et al.) and predicted to be especially potent in SDH-deficient tumours.
+
+Mechanism 60 is genuinely new: no prior MORNING_LOG entry mentions ASCT2, SLC1A5, V-9302, or "upstream glutamine import."
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 60 (ASCT2/SLC1A5 glutamine import — upstream of GLS1; combination with sulfasalazine) |
+| `src/data/seed/targets.ts` | Added SLC1A5 / ASCT2 (UniProt Q15758) target — research lead, no drug yet |
+| `tracker.md` | Appended 4 evaluated PMIDs (2026-10-21) |
+| `MORNING_LOG.md` | This entry |
+
+### Part D — Key citations
+
+- Mullen AR, Wheaton WW, Jin ES, et al. Reductive carboxylation supports growth in tumour cells with defective mitochondria. Nature 2012;481(7381):385-388. PMID 22101431. DOI 10.1038/nature10642. (Foundational: SDH-deficient cells dependent on reductive carboxylation of glutamine; SLC1A5 upstream dependency.)
+- Wei J, Yamada Y, Tamura T, et al. NRF2/xCT-Mediated Antioxidant Adaptation Attenuates Apoptosis Induced by ASCT2 Inhibition in Prostate Cancer. Cancer Sci 2026;117(10):2769–2789. PMID 42460777. DOI 10.1111/cas.70437. (ASCT2 inhibition → NRF2/xCT adaptive compensation; combination synergy with SLC7A11 inhibition.)
+- Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865. (SDHB/C/D → normoxic ROS → constitutive NRF2 activation in SDH-deficient cells.)
