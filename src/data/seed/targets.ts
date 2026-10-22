@@ -595,6 +595,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "SLC7A11 (xCT; UniProt Q9UPY5) is the light chain of the heterodimeric system Xc- cystine-glutamate antiporter (paired with SLC3A2/4F2hc). It mediates electroneutral 1:1 exchange of extracellular cystine for intracellular glutamate, providing the rate-limiting cysteine supply for reduced glutathione (GSH) biosynthesis. GSH is the essential co-substrate for GPX4 (glutathione peroxidase 4), the sole enzymatic reducer of phospholipid hydroperoxides \u2014 the defining step in ferroptosis prevention. SLC7A11 inhibition (by sulfasalazine, erastin, or IKE) blocks cystine import \u2192 depletes intracellular cysteine \u2192 impairs GSH synthesis \u2192 GPX4 cannot reduce lipid hydroperoxides \u2192 lipid peroxide accumulation \u2192 iron-dependent ferroptotic cell death.\n\nIn SDH-deficient tumours, the CoQ-ubiquinol radical-trapping arm of lipid ROS defence is constitutively impaired (SDH cannot reduce CoQ \u2192 less ubiquinol on membranes; Jain C et al., Cell Metab 2026, PMID 42202783), forcing cells to rely on the SLC7A11/GSH/GPX4 axis as their primary lipid ROS defence. This creates a therapeutic dependency: SLC7A11 inhibition removes the compensatory defence in cells whose CoQ-mediated protection is already absent due to SDH loss.",
   },
   {
+    gene_symbol: "WEE1",
+    name: "Wee1 G2 checkpoint kinase",
+    uniprot_id: "P30291",
+    pathway_slug: "sdh-brcaness-wee1-g2m-checkpoint",
+    target_type: "downstream",
+    description:
+      "WEE1 (Wee1 G2 checkpoint kinase; UniProt P30291) is the serine/threonine kinase responsible for phosphorylating and thereby inactivating CDK1 (cyclin-dependent kinase 1) at Tyr15. This inhibitory phosphorylation is the primary molecular gate of the G2/M checkpoint: it prevents CDK1-Cyclin B from activating until DNA damage repair is complete, ensuring cells do not enter mitosis with unrepaired double-strand breaks (DSBs). In HR-deficient (BRCAness) cells — including SDH-deficient tumours where succinate-mediated KDM4A/B inhibition blocks HR repair (Guo et al., Endocr Relat Cancer 2026, PMID 41711310) — WEE1 maintains the G2/M checkpoint for longer than in HR-proficient cells because DSBs remain unrepaired. This extended WEE1-dependent delay becomes a critical survival dependency: without it, HR-deficient cells would enter mitosis before any available repair can occur, triggering mitotic catastrophe and apoptosis. WEE1 inhibition by adavosertib (AZD1775) eliminates this checkpoint, selectively killing BRCAness cells that cannot repair DSBs rapidly enough once the G2/M gate is removed.",
+  },
+  {
     gene_symbol: "SLC1A5",
     name: "Neutral amino acid transporter B(0) (ASCT2; glutamine importer)",
     uniprot_id: "Q15758",

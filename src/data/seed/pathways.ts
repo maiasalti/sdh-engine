@@ -773,4 +773,20 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 46,
   },
+  {
+    name: "WEE1 / CDK1 G2-M Checkpoint (BRCAness Synthetic Lethality)",
+    slug: "sdh-brcaness-wee1-g2m-checkpoint",
+    description:
+      "SDH loss drives succinate accumulation, which competitively inhibits the Jumonji-domain histone demethylase KDM4A/B (2-OG-dependent). KDM4A/B are required to demethylate H3K9me3 marks at sites of DNA double-strand breaks (DSBs), enabling assembly of the TIP60-ATM activation complex and downstream recruitment of BRCA1/RAD51 for homologous recombination (HR) repair. Succinate-mediated KDM4A/B inhibition → H3K9me3 accumulation at DSBs → TIP60/ATM blocked → BRCA1/RAD51 not recruited → HR deficiency (BRCAness). This was directly established by Guo et al. (Endocr Relat Cancer 2026, PMID 41711310) in isogenic SDHB-KO vs WT cell models. The resulting BRCAness creates cells with a chronic deficit in DSB repair that are heavily dependent on the WEE1 kinase–CDK1 G2/M checkpoint to delay mitotic entry and allow any available, slower repair to proceed. WEE1 phosphorylates CDK1 at Tyr15 (inhibitory), maintaining the G2/M checkpoint gate. Abrogating WEE1 with adavosertib (AZD1775) forces premature CDK1 activation → cells with unrepaired DSBs enter mitosis → mitotic catastrophe and cell death. This G2/M abrogation is selectively lethal in HR-deficient (BRCAness) contexts because HR-proficient cells can repair DSBs rapidly in G2 before mitotic checkpoint abrogation becomes lethal.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive KDM4A/B inhibition → H3K9me3 at DSBs → TIP60/ATM/BRCA1/RAD51 recruitment blocked → HR deficiency (BRCAness) [Guo et al., Endocr Relat Cancer 2026, PMID 41711310] → chronic unrepaired DSBs → WEE1-CDK1 G2/M checkpoint dependency for cell viability",
+    downstream_effects: [
+      "WEE1 inhibition (adavosertib/AZD1775) → premature CDK1 Tyr15 dephosphorylation → unscheduled CDK1 activation → mitotic entry with unrepaired DSBs → mitotic catastrophe and apoptosis; selectively lethal in BRCAness/HR-deficient cells",
+      "BRCAness in SDH-deficient tumours is mechanistically distinct from BRCA1/2 mutation-driven HRD: caused by H3K9me3 accumulation at DSB sites (epigenetic block) rather than protein truncation. However, downstream HR deficiency is functionally equivalent — predicts sensitivity to all HR-deficiency-exploiting strategies, including WEE1 inhibition",
+      "Adavosertib + PARP inhibitor synergy predicted: WEE1i abrogates G2/M checkpoint (removes the repair window); PARPi blocks SSB-to-DSB repair (increases DSB load) — combined DSB load in a BRCAness background exceeds the mitotic catastrophe threshold at lower individual drug doses (Krajewska M et al., Nat Commun 2019, PMID 31160564)",
+      "Mechanistically distinct from CHK1/prexasertib (already in engine, sdh-chk1-brcas-replication-checkpoint): CHK1 inhibition abrogates S-phase and intra-S checkpoints (replication stress response); WEE1 inhibition abrogates the G2/M checkpoint specifically (pre-mitotic entry gate). Different cell-cycle phase, different mechanistic target, non-redundant therapeutic action",
+    ],
+    druggable: true,
+    display_order: 47,
+  },
 ];
