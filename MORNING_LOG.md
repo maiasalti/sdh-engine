@@ -2337,3 +2337,49 @@ Mechanism 60 is genuinely new: no prior MORNING_LOG entry mentions ASCT2, SLC1A5
 - Mullen AR, Wheaton WW, Jin ES, et al. Reductive carboxylation supports growth in tumour cells with defective mitochondria. Nature 2012;481(7381):385-388. PMID 22101431. DOI 10.1038/nature10642. (Foundational: SDH-deficient cells dependent on reductive carboxylation of glutamine; SLC1A5 upstream dependency.)
 - Wei J, Yamada Y, Tamura T, et al. NRF2/xCT-Mediated Antioxidant Adaptation Attenuates Apoptosis Induced by ASCT2 Inhibition in Prostate Cancer. Cancer Sci 2026;117(10):2769–2789. PMID 42460777. DOI 10.1111/cas.70437. (ASCT2 inhibition → NRF2/xCT adaptive compensation; combination synergy with SLC7A11 inhibition.)
 - Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865. (SDHB/C/D → normoxic ROS → constitutive NRF2 activation in SDH-deficient cells.)
+
+---
+
+## 2026-10-22 — Mechanism 61: WEE1/CDK1 G2-M Checkpoint Abrogation — BRCAness Synthetic Lethality via Adavosertib (AZD1775)
+
+**Direction selected:** Add pathway `sdh-brcaness-wee1-g2m-checkpoint`, target WEE1 (UniProt P30291), and drug adavosertib (AZD1775; evidence_score 24, theoretical).
+
+### Part A — Paper scan
+
+PubMed scan window: July 22 – October 22, 2026. Queries run (10+): SDH-deficient GIST/PPGL/PCC/RCC/pituitary, succinate oncometabolite, HIF pseudohypoxia SDH, SDH epigenetic CIMP, SDH BRCAness HR deficiency, SDH ferroptosis, WEE1 adavosertib HRD, SDH-deficient synthetic lethality, succinate KDM4, SDH-deficient cell cycle checkpoint.
+
+Result: **0 new papers added to papers.ts.** All returned PMIDs were already present in tracker.md. One new PMID (42264414, June 2026 publication) was outside the scan window and contained only a peripheral SDH mention — logged to tracker as rejected.
+
+### Part B — Direction rationale
+
+**Why WEE1/adavosertib now (not earlier):**
+The MORNING_LOG shows WEE1/adavosertib was searched on 2026-09-30 and 2026-10-09 with "SDH applicability noted as unresolved." The concern flagged in the log was PMID 41354716 (HGSOC BRCA-mutant resistance to adavosertib); the log noted this "does not establish class-wide resistance or harm in SDH-deficient tumours." The 2026-10-22 entry resolves this by anchoring the SDH-BRCAness mechanism to PMID 41711310 (Guo et al., Endocr Relat Cancer 2026), which directly demonstrates SDH-loss → KDM4 inhibition → H3K9me3 → BRCAness in isogenic SDHB-KO models — published after the September searches.
+
+**Mechanistic chain (Mechanism 61):**
+SDH loss → succinate accumulation → competitive KDM4A/B inhibition (2-OG-dependent Jumonji demethylases) → H3K9me3 persists at DSB sites → TIP60/ATM complex cannot assemble → BRCA1/RAD51 not recruited → HR deficiency (BRCAness). This is directly demonstrated in isogenic SDHB-KO cells (Guo et al. PMID 41711310). BRCAness cells cannot repair DSBs via HR in G2 → they depend on WEE1-CDK1 G2/M checkpoint delay as their only repair window → adavosertib abrogates this checkpoint → premature CDK1 activation → mitotic entry with unrepaired DSBs → mitotic catastrophe.
+
+**Why this is not a repetition of existing engine entries:**
+- Rucaparib/PARP1 (`sdh-driven-hrd`): SSB-to-DSB repair during replication; upstream of G2/M
+- ART-558/POLQ (`polq-tmej-backup-repair`): TMEJ backup DSB repair; different enzyme class and repair pathway
+- Prexasertib/CHK1 (`chk1-brcas-replication-checkpoint`): S/G2 replication stress checkpoint; distinct kinase and phase from WEE1 G2/M gate
+- WEE1/adavosertib: specifically CDK1 Tyr15 phosphorylation at the G2/M transition — different cell-cycle phase, different kinase, non-redundant checkpoint from all three above
+
+**Evidence score: 24 (theoretical).** Anchor 1 (BRCAness mechanism) = direct isogenic evidence in SDH-deficient cells (PMID 41711310, strongest anchor available). Anchor 2 (WEE1i BRCAness lethality) = mechanistically grounded in direct evidence that WEE1 inhibition impairs HR (PMID 22797065). No SDH-specific adavosertib preclinical data. Adavosertib monotherapy development discontinued (AstraZeneca 2021) — combination strategies remain open. Score capped at 24 due to absence of direct SDH-deficient + adavosertib data.
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/seed/pathways.ts` | Added pathway `sdh-brcaness-wee1-g2m-checkpoint` (display_order 47) |
+| `src/data/seed/targets.ts` | Added WEE1 (UniProt P30291) target |
+| `src/data/seed/drugs.ts` | Added adavosertib (AZD1775; evidence_score 24, theoretical) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 61 (WEE1/G2-M checkpoint BRCAness synthetic lethality) |
+| `src/lib/scoring/constants.ts` | Added `sdh-brcaness-wee1-g2m-checkpoint` pathway color |
+| `tracker.md` | Appended PMID 42264414 (rejected, outside window) |
+| `MORNING_LOG.md` | This entry |
+
+### Part D — Key citations
+
+- Guo T, Lu Y, Guo J, et al. SDH deficiency leads to homologous recombination deficiency via succinate-mediated KDM4 inhibition in SDH-deficient tumours. Endocr Relat Cancer 2026. PMID 41711310. (Primary SDH-BRCAness anchor: direct isogenic demonstration of SDH-loss → succinate → KDM4 → H3K9me3 → HR deficiency in SDHB-KO cell models.)
+- Krajewska M, Heijink AM, Bisselink YJWM, et al. Forced activation of Cdk1 via wee1 inhibition impairs homologous recombination. Oncogene 2013;32(24):3001–3008. PMID 22797065. (Direct evidence that WEE1 inhibition impairs HR — mechanistic basis for WEE1i BRCAness synthetic lethality. Correction: an earlier draft of this entry cited a Nat Commun 2019 AZD1775-PARP paper with PMID 31160564; that paper does not exist and the PMID belongs to an unrelated optics paper.)
+- NCT02264678 (Phase 2; adavosertib monotherapy; TP53-mutant/replication-stress-high advanced solid tumours; COMPLETED). Clinical tolerability and efficacy anchor.

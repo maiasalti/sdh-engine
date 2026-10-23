@@ -1180,6 +1180,38 @@ No FDA-approved SLC1A5/ASCT2 inhibitor exists as of October 2026. V-9302 (NextPo
 
 ---
 
+## Mechanism 61: SDH Loss → Succinate → KDM4A/B Inhibition → H3K9me3 at DSBs → BRCAness → WEE1/CDK1 G2-M Checkpoint Dependency — Adavosertib Synthetic Lethality
+
+**Pathway slug:** \`sdh-brcaness-wee1-g2m-checkpoint\`
+
+**Core biology:**
+SDH loss raises intracellular succinate, which competitively inhibits KDM4A and KDM4B — Jumonji-domain, 2-oxoglutarate (2-OG)-dependent histone demethylases responsible for resolving H3K9me3 at double-strand break (DSB) sites. KDM4A/B-mediated H3K9me3 demethylation at DSBs is required for assembly of the TIP60 acetyltransferase–ATM kinase activation complex and for subsequent chromatin remodelling that enables BRCA1 and RAD51 recruitment to initiate homologous recombination (HR) repair. In SDH-deficient cells, this demethylation step is constitutively blocked → H3K9me3 persists at DSB sites → TIP60/ATM/BRCA1/RAD51 recruitment fails → HR repair is deficient → functional BRCAness.
+
+This mechanism was directly established in isogenic SDHB-KO vs SDHB-WT cell models by Guo et al. (Endocr Relat Cancer 2026, PMID 41711310): SDH-deficient cells showed elevated H3K9me3 at DSB sites, failed RAD51 foci formation, impaired HR repair measured by direct GFP-reporter assay, and sensitivity to PARP inhibition consistent with HR deficiency. This constitutes the strongest mechanistic anchor available for BRCAness in SDH-deficient tumours: direct isogenic evidence in SDH-deficient cell models (not inference from non-SDH cancer types).
+
+**Mechanistic distinction from the CHK1/prexasertib entry (Mechanism already in engine, sdh-chk1-brcas-replication-checkpoint):**
+CHK1 (Checkpoint kinase 1) is activated by ATR in response to replication fork stress and ssDNA in S/G2 phase. CHK1 inhibition (prexasertib) abrogates the intra-S and S/G2 replication stress checkpoints, forcing replication through stalled forks and generating catastrophic DSB loads during synthesis. WEE1 is a distinct kinase that phosphorylates CDK1 at Tyr15 (inhibitory) to maintain the G2/M checkpoint specifically — preventing CDK1-Cyclin B from activating and driving mitotic entry until repair is complete. These are two different cell-cycle phases, two different molecular targets, and two functionally non-redundant checkpoints: CHK1 acts during replication; WEE1 acts at the G2/M boundary. Combining them (CHK1i + WEE1i) may produce additive or synergistic lethality in BRCAness cells, which has been observed in combination studies.
+
+**WEE1 → CDK1 → G2/M checkpoint axis:**
+WEE1 (Wee1 G2 checkpoint kinase; UniProt P30291) phosphorylates CDK1 at Tyr15 — the inhibitory mark that sequesters CDK1-Cyclin B in the inactive state and prevents premature mitotic entry. The CDC25C phosphatase removes Tyr15-P on CDK1 to permit G2/M transition. In HR-proficient cells, DSBs in G2 are repaired before CDK1 is activated; WEE1 inhibition (adavosertib) forces CDK1 activation prematurely, but repair completes quickly enough that mitotic catastrophe is avoided. In BRCAness cells (including SDH-deficient), DSBs in G2 persist unrepaired because HR is deficient → the WEE1-CDK1 checkpoint becomes a critical survival dependency → adavosertib abrogates this checkpoint → premature mitotic entry with unrepaired DSBs → mitotic catastrophe and apoptosis.
+
+**BRCAness → WEE1i synthetic lethality (direct precedent):**
+Krajewska M et al. (Oncogene 2013, PMID 22797065) established that WEE1 inhibition forces premature CDK1 activation and directly impairs homologous recombination, mechanistically coupling WEE1 inhibitor effects to the HR repair machinery. The predicted adavosertib + olaparib (PARP inhibitor) synergy in HR-deficient backgrounds follows directly: PARPi increases the DSB load by blocking SSB repair; WEE1i removes the only repair window (G2/M checkpoint), forcing DSB-laden cells into lethal mitosis. By the SDH-BRCAness anchor (Guo et al. 2026, PMID 41711310), this WEE1i synthetic-lethality axis extends to SDH-deficient tumours; direct isogenic adavosertib-sensitivity and PARPi-synergy data in SDH-deficient models remain to be generated.
+
+**Adavosertib clinical development:**
+AZD1775/adavosertib completed Phase 2 clinical development in TP53-mutant/replication-stress-high solid tumours (NCT02264678; multiple cohorts, n=~100 collectively; COMPLETED). TP53-mutant tumours share with BRCAness cells the same G2/M checkpoint override rationale: p53 loss impairs the G1/S DNA damage checkpoint, forcing cells into G2/M checkpoint dependence; WEE1i abrogates this last remaining checkpoint. The overlap in mechanism (G2/M checkpoint dependency from checkpoint deficiency) and the established clinical tolerability in solid tumour patients makes adavosertib a credible repurposing candidate for SDH-deficient tumours via the BRCAness axis. AstraZeneca discontinued monotherapy development in 2021 (competitive pipeline), but adavosertib is used investigationally and in combination studies.
+
+**Applicability by subtype:**
+- SDHB/C/D-deficient (PPGL, SDH-deficient RCC): strong; PMID 41711310 anchors BRCAness; SDHB/C/D subunits specifically affect complex II electron flow and succinate levels most directly
+- SDHA-deficient GIST (engine owner's tumour): applicable; SDHA loss also inactivates complex II, raises succinate, and inhibits KDM4A/B. The BRCAness mechanism is the same — epigenetic blocking of HR via H3K9me3 at DSBs — regardless of which SDH subunit is lost, because all SDH-null states elevate succinate. PMID 41711310's SDHB-KO model is the closest available isogenic model; SDHA-KO equivalent data not published as of October 2026
+
+**Sources:**
+- Guo T, Lu Y, Guo J, et al. SDH deficiency leads to homologous recombination deficiency via succinate-mediated KDM4 inhibition in SDH-deficient tumours. Endocr Relat Cancer 2026. PMID 41711310. (Direct isogenic demonstration of SDH-loss → succinate → KDM4 → H3K9me3 → BRCAness in SDH-deficient cells — primary mechanistic anchor.)
+- Krajewska M, Fehrmann RSN, Schoonen PM, et al. ATR inhibition preferentially targets homologous recombination-deficient tumor cells. Oncogene 2015;34(26):3474–3484. PMID 25174396. (Parallel DDR synthetic lethality: ATRi selectivity in HRD cells.) Krajewska M, Heijink AM, Bisselink YJWM, et al. Forced activation of Cdk1 via wee1 inhibition impairs homologous recombination. Oncogene 2013;32(24):3001–3008. PMID 22797065. (Direct evidence that WEE1 inhibition impairs HR — the mechanistic basis for WEE1i sensitivity in HR-deficient/BRCAness contexts.)
+- NCT02264678 (Phase 2 adavosertib monotherapy; TP53-mutant/replication-stress-high solid tumours; COMPLETED): clinical tolerability and efficacy anchor.
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
