@@ -783,7 +783,7 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     downstream_effects: [
       "WEE1 inhibition (adavosertib/AZD1775) → premature CDK1 Tyr15 dephosphorylation → unscheduled CDK1 activation → mitotic entry with unrepaired DSBs → mitotic catastrophe and apoptosis; selectively lethal in BRCAness/HR-deficient cells",
       "BRCAness in SDH-deficient tumours is mechanistically distinct from BRCA1/2 mutation-driven HRD: caused by H3K9me3 accumulation at DSB sites (epigenetic block) rather than protein truncation. However, downstream HR deficiency is functionally equivalent — predicts sensitivity to all HR-deficiency-exploiting strategies, including WEE1 inhibition",
-      "Adavosertib + PARP inhibitor synergy predicted: WEE1i abrogates G2/M checkpoint (removes the repair window); PARPi blocks SSB-to-DSB repair (increases DSB load) — combined DSB load in a BRCAness background exceeds the mitotic catastrophe threshold at lower individual drug doses (Krajewska M et al., Nat Commun 2019, PMID 31160564)",
+      "Adavosertib + PARP inhibitor synergy predicted: WEE1i abrogates G2/M checkpoint (removes the repair window); PARPi blocks SSB-to-DSB repair (increases DSB load) — combined DSB load in a BRCAness background exceeds the mitotic catastrophe threshold at lower individual drug doses (Krajewska M et al., Oncogene 2013, PMID 22797065)",
       "Mechanistically distinct from CHK1/prexasertib (already in engine, sdh-chk1-brcas-replication-checkpoint): CHK1 inhibition abrogates S-phase and intra-S checkpoints (replication stress response); WEE1 inhibition abrogates the G2/M checkpoint specifically (pre-mitotic entry gate). Different cell-cycle phase, different mechanistic target, non-redundant therapeutic action",
     ],
     druggable: true,
