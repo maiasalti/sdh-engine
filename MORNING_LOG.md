@@ -2364,7 +2364,7 @@ SDH loss → succinate accumulation → competitive KDM4A/B inhibition (2-OG-dep
 - Prexasertib/CHK1 (`chk1-brcas-replication-checkpoint`): S/G2 replication stress checkpoint; distinct kinase and phase from WEE1 G2/M gate
 - WEE1/adavosertib: specifically CDK1 Tyr15 phosphorylation at the G2/M transition — different cell-cycle phase, different kinase, non-redundant checkpoint from all three above
 
-**Evidence score: 24 (theoretical).** Anchor 1 (BRCAness mechanism) = direct isogenic evidence in SDH-deficient cells (PMID 41711310, strongest anchor available). Anchor 2 (WEE1i BRCAness lethality) = established in isogenic HR-deficient models (PMID 31160564). No SDH-specific adavosertib preclinical data. Adavosertib monotherapy development discontinued (AstraZeneca 2021) — combination strategies remain open. Score capped at 24 due to absence of direct SDH-deficient + adavosertib data.
+**Evidence score: 24 (theoretical).** Anchor 1 (BRCAness mechanism) = direct isogenic evidence in SDH-deficient cells (PMID 41711310, strongest anchor available). Anchor 2 (WEE1i BRCAness lethality) = mechanistically grounded in direct evidence that WEE1 inhibition impairs HR (PMID 22797065). No SDH-specific adavosertib preclinical data. Adavosertib monotherapy development discontinued (AstraZeneca 2021) — combination strategies remain open. Score capped at 24 due to absence of direct SDH-deficient + adavosertib data.
 
 ### Part C — Files changed
 
@@ -2381,5 +2381,5 @@ SDH loss → succinate accumulation → competitive KDM4A/B inhibition (2-OG-dep
 ### Part D — Key citations
 
 - Guo T, Lu Y, Guo J, et al. SDH deficiency leads to homologous recombination deficiency via succinate-mediated KDM4 inhibition in SDH-deficient tumours. Endocr Relat Cancer 2026. PMID 41711310. (Primary SDH-BRCAness anchor: direct isogenic demonstration of SDH-loss → succinate → KDM4 → H3K9me3 → HR deficiency in SDHB-KO cell models.)
-- Krajewska M, van der Graaf WT, Langendijk JA, et al. WEE1 kinase inhibitor AZD1775 potentiates PARP inhibitor in HR-deficient cancer cells. Nat Commun 2019. PMID 31160564. (WEE1i BRCAness synthetic lethality and olaparib synergy in isogenic HR-deficient models.)
+- Krajewska M, Heijink AM, Bisselink YJWM, et al. Forced activation of Cdk1 via wee1 inhibition impairs homologous recombination. Oncogene 2013;32(24):3001–3008. PMID 22797065. (Direct evidence that WEE1 inhibition impairs HR — mechanistic basis for WEE1i BRCAness synthetic lethality. Correction: an earlier draft of this entry cited a Nat Commun 2019 AZD1775-PARP paper with PMID 31160564; that paper does not exist and the PMID belongs to an unrelated optics paper.)
 - NCT02264678 (Phase 2; adavosertib monotherapy; TP53-mutant/replication-stress-high advanced solid tumours; COMPLETED). Clinical tolerability and efficacy anchor.
