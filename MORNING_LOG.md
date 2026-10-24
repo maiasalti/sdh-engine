@@ -2383,3 +2383,70 @@ SDH loss → succinate accumulation → competitive KDM4A/B inhibition (2-OG-dep
 - Guo T, Lu Y, Guo J, et al. SDH deficiency leads to homologous recombination deficiency via succinate-mediated KDM4 inhibition in SDH-deficient tumours. Endocr Relat Cancer 2026. PMID 41711310. (Primary SDH-BRCAness anchor: direct isogenic demonstration of SDH-loss → succinate → KDM4 → H3K9me3 → HR deficiency in SDHB-KO cell models.)
 - Krajewska M, Heijink AM, Bisselink YJWM, et al. Forced activation of Cdk1 via wee1 inhibition impairs homologous recombination. Oncogene 2013;32(24):3001–3008. PMID 22797065. (Direct evidence that WEE1 inhibition impairs HR — mechanistic basis for WEE1i BRCAness synthetic lethality. Correction: an earlier draft of this entry cited a Nat Commun 2019 AZD1775-PARP paper with PMID 31160564; that paper does not exist and the PMID belongs to an unrelated optics paper.)
 - NCT02264678 (Phase 2; adavosertib monotherapy; TP53-mutant/replication-stress-high advanced solid tumours; COMPLETED). Clinical tolerability and efficacy anchor.
+
+---
+
+## 2026-10-23 — Papers-only scan: no new qualifying papers or drug directions
+
+**Result:** 0 papers added. 0 drugs/pathways/targets/mechanisms added.
+
+### Part A — Paper scan
+
+PubMed scan window: July 23 – October 23, 2026. The following query groups were executed:
+
+1. SDH-deficient GIST treatment / drug repurposing
+2. SDH-deficient paraganglioma / PCC / PPGL treatment
+3. SDH-deficient RCC / pituitary adenoma
+4. Succinate oncometabolite 2-HG drug
+5. HIF pseudohypoxia SDH cancer therapy
+6. SDH BRCAness HRD synthetic lethality
+7. SDH epigenetic CIMP hypermethylation
+8. SDH ferroptosis CoQ ubiquinol
+9. KDM4 succinate histone methylation cancer
+10. SDH glutamine reductive carboxylation drug
+11. SDH mitochondria redox cancer treatment
+12. SDHB SDHC SDHD SDHA mutation cancer drug 2026
+13. Paraganglioma pheochromocytoma novel therapy 2026
+14. GIST succinate dehydrogenase deficient therapy 2026
+15. Succinate receptor SUCNR1 cancer
+16. WEE1 adavosertib BRCAness SDH
+
+**10 new PMIDs evaluated** (not previously in tracker.md):
+
+| PMID | Title (short) | Rejection reason |
+|------|---------------|-----------------|
+| 42809718 | TCA/AKGDH flexibility in heart failure (Martinez Naya N, Am J Physiol Heart Circ Physiol 2026) | Cardiovascular model; not SDH-deficient tumour biology |
+| 42811963 | Venetoclax mPTP/ROS in rat liver mitochondria (Kruglov AG, Front Biosci 2026) | SDH used as TTFA inhibitor readout; isolated mitochondria model; not SDH-deficient tumour biology |
+| 42831206 | Metastasectomy after radionuclide therapy in PCC — case report (Wada N, JCEM Case Rep 2026) | Single case report; no SDH genotype; no new drug or mechanism advance |
+| 42864640 | scRNA-seq of ectopic ACTH/CRH-secreting PCC (Su W, J Transl Med 2026) | Ectopic-ACTH PCC variant; no SDH genotype; no SDH-specific drug advance |
+| 42866373 | LV thrombus in PGL — case report (Alsbikhan A, Ann Med Surg 2026) | Case report; cardiovascular complication; no SDH genotype |
+| 42893849 | GHRH-secreting PCC causing acromegaly — case report (Kitamura T, Endocr J 2026) | Case report; ectopic GHRH secretion; no SDH genotype |
+| 42897632 | CgA epitopes as biomarkers in canine PCC (Prabert J, BMC Vet Res 2026) | Veterinary study; no SDH genotype; not relevant to SDH-deficient tumour drug repurposing |
+| 42692260 | PGL/PCC developmental biology and translational technologies — narrative review (de Bresser CJM, Mod Pathol 2026) | Broad PGL narrative review; no SDH-specific drug mechanism or novel advance |
+| 42762504 | Adrenal endocrine hypertension clinical series (Bayar I, Endocr Regul 2026) | Clinical management series (PA/PHEO/Cushing); no SDH genotype; no drug advance |
+| 42743103 | PCC masquerading as ACS with cardiogenic shock — case report (Zhang S, Am J Case Rep 2026) | Case report; catecholamine cardiomyopathy; no SDH genotype |
+
+**Result: 0 papers added to papers.ts.**
+
+### Part B — Direction selection
+
+All candidate directions were evaluated against the HARD RELEVANCE GATE (must plausibly act on a pathway directly implicated in SDH-deficient biology). Engine now contains 80+ drugs, 48 pathways, 61 mechanisms. Previously assessed remaining leads:
+
+**Non-radiolabeled SSAs (octreotide LAR / lanreotide):** SSTR2-expressing SDHx PPGL is confirmed by positive 68Ga-DOTATATE/177Lu-DOTATATE PET, which is already the basis for the `sstr2-somatostatin-vulnerability` pathway in the engine (used by 177Lu-DOTATATE and [212Pb]VMT-α-NET). A cold SSA would be non-redundant as a direct antiproliferative agent. However, SSTR2 expression in SDHx PPGL derives from the neuroendocrine/chromaffin cell lineage, not from SDH-specific biology. The HARD RELEVANCE GATE requires pathways "directly implicated in SDH-deficient biology" (pseudohypoxia/HIF, succinate/2-HG, DNA/histone hypermethylation, mitochondrial/redox, IGF1R, VEGFR, FGFR, glutaminolysis). SSTR2 signalling does not meet this criterion. Direction rejected.
+
+**PKMYT1 inhibitor (lunresertib):** PKMYT1 phosphorylates CDK1 at Thr14 in addition to WEE1's Tyr15 phosphorylation. In BRCAness cells, PKMYT1 inhibition would complement WEE1 inhibition (adavosertib added 2026-10-22). However, the SDH→BRCAness→PKMYT1 chain lacks direct SDH-specific anchor separate from the one used for WEE1 (Guo et al. PMID 41711310). No published evidence directly connects PKMYT1 to SDH-deficient tumours. Adding PKMYT1 would extend the existing adavosertib pathway rather than add a genuinely new direction. Direction rejected — insufficient independent SDH anchor.
+
+**SUCNR1/GPR91 succinate receptor:** GPR91 (SUCNR1) is a GPCR directly activated by extracellular succinate — a compelling SDH-biology anchor. However, no clinical-stage SUCNR1 antagonist or agonist exists as a potential repurposing candidate. No drug to add. Direction rejected — no clinical drug.
+
+**BCL-2 / venetoclax:** The 2026-10-23 scan retrieved PMID 42811963 (venetoclax and mPTP in rat liver mitochondria), which uses SDH inhibitor TTFA as a tool compound rather than SDH-deficient tumour biology. No published evidence connects BCL-2 dependency to SDH loss specifically. The general claim that SDH-deficient cells might have elevated BCL-2 through HIF target genes is speculative. Direction rejected — no direct SDH anchor meeting gate requirements.
+
+**Conclusion:** No direction passes the HARD RELEVANCE GATE with sufficient specificity to justify a new drug/pathway/target addition. Per the "never pad" principle, this is a papers-only/no-direction run. This is the correct outcome.
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Appended 10 evaluated PMIDs (2026-10-23), all rejected |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/seed/` files.
