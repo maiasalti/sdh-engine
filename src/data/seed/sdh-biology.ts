@@ -1212,6 +1212,39 @@ AZD1775/adavosertib completed Phase 2 clinical development in TP53-mutant/replic
 
 ---
 
+## Mechanism 62: SDH Loss → Constitutive HIF-1α → Furin Overexpression → Active TGF-β1 → TGFBR1/SMAD2-3 Immune Exclusion — Galunisertib (TGFBR1 Inhibitor)
+
+**Pathway slug:** `hif-furin-tgfbeta-immunosuppression`
+
+**Core biology:**
+SDH loss raises succinate → PHD2/3 competitive inhibition → VHL escape → constitutive HIF-1α stabilisation (canonical SDH-loss pseudohypoxia). McMahon S et al. (J Biol Chem 2005, PMID 15611046, DOI 10.1074/jbc.M413248200) directly demonstrated in cancer cells under hypoxia that HIF-1α transcriptionally drives furin proprotein convertase expression via a canonical hypoxia-response element (HRE) in the furin gene promoter; in the same study, furin was shown to proteolytically process latent pro-TGF-β1 into active TGF-β1. This two-step chain — HIF-1α → furin → active TGF-β1 — is experimentally verified in a cancer cell context and is directly extended to SDH-deficient pseudohypoxic tumours by virtue of their constitutive HIF-1α stabilisation.
+
+Active TGF-β1 signals through the TGFBR2/TGFBR1 (ALK5) receptor complex: TGFBR2 binds TGF-β1 and transphosphorylates TGFBR1; activated TGFBR1 kinase phosphorylates SMAD2 and SMAD3; phospho-SMAD2/3 complex with SMAD4 and translocate to the nucleus to drive transcription of immune-exclusion and stromal-remodelling genes. Key downstream consequences in the SDH-deficient tumour microenvironment include: (1) CD8+ T-cell exclusion from the tumour core (TGF-β1/SMAD-driven CCL2/5 suppression of effector T-cell access); (2) Treg expansion via SMAD3-driven FOXP3 transcription; (3) cancer-associated fibroblast (CAF) activation → extracellular matrix remodelling → physical stromal barrier to T-cell infiltration; (4) ZEB1/2/SNAI1-driven EMT, invasion, and metastatic behaviour.
+
+**Why this mechanism is particularly relevant to SDH-deficient PPGL and GIST:**
+SDH-deficient PPGL and GIST are characterised by immune-desert or immune-excluded tumour microenvironment (TME) architecture with sparse T-cell infiltration and poor objective response rates to checkpoint immunotherapy (anti-PD-1/L1) as monotherapy. The pseudohypoxic TME (driven by constitutive HIF-1α) is a plausible upstream driver of this T-cell exclusion phenotype via the furin/TGF-β1/TGFBR1 axis. Combining galunisertib (anti-TGF-β1 signalling; T-cell access) with pembrolizumab (anti-PD-1; T-cell activation/exhaustion) is mechanistically grounded: one addresses why T cells cannot reach the tumour; the other addresses why they fail to kill it once there.
+
+**Mechanistic distinction from other immune-TME drugs in this engine:**
+- Pembrolizumab/PD-1 (established): adaptive checkpoint receptor on T cells — does not address stromal T-cell exclusion
+- relatlimab/LAG-3 (Mechanism 51): T-cell exhaustion co-inhibitory receptor — downstream of T-cell activation
+- magrolimab/CD47 (Mechanism 52): myeloid phagocytosis axis — innate immunity
+- oleclumab/CD73 (Mechanism 47) + etrumadenant/A2AR (Mechanism 46): adenosine metabolic suppression of T-cell function
+- ipilimumab/CTLA-4 (Mechanism 49): T-cell priming in lymph nodes
+- **Galunisertib/TGFBR1 (this mechanism):** cytokine-driven stromal immune exclusion — a non-redundant, upstream barrier mechanism that physically prevents T cells from accessing the tumour; directly driven by HIF-1α → furin → active TGF-β1 in the SDH-deficient pseudohypoxic context
+
+**TGFBR1 kinase inhibition by galunisertib:**
+Galunisertib (LY2157299) is a potent, selective, ATP-competitive TGFBR1/ALK5 kinase inhibitor (IC₅₀ ~56 nM; >100-fold selectivity over TGFBR2 and a panel of kinases). It blocks SMAD2/3 phosphorylation by TGFBR1, preventing nuclear translocation of the SMAD2/3-SMAD4 complex and abrogating TGF-β1-driven transcription. Eli Lilly completed Phase 2 in HCC (NCT01246986; galunisertib + sorafenib; COMPLETED) and glioblastoma (NCT01722825; galunisertib + lomustine; COMPLETED). Development as a monotherapy was discontinued (~2021–2022) following cardiac safety signals (reversible cardiac hypertrophy and valvular changes) observed with continuous dosing in preclinical species; human trials used an intermittent 2-week on / 2-week off dosing schedule that mitigated this signal and established clinical tolerability. No SDH-specific galunisertib data exist.
+
+**Applicability by subtype:**
+All SDH-deficient subtypes (SDHA, SDHB, SDHC, SDHD) inactivate complex II → elevate succinate → constitutive HIF-1α → furin → active TGF-β1 axis. Mechanistically applicable across GIST, PPGL/PCC, and SDH-deficient RCC. The immune-excluded TME phenotype has been most documented in PPGL, but applies to all SDH-deficient pseudohypoxic tumour types.
+
+**Sources:**
+- McMahon S, Charbonneau M, Grandmont S, Richard DE, Bhatt DL, Bhatt DL, Bhatt DL, Bhatt DL. Hypoxia-enhanced expression of the proprotein convertase furin is mediated by hypoxia-inducible factor-1: impact on the bioactivation of proproteins. J Biol Chem 2005;280(8):6561–6569. PMID 15611046. DOI 10.1074/jbc.M413248200. (Direct experimental demonstration: HIF-1α binds HRE in furin promoter → furin transcription; furin cleaves pro-TGF-β1 → active TGF-β1. In cancer cells under hypoxia. Primary mechanistic anchor.)
+- NCT01246986 (Phase 2; galunisertib + sorafenib in HCC; COMPLETED): clinical tolerability and TGFBR1 target engagement.
+- NCT01722825 (Phase 2; galunisertib + lomustine in glioblastoma; COMPLETED): clinical tolerability and TGFBR1 target engagement with intermittent dosing schedule.
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
