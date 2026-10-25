@@ -615,7 +615,7 @@ export const SEED_TARGETS: SeedTarget[] = [
   {
     gene_symbol: "TGFBR1",
     uniprot_id: "P36897",
-    full_name: "TGF-beta receptor type-1 (ALK5)",
+    name: "TGF-beta receptor type-1 (ALK5)",
     pathway_slug: "hif-furin-tgfbeta-immunosuppression",
     target_type: "downstream",
     description:
