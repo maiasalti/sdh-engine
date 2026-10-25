@@ -542,4 +542,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42551410",
     date: "2026-08",
   },
+  {
+    title:
+      "Germline Pathogenic Variants in Succinate Dehydrogenase Genes: Implications from a Single Institution Study.",
+    authors: "Awasty SS, Fisher C, Brock PL, Kirschner LS.",
+    journal: "Endocr Oncol",
+    year: 2026,
+    doi: "10.1530/EO-25-0113",
+    topic: "Genetics & Syndromes",
+    description:
+      "Single-institution 10-year natural history study of 156 SDHx germline pathogenic variant carriers at Ohio State Medical Center. SDHB variants were the most common overall; in probands referred for non-PPGL tumours (e.g., GIST), SDHA variants were the most common while SDHD was never detected through non-PPGL workup. Rate of new tumour development was less than 5% in carriers with no tumour at initial presentation. A subset carried variants in a second cancer-associated gene. Supports gene-specific surveillance tailoring and suggests reconsideration of surveillance frequency for tumour-free SDHx carriers.",
+    pmid: "42925006",
+    date: "2026-10",
+  },
 ];

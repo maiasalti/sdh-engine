@@ -2507,3 +2507,43 @@ No changes to `src/data/seed/` files.
 | `src/lib/scoring/constants.ts` | Added `hif-furin-tgfbeta-immunosuppression` color token |
 | `tracker.md` | Appended 5 evaluated PMIDs (2026-10-24), all rejected |
 | `MORNING_LOG.md` | This entry |
+
+---
+
+## 2026-10-25 — Papers-only scan: SDHx surveillance natural history (no new drug direction)
+
+### Part A — PubMed scan
+
+**Window:** 2026-07-25 to 2026-10-25  
+**Queries run:** SDH-deficient GIST, paraganglioma SDH mutation 2026, pheochromocytoma SDH treatment, SDH deficiency drug therapy, succinate dehydrogenase germline 2026, SDHA SDHB SDHC SDHD cancer 2026
+
+**New qualifying paper found: 1**
+
+| PMID | DOI | Title | Decision |
+|------|-----|-------|----------|
+| 42925006 | 10.1530/EO-25-0113 | Germline Pathogenic Variants in Succinate Dehydrogenase Genes: Implications from a Single Institution Study (Awasty SS et al., Endocr Oncol 2026-10-23) | **ADDED** — Genetics & Syndromes |
+
+**Summary of rejected papers evaluated this run:**
+All other PMIDs returned by searches were already logged in tracker.md from prior runs (no new PMIDs outside tracker). One new PMID (42925006) passed the window and SDH-specificity gate; added to papers.ts.
+
+### Part B — Improvement direction evaluation
+
+**No new direction added.** Two candidate directions were evaluated and rejected:
+
+**Candidate 1: MDM2/p53 direction**
+- Hypothesis: HIF-1α → MDM2 transcription → MDM2-mediated p53 suppression → cell survival in SDH-deficient tumors
+- Rejection rationale: PubMed search found the mechanistic arrows do not hold. PMID 10640274 shows p53 activates MDM2 (classic p53→MDM2 feedback), not HIF-1α→MDM2. PMID 15880652 shows MDM2 promotes HIF-1α stability, not the reverse. No verified HIF-1α binding site in the MDM2 promoter. The SDH-specific anchor is absent. Insufficient to pass the hard relevance gate.
+
+**Candidate 2: MCL-1/HIF direction**
+- Hypothesis: HIF-1α → MCL-1 transcription (via HRE) → anti-apoptotic survival in SDH-deficient hypoxia
+- Rejection rationale: PubMed searches found only correlative data (MCL-1 elevated in hypoxic cells) with no verified HRE in the MCL-1 promoter driving HIF-1α-specific transcription. The existing venetoclax direction covers BCL-2 family anti-apoptotic signaling; MCL-1 would require a structurally distinct drug (navitoclax covers BCL-XL; S63845/AMG-176 target MCL-1 specifically). However, without a verified SDH→MCL-1 link beyond correlative hypoxia data, the direction cannot pass the gate.
+
+**Overriding principle applied:** "Never pad. Adding a weakly-justified drug is worse than adding nothing."
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/papers.ts` | Added PMID 42925006 (Awasty SS et al., Genetics & Syndromes) |
+| `tracker.md` | Appended row for PMID 42925006 (added) |
+| `MORNING_LOG.md` | This entry |
