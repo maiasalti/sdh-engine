@@ -1136,9 +1136,9 @@ This mechanism provides mechanistic grounding for why checkpoint inhibitors (pem
 - All SDH-deficient tumours share CoQ-ubiquinol impairment.
 
 **Sources:**
-- Jain C, Bhatt DL, Chen Y, et al. Succinate dehydrogenase generates the antioxidant ubiquinol to resist ferroptosis. Cell Metab 2026. PMID 42202783. (Mechanistic anchor — outside scan window, May 2026.)
+- Jain C, Essani M, Kumar R, et al. Iron-addicted colorectal cancers exploit heme-complex II axis to resist oxidative cell death. Cell Metab 2026;38(8):1599–1617. PMID 42202783. (Mechanistic anchor — outside scan window, May 2026.)
 - Sun LJ, DeNicola GM. A mitochondrial antioxidant axis fuels iron addiction in colorectal cancer. Cell Metab 2026. PMID 42551410. DOI 10.1016/j.cmet.2026.06.011. (Commentary/extension — within scan window, August 2026; in papers.ts.)
-- Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865. (SDHB/SDHA differential ROS.)
+- Guzy RD, Sharma B, Bell E, Chandel NS, Schumacker PT. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865. (SDHB/SDHA differential ROS.)
 
 ---
 
@@ -1176,7 +1176,7 @@ No FDA-approved SLC1A5/ASCT2 inhibitor exists as of October 2026. V-9302 (NextPo
 **Sources:**
 - Mullen AR, Wheaton WW, Jin ES, et al. Reductive carboxylation supports growth in tumour cells with defective mitochondria. Nature 2012;481:385–388. PMID 22101431. DOI 10.1038/nature10642. (Foundational reductive carboxylation anchor — already in engine.)
 - Wei J, Yamada Y, Tamura T, et al. NRF2/xCT-Mediated Antioxidant Adaptation Attenuates Apoptosis Induced by ASCT2 Inhibition in Prostate Cancer. Cancer Sci 2026;117(10):2769–2789. PMID 42460777. DOI 10.1111/cas.70437. (ASCT2 inhibition → NRF2/xCT adaptive compensation; combination synergy with SLC7A11 inhibition.)
-- Guzy RD, Sharma B, Bell E, Chandel NS, Bhatt DL. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718–731. PMID 17967865. (SDHB/C/D-specific elevated ROS and constitutive NRF2 pre-activation.)
+- Guzy RD, Sharma B, Bell E, Chandel NS, Schumacker PT. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718–731. PMID 17967865. (SDHB/C/D-specific elevated ROS and constitutive NRF2 pre-activation.)
 
 ---
 
@@ -1214,7 +1214,7 @@ AZD1775/adavosertib completed Phase 2 clinical development in TP53-mutant/replic
 
 ## Mechanism 62: SDH Loss → Constitutive HIF-1α → Furin Overexpression → Active TGF-β1 → TGFBR1/SMAD2-3 Immune Exclusion — Galunisertib (TGFBR1 Inhibitor)
 
-**Pathway slug:** `hif-furin-tgfbeta-immunosuppression`
+**Pathway slug:** \`hif-furin-tgfbeta-immunosuppression\`
 
 **Core biology:**
 SDH loss raises succinate → PHD2/3 competitive inhibition → VHL escape → constitutive HIF-1α stabilisation (canonical SDH-loss pseudohypoxia). McMahon S et al. (J Biol Chem 2005, PMID 15611046, DOI 10.1074/jbc.M413248200) directly demonstrated in cancer cells under hypoxia that HIF-1α transcriptionally drives furin proprotein convertase expression via a canonical hypoxia-response element (HRE) in the furin gene promoter; in the same study, furin was shown to proteolytically process latent pro-TGF-β1 into active TGF-β1. This two-step chain — HIF-1α → furin → active TGF-β1 — is experimentally verified in a cancer cell context and is directly extended to SDH-deficient pseudohypoxic tumours by virtue of their constitutive HIF-1α stabilisation.
@@ -1239,7 +1239,7 @@ Galunisertib (LY2157299) is a potent, selective, ATP-competitive TGFBR1/ALK5 kin
 All SDH-deficient subtypes (SDHA, SDHB, SDHC, SDHD) inactivate complex II → elevate succinate → constitutive HIF-1α → furin → active TGF-β1 axis. Mechanistically applicable across GIST, PPGL/PCC, and SDH-deficient RCC. The immune-excluded TME phenotype has been most documented in PPGL, but applies to all SDH-deficient pseudohypoxic tumour types.
 
 **Sources:**
-- McMahon S, Charbonneau M, Grandmont S, Richard DE, Bhatt DL, Bhatt DL, Bhatt DL, Bhatt DL. Hypoxia-enhanced expression of the proprotein convertase furin is mediated by hypoxia-inducible factor-1: impact on the bioactivation of proproteins. J Biol Chem 2005;280(8):6561–6569. PMID 15611046. DOI 10.1074/jbc.M413248200. (Direct experimental demonstration: HIF-1α binds HRE in furin promoter → furin transcription; furin cleaves pro-TGF-β1 → active TGF-β1. In cancer cells under hypoxia. Primary mechanistic anchor.)
+- McMahon S, Grondin F, McDonald PP, Richard DE, Dubois CM. Hypoxia-enhanced expression of the proprotein convertase furin is mediated by hypoxia-inducible factor-1: impact on the bioactivation of proproteins. J Biol Chem 2005;280(8):6561–6569. PMID 15611046. DOI 10.1074/jbc.M413248200. (Direct experimental demonstration: HIF-1α binds HRE in furin promoter → furin transcription; furin cleaves pro-TGF-β1 → active TGF-β1. In cancer cells under hypoxia. Primary mechanistic anchor.)
 - NCT01246986 (Phase 2; galunisertib + sorafenib in HCC; COMPLETED): clinical tolerability and TGFBR1 target engagement.
 - NCT01722825 (Phase 2; galunisertib + lomustine in glioblastoma; COMPLETED): clinical tolerability and TGFBR1 target engagement with intermittent dosing schedule.
 
