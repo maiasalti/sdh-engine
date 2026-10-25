@@ -2450,3 +2450,60 @@ All candidate directions were evaluated against the HARD RELEVANCE GATE (must pl
 | `MORNING_LOG.md` | This entry |
 
 No changes to `src/data/seed/` files.
+
+---
+
+## 2026-10-24
+
+### Part A — PubMed scan
+
+**Queries run:** 16 queries across SDH-deficient GIST, PPGL/PCC, HIF pseudohypoxia, succinate/epigenetics, ferroptosis/ROS, immune TME, FGFR, reductive carboxylation, ATRX-ALT, BRCAness, NAD+ metabolism, glutaminolysis, somatostatin, and WEE1/checkpoint published July–October 2026.
+
+**New PMIDs evaluated (not in tracker.md as of today):**
+
+| PMID | Verdict |
+|------|---------|
+| 42176937 | Rejected: outside window (May 2026); general PPGL diagnostics review; no SDH drug/mechanism advance |
+| 42766861 | Rejected: veterinary (canine) PCC study; no SDH genotype; no drug advance |
+| 42493398 | Rejected: surgical case report for recurrent PCC; no SDH genotype; no drug/mechanism advance |
+| 42688135 | Rejected: PCC vs PGL retrospective outcomes; no SDH genotype; no drug advance |
+| 42206758 | Rejected: outside window (May 2026); incidental vs clinical PPGL detection; no SDH-specific drug/mechanism advance |
+
+**Papers added to `papers.ts`:** 0
+
+### Part B — Direction: HIF-1α → Furin → TGF-β1 → TGFBR1/SMAD2-3 immune exclusion axis / galunisertib (LY2157299)
+
+**Why genuinely novel:** No prior morning run has added any TGF-β pathway drug or TGFBR1 target. The 2026-09-30, 2026-10-06, 2026-10-09, and 2026-10-15 logs all noted galunisertib/TGF-β as an unresolved research lead pending a mechanistic anchor. That anchor is now verified: PMID 15611046 (McMahon S et al., J Biol Chem 2005) directly demonstrates HIF-1α drives furin via a canonical HRE and furin activates pro-TGF-β1, providing the direct molecular bridge from SDH-loss pseudohypoxia to active TGF-β1 production.
+
+**Mechanistic chain:**
+1. SDH loss → succinate → PHD2/3 inhibition → constitutive HIF-1α stabilisation (canonical SDH pseudohypoxia)
+2. HIF-1α → furin overexpression via HRE in furin promoter [PMID 15611046: directly demonstrated in cancer cells under hypoxia]
+3. Furin → proteolytic cleavage of pro-TGF-β1 → active TGF-β1 [PMID 15611046: same study]
+4. Active TGF-β1 → TGFBR2/TGFBR1 (ALK5) → SMAD2/3 phosphorylation → nuclear SMAD2/3-SMAD4 → immune-exclusion gene programme
+5. Downstream: CD8+ T-cell exclusion, Treg expansion, CAF activation, EMT → immune-desert/excluded TME in SDH-deficient PPGL and GIST
+
+**Why non-redundant vs existing immune drugs:**
+- pembrolizumab (PD-1): adaptive checkpoint on T cells — does not address stromal exclusion
+- relatlimab (LAG-3): T-cell exhaustion — downstream of T-cell activation
+- magrolimab (CD47): myeloid innate axis
+- oleclumab + etrumadenant (CD73/A2AR): adenosine metabolic suppression
+- ipilimumab (CTLA-4): T-cell priming
+- Galunisertib/TGFBR1: cytokine-driven stromal immune exclusion — non-redundant upstream barrier mechanism
+
+**New pathway slug:** `hif-furin-tgfbeta-immunosuppression` (display_order 48)
+**New target:** TGFBR1 (UniProt P36897; ALK5)
+**New mechanism:** Mechanism 62
+**Drug added:** galunisertib (LY2157299; CHEMBL2180717; PubChem 9908089; evidence_score 22; theoretical; all tumor types; NCT01246986, NCT01722825)
+**Pathway color:** `bg-lime-300 text-lime-950 dark:bg-lime-700 dark:text-lime-50`
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/seed/pathways.ts` | Added `hif-furin-tgfbeta-immunosuppression` pathway (display_order 48) |
+| `src/data/seed/targets.ts` | Added TGFBR1 (UniProt P36897, ALK5) target entry |
+| `src/data/seed/drugs.ts` | Added galunisertib (LY2157299; evidence_score 22; theoretical) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 62 (HIF-1α → furin → TGF-β1 → TGFBR1/SMAD2-3 immune exclusion) |
+| `src/lib/scoring/constants.ts` | Added `hif-furin-tgfbeta-immunosuppression` color token |
+| `tracker.md` | Appended 5 evaluated PMIDs (2026-10-24), all rejected |
+| `MORNING_LOG.md` | This entry |

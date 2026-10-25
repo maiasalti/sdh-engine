@@ -789,4 +789,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 47,
   },
+  {
+    name: "HIF-1α → Furin → TGF-β1 Immune Exclusion (TGFBR1/SMAD2-3 Axis)",
+    slug: "hif-furin-tgfbeta-immunosuppression",
+    description:
+      "SDH loss → constitutive HIF-1α stabilization (pseudohypoxia) → HIF-1α transcriptionally drives furin proprotein convertase expression via a canonical hypoxia-response element (HRE) in the furin promoter → furin proteolytically cleaves latent pro-TGF-β1 into active TGF-β1 in the secretory pathway and at the cell surface → active TGF-β1 binds TGFBR2 → recruits and transphosphorylates TGFBR1 (ALK5) → TGFBR1 phosphorylates SMAD2/3 → SMAD2/3-SMAD4 complex translocates to nucleus → transcription of immune-exclusion and stromal-remodelling genes. Downstream consequences: CD8+ T-cell exclusion from the tumour core, Treg expansion, cancer-associated fibroblast (CAF) activation, TGF-β-driven EMT, and tumour immune privilege. Galunisertib (LY2157299), a selective TGFBR1 (ALK5) kinase inhibitor, blocks SMAD2/3 phosphorylation and interrupts the entire downstream programme.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → constitutive HIF-1α stabilization → HIF-1α binds HRE in furin promoter → furin overexpression → furin cleaves pro-TGF-β1 → active TGF-β1 → TGFBR2/TGFBR1 (ALK5) → SMAD2/3 phosphorylation → nuclear SMAD2/3-SMAD4 → immune-exclusion gene programme [McMahon et al., J Biol Chem 2005, PMID 15611046: direct demonstration of HIF-1α → furin via HRE and furin → active TGF-β1 in cancer cells under hypoxia]",
+    downstream_effects: [
+      "Active TGF-β1 → SMAD2/3 → transcription of CCL2, CCL5 in immunosuppressive configuration → CD8+ T-cell exclusion from tumour centre",
+      "SMAD3 → FOXP3 promoter activation → Treg expansion → IL-10/TGF-β positive feedback loop maintaining immune privilege",
+      "TGF-β1/SMAD → CAF activation → extracellular matrix remodelling → physical barrier to T-cell infiltration (stromal exclusion)",
+      "SMAD2/3 → ZEB1/2, SNAI1 → epithelial-mesenchymal transition (EMT) markers, invasion, and metastatic potential",
+      "Galunisertib (LY2157299; TGFBR1/ALK5 kinase inhibitor) blocks TGFBR1 kinase → prevents SMAD2/3 phosphorylation → abrogates entire downstream immune-exclusion programme",
+    ],
+    druggable: true,
+    display_order: 48,
+  },
 ];
