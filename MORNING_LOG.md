@@ -2547,3 +2547,51 @@ All other PMIDs returned by searches were already logged in tracker.md from prio
 | `src/data/papers.ts` | Added PMID 42925006 (Awasty SS et al., Genetics & Syndromes) |
 | `tracker.md` | Appended row for PMID 42925006 (added) |
 | `MORNING_LOG.md` | This entry |
+
+---
+
+## 2026-10-26 — Papers-only scan; no new qualifying papers or drug directions
+
+### Part A — PubMed scan (window: 2026-07-26 to 2026-10-26)
+
+21 searches executed across all five tumor types (SDH-GIST, PPGL/PCC, SDH-RCC, SDH-pituitary adenoma) and general SDH-deficient cancer topics. One new PMID found within the window:
+
+| PMID | Decision | Reason |
+|------|----------|--------|
+| 42923952 | rejected | Morishita A et al., Case Rep Oncol 2026-09-08, DOI 10.1159/cro/abzag050. SDHB-Related Carney-Stratakis Syndrome: gastric GIST + suspected PGL case report. Clinical CSS case description; confirms known SDHB germline pathology; no novel SDH-specific mechanism or treatment advance. |
+
+**0 papers added to papers.ts.**
+
+### Part B — Improvement direction
+
+Exhaustive evaluation of remaining candidate directions against the HARD RELEVANCE GATE. All candidates rejected:
+
+**SHP2/PTPN11 inhibitors (TNO155, RMC-4630)**
+- Hypothesis: FGFR1 autocrine loop in SDH-GIST → RAS-GEF → SHP2 scaffold → ERK; SHP2 inhibition would suppress downstream signaling
+- Result: 0 PubMed hits connecting SHP2/PTPN11 to SDH-deficient tumors. No primary evidence. Direction fails gate.
+
+**MEK inhibitors (trametinib, binimetinib)**
+- Hypothesis: FGFR1→RAS→MEK→ERK chain; MEK inhibition downstream of FGFR autocrine loop in SDH-GIST
+- Result: 0 PubMed hits for MEK inhibition in SDH-GIST or SDH-deficient cancers with primary data. Inferrable but not evidenced. Direction fails gate.
+
+All other candidate directions confirmed already handled or ruled out in prior runs:
+- PLK1/volasertib: explicitly ruled out 2026-10-09 (resistance in HRD models, PMID 41354716)
+- PKMYT1/lunresertib: explicitly rejected 2026-10-23 (no published SDH-tumor data)
+- BCL-2/venetoclax: rejected 2026-10-23 (no direct SDH anchor)
+- MDM2: rejected 2026-10-25 (mechanistic chain does not hold)
+- MCL-1: rejected 2026-10-25 (no verified HRE)
+- m6A/METTL3/FTO: rejected 2026-09-20 (no citable anchor paper)
+- CDK7: ruled out 2026-09-19 (too similar to BRD4)
+- SUCNR1 antagonists: no clinical-stage drug exists
+- DHODH, polyamine, neddylation: already in engine
+
+**No new direction added.** The engine is mature (71 drugs, 62 mechanisms). Remaining candidates do not pass the hard relevance gate. Papers-only is the correct outcome.
+
+**Overriding principle applied:** "Never pad. Adding a weakly-justified drug is worse than adding nothing."
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Appended row for PMID 42923952 (rejected) |
+| `MORNING_LOG.md` | This entry |
