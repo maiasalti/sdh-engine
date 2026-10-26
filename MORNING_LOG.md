@@ -2532,7 +2532,7 @@ All other PMIDs returned by searches were already logged in tracker.md from prio
 
 **Candidate 1: MDM2/p53 direction**
 - Hypothesis: HIF-1α → MDM2 transcription → MDM2-mediated p53 suppression → cell survival in SDH-deficient tumors
-- Rejection rationale: PubMed search found the mechanistic arrows do not hold. PMID 10640274 shows p53 activates MDM2 (classic p53→MDM2 feedback), not HIF-1α→MDM2. PMID 15880652 shows MDM2 promotes HIF-1α stability, not the reverse. No verified HIF-1α binding site in the MDM2 promoter. The SDH-specific anchor is absent. Insufficient to pass the hard relevance gate.
+- Rejection rationale: PubMed search found the mechanistic arrows do not hold. PMID 10640274 (Ravi et al.) shows p53 promotes MDM2-mediated ubiquitination and degradation of HIF-1α - p53/MDM2 acting on HIF-1α, not HIF-1α driving MDM2 transcription. PMID 15880652 shows MDM2 promotes HIF-1α stability, not the reverse. No verified HIF-1α binding site in the MDM2 promoter. The SDH-specific anchor is absent. Insufficient to pass the hard relevance gate.
 
 **Candidate 2: MCL-1/HIF direction**
 - Hypothesis: HIF-1α → MCL-1 transcription (via HRE) → anti-apoptotic survival in SDH-deficient hypoxia
