@@ -2628,7 +2628,7 @@ Searches performed (all 12 returned no qualifying new papers):
 APE1, APEX1, Ref-1, APX3330, E3330 — none of these names appear anywhere in any prior MORNING_LOG entry. Confirmed new.
 
 **Hard relevance gate check:**
-- Anchor 1 (pseudohypoxia/HIF pathway, direct): PMID 42476069 (Gangwar P et al. 2026) directly demonstrates APE1/Ref-1 activates HIF-1α by mediating thiol reduction of Cys800. SDH loss → constitutive HIF-1α → chronic dependency on APE1/Ref-1 Cys65 redox co-activation. The constitutive pseudohypoxia of SDH-deficient tumours is a *standing, high-output* dependency on this step, unlike normal tissues where it is only transiently needed.
+- Anchor 1 (pseudohypoxia/HIF pathway, direct): PMID 42476069 (Gangwar P et al. 2026), a review of thiol-system redox regulation of transcription factors, documents that APE1/Ref-1 activates HIF-1α by mediating thiol reduction of Cys800. SDH loss → constitutive HIF-1α → chronic dependency on APE1/Ref-1 Cys65 redox co-activation. The constitutive pseudohypoxia of SDH-deficient tumours is a *standing, high-output* dependency on this step, unlike normal tissues where it is only transiently needed.
 - Anchor 2 (mitochondrial/redox vulnerability, direct): PMID 17967865 (Guzy RD et al. 2008) directly demonstrates SDHB/C/D-deficient cells produce constitutively elevated normoxic ROS, loading the thioredoxin/APE1/Ref-1 redox node beyond normal. APX3330 hits a more critically loaded node.
 - Clinical anchor: PMID 41423797 (Kelley MR et al. The Oncologist 2026) confirms NCT03375086 (Phase 1) completed; RP2D 600 mg/day oral BID; 6/19 stable disease; no treatment-related SAEs.
 
@@ -2656,4 +2656,3 @@ APE1, APEX1, Ref-1, APX3330, E3330 — none of these names appear anywhere in an
 **Rejection log (candidates explicitly ruled out this run):**
 - All drugs evaluated 2026-10-23 through 2026-10-26 remain excluded (see prior entries)
 - No new drug candidates evaluated and rejected today beyond the selected APX3330 direction
-
