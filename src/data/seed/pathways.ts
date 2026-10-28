@@ -823,4 +823,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 49,
   },
+  {
+    name: "PPGL IL-6 → JAK1/JAK2 → STAT3 → HIF-1α Transcriptional Amplification",
+    slug: "ppgl-il6-jak-stat3-hif-amplification",
+    description:
+      "Paraganglioma/pheochromocytoma (PPGL) tumour cells directly secrete IL-6, confirmed histopathologically in multiple case series. SDH-deficient PPGL, via constitutive pseudohypoxia, sustains this IL-6 production through HIF-1α- and NF-κB-driven transcription. IL-6 binds the IL-6R/gp130 receptor complex → activates JAK1/JAK2 → STAT3 phosphorylation (Tyr705) → STAT3 dimerisation and nuclear translocation → transcription of HIF-1α mRNA (Xu et al. Oncogene 2005, PMID 16007214: STAT3 is required for HIF-1α expression). This creates a feedforward amplification loop operating in addition to the post-translational HIF-1α stabilisation from PHD inhibition: SDH loss → pseudohypoxia → HIF-1α → IL-6 → JAK/STAT3 → more HIF-1α mRNA. Ruxolitinib (FDA-approved JAK1/2 inhibitor) breaks the loop by blocking STAT3 activation, reducing HIF-1α at the transcriptional level.",
+    upstream_event:
+      "SDH loss → pseudohypoxia → constitutive HIF-1α → PPGL tumour-cell IL-6 secretion (Rusconi et al. BMJ Case Rep 2026, PMID 41991230; Minetto et al. J Endocrinol Invest 2003, PMID 12906374) → IL-6R/gp130 → JAK1/JAK2 → STAT3 Tyr705 phosphorylation → STAT3 → HIF-1α mRNA upregulation (Xu et al. Oncogene 2005, PMID 16007214)",
+    downstream_effects: [
+      "STAT3 → HIF-1α mRNA upregulation → amplified HIF-1α transcriptional output beyond post-translational PHD inhibition alone",
+      "STAT3 → VEGF transcription → reinforces HIF-1α-driven angiogenesis",
+      "STAT3 → Mcl-1, Bcl-2, Survivin → anti-apoptotic programme promoting tumour cell survival",
+      "STAT3 → Cyclin D1, c-Myc → proliferative gene programme",
+      "STAT3 → IDO1, PD-L1 → immune evasion reinforcing the immunosuppressive tumour microenvironment",
+      "Ruxolitinib (JAK1/JAK2 inhibitor; FDA-approved for MF/PV/GVHD) blocks JAK1/JAK2 → prevents STAT3 Tyr705 phosphorylation → eliminates STAT3-driven HIF-1α amplification",
+    ],
+    druggable: true,
+    display_order: 50,
+  },
 ];

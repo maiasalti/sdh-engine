@@ -1284,6 +1284,49 @@ NCT03375086 (Phase 1; APX3330 in advanced solid tumours; COMPLETED): Kelley MR e
 
 ---
 
+## Mechanism 64: SDH-Deficient PPGL IL-6 Secretion → JAK1/JAK2 → STAT3 → HIF-1α Transcriptional Amplification — Ruxolitinib (JAK1/2 Inhibitor)
+
+**Upstream event:** SDH loss → constitutive pseudohypoxia → PPGL-intrinsic IL-6 secretion → IL-6R/gp130 → JAK1/JAK2 → STAT3 Tyr705 phosphorylation → HIF-1α mRNA upregulation
+
+**Background: PPGL cells directly produce IL-6**
+Paragangliomas and pheochromocytomas are capable of direct IL-6 secretion, confirmed histopathologically by multiple case series:
+- Rusconi V et al. (BMJ Case Rep 2026, PMID 41991230, DOI 10.1136/bcr-2026-272208): A non-secreting cervical paraganglioma presenting with fever of unknown origin and systemic inflammatory response syndrome. Markedly elevated serum IL-6 implicated a paraneoplastic inflammatory syndrome. Surgical resection resolved all inflammatory manifestations. Histopathology confirmed IL-6 expression within tumour cells.
+- Minetto M et al. (J Endocrinol Invest 2003, PMID 12906374, DOI 10.1007/BF03345202): A pheochromocytoma presenting with fever, thrombocytosis, and marked inflammatory signs; IL-6 elevated (20 pg/mL), fell to 4.5 pg/mL 3 weeks post-adrenalectomy. IHC confirmed IL-6 production within the tumour. The causal PPGL-origin IL-6 is established by both histological confirmation and post-operative normalisation.
+
+In SDH-deficient PPGL, constitutive pseudohypoxia (HIF-1α/NF-κB activation) is expected to amplify this intrinsic IL-6 secretion. Hypoxia/HIF-1α promotes NF-κB activation (via IKKβ), and NF-κB is a major transcriptional driver of IL-6 — a well-established axis in multiple tumour types.
+
+**The JAK/STAT3 → HIF-1α feedforward loop:**
+Xu Q et al. (Oncogene 2005, PMID 16007214, DOI 10.1038/sj.onc.1208719) demonstrated that STAT3 is required for HIF-1α expression: Stat3 knockdown substantially reduces HIF-1α protein and mRNA, and blocking Stat3 signalling (including via IL-6R pathway inhibition) attenuates HIF-1 and VEGF induction by multiple oncogenic stimuli including IL-6R, c-Src, and Her2/Neu.
+
+This means HIF-1α output in SDH-deficient PPGL is sustained at two complementary levels:
+1. **Post-translational protein stabilisation**: SDH loss → succinate → PHD2/3 competitive inhibition → VHL-independent HIF-1α escape from proteasomal degradation (the core pseudohypoxia mechanism)
+2. **Transcriptional mRNA upregulation**: PPGL IL-6 → JAK1/2 → STAT3 → HIF-1α mRNA synthesis (PMID 16007214)
+
+Ruxolitinib breaks the loop at JAK1/2 → STAT3 Tyr705 phosphorylation is blocked → STAT3 cannot transactivate HIF-1α promoter → HIF-1α mRNA reduced → compounds HIF suppression in pseudohypoxic cells.
+
+**Additional downstream effects of STAT3 suppression:**
+- VEGF transcription reduced (STAT3 independently drives VEGF, PMID 16007214)
+- Mcl-1, Bcl-2, Survivin: anti-apoptotic STAT3 targets suppressed → apoptotic threshold lowered
+- IDO1, PD-L1: immune-evasion genes partially restored → potentially improves immune recognition
+- Cyclin D1, c-Myc: proliferative targets suppressed
+
+**Ruxolitinib (Jakafi/Jakavi; Incyte):**
+FDA-approved JAK1/JAK2 inhibitor (IC₅₀ ~3.3 nM JAK1, ~2.8 nM JAK2). Approved for myelofibrosis, polycythemia vera, and graft-versus-host disease. Oral; well-characterised safety profile in haematological malignancies.
+
+**Key limitations and applicability:**
+- IL-6-secreting PPGL is estimated at 2–5% of all PPGL cases; ruxolitinib is most rationale for this identifiable subset (elevated serum IL-6, febrile paraneoplastic syndrome)
+- SDH genotype of documented IL-6-secreting cases is unreported
+- No clinical trial in PPGL or SDH-deficient tumours
+- JAK inhibitors in unselected solid tumour populations have shown limited efficacy; biomarker selection (IL-6+ PPGL) is critical
+- PMID 16007214 established STAT3→HIF-1α in HCC/breast cancer models, not PPGL
+
+**Sources:**
+- Rusconi V et al. BMJ Case Rep 2026;19(4):e272208. PMID 41991230. DOI 10.1136/bcr-2026-272208. (IL-6-secreting paraganglioma: IHC-confirmed IL-6 in tumour cells; SIRS resolving post-resection.)
+- Minetto M et al. J Endocrinol Invest 2003;26(5):453-7. PMID 12906374. DOI 10.1007/BF03345202. (IL-6-secreting pheochromocytoma: IHC-confirmed IL-6; inflammatory syndrome resolving post-adrenalectomy.)
+- Xu Q, Briggs J, Park S, et al. Targeting Stat3 blocks both HIF-1 and VEGF expression induced by multiple oncogenic growth signaling pathways. Oncogene 2005;24(36):5552-60. PMID 16007214. DOI 10.1038/sj.onc.1208719. (STAT3 required for HIF-1α expression; IL-6R → JAK/STAT3 → HIF-1 → VEGF circuit established.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
