@@ -1245,6 +1245,45 @@ All SDH-deficient subtypes (SDHA, SDHB, SDHC, SDHD) inactivate complex II → el
 
 ---
 
+## Mechanism 63: SDH Loss → Constitutive HIF-1α → APE1/Ref-1 (APEX1) Redox Co-activation Dependency → APX3330
+
+**Pathway slug:** \`apex1-ref1-hif-redox-activation\`
+
+**Core biology:**
+SDH loss raises succinate → PHD2/3 competitive inhibition → VHL escape → constitutive HIF-1α protein stabilisation (canonical SDH-loss pseudohypoxia). However, nuclear HIF-1α protein stability alone is insufficient to drive transcription: the HIF-1α C-terminal transactivation domain (C-TAD) must interact with the transcriptional co-activators CBP (CREB-binding protein) and p300 to recruit the transcriptional machinery. This interaction is gated by the redox state of Cys800 in HIF-1α C-TAD — Cys800 must be in the reduced thiol (−SH) form for the C-TAD/CBP-p300 interaction to occur; an oxidised Cys800 (−S−S− or −SOH) sterically disrupts the binding interface.
+
+APE1/Ref-1 (APEX1 protein; UniProt P27695) is the nuclear enzyme responsible for maintaining Cys800 in the reduced state. Via a thioredoxin-like mechanism centred on its own Cys65, APE1/Ref-1 directly reduces Cys800 in nuclear HIF-1α, enabling HIF-1α/C-TAD/CBP-p300 complex formation and transcription of the full HIF-1α target gene programme (VEGF, GLUT1, EPO, PDK1, LDHA, and ~200 additional hypoxia-responsive genes). Gangwar P et al. (Biochem Biophys Res Commun 2026, PMID 42476069, DOI 10.1016/j.bbrc.2026.154290), reviewing thiol-system redox regulation of transcription factors, document that APE1/Ref-1 activates HIF-1α by mediating thiol reduction of HIF-1α Cys800, confirming the established mechanistic basis for the Ref-1 co-activation step.
+
+**Why this creates a specific vulnerability in SDH-deficient tumours:**
+In SDH-deficient tumours with constitutive HIF-1α stabilisation, the APE1/Ref-1 Cys65/HIF-1α Cys800 reduction step is chronically, maximally demanded. Normal cells under physiological oxygen experience HIF-1α protein primarily in the cytoplasm (undergoing PHD-mediated hydroxylation and VHL-mediated proteasomal degradation); the nuclear APE1/Ref-1 → HIF-1α Cys800 co-activation step is thus only transiently required. In SDH-deficient tumours, HIF-1α protein is continuously stabilised and continuously nuclear, creating a sustained, high-flux dependency on APE1/Ref-1 Cys65 → Cys800 reduction that is not replicated in normal tissue. This constitutes a synthetic dependency: the same SDH-loss pseudohypoxia mechanism that drives tumour growth becomes a point of redox-co-activation vulnerability selectively in tumour cells.
+
+A second compounding factor: Guzy RD et al. (Mol Cell Biol 2008, PMID 17967865) demonstrated that SDHB/C/D-deficient cells produce constitutively elevated normoxic ROS via retrograde (reverse) electron flow from complex I when complex II electron transfer is blocked. These tumour cells operate under chronic oxidative stress, placing higher demand on all thioredoxin-pathway enzymes, including APE1/Ref-1. APX3330, by inhibiting APE1/Ref-1 Ref-1 function, hits a node that is more critically loaded in SDHB/C/D-deficient tumour cells than in normal cells — amplifying its context-specific effect.
+
+**APX3330 mechanism of action:**
+APX3330 (E3330; Apexian Pharmaceuticals / Indiana University, Kelley MR / Fishel ML group) is a selective, orally bioavailable inhibitor of APE1/Ref-1 redox function. It binds APE1 and blocks the Cys65-mediated reduction of transcription factor cysteine residues WITHOUT inhibiting APE1's separate DNA BER/AP endonuclease activity. This pharmacological dissociation of APE1's two functions is the key selectivity property: APX3330 suppresses HIF-1α (Cys800), AP-1 (FOS/JUN), NF-κB (p50 Cys62), STAT3, CREB, and PAX-8 transcriptional activity while leaving BER intact, limiting genotoxic liability in normal cells. APX3330 is thus not a DNA damage agent but a transcriptional co-activation inhibitor operating at the redox biology interface.
+
+**Mechanistic distinction from other HIF-pathway entries in this engine:**
+- **belzutifan** (HIF-2α/ARNT heterodimerisation inhibitor): targets HIF-2α protein; APX3330 targets HIF-1α (and HIF-2α via analogous cysteine mechanism) at the Cys800 reduction step
+- **ganetespib** (HSP90 inhibitor): destabilises HIF-1α/2α protein stability (among many HSP90 clients); operates at the protein stability level, upstream of the nuclear co-activation step
+- **alisertib** (AURKA inhibitor): AURKA acts as a nuclear co-activator via direct protein–protein interaction with HIF-1α/HIF-2α; kinase-mediated, not redox-mediated
+- **CCS1477** (p300/CBP bromodomain inhibitor): blocks p300/CBP's recognition of acetylated histone tails at HIF target gene promoters; operates at the chromatin reader step, downstream of HIF-1α C-TAD/CBP-p300 interaction; APX3330 acts upstream, blocking the prerequisite Cys800 reduction step
+- **APX3330 (this entry)**: uniquely targets the cysteine reduction gating step that precedes and enables C-TAD/CBP-p300 assembly — mechanistically non-redundant with all other HIF-pathway drugs in the engine
+
+**Applicability by subtype:**
+The pseudohypoxic mechanism (SDH loss → succinate → PHD inhibition → constitutive HIF-1α) is shared across all SDH-deficient subtypes (SDHA, SDHB, SDHC, SDHD). The constitutive nuclear HIF-1α → APE1/Ref-1 dependency is therefore mechanistically applicable to all SDH-deficient tumour types: GIST (including SDHA-deficient GIST, the engine owner's tumour), PPGL/PCC, and SDH-deficient RCC. The additional elevated-ROS dimension applies most strongly to SDHB/C/D-deficient subtypes (Guzy 2008, PMID 17967865), but SDHA-deficient cells share constitutive HIF-1α stabilisation and the Cys800-reduction dependency.
+
+**APX3330 clinical development:**
+NCT03375086 (Phase 1; APX3330 in advanced solid tumours; COMPLETED): Kelley MR et al. The Oncologist 2026, PMID 41423797, DOI 10.1093/oncolo/oyaf423. n=19 evaluable; RP2D 600 mg/day oral BID; 6/19 (32%) stable disease; no treatment-related SAEs; DLT grade 3 maculopapular rash at 720 mg/day (1/6 at that dose level). The oral BID schedule, absence of SAEs at RP2D, and established Phase 1 tolerability support feasibility for SDH-deficient tumour investigation. No SDH-specific tumour cohort or preclinical APX3330 + SDH-deficient model data exist as of October 2026.
+
+**Sources:**
+- Gangwar P, Yadav B, Verma H, et al. Deciphering the role of human thiol systems (Trx/Grx) in the transcriptional regulation: an emphasis on the role of thiol enzymes with the multifunctional APE1/Ref-1 enzyme in human health and diseases. Biochem Biophys Res Commun 2026;831:154290. PMID 42476069. DOI 10.1016/j.bbrc.2026.154290. (Review documenting that APE1/Ref-1 activates HIF-1α by mediating thiol reduction of Cys800. Mechanistic anchor for the Ref-1 → HIF-1α co-activation step.)
+- Kelley MR, Wikel JH, Guo C, Pollok KE, Bailey BJ, Wireman R, Fishel ML, Vasko MR. Identification and characterization of new chemical entities targeting apurinic/apyrimidinic endonuclease 1 for the prevention of chemotherapy-induced peripheral neuropathy. J Pharmacol Exp Ther 2016;359(2):300-309. PMID 27608656. (APE1/Ref-1 redox-inhibitor pharmacology and selectivity — Ref-1 inhibition without BER inhibition.)
+- Kelley MR et al. First-in-human phase I clinical trial of APX3330 (E3330), a selective APE1/Ref-1 redox inhibitor, in patients with advanced solid tumors. The Oncologist 2026;31(2). PMID 41423797. DOI 10.1093/oncolo/oyaf423. (Phase 1 clinical trial; RP2D 600 mg/day; safety, tolerability, stable disease.)
+- Guzy RD, Sharma B, Bell E, Chandel NS, Schumacker PT. Loss of the SdhB, but Not the SdhA, subunit of complex II triggers reactive oxygen species-dependent hypoxia-inducible factor activation and tumorigenesis. Mol Cell Biol 2008;28(2):718-731. PMID 17967865. (SDHB/C/D-deficient cells → elevated normoxic ROS via complex I reverse electron flow. Second mechanistic anchor for elevated APEX1 dependency.)
+- NCT03375086 (Phase 1 APX3330; advanced solid tumours; COMPLETED): clinical anchor confirming compound reached Phase 1 with established RP2D.
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

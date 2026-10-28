@@ -91,4 +91,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "sdh-coq-ferroptosis-sensitization": "bg-amber-300 text-amber-950 dark:bg-amber-700 dark:text-amber-50",
   "sdh-brcaness-wee1-g2m-checkpoint": "bg-red-300 text-red-950 dark:bg-red-700 dark:text-red-50",
   "hif-furin-tgfbeta-immunosuppression": "bg-lime-300 text-lime-950 dark:bg-lime-700 dark:text-lime-50",
+  "apex1-ref1-hif-redox-activation": "bg-indigo-300 text-indigo-950 dark:bg-indigo-700 dark:text-indigo-50",
 };

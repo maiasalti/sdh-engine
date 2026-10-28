@@ -2595,3 +2595,65 @@ All other candidate directions confirmed already handled or ruled out in prior r
 |------|--------|
 | `tracker.md` | Appended row for PMID 42923952 (rejected) |
 | `MORNING_LOG.md` | This entry |
+
+---
+
+## 2026-10-27 — Mechanism 63: APE1/Ref-1 (APEX1) Redox Co-activation of HIF-1α → APX3330
+
+### Part A — PubMed scan (Step 1)
+
+**Search window:** July–October 2026 (new papers not already in papers.ts or tracker.md)
+
+Searches performed (all 12 returned no qualifying new papers):
+1. `SDH GIST paraganglioma pheochromocytoma drug 2026` — 0 new qualifying
+2. `succinate dehydrogenase HIF drug repurposing 2026` — 0 new qualifying
+3. `SDHA SDHB SDHC SDHD cancer treatment 2026` — 0 new qualifying
+4. `pseudohypoxia HIF-2alpha cancer therapy 2026` — 0 new qualifying
+5. `SDH deficient tumor immunotherapy 2026` — 0 new qualifying
+6. `succinate oncometabolite epigenetics drug 2026` — 0 new qualifying
+7. `BRCAness homologous recombination deficiency synthetic lethality PARP 2026` — 0 new qualifying
+8. `APE1 Ref-1 APEX1 cancer HIF thiol reduction 2026` — returned PMID 42476069 (Gangwar P et al., Biochem Biophys Res Commun 2026;831:154290, DOI 10.1016/j.bbrc.2026.154290) — outside July 2026 window; used as mechanistic anchor, not added to papers.ts
+9. `APX3330 E3330 APE1 Ref-1 redox inhibitor clinical 2026` — returned PMID 41423797 (Kelley MR et al., The Oncologist 2026;31(2), DOI 10.1093/oncolo/oyaf423) — outside July 2026 window (2026-01-17); used as clinical anchor, not added to papers.ts
+10. `VEGF angiogenesis SDH tumor targeted therapy 2026` — 0 new qualifying
+11. `glutaminolysis reductive carboxylation SDH cancer 2026` — 0 new qualifying
+12. `TERT telomerase ALT ATRX PPGL drug 2026` — 0 new qualifying
+
+**Result:** 0 papers added to papers.ts. 3 PMIDs logged to tracker.md as evaluated (42476069, 41423797, 31413178 — all outside window or non-SDH-specific).
+
+### Part B — Direction: APE1/Ref-1 (APEX1) Redox Inhibition via APX3330 (Step 2 → 3)
+
+**New direction selected:** Mechanism 63 — APE1/Ref-1 (APEX1) redox co-activation of HIF-1α, targeted by APX3330 (E3330).
+
+**Uniqueness check (verified against all prior MORNING_LOG entries 2026-09-26 through 2026-10-26):**
+APE1, APEX1, Ref-1, APX3330, E3330 — none of these names appear anywhere in any prior MORNING_LOG entry. Confirmed new.
+
+**Hard relevance gate check:**
+- Anchor 1 (pseudohypoxia/HIF pathway, direct): PMID 42476069 (Gangwar P et al. 2026) directly demonstrates APE1/Ref-1 activates HIF-1α by mediating thiol reduction of Cys800. SDH loss → constitutive HIF-1α → chronic dependency on APE1/Ref-1 Cys65 redox co-activation. The constitutive pseudohypoxia of SDH-deficient tumours is a *standing, high-output* dependency on this step, unlike normal tissues where it is only transiently needed.
+- Anchor 2 (mitochondrial/redox vulnerability, direct): PMID 17967865 (Guzy RD et al. 2008) directly demonstrates SDHB/C/D-deficient cells produce constitutively elevated normoxic ROS, loading the thioredoxin/APE1/Ref-1 redox node beyond normal. APX3330 hits a more critically loaded node.
+- Clinical anchor: PMID 41423797 (Kelley MR et al. The Oncologist 2026) confirms NCT03375086 (Phase 1) completed; RP2D 600 mg/day oral BID; 6/19 stable disease; no treatment-related SAEs.
+
+**Distinction from existing HIF entries:**
+- belzutifan: HIF-2α/ARNT heterodimerisation (protein–protein interaction); targets protein step after co-activation
+- ganetespib: HSP90 → HIF-1α/2α protein stability; upstream of nuclear step
+- alisertib: AURKA → HIF-1α nuclear co-activation via kinase interaction; different co-activator protein
+- CCS1477: p300/CBP bromodomain → chromatin acetylation reading; downstream of the Cys800 reduction step that APX3330 targets
+- **APX3330**: uniquely targets the Cys800 thiol-reduction gating step — prerequisite for CBP/p300 C-TAD binding; mechanistically non-redundant
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `src/data/seed/pathways.ts` | Added pathway `apex1-ref1-hif-redox-activation` (display_order 49) |
+| `src/data/seed/targets.ts` | Added target APEX1 (UniProt P27695, pathway_slug `apex1-ref1-hif-redox-activation`) |
+| `src/data/seed/drugs.ts` | Added APX3330 (evidence_score 23, theoretical, NCT03375086, pathway_slugs `apex1-ref1-hif-redox-activation` + `hif-pseudohypoxia`) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 63 (APE1/Ref-1 redox co-activation of HIF-1α → APX3330) |
+| `src/lib/scoring/constants.ts` | Added PATHWAY_COLORS entry for `apex1-ref1-hif-redox-activation` (bg-indigo-300) |
+| `tracker.md` | Appended rows for PMIDs 42476069, 41423797, 31413178 (all rejected from papers.ts; used as mechanistic/clinical anchors) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after this run:** 72 drugs, 63 mechanisms, last pathway display_order 49
+
+**Rejection log (candidates explicitly ruled out this run):**
+- All drugs evaluated 2026-10-23 through 2026-10-26 remain excluded (see prior entries)
+- No new drug candidates evaluated and rejected today beyond the selected APX3330 direction
+

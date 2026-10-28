@@ -806,4 +806,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 48,
   },
+  {
+    name: "APE1/Ref-1 Redox Co-activation of HIF-1α (APEX1 Cys65 → HIF-1α Cys800 Reduction)",
+    slug: "apex1-ref1-hif-redox-activation",
+    description:
+      "SDH loss → constitutive HIF-1α stabilisation (pseudohypoxia) → elevated nuclear HIF-1α requires Cys800 in the C-terminal transactivation domain (C-TAD) to be in the reduced thiol state for interaction with the co-activators CBP/p300; APE1/Ref-1 (APEX1) mediates this reduction via its redox function (Cys65), enabling HIF-1α-driven transcription. In SDH-deficient tumours, constitutive HIF-1α stabilisation creates a chronic dependency on APE1/Ref-1 redox activity to maintain HIF-1α transcriptional output. APX3330 (E3330) selectively inhibits APE1/Ref-1 redox function without affecting its DNA repair (BER) activity.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → constitutive HIF-1α stabilisation → HIF-1α C-TAD Cys800 requires reduction by APE1/Ref-1 (APEX1 Cys65 thioredoxin-like mechanism) → reduced HIF-1α Cys800 → interaction with CBP/p300 → HIF-1α target gene transcription [Gangwar P et al. Biochem Biophys Res Commun 2026, PMID 42476069 (review): APE1/Ref-1 activates HIF-1α by mediating thiol reduction of Cys800]",
+    downstream_effects: [
+      "HIF-1α Cys800 reduction by APE1/Ref-1 → HIF-1α C-TAD/CBP-p300 interaction → transcription of VEGF, GLUT1, EPO, PDK1, and full HIF-1α target gene programme",
+      "APX3330 (APE1/Ref-1 redox inhibitor) blocks Cys65-mediated reduction of HIF-1α Cys800 → C-TAD/CBP-p300 interaction lost → HIF-1α transcriptional output suppressed despite continued HIF-1α protein stabilisation",
+      "APE1/Ref-1 redox function also activates AP-1 (FOS/JUN), NF-κB, STAT3, CREB, PAX-8 by reducing their cysteine residues → APX3330 broadly attenuates nuclear redox-regulated transcription",
+      "SDH-deficient cells with constitutive HIF-1α show chronic dependence on APE1/Ref-1 redox co-activation → elevated APEX1 expression/activity creates a context-specific vulnerability to APX3330",
+      "Synergy with elevated ROS in SDHB/C/D-deficient tumours (Guzy RD et al. Mol Cell Biol 2008, PMID 17967865): redox-stressed cells have elevated thioredoxin pathway demand → APX3330 blockade of APE1/Ref-1 hits a more critically loaded redox node",
+    ],
+    druggable: true,
+    display_order: 49,
+  },
 ];
