@@ -622,6 +622,24 @@ export const SEED_TARGETS: SeedTarget[] = [
       "TGFBR1 (TGF-β receptor type I; ALK5; UniProt P36897) is a transmembrane serine/threonine kinase receptor that, when bound by active TGF-β1 in complex with TGFBR2, is transphosphorylated and in turn phosphorylates the intracellular signalling mediators SMAD2 and SMAD3. Phospho-SMAD2/3 heterodimerises with SMAD4 and translocates to the nucleus to drive transcription of immune-exclusion and stromal-remodelling genes. In SDH-deficient pseudohypoxic tumours, the pathway is constitutively primed by HIF-1α-driven furin overexpression: furin proteolytically activates latent pro-TGF-β1 to active TGF-β1 (McMahon et al., J Biol Chem 2005, PMID 15611046), creating a constitutive TGFBR1/SMAD2/3 signalling loop. Galunisertib (LY2157299) is a selective, ATP-competitive TGFBR1 kinase inhibitor (IC₅₀ ~56 nM) that blocks SMAD2/3 phosphorylation and abrogates the entire downstream immune-exclusion programme. Completed Phase 2 clinical trials in hepatocellular carcinoma (NCT01246986) and glioblastoma (NCT01722825) established tolerability and target engagement, using an intermittent 2-week on / 2-week off schedule to manage a class-related cardiac safety signal associated with continuous dosing.",
   },
   {
+    gene_symbol: "JAK1",
+    uniprot_id: "P23458",
+    name: "Tyrosine-protein kinase JAK1",
+    pathway_slug: "ppgl-il6-jak-stat3-hif-amplification",
+    target_type: "downstream",
+    description:
+      "JAK1 (Janus kinase 1; UniProt P23458) is a receptor-associated non-receptor tyrosine kinase constitutively bound to the cytoplasmic domain of IL-6 receptor family members (gp130/IL6ST) and interferon receptors. Upon IL-6 binding to the IL-6R/gp130 complex, JAK1 transphosphorylates JAK2 and phosphorylates gp130 Tyr residues, creating docking sites for STAT3 SH2 domains → JAK1 phosphorylates STAT3 at Tyr705 → STAT3 dimerises, translocates to the nucleus, and drives transcription of HIF-1α, VEGF, Mcl-1, Cyclin D1, and other oncogenic targets. Xu et al. (Oncogene 2005, PMID 16007214) established that STAT3 is required for HIF-1α expression, creating a feedforward loop in IL-6-secreting PPGL: SDH loss → pseudohypoxia → IL-6 secretion → JAK1 → STAT3 → more HIF-1α mRNA. Ruxolitinib (Jakafi; Incyte) is a competitive ATP-site JAK1/JAK2 inhibitor (IC₅₀ ~3.3 nM JAK1) that blocks STAT3 phosphorylation; FDA-approved for myelofibrosis, polycythemia vera, and GVHD.",
+  },
+  {
+    gene_symbol: "JAK2",
+    uniprot_id: "O60674",
+    name: "Tyrosine-protein kinase JAK2",
+    pathway_slug: "ppgl-il6-jak-stat3-hif-amplification",
+    target_type: "downstream",
+    description:
+      "JAK2 (Janus kinase 2; UniProt O60674) is a non-receptor tyrosine kinase that pairs with JAK1 in the IL-6/gp130/STAT3 signalling complex. In PPGL, IL-6 secreted directly by tumour cells (confirmed by IHC: Rusconi et al. BMJ Case Rep 2026, PMID 41991230; Minetto et al. J Endocrinol Invest 2003, PMID 12906374) signals through gp130 → JAK1/JAK2 tandem kinases → STAT3 Tyr705 phosphorylation. STAT3 then amplifies HIF-1α transcription (Xu et al. Oncogene 2005, PMID 16007214), reinforcing the pseudohypoxic state in SDH-deficient PPGL. Ruxolitinib inhibits JAK1 and JAK2 with comparable potency (IC₅₀ ~2.8 nM JAK2), abrogating IL-6-driven STAT3 phosphorylation and breaking the IL-6 → JAK/STAT3 → HIF-1α amplification loop.",
+  },
+  {
     gene_symbol: "APEX1",
     uniprot_id: "P27695",
     name: "DNA-(apurinic or apyrimidinic site) endonuclease / Redox effector factor 1 (APE1/Ref-1)",

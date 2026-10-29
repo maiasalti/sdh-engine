@@ -2656,3 +2656,56 @@ APE1, APEX1, Ref-1, APX3330, E3330 — none of these names appear anywhere in an
 **Rejection log (candidates explicitly ruled out this run):**
 - All drugs evaluated 2026-10-23 through 2026-10-26 remain excluded (see prior entries)
 - No new drug candidates evaluated and rejected today beyond the selected APX3330 direction
+
+---
+
+## 2026-10-28 — Mechanism 64: PPGL IL-6 → JAK1/JAK2 → STAT3 → HIF-1α Transcriptional Amplification → Ruxolitinib
+
+### Part A — PubMed scan (Step 1)
+
+**Search window:** July–October 2026 (new papers not already in papers.ts or tracker.md)
+
+Searches performed:
+1. `SDH succinate HIF pseudohypoxia drug therapy 2026` — 0 results
+2. `paraganglioma pheochromocytoma treatment clinical trial 2026` — returned PMIDs 42847129 (already in tracker), 42490294 (already in tracker), 42481355 (already in tracker), 42343339, 41987178, 41139182, 41043170 — older PMIDs excluded, no new qualifying papers
+3. `GIST gastrointestinal stromal tumor SDH imatinib resistance 2026` — returned PMIDs 42762362 (already in tracker: logged 2026-10-17, rejected), 42544736 (already in tracker), 42416402, 42080642, 41664736, 41553644 — no new qualifying papers
+4. `succinate oncometabolite tumor immunity immunosuppression T cell exhaustion 2026` — returned PMID 42587830 (already in tracker: logged 2026-09-04, rejected as broad TME review)
+5. `atovaquone cancer mitochondria complex III OXPHOS tumor` — returned older papers (PMIDs 40176088, 37736880, 35332210, 27136895); no qualifying new papers in window
+6. `pheochromocytoma paraganglioma interleukin-6 IL-6 fever paraneoplastic` — returned PMID 41991230 (BMJ Case Rep 2026-04-16; outside July 2026 window; logged to tracker as evaluated, used as mechanistic anchor for Mechanism 64)
+7. `HIF-1alpha IL-6 transcription hypoxia JAK STAT3 cancer signaling` — returned PMID 27734596, 16007214 — both outside window; 16007214 used as mechanistic anchor for Mechanism 64
+
+**Result:** 0 papers added to papers.ts. 1 new PMID logged to tracker.md (41991230: outside window, used as Part B anchor).
+
+### Part B — Direction: PPGL IL-6 → JAK1/JAK2 → STAT3 → HIF-1α Amplification Loop → Ruxolitinib (Step 2 → 3)
+
+**New direction selected:** Mechanism 64 — PPGL-intrinsic IL-6 secretion drives a JAK1/2 → STAT3 → HIF-1α transcriptional amplification loop, targeted by ruxolitinib.
+
+**Uniqueness check (verified against all prior MORNING_LOG entries 2026-09-22 through 2026-10-27):**
+JAK, JAK1, JAK2, STAT3, ruxolitinib, Jakafi, IL-6, interleukin-6 — none of these names appear as a drug direction in any prior entry. JAK/STAT3 is mentioned in passing in mechanism descriptions for plerixafor (CXCR4 downstream signaling) and APX3330 (STAT3 as one of several APE1/Ref-1 substrates), but never as a primary therapeutic direction. Confirmed new.
+
+**Hard relevance gate check:**
+- Anchor 1 (PPGL directly secretes IL-6 — SDH-relevant context): PMID 41991230 (Rusconi et al. BMJ Case Rep 2026): IHC-confirmed IL-6 expression in paraganglioma tumour cells; SIRS resolving post-resection. PMID 12906374 (Minetto et al. J Endocrinol Invest 2003): IHC-confirmed IL-6 in pheochromocytoma; inflammatory syndrome + elevated IL-6 resolving post-adrenalectomy. The causal tumour-origin IL-6 is established by both cases.
+- Anchor 2 (STAT3 → HIF-1α, solid mechanistic link): PMID 16007214 (Xu et al. Oncogene 2005): STAT3 is required for HIF-1α expression; Stat3 knockdown reduces HIF-1α protein and mRNA; IL-6R → JAK/STAT3 → HIF-1 circuit demonstrated. This creates a feedforward loop: SDH loss → pseudohypoxia → PPGL IL-6 → JAK/STAT3 → more HIF-1α mRNA (amplifying the post-translational stabilisation from PHD inhibition).
+- Drug: ruxolitinib (FDA-approved JAK1/2 inhibitor; IC₅₀ ~3.3 nM JAK1, ~2.8 nM JAK2; approved for MF/PV/GVHD).
+
+**Distinction from existing HIF entries:**
+All existing HIF-targeting drugs in the engine act at protein stabilisation (PHD/VHL), protein stability (HSP90/ganetespib), kinase co-activation (AURKA/alisertib), redox co-activation (APE1/APX3330), or CBP/p300 bromodomain (CCS1477). None targets the IL-6 → JAK/STAT3 → HIF-1α transcriptional mRNA arm. Ruxolitinib uniquely blocks the upstream kinase that phosphorylates STAT3 Tyr705 — a non-redundant HIF suppression mechanism.
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `src/data/seed/pathways.ts` | Added pathway `ppgl-il6-jak-stat3-hif-amplification` (display_order 50) |
+| `src/data/seed/targets.ts` | Added targets JAK1 (UniProt P23458) and JAK2 (UniProt O60674), pathway_slug `ppgl-il6-jak-stat3-hif-amplification` |
+| `src/data/seed/drugs.ts` | Added Ruxolitinib (evidence_score 19, theoretical, tumor_type_applicability `ppgl`, pathway_slugs `ppgl-il6-jak-stat3-hif-amplification` + `hif-pseudohypoxia`) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 64 (PPGL IL-6 → JAK/STAT3 → HIF-1α amplification → ruxolitinib) |
+| `src/lib/scoring/constants.ts` | Added PATHWAY_COLORS entry for `ppgl-il6-jak-stat3-hif-amplification` (bg-sky-300) |
+| `tracker.md` | Appended PMID 41991230 (rejected from papers.ts: outside July 2026 window; used as Mechanism 64 anchor) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after this run:** 73 drugs, 64 mechanisms, last pathway display_order 50
+
+**Rejection log (candidates explicitly ruled out this run):**
+- Atovaquone/Complex III: PMID 40176088 (Cell Commun Signal 2025) showed atovaquone activates ISR (PERK/eIF2α) as a resistance mechanism, reducing therapeutic value; mechanism overlaps with existing CoQ/mitochondrial directions; ruled out
+- HCQ/autophagy: hydroxychloroquine already in engine (confirmed by grep); ruled out
+- CXCR4/plerixafor: already in engine (confirmed by grep at line 843 of drugs.ts); ruled out

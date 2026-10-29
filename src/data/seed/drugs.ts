@@ -1333,4 +1333,26 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT03375086"],
   },
+  {
+    name: "Ruxolitinib",
+    brand_names: ["Jakafi", "Jakavi"],
+    chembl_id: "CHEMBL1789941",
+    pubchem_cid: "25126798",
+    drug_class: "JAK1/JAK2 inhibitor (ATP-competitive)",
+    mechanism_of_action:
+      "Ruxolitinib (Jakafi/Jakavi; Incyte) is a competitive, ATP-site inhibitor of JAK1 and JAK2 (IC₅₀ ~3.3 nM JAK1, ~2.8 nM JAK2 in biochemical assays), FDA-approved for myelofibrosis, polycythemia vera, and chronic/acute graft-versus-host disease. By blocking JAK1/JAK2 kinase activity, ruxolitinib prevents phosphorylation of STAT3 at Tyr705, abrogating STAT3 dimerisation, nuclear translocation, and transcriptional activity.\n\nSDH-deficient PPGL mechanistic rationale:\nParagangliomas and pheochromocytomas directly secrete IL-6. This has been confirmed histopathologically and biochemically: Rusconi et al. (BMJ Case Rep 2026, PMID 41991230, DOI 10.1136/bcr-2026-272208) reported a non-secreting cervical paraganglioma with IHC-confirmed IL-6 expression within tumour cells presenting as fever of unknown origin and SIRS, resolving post-resection; Minetto et al. (J Endocrinol Invest 2003, PMID 12906374, DOI 10.1007/BF03345202) documented IHC-confirmed IL-6 production by a pheochromocytoma with complete post-adrenalectomy resolution of inflammatory markers and elevated serum IL-6.\n\nThe mechanistic importance of this IL-6/JAK/STAT3 axis in SDH-deficient PPGL rests on a feedforward amplification loop. Xu et al. (Oncogene 2005, PMID 16007214, DOI 10.1038/sj.onc.1208719) demonstrated that STAT3 is required for both basal and growth-signal-induced HIF-1α expression: Stat3 knockdown substantially reduces HIF-1α protein and mRNA; IL-6R → JAK/STAT3 is among the upstream activators driving HIF-1 in tumour cells. In SDH-deficient PPGL, the circuit operates as: SDH loss → succinate → PHD inhibition → constitutive HIF-1α protein stabilisation (the primary pseudohypoxia mechanism) → pro-inflammatory/pseudohypoxic state → PPGL-intrinsic IL-6 secretion → IL-6R/gp130 → JAK1/2 → STAT3 → additional HIF-1α mRNA transcription (PMID 16007214) → feedforward amplification. Ruxolitinib blocks JAK1/2 → suppresses STAT3 → reduces HIF-1α mRNA → compounds the HIF-suppressive effect on the pseudohypoxic transcriptional programme.\n\nDownstream STAT3 targets beyond HIF-1α add further anti-tumour rationale in PPGL: VEGF (angiogenesis), Mcl-1/Bcl-2/Survivin (anti-apoptotic), IDO1/PD-L1 (immune evasion), Cyclin D1/c-Myc (proliferative).\n\nMechanistic distinctions:\n- APX3330 (APE1/Ref-1): suppresses STAT3 co-activation by blocking cysteine reduction (redox mechanism), not JAK-mediated Tyr705 phosphorylation — mechanistically distinct, different node of STAT3 inhibition\n- galunisertib (TGFBR1): targets HIF-1α → TGF-β1 immune exclusion arm via SMAD signalling, not JAK/STAT3\n- All other HIF-pathway drugs in the engine operate at protein stabilisation or co-activation level, none targeting the IL-6 → JAK/STAT3 → HIF-1α mRNA amplification arm\n\nKey limitations: (1) IL-6-secreting PPGL represents an estimated 2–5% of all PPGL; applicability is restricted to this subtype, identifiable by elevated serum IL-6 and febrile paraneoplastic syndrome. (2) No clinical trial of ruxolitinib in PPGL or any SDH-deficient tumour. (3) SDH genotype of documented IL-6-secreting cases (PMID 41991230, 12906374) is unreported. (4) Ruxolitinib has shown limited efficacy in solid tumour clinical trials in unselected populations. (5) PMID 16007214 established STAT3→HIF-1α in HCC and breast cancer models, not PPGL. Evidence_score 19 (theoretical) reflects a valid 2-anchor mechanistic chain (IL-6 in PPGL histopathologically confirmed × STAT3→HIF-1α established by Xu et al.) offset by no SDH-deficient PPGL-specific pharmacological data.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/41991230/ ; https://pubmed.ncbi.nlm.nih.gov/12906374/ ; https://pubmed.ncbi.nlm.nih.gov/16007214/",
+    fda_approved: true,
+    approved_indications: [
+      "Myelofibrosis (primary, post-polycythemia vera, post-essential thrombocythemia; FDA-approved Nov 2011)",
+      "Polycythemia vera in patients with inadequate response or intolerance to hydroxyurea (FDA-approved Dec 2014)",
+      "Acute graft-versus-host disease in patients ≥12 years (FDA-approved May 2019)",
+      "Chronic graft-versus-host disease after failure of ≥1 line of systemic therapy (FDA-approved Sep 2021)",
+    ],
+    pathway_slugs: ["ppgl-il6-jak-stat3-hif-amplification", "hif-pseudohypoxia"],
+    target_gene_symbols: ["JAK1", "JAK2"],
+    evidence_score: 19,
+    status: "theoretical",
+    tumor_type_applicability: ["ppgl"],
+    clinical_trial_ids: [],
+  },
 ];
