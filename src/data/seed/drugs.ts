@@ -435,8 +435,8 @@ export const SEED_DRUGS: SeedDrug[] = [
   {
     name: "Epacadostat",
     brand_names: ["INCB024360"],
-    chembl_id: "CHEMBL3301978",
-    pubchem_cid: "25151352",
+    chembl_id: "CHEMBL3545369",
+    pubchem_cid: "135564890",
     drug_class: "IDO1 inhibitor (indoleamine 2,3-dioxygenase 1 inhibitor)",
     mechanism_of_action:
       "Selective, orally bioavailable inhibitor of IDO1 (indoleamine 2,3-dioxygenase 1), the rate-limiting enzyme converting tryptophan to kynurenine. In SDH-deficient tumors, the pseudohypoxic HIF-1α program (sustained by succinate-mediated PHD inhibition) drives IDO1 upregulation; aberrant kynurenine pathway activity was confirmed in metastatic SDHB-driven pheochromocytoma/paraganglioma by multi-omics profiling (Zhou et al., Hormones Athens 2026, PMID: 42230482). Kynurenine depletes the essential amino acid tryptophan from the TME, starving T cells, while kynurenine metabolites directly bind aryl hydrocarbon receptor (AhR) in T cells to drive their exhaustion and expand immunosuppressive FoxP3+ regulatory T cells. Epacadostat blocks IDO1 activity, potentially reversing this kynurenine-driven immune suppression in SDH-deficient tumors. Extensive Phase 1/2 clinical data for epacadostat exists in solid tumors (INCB24360-201, NCT02318277). Critical limitation: the Phase 3 ECHO-301 trial of epacadostat + pembrolizumab versus pembrolizumab alone failed in melanoma (Perez et al., J Clin Oncol 2019; DOI: 10.1200/JCO.18.01174), raising serious doubts about IDO1 inhibition as a monotherapy or checkpoint-combination strategy in broadly unselected patients. The SDH-deficient context may be different — IDO1 upregulation here is mechanistically driven by the constitutive pseudohypoxic HIF-1α program rather than interferon-γ induction, and the T-cell suppressive TME is confirmed by orthogonal evidence (PMID 35977513) — but dedicated preclinical validation in SDH-deficient models is absent.",
