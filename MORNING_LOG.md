@@ -2709,3 +2709,65 @@ All existing HIF-targeting drugs in the engine act at protein stabilisation (PHD
 - Atovaquone/Complex III: PMID 40176088 (Cell Commun Signal 2025) showed atovaquone activates ISR (PERK/eIF2α) as a resistance mechanism, reducing therapeutic value; mechanism overlaps with existing CoQ/mitochondrial directions; ruled out
 - HCQ/autophagy: hydroxychloroquine already in engine (confirmed by grep); ruled out
 - CXCR4/plerixafor: already in engine (confirmed by grep at line 843 of drugs.ts); ruled out
+
+---
+
+## 2026-10-29 — Papers-only scan; no new qualifying papers or drug directions
+
+### Part A — PubMed scan (window: 2026-07-29 to 2026-10-29)
+
+24 queries executed across SDH-deficient GIST, PPGL/PCC, HIF pseudohypoxia, succinate epigenetics, mitochondrial/redox, BRCAness, ferroptosis, glutaminolysis, m6A RNA methylation, and PHGDH/serine synthesis topics.
+
+**All returned PMIDs were already logged in tracker.md from prior sessions.** New PMIDs encountered during today's scan:
+
+| PMID | Status |
+|------|--------|
+| 42554827 | Already in papers.ts (added prior run — SDHx-specific SSTR-PET phenotype, Imperiale A et al., Eur J Nucl Med 2026-08-05) |
+| 42758527 | Already in papers.ts (added prior run — plasma succinate biomarker, Cole YC et al., Endocr Relat Cancer 2026-10-01) |
+| 42611605 | Already in papers.ts (added prior run — pediatric SDHA-deficient GIST with retained SDHB IHC, Tanimura R et al., J Pediatr Hematol Oncol 2026-08-18) |
+| 42847129, 42621358, 42544736, 41985045, 42923952, 42687764, 42489911, 42650014 | Already in tracker.md (previously evaluated and rejected) |
+
+**Papers added to `src/data/papers.ts`:** 0
+**New tracker entries:** 0 (all encountered PMIDs pre-existing in tracker.md or papers.ts)
+
+### Part B — Direction evaluation
+
+Engine state entering this run: 73 drugs, 64 mechanisms, last pathway display_order 50.
+
+The following candidate directions were evaluated against the HARD RELEVANCE GATE. All rejected:
+
+**PHGDH / NCT-502 (serine synthesis):**
+PubMed returned 0 hits connecting PHGDH or serine synthesis vulnerability to SDH-deficient tumor models. No published SDH-specific anchor exists. Direction fails gate; remains an unresolved research lead (noted in prior runs 2026-10-09, 2026-10-10).
+
+**Mitochondrial Complex I / IACS-010759:**
+The hypothesis — SDH-deficient cells lose Complex II and may depend more heavily on Complex I for NADH oxidation, making them synthetically sensitive to Complex I inhibition — was not supported by any published SDH-specific evidence. PubMed returned 0 hits for IACS-010759 (or metformin/phenformin) in SDH-deficient tumor models. The opposite logic also holds: Mullen et al. (PMID 22101431) demonstrated SDH-deficient cells rely on reductive carboxylation of glutamine rather than oxidative OXPHOS, suggesting these cells may have already downregulated Complex I-driven OXPHOS. The direction remains mechanistically equivocal without direct published evidence. Direction fails gate.
+
+**ASS1 / pegargiminase (ADI-PEG20) / arginine auxotrophy:**
+Hypothesis: CIMP-mediated promoter methylation of ASS1 (argininosuccinate synthase 1) in SDH-deficient tumors → arginine auxotrophy → sensitivity to arginine-depleting therapy (pegargiminase/ADI-PEG20). PubMed returned 0 hits linking ASS1 silencing or arginine auxotrophy to SDH-deficient GIST, PPGL, or any SDHx-mutated tumor type. The mechanistic chain is biologically plausible (the CIMP loci in SDH-GIST are not well-characterised beyond a few canonical targets in Killian 2013/PMID 23550148) but lacks a citable anchor. Direction fails gate.
+
+**m6A RNA epitranscriptomics / AlkBH5-FTO inhibition by succinate:**
+Hypothesis: Succinate competitively inhibits AlkBH5 and FTO (2-OG-dependent RNA m6A demethylases), elevating m6A on oncogenic mRNAs including HIF-1α, amplifying HIF output beyond protein stabilisation. PubMed returned 0 hits establishing this connection. The hypothesis extrapolates from well-established 2-OG-dependent enzyme inhibition by succinate (TET2/3, KDMs) to a class of 2-OG-dependent RNA-modifying enzymes, but no primary paper has demonstrated succinate-mediated m6A dysregulation in SDH-deficient cells. m6A / METTL3 / FTO was previously assessed as an unresolved lead (2026-09-20). Direction fails gate.
+
+**TRAP1 (mitochondrial HSP90) / gamitrinib:**
+Hypothesis: SDH-complex instability in SDHB/C/D-deficient cells generates mitochondrial proteotoxic stress → TRAP1 dependency. PubMed returned 0 hits connecting TRAP1 upregulation or dependency to SDH-deficient cells specifically. The engine already has ganetespib (cytoplasmic/nuclear HSP90); TRAP1 inhibition is a non-redundant mechanism but lacks an SDH-specific published anchor. Direction fails gate.
+
+**MEK / SHP2 inhibitors (trametinib, binimetinib, TNO155):**
+0 PubMed hits for MEK or SHP2 inhibition in SDH-deficient cancers with primary evidence. Already confirmed absent in 2026-10-26 run. Direction fails gate.
+
+**MDM2 / p53:**
+Explicitly rejected 2026-10-25: the mechanistic chain (HIF-1α → MDM2) does not hold; confirmed that p53 promotes MDM2-mediated HIF-1α degradation (not the reverse). Direction remains excluded.
+
+**ASNS / l-asparaginase:**
+Hypothesis: CIMP-mediated ASNS promoter methylation → asparagine auxotrophy → sensitivity to l-asparaginase or pegylated versions. PubMed returned 0 hits linking ASNS silencing to SDH-deficient tumor types. Direction fails gate for the same reason as ASS1: biologically plausible extension of the CIMP axis but not supported by a citable anchor in SDHx-mutated tumors.
+
+**Conclusion:** No direction passes the HARD RELEVANCE GATE with sufficient specificity to justify a new drug, pathway, target, or mechanism entry. Per the "never pad" principle, this is a no-direction run. The engine has 73 drugs and 64 mechanisms; remaining untested mechanistic hypotheses require primary published evidence in SDH-deficient tumor models before they can be added.
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `tracker.md`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**PR branch:** morning/2026-10-29-scan-no-direction
