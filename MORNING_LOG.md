@@ -2771,3 +2771,71 @@ Hypothesis: CIMP-mediated ASNS promoter methylation → asparagine auxotrophy �
 No changes to `src/data/papers.ts`, `tracker.md`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
 
 **PR branch:** morning/2026-10-29-scan-no-direction
+
+---
+
+## 2026-10-30
+
+### Summary
+Papers-only run. Part A: 12 PubMed queries yielded 2 new PMIDs, both rejected. Part B: 9 candidate directions exhaustively evaluated; none clears the hard relevance gate. Engine unchanged at 73 drugs, 64 mechanisms. tracker.md updated with 2 new rejected PMIDs.
+
+### Part A — PubMed Scan (scan window: ~August–October 2026)
+
+**Query set run (12 queries):**
+- SDH-deficient GIST/paraganglioma/pheochromocytoma new treatment 2026
+- SDHB/SDHC/SDHD/SDHA deficiency drug repurposing 2026
+- Succinate accumulation cancer therapy 2026
+- HIF-2alpha pseudohypoxia SDH cancer treatment 2026
+- SDH-deficient tumor epigenetic therapy 2026
+- Paraganglioma pheochromocytoma novel systemic therapy 2026
+- SDH-deficient GIST clinical trial 2026
+- Succinate dehydrogenase inhibitor cancer 2026
+- SDH-deficient tumor metabolic vulnerability 2026
+- Paraganglioma ferroptosis BRCAness DNA repair 2026
+- SDHB ROS oxidative stress therapeutic target 2026
+- SDH-deficient immunotherapy checkpoint 2026
+
+**New PMIDs encountered:**
+1. **42953123** — Secondary hypertension systematic review (general endocrine hypertension context; no SDH-specific mechanism or drug advance). **Rejected.**
+2. **42154170** — Partial vs total adrenalectomy in pheochromocytoma (surgical technique comparison; no SDH genotype; no molecular/drug advance). **Rejected.**
+
+**Papers added to papers.ts: 0**
+
+---
+
+### Part B — Improvement Direction Evaluation
+
+**Candidate directions evaluated and rejected (all 9 fail the hard relevance gate):**
+
+1. **LY3410738 data quality correction** — Verified: LY3410738 has already been removed from drugs.ts (confirmed by grep). Only TH9619 (the correct MTHFD1/2 inhibitor, added 2026-10-12) remains. No correction needed.
+
+2. **NQO1/β-lapachone (ARQ-501)** — NQO1 is an NRF2/ARE target gene, not a direct HIF-1α transcription target (PubMed search returned 0 hits for HIF-1α → NQO1 direct transcription; PMID 42171285 shows KEAP1→NRF2→NQO1, not HIF-1α→NQO1). The mechanistic chain for all SDH subtypes (including SDHA-deficient GIST) cannot be established. SDHB/C/D cells have elevated ROS → NRF2 → NQO1 upregulation (indirect), but this is SDHB/C/D-specific per Guzy 2008 (PMID 17967865). The engine already has auranofin for the SDHB/C/D ROS axis. ARQ-501 reached Phase 2 in pancreatic cancer (NCT01505140) but no SDH-deficient preclinical or clinical data exists. **Rejected: SDH-specific connection requires ROS anchor that excludes SDHA-deficient GIST (engine owner's subtype), and the HIF-1α→NQO1 chain is not citable.**
+
+3. **OGG1 inhibitors (TH10785)** — OGG1 repairs 8-oxoG oxidative base damage. Mechanistic rationale: SDHB/C/D ROS → 8-oxoG accumulation → OGG1 dependency → synthetic lethality with OGG1 inhibitor. PubMed returned 0 results for "OGG1 inhibitor TH10785 clinical trial cancer." No published clinical-stage OGG1 inhibitor data in cancer found. **Rejected: no verified clinical anchor.**
+
+4. **PRMT5/MAT2A inhibitors** — PRMT5 synthetic lethality is MTAP-dependent (MTA accumulates in MTAP-deleted cells, partially inhibiting PRMT5). SDH-deficient cancers do not have documented high MTAP deletion frequency; the SDH-specific dependency cannot be established. **Rejected: no SDH-specific connection; MTAP-dependent mechanism.**
+
+5. **WNT/β-catenin inhibitors (porcupine inhibitors)** — No published evidence connecting SDH loss to Wnt/β-catenin pathway activation in PPGL, GIST, or RCC. **Rejected: no published SDH-specific anchor.**
+
+6. **HDAC6/ricolinostat** — Previously evaluated and rejected 2026-10-29 as redundant with panobinostat (pan-HDAC). Confirmed redundant today. **Rejected.**
+
+7. **KDM5 (JARID1) inhibitors** — H3K4 demethylases; no clinical-stage KDM5 inhibitor with SDH-specific published data. **Rejected: no clinical anchor.**
+
+8. **GPX4 inhibitors (direct ferroptosis inducers: RSL3, ML210)** — No clinical-stage GPX4 inhibitor as of October 2026. CoQ/ferroptosis axis already covered by sulfasalazine (SLC7A11/xCT). **Rejected: no clinical anchor.**
+
+9. **Focal adhesion kinase (FAK/PTK2) inhibitors (defactinib)** — No published evidence connecting SDH loss to FAK pathway activation. **Rejected: no SDH-specific published anchor.**
+
+**Conclusion:** No direction passes the hard relevance gate. Per the "never pad" principle, this is a no-direction run. Engine remains at 73 drugs, 64 mechanisms. The remaining unexplored biology either lacks a clinical-stage drug, relies on SDHB/C/D-specific ROS (excluding the engine owner's SDHA-deficient GIST subtype), or lacks a citable SDH-specific published anchor.
+
+---
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Added 2 new rejected PMIDs: 42953123, 42154170 |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**PR branch:** morning/2026-10-30-scan-papers-only
