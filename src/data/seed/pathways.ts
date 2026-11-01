@@ -841,4 +841,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 50,
   },
+  {
+    name: "HIF-1α → GLUT1/SLC2A1 Glucose Transport Dependency",
+    slug: "hif-glut1-glucose-transport",
+    description:
+      "SDH loss → constitutive HIF-1α stabilisation (pseudohypoxia) → HIF-1α transcriptionally drives SLC2A1/GLUT1 expression via canonical hypoxia-response elements (HREs) in the SLC2A1 promoter. In SDH-deficient tumours with a truncated TCA cycle, GLUT1-mediated glucose import is the primary carbon source feeding anaerobic glycolysis (Warburg metabolism). GLUT1 is constitutively over-expressed in SDH-deficient GIST and PPGL — used as an IHC marker of pseudohypoxia — creating a glucose transport dependency that is absent in SDH-proficient tumours. Blocking GLUT1 with KL-11743 starves SDH-deficient cells of glucose without a functional oxidative phosphorylation fallback.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD1/2/3 inhibition → HIF-1α stabilisation → HIF-1α binds HRE in SLC2A1 promoter → GLUT1 over-expression (Ebert BL et al. Biochem J 1995, PMID 8561556: direct demonstration of HIF-1α → GLUT1 via HRE)",
+    downstream_effects: [
+      "Constitutive GLUT1 surface expression drives high-rate glucose uptake in SDH-deficient pseudohypoxic cells",
+      "Glucose → glycolysis → pyruvate → lactate (Warburg metabolism); cannot fall back to OXPHOS because SDH/complex II is absent",
+      "GLUT1 inhibition (KL-11743) selectively starves SDH-deficient cells that lack the OXPHOS rescue route available in normal cells",
+      "GLUT1 over-expression confirmed by IHC in SDH-deficient GIST and PPGL as a clinical pseudohypoxia marker",
+      "Mechanistically distinct from CAIX/SLC-0111 (pH regulation downstream) and MCT1/AZD3965 (lactate export downstream): GLUT1 is the upstream glucose import gate",
+    ],
+    druggable: true,
+    display_order: 51,
+  },
 ];

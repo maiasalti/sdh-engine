@@ -2888,3 +2888,40 @@ No other direction identified that passes the HARD RELEVANCE GATE. All 16 candid
 No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
 
 **PR branch:** morning/2026-10-31-papers-only-scan
+
+---
+
+## 2026-11-01 — HIF-1α → GLUT1/SLC2A1 Glucose Transport Dependency; KL-11743
+
+**Scan window:** August 2 – November 1, 2026
+
+**PubMed scan results:**
+- PMID 42155081: Batini L et al. "Genetic alterations of telomere maintenance pathways in paragangliomas." *Arch Endocrinol Metab* 2026-08-01. DOI: 10.20945/2359-4292-2026-0050. **ADDED** to `papers.ts` (Genetics & Syndromes): 79 PPGL patients; germline SDHB PVs in 25.3%; somatic TERT promoter PVs in 16.7% of metastatic SDHB-mutant cases — TERT promoter mutation = malignant progression driver specifically in SDHB-mutated PPGL.
+- PMID 42944559: NEN bone metastasis systematic review. **REJECTED** — no SDH-specific content.
+- PMID 42080818: SDH-deficient RCC FDG PET case report. **REJECTED** — outside scan window (April 2026) and case report only.
+
+**Improvement direction chosen:** HIF-1α → GLUT1/SLC2A1 glucose transport dependency; KL-11743 (new pathway, new target, new drug)
+
+**Mechanistic justification:**
+SDH loss → succinate → PHD1/2/3 inhibition → constitutive HIF-1α stabilisation → HIF-1α binds SLC2A1/GLUT1 HRE promoter elements → constitutive GLUT1 over-expression (Ebert BL & Bunn HF, Biochem J 1995, PMID 8561556). SDH/complex II inactivation truncates the TCA cycle → no OXPHOS fallback → forced Warburg metabolism → GLUT1 becomes rate-limiting for survival. GLUT1 over-expression is confirmed by IHC in SDH-deficient GIST and PPGL as a pseudohypoxia marker. KL-11743 (Phase 1 NCT03986606, R/R AML, Kineta Oncology) is a selective GLUT1 inhibitor that provides a clinical-stage compound for this target.
+
+**Non-redundancy verified:**
+- AZD3965/MCT1: lactate EXPORT (downstream)
+- SLC-0111/CA9: pH regulation (downstream)
+- Telaglenastat/GLS1: glutaminolysis (different substrate)
+- KL-11743/GLUT1: glucose IMPORT (upstream gate; unique position)
+
+**Files changed:**
+
+| File | Change |
+|---|---|
+| `src/data/papers.ts` | +1 entry: PMID 42155081 (Batini et al. Arch Endocrinol Metab 2026) |
+| `src/data/seed/pathways.ts` | +1 pathway: `hif-glut1-glucose-transport` (display_order 51) |
+| `src/data/seed/targets.ts` | +1 target: SLC2A1/GLUT1 (UniProt P11166) |
+| `src/data/seed/drugs.ts` | +1 drug: KL-11743 (evidence_score 19, theoretical, all tumor types, NCT03986606) |
+| `src/data/seed/sdh-biology.ts` | +Mechanism 65: GLUT1/SLC2A1 glucose transport dependency |
+| `src/lib/scoring/constants.ts` | +1 PATHWAY_COLORS entry: hif-glut1-glucose-transport (orange-300) |
+| `tracker.md` | +3 rows: PMID 42155081 (added), 42944559 (rejected), 42080818 (rejected) |
+| `MORNING_LOG.md` | This entry |
+
+**PR branch:** morning/2026-11-01-glut1-kl11743

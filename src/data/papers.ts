@@ -555,4 +555,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42925006",
     date: "2026-10",
   },
+  {
+    title:
+      "Genetic alterations of telomere maintenance pathways in paragangliomas.",
+    authors: "Batini L, Lobato EC, Freitas-Castro F, et al.",
+    journal: "Arch Endocrinol Metab",
+    year: 2026,
+    doi: "10.20945/2359-4292-2026-0050",
+    topic: "Genetics & Syndromes",
+    description:
+      "Brazilian cohort of 79 PPGL patients characterising telomere maintenance pathway alterations: germline SDHB pathogenic variants in 25.3%; somatic TERT promoter pathogenic variants in 2.5% overall but in 16.7% of metastatic SDHB-mutant cases, establishing TERT promoter mutation as a high-frequency somatic driver of malignant progression specifically in SDHB-mutated PPGL. ATRX somatic variants identified were assessed as likely benign. Provides direct evidence linking SDHB mutation with TERT promoter activation as a route to metastatic potential.",
+    pmid: "42155081",
+    date: "2026-08",
+  },
 ];
