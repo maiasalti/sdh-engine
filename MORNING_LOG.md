@@ -2839,3 +2839,52 @@ Papers-only run. Part A: 12 PubMed queries yielded 2 new PMIDs, both rejected. P
 No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
 
 **PR branch:** morning/2026-10-30-scan-papers-only
+
+---
+
+## 2026-10-31 (Saturday)
+
+**Engine state at start:** 73 drugs, 64 mechanisms, display_order 50
+
+### Part A — PubMed scan (August–October 2026)
+
+Searches run:
+- "succinate dehydrogenase cancer 2026" (Aug–Oct 2026 date filter)
+- "SDHB SDHD mutation paraganglioma pheochromocytoma" (Aug–Oct 2026)
+- "SDH-deficient GIST renal cell carcinoma 2026" (Aug–Oct 2026)
+
+**Papers evaluated: 4. Papers added: 0.**
+
+| PMID | Decision | Reason |
+|------|----------|--------|
+| 42959697 | Rejected | GIST in Turner Syndrome case series (3 patients at Royal Marsden); patient 3 was SDH-deficient Carney triad; case-series level; no new SDH-specific treatment or mechanistic advance |
+| 42914194 | Rejected | SDH-deficient RCC clinicopathological case report (CMC Vellore; BMJ Case Reports); abstract unavailable; no mechanistic or treatment advance |
+| 42792164 | Rejected | SDHD in glioblastoma as redox-responsive mitochondrial component (Antioxidants 2026); GBM is NOT an SDH-deficient tumor type; paper uses SDHD as a functional redox marker, not disease-defining loss-of-function |
+| 42434865 | Rejected | Dnajb5 chaperone from Antarctic fish, muscle regeneration; SDH used as histochemical marker only; no relevance to SDH-deficient cancer biology |
+
+### Part B — Direction analysis
+
+**Candidate direction evaluated:** DNA-PKcs/NHEJ inhibition (PRKDC) — rationale: SDH loss → BRCAness → HR deficiency → dependency on NHEJ backup repair → synthetic lethality with DNA-PK inhibitors.
+
+**Outcome:** Direction ALREADY IN ENGINE (added in a pre-2026-09-19 run not captured in earlier MORNING_LOG entries):
+- `src/data/seed/pathways.ts` line 426: `NHEJ / DNA-PK Backup Repair` pathway
+- `src/data/seed/targets.ts` line 409: PRKDC target (DNA-PKcs)
+- `src/data/seed/drugs.ts` line 813: Peposertib (M3814), DNA-PK inhibitor
+- `src/data/seed/drugs.ts` line 883: Elimusertib (AZD7648), DNA-PKcs inhibitor, NCT03907969 cited
+
+No other direction identified that passes the HARD RELEVANCE GATE. All 16 candidate directions explored over the 2026-10-29 and 2026-10-30 runs remain exhausted.
+
+**Conclusion:** Papers-only run. No new drugs, mechanisms, pathways, or targets added. Engine remains at **73 drugs, 64 mechanisms**.
+
+---
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Added 4 new rejected PMIDs: 42959697, 42914194, 42792164, 42434865 |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**PR branch:** morning/2026-10-31-papers-only-scan
