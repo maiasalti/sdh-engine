@@ -1330,7 +1330,7 @@ FDA-approved JAK1/JAK2 inhibitor (IC₅₀ ~3.3 nM JAK1, ~2.8 nM JAK2). Approved
 ## Mechanism 65: SDH Loss → Constitutive HIF-1α → SLC2A1/GLUT1 Over-expression → Glucose Transport Dependency — KL-11743 (GLUT1 Inhibitor)
 
 **Core biology:**
-SDH loss elevates succinate → competitive inhibition of PHD1/2/3 (prolyl hydroxylase domain proteins; 2-oxoglutarate-dependent dioxygenases) → HIF-1α protein stabilisation regardless of oxygen tension (canonical pseudohypoxia). Nuclear HIF-1α binds hypoxia-response elements (HREs) in the promoter of SLC2A1 (solute carrier family 2 member 1, encoding GLUT1; Glucose Transporter Type 1) → constitutive, high-level GLUT1 surface expression (Ebert BL & Bunn HF, Biochem J 1995, PMID 8561556: direct demonstration of HIF-1α → GLUT1 HRE regulation).
+SDH loss elevates succinate → competitive inhibition of PHD1/2/3 (prolyl hydroxylase domain proteins; 2-oxoglutarate-dependent dioxygenases) → HIF-1α protein stabilisation regardless of oxygen tension (canonical pseudohypoxia). Nuclear HIF-1α binds hypoxia-response elements (HREs) in the promoter of SLC2A1 (solute carrier family 2 member 1, encoding GLUT1; Glucose Transporter Type 1) → constitutive, high-level GLUT1 surface expression (Ebert BL, Firth JD & Ratcliffe PJ, J Biol Chem 1995, PMID 7493931: the hypoxia response of the Glut-1 enhancer is mediated by a functionally critical HIF-1 binding site).
 
 **Why SDH-deficient tumours are selectively dependent on GLUT1:**
 SDH/complex II inactivation truncates the TCA cycle at succinate → fumarate, preventing mitochondrial NADH/FADH₂ generation from TCA intermediates and thus blocking oxidative phosphorylation (OXPHOS) at complex II and downstream. SDH-deficient cells are metabolically committed to anaerobic glycolysis (Warburg metabolism) as their dominant ATP source. Normal cells and most other tumour types respond to glucose restriction by up-regulating OXPHOS — a rescue route unavailable to SDH-deficient cells. When GLUT1 is inhibited, SDH-deficient cells are selectively starved of glucose without a metabolic escape valve; SDH-proficient cells can compensate via OXPHOS.
@@ -1338,8 +1338,8 @@ SDH/complex II inactivation truncates the TCA cycle at succinate → fumarate, p
 **GLUT1 as a clinical SDH-deficiency marker:**
 GLUT1 over-expression in SDH-deficient GIST and PPGL is well-established in pathology practice: GLUT1 IHC is used alongside CAIX as a pseudohypoxia marker in these tumours, and GLUT1 positivity correlates with SDHB IHC loss (a proxy for all four SDH subunit deficiencies). This constitutive over-expression confirms the HIF-1α → GLUT1 chain is active in patient tumours.
 
-**KL-11743 (Kineta Oncology):**
-First-in-class selective GLUT1 inhibitor (IC₅₀ ~2 nM). Phase 1 in relapsed/refractory AML (NCT03986606), establishing first-in-human safety and PK. No SDH-specific preclinical or clinical data exist. The SDH-deficiency rationale rests on the mechanistic chain above.
+**KL-11743 (Kadmon Corporation):**
+Potent, orally bioavailable, glucose-competitive inhibitor of class I glucose transporters (GLUT1 IC₅₀ ~115 nM; GLUT1-4 range 68-137 nM). Preclinical only: no registered clinical trials. Direct in vivo SDH-deficient evidence: patient-derived xenograft models of SDHA-deficient cancers are specifically sensitive to KL-11743, and KL-11743 is synthetically lethal with chemical or genetic disruption of mitochondrial metabolism (Olszewski et al., Cell Chem Biol 2022, PMID 34715056). Acute glucose-uptake inhibition forces leukaemia cells onto mitochondrial respiration for survival - the escape route SDH-deficient cells lack (PMID 39863913).
 
 **Non-redundancy with existing engine drugs:**
 - AZD3965/MCT1: blocks lactate EXPORT — downstream of glycolysis (Mechanism 38)
@@ -1348,12 +1348,12 @@ First-in-class selective GLUT1 inhibitor (IC₅₀ ~2 nM). Phase 1 in relapsed/r
 - KL-11743/GLUT1: glucose IMPORT gate — upstream of all glycolytic steps; unique position in the metabolic axis
 
 **Limitations:**
-No SDH-specific in vitro/in vivo efficacy data for KL-11743 or any GLUT1 inhibitor. GLUT1 is expressed in most tissues; selective tumour toxicity depends on the metabolic vulnerability conferred by SDH deficiency and the inability to switch to OXPHOS.
+KL-11743 has no human clinical data; all evidence is preclinical. The key in vivo evidence (specific sensitivity of SDHA-deficient PDX models, PMID 34715056) comes from the compound's originating study and has not yet been independently replicated in SDH-deficient GIST/PPGL/RCC models. GLUT1 is expressed in most tissues; selective tumour toxicity depends on the metabolic vulnerability conferred by SDH deficiency and the inability to switch to OXPHOS.
 
 **Sources:**
-- Ebert BL, Firth JD, Ratcliffe PJ. Hypoxia and mitochondrial inhibitors regulate expression of glucose transporter-1 via distinct Cis-acting sequences. J Biol Chem. 1995;270(49):29083-29089. PMID 8510375. [Note: Ebert BL & Bunn HF, Biochem J 1995, PMID 8561556 is the HIF-1α → GLUT1 HRE-specific reference]
-- Ebert BL, Bunn HF. Regulation of the erythropoietin gene. Blood. 1999. [Ebert 1995 Biochem J: the canonical HIF-1α → GLUT1 HRE paper, PMID 8561556]
-- NCT03986606: KL-11743 Phase 1 in R/R AML (Kineta Oncology)
+- Ebert BL, Firth JD, Ratcliffe PJ. Hypoxia and mitochondrial inhibitors regulate expression of glucose transporter-1 via distinct cis-acting sequences. J Biol Chem. 1995;270(49):29083-29089. PMID 7493931.
+- Olszewski K, Barsotti A, Feng XJ, et al. Inhibition of glucose transport synergizes with chemical or genetic disruption of mitochondrial metabolism and suppresses TCA cycle-deficient tumors. Cell Chem Biol. 2022;29(3):423-435.e10. PMID 34715056.
+- Metabolic adaptations to acute glucose uptake inhibition converge upon mitochondrial respiration for leukemia cell survival. Cell Commun Signal. 2025 Jan 25. PMID 39863913.
 
 ---
 
