@@ -2939,3 +2939,60 @@ Citation verification of the 2026-11-01 PR found two fabrications and two factua
 5. Tracker rows corrected: PMID 42944559 described as a "systematic review" (it is a characterization study, Coston TW et al., J Neuroendocrinol 2026); PMID 42080818 rejection rationale corrected (real paper - "Intense FDG Uptake of Lung Metastases From SDH-deficient RCC", Clin Nucl Med; rejected as a case report).
 
 Verified clean this run: PMID 42155081 (Batini L et al., Arch Endocrinol Metab 2026) - title, authors, journal, DOI all match, and the abstract supports every number cited (79 PPGL patients; germline SDHB PVs 25.3%; somatic TERT promoter PVs in 16.7% of metastatic patients with germline SDHB PVs). UniProt P11166 confirmed as SLC2A1/GLUT1.
+
+## 2026-11-02 — Papers-only scan; no new qualifying papers or drug directions
+
+**Engine state at start:** 74 drugs, 65 mechanisms, last pathway display_order 51
+
+### Part A — PubMed scan (August 2 – November 2, 2026)
+
+**Queries run (12 total):**
+1. SDH-deficient GIST gastrointestinal stromal tumor treatment
+2. Pheochromocytoma paraganglioma SDH succinate dehydrogenase therapy
+3. Succinate dehydrogenase deficient renal cell carcinoma pituitary adenoma cancer
+4. SDHB SDHC SDHD SDHA mutation cancer drug therapeutic target
+5. Succinate oncometabolite pseudohypoxia HIF epigenetic methylation cancer drug
+6. SDH synthetic lethality BRCAness homologous recombination deficiency PARP inhibitor
+7. Succinate dehydrogenase complex immunotherapy checkpoint T cell tumor microenvironment
+8. Paraganglioma pheochromocytoma novel treatment clinical trial systemic therapy
+9. SDH succinate dehydrogenase cancer metabolism novel mechanism
+10. SDHx germline pathogenic variant paraganglioma surveillance genetics
+11. Succinate dehydrogenase deficiency drug repurposing cancer vulnerability
+12. Succinate dehydrogenase tumor cancer (October–November 2026 focused)
+
+**New PMIDs evaluated (not previously in tracker.md):**
+
+| PMID | Decision | Reason |
+|------|----------|--------|
+| 42968940 | **rejected** | Du Y, He L, Guo Y, Zhang Y, He J. "Succinate Dehydrogenase in Lung Cancer: from Molecular Mechanisms to Clinical Implications." OncoTargets Ther 2026;19:629223. DOI 10.2147/OTT.S629223. Published 2026-10-28. Lung cancer review discussing SDHAF2/SDH5 as a potential tumor suppressor and its role in EMT/radiotherapy resistance. Lung cancer is NOT an SDH-deficient cancer within the engine's defined scope (GIST, PPGL, PCC, RCC, pituitary adenoma). The paper covers SDH functional loss as a modifier of lung cancer biology, not germline or somatic SDHA/B/C/D LOF mutation as the disease-defining driver. Not added. |
+
+**Papers added to `src/data/papers.ts`:** 0
+
+All other returned PMIDs (42544736, 42923952, 42758527, 42925006, 42847134, 42804417, 42611605, 42498833, 42264414, 41985045, 42959697, 42764100, 42573142) were already present in tracker.md or papers.ts from prior sessions.
+
+### Part B — Direction evaluation
+
+Engine state: 74 drugs, 65 mechanisms. Prior runs 2026-10-29, 2026-10-30, 2026-10-31 each exhaustively evaluated and rejected all remaining candidate directions. No new PubMed paper was found that opens a new mechanistic anchor for a previously unrepresented direction.
+
+**Candidate directions evaluated and rejected this run:**
+
+**CD39/ENTPD1 + adenosine pathway (upstream of CD73):**
+- Hypothesis: HIF-1α might also drive CD39 (ENTPD1, NTPDase1) expression, which converts extracellular ATP → ADP → AMP upstream of CD73 (NT5E). The engine covers CD73/oleclumab (Mechanism 42, 2026-09-10) and ADORA2A/etrumadenant (2026-10-01). CD39 would be a third node in the same pathway.
+- Status: AB598 (AstraZeneca) and TTX-030 (Tizona/Acurras) are Phase 1/2 CD39 inhibitors. However, the direct HIF-1α → HRE → ENTPD1 transcriptional link is not as cleanly demonstrated as HIF-1α → NT5E (Synnestvedt 2002, PMID 12370277). The adenosine pathway is already covered at two mechanistically distinct points. Adding a third node targeting CD39 — which has a weaker HIF-1α anchor and serves the same pathway segment — does not rise to the level of a "genuinely new direction." Direction fails gate.
+
+**ATM/DNAPK/CHK axis extensions:** All checkpoint kinases in the BRCAness synthetic lethality chain (ATR/ceralasertib, CHK1/prexasertib, WEE1/adavosertib, DNA-PK/peposertib+elimusertib, POLQ/ART558) are already in the engine. No mechanistically non-redundant kinase remains with a clinical-stage inhibitor and a distinct SDH-specific anchor.
+
+All candidate directions enumerated in prior runs (2026-10-23 through 2026-11-01) remain excluded. Per the "never pad" principle, this is the correct outcome.
+
+**Conclusion:** 12-query PubMed scan found 1 new PMID (42968940) — a lung cancer SDH review outside the engine's tumor-type scope. All other PMIDs were previously evaluated. No new direction passes the hard relevance gate. Engine remains at 74 drugs, 65 mechanisms.
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Appended 1 row: PMID 42968940 (rejected) |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**PR branch:** morning/2026-11-02-papers-only
