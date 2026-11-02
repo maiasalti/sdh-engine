@@ -93,4 +93,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-furin-tgfbeta-immunosuppression": "bg-lime-300 text-lime-950 dark:bg-lime-700 dark:text-lime-50",
   "apex1-ref1-hif-redox-activation": "bg-indigo-300 text-indigo-950 dark:bg-indigo-700 dark:text-indigo-50",
   "ppgl-il6-jak-stat3-hif-amplification": "bg-sky-300 text-sky-950 dark:bg-sky-700 dark:text-sky-50",
+  "hif-glut1-glucose-transport": "bg-orange-300 text-orange-950 dark:bg-orange-700 dark:text-orange-50",
 };
