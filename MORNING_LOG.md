@@ -2925,3 +2925,17 @@ SDH loss → succinate → PHD1/2/3 inhibition → constitutive HIF-1α stabilis
 | `MORNING_LOG.md` | This entry |
 
 **PR branch:** morning/2026-11-01-glut1-kl11743
+
+---
+
+## Correction note - 2026-11-02 (PR #136 post-review fixes by Instinct)
+
+Citation verification of the 2026-11-01 PR found two fabrications and two factual errors, corrected before merge:
+
+1. **Fabricated anchor citation**: "Ebert BL & Bunn HF, Biochem J 1995, PMID 8561556" was cited across drugs.ts, targets.ts, pathways.ts and sdh-biology.ts as the HIF-1α → GLUT1 HRE reference. PMID 8561556 is an unrelated paper (Clark RE, Ann Thorac Surg 1996; CABG volume-outcome); no such Biochem J paper exists. The intended paper is real: Ebert BL, Firth JD, Ratcliffe PJ. "Hypoxia and mitochondrial inhibitors regulate expression of glucose transporter-1 via distinct cis-acting sequences." J Biol Chem. 1995;270(49):29083-29089. **PMID 7493931** - its abstract confirms the Glut-1 enhancer's hypoxia response is mediated by a functionally critical HIF-1 binding site. The claim survives; the citation was wrong. All occurrences replaced.
+2. **Wrong clinical trial**: KL-11743 was described as "Kineta Oncology; Phase 1 NCT03986606 in R/R AML; first-in-human safety/PK established". NCT03986606 is actually a Phase 1 study of PSB205 (Qilu Puget Sound/Sound Biologics) in advanced solid tumours. No KL-11743 trial is registered on clinicaltrials.gov (checked 2026-11-02). Developer is Kadmon Corporation (Olszewski et al., Cell Chem Biol 2022, PMID 34715056). Trial references removed; clinical_trial_ids emptied.
+3. **Missed direct SDH-deficient evidence**: the PR claimed "no SDH-specific preclinical or clinical data exist". The compound's originating paper (PMID 34715056) reports that patient-derived xenograft models of SDHA-deficient cancers are specifically sensitive to KL-11743, with synthetic lethality between KL-11743 and mitochondrial/TCA-cycle disruption. Entry upgraded: evidence_score 19 → 30, status theoretical → preclinical, consistent with pevonedistat (30) convention.
+4. **Potency corrected**: "IC₅₀ ~2 nM" → GLUT1 IC₅₀ ~115 nM (class I GLUT1-4 inhibitor, range 68-137 nM), per the compound datasheet citing Olszewski et al. 2022. PubChem CID 146345838 added.
+5. Tracker rows corrected: PMID 42944559 described as a "systematic review" (it is a characterization study, Coston TW et al., J Neuroendocrinol 2026); PMID 42080818 rejection rationale corrected (real paper - "Intense FDG Uptake of Lung Metastases From SDH-deficient RCC", Clin Nucl Med; rejected as a case report).
+
+Verified clean this run: PMID 42155081 (Batini L et al., Arch Endocrinol Metab 2026) - title, authors, journal, DOI all match, and the abstract supports every number cited (79 PPGL patients; germline SDHB PVs 25.3%; somatic TERT promoter PVs in 16.7% of metastatic patients with germline SDHB PVs). UniProt P11166 confirmed as SLC2A1/GLUT1.
