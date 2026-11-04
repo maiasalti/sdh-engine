@@ -2996,3 +2996,69 @@ All candidate directions enumerated in prior runs (2026-10-23 through 2026-11-01
 No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
 
 **PR branch:** morning/2026-11-02-papers-only
+
+---
+
+## 2026-11-03 — Papers-only scan; no new qualifying papers or drug directions
+
+**Engine state at start:** 74 drugs, 65 mechanisms, last pathway display_order 51
+
+### Part A — PubMed scan (August 3 – November 3, 2026)
+
+**Queries run (10 total):**
+1. Succinate dehydrogenase deficient tumor treatment drug
+2. SDHB pheochromocytoma paraganglioma treatment systemic therapy
+3. SDH-deficient GIST paraganglioma pheochromocytoma cancer succinate
+4. FGFR1 autocrine SDH-deficient gastrointestinal stromal tumor epigenetic
+5. Paraganglioma pheochromocytoma SDHx therapy novel systemic
+6. Succinate oncometabolite HIF pseudohypoxia cancer drug
+7. SDHB SDHC SDHD SDHA mutation cancer drug therapy
+8. Succinate oncometabolite epigenetic cancer therapy
+9. SDH complex II cancer drug target treatment
+10. Succinate dehydrogenase tumor drug vulnerability synthetic lethality novel
+
+**Result:** No new PMIDs above PMID 42968940 (the last tracked entry as of 2026-11-02) returned by any query. All PMIDs returned by searches were already present in tracker.md from prior sessions (e.g., 42352974, 42191879, 42597314, 41301064, 42080642, 41342592, 41711310, 41231120, 41404848, 42813377, etc.).
+
+**Papers added to `src/data/papers.ts`:** 0
+
+### Part B — Direction evaluation
+
+Engine state: 74 drugs, 65 mechanisms, 51 pathways. Prior runs 2026-10-29 through 2026-11-02 each exhaustively evaluated and rejected remaining candidate directions. No PubMed search today opened a new mechanistic anchor for a previously unrepresented direction. The following additional candidates were evaluated this run and rejected:
+
+**ATM/AZD0156/AZD1390 (ATM kinase inhibitor):**
+Hypothesis: SDH loss → BRCAness → HR deficiency → dependency on ATM to coordinate any residual DSB repair (NHEJ signaling) → synthetic lethality with ATM inhibition. The 2026-11-02 conclusion that "no mechanistically non-redundant kinase remains" was intended to cover ATM. Examined more carefully today: (a) The existing DNA-PK entries (peposertib, elimusertib) already block NHEJ execution — the kinase that ATM activates at NHEJ-committed DSBs. (b) The SDH → succinate → KDM4 → H3K9me3 → impaired TIP60/ATM activation chain (PMID 32494005) means ATM is already constitutively suppressed at DSB sites in SDH-deficient cells — further pharmacological ATM inhibition adds to an already-impaired node rather than acting as a synthetic lethal. (c) Clinical trials (AZD0156 NCT02588105, AZD1390 NCT03423628) are in HR-intact tumors where ATM is functional. No SDH-specific ATM inhibitor data exists. Direction rejected.
+
+**CD39/ENTPD1 — TTX-030 or SRF617 (Phase 1/2 CD39 inhibitors):**
+Re-evaluated from 2026-11-02 unresolved lead. Hypoxia up-regulates CD39 (ENTPD1/NTPDase1) in vascular endothelial cells (Eltzschig et al., J Exp Med 2003, PMID 12939345: hypoxia-induced CD39, >20-fold mRNA increase); a direct HIF-1α HRE in the ENTPD1 promoter is not cleanly demonstrated. CD39 hydrolyses ATP → AMP (upstream of CD73/NT5E which makes adenosine). TTX-030 (NextPoint Therapeutics, NCT03884556 Phase 1/2) and SRF617 (Surface Oncology, NCT04336098) are verified Phase 1/2 CD39 inhibitors. However: the adenosine immunosuppressive axis is already covered at two non-redundant molecular nodes — oleclumab/CD73 (Mechanism 42: blocks adenosine production from AMP) and etrumadenant/ADORA2A (Mechanism 51: blocks adenosine signalling on T cells). Adding CD39 inhibition as a third node in the same pathway does not add a new mechanistic direction; it would be a third approach to the same succinate → HIF → CD73/adenosine cascade. The 2026-11-02 rejection stands. Direction rejected.
+
+**ACLY/bempedoic acid (ATP-citrate lyase inhibitor):**
+Hypothesis: SDH-deficient cells depend on ACLY to convert reductively carboxylated citrate → acetyl-CoA (for fatty acid synthesis and histone acetylation). Bempedoic acid (FDA-approved for LDL-C reduction; inhibits ACLY in hepatocytes). PubMed returned 0 hits for bempedoic acid or ACLY inhibition in SDH-deficient tumor models. The reductive carboxylation→ACLY dependency is biologically plausible given Mullen et al. 2012 (PMID 22101431), but no primary paper demonstrates selective ACLY lethality in SDH-deficient cells beyond general ACLY requirements in cancer. The de-novo-lipogenesis pathway is already in the engine (FASN inhibitor). Direction fails gate: no SDH-specific published anchor.
+
+**SLC7A5/LAT1 inhibitor (JPH203/Nanvuranlat):**
+Hypothesis: Constitutive HIF-1α → SLC7A5/LAT1 (large neutral amino acid transporter) upregulation → dependency on LAT1-mediated amino acid import for mTOR activation. JPH203 (Nobilis Health/J-Pharma) Phase 1/2 for biliary tract cancer; Nanvuranlat Phase 2 for SCLC. HIF-driven SLC7A5/LAT1 up-regulation is established in cancer (Elorza et al., Mol Cell 2012, PMID 23103253: HIF-2α activates mTORC1 through SLC7A5). However: LAT1's primary downstream effect is leucine → mTOR → S6K/4EBP1 signalling, which is already covered upstream by everolimus/mTOR in the engine. LAT1 inhibition would be an additional way to reach the same mTOR node. Not a genuinely new direction; mTOR pathway coverage makes this redundant. Direction rejected.
+
+All candidate directions evaluated in prior runs 2026-10-29 through 2026-11-02 remain excluded. Per the "never pad" principle, this is the correct outcome.
+
+**Conclusion:** 10-query PubMed scan found no new qualifying papers. Four additional candidate directions evaluated — ATM inhibitor, CD39 inhibitor, ACLY inhibitor, LAT1 inhibitor — all rejected per the HARD RELEVANCE GATE: either the pathway is already covered, no SDH-specific primary anchor exists, or the mechanistic link is too indirect. Engine remains at **74 drugs, 65 mechanisms**.
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `tracker.md`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**PR branch:** morning/2026-11-03-papers-only
+
+---
+
+## Correction note - 2026-11-04 (PR #138 post-review fixes by Instinct)
+
+Citation verification of the 2026-11-03 log entry found two citation fabrications and one wrong mechanism number, corrected before merge:
+
+1. **"Synnestvedt et al. J Immunol 2004" (HIF-1a -> CD39)**: no such paper exists. Synnestvedt K's only hypoxia paper is the J Clin Invest 2002 CD73 study (PMID 12370277) - correctly cited in the 2026-11-02 entry for the CD73 anchor. Replaced with the verified paper on hypoxia-induced CD39 in endothelium: Eltzschig HK et al., "Coordinated adenine nucleotide phosphohydrolysis and nucleoside signaling in posthypoxic endothelium", J Exp Med 2003, PMID 12939345 (abstract: hypoxia-induced CD39 >20-fold mRNA increase in endothelial cells). The corrected text also states that a direct HIF-1a HRE in ENTPD1 is not cleanly demonstrated, consistent with the 2026-11-02 assessment.
+2. **"Bhutia et al. Cancer Res 2016, PMID 26956906" (HIF-1a -> SLC7A5)**: PMID 26956906 is an unrelated paper (goose hepatocyte PI3K-mTOR lipid study). The real Bhutia YD paper is a Cancer Res 2015 review on amino acid transporters (PMID 25855379), not a HIF-SLC7A5 demonstration. The correct citation for HIF -> SLC7A5 is Elorza A et al., "HIF2a acts as an mTORC1 activator through the amino acid carrier SLC7A5", Mol Cell 2012, PMID 23103253 (note: HIF-2a, not HIF-1a). Text corrected accordingly.
+3. **Mechanism number**: etrumadenant/ADORA2A cited as "Mechanism 46"; the engine's actual mechanism is 51 (sdh-biology.ts). Corrected. (The PR body table also said "Mechanism 33/36" for the same two entries; the true numbers are 42 for oleclumab/CD73 and 51 for etrumadenant/ADORA2A.)
+
+Both citation errors sat inside rejection rationales, so no direction outcome changed. All four clinical trials cited in the entry verified against clinicaltrials.gov: NCT02588105 (AZD0156), NCT03423628 (AZD1390), NCT03884556 (TTX-030), NCT04336098 (SRF617). PMID 32494005 (Sulkowski, Nature 2020) and PMID 22101431 (Mullen, Nature 2011/2012) verified and used correctly.
