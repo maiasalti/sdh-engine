@@ -649,6 +649,15 @@ export const SEED_TARGETS: SeedTarget[] = [
       "JAK2 (Janus kinase 2; UniProt O60674) is a non-receptor tyrosine kinase that pairs with JAK1 in the IL-6/gp130/STAT3 signalling complex. In PPGL, IL-6 secreted directly by tumour cells (confirmed by IHC: Rusconi et al. BMJ Case Rep 2026, PMID 41991230; Minetto et al. J Endocrinol Invest 2003, PMID 12906374) signals through gp130 → JAK1/JAK2 tandem kinases → STAT3 Tyr705 phosphorylation. STAT3 then amplifies HIF-1α transcription (Xu et al. Oncogene 2005, PMID 16007214), reinforcing the pseudohypoxic state in SDH-deficient PPGL. Ruxolitinib inhibits JAK1 and JAK2 with comparable potency (IC₅₀ ~2.8 nM JAK2), abrogating IL-6-driven STAT3 phosphorylation and breaking the IL-6 → JAK/STAT3 → HIF-1α amplification loop.",
   },
   {
+    gene_symbol: "CXCR2",
+    uniprot_id: "P25025",
+    name: "C-X-C chemokine receptor type 2 (IL-8RB; CXCR2)",
+    pathway_slug: "hif-cxcl8-cxcr2-neutrophil-immunosuppression",
+    target_type: "downstream",
+    description:
+      "CXCR2 (CXC chemokine receptor 2, also IL-8RB; UniProt P25025) is a G protein-coupled receptor (GPCR) of the chemokine receptor family that binds CXCL8/IL-8, CXCL1, CXCL2, CXCL5, CXCL6, CXCL7, and GROα/β/γ. It is expressed primarily on neutrophils, monocytes, mast cells, and some epithelial cancer cells. CXCR2 activation by CXCL8 triggers Gαi/Gβγ-mediated ERK1/2, PI3K/AKT, and PLCβ/PKC signalling cascades, driving neutrophil chemotaxis and degranulation. In the tumour microenvironment, CXCR2-mediated recruitment of tumor-associated neutrophils (TANs) leads to N2 pro-tumour polarisation characterised by TGF-β secretion, immunosuppressive cytokine production, and suppression of CD8+ cytotoxic T-cell function.\n\nIn SDH-deficient tumours, constitutive HIF-1α pseudohypoxia — driven by succinate-mediated PHD inhibition — promotes NF-κB co-activation and CXCL8/IL-8 upregulation (Bobrovnikova-Marjon et al., Cancer Res 2004, PMID 15256456), creating a sustained CXCL8-rich tumour microenvironment that constitutively recruits CXCR2+ neutrophils. Waugh and Wilson (Clin Cancer Res 2008, PMID 18980965) reviewed that elevated CXCL8/CXCR1/CXCR2 expression correlates with tumour angiogenesis, metastasis, and poor prognosis across multiple solid tumour types.\n\nAZD5069 (AstraZeneca) is an orally bioavailable, selective CXCR2 antagonist that blocks CXCL8-induced CXCR2 signalling. In ARID1A-deficient pancreatic cancer, CXCR2 blockade reduced CXCR2+ TAN infiltration, suppressed tumour growth, and augmented anti-PD-L1 efficacy in syngeneic mouse models (Kuo et al., Cancer Immunol Immunother 2026, PMID 42479087). No SDH-deficient specific data exist.",
+  },
+  {
     gene_symbol: "APEX1",
     uniprot_id: "P27695",
     name: "DNA-(apurinic or apyrimidinic site) endonuclease / Redox effector factor 1 (APE1/Ref-1)",
