@@ -3137,3 +3137,69 @@ Citation and trial verification of the 2026-11-04 entry found three issues, corr
 3. **Citation scope**: PMID 15256456 (Bobrovnikova-Marjon et al., Cancer Res 2004) was cited as demonstrating NF-kB/AP-1-driven CXCL8 upregulation under hypoxic stress; the paper's experiments studied glutamine deprivation (it notes hypoxia as the likely primary environmental driver of IL-8 expression in solid tumors). Wording softened in sdh-biology.ts, pathways.ts, and targets.ts. The unverifiable pIC50/selectivity numbers for AZD5069 were softened to "potent and selective".
 
 Verified clean: PMIDs 15256456, 18980965, 42479087 resolve with matching authors and titles; NCT02499328 confirmed as the durvalumab + AZD5069 Phase 1/2 trial; tracker.md spot-checks (42972661, 42981503, 42972108) match their rejection entries; engine-state claims verified (75 drugs, Mechanism 66, display_order 52); npm build passes on the corrected tree. Note: the PR body claims it "corrects a structural error where a CXCR2 description was misassigned to an APEX1 object" - no such change exists in the diff and the APEX1 object is correct as-is.
+
+---
+
+## 2026-11-05 — Add cell-type-specific FAO/CPT1 dependency in SDH-deficient PPGL — Perhexiline (Mechanism 67)
+
+### Part A — PubMed scan
+
+**Window:** August 5 – November 5, 2026 (new papers only; excluded: veterinary, non-SDH tumor types, case reports without mechanistic advance, papers outside window, papers already in tracker).
+
+**Search queries run:** SDH-deficient PPGL paraganglioma metabolism 2026, SDH-deficient PPGL pheochromocytoma treatment 2026, SDH-deficient GIST treatment 2026, SDH-deficient RCC 2026, succinate dehydrogenase FAO fatty acid oxidation, plus targeted follow-up queries.
+
+**Result: 1 paper added.**
+
+PMIDs evaluated this session:
+
+| PMID | Reason |
+|------|--------|
+| 42982179 | ADDED: Zhou SX et al., J Biol Chem 2026-11-04; direct demonstration of cell-type-specific FAO upregulation in SDH-loss chromaffin cells (imCCs); anchor for Mechanism 67 |
+| 42581163 | rejected: PRRT comparison study (DOTA-JR11 vs DOTA-TOC in mPPGL); not SDH-specific; PRRT/SSTR2 direction already covered |
+| 42960482 | rejected: sunitinib meta-analysis in general mPPGL; not SDH-specific; sunitinib/VEGFR direction already covered |
+
+### Part B — Engine improvement
+
+**New direction: SDH-deficient PPGL Fatty Acid Oxidation (FAO) Dependency → CPT1 Inhibition → Perhexiline (Mechanism 67)**
+
+**Rationale (not in any prior log entry):**
+
+SDH-deficient PPGL uniquely upregulate FAO (fatty acid β-oxidation) to compensate for energy deficiency after SDH/Complex II loss — a property specific to chromaffin-lineage cells and absent in fibroblasts with the same SDH loss. This is a genuinely novel direction: no prior MORNING_LOG entry covers FAO, CPT1, or Perhexiline.
+
+**Mechanistic anchor (PMID 42982179):**
+
+Zhou SX, Madden B, Charlesworth MC, Hitosugi T, Favier J, Maher LJ. "Distinct proteomic and acylproteomic adaptations to succinate dehydrogenase loss in two cell contexts." J Biol Chem 2026;302:113719. DOI 10.1016/j.jbc.2026.113719. PMID 42982179. Published 2026-11-04.
+
+This paper directly demonstrates that SDH-loss immortalized mouse chromaffin cells (imCCs, the PPGL cell-of-origin model) specifically upregulate fatty acid β-oxidation (FAO) activity, confirmed by stable isotope tracing and pharmacologic FAO inhibition, while this upregulation is absent in SDH-loss immortalized mouse embryonic fibroblasts (iMEFs, non-neuroendocrine cell type). Both cell types show energy deficiency, but only the chromaffin-lineage cells compensate via FAO. Proteomic analysis confirms upregulation of mitochondrial proteins including TCA cycle and FAO enzymes in SDH-loss imCCs.
+
+**Mechanistic chain:**
+
+SDH loss → TCA cycle truncation at succinate → fumarate → Complex II-dependent OXPHOS failure → energy deficiency → chromaffin-cell-specific FAO upregulation (PMID 42982179; directly demonstrated) → rate-limiting step is CPT1A/CPT1B (carnitine palmitoyltransferase 1) controlling long-chain fatty acid import into mitochondrial matrix → Perhexiline (CPT1A/CPT1B/CPT2 inhibitor; anti-anginal; approved Australia/NZ as Pexsig) blocks CPT1 → impaired FA import → FAO flux suppressed → bioenergetic crisis in cells that cannot rescue via OXPHOS (SDH/Complex II already non-functional).
+
+Cell-type specificity limits relevance to PPGL (chromaffin-origin); GIST (ICC origin) and RCC (tubular epithelial origin) may not share this chromaffin-specific FAO upregulation.
+
+**Evidence score: 26 (theoretical, toward upper bound).** Three-anchor chain: (1) direct FAO upregulation demonstration in PPGL-origin cell model (PMID 42982179); (2) CPT1A rate-limiting step of FAO; (3) Perhexiline is a clinically available CPT1 inhibitor. No study has tested perhexiline in SDH-deficient PPGL; cytotoxic consequence of FAO inhibition is inferred, not demonstrated.
+
+**Correction also applied this session:**
+
+Fixed a data-quality omission from the 2026-11-04 commit: `hif-cxcl8-cxcr2-neutrophil-immunosuppression` was added to pathways.ts, drugs.ts, and targets.ts on 2026-11-04 but was NOT added to `src/lib/scoring/constants.ts`. Added `"hif-cxcl8-cxcr2-neutrophil-immunosuppression": "bg-pink-300 text-pink-950 dark:bg-pink-700 dark:text-pink-50"` to PATHWAY_COLORS.
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `src/data/papers.ts` | Added PMID 42982179 (Zhou SX et al., J Biol Chem 2026-11-04; FAO upregulation in SDH-loss chromaffin cells) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 67 section: SDH-deficient PPGL FAO dependency → CPT1 inhibition → Perhexiline |
+| `src/data/seed/pathways.ts` | Added `sdh-fao-cpt1-dependency` pathway at display_order 53 |
+| `src/data/seed/targets.ts` | Added CPT1A target (UniProt P50416, pathway_slug sdh-fao-cpt1-dependency) |
+| `src/data/seed/drugs.ts` | Added Perhexiline drug entry (evidence_score 26, status theoretical, tumor_type_applicability ppgl) |
+| `src/lib/scoring/constants.ts` | Fixed missing `hif-cxcl8-cxcr2-neutrophil-immunosuppression` color (omitted from 2026-11-04 commit); added `sdh-fao-cpt1-dependency` color |
+| `tracker.md` | Added 3 evaluated PMIDs (1 added, 2 rejected) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after today:**
+- Drugs: 76 (was 75) [+1 Perhexiline]
+- Mechanisms: 67 (was 66) [+1 FAO/CPT1 dependency]
+- Last pathway display_order: 53
+
+**PR branch:** morning/2026-11-05-fao-cpt1-perhexiline

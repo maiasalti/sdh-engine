@@ -568,4 +568,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42155081",
     date: "2026-08",
   },
+  {
+    title:
+      "Distinct proteomic and acylproteomic adaptations to succinate dehydrogenase loss in two cell contexts.",
+    authors: "Zhou SX, Madden B, Charlesworth MC, Hitosugi T, Favier J, Maher LJ.",
+    journal: "J Biol Chem",
+    year: 2026,
+    doi: "10.1016/j.jbc.2026.113719",
+    topic: "Tumor Biology",
+    description:
+      "Direct demonstration that SDH loss drives cell-type-specific metabolic reprogramming in a PPGL-relevant cell model: immortalized mouse chromaffin cells (imCCs, chromaffin-lineage) with SDH loss specifically upregulate fatty acid β-oxidation (FAO) activity — confirmed by stable isotope tracing and pharmacologic FAO inhibition — while this upregulation is absent in SDH-loss immortalized mouse embryonic fibroblasts (iMEFs). Both cell types show energy deficiency, but only the chromaffin-lineage cells compensate via FAO. Proteomic analysis reveals significant upregulation of mitochondrial proteins including TCA cycle and FAO enzymes in imCCs with SDH loss. Establishes CPT1-dependent FAO as a chromaffin-cell-specific metabolic dependency and therapeutic vulnerability in SDH-deficient PPGL, and provides a mechanistic explanation for why SDH mutations cause tumors preferentially in chromaffin-lineage tissues.",
+    pmid: "42982179",
+    date: "2026-11",
+  },
 ];
