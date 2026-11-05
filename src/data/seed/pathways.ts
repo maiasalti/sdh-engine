@@ -864,7 +864,7 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     description:
       "SDH loss → constitutive HIF-1α pseudohypoxia → NF-κB co-activation → CXCL8/IL-8 upregulation → CXCR1/CXCR2 on tumor-associated neutrophils → N2 pro-tumor polarization → immunosuppressive tumor microenvironment with reduced CD8+ T-cell infiltration. CXCR2 blockade reverses neutrophil-mediated immunosuppression and augments checkpoint inhibitor efficacy.",
     upstream_event:
-      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α pseudohypoxia → NF-κB co-activation → CXCL8 (IL-8) transcription (Bobrovnikova-Marjon et al., Cancer Res 2004, PMID 15256456: hypoxia is the primary environmental driver of IL-8 expression via NF-κB/AP-1)",
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α pseudohypoxia → NF-κB co-activation → CXCL8 (IL-8) transcription (Bobrovnikova-Marjon et al., Cancer Res 2004, PMID 15256456: hypoxia noted as the primary environmental driver of IL-8 expression in solid tumors; NF-κB/AP-1 drive IL-8 transcription under metabolic stress)",
     downstream_effects: [
       "CXCL8 secretion → CXCR2 on bone-marrow-derived neutrophils → chemotaxis into tumour microenvironment",
       "CXCR2+ tumor-associated neutrophils polarise to N2 pro-tumour phenotype → suppress cytotoxic T-cell function and promote tumour growth",
