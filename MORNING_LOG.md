@@ -3126,3 +3126,14 @@ Elevated CXCL8/CXCR1/CXCR2 expression correlates with tumour angiogenesis, metas
 - Last pathway display_order: 52
 
 **PR branch:** morning/2026-11-04-cxcl8-cxcr2-azd5069
+---
+
+## Correction note - 2026-11-05 (PR #139 post-review fixes by Instinct)
+
+Citation and trial verification of the 2026-11-04 entry found three issues, corrected in place in the seed files before merge:
+
+1. **Wrong trial IDs**: drugs.ts cited NCT01209676 (an IMCgp100 melanoma trial) and NCT01236833 (a neonatal nutrition study) for AZD5069's respiratory programme. Correct trials: uncontrolled persistent asthma NCT01704495, COPD NCT01233232, bronchiectasis NCT01255592. drugs.ts also claimed no oncology trials of AZD5069 are registered; AZD5069 has in fact completed a Phase 1/2 combination with durvalumab in advanced solid tumours/SCCHN (NCT02499328) and entered an enzalutamide combination study (NCT03177187, terminated). drugs.ts and sdh-biology.ts corrected.
+2. **Drug-antibody conflation**: drugs.ts attributed the ARID1A-deficient PDAC results (Kuo et al., Cancer Immunol Immunother 2026, PMID 42479087) to AZD5069 itself; the study used an anti-CXCR2 antibody. Corrected to CXCR2 blockade by anti-CXCR2 antibody, with AZD5069 as the small-molecule extrapolation.
+3. **Citation scope**: PMID 15256456 (Bobrovnikova-Marjon et al., Cancer Res 2004) was cited as demonstrating NF-kB/AP-1-driven CXCL8 upregulation under hypoxic stress; the paper's experiments studied glutamine deprivation (it notes hypoxia as the likely primary environmental driver of IL-8 expression in solid tumors). Wording softened in sdh-biology.ts, pathways.ts, and targets.ts. The unverifiable pIC50/selectivity numbers for AZD5069 were softened to "potent and selective".
+
+Verified clean: PMIDs 15256456, 18980965, 42479087 resolve with matching authors and titles; NCT02499328 confirmed as the durvalumab + AZD5069 Phase 1/2 trial; tracker.md spot-checks (42972661, 42981503, 42972108) match their rejection entries; engine-state claims verified (75 drugs, Mechanism 66, display_order 52); npm build passes on the corrected tree. Note: the PR body claims it "corrects a structural error where a CXCR2 description was misassigned to an APEX1 object" - no such change exists in the diff and the APEX1 object is correct as-is.
