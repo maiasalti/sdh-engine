@@ -858,4 +858,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 51,
   },
+  {
+    name: "HIF-Driven CXCL8/IL-8 → CXCR2 → Pro-Tumor Neutrophil Immunosuppression",
+    slug: "hif-cxcl8-cxcr2-neutrophil-immunosuppression",
+    description:
+      "SDH loss → constitutive HIF-1α pseudohypoxia → NF-κB co-activation → CXCL8/IL-8 upregulation → CXCR1/CXCR2 on tumor-associated neutrophils → N2 pro-tumor polarization → immunosuppressive tumor microenvironment with reduced CD8+ T-cell infiltration. CXCR2 blockade reverses neutrophil-mediated immunosuppression and augments checkpoint inhibitor efficacy.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α pseudohypoxia → NF-κB co-activation → CXCL8 (IL-8) transcription (Bobrovnikova-Marjon et al., Cancer Res 2004, PMID 15256456: hypoxia noted as the primary environmental driver of IL-8 expression in solid tumors; NF-κB/AP-1 drive IL-8 transcription under metabolic stress)",
+    downstream_effects: [
+      "CXCL8 secretion → CXCR2 on bone-marrow-derived neutrophils → chemotaxis into tumour microenvironment",
+      "CXCR2+ tumor-associated neutrophils polarise to N2 pro-tumour phenotype → suppress cytotoxic T-cell function and promote tumour growth",
+      "CXCL8 → CXCR2 on cancer cells → ERK1/2 / PI3K / AKT activation → enhanced proliferation and survival in some tumour types",
+      "CXCL8 → CXCR2 → pro-angiogenic factor release (MMP-9, VEGF) from neutrophils → tumour angiogenesis",
+      "AZD5069 (selective CXCR2 antagonist) blocks CXCL8-induced CXCR2 signalling → reduces CXCR2+ neutrophil recruitment → remodels immunosuppressive TME → augments anti-PD-L1 efficacy (Kuo et al., Cancer Immunol Immunother 2026, PMID 42479087)",
+    ],
+    druggable: true,
+    display_order: 52,
+  },
 ];

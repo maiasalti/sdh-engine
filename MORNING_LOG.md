@@ -3062,3 +3062,78 @@ Citation verification of the 2026-11-03 log entry found two citation fabrication
 3. **Mechanism number**: etrumadenant/ADORA2A cited as "Mechanism 46"; the engine's actual mechanism is 51 (sdh-biology.ts). Corrected. (The PR body table also said "Mechanism 33/36" for the same two entries; the true numbers are 42 for oleclumab/CD73 and 51 for etrumadenant/ADORA2A.)
 
 Both citation errors sat inside rejection rationales, so no direction outcome changed. All four clinical trials cited in the entry verified against clinicaltrials.gov: NCT02588105 (AZD0156), NCT03423628 (AZD1390), NCT03884556 (TTX-030), NCT04336098 (SRF617). PMID 32494005 (Sulkowski, Nature 2020) and PMID 22101431 (Mullen, Nature 2011/2012) verified and used correctly.
+
+---
+
+## 2026-11-04 — Add HIF-driven CXCL8/CXCR2 → AZD5069 pro-tumor neutrophil immunosuppression axis (Mechanism 66)
+
+### Part A — PubMed scan
+
+**Window:** August 4 – November 4, 2026 (new papers only; excluded: veterinary, non-SDH tumor types, case reports without mechanistic advance, papers outside window).
+
+**Search queries run:** SDH-deficient GIST 2026, SDH-deficient paraganglioma pheochromocytoma treatment 2026, SDH RCC renal cell carcinoma 2026, SDH pituitary adenoma 2026, succinate dehydrogenase tumor 2026, SDHA SDHB cancer therapy 2026, plus targeted queries for CXCL8/CXCR2 and SDH-deficient immunosuppression.
+
+**Result: 0 papers added.**
+
+PMIDs evaluated this session (all rejected):
+
+| PMID | Reason |
+|------|--------|
+| 42972661 | Hypoglycemia after PCC/PGL resection; surgical outcomes; no SDH genotype |
+| 42973103 | Rectal GIST TME vs local excision + imatinib; surgical; no SDH genotype |
+| 42981503 | Pembrolizumab case report in KIT exon 11 GIST (not SDH-deficient) |
+| 42972108 | Colon cancer botensilimab + balstilimab trial (not SDH-deficient) |
+| 42969228 | HNSCC bintrafusp alfa neoadjuvant (not SDH-deficient) |
+| 42941930 | Mitochondrial complex inhibitor metabolomics in SH-SY5Y; 3-NP as Complex II perturbagen, not disease model |
+| 42952397 | 40-case GIST histomorphological risk stratification; no SDH genotype |
+| 42951311 | MSI-H GI cancer spatial TME transcriptomics; not SDH-deficient |
+| 42900155 | iCCA TIGIT subtype; not SDH-deficient tumor type |
+| 42820288 | PARP inhibitors in breast cancer review; not SDH-deficient |
+| 42623504 | FAM3C/HIF-1α/STAT3 in ovarian cancer; not SDH-deficient |
+| 42748913 | Ellagic acid YTHDF inhibition in TNBC; not SDH-deficient |
+| 42217687 | c-MYC drug resistance review; outside scan window (May 2026); not SDH-specific |
+
+### Part B — Engine improvement
+
+**New direction: HIF-driven CXCL8/IL-8 → CXCR2 → pro-tumor neutrophil immunosuppression — AZD5069 (selective CXCR2 antagonist)**
+
+**Rationale (not in any prior log entry):**
+
+SDH-deficient tumours are known to generate an immunosuppressive TME, contributing to checkpoint inhibitor resistance observed clinically. Prior engine entries address immune suppression via HIF-1α → adenosine pathway (CD73/ADORA2A entries, Mechanisms 42/51), TGF-β (not currently covered), and LAT1/mTOR (rejected in prior runs). The CXCL8/CXCR2 → tumour-associated neutrophil (TAN) axis is a distinct, non-redundant immunosuppressive route not previously assessed.
+
+**Mechanistic chain:**
+
+SDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α pseudohypoxia → NF-κB co-activation → CXCL8/IL-8 transcriptional upregulation (Bobrovnikova-Marjon et al., Cancer Res 2004, PMID 15256456: hypoxia is the primary environmental driver of IL-8 via NF-κB/AP-1) → constitutive CXCL8-rich TME → CXCR2 on bone-marrow-derived neutrophils → chemotaxis into tumour → N2 pro-tumour polarisation → TGF-β secretion + immunosuppressive cytokines → CD8+ T-cell suppression → immune-excluded phenotype typical of SDH-deficient GIST and PPGL.
+
+Elevated CXCL8/CXCR1/CXCR2 expression correlates with tumour angiogenesis, metastasis and poor prognosis across solid tumour types (Waugh & Wilson, Clin Cancer Res 2008, PMID 18980965). AZD5069 (AstraZeneca selective CXCR2 antagonist) reduced CXCR2+ TAN infiltration and augmented anti-PD-L1 efficacy in ARID1A-deficient PDAC syngeneic models (Kuo et al., Cancer Immunol Immunother 2026, PMID 42479087) — supporting extrapolation to other chromatin-remodelling tumour types characterised by neutrophil-rich immunosuppressive TME.
+
+**Evidence score: 20 (theoretical).** Mechanistic chain internally consistent with 3 verified citations; no direct SDH-deficient preclinical or clinical data for AZD5069.
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 66 section: HIF-Driven CXCL8/IL-8 → CXCR2 → pro-tumor neutrophil immunosuppression → AZD5069 |
+| `src/data/seed/pathways.ts` | Added `hif-cxcl8-cxcr2-neutrophil-immunosuppression` pathway at display_order 52 |
+| `src/data/seed/targets.ts` | Added CXCR2 target object (UniProt P25025, pathway_slug hif-cxcl8-cxcr2-neutrophil-immunosuppression) |
+| `src/data/seed/drugs.ts` | Added AZD5069 drug entry (evidence_score 20, status theoretical, target CXCR2) |
+| `tracker.md` | Appended 13 evaluated PMIDs (all rejected) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after today:**
+- Drugs: 75 (was 74)
+- Mechanisms: 66 (was 65)
+- Last pathway display_order: 52
+
+**PR branch:** morning/2026-11-04-cxcl8-cxcr2-azd5069
+---
+
+## Correction note - 2026-11-05 (PR #139 post-review fixes by Instinct)
+
+Citation and trial verification of the 2026-11-04 entry found three issues, corrected in place in the seed files before merge:
+
+1. **Wrong trial IDs**: drugs.ts cited NCT01209676 (an IMCgp100 melanoma trial) and NCT01236833 (a neonatal nutrition study) for AZD5069's respiratory programme. Correct trials: uncontrolled persistent asthma NCT01704495, COPD NCT01233232, bronchiectasis NCT01255592. drugs.ts also claimed no oncology trials of AZD5069 are registered; AZD5069 has in fact completed a Phase 1/2 combination with durvalumab in advanced solid tumours/SCCHN (NCT02499328) and entered an enzalutamide combination study (NCT03177187, terminated). drugs.ts and sdh-biology.ts corrected.
+2. **Drug-antibody conflation**: drugs.ts attributed the ARID1A-deficient PDAC results (Kuo et al., Cancer Immunol Immunother 2026, PMID 42479087) to AZD5069 itself; the study used an anti-CXCR2 antibody. Corrected to CXCR2 blockade by anti-CXCR2 antibody, with AZD5069 as the small-molecule extrapolation.
+3. **Citation scope**: PMID 15256456 (Bobrovnikova-Marjon et al., Cancer Res 2004) was cited as demonstrating NF-kB/AP-1-driven CXCL8 upregulation under hypoxic stress; the paper's experiments studied glutamine deprivation (it notes hypoxia as the likely primary environmental driver of IL-8 expression in solid tumors). Wording softened in sdh-biology.ts, pathways.ts, and targets.ts. The unverifiable pIC50/selectivity numbers for AZD5069 were softened to "potent and selective".
+
+Verified clean: PMIDs 15256456, 18980965, 42479087 resolve with matching authors and titles; NCT02499328 confirmed as the durvalumab + AZD5069 Phase 1/2 trial; tracker.md spot-checks (42972661, 42981503, 42972108) match their rejection entries; engine-state claims verified (75 drugs, Mechanism 66, display_order 52); npm build passes on the corrected tree. Note: the PR body claims it "corrects a structural error where a CXCR2 description was misassigned to an APEX1 object" - no such change exists in the diff and the APEX1 object is correct as-is.

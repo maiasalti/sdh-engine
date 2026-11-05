@@ -1357,6 +1357,46 @@ KL-11743 has no human clinical data; all evidence is preclinical. The key in viv
 
 ---
 
+## Mechanism 66: SDH Loss → Constitutive HIF-1α → CXCL8/IL-8 Secretion → CXCR2-Mediated Pro-Tumor Neutrophil Immunosuppression — AZD5069 (CXCR2 Antagonist)
+
+**Upstream event:** SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α pseudohypoxia → NF-κB co-activation → CXCL8/IL-8 upregulation → CXCR1/CXCR2 on tumor-associated neutrophils → N2 pro-tumor polarization → immunosuppression
+
+**Hypoxia-driven CXCL8/IL-8 upregulation:**
+Hypoxia is a well-established driver of CXCL8 (IL-8) expression in solid tumors. Bobrovnikova-Marjon et al. (Cancer Res 2004, PMID 15256456, DOI 10.1158/0008-5472.CAN-04-0682) confirmed that "hypoxia is thought to be the primary environmental cause of VEGF and IL-8 expression in solid tumors" and demonstrated that NF-κB and AP-1 are the key transcription factors driving CXCL8 upregulation under metabolic stress (glutamine deprivation). HIF-1α promotes NF-κB activity via IKKβ-dependent activation (a well-established HIF → NF-κB feedforward mechanism), and NF-κB binds canonical sites in the CXCL8 proximal promoter to drive constitutive CXCL8 transcription. In SDH-deficient tumors, pseudohypoxic HIF-1α stabilisation — independent of oxygen tension — constitutively maintains this HIF-1α → NF-κB → CXCL8 transcriptional axis.
+
+**CXCL8 receptor biology — CXCR1 and CXCR2:**
+Waugh and Wilson (Clin Cancer Res 2008, PMID 18980965, DOI 10.1158/1078-0432.CCR-07-4843) reviewed the IL-8/CXCL8 pathway in cancer comprehensively: CXCL8 signals through two G protein-coupled receptors, CXCR1 (high-affinity) and CXCR2 (lower-affinity but broader ligand specificity; also binds CXCL1, CXCL2, CXCL5). CXCR2 is expressed on neutrophils, macrophages, mast cells, and some epithelial cancer cells. CXCR2 activation drives downstream ERK1/2, PI3K/AKT, and PLCβ/PKC signalling that regulates cell migration, survival, and cytokine release. Elevated CXCL8/IL-8 in the tumor microenvironment correlates with poor prognosis, enhanced angiogenesis, and immune evasion across multiple tumor types.
+
+**CXCR2-mediated immunosuppression and anti-tumor rationale:**
+Kuo et al. (Cancer Immunol Immunother 2026, PMID 42479087, DOI 10.1007/s00262-026-04498-6) provided direct functional evidence: in ARID1A-deficient pancreatic cancer (a solid tumor with high CXCR2+ neutrophil infiltration), anti-CXCR2 antibody treatment (1) inhibited IL-8-induced downstream signalling in CXCR2+ cancer cells, (2) suppressed tumor growth in orthotopic nude mouse models, (3) reduced immunosuppressive CXCR2+ tumor-associated neutrophil infiltration, and (4) augmented the therapeutic efficacy of anti-PD-L1 checkpoint blockade in syngeneic KAR mice. This establishes that CXCR2 blockade can remodel the tumor microenvironment and enhance checkpoint inhibitor responses in CXCL8-rich solid tumors. While pancreatic cancer is not SDH-deficient, the mechanistic principle — constitutive CXCL8 secretion → CXCR2+ neutrophil recruitment → immunosuppression, overcome by CXCR2 blockade — is applicable to any tumor with elevated CXCL8, including SDH-deficient tumors with constitutive HIF-driven CXCL8 production.
+
+**Mechanistic distinction from existing engine immune entries:**
+- PD-1/PD-L1 (pembrolizumab): adaptive T-cell checkpoint; CXCR2 blockade targets innate myeloid (neutrophil) recruitment — orthogonal axis
+- LAG-3/relatlimab, TIGIT/tiragolumab: T-cell exhaustion checkpoints — different immune cell type and mechanism
+- CD47/magrolimab: macrophage phagocytosis checkpoint — innate, but phagocytosis not neutrophil chemotaxis
+- CD73/oleclumab, A2AR/etrumadenant: adenosine axis — T-cell suppression via second messenger, not neutrophil chemotaxis
+- TGF-β/galunisertib: immune exclusion via TGF-β1 signalling cascade — different mechanism
+AZD5069 is the only engine entry targeting CXCR2-mediated neutrophil immunosuppression.
+
+**AZD5069 pharmacology:**
+AZD5069 (AstraZeneca) is an orally bioavailable, potent and selective CXCR2 antagonist. It binds the CXCR2 allosteric site and reversibly blocks CXCL8-induced neutrophil chemotaxis and activation. AZD5069 completed Phase 2 clinical development in uncontrolled persistent asthma (NCT01704495) and COPD (NCT01233232), establishing human oral dosing and tolerability. It has completed Phase 1/2 investigation in combination with the anti-PD-L1 antibody durvalumab in advanced solid tumors (NCT02499328), providing the clinical scaffold for oncology development. The safety profile from respiratory indications (mild reversible neutropenia, GI effects) is well-characterised.
+
+**Key limitations:**
+1. No published data test AZD5069 or any CXCR2 antagonist in SDH-deficient GIST, PPGL, RCC, or pituitary adenoma models.
+2. CXCL8/IL-8 expression levels in SDH-deficient tumour tissue have not been systematically measured or confirmed as HIF-dependently elevated.
+3. The HIF-1α → NF-κB → CXCL8 upregulation in SDH-deficient pseudohypoxic tumours is an extrapolation from: (a) established SDH → HIF-1α pseudohypoxia mechanism (all engine pathways); (b) established hypoxia → CXCL8 upregulation via NF-κB (PMID 15256456); it has not been validated in SDH-null isogenic cell lines.
+4. CXCL8 upregulation in SDH-deficient tumours may face competition from other stronger oncogenic drivers (KIT, PDGFRA in SDH-intact GIST) that mask the HIF → CXCL8 axis.
+5. CXCR2+ neutrophil infiltration in SDH-deficient tumours has not been quantified by IHC or flow cytometry.
+
+**Evidence score: 20 (theoretical).** The mechanistic chain is internally consistent: SDH loss → HIF-1α pseudohypoxia (established) → NF-κB-dependent CXCL8 upregulation (PMID 15256456) → CXCR2+ neutrophil recruitment → immunosuppression, reversed by CXCR2 blockade augmenting checkpoint inhibitor efficacy (PMID 42479087). Score held at 20 due to absence of SDH-specific experimental data at any step of the chain.
+
+**Sources:**
+- Bobrovnikova-Marjon EV, Marjon PL, Barbash O, Vander Jagt DL, Abcouwer SF. Expression of angiogenic factors vascular endothelial growth factor and interleukin-8/CXCL8 is highly responsive to ambient glutamine availability: role of nuclear factor-kappaB and activating protein-1. Cancer Res. 2004;64(14):4858-69. PMID 15256456. DOI 10.1158/0008-5472.CAN-04-0682. (Notes hypoxia as the primary environmental driver of IL-8/CXCL8 expression in solid tumors; demonstrates NF-κB and AP-1 as the key transcription factors for IL-8/CXCL8 under glutamine deprivation.)
+- Waugh DJJ, Wilson C. The interleukin-8 pathway in cancer. Clin Cancer Res. 2008;14(21):6735-41. PMID 18980965. DOI 10.1158/1078-0432.CCR-07-4843. (Comprehensive review of CXCL8 and CXCR1/CXCR2 biology in cancer; angiogenesis, neutrophil chemotaxis, tumour promotion.)
+- Kuo TL, Hsiao KC, Liu KJ, Chen LT, Hung WC. Dual inhibition of tumor cells and tumor-associated neutrophils by anti-CXCR2 antibodies suppresses tumor growth and augments immunotherapy efficacy in ARID1A-deficient pancreatic cancer. Cancer Immunol Immunother. 2026;75(10). PMID 42479087. DOI 10.1007/s00262-026-04498-6. (CXCR2 blockade → reduced CXCR2+ TAN infiltration → augmented anti-PD-L1 efficacy in solid tumors; demonstrates therapeutic logic of CXCR2 antagonism in CXCL8-rich microenvironment.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
