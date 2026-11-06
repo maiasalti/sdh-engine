@@ -875,4 +875,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 52,
   },
+  {
+    name: "SDH-Deficient PPGL Fatty Acid Oxidation (FAO) Dependency → CPT1 Inhibition",
+    slug: "sdh-fao-cpt1-dependency",
+    description:
+      "SDH loss truncates the TCA cycle at succinate → fumarate and impairs Complex II-dependent OXPHOS, creating severe bioenergetic stress in PPGL chromaffin cells. Zhou et al. (J Biol Chem 2026, PMID 42982179) demonstrated — using stable isotope tracing and pharmacologic FAO inhibition in isogenic cell models — that SDH-loss immortalized mouse chromaffin cells (imCCs, the PPGL-relevant cell type) specifically upregulate fatty acid β-oxidation (FAO) activity to compensate for this energy deficiency. This FAO upregulation is cell-type specific: SDH-loss immortalized mouse embryonic fibroblasts (iMEFs) do not show the same FAO increase, establishing chromaffin-cell lineage specificity. CPT1A (carnitine palmitoyltransferase 1A), the outer mitochondrial membrane enzyme catalyzing the rate-limiting step of long-chain fatty acid import into the mitochondrial matrix, becomes a dependency in this chromaffin-cell-specific metabolic adaptation.",
+    upstream_event:
+      "SDH loss → TCA cycle truncation at succinate → fumarate → Complex II-dependent OXPHOS failure → energy deficiency → cell-type-specific FAO upregulation in chromaffin-lineage cells (Zhou SX et al., J Biol Chem 2026, PMID 42982179; directly demonstrated by stable isotope tracing and pharmacologic FAO inhibition in SDH-loss imCCs vs iMEFs) → elevated mitochondrial fatty acid import via CPT1A/CPT1B/CPT2 → FAO flux increases to compensate for absent succinate oxidation",
+    downstream_effects: [
+      "FAO activity specifically increased in SDH-loss chromaffin cells (imCCs) but not in SDH-loss fibroblasts (iMEFs) — directly established by stable isotope tracing and pharmacologic FAO inhibition in isogenic models (PMID 42982179)",
+      "SDH-loss imCCs show significant upregulation of mitochondrial proteins including TCA cycle and FAO enzymes (proteomics), confirming the metabolic rewiring at the protein level (PMID 42982179)",
+      "CPT1A (rate-limiting outer mitochondrial membrane enzyme for long-chain FA carnitine conjugation and mitochondrial import) activity required to sustain the upregulated FAO flux → CPT1 inhibition blocks the compensatory energy pathway in SDH-deficient chromaffin cells",
+      "Perhexiline (CPT1A/CPT1B/CPT2 inhibitor; anti-anginal; approved in Australia/NZ) blocks long-chain fatty acid carnitine conjugation → impairs mitochondrial FA import → suppresses FAO → bioenergetic crisis in SDH-deficient chromaffin cells unable to rescue via OXPHOS (SDH/Complex II non-functional)",
+      "Cell-type specificity restricts therapeutic relevance to PPGL (chromaffin-origin); GIST (ICC origin) and RCC (tubular epithelial origin) may not share this chromaffin-specific FAO upregulation",
+      "Mechanistically distinct from glutamine dependency (telaglenastat/GLS1), glucose import dependency (KL-11743/GLUT1), lactate export (AZD3965/MCT1), and redox vulnerability (auranofin/TXNRD1); targets a third, cell-type-specific energy-generating pathway",
+    ],
+    druggable: true,
+    display_order: 53,
+  },
 ];

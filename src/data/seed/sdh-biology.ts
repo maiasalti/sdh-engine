@@ -1397,6 +1397,43 @@ AZD5069 (AstraZeneca) is an orally bioavailable, potent and selective CXCR2 anta
 
 ---
 
+## Mechanism 67: SDH-Deficient PPGL Fatty Acid Oxidation (FAO) Dependency → CPT1 Inhibition → Perhexiline
+
+**Upstream event:** SDH loss → TCA cycle truncation at succinate → fumarate → Complex II-dependent OXPHOS failure → energy deficiency → chromaffin-cell-specific FAO upregulation (Zhou SX et al., J Biol Chem 2026, PMID 42982179)
+
+**Direct demonstration of cell-type-specific FAO upregulation:**
+Zhou et al. (J Biol Chem 2026, PMID 42982179, DOI 10.1016/j.jbc.2026.113719) compared proteomic, acetylproteomic, and succinylproteomic profiles of SDH-loss immortalized mouse chromaffin cells (imCCs — derived from chromaffin cells of the adrenal medulla, the PPGL cell of origin) versus SDH-loss immortalized mouse embryonic fibroblasts (iMEFs — a non-neuroendocrine cell type). Both cell models showed energy deficiency upon SDH loss. However, SDH-loss imCCs, but not SDH-loss iMEFs, showed significant upregulation of mitochondrial proteins including TCA cycle and FAO enzymes. Effects on fatty acid β-oxidation were directly assessed by stable isotope tracing and pharmacologic FAO inhibition, confirming that FAO activity is uniquely increased in SDH-loss imCCs. This cell-type specificity is biologically significant: it explains why SDH mutations cause tumors specifically in chromaffin-lineage tissues (PPGL) rather than fibroblasts, and establishes CPT1-dependent FAO as a chromaffin-cell-specific metabolic dependency and therapeutic vulnerability.
+
+**CPT1A as the rate-limiting step:**
+Carnitine palmitoyltransferase 1 (CPT1; primarily CPT1A, the liver isoform, or CPT1B, the muscle isoform) catalyzes the rate-limiting step of long-chain fatty acid import into the mitochondrial matrix: acyl-transfer from long-chain acyl-CoA to carnitine forming acylcarnitine. CACT (SLC25A20) transports acylcarnitine across the inner mitochondrial membrane; CPT2 performs the reverse reaction to regenerate acyl-CoA in the matrix for β-oxidation. Without CPT1 activity, long-chain fatty acids cannot access the mitochondrial β-oxidation machinery. Malonyl-CoA is the endogenous allosteric CPT1A inhibitor, linking CPT1 activity to lipogenesis status. In SDH-deficient chromaffin cells with upregulated FAO (PMID 42982179), CPT1 is the gatekeeper of the compensatory energy pathway.
+
+**Perhexiline (CPT1A/CPT1B/CPT2 inhibitor):**
+Perhexiline (Pexsig; approved in Australia and New Zealand for refractory angina) is a clinically available CPT1A/CPT1B/CPT2 inhibitor. It was originally developed as a metabolic anti-anginal agent: by shifting myocardial energy metabolism from FAO toward glucose oxidation, it improves cardiac efficiency. Its mechanism of action — CPT1 inhibition suppressing FAO — directly targets the metabolic vulnerability identified in SDH-deficient PPGL chromaffin cells by PMID 42982179. By blocking CPT1, perhexiline would deprive SDH-deficient PPGL cells of the compensatory FAO energy pathway while OXPHOS is already non-functional (SDH/Complex II loss), creating a dual bioenergetic blockade.
+
+**Synthetic-lethal energy deprivation rationale:**
+SDH-deficient PPGL cells face a metabolic configuration amenable to synthetic-lethal intervention: SDH loss blocks OXPHOS at Complex II → cells compensate via FAO (and glycolysis) → blocking FAO via CPT1 inhibition (perhexiline) + the already-absent OXPHOS creates bioenergetic catastrophe. Normal chromaffin cells (SDH-proficient) can rescue energy homeostasis via OXPHOS when FAO is impaired, providing a potential therapeutic window. This is mechanistically parallel to the GLUT1 inhibitor rationale (Mechanism 65/KL-11743): in both cases, SDH-deficiency eliminates the OXPHOS rescue route, making a second metabolic blockade selectively lethal.
+
+**Mechanistic distinction from existing engine metabolic entries:**
+- Telaglenastat/GLS1 (Mechanism 13): blocks glutaminolysis — different metabolic substrate (glutamine)
+- KL-11743/GLUT1 (Mechanism 65): blocks glucose import — different metabolic substrate (glucose, not fatty acids)
+- AZD3965/MCT1: blocks lactate export — downstream of glycolysis
+- Auranofin/TXNRD1: targets thioredoxin ROS scavenging, not energy substrate FAO
+Perhexiline/CPT1A is the only FAO-focused entry in the engine and the only PPGL-cell-lineage-specific metabolic dependency.
+
+**Key limitations:**
+1. PMID 42982179 uses a pharmacologic FAO inhibitor in SDH-loss imCCs to assess FAO activity; the specific compound is not named in the abstract and cytotoxicity outcomes are not explicitly reported — the therapeutic implication (FAO inhibition → cell death in SDH-deficient PPGL) is mechanistically inferred, not directly demonstrated by the cited work.
+2. No published study has tested perhexiline or any CPT1 inhibitor specifically in SDH-deficient PPGL cell lines or patient-derived models.
+3. The CPT1 isoform (CPT1A vs CPT1B) relevant to chromaffin cells requires experimental clarification.
+4. Perhexiline has a narrow therapeutic window due to CYP2D6-dependent pharmacokinetics: CYP2D6 poor metabolizers accumulate perhexiline to hepatotoxic and neurotoxic concentrations, requiring therapeutic drug monitoring and CYP2D6 genotyping for safe clinical use.
+5. No clinical trial of perhexiline or any CPT1 inhibitor in PPGL or any SDH-deficient tumor exists.
+
+**Evidence score: 26 (theoretical, toward upper bound).** Three-anchor chain: (1) direct demonstration of FAO upregulation in SDH-loss chromaffin cells by isotope tracing and pharmacologic inhibition (PMID 42982179); (2) CPT1A is the rate-limiting enzyme for FAO; (3) perhexiline is a clinically available CPT1 inhibitor. Score held at theoretical/26 because cytotoxic consequences of FAO inhibition in SDH-deficient PPGL cells are inferred, not directly demonstrated.
+
+**Sources:**
+- Zhou SX, Madden B, Charlesworth MC, Hitosugi T, Favier J, Maher LJ. Distinct proteomic and acylproteomic adaptations to succinate dehydrogenase loss in two cell contexts. J Biol Chem. 2026;302:113719. PMID 42982179. DOI 10.1016/j.jbc.2026.113719. (Direct demonstration of cell-type-specific FAO upregulation in SDH-loss chromaffin cells using stable isotope tracing and pharmacologic FAO inhibition; establishes CPT1-dependent FAO as a PPGL-specific metabolic dependency.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).

@@ -1389,4 +1389,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
   },
+  {
+    name: "Perhexiline",
+    brand_names: ["Pexsig"],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "CPT1A/CPT1B/CPT2 inhibitor (fatty acid oxidation inhibitor); anti-anginal agent",
+    mechanism_of_action:
+      "Perhexiline (Pexsig; approved in Australia and New Zealand for refractory angina; not FDA- or EMA-approved) is a clinically available inhibitor of carnitine palmitoyltransferase 1A (CPT1A), CPT1B, and CPT2. These enzymes catalyze the rate-limiting step of long-chain fatty acid β-oxidation: acyl-CoA → acylcarnitine conjugation and mitochondrial transport. Perhexiline blocks this step, suppressing FAO and shifting cellular energy metabolism away from fatty acid substrates.\n\nSDH-deficient PPGL mechanistic rationale:\n\nZhou et al. (J Biol Chem 2026, PMID 42982179, DOI 10.1016/j.jbc.2026.113719) used proteomics, stable isotope tracing, and pharmacologic FAO inhibition in isogenic cell models — immortalized mouse chromaffin cells (imCCs, PPGL-origin cell type) and immortalized mouse embryonic fibroblasts (iMEFs) — with and without SDH loss. Key finding: SDH-loss imCCs, but NOT SDH-loss iMEFs, show a specific upregulation of FAO activity. Both cell types show energy deficiency upon SDH loss, but only chromaffin-lineage cells compensate via increased FAO. The same paper demonstrated at the proteomic level that SDH-loss imCCs upregulate mitochondrial proteins including TCA cycle and FAO enzymes. This directly establishes cell-type-specific FAO dependency as a consequence of SDH loss in chromaffin cells.\n\nMechanistic chain: SDH loss → TCA cycle truncation → Complex II-dependent OXPHOS failure → energy deficiency → chromaffin-cell-specific upregulation of CPT1-dependent FAO (PMID 42982179) → CPT1A/CPT1B inhibition by perhexiline → impaired long-chain fatty acid import → FAO flux suppressed → bioenergetic crisis in SDH-deficient PPGL cells that cannot rescue via OXPHOS.\n\nSelectivity rationale: Normal chromaffin cells (SDH-proficient) can rescue energy homeostasis via OXPHOS when FAO is inhibited. SDH-deficient PPGL cells have already lost OXPHOS at Complex II; inhibiting FAO removes their primary compensatory energy source. This is mechanistically parallel to KL-11743/GLUT1 inhibition (Mechanism 65): SDH loss eliminates OXPHOS rescue, making a second metabolic blockade (here CPT1 instead of GLUT1) selectively lethal by eliminating the compensatory energy pathway.\n\nCritical limitations:\n1. PMID 42982179 uses a pharmacologic FAO inhibitor in SDH-loss imCCs to assess FAO; the specific compound is not named in the abstract and cytotoxicity outcomes are not explicitly reported — the therapeutic implication (FAO inhibition → cell death in SDH-deficient PPGL) is mechanistically inferred, not directly demonstrated by the cited work.\n2. No published study has tested perhexiline or any CPT1 inhibitor specifically in SDH-deficient PPGL cell lines or patient-derived models.\n3. The CPT1 isoform (CPT1A vs CPT1B) relevant to chromaffin cells requires experimental clarification; the target_gene_symbol CPT1A is used as the rate-limiting enzyme but CPT1B may also be relevant.\n4. Perhexiline has a narrow therapeutic window due to CYP2D6-dependent pharmacokinetics: CYP2D6 poor metabolizers accumulate the drug to hepatotoxic and neurotoxic concentrations. Therapeutic drug monitoring and CYP2D6 genotyping are required for safe clinical use, limiting applicability.\n5. No clinical trial of perhexiline or any CPT1 inhibitor in PPGL or any SDH-deficient tumour exists.\n\nEvidence score: 26 (theoretical, toward upper bound). Three-anchor chain: (1) direct demonstration of FAO upregulation in SDH-loss chromaffin cells by isotope tracing and pharmacologic inhibition (PMID 42982179); (2) CPT1A is the rate-limiting enzyme for long-chain FA entry into FAO; (3) perhexiline is a clinically available CPT1A/CPT1B/CPT2 inhibitor. Score held at theoretical/26 because the specific cytotoxic consequence of FAO inhibition in SDH-deficient PPGL cells is inferred, not directly demonstrated by the available pharmacology.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/42982179/",
+    fda_approved: false,
+    approved_indications: [
+      "Refractory angina pectoris (approved in Australia and New Zealand under the brand name Pexsig; not FDA-approved in the United States or EMA-approved in Europe)",
+    ],
+    pathway_slugs: ["sdh-fao-cpt1-dependency"],
+    target_gene_symbols: ["CPT1A"],
+    evidence_score: 26,
+    status: "theoretical",
+    tumor_type_applicability: ["ppgl"],
+    clinical_trial_ids: [],
+  },
 ];
