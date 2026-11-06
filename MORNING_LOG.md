@@ -3203,16 +3203,10 @@ Fixed a data-quality omission from the 2026-11-04 commit: `hif-cxcl8-cxcr2-neutr
 - Last pathway display_order: 53
 
 **PR branch:** morning/2026-11-05-fao-cpt1-perhexiline
---
-
-
+---
 
 ## Correction note - 2026-11-06 (PR #140 post-review fix by Instinct)
 
-
-
 One wording correction before merge: sdh-biology.ts described perhexiline as approved in Australia/NZ "for refractory angina and heart failure"; it is approved there for refractory angina only (heart failure use is off-label). drugs.ts already stated this correctly.
-
-
 
 All citations verified: PMID 42982179 authors/title/abstract match and support the FAO claim; tracker PMIDs 42581163/42960482 match; CPT1A UniProt P50416 verified; 76 drugs / Mechanism 67 / display_order 53 confirmed; npm build passes.
