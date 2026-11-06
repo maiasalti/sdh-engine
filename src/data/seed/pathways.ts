@@ -893,4 +893,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 53,
   },
+  {
+    name: "HIF-Driven CSF1 → CSF1R → Tumor-Associated Macrophage Survival and M2 Polarization",
+    slug: "hif-csf1-csf1r-m2-tam-immunosuppression",
+    description:
+      "SDH loss → constitutive pseudohypoxia → HIF-1α/2α stabilization → HIF transcriptional activation of CSF1 (M-CSF) → CSF1 binding to CSF1R on tumor-associated macrophages (TAMs) → TAM survival, proliferation, and M2-phenotype polarization → immunosuppressive tumor microenvironment. CSF1 is a bona fide HIF transcriptional target: HIF activity is required for CSF1 gene transcription in cancer cells (Chaturvedi et al., PNAS 2014, PMID 24799675). The αKG/HIF1α → CSF1 → TAM/MDSC infiltration axis is additionally supported in hepatocellular carcinoma (He et al., Hepatology 2021, PMID 34288020). M2-polarized TAMs suppress CD8+ cytotoxic T-cell function, secrete pro-angiogenic VEGF and MMP-9, and promote invasion.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α/2α stabilization (pseudohypoxia) → HIF heterodimer binds HREs in CSF1 promoter → constitutive CSF1/M-CSF transcription and secretion → CSF1 binds CSF1R (CD115) on TAMs → CSF1R kinase activation (PI3K/AKT, RAS/MAPK, JAK/STAT5) → TAM survival, proliferation, and M2 polarization (IL-10 high, IL-12 low, TGF-β secretion, arginase-1 expression)",
+    downstream_effects: [
+      "CSF1 established as HIF transcriptional target: HIF activity required for CSF1 gene transcription in breast cancer cells promoting macrophage recruitment (Chaturvedi et al., PNAS 2014, PMID 24799675)",
+      "αKG/HIF1α → CSF1 → TAM/MDSC infiltration corroborated in HCC: SLC7A11-mediated αKG depletion → HIF1α → CSF1 upregulation → CSF1R-dependent TAM accumulation (He et al., Hepatology 2021, PMID 34288020)",
+      "M2-polarized TAMs secrete IL-10, TGF-β, arginase-1 → suppress CD8+ cytotoxic T-cell function → immune-excluded, cold TME",
+      "TAMs secrete VEGF, MMP-9 → promote tumor angiogenesis and extracellular matrix remodeling → invasion support",
+      "Pexidartinib (PLX3397; CSF1R + KIT + FLT3 inhibitor; FDA-approved for TGCT) blocks CSF1R signaling → TAM depletion and M2→M1 repolarization",
+      "Mechanistically distinct from CXCR2/neutrophil axis (Mechanism 66) and CD47/phagocytosis evasion (Mechanism 55): targets macrophage survival/M2 polarization, not neutrophil recruitment or phagocytosis checkpoint",
+      "Preclinical GIST context: PLX3397 showed superior activity in KIT-mutant GIST murine models versus imatinib via KIT (not CSF1R); in SDH-GIST (KIT/PDGFRA-wildtype), only the CSF1R/TAM arm applies (Kim et al., Clin Cancer Res 2014, PMID 24583793)",
+    ],
+    druggable: true,
+    display_order: 54,
+  },
 ];

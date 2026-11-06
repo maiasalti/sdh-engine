@@ -1434,6 +1434,58 @@ Perhexiline/CPT1A is the only FAO-focused entry in the engine and the only PPGL-
 
 ---
 
+## Mechanism 68: HIF-Driven CSF1 → CSF1R → Tumor-Associated Macrophage (TAM) Survival and M2 Polarization
+
+### Pathway overview
+
+SDH loss → constitutive pseudohypoxia → HIF-1α/2α stabilization → HIF transcriptional activation of CSF1 (macrophage colony-stimulating factor, M-CSF) → CSF1 binding to CSF1R on tumor-associated macrophages (TAMs) → TAM survival, proliferation, and M2-phenotype polarization → immunosuppressive tumor microenvironment.
+
+The CSF1/CSF1R axis is the dominant survival and differentiation signal for the macrophage lineage. CSF1R (CD115; encoded by CSF1R) is a receptor tyrosine kinase expressed on myeloid cells — monocytes, macrophages, dendritic cells. CSF1 binding activates CSF1R kinase → PI3K/AKT, RAS/MAPK, and JAK/STAT5 cascades → transcriptional programs supporting macrophage survival, proliferation, and differentiation to the immunosuppressive M2 phenotype (IL-10 high, IL-12 low, TGF-β secretion, arginase-1 expression). In tumors, M2-polarized TAMs suppress CD8+ T-cell function, secrete pro-angiogenic factors (VEGF, MMP-9), and promote cancer cell invasion and metastasis.
+
+### HIF → CSF1 transcriptional link
+
+Chaturvedi et al. (PNAS 2014, PMID 24799675) demonstrated that HIF transcriptional activity is specifically required for CSF1 gene transcription in triple-negative breast cancer cells. The authors showed that two feed-forward signaling loops between breast cancer cells and mesenchymal stem cells promoting TAM recruitment are both dependent on HIF transcriptional activity, with hypoxia synergizing with chemokine signals to trigger CSF1 gene transcription. This establishes CSF1 as a bona fide HIF target gene whose expression is driven by the pseudohypoxic program that is constitutively activated by SDH loss.
+
+He et al. (Hepatology 2021, PMID 34288020) further corroborated the HIF → CSF1 axis in hepatocellular carcinoma: SLC7A11 overexpression depleted αKG → elevated HIF1α → transcriptional upregulation of CSF1 → TAM and MDSC infiltration via the CSF1/CSF1R axis. The αKG/HIF1α → CSF1 connection is especially relevant to SDH biology: SDH loss also suppresses αKG-dependent PHD activity (through succinate competition), constitutively driving the same HIF1α → CSF1 output.
+
+### SDH-deficient context
+
+In SDH-deficient tumors, pseudohypoxia is not an occasional transcriptional event triggered by transient oxygenation failure — it is a constitutive, oncometabolite-driven state present in every cell. Succinate-mediated PHD inhibition locks HIF-1α (and to a lesser extent HIF-2α) in the transcriptionally active state continuously. This means CSF1 expression is constitutively elevated by HIF activity, sustaining a continuous CSF1-rich tumor microenvironment and providing a persistent survival signal to CSF1R-expressing TAMs. TAMs accumulate in the SDH-deficient TME and can adopt an M2-immunosuppressive phenotype, contributing to the immune-excluded, cold TME characteristic of SDH-deficient GIST and PPGL.
+
+This mechanism is distinct from other TAM/myeloid entries in the engine:
+- CD47/magrolimab (Mechanism 55) — targets macrophage phagocytosis checkpoint signaling (SIRPα binding), not TAM survival/polarization
+- AZD5069/CXCR2 (Mechanism 66) — targets HIF-driven CXCL8 → CXCR2 → pro-tumoral neutrophil (TAN) recruitment, not macrophage lineage
+
+The CSF1R entry specifically targets macrophage *survival and M2 polarization*, which is mechanistically orthogonal to the neutrophil recruitment axis (CXCR2) and phagocytosis evasion (CD47).
+
+### Drug: Pexidartinib (PLX3397, Turalio)
+
+Pexidartinib (PLX3397; Daiichi Sankyo; brand name Turalio) is an FDA-approved, orally bioavailable small molecule inhibitor with primary activity against CSF1R, KIT (wild-type and V559I), and FLT3. It is approved (2019) for tenosynovial giant cell tumor (TGCT) — a CSF1-driven benign but locally aggressive soft tissue tumor where CSF1R inhibition is the established mechanism of action.
+
+In SDH-deficient tumors, the therapeutic rationale is strictly via CSF1R → TAM depletion. This is mechanistically distinct from the TGCT indication, where tumor cells themselves express CSF1R (or abnormal CSF1 drives direct neoplastic proliferation). In SDH-GIST and PPGL, pexidartinib would act on CSF1R-expressing TAMs in the tumor microenvironment, depleting M2-immunosuppressive macrophages to restore immune effector function.
+
+Kim et al. (Clin Cancer Res 2014, PMID 24583793) tested PLX3397 in KIT-mutant GIST murine models (Kit^V558del/+ mice and xenografts). PLX3397 was superior to imatinib in reducing tumor weight; critically, the authors showed that this superiority was due to more potent KIT inhibition by PLX3397 — adding CSF1R inhibition to imatinib did not improve imatinib's effects, indicating that TAM depletion alone was insufficient in KIT-driven GIST models. This finding is important context for SDH-GIST: since SDH-deficient GIST lacks activating KIT/PDGFRA mutations and is entirely imatinib-resistant, the KIT inhibitory component of pexidartinib provides no therapeutic benefit in SDH-GIST. Only the CSF1R/TAM-depletion arm would apply. Whether CSF1R-mediated TAM depletion alone is sufficient for anti-tumor activity in SDH-deficient GIST remains entirely unknown.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Macrophage colony-stimulating factor 1 receptor | CSF1R | Pexidartinib (PLX3397, Turalio) | FDA-approved for TGCT; preclinical in KIT-mutant GIST (PMID 24583793) | None; rationale via constitutive HIF → CSF1 transcription (PMID 24799675, PMID 34288020) |
+
+**Key limitations:**
+1. The KIT inhibitory component of pexidartinib is irrelevant in SDH-deficient GIST (KIT/PDGFRA-wildtype). Only CSF1R/TAM depletion applies.
+2. PMID 24583793 showed CSF1R-mediated TAM depletion alone did not enhance imatinib efficacy in KIT-mutant GIST — suggesting TAM depletion may not be sufficient as monotherapy in GIST.
+3. No data exist on CSF1 expression levels or TAM infiltration specifically in SDH-deficient GIST or PPGL.
+4. HIF → CSF1 transcriptional activation established in breast cancer (PMID 24799675) and HCC (PMID 34288020) — extrapolation to SDH-deficient tumors is mechanistically grounded but unverified.
+5. Pexidartinib has significant hepatotoxicity risk: FDA label carries a black box warning for serious and potentially fatal liver injury (grade ≥3 ALT/AST elevation in ~6% of patients in the TGCT trial). REMS program required.
+
+**Evidence score: 22 (theoretical, toward lower bound).** Mechanistic chain supported by established HIF → CSF1 citations (PMID 24799675, PMID 34288020) in non-SDH tumor models; pexidartinib is FDA-approved for a CSF1R-driven indication. Score held near lower end of theoretical range because: (a) no SDH-deficient preclinical or clinical data exist; (b) CSF1R inhibition alone did not enhance activity in GIST preclinical models (PMID 24583793); (c) hepatotoxicity REMS limits repurposing feasibility.
+
+**Sources:**
+- Chaturvedi P, Gilkes DM, Takano N, Semenza GL. Hypoxia-inducible factor-dependent signaling between triple-negative breast cancer cells and mesenchymal stem cells promotes macrophage recruitment. Proc Natl Acad Sci U S A. 2014;111(20):E2120-9. PMID 24799675. DOI 10.1073/pnas.1406655111. (HIF transcriptional activity required for CSF1 gene transcription; HIF-dependent CSF1-mediated TAM recruitment directly demonstrated.)
+- He Q, Liu M, Huang W, et al. IL-1β-Induced Elevation of Solute Carrier Family 7 Member 11 Promotes Hepatocellular Carcinoma Metastasis Through Up-regulating Programmed Death Ligand 1 and Colony-Stimulating Factor 1. Hepatology. 2021;74(6):3174-3193. PMID 34288020. DOI 10.1002/hep.32062. (αKG/HIF1α cascade drives CSF1 and TAM/MDSC infiltration via CSF1/CSF1R axis.)
+- Kim TS, Cavnar MJ, Cohen NA, et al. Increased KIT inhibition enhances therapeutic efficacy in gastrointestinal stromal tumor. Clin Cancer Res. 2014;20(9):2350-62. PMID 24583793. DOI 10.1158/1078-0432.CCR-13-3033. (PLX3397 in KIT-mutant GIST: superior efficacy via KIT, not CSF1R/TAM depletion; important context for SDH-GIST rationale.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
