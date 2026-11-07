@@ -3279,3 +3279,74 @@ All citations verified: PMID 42982179 authors/title/abstract match and support t
 One data fix before merge: drugs.ts listed pexidartinib chembl_id as CHEMBL2180736 (an unnamed ChEMBL record); corrected to CHEMBL3813873, the canonical ChEMBL entry for PEXIDARTINIB.
 
 All citations verified clean: PMID 24799675 (Chaturvedi et al., PNAS 2014) authors/title match and the abstract confirms HIF-dependent CSF1 gene transcription; PMID 34288020 (He et al., Hepatology 2021) confirms the aKG/HIF1a-CSF1-TAM/MDSC axis; PMID 24583793 (Kim TS et al., Clin Cancer Res 2014) confirms PLX3397 superiority via KIT, not CSF1R; tracker PMIDs 41543031/41612592/41320153/41674582 match their entries; CSF1R UniProt P07333 verified; engine state 77 drugs / Mechanism 68 / display_order 54 confirmed; npm build passes.
+
+---
+
+# Morning Run — 2026-11-07
+
+**Direction:** Mechanism 69 — HIF-1α → LDHA → Warburg Glycolytic NAD⁺ Regeneration → FX11
+
+**Drug added:** FX11 (LDHA inhibitor; research-grade small molecule)
+
+**Pathway added:** `hif-ldha-warburg-glycolysis-nad` (display_order 55)
+
+**New paper added:** PMID 42687764 (Kandukuri S et al., Am J Surg Pathol 2026-09-03; DOI 10.1097/PAS.0000000000002611)
+
+**Bug fix:** Removed duplicate entry for PMID 42573142 (Jimenez belzutifan J Clin Endocrinol Metab) from papers.ts; it appeared twice (lines ~210-218 and ~493-505 in prior version).
+
+**Papers scan:**
+- PMID 42687764: **ADDED** — SDHA-deficient RCC case series (Kandukuri S et al., Am J Surg Pathol); 5 cases; SDHA IHC may be false-negative; 2/4 patients metastasized within 14–34 months; more aggressive than SDHB-deficient RCC
+- PMID 42611605: rejected — pediatric GIST, SDHB-retained, KIT-mutant; outside panel
+- PMID 42544736: rejected — pediatric GIST case series; no mechanistic/drug advance
+- PMID 42554827: rejected — SSTR-PET genotype-location imaging study; no drug advance
+- PMID 41634405: rejected — outside Aug 7–Nov 7 2026 scan window (Feb 2026); Italian GIUP survey
+
+**Direction selection rationale:**
+
+LDHA (lactate dehydrogenase A) fills a specific mechanistic gap in the glycolytic axis. The existing engine covers glucose import (GLUT1/KL-11743, Mechanism 65) and lactate export (MCT1/AZD3965, Mechanism 15), but was missing the NAD⁺ regeneration step between glycolysis and lactate export. LDHA is that step: pyruvate + NADH → lactate + NAD⁺. Without this step, GAPDH stalls and glycolysis arrests.
+
+Three alternatives evaluated:
+1. **HSP90/ganetespib** — targets HIF-1α client stability (HSP90 chaperones HIF-1α); some SDH-deficient cell data but ganetespib has largely failed clinically; not novel enough relative to existing HIF/VEGF entries
+2. **NRF2/sulforaphane** — ROS/antioxidant axis; some mechanistic overlap with TXNRD1/auranofin (already Mechanism 25); would require careful differentiation
+3. **LDHA/FX11** — fills a genuine gap in the glycolytic axis; three strong, verified anchor papers; mechanistically non-redundant with all 68 existing mechanisms; completes the glycolysis pathway triad
+
+LDHA selected because it is mechanistically unique (the only glycolytic axis entry targeting NAD⁺ regeneration), has three verified anchor papers, and the synthetic lethality argument (HIF-1α driving LDHA upregulation + OXPHOS failure making LDHA-dependent glycolysis essential) is clean and internally consistent.
+
+**Mechanistic rationale:**
+
+SDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α pseudohypoxia → HIF-1α binds HREs in the LDHA promoter → constitutive LDHA transcription (Semenza GL et al., J Biol Chem 1996, PMID 8955077: direct demonstration HIF-1 binds HREs in LDHA, aldolase A, enolase 1 promoters). SDH/Complex II dysfunction simultaneously impairs OXPHOS, forcing reliance on glycolysis for ATP generation. LDHA is the NAD⁺ regeneration step that keeps glycolytic flux running: without it, GAPDH stalls, glycolysis arrests, ATP collapses. Normal (SDH-proficient) cells can rescue energy homeostasis via OXPHOS when LDHA is inhibited; SDH-deficient cells cannot.
+
+Fantin VR, St-Pierre J, Leder P (Cancer Cell 2006, PMID 16766262) demonstrated that LDH-A suppression specifically compromises hypoxic proliferation, links the glycolytic program to mitochondrial physiology, and suppresses tumor maintenance. Le A, Cooper CR, Dang CV et al. (PNAS 2010, PMID 20133848) showed that FX11 LDHA inhibition reduces ATP, induces oxidative stress, and inhibits lymphoma and pancreatic cancer xenograft progression.
+
+**Key limitations flagged:**
+1. FX11 is a research tool compound with no clinical trial data or pharmacokinetic characterization.
+2. No study has tested FX11 or any LDHA inhibitor specifically in SDH-deficient cell lines, mouse models, or patients.
+3. Normal cells (skeletal muscle, red blood cells) also rely on LDHA under anaerobic conditions; therapeutic window depends on the degree of OXPHOS insufficiency in SDH-deficient tumors.
+4. Glycolytic dependency argument applies broadly to HIF-driven tumors; SDH-specific selectivity rests on OXPHOS failure argument, mechanistically inferred but not directly tested with LDHA inhibitors.
+
+**Evidence score: 24 (theoretical)**
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 69 section: HIF-1α → LDHA → Warburg Glycolytic NAD⁺ Regeneration |
+| `src/data/seed/pathways.ts` | Added `hif-ldha-warburg-glycolysis-nad` pathway at display_order 55 |
+| `src/data/seed/targets.ts` | Added LDHA target (UniProt P00338) |
+| `src/data/seed/drugs.ts` | Added FX11 drug entry (evidence_score 24, status theoretical, fda_approved false, tumor_type_applicability all) |
+| `src/lib/scoring/constants.ts` | Added `hif-ldha-warburg-glycolysis-nad` color (bg-lime-400) |
+| `src/data/papers.ts` | Added PMID 42687764 (Kandukuri SDHA-deficient RCC); removed duplicate PMID 42573142 |
+| `tracker.md` | Added 6 evaluated entries (1 added, 5 rejected) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after today:**
+- Drugs: 78 (was 77) [+1 FX11]
+- Mechanisms: 69 (was 68) [+1 HIF/LDHA/NAD⁺/glycolysis]
+- Last pathway display_order: 55
+
+**Open questions:**
+- LDHA expression levels in SDH-deficient GIST/PPGL vs. SDH-proficient — HIF-1α pseudohypoxia should constitutively upregulate LDHA, but direct measurement would strengthen the rationale.
+- Synthetic lethality validation opportunity: test FX11 in SDHB-null vs. SDH-proficient isogenic cell lines; measure NAD⁺/NADH ratio, ATP, cell viability.
+- More clinically tractable LDHA inhibitors than FX11 (e.g., galloflavin, NHI series) exist in the literature — could be added if validated in SDH-deficient models.
+
+**PR branch:** `claude/clever-lovelace-v3j45o`

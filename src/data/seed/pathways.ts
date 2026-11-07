@@ -912,4 +912,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 54,
   },
+  {
+    name: "HIF-1α → LDHA → Warburg Glycolytic NAD⁺ Regeneration",
+    slug: "hif-ldha-warburg-glycolysis-nad",
+    description:
+      "SDH loss → constitutive HIF-1α pseudohypoxia → HIF-1α transcriptional activation of LDHA via hypoxia response elements (HREs) → constitutively elevated LDHA → pyruvate + NADH → lactate + NAD⁺. NAD⁺ regeneration by LDHA sustains glycolytic flux that compensates for OXPHOS failure caused by SDH/Complex II dysfunction. LDHA inhibition collapses NAD⁺, stalls glycolysis at GAPDH, and depletes ATP in SDH-deficient cells that cannot rescue energy homeostasis via OXPHOS. Semenza GL et al. (J Biol Chem 1996, PMID 8955077) established that HIF-1 binds HREs in the LDHA promoter and transcriptionally activates LDHA under hypoxia/pseudohypoxia.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HIF-1α binds HREs in LDHA promoter → LDHA transcriptional upregulation (PMID 8955077) → elevated LDHA enzyme levels → constitutive pyruvate-to-lactate flux with NAD⁺ regeneration",
+    downstream_effects: [
+      "Constitutively elevated LDHA enzyme levels via HIF-1α → HRE-driven transcription (Semenza GL et al., J Biol Chem 1996, PMID 8955077: HIF-1 binds HREs in aldolase A, enolase 1, and LDHA promoters)",
+      "LDHA catalyzes pyruvate + NADH → lactate + NAD⁺, regenerating NAD⁺ for continued GAPDH activity and uninterrupted glycolytic flux",
+      "SDH/Complex II dysfunction removes the OXPHOS rescue: LDHA-dependent glycolysis becomes the primary ATP source",
+      "LDH-A suppression specifically compromises hypoxic proliferation, links the glycolytic program to mitochondrial physiology, and suppresses tumor maintenance (Fantin VR et al., Cancer Cell 2006, PMID 16766262)",
+      "FX11 LDHA inhibition → NAD⁺ depletion → glycolytic arrest → ATP reduction → oxidative stress → inhibition of lymphoma and pancreatic cancer xenograft progression (Le A, Cooper CR, Dang CV et al., PNAS 2010, PMID 20133848)",
+      "Mechanistically distinct from GLUT1 inhibition (KL-11743; glucose import step) and MCT1 inhibition (AZD3965; lactate/H⁺ export step): LDHA is the NAD⁺ regeneration step between glycolysis and lactate export",
+    ],
+    druggable: true,
+    display_order: 55,
+  },
 ];

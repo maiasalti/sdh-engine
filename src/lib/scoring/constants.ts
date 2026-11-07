@@ -97,4 +97,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-cxcl8-cxcr2-neutrophil-immunosuppression": "bg-pink-300 text-pink-950 dark:bg-pink-700 dark:text-pink-50",
   "sdh-fao-cpt1-dependency": "bg-yellow-300 text-yellow-950 dark:bg-yellow-700 dark:text-yellow-50",
   "hif-csf1-csf1r-m2-tam-immunosuppression": "bg-cyan-400 text-cyan-950 dark:bg-cyan-600 dark:text-cyan-50",
+  "hif-ldha-warburg-glycolysis-nad": "bg-lime-400 text-lime-950 dark:bg-lime-600 dark:text-lime-50",
 };

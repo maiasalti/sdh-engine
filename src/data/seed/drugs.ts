@@ -1427,4 +1427,21 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: [],
   },
+  {
+    name: "FX11",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "LDHA (lactate dehydrogenase A) inhibitor; research-grade small molecule",
+    mechanism_of_action:
+      "FX11 (3-dihydroxy-6-methyl-7-(phenylmethyl)-4-propylnaphthalene-1-carboxylic acid) is a small molecule inhibitor of LDHA (lactate dehydrogenase A), the enzyme catalyzing the terminal step of anaerobic glycolysis: pyruvate + NADH → lactate + NAD⁺. LDHA inhibition by FX11 depletes the cytoplasmic NAD⁺ pool, stalling glycolysis at the GAPDH step, reducing ATP production, and inducing oxidative stress.\n\nMechanistic rationale for SDH-deficient tumors:\n\nSDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α pseudohypoxia → HIF-1α binds hypoxia response elements (HREs) in the LDHA promoter → constitutive LDHA transcriptional upregulation (Semenza GL et al., J Biol Chem 1996, PMID 8955077: direct demonstration that HIF-1 binds HREs in aldolase A, enolase 1, and LDHA promoters). Concurrently, SDH/Complex II dysfunction truncates the TCA cycle and impairs OXPHOS, forcing SDH-deficient cells to rely on glycolysis as their primary ATP source. Without LDHA-mediated NAD⁺ regeneration, GAPDH cannot proceed, glycolytic flux arrests, and ATP production collapses in cells that cannot rescue energy homeostasis via OXPHOS. This creates a synthetic metabolic vulnerability: SDH-deficient cells are doubly exposed — constitutively elevated LDHA by HIF-1α AND OXPHOS failure making LDHA-dependent glycolysis essential.\n\nFantin VR, St-Pierre J, Leder P (Cancer Cell 2006, PMID 16766262) demonstrated that genetic LDH-A suppression compromises hypoxic proliferation, links the glycolytic program to mitochondrial physiology, and suppresses tumor maintenance — validating LDHA as a metabolic dependency in glycolysis-reliant cancer cells.\n\nLe A, Cooper CR, Dang CV et al. (PNAS 2010, PMID 20133848) showed that FX11 LDHA inhibition reduces ATP production, induces oxidative stress, and inhibits lymphoma and pancreatic cancer xenograft progression in vivo — establishing that pharmacologic LDHA inhibition can suppress tumor growth in LDHA-dependent cancer models.\n\nFX11 completes the glycolytic axis in this engine: KL-11743 targets GLUT1 (glucose import), AZD3965 targets MCT1 (lactate/H⁺ export), and FX11 targets LDHA (the NAD⁺ regeneration step between glycolysis and lactate export) — these are mechanistically distinct points in the same pathway.\n\nCritical limitations:\n1. FX11 is a research tool compound with no clinical trial data, no pharmacokinetic/pharmacodynamic characterization in animals or humans beyond the xenograft studies.\n2. No study has tested FX11 or any LDHA inhibitor in SDH-deficient cell lines, mouse models, or patients.\n3. Normal cells (skeletal muscle, red blood cells) also rely on LDHA under anaerobic conditions — selectivity depends on the degree of OXPHOS insufficiency in SDH-deficient tumors vs. normal tissues.\n4. The glycolytic dependency argument applies broadly to many HIF-driven tumor types; the incremental vulnerability of SDH-deficient cells rests on OXPHOS failure, which amplifies LDHA dependency but is not specific to SDH-deficient tumors alone.\n\nEvidence score: 24 (theoretical). Three verified anchor papers: (1) PMID 8955077 — HIF-1α constitutively drives LDHA transcription via HREs; (2) PMID 16766262 — LDH-A suppression compromises hypoxic proliferation and tumor maintenance; (3) PMID 20133848 — FX11 LDHA inhibition reduces ATP, induces oxidative stress, and inhibits cancer xenograft progression. Score is theoretical because all evidence is in non-SDH-deficient cancer models.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/8955077/ ; https://pubmed.ncbi.nlm.nih.gov/16766262/ ; https://pubmed.ncbi.nlm.nih.gov/20133848/",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["hif-ldha-warburg-glycolysis-nad", "hif-pseudohypoxia"],
+    target_gene_symbols: ["LDHA"],
+    evidence_score: 24,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: [],
+  },
 ];
