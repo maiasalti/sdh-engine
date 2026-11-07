@@ -1408,4 +1408,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["ppgl"],
     clinical_trial_ids: [],
   },
+  {
+    name: "Pexidartinib",
+    brand_names: ["Turalio"],
+    chembl_id: "CHEMBL3813873",
+    pubchem_cid: null,
+    drug_class: "Selective CSF1R/KIT/FLT3 inhibitor (small molecule receptor tyrosine kinase inhibitor; orally bioavailable)",
+    mechanism_of_action:
+      "Pexidartinib (PLX3397; Daiichi Sankyo; brand name Turalio) is an orally bioavailable, ATP-competitive small molecule inhibitor with primary activity against CSF1R (IC50 ~20 nM), wild-type KIT (IC50 ~10 nM), and FLT3 (IC50 ~160 nM). It is FDA-approved (August 2019) for symptomatic tenosynovial giant cell tumor (TGCT) — a CSF1-driven, CSF1R-expressing neoplasm — as the first approved systemic treatment for TGCT.\n\nMechanistic rationale for SDH-deficient tumors:\n\nSDH loss → succinate accumulation → competitive PHD inhibition → constitutive HIF-1α/2α pseudohypoxia → HIF heterodimer transcriptionally drives CSF1 (M-CSF) expression. CSF1 is a bona fide HIF transcriptional target: Chaturvedi et al. (PNAS 2014, PMID 24799675, Semenza laboratory) demonstrated that HIF transcriptional activity is specifically required for CSF1 gene transcription in triple-negative breast cancer cells, with hypoxia synergizing with MSC-derived signals to drive CSF1 expression and downstream TAM recruitment. The αKG/HIF1α → CSF1 axis is additionally supported in HCC: He et al. (Hepatology 2021, PMID 34288020) showed that SLC7A11-mediated αKG depletion — mechanistically analogous to succinate-mediated αKG-dependent enzyme inhibition — drives HIF1α-dependent CSF1 upregulation and CSF1/CSF1R-mediated TAM/MDSC infiltration.\n\nConstitutive HIF → CSF1 expression in SDH-deficient tumors creates a sustained M-CSF-rich TME, providing chronic survival and M2-polarization signals to CSF1R-expressing TAMs. M2-polarized TAMs suppress CD8+ cytotoxic T-cell function (via IL-10, TGF-β secretion), deplete L-arginine (arginase-1), and promote angiogenesis (VEGF, MMP-9 secretion) — collectively contributing to the immune-excluded, immunosuppressive TME that limits immunotherapy efficacy in SDH-deficient GIST and PPGL.\n\nPexidartinib blocks CSF1R autophosphorylation and downstream PI3K/AKT/MAPK/STAT5 signaling → impaired TAM survival and M2 polarization → potential shift toward M1-like anti-tumor macrophage phenotype and restored T-cell function.\n\nCritical SDH-specific limitation from preclinical GIST data: Kim et al. (Clin Cancer Res 2014, PMID 24583793) tested PLX3397 versus imatinib in Kit^V558del/+ murine GIST and human GIST xenografts. PLX3397 was superior to imatinib in reducing tumor weight, but the authors showed that adding CSF1R inhibition to imatinib did not improve efficacy beyond imatinib alone — the PLX3397 superiority was due to more potent KIT inhibition, not TAM depletion. This is essential context for SDH-GIST: SDH-deficient GIST lacks activating KIT/PDGFRA mutations (the KIT arm provides no benefit), meaning the therapeutic rationale in SDH-GIST rests entirely on CSF1R/TAM depletion, which the available GIST preclinical data suggest may be insufficient as monotherapy.\n\nEvidence score: 22 (theoretical). Mechanistic chain: SDH loss → pseudohypoxia/HIF → CSF1 transcription (PMID 24799675, PMID 34288020) → CSF1R on TAMs → M2-immunosuppressive TME. Score reflects FDA-approved compound targeting a cited HIF-driven mechanism, offset by: (a) no SDH-deficient preclinical or clinical data; (b) CSF1R inhibition alone insufficient in GIST preclinical models (PMID 24583793); (c) hepatotoxicity REMS limits repurposing feasibility.\n\nSafety note: Pexidartinib carries an FDA black box warning for serious and potentially fatal hepatotoxicity (grade ≥3 ALT/AST in ~6% of TGCT trial patients). FDA REMS program required: monthly liver function tests for first 3 months.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/24799675/ ; https://pubmed.ncbi.nlm.nih.gov/34288020/ ; https://pubmed.ncbi.nlm.nih.gov/24583793/",
+    fda_approved: true,
+    approved_indications: [
+      "Symptomatic tenosynovial giant cell tumor (TGCT) in adult patients — FDA-approved August 2019 (Turalio, Daiichi Sankyo); first approved systemic treatment for TGCT",
+    ],
+    pathway_slugs: ["hif-csf1-csf1r-m2-tam-immunosuppression", "hif-pseudohypoxia"],
+    target_gene_symbols: ["CSF1R"],
+    evidence_score: 22,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: [],
+  },
 ];

@@ -3209,4 +3209,73 @@ Fixed a data-quality omission from the 2026-11-04 commit: `hif-cxcl8-cxcr2-neutr
 
 One wording correction before merge: sdh-biology.ts described perhexiline as approved in Australia/NZ "for refractory angina and heart failure"; it is approved there for refractory angina only (heart failure use is off-label). drugs.ts already stated this correctly.
 
+---
+
+## 2026-11-06 — HIF → CSF1/CSF1R → TAM M2 polarization (Mechanism 68 / Pexidartinib)
+
+**Scan window:** Aug 6 – Nov 6, 2026
+
+**Papers evaluated this run:**
+
+| PMID | Title (brief) | Decision |
+|------|--------------|----------|
+| 41543031 | Liang Y et al., Endocr Relat Cancer 2026-02 — real-world PPGL cohort, surufatinib/temozolomide | Rejected: outside window; no SDH-specific mechanistic advance |
+| 41612592 | Qu Y et al., Autophagy 2026-02 — NDV mitophagy in avian cells | Rejected: outside window; SDHA as organelle marker only; off-panel |
+| 41320153 | Han X et al., Cell Mol Gastroenterol Hepatol 2025-11 — glutamine metabolism in neonatal intestinal macrophages/NEC | Rejected: outside window; not an SDH-deficient cancer model |
+| 41674582 | Bonetti A et al., medRxiv 2026-02 — deep learning GIST mutation classification | Rejected: outside window; no SDH-specific content; preprint |
+
+**Papers added to papers.ts:** 0
+
+**New improvement direction: Mechanism 68 — HIF-Driven CSF1 → CSF1R → Tumor-Associated Macrophage (TAM) Survival and M2 Polarization → Pexidartinib**
+
+**Mechanistic rationale:**
+
+SDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α/2α pseudohypoxia. HIF transcriptionally drives CSF1 (macrophage colony-stimulating factor, M-CSF) — Chaturvedi et al. (PNAS 2014, PMID 24799675, Semenza laboratory) directly demonstrated that HIF transcriptional activity is required for CSF1 gene transcription in cancer cells, with hypoxia synergizing with MSC-derived signals to drive CSF1 expression and downstream TAM recruitment. He et al. (Hepatology 2021, PMID 34288020) additionally showed that αKG/HIF1α cascade drives CSF1 and TAM/MDSC infiltration via the CSF1/CSF1R axis in HCC — the αKG depletion mechanism is analogous to succinate-driven PHD inhibition. CSF1 → CSF1R on TAMs → TAM survival, M2 polarization (IL-10, TGF-β, arginase-1) → immunosuppressive TME.
+
+This mechanism clears the HARD RELEVANCE GATE: pseudohypoxia/HIF is explicitly listed, and CSF1 is a bona fide HIF transcriptional target with verified primary citations in non-SDH tumor models.
+
+Pexidartinib (PLX3397; brand name Turalio) is FDA-approved for TGCT (tenosynovial giant cell tumor), the first approved systemic treatment for a CSF1R-driven indication. Kim et al. (Clin Cancer Res 2014, PMID 24583793) tested pexidartinib in KIT-mutant GIST murine models: superior to imatinib, but via KIT, not CSF1R/TAM depletion. In SDH-GIST (KIT/PDGFRA-wildtype), only the CSF1R/TAM arm applies.
+
+This direction is mechanistically distinct from AZD5069/CXCR2 (Mechanism 66, neutrophil recruitment) and magrolimab/CD47 (Mechanism 55, phagocytosis evasion): it targets macrophage *survival and M2 polarization*, not neutrophil recruitment or phagocytosis checkpoint.
+
+**Key limitations flagged:**
+1. CSF1R inhibition alone did not enhance activity in GIST preclinical models (PMID 24583793) — in KIT-mutant GIST, TAM depletion was insufficient. In SDH-GIST (KIT-WT), only the CSF1R arm applies.
+2. No SDH-deficient-specific CSF1 expression data or TAM infiltration data exist.
+3. HIF → CSF1 established in breast cancer and HCC — extrapolation to SDH-deficient tumors is mechanistically grounded but unverified.
+4. Hepatotoxicity black box warning; REMS required.
+
+**Evidence score: 22 (theoretical, toward lower bound)**
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 68 section: HIF-driven CSF1/CSF1R/TAM M2 immunosuppression axis |
+| `src/data/seed/pathways.ts` | Added `hif-csf1-csf1r-m2-tam-immunosuppression` pathway at display_order 54 |
+| `src/data/seed/targets.ts` | Added CSF1R target (UniProt P07333) |
+| `src/data/seed/drugs.ts` | Added Pexidartinib drug entry (evidence_score 22, status theoretical, fda_approved true for TGCT, tumor_type_applicability all) |
+| `src/lib/scoring/constants.ts` | Added `hif-csf1-csf1r-m2-tam-immunosuppression` color (bg-cyan-400) |
+| `tracker.md` | Added 4 evaluated PMIDs (all rejected/outside window) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after today:**
+- Drugs: 77 (was 76) [+1 Pexidartinib]
+- Mechanisms: 68 (was 67) [+1 HIF/CSF1/CSF1R/TAM M2]
+- Last pathway display_order: 54
+
+**Open questions:**
+- Does SDH-deficient GIST or PPGL show elevated CSF1 expression or high TAM infiltration? No published data yet.
+- Would pexidartinib combine well with PD-1/PD-L1 blockade to overcome the M2-TAM-driven cold TME? Mechanistically plausible (TAM repolarization → restored T-cell function), not tested in SDH-deficient models.
+- In vitro validation opportunity: measure CSF1 mRNA/protein in SDHA-null cell lines vs. parental; rescue with HIF inhibition (belzutifan?).
+
+**PR branch:** morning/2026-11-06-csf1r-pexidartinib
+---
+
 All citations verified: PMID 42982179 authors/title/abstract match and support the FAO claim; tracker PMIDs 42581163/42960482 match; CPT1A UniProt P50416 verified; 76 drugs / Mechanism 67 / display_order 53 confirmed; npm build passes.
+---
+
+## Correction note - 2026-11-07 (PR #141 post-review fix by Instinct)
+
+One data fix before merge: drugs.ts listed pexidartinib chembl_id as CHEMBL2180736 (an unnamed ChEMBL record); corrected to CHEMBL3813873, the canonical ChEMBL entry for PEXIDARTINIB.
+
+All citations verified clean: PMID 24799675 (Chaturvedi et al., PNAS 2014) authors/title match and the abstract confirms HIF-dependent CSF1 gene transcription; PMID 34288020 (He et al., Hepatology 2021) confirms the aKG/HIF1a-CSF1-TAM/MDSC axis; PMID 24583793 (Kim TS et al., Clin Cancer Res 2014) confirms PLX3397 superiority via KIT, not CSF1R; tracker PMIDs 41543031/41612592/41320153/41674582 match their entries; CSF1R UniProt P07333 verified; engine state 77 drugs / Mechanism 68 / display_order 54 confirmed; npm build passes.
