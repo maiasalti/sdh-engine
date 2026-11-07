@@ -1411,7 +1411,7 @@ export const SEED_DRUGS: SeedDrug[] = [
   {
     name: "Pexidartinib",
     brand_names: ["Turalio"],
-    chembl_id: "CHEMBL2180736",
+    chembl_id: "CHEMBL3813873",
     pubchem_cid: null,
     drug_class: "Selective CSF1R/KIT/FLT3 inhibitor (small molecule receptor tyrosine kinase inhibitor; orally bioavailable)",
     mechanism_of_action:
