@@ -3272,3 +3272,10 @@ This direction is mechanistically distinct from AZD5069/CXCR2 (Mechanism 66, neu
 ---
 
 All citations verified: PMID 42982179 authors/title/abstract match and support the FAO claim; tracker PMIDs 42581163/42960482 match; CPT1A UniProt P50416 verified; 76 drugs / Mechanism 67 / display_order 53 confirmed; npm build passes.
+---
+
+## Correction note - 2026-11-07 (PR #141 post-review fix by Instinct)
+
+One data fix before merge: drugs.ts listed pexidartinib chembl_id as CHEMBL2180736 (an unnamed ChEMBL record); corrected to CHEMBL3813873, the canonical ChEMBL entry for PEXIDARTINIB.
+
+All citations verified clean: PMID 24799675 (Chaturvedi et al., PNAS 2014) authors/title match and the abstract confirms HIF-dependent CSF1 gene transcription; PMID 34288020 (He et al., Hepatology 2021) confirms the aKG/HIF1a-CSF1-TAM/MDSC axis; PMID 24583793 (Kim TS et al., Clin Cancer Res 2014) confirms PLX3397 superiority via KIT, not CSF1R; tracker PMIDs 41543031/41612592/41320153/41674582 match their entries; CSF1R UniProt P07333 verified; engine state 77 drugs / Mechanism 68 / display_order 54 confirmed; npm build passes.
