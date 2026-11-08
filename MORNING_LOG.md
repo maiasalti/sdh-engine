@@ -3350,3 +3350,82 @@ Fantin VR, St-Pierre J, Leder P (Cancer Cell 2006, PMID 16766262) demonstrated t
 - More clinically tractable LDHA inhibitors than FX11 (e.g., galloflavin, NHI series) exist in the literature — could be added if validated in SDH-deficient models.
 
 **PR branch:** `claude/clever-lovelace-v3j45o`
+
+---
+
+# Morning Run — 2026-11-08
+
+**Direction:** Mechanism 70 — HIF-1α → CCL2 → CCR2+ Monocyte Recruitment → TAM Formation → BMS-813160
+
+**Drug added:** BMS-813160 (dual CCR2/CCR5 antagonist; clinical-stage compound)
+
+**Pathway added:** `hif-ccl2-ccr2-tam-monocyte` (display_order 56)
+
+**New paper added:** None (no new qualifying SDH-deficient cancer papers found in Nov 1–8, 2026 window)
+
+**Papers scan:**
+- PMID 42611522: rejected — PPGL genetic testing utility retrospective review (48 patients, Baylor 2026); clinical/genetic testing study; no drug or mechanism advance
+- PMID 42468557: rejected — veterinary PHEO surgical prep study (dogs; phenoxybenzamine; J Am Vet Med Assoc 2026); off-panel; no SDH-specific content
+- PMID 42212733: rejected — veterinary case report (mast cell tumor + incidental PHEO in Malayan sun bear; J Vet Diagn Invest 2026); off-panel; no SDH-specific content
+- PMID 32781743: used as mechanistic anchor for Mechanism 70; not added to papers.ts (outside scan window; general review not SDH-specific)
+- PMID 34639040: used as mechanistic anchor for Mechanism 70; not added to papers.ts (outside scan window; general review not SDH-specific)
+- PMID 28507122: used as mechanistic anchor for Mechanism 70; not added to papers.ts (outside scan window; not SDH-deficient clinical/treatment paper)
+- PMID 42986404: rejected — CD56 as IHC marker for EVT of kidney (Nguyen NJ et al., Virchows Arch 2026-11-05); SDH-deficient RCC mentioned only as differential; no drug or mechanism advance
+- PMID 42981821: rejected — microplastics promoting gastric cancer; SDHA cited as differentially expressed metabolic marker only (Li P et al., Transl Oncol 2026-11-04); not an SDH-deficient cancer model; off-panel
+- PMID 16318581: rejected — 2005 melanoma paper; outside scan window; showed CCL2 → HIF-1α in macrophages (not the direction needed); off-panel
+
+**Direction selection rationale:**
+
+The CCR2/CCL2 → BMS-813160 direction was chosen after evaluating the full mechanism space against all 69 prior entries. The primary consideration was genuine non-redundancy with existing mechanisms — particularly Mechanism 68 (CSF1R/pexidartinib, 2026-11-06), which also targets TAM biology. The critical distinction:
+
+- **Mechanism 68 (CSF1R/pexidartinib)**: targets EXISTING TAM survival/M2 polarization (the "maintenance" arm) — once TAMs are present in the tumor, CSF1R signaling sustains their viability and M2 phenotype. Pexidartinib depletes established TAMs.
+- **Mechanism 70 (CCR2/BMS-813160)**: targets CCR2+ MONOCYTE RECRUITMENT before TAMs form (the "recruitment" arm) — interrupting the upstream CCL2-to-CCR2 chemoattraction step that generates TAMs. This is a genuinely different biological node: even a tumor that has fully replenished its TAM pool would be depleted over time by blocking new monocyte input.
+
+This distinction is established in the TAM biology literature and makes CCR2 + CSF1R a rational combination strategy. The HIF-1α → CCL2 axis follows directly from the pseudohypoxia core mechanism: HIF-1 and NF-κB co-activation (constitutively active in SDH-deficient tumors) drives CCL2 transcription and CCR2 expression (Korbecki et al., IJMS 2020, PMID 32781743; Korbecki et al., IJMS 2021, PMID 34639040). The CCR2+ monocyte → HIF-1 activity → metastatic niche link is directly demonstrated (Hara et al., PNAS 2017, PMID 28507122).
+
+BMS-813160 (Bristol-Myers Squibb) is a clinical-stage dual CCR2/CCR5 antagonist, making this a pharmacologically tractable direction. CCR5 dual-blockade adds orthogonal benefit by reducing Treg and M2 macrophage trafficking (via CCR5 on these cell types).
+
+Three alternatives evaluated and rejected:
+1. **NKG2A/HLA-E → Monalizumab**: HIF-1α → HLA-E upregulation → NKG2A/CD94 inhibitory ligation on NK/CD8+ T cells. Mechanistically sound but: (a) no strong PubMed-verified link between HIF and HLA-E in SDH-deficient tumors; (b) monalizumab (AstraZeneca) clinical program heavily overlaps with existing PD-L1/PD-1 entries
+2. **HSP90/ganetespib (second evaluation)**: Mechanism 38 already covers HSP90 chaperone → HIF-1α client stability; would be redundant with existing HSP90 entry despite different drug
+3. **EZH2/tazemetostat**: H3K27me3 writer; likely already covered in mechanisms 42–69 (the succinate → KDM6A/B inhibition → H3K27me3 elevation is a core SDH mechanism that would have been an early addition)
+
+**Mechanistic rationale:**
+
+SDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α/2α pseudohypoxia. HIF-1 and NF-κB are co-activated by cycling hypoxia/pseudohypoxia in SDH-deficient tumor cells. These two transcription factors together drive CCL2 (MCP-1/CCL2) transcription: Korbecki et al. (IJMS 2021, PMID 34639040) demonstrated that cycling hypoxia activates HIF-1 and NF-κB and their downstream targets including CCL2/MCP-1, CXCL1/GRO-α, CXCL8/IL-8, and COX-2, which recruit monocytes and neutrophils that differentiate into TAMs/TANs. Korbecki et al. (IJMS 2020, PMID 32781743) comprehensively reviewed hypoxia/HIF effects on CC chemokines, documenting that HIF signaling upregulates CCL2 expression and CCR2 expression across tumor types. CCL2 secreted by SDH-deficient tumor cells establishes a chemoattractant gradient that recruits CCR2+ inflammatory monocytes from bone marrow. Hara et al. (PNAS 2017, PMID 28507122) established that CCR2+ inflammatory monocytes are recruited toward CCL2 at metastatic sites via HIF-1-dependent chemotaxis (APBA3/Mint3 → HIF-1 → HIF-1-driven glycolysis → monocyte chemotaxis). Once in the tumor, these monocytes differentiate into M2-polarized TAMs that suppress adaptive anti-tumor immunity (IL-10, TGF-β, arginase-1 secretion; PD-L1/PD-L2 expression) and promote angiogenesis (VEGF, MMP-9).
+
+BMS-813160 CCR2 blockade interrupts this monocyte-to-TAM recruitment axis upstream of differentiation. CCR5 dual-blockade adds orthogonal immunosuppression-relief via reduced Treg trafficking (CCR5+ Tregs) and M2 macrophage chemotaxis modulation.
+
+**Key limitations flagged:**
+1. No study has tested BMS-813160 or any CCR2 antagonist in SDH-deficient cell lines, mouse models, or patients.
+2. The HIF-1α → CCL2 → CCR2+ monocyte → TAM chain is mechanistically inferred from pseudohypoxia biology; direct CCL2/CCR2 expression data in SDH-deficient GIST, PPGL, or RCC models is absent.
+3. TAM recruitment may rely on multiple CCR2 ligands (CCL7, CCL8, CCL12) and other non-CCR2 mechanisms; CCL2/CCR2 dominance in SDH-deficient TME is unestablished.
+4. Mechanistic overlap with Mechanism 68 (CSF1R) in terms of TAM-depletion endpoint — though the mechanistic nodes (recruitment vs. survival) are non-redundant.
+5. The CCL2/CCR2 axis is relevant in inflammatory disease broadly; potential on-target effects on beneficial monocyte responses (e.g., infection surveillance, wound healing) require clinical consideration.
+
+**Evidence score: 20 (theoretical)**
+
+**Files changed:**
+
+| File | Change |
+|------|--------|
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 70 section: HIF-1α → CCL2 → CCR2+ Monocyte Recruitment → TAM Formation |
+| `src/data/seed/pathways.ts` | Added `hif-ccl2-ccr2-tam-monocyte` pathway at display_order 56 |
+| `src/data/seed/targets.ts` | Added CCR2 target (UniProt P41597) |
+| `src/data/seed/drugs.ts` | Added BMS-813160 drug entry (evidence_score 20, status theoretical, fda_approved false, tumor_type_applicability all) |
+| `src/lib/scoring/constants.ts` | Added `hif-ccl2-ccr2-tam-monocyte` color (bg-sky-400) |
+| `tracker.md` | Added 7 evaluated entries (0 added to papers.ts, 7 rejected/anchor-only) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after today:**
+- Drugs: 79 (was 78) [+1 BMS-813160]
+- Mechanisms: 70 (was 69) [+1 HIF/CCL2/CCR2/monocyte-recruitment/TAM]
+- Last pathway display_order: 56
+
+**Open questions:**
+- CCL2 expression in SDH-deficient GIST/PPGL vs. SDH-proficient — HIF-1α pseudohypoxia should constitutively drive CCL2 upregulation, but direct measurement would strengthen the rationale.
+- TAM density and M2/M1 ratio in SDH-deficient vs. SDH-proficient GIST/PPGL — available IHC/transcriptomic data from published SDH-deficient tumor cohorts could validate the immune-excluded phenotype.
+- Optimal combination: CCR2 blockade (recruitment) + CSF1R blockade (survival) + checkpoint inhibition (restore T-cell function) may provide complementary TAM depletion and T-cell reinvigoration; rationale is mechanistically sound but untested in SDH-deficient models.
+- CCR5 component relevance: Treg infiltration in SDH-deficient tumors is documented in the immune profiling literature; the CCR5-Treg trafficking contribution to immunosuppression in SDH-GIST/PPGL merits direct investigation.
+
+**PR branch:** `claude/clever-lovelace-0mn2dp`

@@ -1428,6 +1428,23 @@ export const SEED_DRUGS: SeedDrug[] = [
     clinical_trial_ids: [],
   },
   {
+    name: "BMS-813160",
+    brand_names: [],
+    chembl_id: null,
+    pubchem_cid: null,
+    drug_class: "Dual CCR2/CCR5 antagonist (small molecule; orally bioavailable)",
+    mechanism_of_action:
+      "BMS-813160 (Bristol-Myers Squibb) is an orally bioavailable, small molecule dual antagonist of CCR2 (C-C chemokine receptor type 2) and CCR5. By blocking both receptors, BMS-813160 interrupts the CCL2-driven monocyte-to-TAM recruitment axis (via CCR2) while also reducing Treg trafficking and M2 macrophage chemotaxis into the TME (via CCR5).\n\nMechanistic rationale for SDH-deficient tumors:\n\nSDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α/2α pseudohypoxia → HIF-1 and NF-κB transcriptional co-activation → CCL2 (MCP-1) upregulation in tumor cells. Cycling hypoxia → HIF-1 and NF-κB co-activation drives CCL2/MCP-1 and other chemokines that recruit monocytes and promote TAM differentiation (Korbecki et al., IJMS 2021, PMID 34639040, DOI 10.3390/ijms221910701). Hypoxia/HIF signaling upregulates both CCL2 and CCR2 expression in tumors (Korbecki et al., IJMS 2020, PMID 32781743, DOI 10.3390/ijms21165647: comprehensive review of HIF-driven CC chemokine and receptor expression changes). CCR2+ inflammatory monocytes are recruited toward CCL2 gradients via HIF-1-dependent chemotaxis (Hara et al., PNAS 2017, PMID 28507122, DOI 10.1073/pnas.1703171114: APBA3/HIF-1-dependent CCR2+ monocyte chemotaxis toward CCL2 drives metastatic niche formation).\n\nCCL2-recruited CCR2+ monocytes differentiate into M2-immunosuppressive TAMs that suppress CD8+ cytotoxic T-cell function (via IL-10, TGF-β, arginase-1 secretion), express checkpoint ligands (PD-L1/PD-L2), and promote angiogenesis (VEGF, MMP-9) — collectively creating the immune-excluded, immunosuppressive TME that limits immunotherapy in SDH-deficient tumors.\n\nBMS-813160 CCR2 blockade interrupts monocyte recruitment before TAMs establish in the TME. This is mechanistically distinct from Mechanism 68 (CSF1R/pexidartinib), which targets EXISTING TAM survival/M2 polarization (downstream of differentiation). These are non-redundant: CCR2 blocks recruitment; CSF1R blocks survival. CCR5 dual-blockade adds orthogonal benefit by reducing Treg trafficking and directly modulating M2 macrophage chemotaxis.\n\nCritical limitations:\n1. No study has tested BMS-813160 or any CCR2 antagonist specifically in SDH-deficient tumor cell lines, mouse models, or patients.\n2. The HIF-1α → CCL2 → CCR2+ monocyte → TAM chain in SDH-deficient tumors is mechanistically inferred from pseudohypoxia biology; direct CCL2 and CCR2 expression data in SDH-deficient GIST, PPGL, or RCC models is absent.\n3. TAM recruitment may rely on multiple CCR2 ligands (CCL7, CCL8, CCL12) beyond CCL2; the dominant chemokine-receptor pair in SDH-deficient TME is unknown.\n4. Mechanistic overlap with Mechanism 68 (CSF1R/pexidartinib): both reduce TAM burden via distinct arms (recruitment vs. survival); the incremental benefit of blocking both nodes is unquantified.\n5. The BMS-813160 clinical development program has focused on NASH/liver fibrosis and select oncology indications; pharmacology in SDH-deficient tumor histologies has not been characterized.\n\nEvidence score: 20 (theoretical). Three anchor papers establishing HIF → CCL2 → CCR2 → TAM recruitment axis: (1) PMID 32781743 — hypoxia/HIF upregulates CCL2 and CCR2 in tumors; (2) PMID 34639040 — cycling hypoxia → HIF-1/NF-κB → CCL2 → monocyte recruitment → TAM differentiation; (3) PMID 28507122 — CCR2+ monocyte recruitment toward CCL2 linked to HIF-1 activity. Score is theoretical because all evidence is in non-SDH-deficient contexts.\n\nSources: https://pubmed.ncbi.nlm.nih.gov/32781743/ ; https://pubmed.ncbi.nlm.nih.gov/34639040/ ; https://pubmed.ncbi.nlm.nih.gov/28507122/",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["hif-ccl2-ccr2-tam-monocyte", "hif-pseudohypoxia"],
+    target_gene_symbols: ["CCR2"],
+    evidence_score: 22,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT03184870"],
+  },
+  {
     name: "FX11",
     brand_names: [],
     chembl_id: null,

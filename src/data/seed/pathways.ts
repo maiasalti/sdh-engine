@@ -930,4 +930,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 55,
   },
+  {
+    name: "HIF-1α → CCL2 → CCR2 Monocyte Recruitment → TAM",
+    slug: "hif-ccl2-ccr2-tam-monocyte",
+    description:
+      "SDH loss → constitutive HIF-1α/NF-κB pseudohypoxia → CCL2 (MCP-1) upregulation in tumor cells → CCL2 chemoattracts CCR2+ inflammatory monocytes from bone marrow → monocytes differentiate into M2-immunosuppressive TAMs → immunosuppressive TME. Blocking CCR2 interrupts monocyte-to-TAM recruitment upstream of the CSF1R-dependent TAM survival program (Mechanism 68: pexidartinib). Cycling hypoxia via HIF-1 and NF-κB drives CCL2/MCP-1 and other chemokines that recruit monocytes and promote TAM differentiation (Korbecki et al., IJMS 2021, PMID 34639040). BMS-813160 is a dual CCR2/CCR5 antagonist: CCR5 blockade adds orthogonal benefit by reducing Treg trafficking and M2 macrophage chemotaxis.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α/2α stabilization → HIF-1 and NF-κB co-activate CCL2 transcription → CCL2 (MCP-1) secreted into TME → CCR2+ inflammatory monocyte chemoattraction → monocyte extravasation and TME homing → differentiation into M2-immunosuppressive TAMs",
+    downstream_effects: [
+      "Hypoxia/HIF upregulates CCL2 (MCP-1) and CCR2 expression across tumor types (Korbecki et al., IJMS 2020, PMID 32781743: comprehensive review of HIF-driven CC chemokine and CC chemokine receptor expression changes in tumors)",
+      "Cycling hypoxia → HIF-1 and NF-κB co-activation → CCL2/MCP-1 and chemokines (CXCL1/GRO-α, CXCL8/IL-8) → monocyte and neutrophil recruitment → TAM/TAN differentiation (Korbecki et al., IJMS 2021, PMID 34639040)",
+      "CCR2+ inflammatory monocytes recruited toward CCL2 at tumor/metastatic sites; APBA3-dependent HIF-1 activity in monocytes drives CCR2-mediated chemotaxis and metastatic niche formation (Hara T et al., PNAS 2017, PMID 28507122)",
+      "M2-TAMs secrete IL-10, TGF-β, arginase-1 → suppress CD8+ cytotoxic T-cell function; express PD-L1/PD-L2 → T-cell exhaustion; produce VEGF, MMP-9 → angiogenesis and ECM remodeling",
+      "CCR5 blockade (dual CCR2/CCR5 antagonist BMS-813160): reduces Treg trafficking into the TME (CCR5 expressed on Tregs) and inhibits M2-polarized macrophage chemotaxis → orthogonal immunosuppression relief beyond CCR2 alone",
+      "Non-redundant with Mechanism 68 (CSF1R/pexidartinib): CSF1R targets EXISTING TAM survival/M2 polarization; CCR2 blocks MONOCYTE-TO-TAM RECRUITMENT before TAMs establish in the TME",
+    ],
+    druggable: true,
+    display_order: 56,
+  },
 ];
