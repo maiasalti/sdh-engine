@@ -492,19 +492,6 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
-      "Belzutifan, A Hypoxia-Inducible Factor 2-Alpha Inhibitor, for Patients with Advanced Pheochromocytoma and Paraganglioma.",
-    authors: "Jimenez C, Waguespack SG, Kaplan J, Habra MA, Varghese J.",
-    journal: "J Clin Endocrinol Metab",
-    year: 2026,
-    doi: "10.1210/clinem/dgag324",
-    topic: "Treatment & Trials",
-    description:
-      "MD Anderson clinical review of belzutifan — the first oral and second FDA-approved therapy for metastatic PPGL — in the context of pseudohypoxia-driven (Cluster 1) tumours including SDHx-mutated disease. Summarises LITESPARK-015 Phase 2 data: disease control rate 85%, overall response rate 26%. Safety profile is dominated by predictable mechanism-based adverse events (grade 1–3 anemia most common). Molecular correlates of response remain to be determined; the review calls for biomarker studies to define SDH-genotype-specific benefit.",
-    pmid: "42573142",
-    date: "2026-08",
-  },
-  {
-    title:
       "Clinical characteristics and prognosis of SDHD pathogenic variant carriers: a systematic review and meta-analysis.",
     authors: "Lian X, Shen L, Song J, Pang M, Zhong Y, Zhang H, Xing Y, Tung TH, Shen B.",
     journal: "J Med Genet",
@@ -580,5 +567,18 @@ export const PAPERS: CuratedPaper[] = [
       "Direct demonstration that SDH loss drives cell-type-specific metabolic reprogramming in a PPGL-relevant cell model: immortalized mouse chromaffin cells (imCCs, chromaffin-lineage) with SDH loss specifically upregulate fatty acid β-oxidation (FAO) activity — confirmed by stable isotope tracing and pharmacologic FAO inhibition — while this upregulation is absent in SDH-loss immortalized mouse embryonic fibroblasts (iMEFs). Both cell types show energy deficiency, but only the chromaffin-lineage cells compensate via FAO. Proteomic analysis reveals significant upregulation of mitochondrial proteins including TCA cycle and FAO enzymes in imCCs with SDH loss. Establishes CPT1-dependent FAO as a chromaffin-cell-specific metabolic dependency and therapeutic vulnerability in SDH-deficient PPGL, and provides a mechanistic explanation for why SDH mutations cause tumors preferentially in chromaffin-lineage tissues.",
     pmid: "42982179",
     date: "2026-11",
+  },
+  {
+    title:
+      "Expanding the Morphologic, Clinical, and Molecular Spectrum of Succinate Dehydrogenase A (SDHA)-Deficient Renal Cell Carcinoma: A Case Series With Review of Literature.",
+    authors: "Kandukuri S, Lobo A, Tsai H, Aron M, Jha S, Hirsch MS, Mohanty S.",
+    journal: "Am J Surg Pathol",
+    year: 2026,
+    doi: "10.1097/PAS.0000000000002611",
+    topic: "Diagnosis & Pathology",
+    description:
+      "Multi-institutional case series of 5 SDHA-deficient RCCs characterising their morphologic, clinical, and molecular spectrum. Median age 40 years; male predominance (4:1). Common histologic features: papillary and nested architecture (100%), eosinophilic/flocculent cytoplasm (100%); 80% solid growth and cytoplasmic vacuoles with inclusions. 80% high-grade (ISUP/WHO grade 3) with desmoplastic stroma. All 5 showed SDHB IHC loss; SDHA IHC was retained in 1/5 despite confirmed SDHA mutation — establishing that SDHB IHC is the more sensitive screening marker and SDHA IHC can be false-negative. 2 of 4 evaluable patients developed metastases within 14–34 months. Concludes SDHA-deficient RCC is more aggressive than typical SDHB-deficient RCC with higher metastatic risk; NGS is recommended when SDHB loss is detected.",
+    pmid: "42687764",
+    date: "2026-09",
   },
 ];

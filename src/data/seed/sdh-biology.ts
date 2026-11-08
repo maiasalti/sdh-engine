@@ -1486,6 +1486,67 @@ Kim et al. (Clin Cancer Res 2014, PMID 24583793) tested PLX3397 in KIT-mutant GI
 
 ---
 
+## Mechanism 69: HIF-1α → LDHA → Warburg Glycolytic NAD⁺ Regeneration
+
+### Pathway overview
+
+SDH loss → constitutive pseudohypoxia → HIF-1α/2α stabilization → HIF-1α transcriptional activation of LDHA (lactate dehydrogenase A) via hypoxia response elements (HREs) in the LDHA promoter → constitutively elevated LDHA enzyme levels → LDHA catalyzes pyruvate + NADH → lactate + NAD⁺ → NAD⁺ regeneration sustains glycolytic flux → ATP production via glycolysis compensates for OXPHOS failure caused by SDH/Complex II dysfunction.
+
+LDHA (lactate dehydrogenase A; LDH-5; UniProt P00338) catalyzes the terminal step of anaerobic glycolysis: conversion of pyruvate to L-lactate coupled with NADH → NAD⁺ regeneration. This NAD⁺ regeneration is metabolically essential: without it, the cytoplasmic NAD⁺ pool is depleted and GAPDH (glyceraldehyde 3-phosphate dehydrogenase), which is NAD⁺-dependent, cannot proceed — glycolysis stalls. In normally oxygenated cells with intact OXPHOS, the ETC performs bulk NADH reoxidation; in OXPHOS-impaired cells (SDH-deficient), LDHA takes over as the primary NADH oxidase, making LDHA-mediated NAD⁺ regeneration essential for continued glycolytic ATP generation.
+
+### HIF-1α → LDHA transcriptional link
+
+Semenza GL et al. (J Biol Chem 1996, PMID 8955077) demonstrated that HIF-1 binds hypoxia response elements (HREs) in the promoters of LDHA, aldolase A, and enolase 1, transcriptionally activating these glycolytic enzymes under hypoxic conditions. This established the molecular basis for the Warburg effect: HIF-1α, stabilized by hypoxia (or pseudohypoxia), constitutively drives LDHA transcription, shifting cells from OXPHOS toward fermentative glycolysis.
+
+In SDH-deficient tumors, pseudohypoxia is not an occasional transcriptional event triggered by transient oxygenation failure — it is a constitutive, oncometabolite-driven state present in every cell. Succinate-mediated PHD inhibition locks HIF-1α in the transcriptionally active state continuously. This means LDHA transcription is constitutively elevated by HIF-1α activity, sustaining a continuously elevated LDHA protein level.
+
+### Synthetic metabolic vulnerability
+
+In SDH-deficient cells, two pressures converge to create an obligate LDHA dependency:
+
+1. **Constitutive HIF-1α pseudohypoxia driving LDHA upregulation**: Succinate-mediated PHD competitive inhibition → constitutive HIF-1α stabilization → HRE-driven LDHA transcription (PMID 8955077) → elevated LDHA enzyme levels.
+
+2. **OXPHOS failure eliminating the rescue pathway**: SDH/Complex II dysfunction truncates the TCA cycle at succinate → fumarate and impairs Complex II-mediated electron entry into the ETC. This impairs the ability of cells to rescue energy homeostasis via OXPHOS when glycolysis is blocked. Normal cells (SDH-proficient) can survive LDHA inhibition by upregulating OXPHOS; SDH-deficient cells cannot.
+
+The result: LDHA inhibition collapses NAD⁺, stalls glycolysis at GAPDH, depletes ATP, and induces oxidative stress in a cell that cannot rescue energy homeostasis via OXPHOS. This is mechanistically analogous to the GLUT1/KL-11743 rationale (Mechanism 65) — both exploit the same OXPHOS failure, attacking different nodes of the glycolytic pathway.
+
+Fantin VR, St-Pierre J, Leder P (Cancer Cell 2006, PMID 16766262) used genetic LDH-A knockdown to demonstrate that LDHA suppression specifically compromises hypoxic proliferation, links the glycolytic program to mitochondrial physiology, and suppresses tumor maintenance in cancer models. The knockdown studies showed that LDH-A loss does not kill cells under normoxia but selectively impairs growth under hypoxic conditions — consistent with the hypothesis that LDHA dependency increases as OXPHOS is impaired.
+
+### Relationship to other glycolysis-axis entries in the engine
+
+This mechanism fills a specific gap in the glycolytic axis:
+- **GLUT1/KL-11743 (Mechanism 65)**: glucose import step (SLC2A1 transporter)
+- **LDHA/FX11 (Mechanism 69, this entry)**: NAD⁺ regeneration step (LDHA, pyruvate → lactate)
+- **MCT1/AZD3965 (Mechanism 15)**: lactate + H⁺ export step (SLC16A1 transporter)
+
+These are mechanistically distinct enzymatic steps in the same glycolytic-to-lactate pathway. LDHA is the NAD⁺ regeneration step between glycolysis and lactate export, filling the gap between GLUT1 inhibition (which blocks glucose entry) and MCT1 inhibition (which blocks lactate egress).
+
+### Drug: FX11
+
+FX11 (3-dihydroxy-6-methyl-7-(phenylmethyl)-4-propylnaphthalene-1-carboxylic acid) is a small molecule LDHA inhibitor. Le A, Cooper CR, Dang CV et al. (PNAS 2010, PMID 20133848) demonstrated that FX11 inhibits LDHA, reduces intracellular ATP, induces oxidative stress, and inhibits lymphoma and pancreatic cancer xenograft progression in vivo. FX11 established proof-of-concept that pharmacologic LDHA inhibition can suppress tumor growth in LDHA-dependent cancer models.
+
+FX11 is a research-grade compound with no published clinical trials and no FDA approval. It lacks pharmacokinetic characterization for clinical translation and is used primarily as a mechanistic probe.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| Lactate dehydrogenase A | LDHA | FX11 | Research tool compound; no clinical trials | None; rationale via constitutive HIF-1α → LDHA transcription (PMID 8955077) and OXPHOS failure making LDHA-dependent glycolysis essential |
+
+**Key limitations:**
+1. No study has tested FX11 or any LDHA inhibitor specifically in SDH-deficient cell lines, animal models, or patients.
+2. FX11 is a research tool compound with no clinical pharmacokinetic, pharmacodynamic, or safety data.
+3. Normal cells relying on anaerobic metabolism (skeletal muscle during exercise, red blood cells) also use LDHA; therapeutic window depends on the degree of OXPHOS competence in normal vs. SDH-deficient tumor cells.
+4. The glycolytic dependency argument applies broadly to many HIF-driven tumors; the incremental selectivity conferred by SDH loss rests on the OXPHOS failure argument, which is mechanistically sound but has not been directly tested with LDHA inhibitors in SDH-deficient models.
+5. FX11 completes the glycolytic axis alongside existing entries (GLUT1/KL-11743, MCT1/AZD3965); combination strategies targeting multiple glycolytic steps simultaneously may offer greater selectivity.
+
+**Evidence score: 24 (theoretical).** Three verified anchor papers: (1) PMID 8955077 — HIF-1α constitutively drives LDHA transcription via HREs; (2) PMID 16766262 — LDH-A suppression compromises hypoxic proliferation and tumor maintenance; (3) PMID 20133848 — FX11 LDHA inhibition reduces ATP, induces oxidative stress, and inhibits cancer xenograft progression. Score is theoretical because all evidence is in non-SDH-deficient cancer models.
+
+**Sources:**
+- Semenza GL, Jiang BH, Leung SW, Passantino R, Concordet JP, Maire P, Giallongo A. Hypoxia response elements in the aldolase A, enolase 1, and lactate dehydrogenase A gene promoters contain essential binding sites for hypoxia-inducible factor 1. J Biol Chem. 1996;271(51):32529-37. PMID 8955077. DOI 10.1074/jbc.271.51.32529. (Direct demonstration that HIF-1 binds HREs in the LDHA promoter and transcriptionally activates LDHA under hypoxia/pseudohypoxia.)
+- Fantin VR, St-Pierre J, Leder P. Attenuation of LDH-A expression uncovers a link between glycolysis, mitochondrial physiology, and tumor maintenance. Cancer Cell. 2006;9(6):425-34. PMID 16766262. DOI 10.1016/j.ccr.2006.04.023. (LDH-A knockdown links the glycolytic program to mitochondrial physiology, compromises hypoxic proliferation, and suppresses tumor maintenance.)
+- Le A, Cooper CR, Gouw AM, Dinavahi R, Maitra A, Deck LM, Royer RE, Vander Jagt DL, Semenza GL, Dang CV. Inhibition of lactate dehydrogenase A induces oxidative stress and inhibits tumor progression. Proc Natl Acad Sci U S A. 2010;107(5):2037-42. PMID 20133848. DOI 10.1073/pnas.0914433107. (FX11 inhibits LDHA → reduces ATP → induces oxidative stress → inhibits lymphoma and pancreatic cancer xenograft progression.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
