@@ -1547,6 +1547,42 @@ FX11 is a research-grade compound with no published clinical trials and no FDA a
 
 ---
 
+### Mechanism 70: HIF-1α → CCL2 (MCP-1) → CCR2+ Monocyte Recruitment → Tumor-Associated Macrophages (TAMs)
+
+**Core biology:**
+SDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α/2α pseudohypoxia → HIF-1 and NF-κB transcriptional co-activation → CCL2 (MCP-1/CCL2) upregulation in tumor cells → CCL2 secreted into the TME → chemoattracts CCR2 (CD192)-expressing inflammatory monocytes from bone marrow → CCR2+ monocytes extravasate and home to the tumor → differentiate into M2-immunosuppressive tumor-associated macrophages (TAMs) → TAMs suppress CD8+ cytotoxic T-cell function (via IL-10, TGF-β, arginase-1), promote angiogenesis (VEGF, MMP-9), and create an immune-excluded TME.
+
+Korbecki et al. (Int J Mol Sci 2020, PMID 32781743, DOI 10.3390/ijms21165647) provided a comprehensive review demonstrating that hypoxia/HIF signaling upregulates CCL2 and CCR2 expression across multiple tumor types. Korbecki et al. (Int J Mol Sci 2021, PMID 34639040, DOI 10.3390/ijms221910701) showed that cycling hypoxia via HIF-1 and NF-κB co-activation drives CCL2/MCP-1 and other chemokines (CXCL1/GRO-α, CXCL8/IL-8) that recruit monocytes and neutrophils and promote their differentiation into TAMs/TANs. Hara et al. (PNAS 2017, PMID 28507122, DOI 10.1073/pnas.1703171114) demonstrated that CCR2+ inflammatory monocytes are recruited toward CCL2 at metastatic sites, with APBA3-dependent HIF-1 activity in monocytes driving HIF-1-dependent glycolysis and CCR2-mediated chemotaxis — directly linking HIF-1 activity in monocytes to CCR2-dependent recruitment.
+
+**Mechanistic distinction from Mechanism 68 (CSF1R/pexidartinib):**
+CSF1R/pexidartinib (Mechanism 68) targets EXISTING TAM survival and M2 polarization — it depletes TAMs already present in the tumor. CCR2/BMS-813160 (Mechanism 70) targets MONOCYTE RECRUITMENT — blocking the upstream step that generates TAMs before they establish in the TME. These are non-redundant: inhibiting both recruitment (CCR2) and survival (CSF1R) could synergistically deplete TAMs via complementary axes.
+
+**CCR5 dual-blockade bonus:** BMS-813160 is a dual CCR2/CCR5 antagonist. CCR5 is expressed on Tregs and M2-polarized macrophages; CCR5 blockade adds orthogonal benefit by reducing Treg trafficking into the TME and directly modulating M2 macrophage chemotaxis.
+
+### Drug: BMS-813160
+
+BMS-813160 (Bristol-Myers Squibb) is an orally bioavailable, dual CCR2/CCR5 small molecule antagonist. It interrupts the CCL2-driven monocyte-to-TAM recruitment axis (CCR2) while also reducing Treg and M2 macrophage trafficking (CCR5). It is a clinical-stage compound with Phase 2 experience in inflammatory and oncology settings.
+
+| Druggable target | Gene | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|
+| C-C chemokine receptor type 2 / type 5 | CCR2 / CCR5 | BMS-813160 | Phase 1b/2 (NCT03184870; PDAC/CRC + chemotherapy ± nivolumab; ORR 37% with triplet in 1L PDAC; tolerability established) | None in SDH-deficient tumors; rationale via constitutive HIF-1α pseudohypoxia → CCL2 upregulation → CCR2+ monocyte recruitment → TAM formation (PMIDs 32781743, 34639040, 28507122) |
+
+**Key limitations:**
+1. No study has tested BMS-813160 or any CCR2 antagonist specifically in SDH-deficient tumor cell lines, animal models, or patients.
+2. The HIF-1α → CCL2 → CCR2+ monocyte → TAM chain in SDH-deficient tumors is mechanistically inferred from pseudohypoxia biology; direct CCL2/CCR2 expression data in SDH-deficient GIST, PPGL, or RCC models is absent.
+3. TAM recruitment may rely on multiple CCR2 ligands (CCL7, CCL8, CCL12) beyond CCL2; the dominant chemokine-receptor pair in SDH-deficient TME is unknown.
+4. Mechanistic overlap with Mechanism 68 (CSF1R/pexidartinib): both reduce TAM burden via distinct arms (recruitment vs. survival); incremental benefit of combined CCR2/CSF1R blockade is unquantified in any SDH-deficient context.
+5. BMS-813160 clinical development has focused on NASH and select oncology indications; SDH-deficient histology-specific pharmacology has not been characterized.
+
+**Evidence score: 20 (theoretical).** Three anchor papers establishing HIF → CCL2 → CCR2 → TAM recruitment axis: (1) PMID 32781743 — hypoxia/HIF upregulates CCL2 and CCR2 in tumors; (2) PMID 34639040 — cycling hypoxia → HIF-1/NF-κB → CCL2 → monocyte recruitment → TAM differentiation; (3) PMID 28507122 — CCR2+ monocyte recruitment toward CCL2 with HIF-1-dependent chemotaxis. Score is theoretical because all evidence is in non-SDH-deficient cancer models.
+
+**Sources:**
+- Korbecki J, Kojder K, Barczak K, Simińska D, Gutowska I, Chlubek D, Baranowska-Bosiacka I. Hypoxia Alters the Expression of CC Chemokines and CC Chemokine Receptors in a Tumor-A Literature Review. Int J Mol Sci. 2020;21(16):5647. PMID 32781743. DOI 10.3390/ijms21165647. (Hypoxia/HIF upregulates CCL2 and CCR2 expression across tumor types.)
+- Korbecki J, Simińska D, Gąssowska-Dobrowolska M, Listos J, Gutowska I, Chlubek D, Baranowska-Bosiacka I. Chronic and Cycling Hypoxia: Drivers of Cancer Chronic Inflammation through HIF-1 and NF-κB Activation: A Review of the Molecular Mechanisms. Int J Mol Sci. 2021;22(19):10701. PMID 34639040. DOI 10.3390/ijms221910701. (Cycling hypoxia → HIF-1 and NF-κB → CCL2/MCP-1 → monocyte recruitment → TAM differentiation.)
+- Hara T, Nakaoka HJ, Hayashi T, Mimura K, Hoshino D, Inoue M, Nagamura F, Murakami Y, Seiki M, Sakamoto T. Control of metastatic niche formation by targeting APBA3/Mint3 in inflammatory monocytes. Proc Natl Acad Sci U S A. 2017;114(22):E4416-E4424. PMID 28507122. DOI 10.1073/pnas.1703171114. (CCR2+ monocyte recruitment toward CCL2; HIF-1-dependent monocyte chemotaxis links HIF-1 activity to CCR2-mediated metastatic niche formation.)
+
+---
+
 ## Important Context for Drug Repurposing
 
 1. SDH-deficient GIST does NOT respond to imatinib (standard GIST therapy targeting KIT/PDGFRA).
