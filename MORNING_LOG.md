@@ -3429,3 +3429,6 @@ BMS-813160 CCR2 blockade interrupts this monocyte-to-TAM recruitment axis upstre
 - CCR5 component relevance: Treg infiltration in SDH-deficient tumors is documented in the immune profiling literature; the CCR5-Treg trafficking contribution to immunosuppression in SDH-GIST/PPGL merits direct investigation.
 
 **PR branch:** `claude/clever-lovelace-0mn2dp`
+## Correction note - 2026-11-09 (PR #143 post-review fix by Instinct)
+
+One data fix before merge: drugs.ts listed BMS-813160 evidence_score as 22; corrected to 20 to match the entry's own scoring text ("Evidence score: 20 (theoretical)"). PR body, mechanism rationale and this log's morning entry already used 20. Citations, trial ID NCT03184870, counts and build otherwise verified clean.
