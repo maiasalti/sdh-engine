@@ -1439,7 +1439,7 @@ export const SEED_DRUGS: SeedDrug[] = [
     approved_indications: [],
     pathway_slugs: ["hif-ccl2-ccr2-tam-monocyte", "hif-pseudohypoxia"],
     target_gene_symbols: ["CCR2"],
-    evidence_score: 22,
+    evidence_score: 20,
     status: "theoretical",
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT03184870"],
