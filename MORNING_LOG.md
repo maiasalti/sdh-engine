@@ -3457,7 +3457,7 @@ One data fix before merge: drugs.ts listed BMS-813160 evidence_score as 22; corr
 
 **Clinical anchors verified on PubMed:**
 - PMID 39414771 (Campos F & Kasper B, Expert Opin Pharmacother 2024): nirogacestat FDA approval 22 Nov 2023, DeFi Phase 3 (NCT03785964), HR 0.29 (95% CI 0.15–0.55), ORR 41% vs. 8% placebo.
-- PMID 40888418 (Smith SR et al., Future Oncol 2025): confirms FDA approval and DeFi outcomes.
+- PMID 40888418 (Tansir G et al., Future Oncol 2025): confirms FDA approval and DeFi outcomes.
 
 **Changes made:**
 - `src/data/seed/pathways.ts`: added `hif-nicd-notch-coactivation` pathway (display_order 57)
@@ -3469,3 +3469,25 @@ One data fix before merge: drugs.ts listed BMS-813160 evidence_score as 22; corr
 **Engine state after this run:** 80 drugs, 71 mechanisms, last pathway display_order 57.
 
 **Tracker.md:** Logged PMIDs 16256737, 20827750, 39414771, 40888418.
+
+
+---
+
+
+
+## Correction note - 2026-11-10 (PR #144 post-review fixes by Instinct)
+
+
+
+Citation and identifier corrections before merge:
+
+1. drugs.ts and sdh-biology.ts carried a hallucinated/duplicated author list for the Gustafsson Dev Cell 2005 anchor (PMID 16256737, with repeated "Bhatt" authors); corrected to the real list: Gustafsson MV, Zheng X, Pereira T, Gradin K, Jin S, Lundkvist J, Ruas JL, Poellinger L, Lendahl U, Bondesson M.
+2. PMID 40888418 was misattributed to "Smith SR et al., Nirogacestat (Ogsiveo) for the treatment of desmoid tumors"; the real paper is Tansir G, Rastogi S, Gounder MM, "Repurposing nirogacestat, a gamma secretase enzyme inhibitor in desmoid tumors" (Future Oncol 2025; DOI 10.1080/14796694.2025.2550826). Corrected in drugs.ts, sdh-biology.ts, tracker.md and this log.
+3. PMID 39414771's cited title and issue/pages were wrong; corrected to "Examining nirogacestat for adults with progressing desmoid tumors who require systemic treatment" (Expert Opin Pharmacother. 2024;25(16):2115-2124) in sdh-biology.ts and tracker.md.
+4. drugs.ts identifier corrections: nirogacestat chembl_id CHEMBL2180736 -> CHEMBL1770916 (canonical NIROGACESTAT) and pubchem_cid 9908089 -> 46224413; the pre-existing adavosertib entry carried the same unnamed ChEMBL record -> CHEMBL1976040 (canonical ADAVOSERTIB).
+5. sdh-biology.ts: removed unresolved "(Mechanism X)" placeholders from the Mechanism 71 non-redundancy paragraph.
+All PMIDs resolve with matching authors/titles; counts (80 drugs, Mechanism 71, display_order 57) and npm build verified.
+
+
+
+
