@@ -3432,3 +3432,62 @@ BMS-813160 CCR2 blockade interrupts this monocyte-to-TAM recruitment axis upstre
 ## Correction note - 2026-11-09 (PR #143 post-review fix by Instinct)
 
 One data fix before merge: drugs.ts listed BMS-813160 evidence_score as 22; corrected to 20 to match the entry's own scoring text ("Evidence score: 20 (theoretical)"). PR body, mechanism rationale and this log's morning entry already used 20. Citations, trial ID NCT03184870, counts and build otherwise verified clean.
+
+---
+
+## 2026-11-09
+
+### Part A: PubMed Scan (Aug 9 – Nov 9, 2026)
+
+**Queries run:** SDH-deficient GIST, paraganglioma, pheochromocytoma, renal cell carcinoma (SDH-deficient), SDH-deficient biology, succinate/pseudohypoxia/HIF targets, epigenetic dysregulation/DNMT3A/TET inhibition, VEGFR/angiogenesis, mTOR/PI3K, glutaminolysis/GLS, FGFR/FGF signalling, IGF1R, BRCAness/PARP, DNA damage/ATR, glutathione/redox, iron-sulfur clusters/ferroptosis, CXCR4/CXCR2 TME, CSF1R, CCL2/CCR2, LAT1/MCT, LDHA, NKG2A, HDAC, PRMT, KDM5, CDK, CDK4/6, Notch/gamma-secretase/nirogacestat.
+
+**Result:** 0 new qualifying papers. All returned PMIDs were already logged in tracker.md from prior runs. No new papers added to `src/data/papers.ts`.
+
+### Part B: New Direction — Mechanism 71
+
+**Direction: HIF-1α·NICD Notch Co-activation → γ-Secretase Inhibition (Nirogacestat)**
+
+**Non-redundancy confirmed:** Reviewed all 70 prior mechanisms and all rejected candidates through Nov 8, 2026. Notch, gamma-secretase, NICD, nirogacestat, crenigacestat, LY3039478 — none appear in any prior entry. Mechanistically distinct from all 70 existing HIF-axis entries: belzutifan (HIF-2α/ARNT), ganetespib (HSP90/HIF), alisertib (AURKA/HIF mRNA), APX3330 (APEX1/HIF), CCS1477 (p300/CBP/HIF), ruxolitinib (JAK-STAT3/HIF mRNA) — none targets the NICD proteolytic release step or the HIF-1α·NICD transcriptional complex.
+
+**Mechanism:** SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α pseudohypoxia → HIF-1α physically associates with NICD at Notch-responsive promoters → constitutive Hey2/Hes1 expression → maintained undifferentiated state. γ-Secretase (PSEN1 catalytic subunit) releases NICD from Notch transmembrane receptor — the unique rate-limiting step. Blocking PSEN1 with nirogacestat → no NICD → HIF-1α finds no NICD partner → complex disrupted → constitutive Notch target gene expression extinguished.
+
+**Mechanistic anchors verified on PubMed:**
+- PMID 16256737 (Gustafsson MV et al., Dev Cell 2005;9(5):617-28, DOI 10.1016/j.devcel.2005.09.010): co-IP and ChIP confirm direct HIF-1α/NICD protein-protein interaction and co-recruitment to Hey2/Hes1 promoters under hypoxia. PRIMARY ANCHOR.
+- PMID 20827750 (Pistollato F et al., Stem Cells 2010;28(11):1918-29): γ-secretase inhibition blocks HIF-1α/Notch interaction in medulloblastoma. SUPPORTING ANCHOR.
+
+**Clinical anchors verified on PubMed:**
+- PMID 39414771 (Campos F & Kasper B, Expert Opin Pharmacother 2024): nirogacestat FDA approval 22 Nov 2023, DeFi Phase 3 (NCT03785964), HR 0.29 (95% CI 0.15–0.55), ORR 41% vs. 8% placebo.
+- PMID 40888418 (Tansir G et al., Future Oncol 2025): confirms FDA approval and DeFi outcomes.
+
+**Changes made:**
+- `src/data/seed/pathways.ts`: added `hif-nicd-notch-coactivation` pathway (display_order 57)
+- `src/data/seed/targets.ts`: added PSEN1 target (γ-secretase catalytic subunit, UniProt P49768)
+- `src/data/seed/drugs.ts`: added nirogacestat (Ogsiveo; PF-03084014; evidence_score 22; theoretical; FDA-approved desmoid tumors Nov 2023; NCT03785964)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 71 with full mechanistic rationale, limitation list, and cited sources
+- `src/lib/scoring/constants.ts`: added `hif-nicd-notch-coactivation` → `bg-violet-400` pathway color
+
+**Engine state after this run:** 80 drugs, 71 mechanisms, last pathway display_order 57.
+
+**Tracker.md:** Logged PMIDs 16256737, 20827750, 39414771, 40888418.
+
+
+---
+
+
+
+## Correction note - 2026-11-10 (PR #144 post-review fixes by Instinct)
+
+
+
+Citation and identifier corrections before merge:
+
+1. drugs.ts and sdh-biology.ts carried a hallucinated/duplicated author list for the Gustafsson Dev Cell 2005 anchor (PMID 16256737, with repeated "Bhatt" authors); corrected to the real list: Gustafsson MV, Zheng X, Pereira T, Gradin K, Jin S, Lundkvist J, Ruas JL, Poellinger L, Lendahl U, Bondesson M.
+2. PMID 40888418 was misattributed to "Smith SR et al., Nirogacestat (Ogsiveo) for the treatment of desmoid tumors"; the real paper is Tansir G, Rastogi S, Gounder MM, "Repurposing nirogacestat, a gamma secretase enzyme inhibitor in desmoid tumors" (Future Oncol 2025; DOI 10.1080/14796694.2025.2550826). Corrected in drugs.ts, sdh-biology.ts, tracker.md and this log.
+3. PMID 39414771's cited title and issue/pages were wrong; corrected to "Examining nirogacestat for adults with progressing desmoid tumors who require systemic treatment" (Expert Opin Pharmacother. 2024;25(16):2115-2124) in sdh-biology.ts and tracker.md.
+4. drugs.ts identifier corrections: nirogacestat chembl_id CHEMBL2180736 -> CHEMBL1770916 (canonical NIROGACESTAT) and pubchem_cid 9908089 -> 46224413; the pre-existing adavosertib entry carried the same unnamed ChEMBL record -> CHEMBL1976040 (canonical ADAVOSERTIB).
+5. sdh-biology.ts: removed unresolved "(Mechanism X)" placeholders from the Mechanism 71 non-redundancy paragraph.
+All PMIDs resolve with matching authors/titles; counts (80 drugs, Mechanism 71, display_order 57) and npm build verified.
+
+
+
+

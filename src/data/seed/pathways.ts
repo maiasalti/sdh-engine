@@ -948,4 +948,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 56,
   },
+  {
+    name: "HIF-1α · NICD Notch Co-activation",
+    slug: "hif-nicd-notch-coactivation",
+    description:
+      "Under SDH-deficient pseudohypoxia, stabilised HIF-1α physically associates with the Notch intracellular domain (NICD) at Notch-responsive promoters, constitutively driving Hey2, Hes1 and other Notch target genes. Blocking γ-secretase-mediated NICD release with nirogacestat prevents NICD generation and disrupts the HIF-1α·NICD transcriptional complex.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α stabilization → HIF-1α recruits NICD to Notch-responsive promoters (Hey2, Hes1, Nrarp)",
+    downstream_effects: [
+      "Constitutive Hey2/Hes1 expression maintaining undifferentiated state",
+      "Notch target gene co-activation by HIF-1α·NICD complex",
+      "Hypoxia-dependent enhancement of Notch signalling",
+      "Block of differentiation and apoptosis in neural-lineage SDH-deficient cells",
+      "γ-secretase inhibition prevents NICD cleavage → no NICD → disrupts HIF-1α co-activation",
+    ],
+    druggable: true,
+    display_order: 57,
+  },
 ];
