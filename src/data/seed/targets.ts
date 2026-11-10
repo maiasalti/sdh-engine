@@ -711,4 +711,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "LDHA (L-lactate dehydrogenase A chain; LDH-5; UniProt P00338) is the NAD⁺-dependent enzyme that catalyzes the terminal step of anaerobic glycolysis: pyruvate + NADH ⇌ L-lactate + NAD⁺. The forward reaction (pyruvate → lactate) regenerates NAD⁺, enabling continued GAPDH activity and uninterrupted glycolytic flux. LDHA is a homotetrameric enzyme (LDH-5) or component of heterotetramers (LDH-1 through LDH-4) with distinct tissue distributions; in rapidly proliferating cancer cells the LDH-5 homotetramer (all LDHA subunits) predominates.\n\nIn SDH-deficient tumors, two converging pressures create an obligate LDHA dependency: (1) HIF-1α, constitutively stabilized by succinate-mediated PHD inhibition, transcriptionally activates LDHA via hypoxia response elements (HREs) in the LDHA promoter — directly demonstrated by Semenza GL et al. (J Biol Chem 1996, PMID 8955077), who showed HIF-1 binds HREs in aldolase A, enolase 1, and LDHA promoters; (2) SDH/Complex II dysfunction impairs OXPHOS, forcing cells to rely on glycolysis for ATP generation. Without LDHA-mediated NAD⁺ regeneration, the NADH pool would be exhausted, GAPDH would stall, and glycolysis would arrest — eliminating the primary energy source in OXPHOS-impaired SDH-deficient cells.\n\nFantin VR et al. (Cancer Cell 2006, PMID 16766262) demonstrated that LDH-A suppression compromises hypoxic proliferation, links the glycolytic program to mitochondrial physiology, and suppresses tumor maintenance in cancer models. FX11 (Le A et al., PNAS 2010, PMID 20133848), a small molecule LDHA inhibitor, reduces ATP, induces oxidative stress, and inhibits cancer xenograft progression — establishing LDHA as a pharmacologically tractable therapeutic target in glycolysis-dependent cancers.",
   },
+  {
+    gene_symbol: "EZH1",
+    name: "Histone-lysine N-methyltransferase EZH1",
+    uniprot_id: "Q92800",
+    pathway_slug: "ezh1-ezh2-dual-prc2-dependency",
+    target_type: "direct",
+    description:
+      "EZH1 (UniProt Q92800) is the catalytic SET-domain methyltransferase of the alternative EZH1-PRC2 complex, which trimethylates histone H3 at lysine 27 (H3K27me3). Unlike EZH2, EZH1-PRC2 is ubiquitously expressed in post-mitotic and quiescent cells. When EZH2 is inhibited (e.g., by tazemetostat), EZH1-PRC2 compensates to maintain residual H3K27me3 at target gene loci, limiting the therapeutic effect of EZH2-only inhibition (Shen X et al., Mol Cell 2008, PMID 19026780, DOI 10.1016/j.molcel.2008.09.016). Valemetostat (DS-3201b) is a dual EZH1+EZH2 inhibitor that blocks both PRC2 complexes simultaneously, eliminating this compensatory escape.",
+  },
 ];
