@@ -1627,7 +1627,7 @@ Nirogacestat (PF-03084014; Ogsiveo; Springworks Therapeutics) is the first FDA-a
 SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM6A (UTX) and KDM6B (JMJD3) histone H3K27 demethylases → H3K27me3 elevation genome-wide → constitutive PRC2 dependency. This is part of the canonical succinate-driven epigenetic dysregulation axis (the same oncometabolite that inhibits TET demethylases for CIMP, KDM4A/B for BRCAness, and KDM6A/B for H3K27me3 elevation).
 
 **The EZH1 compensation problem:**
-EZH2-only inhibition (tazemetostat; Mechanism 2 in the engine) is the established approach to PRC2 inhibition in SDH-driven H3K27me3 elevation. However, Shen X, Liu Y, Hsu YJ, Fujiwara Y, Kim J, Mao X, Yuan GC, Orkin SH (Mol Cell 2008;32(4):491-502, PMID 19026780, DOI 10.1016/j.molcel.2008.09.016) demonstrated that EZH1 forms a distinct PRC2 complex (EZH1-PRC2) that also trimethylates H3K27 and complements EZH2 in maintaining H3K27me3 at PRC2 target loci. EZH1-PRC2 is active particularly in quiescent and post-mitotic cells. When EZH2 is inhibited, EZH1-PRC2 compensates — residual H3K27me3 at key loci is maintained by EZH1-PRC2, partially restoring the silenced chromatin state and limiting the effect of EZH2-only blockade.
+EZH2-only inhibition (tazemetostat; Mechanism 9 in the engine) is the established approach to PRC2 inhibition in SDH-driven H3K27me3 elevation. However, Shen X, Liu Y, Hsu YJ, Fujiwara Y, Kim J, Mao X, Yuan GC, Orkin SH (Mol Cell 2008;32(4):491-502, PMID 19026780, DOI 10.1016/j.molcel.2008.09.016) demonstrated that EZH1 forms a distinct PRC2 complex (EZH1-PRC2) that also trimethylates H3K27 and complements EZH2 in maintaining H3K27me3 at PRC2 target loci. EZH1-PRC2 is active particularly in quiescent and post-mitotic cells. When EZH2 is inhibited, EZH1-PRC2 compensates — residual H3K27me3 at key loci is maintained by EZH1-PRC2, partially restoring the silenced chromatin state and limiting the effect of EZH2-only blockade.
 
 Dual inhibition of both EZH1 and EZH2 simultaneously prevents this compensatory escape. Valemetostat (DS-3201b; Daiichi Sankyo) is the first clinically approved dual EZH1+EZH2 inhibitor.
 
@@ -1635,16 +1635,16 @@ Dual inhibition of both EZH1 and EZH2 simultaneously prevents this compensatory 
 Yamagishi M, Kuze Y, Kobayashi S et al. (Nature 2024;627(8002):221-228, PMID 38383791, DOI 10.1038/s41586-024-07103-x) published integrative single-cell analyses from the valemetostat ATLL clinical trial. They showed that valemetostat abolishes the highly condensed H3K27me3-driven chromatin structure in ATLL cells, neutralizing multiple gene loci including tumor suppressor genes, and established the drug's mechanism of action via H3K27me3 depletion — directly demonstrating the therapeutic mechanism on the same epigenetic mark elevated by SDH loss.
 
 **Clinical efficacy:**
-VALENTINE-PTCL01 Phase 2 trial (NCT04703192; Zinzani PL et al., Lancet Oncol 2024;25(12):1602-1613, PMID 39486433, DOI 10.1016/S1470-2045(24)00503-5): oral valemetostat 200 mg/day in relapsed/refractory PTCL (n=133) achieved an objective response rate of 44% (52/119 evaluable patients) by blinded independent central review. Most common grade 3/4 adverse events: thrombocytopenia 23%, anaemia 19%, neutropenia 17%. No treatment-related deaths. Valemetostat is approved in Japan (September 2023) for ATLL.
+VALENTINE-PTCL01 Phase 2 trial (NCT04703192; Zinzani PL et al., Lancet Oncol 2024;25(12):1602-1613, PMID 39486433, DOI 10.1016/S1470-2045(24)00503-5): oral valemetostat 200 mg/day in relapsed/refractory PTCL (n=133) achieved an objective response rate of 44% (52/119 evaluable patients) by blinded independent central review. Most common grade 3/4 adverse events: thrombocytopenia 23%, anaemia 19%, neutropenia 17%. No treatment-related deaths. Valemetostat is approved in Japan (September 2022) for ATLL.
 
 **Non-redundancy with existing mechanisms:**
-- Tazemetostat (Mechanism 2, epigenetic-dysregulation): EZH2-only inhibitor. EZH1-PRC2 escapes tazemetostat, re-establishing H3K27me3 at key loci.
+- Tazemetostat (Mechanism 9, epigenetic-dysregulation): EZH2-only inhibitor. EZH1-PRC2 escapes tazemetostat, re-establishing H3K27me3 at key loci.
 - Valemetostat (this mechanism): blocks both EZH2-PRC2 AND EZH1-PRC2 — no residual H3K27me3 rescue possible via EZH1 compensation.
 - All other epigenetic drugs in the engine act on DNA methylation (5-azacytidine), HDAC, BET, or HAT — none target the H3K27 methyltransferase node with EZH1 coverage.
 
 | Druggable target | Gene | UniProt | Drug | Stage | SDH-specific data |
 |---|---|---|---|---|---|
-| Histone H3K27 methyltransferase (EZH1-PRC2 + EZH2-PRC2) | EZH1 / EZH2 | Q92800 / Q15910 | Valemetostat (DS-3201b; Daiichi Sankyo) | Approved Japan (ATLL 2023); Phase 2 PTCL: VALENTINE-PTCL01 NCT04703192; Phase 1/2 solid tumors NCT04197024 | None directly; rationale via KDM6A/B inhibition → H3K27me3 elevation (SDH-deficient tumors), EZH1 compensation escape from EZH2-only inhibition (PMID 19026780) |
+| Histone H3K27 methyltransferase (EZH1-PRC2 + EZH2-PRC2) | EZH1 / EZH2 | Q92800 / Q15910 | Valemetostat (DS-3201b; Daiichi Sankyo) | Approved Japan (ATLL 2022); Phase 2 PTCL: VALENTINE-PTCL01 NCT04703192; Phase 1 lymphomas NCT02732275 | None directly; rationale via KDM6A/B inhibition → H3K27me3 elevation (SDH-deficient tumors), EZH1 compensation escape from EZH2-only inhibition (PMID 19026780) |
 
 **Key limitations:**
 1. No study has tested valemetostat in SDH-deficient cell lines, animal models, or patients.
