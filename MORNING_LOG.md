@@ -3505,7 +3505,7 @@ All PMIDs resolve with matching authors/titles; counts (80 drugs, Mechanism 71, 
 - PMID 38383791: Yamagishi M et al. Mechanisms of action and resistance in histone methylation-targeted therapy. Nature 2024;627(8002):221-228. DOI 10.1038/s41586-024-07103-x. (Valemetostat MoA in ATLL clinical trial via H3K27me3 chromatin remodeling — integrative single-cell.)
 - PMID 39486433: Zinzani PL et al. Valemetostat for patients with R/R PTCL (VALENTINE-PTCL01). Lancet Oncol 2024;25(12):1602-1613. DOI 10.1016/S1470-2045(24)00503-5. (Phase 2: 44% ORR in R/R PTCL.)
 
-**Drug:** Valemetostat (DS-3201b). Approved Japan for ATLL (Sep 2023). Evidence score: 24 (theoretical — all SDH-deficient relevance inferred from KDM6A/B inhibition → H3K27me3 elevation). Tumor type: all.
+**Drug:** Valemetostat (DS-3201b). Approved Japan for ATLL (Sep 2022). Evidence score: 24 (theoretical — all SDH-deficient relevance inferred from KDM6A/B inhibition → H3K27me3 elevation). Tumor type: all.
 
 **Files changed:** `src/data/seed/pathways.ts`, `src/data/seed/targets.ts` (new EZH1 target), `src/data/seed/drugs.ts`, `src/data/seed/sdh-biology.ts`, `src/lib/scoring/constants.ts`, `tracker.md`.
 
@@ -3513,3 +3513,22 @@ All PMIDs resolve with matching authors/titles; counts (80 drugs, Mechanism 71, 
 
 
 
+---
+
+
+
+## Correction note - 2026-11-11 (PR #145 post-review fixes by Instinct)
+
+
+
+Citation and factual corrections before merge:
+
+
+
+1. drugs.ts and sdh-biology.ts cited NCT04197024 as an "ongoing Phase 1/2 dose-escalation and expansion study of valemetostat in relapsed/refractory B- and T-cell lymphomas and advanced solid tumors"; NCT04197024 is an unrelated study (Assessment of Exercise Capacity in Virtual Reality). Corrected to NCT02732275 (first-in-human Phase 1 dose-escalation/expansion of valemetostat in relapsed/refractory B- and T-cell non-Hodgkin lymphomas) in drugs.ts (text, Sources, clinical_trial_ids) and the sdh-biology.ts stage table.
+2. Japan approval date was "September 2023"; EZHARMIA (valemetostat tosilate) was approved by Japan MHLW on 26 September 2022 for R/R ATL (Daiichi Sankyo press release, 26 Sep 2022). Corrected in drugs.ts, sdh-biology.ts and this log.
+3. sdh-biology.ts referred to tazemetostat as "Mechanism 2"; tazemetostat is Mechanism 9 (EZH2 / PRC2 Histone Methylation Vulnerability, pathway epigenetic-dysregulation) in this engine. Corrected in both mentions.
+
+
+
+All 3 new anchor PMIDs (19026780 Shen Mol Cell 2008; 38383791 Yamagishi Nature 2024; 39486433 Zinzani Lancet Oncol 2024) verified: resolve, authors, titles, journals/volume/pages, and claims (VALENTINE-PTCL01 44% ORR = 52/119, n=133, grade 3-4 thrombocytopenia 23% / anaemia 19% / neutropenia 17%) all match PubMed. NCT04703192 confirmed as VALENTINE-PTCL01. UniProt Q92800 = EZH1 and Q15910 = EZH2 confirmed. Counts (81 drugs, Mechanism 72, display_order 58) and npm build verified.
