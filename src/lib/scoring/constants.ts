@@ -100,4 +100,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-ldha-warburg-glycolysis-nad": "bg-lime-400 text-lime-950 dark:bg-lime-600 dark:text-lime-50",
   "hif-ccl2-ccr2-tam-monocyte": "bg-sky-400 text-sky-950 dark:bg-sky-600 dark:text-sky-50",
   "hif-nicd-notch-coactivation": "bg-violet-400 text-violet-950 dark:bg-violet-600 dark:text-violet-50",
+  "ezh1-ezh2-dual-prc2-dependency": "bg-violet-500 text-violet-50 dark:bg-violet-500 dark:text-violet-50",
 };

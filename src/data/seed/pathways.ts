@@ -965,4 +965,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 57,
   },
+  {
+    name: "EZH1+EZH2 Dual PRC2 Dependency",
+    slug: "ezh1-ezh2-dual-prc2-dependency",
+    description:
+      "SDH loss → succinate accumulation → KDM6A/B (UTX/JMJD3) demethylase inhibition → H3K27me3 elevation → constitutive PRC2 dependency. EZH2-only inhibition is partially circumvented by EZH1-PRC2, which maintains residual H3K27me3 at target loci. Blocking both EZH1 and EZH2 simultaneously prevents this compensatory escape.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive inhibition of KDM6A (UTX) and KDM6B (JMJD3) demethylases → H3K27me3 elevation → PRC2 (EZH1-PRC2 and EZH2-PRC2) dependency",
+    downstream_effects: [
+      "H3K27me3-mediated silencing of tumor suppressor genes",
+      "EZH2-PRC2 as primary methyltransferase; EZH1-PRC2 as compensatory H3K27 methyltransferase (Shen et al., Mol Cell 2008, PMID 19026780)",
+      "EZH1-mediated H3K27me3 maintenance bypasses EZH2-only inhibition (tazemetostat resistance mechanism)",
+      "Dual EZH1+EZH2 blockade prevents compensatory H3K27me3 restoration",
+      "Valemetostat (DS-3201b) is a potent oral dual EZH1/EZH2 inhibitor with Phase 2 clinical data in PTCL (44% ORR; VALENTINE-PTCL01, PMID 39486433)",
+    ],
+    druggable: true,
+    display_order: 58,
+  },
 ];
