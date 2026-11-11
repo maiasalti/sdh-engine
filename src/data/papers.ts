@@ -581,4 +581,30 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42687764",
     date: "2026-09",
   },
+  {
+    title:
+      "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series.",
+    authors: "Berman ZT, Hohenberger P, Bulusu R, et al.",
+    journal: "Cancers (Basel)",
+    year: 2026,
+    doi: "10.3390/cancers18162704",
+    topic: "Treatment & Trials",
+    description:
+      "International multicenter retrospective case series (n=12; median age 27 years) of yttrium-90 (Y-90) selective internal radiation therapy (SIRT) for unresectable SDH-deficient GIST hepatic metastases. Objective response rate was 66.7% (1 CR, 7 PR); disease control rate 100%; one grade ≥3 adverse event. Median overall survival not reached at 32-month median follow-up (range 3–77 months). Establishes SIRT as safe and effective for SDH-deficient GIST liver mets, and suggests the subtype is more sensitive to radiation than previously appreciated — consistent with BRCAness/HR deficiency from succinate-mediated KDM4A/B inhibition.",
+    pmid: "42650014",
+    date: "2026-08",
+  },
+  {
+    title:
+      "Effects of a GLP-1 agonist and antidiabetic therapies on pheochromocytoma/paraganglioma growth.",
+    authors: "Wang K, Stempfle P, Hamati J, et al.",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0283",
+    topic: "Treatment & Trials",
+    description:
+      "Prospective PROSPHEO trial (NCT03344016; n=54 primary cultures, 67 clinical patients) showing cluster-dependent effects of antidiabetic drugs on PPGL growth: semaglutide (GLP-1R agonist) produced significant antitumor effects specifically in cluster 1 PPGLs (pseudohypoxia-driven, includes SDHx- and VHL-related tumors) but not in cluster 2/3 (kinase-driven). Clinical data confirmed larger median tumor sizes in insulin-treated vs. metformin/GLP-1RA-treated patients. Provides first clinical evidence that GLP-1R agonism has cluster-selective antitumor activity in pseudohypoxic PPGLs.",
+    pmid: "42847129",
+    date: "2026-10",
+  },
 ];

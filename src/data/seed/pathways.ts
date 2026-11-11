@@ -982,4 +982,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 58,
   },
+  {
+    name: "GLP-1R → PKA → HIF-1α Destabilization",
+    slug: "glp1r-pka-hif-destabilization",
+    description:
+      "GLP-1 receptor (GLP1R) is a Gs-coupled GPCR that elevates cAMP and activates PKA upon agonist binding. In SDH-deficient/cluster 1 pseudohypoxic PPGLs, constitutive HIF-1α stabilisation (driven by succinate → PHD inhibition) maintains the pseudohypoxia program. GLP-1R agonism activates PKA, which can phosphorylate HIF-1α and promote its destabilisation, thereby countering the constitutive pseudohypoxic state. Wang et al. (Endocr Relat Cancer 2026, PMID 42847129; PROSPHEO trial NCT03344016) demonstrated significant antitumour effects of semaglutide specifically in cluster 1 PPGLs (pseudohypoxia-driven, includes SDHx), with no effect in cluster 2/3 (kinase-driven), consistent with HIF-dependency of the response.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α pseudohypoxia; GLP-1R agonism → Gs → cAMP → PKA activation → proposed HIF-1α phosphorylation → HIF-1α destabilisation",
+    downstream_effects: [
+      "GLP-1R Gs-coupling → adenylyl cyclase activation → intracellular cAMP elevation → PKA activation",
+      "PKA-mediated phosphorylation of HIF-1α (proposed mechanism consistent with published cAMP/PKA-HIF biology; not yet validated in SDH-null isogenic cell pairs)",
+      "Cluster 1-specific antitumour effect of semaglutide in PPGL patient-derived primary cultures (n=8 cluster 1 tumours; Wang et al. 2026, PMID 42847129)",
+      "Clinical correlate: larger median tumour sizes in insulin-treated vs. metformin/GLP-1RA-treated patients in the PROSPHEO prospective trial (n=67)",
+      "Mechanistically distinct from belzutifan (direct HIF-2α/ARNT dimerisation inhibitor), ganetespib (HSP90/HIF stability), and other HIF-targeting agents in the engine — acts via GPCR/cAMP/PKA rather than direct HIF protein binding",
+    ],
+    druggable: true,
+    display_order: 59,
+  },
 ];
