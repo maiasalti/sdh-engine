@@ -720,4 +720,13 @@ export const SEED_TARGETS: SeedTarget[] = [
     description:
       "EZH1 (UniProt Q92800) is the catalytic SET-domain methyltransferase of the alternative EZH1-PRC2 complex, which trimethylates histone H3 at lysine 27 (H3K27me3). Unlike EZH2, EZH1-PRC2 is ubiquitously expressed in post-mitotic and quiescent cells. When EZH2 is inhibited (e.g., by tazemetostat), EZH1-PRC2 compensates to maintain residual H3K27me3 at target gene loci, limiting the therapeutic effect of EZH2-only inhibition (Shen X et al., Mol Cell 2008, PMID 19026780, DOI 10.1016/j.molcel.2008.09.016). Valemetostat (DS-3201b) is a dual EZH1+EZH2 inhibitor that blocks both PRC2 complexes simultaneously, eliminating this compensatory escape.",
   },
+  {
+    gene_symbol: "GLP1R",
+    name: "Glucagon-like peptide-1 receptor (GLP-1R; GLP1R)",
+    uniprot_id: "P43220",
+    pathway_slug: "glp1r-pka-hif-destabilization",
+    target_type: "direct",
+    description:
+      "GLP1R (Glucagon-like peptide-1 receptor; UniProt P43220) is a class B Gs-coupled GPCR expressed on pancreatic β-cells, intestinal L-cells, kidney, lung, heart, and select neuroendocrine/PPGL cells. Agonist binding (GLP-1 peptide or pharmacologic agonists such as semaglutide) activates Gs → adenylyl cyclase → cAMP elevation → PKA and EPAC activation. Beyond its canonical incretin effects on insulin secretion, GLP-1R/PKA signaling has been proposed to phosphorylate and destabilise HIF-1α in pseudohypoxic cells. Wang et al. (Endocr Relat Cancer 2026, PMID 42847129; PROSPHEO prospective trial NCT03344016) demonstrated cluster-dependent antitumour effects of semaglutide in PPGL patient-derived primary cultures: significant antitumour activity specifically in cluster 1 (pseudohypoxia-driven, SDHx/VHL) tumours, with no antitumour effect in cluster 2/3 (kinase-driven) tumours — high-dose semaglutide instead showed tumour-promoting effects in three germline RET-mutant (MEN2) tumours. The cluster 1 specificity is consistent with HIF-dependent vulnerability, since SDH-deficient and VHL-deficient PPGLs (cluster 1) share constitutive HIF-1α/2α pseudohypoxia as the defining molecular feature. GLP1R expression in PPGL is supported by the neuroendocrine cell lineage of chromaffin cells and paraganglia, which express multiple GPCRs including GLP1R.",
+  },
 ];
