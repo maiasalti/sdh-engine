@@ -3551,7 +3551,7 @@ All 3 new anchor PMIDs (19026780 Shen Mol Cell 2008; 38383791 Yamagishi Nature 2
 - **PMID 42650014** (Berman ZT et al., Cancers (Basel) 2026; DOI 10.3390/cancers18162704): SIRT (Y-90 radioembolization) for SDH-deficient GIST liver mets. n=12; 66.7% ORR, 100% DCR, durable responses at 32-month median follow-up; suggests SDH-deficient GIST is more radiation-sensitive than appreciated — consistent with BRCAness/HR deficiency. **ADDED to papers.ts (Treatment & Trials).**
 - **PMID 42847129** (Wang K et al., Endocr Relat Cancer 2026; DOI 10.1530/ERC-26-0283): GLP-1R agonist semaglutide antitumour effects in PPGL. PROSPHEO prospective trial (NCT03344016). Cluster 1-specific antitumour activity of semaglutide in patient-derived primary cultures (n=8 cluster 1); clinical correlate in 67 patients. **ADDED to papers.ts (Treatment & Trials); Part B anchor for Mechanism 73.**
 
-Notable finding from PMID 42650014 (not a new drug direction today): The 66.7% ORR with SIRT in SDH-deficient GIST liver mets provides clinical validation of the radiation sensitivity predicted by BRCAness/HR deficiency (Mechanism 7 in the engine). The enhanced response may support future combination studies of SIRT + PARP inhibitor, exploiting both the locoregional radiation and the HR deficiency, but this combination angle is an extension of existing Mechanism 7 and requires dedicated entry work before addition.
+Notable finding from PMID 42650014 (not a new drug direction today): The 66.7% ORR with SIRT in SDH-deficient GIST liver mets provides clinical validation of the radiation sensitivity predicted by BRCAness/HR deficiency (Mechanism 14 in the engine). The enhanced response may support future combination studies of SIRT + PARP inhibitor, exploiting both the locoregional radiation and the HR deficiency, but this combination angle is an extension of existing Mechanism 14 and requires dedicated entry work before addition.
 
 
 
@@ -3591,3 +3591,23 @@ SDH loss → constitutive succinate accumulation → PHD competitive inhibition 
 **Files changed:** `src/data/papers.ts` (2 new entries), `src/data/seed/pathways.ts` (new pathway display_order 59), `src/data/seed/targets.ts` (new GLP1R target), `src/data/seed/drugs.ts` (new semaglutide entry), `src/lib/scoring/constants.ts` (new pathway color), `tracker.md` (3 PMIDs logged).
 
 **Engine state after:** 82 drugs, 73 mechanisms, last pathway display_order 59.
+---
+
+
+
+## Correction note - 2026-11-12 (PR #146 post-review fixes by Instinct)
+
+
+
+Accuracy corrections before merge:
+
+
+
+1. drugs.ts called ganetespib "Mechanism 25"; in this engine Mechanism 25 is glutamine/telaglenastat (per the Key Druggable Targets table's "see Mechanism 25" cross-reference), while ganetespib's HSP90 mechanism is section 37 (HSP90-Dependent HIF Pseudohypoxic Proteome Stability). Corrected to Mechanism 37.
+2. The 2026-11-11 log entry called BRCAness "Mechanism 7"; the engine's own cross-references call BRCAness Mechanism 14 (Succinate-Driven Homologous Recombination Deficiency). Corrected in both mentions.
+3. Added the omitted MEN2/RET caveat from PMID 42847129: high-dose semaglutide showed tumour-promoting effects in three germline RET-mutant (MEN2, cluster 2/3) PPGLs in the same PROSPHEO culture series. drugs.ts limitation 6 added; targets.ts "no significant effect in cluster 2/3" corrected to note the MEN2 tumour-promoting signal.
+
+
+All 3 scan PMIDs verified: 42544736 (Elfarraj Pediatr Blood Cancer 2026;73(10):e70453, DOI 10.1002/1545-5017.70453 - rejected entry accurate), 42650014 (Berman Cancers 2026;18(16), DOI 10.3390/cancers18162704 - n=12, 1 CR + 7 PR = 66.7% ORR, 100% DCR, one grade >=3 AE, 32-month median follow-up all match abstract), 42847129 (Wang Endocr Relat Cancer 2026;33(10), DOI 10.1530/ERC-26-0283 - n=54 cultures / 8 cluster 1 / 18 cluster 2/3, 67 PROSPHEO patients, cluster 1-specific semaglutide antitumour effect, larger tumours with insulin all match abstract). UniProt P43220 = GLP1R and NCT03344016 = PROSPHEO confirmed. Counts (82 drugs, display_order 59) and npm build verified.
+
+
