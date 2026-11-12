@@ -102,4 +102,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hif-nicd-notch-coactivation": "bg-violet-400 text-violet-950 dark:bg-violet-600 dark:text-violet-50",
   "ezh1-ezh2-dual-prc2-dependency": "bg-violet-500 text-violet-50 dark:bg-violet-500 dark:text-violet-50",
   "glp1r-pka-hif-destabilization": "bg-green-300 text-green-950 dark:bg-green-700 dark:text-green-50",
+  "brcaness-parg-par-trap": "bg-red-400 text-red-50 dark:bg-red-600 dark:text-red-50",
 };
