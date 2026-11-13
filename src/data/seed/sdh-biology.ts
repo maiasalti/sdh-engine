@@ -1187,7 +1187,7 @@ No FDA-approved SLC1A5/ASCT2 inhibitor exists as of October 2026. V-9302 (NextPo
 **Core biology:**
 SDH loss raises intracellular succinate, which competitively inhibits KDM4A and KDM4B — Jumonji-domain, 2-oxoglutarate (2-OG)-dependent histone demethylases responsible for resolving H3K9me3 at double-strand break (DSB) sites. KDM4A/B-mediated H3K9me3 demethylation at DSBs is required for assembly of the TIP60 acetyltransferase–ATM kinase activation complex and for subsequent chromatin remodelling that enables BRCA1 and RAD51 recruitment to initiate homologous recombination (HR) repair. In SDH-deficient cells, this demethylation step is constitutively blocked → H3K9me3 persists at DSB sites → TIP60/ATM/BRCA1/RAD51 recruitment fails → HR repair is deficient → functional BRCAness.
 
-This mechanism was directly established in isogenic SDHB-KO vs SDHB-WT cell models by Guo et al. (Endocr Relat Cancer 2026, PMID 41711310): SDH-deficient cells showed elevated H3K9me3 at DSB sites, failed RAD51 foci formation, impaired HR repair measured by direct GFP-reporter assay, and sensitivity to PARP inhibition consistent with HR deficiency. This constitutes the strongest mechanistic anchor available for BRCAness in SDH-deficient tumours: direct isogenic evidence in SDH-deficient cell models (not inference from non-SDH cancer types).
+This mechanism is anchored by isogenic SDHB-KO vs SDHB-WT cell models from Guo Q et al. (Endocr Relat Cancer 2026, PMID 41711310): succinate accumulation in SDH-deficient cells inhibits KDM4 histone demethylase activity and impairs DNA repair, and KDM4 inhibition recapitulates the SDH-deficient DNA-damage susceptibility phenotype. This constitutes the strongest mechanistic anchor available for BRCAness in SDH-deficient tumours: direct isogenic evidence in SDH-deficient cell models (not inference from non-SDH cancer types).
 
 **Mechanistic distinction from the CHK1/prexasertib entry (Mechanism already in engine, sdh-chk1-brcas-replication-checkpoint):**
 CHK1 (Checkpoint kinase 1) is activated by ATR in response to replication fork stress and ssDNA in S/G2 phase. CHK1 inhibition (prexasertib) abrogates the intra-S and S/G2 replication stress checkpoints, forcing replication through stalled forks and generating catastrophic DSB loads during synthesis. WEE1 is a distinct kinase that phosphorylates CDK1 at Tyr15 (inhibitory) to maintain the G2/M checkpoint specifically — preventing CDK1-Cyclin B from activating and driving mitotic entry until repair is complete. These are two different cell-cycle phases, two different molecular targets, and two functionally non-redundant checkpoints: CHK1 acts during replication; WEE1 acts at the G2/M boundary. Combining them (CHK1i + WEE1i) may produce additive or synergistic lethality in BRCAness cells, which has been observed in combination studies.
@@ -1206,7 +1206,7 @@ AZD1775/adavosertib completed Phase 2 clinical development in TP53-mutant/replic
 - SDHA-deficient GIST (engine owner's tumour): applicable; SDHA loss also inactivates complex II, raises succinate, and inhibits KDM4A/B. The BRCAness mechanism is the same — epigenetic blocking of HR via H3K9me3 at DSBs — regardless of which SDH subunit is lost, because all SDH-null states elevate succinate. PMID 41711310's SDHB-KO model is the closest available isogenic model; SDHA-KO equivalent data not published as of October 2026
 
 **Sources:**
-- Guo T, Lu Y, Guo J, et al. SDH deficiency leads to homologous recombination deficiency via succinate-mediated KDM4 inhibition in SDH-deficient tumours. Endocr Relat Cancer 2026. PMID 41711310. (Direct isogenic demonstration of SDH-loss → succinate → KDM4 → H3K9me3 → BRCAness in SDH-deficient cells — primary mechanistic anchor.)
+- Guo Q, Lee S, Armstrong N, et al. Succinate dehydrogenase-deficient cancer cells have increased susceptibility to Ym155-induced DNA damage. Endocr Relat Cancer 2026;33(3):e250397. PMID 41711310. DOI 10.1530/ERC-25-0397. (Direct isogenic demonstration of SDH-loss → succinate → KDM4 inhibition → impaired DNA repair in SDH-deficient cells — primary mechanistic anchor.)
 - Krajewska M, Fehrmann RSN, Schoonen PM, et al. ATR inhibition preferentially targets homologous recombination-deficient tumor cells. Oncogene 2015;34(26):3474–3484. PMID 25174396. (Parallel DDR synthetic lethality: ATRi selectivity in HRD cells.) Krajewska M, Heijink AM, Bisselink YJWM, et al. Forced activation of Cdk1 via wee1 inhibition impairs homologous recombination. Oncogene 2013;32(24):3001–3008. PMID 22797065. (Direct evidence that WEE1 inhibition impairs HR — the mechanistic basis for WEE1i sensitivity in HR-deficient/BRCAness contexts.)
 - NCT02264678 (Phase 2 adavosertib monotherapy; TP53-mutant/replication-stress-high solid tumours; COMPLETED): clinical tolerability and efficacy anchor.
 
@@ -1674,4 +1674,83 @@ When analyzing drug candidates, always consider:
 - Whether evidence exists specifically in SDH-deficient models (not just general cancer)
 - FDA approval status and accessibility
 - Potential for combination with other candidates
-- Known toxicity profiles and feasibility for long-term use`;
+- Known toxicity profiles and feasibility for long-term use
+
+---
+
+## Mechanism 73: GLP-1R → PKA → HIF-1α Destabilization — Cluster 1 (SDHx) PPGL Antitumour Activity of Semaglutide
+
+**Pathway:** glp1r-pka-hif-destabilization (display_order 59)
+
+**Core SDH biology:**
+SDH loss → constitutive succinate accumulation → PHD competitive inhibition → constitutive HIF-1α/2α pseudohypoxia. Cluster 1 PPGLs (SDHx- and VHL-mutated) share constitutive HIF stabilisation as the defining molecular feature; cluster 2/3 PPGLs (kinase-driven: RET, NF1, TMEM127, MAX) do not.
+
+**GLP-1R → PKA axis:**
+GLP-1 receptor (GLP1R; UniProt P43220) is a class B Gs-coupled GPCR expressed on pancreatic β-cells, intestinal L-cells, and select neuroendocrine/PPGL cells. Agonist binding (semaglutide) → Gs activation → adenylyl cyclase → cAMP elevation → PKA and EPAC activation. PKA has been proposed to phosphorylate HIF-1α, promoting its destabilisation and partially countering constitutive pseudohypoxia in cluster 1 PPGLs.
+
+**Clinical evidence (PROSPHEO trial, NCT03344016):**
+Wang K et al. (Endocr Relat Cancer 2026, PMID 42847129, DOI 10.1530/ERC-26-0283) used patient-derived PPGL primary cultures (n=54 total; 8 cluster 1, 18 cluster 2/3) from the PROSPHEO prospective clinical trial. Semaglutide produced significant antitumour effects specifically in cluster 1 PPGLs (pseudohypoxia-driven: SDHx, VHL) but not in cluster 2/3 (kinase-driven). Clinical PROSPHEO data from 67 patients confirmed larger median tumour sizes in insulin-treated vs. metformin/GLP-1RA-treated patients. High-dose semaglutide showed tumour-promoting effects in three germline RET pathogenic variant (MEN2/cluster 2) tumours — the antitumour signal is restricted to cluster 1, and the RET/MEN2 (cluster 2/3) tumour-promoting signal argues against use in that subgroup.
+
+**Non-redundancy with existing HIF-targeting mechanisms:**
+GLP-1R → Gs → cAMP → PKA is a GPCR/second-messenger mechanism distinct from: belzutifan (direct HIF-2α/ARNT dimerisation inhibitor), ganetespib (HSP90/HIF stability), ruxolitinib (JAK-STAT3/HIF mRNA), alisertib (AURKA/HIF mRNA; Mechanism 50 in the engine), APX3330 (APEX1 redox/HIF), and CCS1477 (p300/CBP/HIF transactivation). First GPCR/incretin-class entry in the engine.
+
+| Druggable target | Gene | UniProt | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|---|
+| Glucagon-like peptide-1 receptor (GLP-1R) | GLP1R | P43220 | Semaglutide (Ozempic; Wegovy; Rybelsus) | FDA-approved (T2DM 2017–2019; obesity 2021); active oncology basket trials | PROSPHEO patient-derived cultures: significant antitumour effect in cluster 1 (SDHx/VHL) PPGLs (n=8); no effect or tumour-promoting effect in cluster 2/3 (n=18 + 3 RET/MEN2); clinical correlate from 67-patient prospective trial (PMID 42847129) |
+
+**Key limitations:**
+1. The antitumour mechanism of semaglutide in cluster 1 PPGLs is unestablished; PKA-mediated HIF-1α phosphorylation is proposed but not directly validated in SDH-null isogenic cell pairs.
+2. All clinical-level data are from PROSPHEO, not designed or powered as a semaglutide antitumour study; sample size is small (n=8 cluster 1 cultures).
+3. GLP1R expression levels in SDH-deficient PPGL tissue have not been systematically quantified or correlated with response.
+4. High-dose semaglutide showed tumour-promoting effects in three RET/MEN2 (cluster 2/3) tumours; restricted to cluster 1 indication.
+
+**Evidence score: 35 (preclinical).** Patient-derived primary culture data with cluster 1-specific antitumour effect (PMID 42847129); PROSPHEO clinical correlate; FDA-approved drug; proposed mechanism grounded in SDH pseudohypoxia/HIF axis. Score limited by small n, observational clinical data, and unproven PKA-HIF mechanism in SDH-null cells.
+
+**Sources:**
+- Wang K, Stempfle P, Hamati J et al. Effects of a GLP-1 agonist and antidiabetic therapies on pheochromocytoma/paraganglioma growth. Endocr Relat Cancer. 2026. PMID 42847129. DOI 10.1530/ERC-26-0283. (PROSPHEO prospective trial: semaglutide cluster 1-specific antitumour effects in PPGL primary cultures and clinical tumour size correlates; tumour-promoting in RET/MEN2 cluster 2/3.)
+
+---
+
+## Mechanism 74: BRCAness → PARG Dependency → PAR Trap — Synthetic Lethality Infrastructure for Future PARG Inhibitor Candidates
+
+**Pathway:** brcaness-parg-par-trap (display_order 60)
+
+**Core SDH biology:**
+SDH loss → succinate accumulation → competitive inhibition of α-KG-dependent KDM4A and KDM4B (H3K9me3 demethylases) → H3K9me3 accumulation at double-strand breaks (DSBs) → impaired DSB resection and homologous recombination (BRCAness). Guo Q et al. (Endocr Relat Cancer 2026, PMID 41711310, DOI 10.1530/ERC-25-0397) demonstrated the succinate → KDM4 inhibition → impaired DNA repair axis directly in isogenic SDHB-deficient (SDHB-KO) RCC cells, primary human pheochromocytoma cells, and a mouse pheochromocytoma cell line, establishing this axis as the mechanistic basis of BRCAness in SDH-deficient cancers.
+
+**PARG dependency mechanism:**
+In HR-impaired (BRCAness) cells, PARP1 generates poly(ADP-ribose) (PAR) chains at stalled replication forks to recruit repair factors (XRCC1, ALC1, FUS) and stabilise forks. PARG (Poly(ADP-ribose) glycohydrolase; gene PARG; UniProt Q86W56) is the primary enzyme removing PAR chains, completing the PAR → dePAR cycle essential for repair completion. Inhibiting PARG in HR-deficient cells causes:
+1. PAR accumulates at stalled forks → PAR-binding repair proteins are trapped in unproductive complexes
+2. Replication fork collapse → DSBs that HR-deficient cells cannot repair by homologous recombination
+3. Replication catastrophe and cell death — selectively in cells with pre-existing HR deficiency (BRCAness)
+
+**Mechanistic distinction from PARP inhibitors:**
+- PARPi (olaparib, niraparib, etc.): block PAR synthesis → PARP1 trapping on DNA → no PAR generated → DSBs unrepaired in HR-deficient cells
+- PARGi: allow PARP1 to generate PAR but block PAR removal → PAR trap → fork collapse in HR-deficient cells
+These are OPPOSITE mechanisms acting on the same PAR cycle with distinct cellular consequences and NON-OVERLAPPING resistance profiles. PARG loss is a documented PARPi resistance mechanism (Gogola E et al., Cancer Cell 2018, PMID 29894693, DOI 10.1016/j.ccell.2018.05.008): PARG-deficient cells lose sensitivity to PARPi but would become MORE sensitive to PARGi — directly predicting PARGi utility in PARPi-resistant SDH-deficient tumors.
+
+**Preclinical proof-of-concept:**
+- Houl JH et al. (Nat Commun 2019, PMID 31827085, DOI 10.1038/s41467-019-13508-4): selective small-molecule PARG inhibitor (methylxanthine derivatives; PDD00017273) causes replication fork stalling, suppresses replication fork progression, and induces cancer cell death in vitro; retains activity in PARPi-resistant glioblastoma cells — directly demonstrating non-redundancy with PARPi.
+- Zhou X et al. (J Transl Med 2026, PMID 42092965, DOI 10.1186/s12967-026-08208-9): PARG inhibition (PDD00017273) is synthetic lethal with ATM deficiency in prostate cancer via replication-associated PARylation and replication stress; in vivo suppression of ATM-deficient xenograft tumors. ATM loss impairs DDR similarly to HR-deficiency, extending the PARG synthetic lethality concept beyond germline BRCA1/2 mutations.
+- Gogola E et al. (Cancer Cell 2018, PMID 29894693, DOI 10.1016/j.ccell.2018.05.008): genetic screen in Brca2-mutated mouse mammary tumors identifies PARG loss as a major PARPi resistance mechanism; PARG-negative clones detected in human serous ovarian and triple-negative breast cancers — demonstrating the PARG/BRCAness connection in human tumors.
+
+**Current clinical status and engine role:**
+No clinical-stage PARG inhibitor has entered Phase 1 trials as of November 2026. PDD00017273 (CRUK Manchester) is the best-characterised selective PARG tool compound but is not a drug candidate. This mechanism entry documents PARG as infrastructure: when a clinical PARG inhibitor enters development, the engine will recognise it as highly relevant to SDH-deficient BRCAness tumors via this pathway. It also identifies that SDH-deficient tumors with acquired PARPi resistance (via PARG loss) may paradoxically gain PARG dependency.
+
+| Druggable target | Gene | UniProt | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|---|
+| Poly(ADP-ribose) glycohydrolase | PARG | Q86W56 | PDD00017273 (tool compound only; no IND filing) | Preclinical only — no clinical-stage PARG inhibitor exists | None in SDH-deficient models directly; rationale via BRCAness anchor (PMID 41711310) → dependency on PAR cycling → PARG vulnerability |
+
+**Key limitations:**
+1. No clinical-stage PARG inhibitor exists; this entry is mechanism infrastructure for future drug additions.
+2. PARG inhibition has not been tested in SDH-deficient cell lines or animal models; the connection to SDH-deficient BRCAness is mechanistically inferred from the KDM4A/B → impaired HR axis.
+3. The succinate → KDM4 → impaired DNA repair axis (PMID 41711310) was demonstrated in SDHB-deficient RCC and pheochromocytoma models, not in GIST; whether the degree of HR impairment predicts PARG synthetic lethality at a clinically meaningful level has not been quantified.
+4. PDD00017273 is a research tool compound, included here to document the mechanism, not as a drug repurposing recommendation.
+
+**Evidence score: 20 (theoretical infrastructure).** Mechanistic anchor: PMID 41711310 (SDH loss → succinate → KDM4 inhibition → impaired DNA repair in isogenic SDHB-deficient models). PARG mechanism anchors: PMID 31827085 (selective PARG inhibitor → replication fork stalling + cancer cell death); PMID 29894693 (PARG/PARPi resistance axis); PMID 42092965 (PARG inhibition synthetic lethality with ATM deficiency, 2026). Score is theoretical because: no clinical PARG inhibitor, no SDH-specific PARG data, all SDH relevance inferred from BRCAness anchor.
+
+**Sources:**
+- Guo Q, Lee S, Armstrong N, et al. Succinate dehydrogenase-deficient cancer cells have increased susceptibility to Ym155-induced DNA damage. Endocr Relat Cancer. 2026;33(3):e250397. PMID 41711310. DOI 10.1530/ERC-25-0397. (Isogenic SDHB-KO RCC cells, primary human pheochromocytoma cells, and mouse pheochromocytoma models: succinate → KDM4 inhibition → impaired DNA repair; the mechanistic basis of SDH-deficient BRCAness.)
+- Houl JH, Ye Z, Brosey CA et al. Selective small molecule PARG inhibitor causes replication fork stalling and cancer cell death. Nat Commun. 2019;10(1):5654. PMID 31827085. DOI 10.1038/s41467-019-13508-4. (First selective PARG inhibitor; replication fork stalling; active in PARPi-resistant cells.)
+- Gogola E, Duarte AA, de Ruiter JR et al. Selective Loss of PARG Restores PARylation and Counteracts PARP Inhibitor-Mediated Synthetic Lethality. Cancer Cell. 2018;33(6):1078-1093.e12. PMID 29894693. DOI 10.1016/j.ccell.2018.05.008. (PARG loss as PARPi resistance mechanism; PAR cycle biology; PARG/PARP mechanistic non-redundancy in BRCAness tumors.)
+- Zhou X, Guo C, Fan Z et al. PARG inhibition in ATM-deficient prostate cancer: from mechanistic discovery to therapeutic potential. J Transl Med. 2026;24(1). PMID 42092965. DOI 10.1186/s12967-026-08208-9. (PARG inhibition synthetic lethal with ATM deficiency; replication-associated PARylation; extends PARG SL concept beyond BRCA mutations.)`;

@@ -999,4 +999,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 59,
   },
+  {
+    name: "BRCAness → PARG Dependency → PAR Trap",
+    slug: "brcaness-parg-par-trap",
+    description:
+      "SDH loss → succinate → KDM4A/B inhibition → H3K9me3 at DSBs → impaired HR (BRCAness). HR-impaired cells rely on PARP1-generated PAR chains for fork stabilisation. PARG inhibition prevents PAR removal → persistent PAR accumulation → replication fork collapse selectively in HR-deficient cells — a mechanism mechanistically distinct from PARP inhibitors.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive inhibition of KDM4A/B (H3K9me3 demethylases) → H3K9me3 at DSBs → impaired HR (BRCAness anchor: Guo Q et al. 2026, PMID 41711310)",
+    downstream_effects: [
+      "BRCAness creates dependency on PARP1-generated PAR for replication fork stabilisation at stalled forks",
+      "PARG inhibition prevents PAR removal → persistent PAR accumulation → trapping of PAR-binding repair proteins",
+      "Replication fork collapse → irreparable DSBs → cell death selectively in HR-deficient context",
+      "Mechanistically DISTINCT from PARP inhibitors: PARPi blocks PAR synthesis; PARGi blocks PAR removal — non-overlapping resistance profiles (PMID 29894693)",
+      "Preclinical proof-of-concept: selective PARG inhibitor causes replication fork stalling and cancer cell death (PMID 31827085); synthetic lethality with ATM deficiency (PMID 42092965)",
+    ],
+    druggable: true,
+    display_order: 60,
+  },
 ];
