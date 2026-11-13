@@ -3667,3 +3667,33 @@ Accuracy corrections before merge:
 4. Softened "semaglutide should NOT be used in RET/MEN2 (cluster 2/3) patients" to state the finding (tumour-promoting signal in three germline RET-mutant tumours) instead of a clinical directive.
 
 All citations verified: 29894693 (Gogola Cancer Cell 2018;33(6):1078-1093.e12, DOI 10.1016/j.ccell.2018.05.008 - PARG loss as PARPi resistance mechanism), 31827085 (Houl Nat Commun 2019;10(1):5654, DOI 10.1038/s41467-019-13508-4 - methylxanthine PARG inhibitors, replication fork stalling, active in PARPi-resistant glioblastoma), 42092965 (Zhou J Transl Med 2026;24(1):648, DOI 10.1186/s12967-026-08208-9 - PARGi synthetic lethal with ATM deficiency in prostate cancer incl. xenografts), 41711310 (real identity as above). tracker.md PMIDs 42982179, 42687764, 42474024, 32295316, 41451844 all resolve as logged. UniProt Q86W56 = PARG confirmed. Counts (82 drugs, display_order 60) and npm build verified.
+
+---
+
+## 2026-11-13
+
+**Direction**: Papers-only scan — no qualifying new mechanism identified
+**Angle**: n/a
+**Papers added**: 0
+**Papers rejected**: 1
+
+| PMID | Reason |
+|------|--------|
+| 42336245 | Pub date June 2026; outside Aug 13–Nov 13 2026 scan window; no drug or mechanism advance |
+
+**Step 2 candidates evaluated and declined**:
+
+- **SRC kinase inhibitors (bosutinib / dasatinib)** via HIF-1α Tyr-703 phosphorylation / FIH bypass: mechanism is real (SRC phosphorylates HIF-1α at Tyr-703, interfering with FIH-mediated Asn-803 hydroxylation, maintaining p300/CBP binding and full transcriptional activity), and is mechanistically distinct from the existing JAK/STAT3/HIF entry (Mechanism 64). Both drugs are FDA-approved. However: (a) SRC activation in SDH-deficient cancers specifically is not established; the rationale is inference, not SDH-biology data; (b) no fresh paper in the scan window supports this direction; adding the drug without a citable, verified anchor would be padding. Declined.
+- **ROCK1/ROCK2 inhibitors (ripasudil / fasudil)**: no direct, established SDH-biology mechanistic link. Declined; fails hard relevance gate.
+- **ASCT2 / SLC1A5 inhibitors (V-9302)**: glutamine transporter blockade is SDH-relevant (reductive carboxylation dependency) but is mechanistically subsumed by the existing telaglenastat/GLS entry (pathway slug `glutamine-dependency` already in engine). V-9302 is a research tool compound with no clinical data. Would be a second drug on the same pathway without meaningful clinical advance. Declined.
+- **Direct STING agonists (ADU-S100 / diABZI)**: already in engine (confirmed line 830 of drugs.ts: "Cyclic dinucleotide STING agonist (intratumoral)"). Not a new direction.
+
+**Do NOT repeat**:
+- SRC/HIF-1α FIH-bypass direction (evaluated here, declined; re-evaluate only if preclinical SDH-deficient data emerge)
+- ASCT2/SLC1A5 direction (subsumed by glutamine-dependency pathway)
+- ROCK inhibitors (no SDH-biology link established)
+- Directions declined above
+
+**Summary**: PubMed scan across five queries for Aug 13–Nov 13 2026 returned 0 new qualifying papers meeting the hard relevance gate. One PMID (42336245) encountered was outside the scan window (June 2026 pub date) and carried no drug or mechanism advance. Direction evaluation identified no candidate passing the gate without unsupported theoretical extrapolation. Papers-only run per the never-pad principle. Engine state unchanged: 82 drugs, 74 mechanisms, display_order 60.
+
+**PR**: morning/2026-11-13-papers-only-scan
