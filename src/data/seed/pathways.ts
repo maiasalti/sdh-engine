@@ -1005,7 +1005,7 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     description:
       "SDH loss → succinate → KDM4A/B inhibition → H3K9me3 at DSBs → impaired HR (BRCAness). HR-impaired cells rely on PARP1-generated PAR chains for fork stabilisation. PARG inhibition prevents PAR removal → persistent PAR accumulation → replication fork collapse selectively in HR-deficient cells — a mechanism mechanistically distinct from PARP inhibitors.",
     upstream_event:
-      "SDH loss → succinate accumulation → competitive inhibition of KDM4A/B (H3K9me3 demethylases) → H3K9me3 at DSBs → impaired HR (BRCAness anchor: Guo et al. 2025, PMID 41711310)",
+      "SDH loss → succinate accumulation → competitive inhibition of KDM4A/B (H3K9me3 demethylases) → H3K9me3 at DSBs → impaired HR (BRCAness anchor: Guo Q et al. 2026, PMID 41711310)",
     downstream_effects: [
       "BRCAness creates dependency on PARP1-generated PAR for replication fork stabilisation at stalled forks",
       "PARG inhibition prevents PAR removal → persistent PAR accumulation → trapping of PAR-binding repair proteins",
