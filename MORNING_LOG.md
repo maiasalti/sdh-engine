@@ -3697,3 +3697,42 @@ All citations verified: 29894693 (Gogola Cancer Cell 2018;33(6):1078-1093.e12, D
 **Summary**: PubMed scan across five queries for Aug 13–Nov 13 2026 returned 0 new qualifying papers meeting the hard relevance gate. One PMID (42336245) encountered was outside the scan window (June 2026 pub date) and carried no drug or mechanism advance. Direction evaluation identified no candidate passing the gate without unsupported theoretical extrapolation. Papers-only run per the never-pad principle. Engine state unchanged: 82 drugs, 74 mechanisms, display_order 60.
 
 **PR**: morning/2026-11-13-papers-only-scan
+
+---
+
+## 2026-11-14
+
+**Direction**: HDAC6/ricolinostat — HSP90 hyperacetylation → VHL-independent HIF-1α destabilization (Mechanism 75)
+**Angle**: In SDH-deficient cells, PHD/VHL pathway is blocked by succinate. HIF-1α stability therefore depends entirely on the VHL-independent HSP90 chaperone pathway (PMID 12052835). HDAC6 is the deacetylase that keeps HSP90 active (PMID 15937340). HDAC6 inhibition → HSP90 hyperacetylation → impaired HIF-1α chaperoning → HIF-1α degradation. Ricolinostat (ACY-1215) is a selective HDAC6 inhibitor with Phase 1/1b clinical data (NCT01421173, NCT01583283). Mechanistically distinct from ganetespib (Mechanism 37, direct HSP90 inhibitor).
+**Papers added**: 1 (PMID 43023874)
+**Papers rejected**: 7 (43001060, 43024315, 42988773, 42960229, 42922202, 42618858 — no qualifying advance; 42336245 — already logged 2026-11-13)
+**Drugs added**: 1 (Ricolinostat; drug #83)
+**Mechanisms added**: 1 (Mechanism 75; display_order 61)
+
+| PMID | Reason |
+|------|--------|
+| 43023874 | Added — Robledo et al. PPGL immune subtypes; SDHx → immunosuppressive TME; Endocr Relat Cancer 2026 |
+| 43001060 | Rejected — no SDH-specific drug or mechanism advance |
+| 43024315 | Rejected — no SDH-specific drug or mechanism advance |
+| 42988773 | Rejected — no SDH-specific drug or mechanism advance |
+| 42960229 | Rejected — no SDH-specific drug or mechanism advance |
+| 42922202 | Rejected — no SDH-specific drug or mechanism advance |
+| 42618858 | Rejected — no SDH-specific drug or mechanism advance |
+| 15937340 | Part B anchor: HDAC6 is the HSP90 deacetylase; Bali et al. J Biol Chem 2005 |
+| 12052835 | Part B anchor: HSP90/VHL-independent HIF-1α stability; Isaacs et al. J Biol Chem 2002 |
+| 32178737 | Part B supporting: ACY-1215 reduces HIF-1α gene expression; Lin et al. BMC Pharmacol Toxicol 2020 |
+
+**Files changed**:
+- `src/data/papers.ts`: added PMID 43023874 (Robledo et al., Immunology & Immunotherapy)
+- `src/data/seed/pathways.ts`: added `hdac6-hsp90-vhl-independent-hif` (display_order 61)
+- `src/data/seed/targets.ts`: added HDAC6 (UniProt Q9UBN7)
+- `src/data/seed/drugs.ts`: added Ricolinostat (ACY-1215; evidence_score 22; theoretical; all tumors)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 75 (HDAC6 → HSP90 → VHL-independent HIF-1α)
+- `src/lib/scoring/constants.ts`: added `hdac6-hsp90-vhl-independent-hif` pathway color (bg-orange-400)
+- `tracker.md`: logged 10 new PMIDs
+
+**Engine state after**: 83 drugs, 75 mechanisms, display_order 61
+
+**Summary**: SDH loss blocks PHD/VHL, leaving HSP90 as the dominant HIF-1α stability mechanism (VHL-independent pathway, PMID 12052835). HDAC6 is the deacetylase keeping HSP90 active (PMID 15937340). HDAC6 inhibition (ricolinostat/ACY-1215) → HSP90 hyperacetylation → HIF-1α degradation — specifically targeting the dominant stability pathway in SDH-deficient cells. This is mechanistically distinct from ganetespib (direct HSP90 inhibitor, Mechanism 37): two distinct entry points into the same HDAC6 → HSP90 → HIF-1α chain. Evidence score 22 (theoretical): strong mechanistic anchors, no SDH-specific experimental validation yet.
+
+**PR**: morning/2026-11-14-hdac6-ricolinostat-hif

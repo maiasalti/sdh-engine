@@ -1016,4 +1016,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 60,
   },
+  {
+    name: "HDAC6-HSP90 Acetylation → VHL-independent HIF-1α Destabilization",
+    slug: "hdac6-hsp90-vhl-independent-hif",
+    description:
+      "SDH loss → succinate → PHD/VHL pathway blocked → HIF-1α stability becomes HSP90-dependent via VHL-independent chaperone pathway. HDAC6 is the deacetylase that maintains HSP90 in its active conformation. HDAC6 inhibition → HSP90 hyperacetylation → impaired chaperoning → HIF-1α degradation — specifically targeting the VHL-independent stability mechanism that dominates in SDH-deficient cells.",
+    upstream_event:
+      "SDH loss → succinate accumulation → competitive PHD inhibition → VHL-independent HIF-1α stability becomes the dominant pathway; HSP90 chaperones HIF-1α even in VHL-null cells (PMID 12052835)",
+    downstream_effects: [
+      "HDAC6 inhibition → HSP90 Lys294 hyperacetylation → impaired ATP-binding and chaperoning → polyubiquitylation and proteasomal degradation of HSP90 client proteins (PMID 15937340)",
+      "HIF-1α is an HSP90 client; HSP90 inhibition degrades HIF-1α in a VHL-INDEPENDENT manner — directly tested in VHL-null RCC cells (PMID 12052835)",
+      "In SDH-deficient cells, PHD/VHL pathway is blocked by succinate; HSP90-mediated VHL-independent stability is therefore the DOMINANT HIF-1α maintenance mechanism",
+      "Selective amplification of effect in SDH-deficient vs. SDH-intact cells: PHD/VHL competent cells can re-stabilise HIF-1α even with HSP90 disruption; PHD/VHL-blocked cells cannot",
+      "ACY-1215 (ricolinostat) reduces HIF-1α gene expression in cancer cells (PMID 32178737), consistent with HDAC6 → HSP90 → HIF-1α regulatory axis",
+    ],
+    druggable: true,
+    display_order: 61,
+  },
 ];

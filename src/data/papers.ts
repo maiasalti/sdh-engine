@@ -607,4 +607,17 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42847129",
     date: "2026-10",
   },
+  {
+    title:
+      "Immune Subtypes of PPGL: Genomic Determinants and Therapeutic Implications",
+    authors: "Robledo M, Salazar-Hidalgo ME, Arroba E, Cascón A",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0295",
+    topic: "Tumor Biology",
+    description:
+      "Comprehensive review of immune subtypes in PPGL correlated with genomic subtypes. SDHx (pseudohypoxic cluster) → immunosuppressive TME enriched in fibroblast-like perivascular cells shaped by succinate accumulation and HIF-2α. MAML3 fusion → PD-L1 overexpression + CD8+/NK infiltration. ATRX mutations and TERT activation modulate immune contexture and metastatic risk. Calls for molecularly stratified trials: belzutifan for pseudohypoxic (SDHx), checkpoint inhibition for MAML3+ and immune-enriched kinase signaling subtypes.",
+    pmid: "43023874",
+    date: "2026-11",
+  },
 ];

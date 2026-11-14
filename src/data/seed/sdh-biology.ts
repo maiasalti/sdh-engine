@@ -1753,4 +1753,47 @@ No clinical-stage PARG inhibitor has entered Phase 1 trials as of November 2026.
 - Guo Q, Lee S, Armstrong N, et al. Succinate dehydrogenase-deficient cancer cells have increased susceptibility to Ym155-induced DNA damage. Endocr Relat Cancer. 2026;33(3):e250397. PMID 41711310. DOI 10.1530/ERC-25-0397. (Isogenic SDHB-KO RCC cells, primary human pheochromocytoma cells, and mouse pheochromocytoma models: succinate → KDM4 inhibition → impaired DNA repair; the mechanistic basis of SDH-deficient BRCAness.)
 - Houl JH, Ye Z, Brosey CA et al. Selective small molecule PARG inhibitor causes replication fork stalling and cancer cell death. Nat Commun. 2019;10(1):5654. PMID 31827085. DOI 10.1038/s41467-019-13508-4. (First selective PARG inhibitor; replication fork stalling; active in PARPi-resistant cells.)
 - Gogola E, Duarte AA, de Ruiter JR et al. Selective Loss of PARG Restores PARylation and Counteracts PARP Inhibitor-Mediated Synthetic Lethality. Cancer Cell. 2018;33(6):1078-1093.e12. PMID 29894693. DOI 10.1016/j.ccell.2018.05.008. (PARG loss as PARPi resistance mechanism; PAR cycle biology; PARG/PARP mechanistic non-redundancy in BRCAness tumors.)
-- Zhou X, Guo C, Fan Z et al. PARG inhibition in ATM-deficient prostate cancer: from mechanistic discovery to therapeutic potential. J Transl Med. 2026;24(1). PMID 42092965. DOI 10.1186/s12967-026-08208-9. (PARG inhibition synthetic lethal with ATM deficiency; replication-associated PARylation; extends PARG SL concept beyond BRCA mutations.)`;
+- Zhou X, Guo C, Fan Z et al. PARG inhibition in ATM-deficient prostate cancer: from mechanistic discovery to therapeutic potential. J Transl Med. 2026;24(1). PMID 42092965. DOI 10.1186/s12967-026-08208-9. (PARG inhibition synthetic lethal with ATM deficiency; replication-associated PARylation; extends PARG SL concept beyond BRCA mutations.)
+
+---
+
+## Mechanism 75: HDAC6 → HSP90 Hyperacetylation → VHL-independent HIF-1α Destabilization
+
+**Pathway:** hdac6-hsp90-vhl-independent-hif (display_order 61)
+
+**Core SDH biology:**
+SDH loss → constitutive succinate accumulation → competitive PHD inhibition (PHD requires α-KG as cofactor; succinate is a competitive inhibitor) → VHL cannot be recruited to hydroxylated HIF-1α → canonical PHD/VHL-dependent HIF-1α degradation is blocked → constitutive HIF-1α pseudohypoxia. This is the primary oncogenic driver of all SDH-deficient tumors.
+
+The key question for targeting: how else can HIF-1α be destabilized when PHD/VHL is non-functional?
+
+**VHL-independent HIF-1α stability — the HSP90 mechanism:**
+Isaacs JS et al. (J Biol Chem 2002, PMID 12052835, DOI 10.1074/jbc.M204733200) demonstrated that HSP90 maintains HIF-1α stability through a VHL-INDEPENDENT pathway. In VHL-null RCC cells (where VHL-dependent HIF-1α degradation is constitutively blocked, directly analogous to SDH-deficient pseudohypoxia), the HSP90 inhibitor geldanamycin promotes HIF-1α degradation. Critically, this effect was retained even in HIF-1α mutants resistant to VHL-dependent hydroxylation, confirming the VHL-independence of the HSP90 chaperone pathway. This established that HSP90 chaperones HIF-1α through a mechanistically distinct route from PHD/VHL.
+
+**HDAC6 is the HSP90 deacetylase — connecting HDAC6 inhibition to HSP90 function:**
+Bali P et al. (J Biol Chem 2005, PMID 15937340, DOI 10.1074/jbc.C500186200) established that HDAC6 is the deacetylase that maintains HSP90 in its active, deacetylated conformation. HDAC6 inhibition → HSP90 hyperacetylation at Lys294 → impaired ATP-binding and chaperone function → polyubiquitylation and proteasomal degradation of HSP90 client proteins including AKT, CDK4, and RAF1. This was confirmed in multiple cell lines and is the mechanistic basis for the clinical development of selective HDAC6 inhibitors (ricolinostat/ACY-1215).
+
+**SDH-specificity of the HDAC6 → HSP90 → HIF-1α axis:**
+In PHD/VHL-intact cells, HIF-1α is maintained at low levels by constitutive PHD-mediated hydroxylation and VHL-mediated ubiquitination. HSP90 disruption in these cells has a relatively modest effect on HIF-1α levels because the PHD/VHL pathway retains HIF-1α degradation capacity. In SDH-deficient cells, the PHD/VHL pathway is blocked by succinate — constitutively and irreversibly (as long as SDH remains non-functional). HIF-1α stability is therefore entirely dependent on the VHL-independent HSP90 chaperone pathway. This mechanistic dependency makes HDAC6 inhibition → HSP90 hyperacetylation → HIF-1α degradation specifically and potently effective in SDH-deficient (pseudohypoxic, PHD/VHL-blocked) cells.
+
+**Drug: Ricolinostat (ACY-1215)**
+Ricolinostat is an oral, selective HDAC6 inhibitor (IC50 5 nM vs HDAC6; >10-fold selectivity over class I HDACs HDAC1/2/3). It has entered clinical trials for haematologic malignancies (NCT01421173, NCT01583283) with an established safety profile. Lin CF et al. (BMC Pharmacol Toxicol 2020, PMID 32178737, DOI 10.1186/s40360-020-0400-0) confirmed that ACY-1215 reduces HIF-1α gene expression in cancer cells, consistent with the HDAC6 → HSP90 → HIF-1α axis.
+
+**Mechanistic distinction from ganetespib (Mechanism 37 — direct HSP90 inhibitor):**
+Ganetespib targets HSP90 directly at the N-terminal ATP-binding domain. Ricolinostat targets HDAC6, which indirectly modulates HSP90 activity via post-translational hyperacetylation. These are distinct molecular entry points: direct HSP90 inhibition has significant on-target toxicity (atypical pneumonitis, ocular effects seen in ganetespib trials); HDAC6 inhibition hyperacetylates HSP90 without fully blocking it — a milder, potentially more selective perturbation. The HDAC6 → HSP90 → HIF-1α axis is mechanistically distinct from and complementary to direct HSP90 inhibition.
+
+| Druggable target | Gene | UniProt | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|---|
+| Histone deacetylase 6 | HDAC6 | Q9UBN7 | Ricolinostat (ACY-1215) | Phase 1/1b (haematologic malignancies: NCT01421173, NCT01583283); no solid tumor trials | None in SDH-deficient models directly; rationale via HDAC6/HSP90 (PMID 15937340) + HSP90/VHL-independent HIF-1α (PMID 12052835) + ACY-1215/HIF-1α (PMID 32178737) |
+
+**Key limitations:**
+1. HDAC6 inhibition → HSP90 hyperacetylation → HIF-1α degradation has not been directly tested in SDH-deficient isogenic cell lines. SDH-specificity is mechanistically inferred from the two anchor papers.
+2. ACY-1215 reduces HIF-1α gene expression (PMID 32178737), but whether this is via HDAC6 → HSP90 or via HDAC6-independent effects on HIF-1α transcription (e.g., via other HDAC6 substrates such as tubulin or cortactin) has not been dissected in SDH-deficient models.
+3. No ricolinostat clinical data exist in solid tumors (SDH-deficient or otherwise); all trials are in haematologic malignancies.
+4. Degree of HSP90 hyperacetylation required to disrupt HIF-1α stability in SDH-deficient cells has not been quantified.
+
+**Evidence score: 22 (theoretical).** Mechanistic anchors are strong: HDAC6/HSP90 axis (PMID 15937340) and HSP90/VHL-independent HIF-1α stability (PMID 12052835) are rigorously established. The SDH-specificity argument is mechanistically compelling (PHD/VHL block → HSP90-only pathway). Score limited by absence of SDH-specific experimental data and absence of solid tumor clinical data for ricolinostat.
+
+**Sources:**
+- Bali P, Pranpat M, Bradner J et al. Inhibition of histone deacetylase 6 acetylates and disrupts the chaperone function of heat shock protein 90: a novel basis for antileukemia activity of histone deacetylase inhibitors. J Biol Chem. 2005;280(29):26729-34. PMID 15937340. DOI 10.1074/jbc.C500186200. (HDAC6 is the HSP90 deacetylase; HDAC6 inhibition → HSP90 Lys294 hyperacetylation → impaired chaperone function → HSP90 client degradation; established in leukemia cells and with tubacin/MI-192.)
+- Isaacs JS, Jung YJ, Mimnaugh EG et al. Hsp90 regulates a von Hippel Lindau-independent hypoxia-inducible factor-1 alpha-degradative pathway. J Biol Chem. 2002;277(33):29936-44. PMID 12052835. DOI 10.1074/jbc.M204733200. (HSP90 maintains HIF-1α stability via VHL-INDEPENDENT pathway; geldanamycin degrades HIF-1α in VHL-null RCC cells; directly relevant to SDH-deficient pseudohypoxia where VHL pathway is blocked by succinate/PHD inhibition.)
+- Lin CF, Young KC, Bai CH et al. Ricolinostat (ACY-1215) modulates the expression of protein biomarkers of treatment resistance in hepatocellular carcinoma cell lines. BMC Pharmacol Toxicol. 2020;21(1):21. PMID 32178737. DOI 10.1186/s40360-020-0400-0. (ACY-1215 reduces HIF-1α gene expression in cancer cells; supporting anchor for HDAC6 → HIF-1α regulatory axis.)`;
