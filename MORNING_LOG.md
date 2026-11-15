@@ -3703,7 +3703,7 @@ All citations verified: 29894693 (Gogola Cancer Cell 2018;33(6):1078-1093.e12, D
 ## 2026-11-14
 
 **Direction**: HDAC6/ricolinostat — HSP90 hyperacetylation → VHL-independent HIF-1α destabilization (Mechanism 75)
-**Angle**: In SDH-deficient cells, PHD/VHL pathway is blocked by succinate. HIF-1α stability therefore depends entirely on the VHL-independent HSP90 chaperone pathway (PMID 12052835). HDAC6 is the deacetylase that keeps HSP90 active (PMID 15937340). HDAC6 inhibition → HSP90 hyperacetylation → impaired HIF-1α chaperoning → HIF-1α degradation. Ricolinostat (ACY-1215) is a selective HDAC6 inhibitor with Phase 1/1b clinical data (NCT01421173, NCT01583283). Mechanistically distinct from ganetespib (Mechanism 37, direct HSP90 inhibitor).
+**Angle**: In SDH-deficient cells, PHD/VHL pathway is blocked by succinate. HIF-1α stability therefore depends entirely on the VHL-independent HSP90 chaperone pathway (PMID 12052835). HDAC6 is the deacetylase that keeps HSP90 active (PMID 15937340). HDAC6 inhibition → HSP90 hyperacetylation → impaired HIF-1α chaperoning → HIF-1α degradation. Ricolinostat (ACY-1215) is a selective HDAC6 inhibitor with Phase 1/1b clinical data (NCT01323751, NCT01583283). Mechanistically distinct from ganetespib (Mechanism 37, direct HSP90 inhibitor).
 **Papers added**: 1 (PMID 43023874)
 **Papers rejected**: 7 (43001060, 43024315, 42988773, 42960229, 42922202, 42618858 — no qualifying advance; 42336245 — already logged 2026-11-13)
 **Drugs added**: 1 (Ricolinostat; drug #83)
@@ -3720,7 +3720,7 @@ All citations verified: 29894693 (Gogola Cancer Cell 2018;33(6):1078-1093.e12, D
 | 42618858 | Rejected — no SDH-specific drug or mechanism advance |
 | 15937340 | Part B anchor: HDAC6 is the HSP90 deacetylase; Bali et al. J Biol Chem 2005 |
 | 12052835 | Part B anchor: HSP90/VHL-independent HIF-1α stability; Isaacs et al. J Biol Chem 2002 |
-| 32178737 | Part B supporting: ACY-1215 reduces HIF-1α gene expression; Lin et al. BMC Pharmacol Toxicol 2020 |
+| 32178737 | Part B supporting: HDAC6 inhibition associated with decreased HIF-1α gene expression (computational analysis) + rat cardiac IR benefit; Lin et al. BMC Pharmacol Toxicol 2020 |
 
 **Files changed**:
 - `src/data/papers.ts`: added PMID 43023874 (Robledo et al., Immunology & Immunotherapy)
@@ -3736,3 +3736,15 @@ All citations verified: 29894693 (Gogola Cancer Cell 2018;33(6):1078-1093.e12, D
 **Summary**: SDH loss blocks PHD/VHL, leaving HSP90 as the dominant HIF-1α stability mechanism (VHL-independent pathway, PMID 12052835). HDAC6 is the deacetylase keeping HSP90 active (PMID 15937340). HDAC6 inhibition (ricolinostat/ACY-1215) → HSP90 hyperacetylation → HIF-1α degradation — specifically targeting the dominant stability pathway in SDH-deficient cells. This is mechanistically distinct from ganetespib (direct HSP90 inhibitor, Mechanism 37): two distinct entry points into the same HDAC6 → HSP90 → HIF-1α chain. Evidence score 22 (theoretical): strong mechanistic anchors, no SDH-specific experimental validation yet.
 
 **PR**: morning/2026-11-14-hdac6-ricolinostat-hif
+---
+
+## Correction note - 2026-11-15 (PR #149 noon-review fixes by Instinct)
+
+Accuracy corrections before merge:
+
+1. PMID 32178737 was cited with a fabricated title ("Ricolinostat (ACY-1215) modulates the expression of protein biomarkers of treatment resistance in hepatocellular carcinoma cell lines") and an unsupported claim ("confirmed ACY-1215 reduces HIF-1α gene expression in cancer cells"). The real paper is Lin CF, Hsu KC, HuangFu WC et al., "Investigating the potential effects of selective histone deacetylase 6 inhibitor ACY1215 on infarct size in rats with cardiac ischemia-reperfusion injury" (BMC Pharmacol Toxicol 2020;21(1):21 - same journal/volume/page/DOI as cited). Its actual HIF-1α content: a computational gene-expression analysis associating HDAC6 inhibition with decreased HIF-1α gene expression (the HDAC6 inhibitor in that analysis was ISOX, not ACY-1215), plus reduced rat cardiac infarct size with ACY1215 possibly via HIF-1α modulation. All four files citing it (sdh-biology.ts, drugs.ts, targets.ts, pathways.ts) corrected, and limitation 2 rewritten.
+2. NCT01421173 is a vorinostat combination trial, not a ricolinostat trial. Replaced with the real first ACY-1215 trial NCT01323751 (ACY-1215 alone and with bortezomib/dexamethasone in multiple myeloma) in drugs.ts, sdh-biology.ts and this log's angle line. NCT01583283 (ACY-1215 + lenalidomide/dexamethasone) was correct.
+3. "No solid tumor trials/data; all trials are in haematologic malignancies" was wrong: phase 1 solid-tumor ricolinostat combination trials exist (breast NCT02632071, gynecologic NCT02661815, cholangiocarcinoma NCT02856568). Wording corrected in drugs.ts and sdh-biology.ts.
+4. The "HSP90 hyperacetylation at Lys294 -> impaired ATP-binding" residue detail is not from Bali et al. 2005 (HDAC6 = HSP90 deacetylase); it comes from Scroggins BT et al., Mol Cell 2007 (PMID 17218278, verified). Attribution corrected in drugs.ts, targets.ts, pathways.ts, sdh-biology.ts (Scroggins added to the Mechanism 75 source list).
+
+Verified unchanged: PMID 15937340 (Bali, JBC 2005 - HDAC6/HSP90 deacetylase, abstract supports), PMID 12052835 (Isaacs, JBC 2002 - HSP90/VHL-independent HIF-1α pathway, abstract supports), PMID 43023874 (Robledo, ERC 2026 - PPGL immune subtypes, abstract supports SDHx immunosuppressive TME claims, DOI 10.1530/ERC-26-0295 matches), UniProt Q9UBN7 = HDAC6, Mechanism 37 = HSP90/ganetespib cross-reference, tracker PMIDs 43001060/43024315/42988773/42960229/42922202/42618858 all resolve (case reports, rejections sound). Counts: 83 drugs, 61 pathways/display_order, Mechanism 75 present.
