@@ -103,4 +103,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "ezh1-ezh2-dual-prc2-dependency": "bg-violet-500 text-violet-50 dark:bg-violet-500 dark:text-violet-50",
   "glp1r-pka-hif-destabilization": "bg-green-300 text-green-950 dark:bg-green-700 dark:text-green-50",
   "brcaness-parg-par-trap": "bg-red-400 text-red-50 dark:bg-red-600 dark:text-red-50",
+  "hdac6-hsp90-vhl-independent-hif": "bg-orange-400 text-orange-50 dark:bg-orange-600 dark:text-orange-50",
 };
