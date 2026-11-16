@@ -3786,3 +3786,21 @@ Accuracy corrections before merge:
 4. The "HSP90 hyperacetylation at Lys294 -> impaired ATP-binding" residue detail is not from Bali et al. 2005 (HDAC6 = HSP90 deacetylase); it comes from Scroggins BT et al., Mol Cell 2007 (PMID 17218278, verified). Attribution corrected in drugs.ts, targets.ts, pathways.ts, sdh-biology.ts (Scroggins added to the Mechanism 75 source list).
 
 Verified unchanged: PMID 15937340 (Bali, JBC 2005 - HDAC6/HSP90 deacetylase, abstract supports), PMID 12052835 (Isaacs, JBC 2002 - HSP90/VHL-independent HIF-1α pathway, abstract supports), PMID 43023874 (Robledo, ERC 2026 - PPGL immune subtypes, abstract supports SDHx immunosuppressive TME claims, DOI 10.1530/ERC-26-0295 matches), UniProt Q9UBN7 = HDAC6, Mechanism 37 = HSP90/ganetespib cross-reference, tracker PMIDs 43001060/43024315/42988773/42960229/42922202/42618858 all resolve (case reports, rejections sound). Counts: 83 drugs, 61 pathways/display_order, Mechanism 75 present.
+
+---
+
+## 2026-11-16
+
+**Direction:** data-quality / mechanism-enrichment
+**Angle:** Pembrolizumab MoA enriched with Robledo 2026 (PMID 43023874) PPGL immune subtype stratification — SDHx = constitutively immune-excluded cluster 1; supports combination over monotherapy
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 2 (PMIDs 42944559, 42212733)
+**Summary:** PubMed scan (Aug 16–Nov 16, 2026) run across SDH-deficient GIST, PPGL, pheochromocytoma, SDH RCC, pseudohypoxia/HIF, BRCAness/DDR, succinate oncometabolite, and immune evasion themes. Two new PMIDs found not previously in tracker.md: (1) PMID 42944559 (Coston TW et al., J Neuroendocrinol 2026, DOI 10.1111/jne.70301): NEN bone metastasis characterization study using DOTATATE-PET (n=424); paraganglioma/pheochromocytoma included but no SDH genotyping; imaging/surveillance focus, not a treatment study — rejected. (2) PMID 42212733 (Ferreira B et al., J Vet Diagn Invest 2026, DOI 10.1177/10406387261450594): incidental pheochromocytoma in a Malayan sun bear; veterinary case report, no human cancer biology, no SDH genotyping — rejected.
+
+For Part B: PMID 43023874 (Robledo M et al., Endocr Relat Cancer 2026) was added to papers.ts on 2026-11-14 but had not been used to update any drug entry. This paper formally stratified PPGL immune phenotypes by genomic subtype — finding that SDHx-deficient tumors (cluster 1) are constitutively immune-excluded ('cold') with an immunosuppressive TME shaped by succinate and HIF-2α, while MAML3-fusion tumors are immunologically 'hot' with CD8+/NK infiltration. The existing pembrolizumab entry (evidence_score 32, theoretical) correctly captured the HIF-1α → CD274 (PD-L1) transcriptional mechanism (Noman et al. 2014) but lacked the immune subtype stratification context explaining WHY this mechanistically well-grounded PD-L1 upregulation does not translate to single-agent checkpoint response in SDHx PPGL: despite HIF-driven PD-L1 expression, the constitutive succinate-mediated immune exclusion keeps the TME T-cell-depleted. Added a new paragraph to the pembrolizumab MoA citing Robledo 2026 (PMID 43023874): SDHx = cluster 1 = immune-excluded; this is the mechanistic explanation for limited single-agent efficacy; combination strategies addressing the adenosine axis (CD73/oleclumab), phagocytosis evasion (CD47/magrolimab), and IDO1/kynurenine axis (epacadostat) alongside pembrolizumab are the rationale-supported approach. Updated the limitation note to reflect that Robledo 2026 now provides the missing molecular stratification. No score or status change (32/theoretical remains correct — the update clarifies the clinical application context, not the mechanistic evidence strength).
+
+**Files changed:** `src/data/seed/drugs.ts` (pembrolizumab MoA enriched with Robledo 2026 immune subtype stratification paragraph), `tracker.md` (2 new rejected rows: PMIDs 42944559, 42212733), `MORNING_LOG.md` (this entry).
+
+**Engine state after:** 83 drugs (unchanged), 75 mechanisms (unchanged), display_order 61 (unchanged).
+
+**PR:** [Morning] Enrich pembrolizumab MoA with Robledo 2026 PPGL immune subtype stratification
