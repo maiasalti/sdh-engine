@@ -3738,6 +3738,44 @@ All citations verified: 29894693 (Gogola Cancer Cell 2018;33(6):1078-1093.e12, D
 **PR**: morning/2026-11-14-hdac6-ricolinostat-hif
 ---
 
+## 2026-11-15
+
+**Direction**: No addition — no new paper cleared the hard relevance gate
+
+**Directions evaluated**:
+- **CD276/B7-H3/enoblituzumab**: Hypothesis: SDH loss → succinate → PHD inhibition → HIF stabilization → transcriptional upregulation of B7-H3/CD276 → T-cell suppression. PubMed search found two papers (PMIDs 38989423, 27197253) but *both show B7-H3 upstream of HIF* (B7-H3 → PI3K-AKT-mTOR → HIF-1α; B7-H3 → ROS → HIF-1α stabilization), not HIF → B7-H3. No verifiable PubMed paper demonstrates HIF transcriptionally inducing CD276 expression. Direction fails SDH relevance gate: cannot cite a mechanistic link. REJECTED.
+- **DRP1/mitochondrial fission (Mdivi-1)**: PMID 42649495 (HCC) shows Drp1 inhibition restores SDHB expression and reduces succinate in liver cancer driven by *acquired* SDHB silencing. In genetic SDH-deficient cancers (GIST, PPGL), SDHB is lost through germline/somatic mutation — restored mitochondrial dynamics cannot rescue a mutated/deleted gene. Mechanism reversal; not applicable. REJECTED.
+- **BET bromodomain inhibitors**: 0 PubMed hits in PPGL/GIST/SDH context; no primary citation available. REJECTED.
+- **DNMT inhibitors (azacitidine/decitabine) in SDH-deficient cancers**: 0 PubMed hits specifically in this context; no anchor paper despite mechanistic plausibility. REJECTED.
+- **FGFR inhibitors**: 0 PubMed hits in PPGL/GIST in 2026 window (beyond PMID 42191879 already in engine). REJECTED.
+- **SUCNR1/GPR91 succinate receptor**: 0 PubMed hits; no clinical-stage agent identified. REJECTED.
+
+**Papers reviewed**: 9 (PMIDs: 43033335, 42878740, 42755565, 42649495, 40827068, 38989423, 27197253, 40794737, 38327753)
+**Papers added**: 0
+**Papers rejected**: 9
+**Drugs added**: 0
+**Mechanisms added**: 0
+
+| PMID | Reason |
+|------|--------|
+| 43033335 | Rejected — GIST adjuvant precision therapy review; confirms SDH-deficient GIST is imatinib-insensitive; no new drug or mechanistic advance |
+| 42878740 | Rejected — PPGL immunomodulation review (Venema et al. ERC 2026); discusses cluster 1 pseudohypoxia/succinate TME; no specific actionable new drug target beyond engine |
+| 42755565 | Rejected — composite pheochromocytoma case report (surgical recurrence); no drug or mechanistic advance |
+| 42649495 | Rejected — Drp1/mitochondrial fission restores SDHB in HCC acquired epigenetic SDH loss; mechanism reversed for germline/somatic mutation SDH loss in GIST/PPGL; not applicable |
+| 40827068 | Rejected — SDHA-deficient RCC case report; confirms poor prognosis with chemo/targeted therapy; no new drug direction |
+| 38989423 | Rejected — B7-H3 → PI3K-AKT-mTOR-HIF-1α in colorectal cancer; directionality opposite of needed (B7-H3 upstream of HIF, not HIF → B7-H3); CD276 direction fails SDH relevance gate |
+| 27197253 | Rejected — B7-H3 → ROS → HIF-1α stabilization; same directionality issue; CD276 direction fails SDH relevance gate |
+| 40794737 | Rejected — enoblituzumab phase 1 pediatric solid tumors; no objective responses; no SDH-specific anchor |
+| 38327753 | Rejected — B7-H3 inhibitors clinical review (promising for prostate/CNS/SCLC); no SDH-specific anchor |
+
+**Engine state after**: 83 drugs, 75 mechanisms, display_order 61 (unchanged)
+
+**Summary**: The candidate CD276/B7-H3 direction (targeting HIF-driven immune evasion with enoblituzumab) could not be anchored: all available HIF/B7-H3 papers show B7-H3 upstream of HIF, not downstream. The DRP1/Mdivi-1 direction is inapplicable because the SDHB-restoration mechanism only works in acquired epigenetic SDH silencing (HCC), not in the germline/somatic mutations that define GIST and PPGL. No other direction produced a verifiable primary paper clearing the hard gate today. No-add is correct.
+
+**PR**: morning/2026-11-15-no-add
+
+---
+
 ## Correction note - 2026-11-15 (PR #149 noon-review fixes by Instinct)
 
 Accuracy corrections before merge:
