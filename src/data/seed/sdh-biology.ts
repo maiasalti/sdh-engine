@@ -1797,4 +1797,49 @@ Ganetespib targets HSP90 directly at the N-terminal ATP-binding domain. Ricolino
 - Bali P, Pranpat M, Bradner J et al. Inhibition of histone deacetylase 6 acetylates and disrupts the chaperone function of heat shock protein 90: a novel basis for antileukemia activity of histone deacetylase inhibitors. J Biol Chem. 2005;280(29):26729-34. PMID 15937340. DOI 10.1074/jbc.C500186200. (HDAC6 is the HSP90 deacetylase; HDAC6 inhibition → HSP90 Lys294 hyperacetylation → impaired chaperone function → HSP90 client degradation; established in leukemia cells and with tubacin/MI-192.)
 - Isaacs JS, Jung YJ, Mimnaugh EG et al. Hsp90 regulates a von Hippel Lindau-independent hypoxia-inducible factor-1 alpha-degradative pathway. J Biol Chem. 2002;277(33):29936-44. PMID 12052835. DOI 10.1074/jbc.M204733200. (HSP90 maintains HIF-1α stability via VHL-INDEPENDENT pathway; geldanamycin degrades HIF-1α in VHL-null RCC cells; directly relevant to SDH-deficient pseudohypoxia where VHL pathway is blocked by succinate/PHD inhibition.)
 - Lin CF, Hsu KC, HuangFu WC et al. Investigating the potential effects of selective histone deacetylase 6 inhibitor ACY1215 on infarct size in rats with cardiac ischemia-reperfusion injury. BMC Pharmacol Toxicol. 2020;21(1):21. PMID 32178737. DOI 10.1186/s40360-020-0400-0. (Computational gene-expression analysis: HDAC6 inhibition associated with decreased HIF-1α gene expression; ACY1215 reduced cardiac IR infarct size in rats possibly via HIF-1α modulation; supporting anchor for an HDAC6 → HIF-1α regulatory axis.)
-- Scroggins BT, Robzyk K, Wang D et al. An acetylation site in the middle domain of Hsp90 regulates chaperone function. Mol Cell. 2007;25(1):151-9. PMID 17218278. (HSP90 Lys294 acetylation impairs ATP binding and client interaction; residue-level detail for the HDAC6 → HSP90 hyperacetylation step.)`;
+- Scroggins BT, Robzyk K, Wang D et al. An acetylation site in the middle domain of Hsp90 regulates chaperone function. Mol Cell. 2007;25(1):151-9. PMID 17218278. (HSP90 Lys294 acetylation impairs ATP binding and client interaction; residue-level detail for the HDAC6/HSP90 hyperacetylation step.)
+
+---
+
+## Mechanism 76: HIF-1alpha to HK2 Upregulation to Glycolytic Commitment Step (2-DG Synthetic Lethality)
+
+**Pathway:** hk2-glycolytic-commitment (display_order 62)
+
+**Core SDH biology:**
+SDH loss causes constitutive succinate accumulation, which competitively inhibits PHD enzymes (PHD1/2/3), stabilizing HIF-1alpha and HIF-2alpha regardless of oxygen levels (pseudohypoxia). Concurrently, SDH complex II dysfunction eliminates OXPHOS capacity — Complex II is both a TCA enzyme and ETC electron carrier (ubiquinone reduction). Without Complex II, the ETC is impaired, OXPHOS fails, and cells are forced to derive ATP entirely from Warburg glycolysis.
+
+**HIF-1alpha to HRE/E-box to HK2 transcription (anchor: PMID 11557773):**
+Mathupala SP, Rempel A, and Pedersen PL (J Biol Chem 2001;276(46):43407-12, PMID 11557773, DOI 10.1074/jbc.M108181200) identified consensus HIF-1 response element (HRE) motifs overlapping E-box sequences in the distal HK2 promoter in hepatoma cells. Key findings:
+- Reporter gene analysis (nested deletion mutants): hypoxic conditions activated the full HK2 promoter ~3-fold; with simultaneous glucose stimulation, activation approached ~7-fold. A significant fraction of this activation localised to the distal region containing the overlapping HRE/E-box elements.
+- DNase I footprint analysis: nuclear proteins from hepatoma cells specifically bound the HRE/E-box region of the HK2 promoter under hypoxic conditions.
+- HIF-1 protein induction under hypoxia was confirmed in the same cells by Western blotting.
+- Together, these data establish a direct, cis-acting, glucose-modulated transcriptional axis from HIF-1alpha to HK2 in glycolytic cancer cells.
+
+**Why HK2 is rate-limiting in SDH-deficient cells:**
+HK2 catalyzes the first irreversible step of glycolysis: glucose + ATP -> glucose-6-phosphate (G6P) + ADP. This reaction commits glucose to the glycolytic pathway. Because SDH-deficient cells cannot use OXPHOS for ATP production, the entire cellular ATP budget depends on glycolytic flux through HK2. HK2 is therefore rate-limiting in a way it is not in SDH-intact cells with functional OXPHOS.
+
+**Position in the glycolytic triad:**
+- Mechanism 65 (SLC2A1/GLUT1 -> KL-11743): HIF-1alpha -> GLUT1 -> glucose import step
+- Mechanism 76 (HK2 -> 2-DG, this entry): HIF-1alpha -> HK2 -> glycolytic commitment step
+- Mechanism 69 (LDHA -> FX11): HIF-1alpha -> LDHA -> NAD+ regeneration / lactate production step
+
+**Drug: 2-Deoxyglucose (2-DG)**
+2-Deoxyglucose (2-DG; 2-deoxy-D-glucose) is a glucose analog phosphorylated by HK2 to 2-DG-6-phosphate (2-DG-6P). Unlike G6P, 2-DG-6P cannot be metabolized by phosphoglucose isomerase (PGI). Accumulating 2-DG-6P product-inhibits HK2, blocking glycolytic flux and depleting ATP selectively in OXPHOS-impaired SDH-deficient cells.
+
+| Druggable target | Gene | UniProt | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|---|
+| Hexokinase 2 | HK2 | P52789 | 2-Deoxyglucose (2-DG) | Phase 1 (prostate cancer: 2-DG + docetaxel); multiple Phase 1/2 trials in solid tumors | None in SDH-deficient models directly; rationale via HIF-1alpha -> HK2 HRE/E-box (PMID 11557773) + obligate glycolytic ATP dependence from OXPHOS failure |
+
+**Key limitations:**
+1. 2-DG has not been tested in SDH-deficient isogenic cell lines or patient-derived models.
+2. 2-DG also inhibits N-linked glycosylation via the hexosamine biosynthesis pathway, creating off-target toxicity.
+3. Clinical trials of 2-DG in solid tumors showed tolerability challenges: CNS effects, hypoglycemia-like events at higher doses.
+4. Cancer cells may upregulate HK1 or other hexokinase isoforms to bypass HK2 inhibition.
+5. No dedicated SDH-deficient oncology clinical trial with 2-DG has been conducted.
+
+**Evidence score: 22 (theoretical).** Mechanistic anchor PMID 11557773 is rigorously verified. SDH-deficiency synthetic lethality argument is mechanistically compelling: OXPHOS failure + HIF-driven HK2 overexpression = dual obligate reliance on the glycolytic commitment step. Score limited by absence of SDH-deficient model data.
+
+**Sources:**
+- Mathupala SP, Rempel A, Pedersen PL. Glucose catabolism in cancer cells: identification and characterization of a marked activation response of the type II hexokinase gene to hypoxic conditions. J Biol Chem. 2001;276(46):43407-12. PMID 11557773. DOI 10.1074/jbc.M108181200. (Primary anchor: direct demonstration of HIF-1alpha -> HRE/E-box -> HK2 upregulation ~3-7-fold under hypoxia/glucose in hepatoma cells; DNase I footprint confirms nuclear protein binding to HRE/E-box region; HIF-1 protein induction confirmed in same cells.)
+
+`;

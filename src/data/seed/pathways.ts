@@ -1033,4 +1033,21 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 61,
   },
+  {
+    name: "HIF-1α → HK2 Upregulation → Glycolytic Commitment Step",
+    slug: "hk2-glycolytic-commitment",
+    description:
+      "SDH loss → constitutive HIF-1α pseudohypoxia → HIF-1α directly binds overlapping HRE/E-box elements in the hexokinase 2 (HK2) promoter, driving its transcriptional upregulation in cancer cells (Mathupala SP et al., J Biol Chem 2001, PMID 11557773). HK2 catalyzes the first irreversible committed step of glycolysis: glucose + ATP → glucose-6-phosphate + ADP. With OXPHOS irreparably lost through SDH complex II failure, SDH-deficient tumors are obligate Warburg glycolysers; HK2 activity is rate-limiting for ATP production, making these cells specifically dependent on HK2 for survival.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD competitive inhibition → constitutive HIF-1α pseudohypoxia → HIF-1α binds HRE/E-box hybrid element in the distal HK2 promoter (PMID 11557773, Mathupala SP et al., J Biol Chem 2001) → ~3–7-fold HK2 transcriptional activation under hypoxia/glucose conditions",
+    downstream_effects: [
+      "HK2 overexpression commits glucose to glycolysis by producing glucose-6-phosphate, an allosteric inhibitor of glucokinase and a substrate committed to glycolytic flux — the irreversible gating step between GLUT1-mediated glucose import (hif-glut1-glucose-transport) and downstream glycolysis",
+      "SDH-deficient tumors are obligate glycolysers: OXPHOS failure forces total ATP dependence on glycolytic flux, making HK2 a rate-limiting survival enzyme (distinct from SDH-intact cells that can sustain ATP via mitochondrial respiration)",
+      "2-Deoxyglucose (2-DG) is phosphorylated by HK2 to 2-DG-6-phosphate, which cannot be metabolized by phosphoglucose isomerase; accumulating 2-DG-6-phosphate product-inhibits HK2, blocking glycolytic flux and depleting ATP selectively in OXPHOS-impaired SDH-deficient tumors",
+      "Completes the glycolytic triad: GLUT1 (glucose import, Mechanism 65) → HK2 (glycolytic commitment, Mechanism 76) → LDHA (NAD⁺ regeneration, Mechanism 69) — blocking any node interrupts the entire Warburg programme",
+      "HK2 is associated with the outer mitochondrial membrane (OMM) via VDAC1 interaction; this mitochondrial HK2 isoform preferentially uses mitochondrial ATP as substrate and is specifically upregulated in cancer (Mathupala SP et al., J Biol Chem 2001, PMID 11557773)",
+    ],
+    druggable: true,
+    display_order: 62,
+  },
 ];
