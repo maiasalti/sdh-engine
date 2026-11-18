@@ -1842,4 +1842,52 @@ HK2 catalyzes the first irreversible step of glycolysis: glucose + ATP -> glucos
 **Sources:**
 - Mathupala SP, Rempel A, Pedersen PL. Glucose catabolism in cancer cells: identification and characterization of a marked activation response of the type II hexokinase gene to hypoxic conditions. J Biol Chem. 2001;276(46):43407-12. PMID 11557773. DOI 10.1074/jbc.M108181200. (Primary anchor: direct demonstration of HIF-1alpha -> HRE/E-box -> HK2 upregulation ~3-7-fold under hypoxia/glucose in hepatoma cells; DNase I footprint confirms nuclear protein binding to HRE/E-box region; HIF-1 protein induction confirmed in same cells.)
 
+---
+
+## Mechanism 77: Succinate-Driven T-Cell Exhaustion / TIM-3 Checkpoint (Sabatolimab)
+
+**Pathway:** succinate-tim3-exhaustion (display_order 63)
+
+**Core SDH biology:**
+SDH loss → constitutive succinate accumulation → sustained immunosuppressive TME. Two mechanistic arms connect SDH loss to TIM-3-mediated immune evasion:
+
+**Arm 1 — Succinate → T-cell exhaustion → TIM-3 upregulation:**
+Gudgeon NH et al. (Cell Rep 2022, PMID 35977513, DOI 10.1016/j.celrep.2022.111193) demonstrated that extracellular succinate at concentrations found in SDH-deficient PPGL tumors directly suppresses CD8+ T-cell degranulation and IFN-gamma production via MCT1 uptake — establishing succinate as an active immunosuppressive oncometabolite in the SDH-deficient TME. Pfefer T et al. (Immunol Lett 2026 review, PMID 41724335) extended this mechanism to encompass T-cell exhaustion promotion by succinate in the tumor microenvironment.
+
+T-cell exhaustion is an epigenetically-driven program characterised by progressive loss of effector function and sequential upregulation of co-inhibitory checkpoint receptors: PD-1 upregulates early; LAG-3 and TIM-3 appear later and define deeper, more terminal exhaustion states. TIM-3+PD-1+ and TIM-3+LAG-3+ co-expression marks the most severely functionally impaired TIL subset. In SDH-deficient tumors, chronic constitutive succinate production would be predicted to sustain persistent T-cell exhaustion, progressively driving TIM-3 upregulation on infiltrating CD8+ T cells (inferred from the established succinate-exhaustion link; direct demonstration in SDH-null TIL models has not been published).
+
+**Arm 2 — HIF-1 → TGF-beta1/Smad3 → galectin-9 (TIM-3 ligand) upregulation:**
+Selnø ATH et al. (Aging 2020, PMID 33295886, DOI 10.18632/aging.202343) established a cancer-cell-specific chain in breast cancer, colorectal cancer, and AML cells: HIF-1 and AP-1 jointly upregulate TGF-beta1 expression → autocrine TGF-beta1 → Smad3 phosphorylation and nuclear translocation → transcriptional upregulation of galectin-9 (LGALS9). This effect was not observed in non-transformed cells — it is cancer-specific. Galectin-9 is the principal TIM-3 ligand: galectin-9 binding to the TIM-3 IgV domain displaces the intracellular adaptor BAT3/HSPA1A from the TIM-3 cytoplasmic tail, triggering the full co-inhibitory signal. In SDH-deficient tumors, constitutive HIF-1alpha pseudohypoxia (caused by succinate-driven PHD inhibition) would be predicted to constitutively activate the HIF-1 -> TGF-beta1 -> galectin-9 axis (PMID 33295886), increasing galectin-9 ligand availability on tumor cells and thereby amplifying TIM-3 ligation on infiltrating exhausted T cells. This HIF-driven galectin-9 arm adds a second SDH-specific contribution to TIM-3 biology not present in the LAG-3 (Mechanism 52) direction.
+
+**TIM-3 — mechanistic distinction from LAG-3 (Mechanism 52):**
+Both TIM-3 and LAG-3 are co-expressed on exhausted TILs (using the same upstream succinate-exhaustion logic as the rationale), but they are distinct, non-redundant receptors:
+- Different gene: HAVCR2 (chr5q33.2) vs. LAG3 (chr12p13.31)
+- Different ligands: TIM-3 binds galectin-9/CEACAM1/HMGB1/phosphatidylserine; LAG-3 binds MHC-II (HLA-DR)
+- Different intracellular signaling: TIM-3 recruits BAT3/HSPA1A through its cytoplasmic tail; BAT3 displacement by galectin-9 binding is the activation switch; LAG-3 signals via its KIEELE motif and FCRL3 interaction — completely distinct molecular machinery
+- Broader cellular expression: TIM-3 is expressed on NK cells, macrophages, and dendritic cells in addition to T cells; LAG-3 is predominantly T-cell-restricted — TIM-3 blockade may therefore partially restore innate immune function in addition to adaptive T-cell function
+- TIM-3 marks more terminal exhaustion: TIM-3 upregulation occurs later in the exhaustion program than LAG-3; TIM-3+LAG-3+PD-1+ triple co-expression = deepest exhaustion state
+- Galectin-9 HIF axis (PMID 33295886) adds an SDH-specific second mechanism not applicable to LAG-3
+
+**Drug: Sabatolimab (MBG453)**
+Sabatolimab (Novartis) is an investigational fully humanized IgG4 monoclonal antibody that binds TIM-3 (UniProt Q8TDQ0) and blocks galectin-9/TIM-3 and CEACAM1/TIM-3 interactions, relieving the co-inhibitory brake on terminally exhausted TILs. The IgG4 isotype minimises Fc-mediated effector function (ADCC, CDC), consistent with other T-cell checkpoint antibodies (nivolumab, pembrolizumab, relatlimab are all IgG4).
+
+| Druggable target | Gene | UniProt | Drug | Stage | SDH-specific data |
+|---|---|---|---|---|---|
+| TIM-3 (T-cell Immunoglobulin and Mucin domain-3) | HAVCR2 | Q8TDQ0 | Sabatolimab (MBG453) | Phase 1/2 (solid tumors: CHECKPOINT-005, NCT04171960, sabatolimab + spartalizumab); Phase 2/3 (MDS/AML: STIMULUS-MDS1, NCT03946670) | None in SDH-deficient models directly; rationale via succinate-T-cell-exhaustion (PMID 35977513 + 41724335) + HIF-1 -> galectin-9 (PMID 33295886) |
+
+**Key limitations:**
+1. No published data test sabatolimab or any anti-TIM-3 agent in SDH-deficient GIST, PPGL, RCC, or pituitary adenoma.
+2. TIM-3 expression on TILs in SDH-deficient tumor tissue has not been quantified by IHC or flow cytometry; HAVCR2 expression in SDH-null vs. SDH-intact isogenic cell lines has not been measured.
+3. The galectin-9 HIF axis (PMID 33295886) was demonstrated in non-SDH-deficient breast/colorectal/AML cells; whether SDH-null cancer cells constitutively activate this exact two-step HIF-1 -> TGF-beta1 -> galectin-9 chain has not been tested.
+4. The succinate -> T-cell exhaustion -> TIM-3 upregulation chain is inferred from the upstream evidence (PMID 35977513 + 41724335); direct TIM-3 upregulation in SDH-null TILs has not been shown.
+5. STIMULUS-MDS1 primary endpoint results were mixed; TIM-3 blockade is not established as effective in solid tumors. CHECKPOINT-005 is ongoing; no sabatolimab efficacy signal in solid tumors has been reported.
+6. Galectin-9/TIM-3 ligation may also affect macrophage polarization (TIM-3 is expressed on TAMs); it is not known whether sabatolimab restores anti-tumor macrophage function in SDH-deficient TME.
+
+**Evidence score: 22 (theoretical).** Upstream mechanistic anchors PMID 35977513 and PMID 41724335 are well-established (same as LAG-3 Mechanism 52, evidence 20); the additional galectin-9 HIF axis (PMID 33295886) adds a second verified mechanistic connection between SDH-loss-induced pseudohypoxia and TIM-3 ligation, raising the score slightly above LAG-3's 20. TIM-3/HAVCR2 is a mechanistically distinct and non-redundant target. Score limited by complete absence of SDH-deficient preclinical or clinical data for sabatolimab or any TIM-3 inhibitor.
+
+**Sources:**
+- Gudgeon NH, Spodik A, Spodik M et al. Succinate uptake by T cells suppresses their effector function via inhibition of mitochondrial glucose oxidation. Cell Rep. 2022;40(7):111193. PMID 35977513. DOI 10.1016/j.celrep.2022.111193. (Primary anchor: direct demonstration that extracellular succinate at SDH-deficient PPGL TME-relevant concentrations suppresses CD8+ T-cell degranulation and IFN-gamma via MCT1 uptake; succinate inhibits mitochondrial glucose oxidation in T cells, suppressing effector function.)
+- Pfefer T et al. Immunometabolites and cancer: the role of 2-HG, succinate, fumarate and itaconate in tumour development and anti-tumour immunity. Immunol Lett. 2026;271:107153. PMID 41724335. (Review anchor: succinate promotes T-cell exhaustion in the tumor microenvironment and drives cancer-associated fibroblast expansion; two mechanistic contributions to SDH-deficient immune evasion beyond direct T-cell suppression.)
+- Selnø ATH, Schlichtner S, Yasinska IM et al. Transforming growth factor beta type 1 (TGF-beta) and hypoxia-inducible factor 1 (HIF-1) transcription complex as master regulators of the immunosuppressive protein galectin-9 expression in human cancer and embryonic cells. Aging (Albany NY). 2020;12(23):23478-23496. PMID 33295886. DOI 10.18632/aging.202343. (Secondary SDH-specific anchor: HIF-1 and AP-1 jointly drive TGF-beta1 expression -> autocrine TGF-beta1 -> Smad3 -> galectin-9 upregulation specifically in cancer cells; demonstrated in breast cancer/colorectal cancer/AML; establishes HIF-1 as a galectin-9 regulator relevant to constitutively HIF-active SDH-deficient tumors.)
+
 `;
