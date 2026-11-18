@@ -3804,3 +3804,35 @@ For Part B: PMID 43023874 (Robledo M et al., Endocr Relat Cancer 2026) was added
 **Engine state after:** 83 drugs (unchanged), 75 mechanisms (unchanged), display_order 61 (unchanged).
 
 **PR:** [Morning] Enrich pembrolizumab MoA with Robledo 2026 PPGL immune subtype stratification
+
+---
+
+## 2026-11-17
+
+**Direction:** New mechanism addition (Mechanism 76)
+**Angle:** HIF-1α → HK2 upregulation → glycolytic commitment step (2-Deoxyglucose / 2-DG)
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 0 (all PubMed hits already in tracker from prior runs)
+**Drugs added:** 1 (2-Deoxyglucose)
+**Mechanisms added:** 1 (Mechanism 76: hk2-glycolytic-commitment, display_order 62)
+
+**PubMed scan (Aug 17–Nov 17, 2026):** 10+ queries run across SDH-deficient GIST, PPGL, pheochromocytoma, SDH-deficient RCC, pseudohypoxia/HIF, BRCAness/DDR, succinate oncometabolite, glycolysis, hexokinase, and immune evasion themes. All returned PMIDs were already present in tracker.md from prior session runs. No new qualifying papers found — correct per protocol (adding nothing is better than adding an unverified paper or a weakly-justified drug).
+
+**Summary:** SDH loss → constitutive HIF-1α pseudohypoxia → HIF-1α directly binds overlapping HRE/E-box elements in the HK2 promoter (PMID 11557773, Mathupala SP et al., J Biol Chem 2001) → ~3–7-fold HK2 transcriptional upregulation. HK2 catalyzes the first irreversible committed step of glycolysis: glucose → glucose-6-phosphate. With OXPHOS abolished by SDH complex II loss, SDH-deficient cells are obligate Warburg glycolysers — HK2 is rate-limiting for all ATP production. 2-Deoxyglucose (2-DG), a glucose analog, is phosphorylated by HK2 to 2-DG-6-phosphate, which product-inhibits HK2, blocking glycolytic ATP generation selectively in OXPHOS-impaired cells.
+
+This mechanism completes the glycolytic triad in the engine:
+- Mechanism 65 (GLUT1/KL-11743): HIF-1α → SLC2A1/GLUT1 → glucose import
+- **Mechanism 76 (HK2/2-DG, today):** HIF-1α → HK2 → glycolytic commitment
+- Mechanism 69 (LDHA/FX11): HIF-1α → LDHA → NAD⁺ regeneration / lactate
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: added `hk2-glycolytic-commitment` (display_order 62)
+- `src/data/seed/targets.ts`: added HK2 (UniProt P52789)
+- `src/data/seed/drugs.ts`: added 2-Deoxyglucose (evidence_score 22; theoretical; all tumors; pathway_slugs: hk2-glycolytic-commitment + hif-pseudohypoxia)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 76 (HIF-1α → HK2 → 2-DG, glycolytic triad completion)
+- `src/lib/scoring/constants.ts`: added `hk2-glycolytic-commitment` pathway color (bg-amber-400)
+- `tracker.md`: logged PMID 11557773 (mechanism anchor; outside scan window)
+
+**Engine state after:** 84 drugs, 76 mechanisms, display_order 62
+
+**PR:** [Morning] Add HK2 glycolytic commitment mechanism (Mech 76) and 2-DG
