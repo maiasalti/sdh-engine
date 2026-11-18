@@ -620,4 +620,30 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "43023874",
     date: "2026-11",
   },
+  {
+    title:
+      "Genetic, cellular, and environmental factors influencing tumourigenesis in carriers of succinate dehydrogenase germline mutations",
+    authors: "Lim ES, Bayley JP, Gimenez-Roqueplo AP, Clifton-Bligh RJ, Richter S",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0282",
+    topic: "Review / Overview",
+    description:
+      "Comprehensive review consolidating how genetic (genotype-phenotype relationships), cellular (haploinsufficiency vs. two-hit loss), and environmental factors interact in SDHx germline mutation carriers to determine tumour risk. Reviews the biology of non-tumoural haploinsufficient cells, the role of environmental stressors in tipping succinate and ROS above a tumourigenic threshold, and genotype-specific phenotype determinants across SDHA/B/C/D/SDHAF2 pathogenic variants.",
+    pmid: "42626917",
+    date: "2026-09",
+  },
+  {
+    title:
+      "A multistakeholder call for belzutifan biomarker data in advanced pheochromocytoma and paraganglioma",
+    authors: "Toledo RA, Arenillas C, Dahia PLM, et al.",
+    journal: "Trends Endocrinol Metab",
+    year: 2026,
+    doi: "10.1016/j.tem.2026.06.007",
+    topic: "Treatment & Trials",
+    description:
+      "Multistakeholder perspective calling for genomic correlate analysis and outcome data from the FDA-approved belzutifan (HIF-2α inhibitor) PPGL trial; argues that SDHx-driven pseudohypoxic (cluster 1) tumors are the most mechanistically rational subgroup for HIF-2α inhibition and that SDH-stratified biomarker data is an urgent scientific and clinical priority.",
+    pmid: "42481355",
+    date: "2026-09",
+  },
 ];
