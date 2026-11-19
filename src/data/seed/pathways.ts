@@ -1050,4 +1050,20 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 62,
   },
+  {
+    name: "Succinate-Driven TME → TIM-3 on Tregs and NK Cells",
+    slug: "succinate-tim3-treg-nk",
+    description:
+      "SDH loss → succinate accumulation → pseudohypoxic / immunosuppressive TME → TIM-3 (HAVCR2) upregulation on regulatory T cells (Tregs) and NK cells. TIM-3 on Tregs is required for their stability and immunosuppressive function via Akt/FOXO1 signalling; Tim-3 deletion in Tregs delays tumour-specific T-cell exhaustion and lowers tumour burden, and cooperates with PD-1 blockade to sensitize immunotherapy-resistant models (Banerjee H et al., Cancer Immunol Res 2026, PMID 42455126). TIM-3 is also broadly expressed on NK cells and myeloid cells (not T-cell-restricted like CTLA-4/PD-1); sabatolimab (anti-TIM-3) + decitabine in AML/MDS induced cytotoxic NK cell expansion, type I IFN signalling, and cytotoxic CD4+ T-cell expansion (Huuhtanen J et al., Cancer Immunol Res 2026, PMID 42599272). Sabatolimab (MBG453; Novartis humanized IgG4 anti-TIM-3) blocks TIM-3 on all three arms simultaneously (Tregs, NK cells, myeloid), restoring multi-arm anti-tumour immunity. Mechanistically non-redundant with LAG-3/relatlimab (Mechanism 52): different target cell populations (Tregs and NK cells vs. exhausted CD8+ T cells), different ligands, different mechanism.",
+    upstream_event:
+      "SDH loss → succinate accumulation → PHD inhibition → constitutive HIF-1α pseudohypoxia + immunosuppressive TME → TIM-3 expression on Tregs (sustained via Akt/FOXO1; Banerjee H et al., Cancer Immunol Res 2026, PMID 42455126) and on NK cells/myeloid cells (Huuhtanen J et al., Cancer Immunol Res 2026, PMID 42599272)",
+    downstream_effects: [
+      "TIM-3 on tumour Tregs sustains their immunosuppressive function via Akt/FOXO1 signalling; Tim-3+ Treg abundance correlates with immunotherapy resistance; decrease in Tim-3+ tumour Tregs correlates with responsiveness to PD-1/LAG-3 combination blockade in human trial (PMID 42455126)",
+      "TIM-3 on NK cells → Galectin-9/PS ligation → inhibitory signalling → suppressed NK cytotoxicity; TIM-3 blockade reinstates cytotoxic NK cell expansion and type I IFN signalling (PMID 42599272)",
+      "Sabatolimab (MBG453; RP2D 800 mg Q4W i.v.; Novartis) blocks TIM-3 on Tregs, NK cells, and myeloid cells simultaneously → Treg destabilisation + NK reinvigoration + myeloid reprogramming; mechanism distinct from T-cell-restricted CTLA-4/PD-1/LAG-3 blockade",
+      "Tim-3 Treg arm is non-redundant with LAG-3 blockade: Banerjee 2026 showed Tim-3+ Treg decrease as a correlate of PD-1/LAG-3 response — implying Tim-3+ Tregs constitute residual resistance to LAG-3 blockade",
+    ],
+    druggable: true,
+    display_order: 63,
+  },
 ];

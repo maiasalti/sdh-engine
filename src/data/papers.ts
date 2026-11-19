@@ -620,4 +620,46 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "43023874",
     date: "2026-11",
   },
+  {
+    title:
+      "Tim-3 Sustains Tumor Treg Stability and Function, Limiting Checkpoint Blockade Therapy Efficacy",
+    authors:
+      "Banerjee H, Onyekachi OV, Nieves-Rosado H, Murter BM, Kulkarni A, Pandey SP, Cardona E, Dougherty JE, Li H, Upadhyay P, Hinterleitner R, Ferris RL, Kane LP",
+    journal: "Cancer Immunol Res",
+    year: 2026,
+    doi: "10.1158/2326-6066.CIR-25-0687",
+    topic: "Immunology",
+    description:
+      "Establishes in syngeneic murine tumour models that Tim-3 on tumour-infiltrating Tregs is required for their stability and immunosuppressive function via Akt/FOXO1 signalling. Tim-3 deletion in Tregs (whole-body or Treg-specific, including delayed deletion post-inoculation) delays T-cell exhaustion and lowers tumour burden without altering peripheral homeostasis. Tim-3 Treg deletion cooperates with PD-1 blockade to sensitize immunotherapy-resistant tumour models. Human clinical trial correlation: decreased Tim-3+ tumour Tregs associated with responsiveness to PD-1/LAG-3 combination blockade. Directly anchors the Treg arm of Mechanism 77 (SDH loss → immunosuppressive TME → TIM-3+ Treg stabilisation → sabatolimab).",
+    pmid: "42455126",
+    date: "2026-10",
+  },
+  {
+    title:
+      "TIM3 Blockade with Hypomethylating Therapy Restores NK Cell and Cytotoxic CD4+ T-cell Activity in Patients with AML or MDS",
+    authors:
+      "Huuhtanen J, Forstén S, Ford B, Smolander J, Brück O, Lundgren S, Kreutzman A, Dufva O, Kankainen M, Ilander M, Lähteenmäki H, Kasanen T, Klievink J, Leitner J, Steinberger P, Kontro M, Pelletier MR, Lähdesmäki H, Sabatos-Peyton C, Rinne ML, Porkka K, Peltonen K, Mustjoki S",
+    journal: "Cancer Immunol Res",
+    year: 2026,
+    doi: "10.1158/2326-6066.CIR-26-0160",
+    topic: "Clinical Trials",
+    description:
+      "Phase Ib pharmacodynamic analysis of sabatolimab + decitabine (NCT03066648) in AML/MDS using scRNA-seq and TCR-seq. Establishes that TIM-3 is broadly expressed on NK cells, myeloid cells, and T cells — unlike CTLA-4/PD-1 which are T-cell-restricted. Sabatolimab treatment induced cytotoxic NK cell subset expansion and enhanced type I IFN signalling. Responders showed expansion of cytotoxic CD4+ T cells and B cells. Mechanistically distinct from anti-PD-1 and anti-CTLA-4. Anchors the NK cell and myeloid arm of Mechanism 77 (TIM-3 broadly expressed on NK/myeloid cells; sabatolimab restores NK cytotoxicity via TIM-3 blockade in immunosuppressive contexts).",
+    pmid: "42599272",
+    date: "2026-11",
+  },
+  {
+    title:
+      "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series",
+    authors:
+      "Berman ZT, Hohenberger P, Bulusu R, Rose SC, Fanta PT, Evans J, Diehl S, Menge F, Ali N, Sicklick JK",
+    journal: "Cancers",
+    year: 2026,
+    doi: "10.3390/cancers18162704",
+    topic: "Clinical Trials",
+    description:
+      "Retrospective multicenter series (n=12) of Y-90 yttrium SIRT for progressive unresectable SDH-deficient GIST hepatic metastases. ORR 66.7% by mRECIST (1 CR, 7 PR), DCR 100%. Median age 27 years, 66.7% female. Median follow-up 32 months; median OS not reached; 1 death. One Grade ≥3 AE (cholecystitis). Suggests SDH-deficient GIST is more radiosensitive than previously appreciated; SIRT may be a useful liver-directed approach for patients with limited systemic options. Context for locoregional treatment of SDH-GIST hepatic disease.",
+    pmid: "42650014",
+    date: "2026-08",
+  },
 ];

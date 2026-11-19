@@ -105,4 +105,5 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "brcaness-parg-par-trap": "bg-red-400 text-red-50 dark:bg-red-600 dark:text-red-50",
   "hdac6-hsp90-vhl-independent-hif": "bg-orange-400 text-orange-50 dark:bg-orange-600 dark:text-orange-50",
   "hk2-glycolytic-commitment": "bg-amber-400 text-amber-950 dark:bg-amber-600 dark:text-amber-50",
+  "succinate-tim3-treg-nk": "bg-rose-300 text-rose-950 dark:bg-rose-700 dark:text-rose-50",
 };

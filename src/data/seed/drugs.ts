@@ -1552,4 +1552,20 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT01323751", "NCT01583283"],
   },
+  {
+    name: "Sabatolimab (MBG453)",
+    generic_name: "sabatolimab",
+    brand_names: ["MBG453"],
+    drug_class: "Anti-TIM-3 monoclonal antibody (checkpoint inhibitor)",
+    mechanism_of_action:
+      "Sabatolimab is a humanized IgG4 monoclonal antibody that binds TIM-3 (HAVCR2; T-cell immunoglobulin and mucin-domain-containing protein-3), blocking its interactions with all known ligands (Galectin-9, phosphatidylserine, CEACAM-1, HMGB1). Unlike CTLA-4 and PD-1 which are T-cell-restricted, TIM-3 is broadly expressed on regulatory T cells (Tregs), NK cells, CD8+ exhausted T cells, and myeloid cells (Huuhtanen J et al., Cancer Immunol Res 2026, PMID 42599272, DOI 10.1158/2326-6066.CIR-26-0160).\n\n**TIM-3 on Tregs:** Banerjee H et al. (Cancer Immunol Res 2026, PMID 42455126, DOI 10.1158/2326-6066.CIR-25-0687) established in syngeneic murine tumour models that Tim-3 on Tregs is required for their stability and immunosuppressive function via Akt/FOXO1 signalling. Tim-3 deletion in Tregs delays tumour-specific T-cell exhaustion and reduces tumour burden without affecting peripheral homeostasis; it also cooperates with PD-1 blockade to sensitize immunotherapy-resistant tumours. In a human clinical trial, decreased Tim-3+ tumour Tregs correlated with responsiveness to PD-1/LAG-3 combination blockade — establishing Tim-3+ Tregs as a residual resistance mechanism to LAG-3 blockade and a non-redundant target.\n\n**TIM-3 on NK cells and myeloid cells:** In a Phase Ib trial of sabatolimab + decitabine in AML/MDS (NCT03066648), Huuhtanen et al. 2026 demonstrated that TIM-3 blockade induced expansion of cytotoxic NK cell subsets, enhanced type I IFN signalling, and expansion of cytotoxic CD4+ T cells. These pharmacodynamic effects, attributable to TIM-3 blockade on NK and myeloid populations, are distinct from anti-PD-1 and anti-CTLA-4 mechanisms.\n\n**SDH-specific mechanistic rationale:**\nSDH loss → succinate accumulation → pseudohypoxic / immunosuppressive TME → TIM-3 expressed on Tregs (which sustain immunosuppression via Akt/FOXO1) and on NK cells/myeloid cells within this TME. Sabatolimab blocks all three TIM-3-expressing immune cell populations simultaneously, restoring multi-arm anti-tumour immunity — a mechanism distinct from LAG-3 blockade (Mechanism 52) which targets exhausted CD8+ T cells via MHC-II and does not reach the TIM-3+ Treg compartment.\n\n**Non-redundancy with LAG-3/relatlimab (Mechanism 52):**\nLAG-3 acts principally on exhausted CD8+ T cells. TIM-3/sabatolimab targets Tregs, NK cells, and myeloid cells — different populations, different ligands, different mechanism. Banerjee 2026 provides direct experimental evidence that Tim-3+ Tregs constitute a residual resistance mechanism to LAG-3-containing combination regimens.\n\n**Key limitations:**\n1. No dedicated SDH-deficient oncology cohort in any sabatolimab trial. Clinical data are from solid tumours (NCT02608268) and AML/MDS (NCT03066648).\n2. The SDH → succinate → TIM-3 upregulation chain is mechanistically inferred; succinate has not been shown to specifically upregulate TIM-3 on Tregs or NK cells in SDH-deficient model systems.\n3. TIM-3 expression has not been measured on Tregs or NK cells in SDHA-GIST, PPGL, or SDH-RCC tumour infiltrates.\n\nEvidence score: 20 (theoretical). Both anchor papers are authentic 2026 Cancer Immunol Res publications with strong TIM-3 mechanistic data; the SDH-specific link is an inference from the shared immunosuppressive TME context. Original solid tumour Phase I/Ib: Curigliano G et al., Clin Cancer Res 2021, PMID 33883177.",
+    fda_approved: false,
+    approved_indications: [],
+    pathway_slugs: ["succinate-tim3-treg-nk"],
+    target_gene_symbols: ["HAVCR2"],
+    evidence_score: 20,
+    status: "theoretical",
+    tumor_type_applicability: ["all"],
+    clinical_trial_ids: ["NCT02608268", "NCT03066648"],
+  },
 ];

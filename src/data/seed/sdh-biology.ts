@@ -1842,4 +1842,37 @@ HK2 catalyzes the first irreversible step of glycolysis: glucose + ATP -> glucos
 **Sources:**
 - Mathupala SP, Rempel A, Pedersen PL. Glucose catabolism in cancer cells: identification and characterization of a marked activation response of the type II hexokinase gene to hypoxic conditions. J Biol Chem. 2001;276(46):43407-12. PMID 11557773. DOI 10.1074/jbc.M108181200. (Primary anchor: direct demonstration of HIF-1alpha -> HRE/E-box -> HK2 upregulation ~3-7-fold under hypoxia/glucose in hepatoma cells; DNase I footprint confirms nuclear protein binding to HRE/E-box region; HIF-1 protein induction confirmed in same cells.)
 
+---
+
+## Mechanism 77: Succinate-Driven Immunosuppressive TME → TIM-3 on Tregs and NK Cells → Sabatolimab (Anti-TIM-3)
+
+**SDH biology context:**
+SDH loss → succinate accumulation → pseudohypoxic / immunosuppressive tumour microenvironment (TME). Within this immunosuppressive milieu, TIM-3 (HAVCR2; T-cell immunoglobulin and mucin-domain-containing protein-3) is an immune checkpoint expressed on multiple cell populations — regulatory T cells (Tregs), NK cells, CD8+ exhausted T cells, and myeloid cells — that sustains immune suppression via distinct mechanisms in each population.
+
+**TIM-3 on regulatory T cells (Tregs):**
+TIM-3 expression on tumour-infiltrating Tregs is required for their stability and immunosuppressive function, acting in part through Akt and FOXO1 signalling. Banerjee H et al. (Cancer Immunol Res 2026, PMID 42455126, DOI 10.1158/2326-6066.CIR-25-0687) demonstrated in syngeneic murine tumour models that Tim-3 deletion specifically in Tregs delays tumour-specific T-cell exhaustion and reduces tumour burden without altering peripheral immune homeostasis. Critically, Tim-3 deletion in Tregs cooperated with PD-1 checkpoint blockade to sensitize an immunotherapy-resistant tumour model; in a human clinical trial, a decrease in Tim-3+ tumour Tregs correlated with responsiveness to PD-1/LAG-3 combination checkpoint blockade. This study establishes TIM-3+ Tregs as a distinct immune-suppressive compartment not addressed by PD-1 or LAG-3 blockade alone.
+
+**TIM-3 on NK cells and myeloid cells:**
+Huuhtanen J et al. (Cancer Immunol Res 2026, PMID 42599272, DOI 10.1158/2326-6066.CIR-26-0160), analysing patients with AML/MDS treated with sabatolimab + decitabine (NCT03066648), established that TIM-3 is broadly expressed on NK cells, myeloid cells, and T cells — unlike CTLA-4 and PD-1 which are T-cell-restricted. Sabatolimab treatment induced expansion of cytotoxic NK cell subsets, enhanced type I interferon signalling, and preferentially expanded cytotoxic CD4+ T cells alongside NK cells. These pharmacodynamic effects are attributable to TIM-3 blockade on NK and myeloid populations, independent of T-cell co-stimulation mechanisms and translating beyond the haematologic disease context.
+
+**Non-redundancy with LAG-3 (Mechanism 52):**
+LAG-3/relatlimab acts principally on exhausted CD8+ effector T cells via MHC-II binding (Mechanism 52). TIM-3/sabatolimab targets a distinct immune cell portfolio that LAG-3 blockade does not reach: TIM-3+ Treg destabilisation (Tregs do not prominently express LAG-3), NK cell reinvigoration, and myeloid reprogramming. Different ligands (Galectin-9, PS, CEACAM-1, HMGB1 for TIM-3; MHC-II for LAG-3), different target cell populations, non-overlapping mechanistic action. The Banerjee 2026 data showing Tim-3+ Treg decrease correlating with PD-1/LAG-3 response provides direct experimental evidence that TIM-3 on Tregs constitutes a residual resistance mechanism to LAG-3 blockade.
+
+**Druggable target — sabatolimab (MBG453):**
+Novartis humanized IgG4 anti-TIM-3 monoclonal antibody. Blocks TIM-3 interactions with Galectin-9, phosphatidylserine, CEACAM-1, and HMGB1. Original Phase I/Ib in solid tumours: NCT02608268 (Curigliano G et al., Clin Cancer Res 2021, PMID 33883177). AML/MDS Phase Ib (sabatolimab + decitabine): NCT03066648 (Huuhtanen J et al., Cancer Immunol Res 2026, PMID 42599272). Safety profile established across both settings.
+
+**Key limitations:**
+1. No direct measurement of TIM-3 expression on Tregs, NK cells, or myeloid cells specifically in SDH-deficient tumour-infiltrating immune populations (SDHA-GIST, PPGL, SDH-RCC).
+2. The SDH → succinate → TIM-3 upregulation chain is mechanistically inferred from the pseudohypoxic/immunosuppressive TME context; succinate has not been shown to specifically upregulate TIM-3 expression on Tregs or NK cells in SDH-deficient model systems.
+3. Clinical benefit of sabatolimab in SDH-deficient solid tumours is entirely unvalidated.
+
+**Evidence score: 20 (theoretical).** Both anchor papers are authentic 2026 results from Cancer Immunol Res with strong TIM-3 mechanistic data, but neither directly tests TIM-3 biology in SDH-deficient cancers. The SDH → TIM-3 link is an inference from the shared immunosuppressive TME context.
+
+**Sources:**
+- Banerjee H et al. Tim-3 Sustains Tumor Treg Stability and Function, Limiting Checkpoint Blockade Therapy Efficacy. Cancer Immunol Res. 2026 Oct 5;14(10):1620-1634. PMID 42455126. DOI 10.1158/2326-6066.CIR-25-0687.
+- Huuhtanen J et al. TIM3 Blockade with Hypomethylating Therapy Restores NK Cell and Cytotoxic CD4+ T-cell Activity in Patients with AML or MDS. Cancer Immunol Res. 2026 Nov 3;14(11):1841-1858. PMID 42599272. DOI 10.1158/2326-6066.CIR-26-0160.
+- Curigliano G et al. Phase I/Ib Clinical Trial of Sabatolimab, an Anti-TIM-3 Antibody, Alone and in Combination with Spartalizumab, an Anti-PD-1 Antibody, in Advanced Solid Tumors. Clin Cancer Res. 2021;27(13):3620-3629. PMID 33883177.
+- NCT02608268 (sabatolimab ± spartalizumab Phase I/Ib, solid tumours).
+- NCT03066648 (sabatolimab + decitabine Phase Ib, AML/MDS).
+
 `;
