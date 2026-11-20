@@ -1063,7 +1063,7 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
       "TIM-3 on exhausted TILs binds galectin-9/CEACAM1/HMGB1/phosphatidylserine on tumor cells, delivering co-inhibitory signals that reinforce terminal exhaustion; ligation of galectin-9 by TIM-3 triggers TIM-3 clustering and potent co-inhibitory signaling",
       "HIF-1 → TGF-β1 → Smad3 → galectin-9 upregulation in cancer cells provides a second SDH-specific TIM-3 ligation arm (Selnø ATH et al. 2020, PMID 33295886); demonstrated in breast cancer, colorectal cancer, and AML cells",
       "TIM-3 is also expressed on NK cells, macrophages, and dendritic cells — TIM-3 blockade may additionally restore innate immune function beyond T-cell-restricted effects",
-      "Anti-TIM-3 blockade with sabatolimab restores T-cell effector function; combined TIM-3 + PD-1 blockade (CHECKPOINT-005, NCT04171960) addresses the two dominant exhaustion checkpoints co-expressed on the most deeply exhausted TILs",
+      "Anti-TIM-3 blockade with sabatolimab restores T-cell effector function; combined TIM-3 + PD-1 blockade (NCT02608268) addresses the two dominant exhaustion checkpoints co-expressed on the most deeply exhausted TILs",
     ],
     druggable: true,
     display_order: 63,
