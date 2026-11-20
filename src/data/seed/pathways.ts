@@ -1050,4 +1050,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 62,
   },
+  {
+    name: "Succinate → T-Cell Exhaustion / TIM-3 Checkpoint",
+    slug: "succinate-tim3-exhaustion",
+    description:
+      "SDH loss constitutively accumulates succinate, which directly suppresses T-cell cytolytic function (Gudgeon et al. Cell Rep 2022, PMID 35977513) and promotes T-cell exhaustion in the SDH-deficient tumor microenvironment (Pfefer T et al., Immunol Lett 2026 review, PMID 41724335). Persistent T-cell exhaustion drives progressive co-expression of multiple co-inhibitory checkpoint receptors — TIM-3 (T-cell Immunoglobulin and Mucin domain-containing protein 3; HAVCR2), LAG-3, and PD-1 — on tumor-infiltrating T cells. TIM-3+PD-1+ and TIM-3+LAG-3+ co-expression defines the most terminally exhausted, most deeply functionally impaired TIL subset. TIM-3 is mechanistically distinct from LAG-3 (Mechanism 52): different gene (HAVCR2 vs. LAG3), different ligands (galectin-9/CEACAM1/HMGB1/phosphatidylserine vs. MHC-II), different signaling (TIM-3 recruits BAT3/HLA-B-associated transcript 3; has distinct Bat3-dependent intracellular signaling), and broader cellular expression including NK cells, macrophages, and dendritic cells — not exclusively T cells. A second SDH-specific arm amplifies TIM-3 ligation directly: Selnø ATH et al. (Aging 2020, PMID 33295886) established in breast cancer, colorectal cancer, and AML cells that HIF-1 and AP-1 jointly drive TGF-β1 expression → autocrine TGF-β1 → Smad3 activation → galectin-9 (LGALS9; a key TIM-3 ligand) upregulation, specifically in malignant but not in non-transformed cells. In SDH-deficient tumors with constitutive HIF-1α pseudohypoxia, this axis predicts constitutive galectin-9 overproduction on tumor cells, further amplifying TIM-3 ligation on infiltrating exhausted T cells. Sabatolimab (MBG453, Novartis) is an investigational fully humanized IgG4 anti-TIM-3 monoclonal antibody that blocks galectin-9/TIM-3 and CEACAM1/TIM-3 interactions.",
+    upstream_event:
+      "SDH loss → succinate accumulation → T-cell functional suppression and exhaustion in immunosuppressive TME (Gudgeon et al. Cell Rep 2022, PMID 35977513; Pfefer T et al., Immunol Lett 2026 review, PMID 41724335) → (inferred, untested) TIM-3 upregulation on terminally exhausted TILs. Parallel arm: SDH loss → constitutive HIF-1α pseudohypoxia → HIF-1 → TGF-β1 → Smad3 → galectin-9 upregulation on tumor cells (Selnø ATH et al., Aging 2020, PMID 33295886) → galectin-9 ligates TIM-3 on TILs",
+    downstream_effects: [
+      "Extracellular succinate directly suppresses CD8⁺ T-cell cytolytic function in the TME (PMID 35977513)",
+      "Succinate promotes T-cell exhaustion in the tumor microenvironment (PMID 41724335, review); TIM-3 upregulation in this setting is an inference, not shown by the cited work",
+      "TIM-3 on exhausted TILs binds galectin-9/CEACAM1/HMGB1/phosphatidylserine on tumor cells, delivering co-inhibitory signals that reinforce terminal exhaustion; ligation of galectin-9 by TIM-3 triggers TIM-3 clustering and potent co-inhibitory signaling",
+      "HIF-1 → TGF-β1 → Smad3 → galectin-9 upregulation in cancer cells provides a second SDH-specific TIM-3 ligation arm (Selnø ATH et al. 2020, PMID 33295886); demonstrated in breast cancer, colorectal cancer, and AML cells",
+      "TIM-3 is also expressed on NK cells, macrophages, and dendritic cells — TIM-3 blockade may additionally restore innate immune function beyond T-cell-restricted effects",
+      "Anti-TIM-3 blockade with sabatolimab restores T-cell effector function; combined TIM-3 + PD-1 blockade (NCT02608268) addresses the two dominant exhaustion checkpoints co-expressed on the most deeply exhausted TILs",
+    ],
+    druggable: true,
+    display_order: 63,
+  },
 ];

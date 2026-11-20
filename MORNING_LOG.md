@@ -3836,3 +3836,56 @@ This mechanism completes the glycolytic triad in the engine:
 **Engine state after:** 84 drugs, 76 mechanisms, display_order 62
 
 **PR:** [Morning] Add HK2 glycolytic commitment mechanism (Mech 76) and 2-DG
+
+---
+
+## 2026-11-18
+
+**Direction:** TIM-3/sabatolimab — succinate-driven T-cell exhaustion + HIF-1 → galectin-9 (Mechanism 77)
+**Angle:** SDH loss → constitutive succinate accumulation → T-cell exhaustion in TME (PMID 35977513 + 41724335) → TIM-3 upregulation on terminally exhausted TILs (inferred). Second SDH-specific arm: HIF-1α pseudohypoxia → TGF-β1/Smad3 → galectin-9 (TIM-3 ligand) upregulation on tumor cells (PMID 33295886, demonstrated in breast/colorectal/AML cancer cells). TIM-3/HAVCR2 is mechanistically distinct from LAG-3 (Mechanism 52): different gene, different ligands (galectin-9/CEACAM1/HMGB1/PS vs. MHC-II), different BAT3-dependent intracellular signaling, broader cellular expression (NK cells, macrophages, DCs). Sabatolimab (MBG453, Novartis) blocks TIM-3/galectin-9 and TIM-3/CEACAM1 interactions; clinical development in solid tumors (CHECKPOINT-005, NCT04171960) and MDS/AML (STIMULUS-MDS1, NCT03946670). Evidence score: 22 (theoretical).
+**Papers added:** 0
+**Papers rejected (logged to tracker.md):** 8 (PMIDs: 42544736, 42923952, 42489911, 43037960, 42820462, 42590786, 42986404, 42620795 — all case reports, broad reviews, or not SDH-specific)
+**Drugs added:** 1 (Sabatolimab; drug #85)
+**Mechanisms added:** 1 (Mechanism 77: succinate-tim3-exhaustion, display_order 63)
+
+| PMID | Reason |
+|------|--------|
+| 42544736 | Rejected — 4-patient pediatric GIST case series; no new mechanism or drug advance |
+| 42923952 | Rejected — CSS case report; multidisciplinary management; no new mechanism or drug |
+| 42489911 | Rejected — German review of hereditary cancer syndromes; SDH-deficient one of many; no novel SDH advance |
+| 43037960 | Rejected — case report; SSTR2/PRRT already in engine; no new mechanism or drug |
+| 42820462 | Rejected — broad PPGL guidelines review; no novel SDH mechanism or drug beyond engine |
+| 42590786 | Rejected — pediatric pheo case report; preserved SDHB = SDH-intact; not SDH-deficient biology |
+| 42986404 | Rejected — renal IHC study; SDH-deficient RCC incidental; no mechanism or drug advance |
+| 42620795 | Rejected — NSUN2 → SUCLG1/2 → succinate in colorectal cancer; different enzyme from SDH; cGAS-STING already in engine; not SDH-specific |
+| 35977513 | Mechanistic anchor (already in tracker): succinate suppresses T-cell function (Gudgeon et al., Cell Rep 2022) |
+| 41724335 | Mechanistic anchor (already in tracker): succinate promotes T-cell exhaustion in TME (Pfefer et al., Immunol Lett 2026) |
+| 33295886 | Part B anchor: HIF-1 → TGF-β1/Smad3 → galectin-9 upregulation in cancer cells (Selnø et al., Aging 2020) |
+
+**Files changed:**
+- `src/data/seed/pathways.ts`: added `succinate-tim3-exhaustion` (display_order 63)
+- `src/data/seed/targets.ts`: added HAVCR2/TIM-3 (UniProt Q8TDQ0)
+- `src/data/seed/drugs.ts`: added Sabatolimab (MBG453; evidence_score 22; theoretical; all tumors; pathway_slugs: succinate-tim3-exhaustion + succinate-immune-evasion)
+- `src/data/seed/sdh-biology.ts`: added Mechanism 77 (TIM-3/sabatolimab; succinate-tim3-exhaustion; display_order 63)
+- `src/lib/scoring/constants.ts`: added `succinate-tim3-exhaustion` pathway color (bg-rose-300)
+- `tracker.md`: logged 9 new PMIDs (8 rejected scan PMIDs + 1 mechanistic anchor)
+
+**Engine state after:** 85 drugs, 77 mechanisms, display_order 63
+
+**Summary:** TIM-3 (HAVCR2) is a non-redundant immune checkpoint that marks terminally exhausted T cells more severely than LAG-3 alone. The SDH-deficient mechanistic rationale has two arms: (1) succinate-driven T-cell exhaustion (PMID 35977513 + 41724335) → TIM-3 upregulation on TILs (inferred); (2) HIF-1α pseudohypoxia → TGF-β1/Smad3 → galectin-9 upregulation on tumor cells (PMID 33295886) → galectin-9 ligates TIM-3 on TILs. The galectin-9 HIF axis is an additional SDH-specific mechanistic connection not present for LAG-3. Sabatolimab (MBG453) blocks TIM-3/galectin-9 interactions; combined TIM-3 + PD-1 blockade is under clinical investigation (NCT04171960). Evidence score 22 (theoretical): two verified upstream mechanistic arms; no SDH-specific preclinical or clinical data yet.
+
+**PR:** morning/2026-11-18-tim3-sabatolimab
+
+---
+
+**Accuracy corrections before merge (2026-11-19 review):**
+
+1. Sabatolimab solid-tumor trial ID corrected: NCT04171960 is an Abbott i-STAT TBI diagnostics study, not a sabatolimab trial. The sabatolimab +/- spartalizumab first-in-human solid tumor trial is NCT02608268 (Phase 1/1b/2, Novartis, terminated 2022; no responses with sabatolimab alone, 5/86 partial responses in the combination arm per Curigliano et al., Clin Cancer Res 2021). Unverifiable nickname "CHECKPOINT-005" removed. Corrected in drugs.ts, pathways.ts, sdh-biology.ts (Mechanism 77 table + limitation 5), and targets.ts.
+2. STIMULUS-MDS1 (NCT03946670) status corrected: terminated, not completed; registered condition is higher-risk MDS (not MDS/AML).
+3. drugs.ts pembrolizumab cross-reference corrected: "Mechanism 10" -> Mechanism 22 (HIF-driven PD-L1 / pembrolizumab); Mechanism 10 is FGFR signaling.
+4. Mechanism 77 source citation corrected: PMID 35977513 authors are Gudgeon N, Munford H, Bishop EL et al. (PubMed lists no Spodik co-author).
+5. PMID 41724335 journal volume corrected: Immunol Lett 2026;279:107153 (was 271).
+6. tracker.md citation details corrected against PubMed: PMID 31271899 (Choi SH, Kim MY, Yoon YS et al.; Biochim Biophys Acta Gene Regul Mech 2019;1862(8):771-785; DOI 10.1016/j.bbagrm.2019.06.004) and PMID 23013270 (Hernandez-Luna MA, Rocha-Zavaleta L, Vega MI et al.; Leuk Lymphoma 2013;54(5):1048-55; DOI 10.3109/10428194.2012.733874). Placeholder rows completed with verified citations for PMIDs 42764100 (Troisi P et al., Crit Rev Oncol Hematol 2026;227:105607), 42264414 (Davis AJ et al., Semin Ultrasound CT MR 2026;47(5):326-341), and 42490294 (Okamoto S et al., Clin Cancer Res 2026;32(19):4271-4281).
+7. Bookkeeping note: this log and the PR body state "Papers added: 0", but the diff adds 2 reviews to papers.ts (PMIDs 42626917 and 42481355; both citations verified accurate against PubMed).
+
+Verified unchanged: anchor PMIDs 33295886 (Selnø, Aging 2020;12(23):23478-23496 — abstract supports HIF-1/AP-1 → TGF-β1 → Smad3 → galectin-9 in breast/colorectal/AML cells, not non-transformed cells), 35977513 (Gudgeon, Cell Rep 2022;40(7):111193), 41724335 (Pfefer, Immunol Lett 2026;279:107153 — abstract supports succinate → T-cell exhaustion), papers.ts additions 42626917 (Lim ES et al., ERC 2026;33(9), DOI 10.1530/ERC-26-0282) and 42481355 (Toledo RA et al., Trends Endocrinol Metab 2026;37(9):805-809, DOI 10.1016/j.tem.2026.06.007), tracker rejections 42544736/42923952/42489911/43037960/42820462/42590786/42986404/42620795 (all resolve; rejections sound), UniProt Q8TDQ0 = HAVCR2/TIM-3, Mechanism 52 = LAG-3/relatlimab cross-reference. Build passed after corrections. Counts: 85 drugs, display_order 63.
