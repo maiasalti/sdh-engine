@@ -1068,4 +1068,23 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 63,
   },
+  {
+    name: "ABCB1/MDR1 Epigenetic Silencing → Selective ABCB1-Substrate Drug Accumulation",
+    slug: "sdh-abcb1-mdr1-silencing",
+    description:
+      "SDHB loss causes constitutive succinate accumulation that competitively inhibits KDM4A/B histone H3K9 demethylases (α-KG-dependent dioxygenases). KDM4A inhibition leads to H3K9me3 hypermethylation specifically at the ABCB1 (MDR1) chromatin locus, causing near-complete epigenetic silencing of P-glycoprotein (P-gp; ABCB1; UniProt P08183) — the principal ATP-driven efflux pump for a broad class of chemotherapy agents including vinca alkaloids. Loss of P-gp efflux activity causes intracellular accumulation of ABCB1-substrate drugs (vincristine, vinblastine, vinorelbine, paclitaxel) to cytotoxic concentrations specifically in SDHB-deficient cells. SDHB-intact cells retain MDR1 expression and are protected from efflux-dependent cytotoxicity. Schönberger M et al. (bioRxiv preprint Nov 2026, PMID 43060400) established this mechanism in SDHB-deficient isogenic cell lines, patient-derived PPGL tissue, and retrospective clinical data (CVD chemotherapy in SDHB vs. non-SDHB PPGL). This pathway is mechanistically distinct from the HRD/BRCAness arm of KDM4A inhibition (sdh-driven-hrd): both involve KDM4A/H3K9me3, but the downstream target locus is ABCB1 (drug efflux) rather than HR gene promoters (DNA repair).",
+    upstream_event:
+      "SDHB loss → succinate accumulation → competitive inhibition of KDM4A/B H3K9 demethylases (α-KG product-analog inhibition) → H3K9me3 at ABCB1 (MDR1) chromatin locus → heterochromatic compaction → ABCB1 transcriptional silencing → loss of P-glycoprotein (ABCB1; MDR1) efflux pump expression (Schönberger M et al., bioRxiv 2026, PMID 43060400)",
+    downstream_effects: [
+      "ABCB1/MDR1 mRNA and P-glycoprotein protein near-completely silenced in SDHB-deficient cell lines and patient-derived PPGL tissue (PMID 43060400)",
+      "Loss of P-gp efflux activity → intracellular accumulation of ABCB1-substrate drugs (vincristine, vinblastine, vinorelbine, paclitaxel, doxorubicin) to cytotoxic concentrations in SDHB-deficient cells specifically",
+      "SDHB-deficient cell lines show 10–20x greater sensitivity to vincristine vs. SDHB-intact isogenic controls (PMID 43060400)",
+      "KDM4A re-expression in SDHB-KO cells rescues ABCB1 expression and vincristine resistance, confirming the epigenetic causal chain",
+      "Retrospective clinical correlate: SDHB-mutant PPGL patients receiving CVD chemotherapy had significantly longer PFS vs. non-SDHB cases (PMID 43060400)",
+      "Mechanism is SDHB-specific; SDHA/SDHC/SDHD loss does not reproduce equivalent ABCB1 silencing, likely reflecting differential intracellular succinate accumulation by subunit loss type",
+      "Orthogonal to the BRCAness/HRD pathway: same KDM4A/H3K9me3 axis but acting at a different chromatin locus (ABCB1 efflux pump vs. HR gene promoters)",
+    ],
+    druggable: true,
+    display_order: 64,
+  },
 ];

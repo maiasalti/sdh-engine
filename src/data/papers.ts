@@ -688,4 +688,32 @@ export const PAPERS: CuratedPaper[] = [
     pmid: "42650014",
     date: "2026-08",
   },
+  {
+    title:
+      "SDHB Deficiency Silences ABCB1 Expression via H3K9me3-Mediated Chromatin Compaction and Confers Selective Vulnerability to ABCB1-Substrate Chemotherapy",
+    authors:
+      "Schönberger M, Bhatt N, Almeida MQ, Papathomas TG, Ghayee HK, Crona J, Gimenez-Roqueplo AP, Bausch B, Lefebvre H, Rapizzi E, Clifton-Bligh RJ, Eisenhofer G, Lenders JWM, Fassnacht M, Pacak K, Favier J",
+    journal: "bioRxiv",
+    year: 2026,
+    doi: "10.64898/2026.10.29.761968",
+    topic: "Epigenetics",
+    description:
+      "Preprint demonstrating that SDHB loss leads to succinate-driven inhibition of KDM4A histone demethylase, causing H3K9me3 compaction at the ABCB1 (MDR1/P-glycoprotein) chromatin locus and near-complete silencing of P-gp efflux pump expression. SDHB-deficient cell lines and patient-derived PPGL tissue showed dramatically lower ABCB1 mRNA and P-gp protein; SDHB-mutant PPGL patients treated with vincristine-containing chemotherapy had significantly longer progression-free survival vs. non-SDHB cases. Identifies a novel, druggable epigenetic vulnerability specific to SDHB-deficient tumors.",
+    pmid: "43060400",
+    date: "2026-11",
+  },
+  {
+    title:
+      "Tumor Risks and Surveillance Outcomes in SDHA Variant Carriers: A Prospective Multicenter Cohort Study",
+    authors:
+      "Rijken JA, Engelsman AF, Hamming JF, Jochmanová I, Jansen JC, Corssmit EPM, Niemeijer ND, Links TP, Mannelli M, Timmers HJLM, Rapizzi E, Lenders JWM, Crona J, Eisenhofer G, Ghayee HK, Pacak K, Gimenez-Roqueplo AP, Baysal BE, Korpershoek E, Dinjens WNM, de Krijger RR, Bayley JP",
+    journal: "Endocr Oncol",
+    year: 2026,
+    doi: "10.1530/EO-26-0048",
+    topic: "Genomics & Germline",
+    description:
+      "Prospective multicenter cohort (n=106 SDHA variant carriers) with median 10-year follow-up. Penetrance 15% overall; 47% of tumors were malignant. Surveillance identified zero new tumors in asymptomatic carriers over the study period, suggesting current annual imaging protocols may be sufficient and potentially allowing for surveillance interval extension. Provides the largest natural-history dataset to date on SDHA-specific tumor risk and clinical behavior.",
+    pmid: "42762005",
+    date: "2026-09",
+  },
 ];

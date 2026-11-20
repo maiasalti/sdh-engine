@@ -3934,3 +3934,40 @@ TIM-3 (HAVCR2) is expressed on immune compartments LAG-3 blockade does not reach
 **Engine state after:** 85 drugs, 77 mechanisms, display_order 63 (unchanged; extension only)
 
 **PR:** [Morning] Extend Mechanism 77 (TIM-3/sabatolimab) with Treg/NK arms + SIRT case series
+
+---
+
+## 2026-11-20
+
+**Direction:** NEW — Vincristine / ABCB1-MDR1 Epigenetic Silencing
+
+**Hypothesis:** SDHB loss → constitutive succinate accumulation → competitive KDM4A/B inhibition (α-KG–dependent H3K9 demethylases) → H3K9me3 at ABCB1 (MDR1) chromatin locus → near-complete transcriptional silencing of P-glycoprotein (P-gp; ABCB1; UniProt P08183) → loss of MDR1 efflux pump → intracellular accumulation of ABCB1-substrate drugs (vinca alkaloids including vincristine) to cytotoxic concentrations specifically in SDHB-deficient cells.
+
+**Why not attempted before:** This direction was not in the engine and had no prior entry. The vincristine/ABCB1-silencing axis was identified and experimentally established in a preprint published November 3, 2026 (PMID 43060400) — first time this connection has been made in the literature.
+
+**Mechanistic rationale:**
+- Directly rooted in SDH-deficient biology: same succinate → KDM4A inhibition axis as the HRD/BRCAness pathway (sdh-driven-hrd), but acting at the ABCB1 chromatin locus rather than HR gene promoters
+- ABCB1 silencing in SDHB-deficient cells is an epigenetic synthetic-lethal vulnerability: cells lacking P-gp accumulate vincristine and die; SDHB-intact cells retain MDR1 efflux and survive
+- Clinical signal: retrospective PPGL CVD (cyclophosphamide + vincristine + dacarbazine) data show significantly longer PFS in SDHB-mutant patients vs. non-SDHB (PMID 43060400)
+- Vincristine is FDA-approved, well-characterized, and has established clinical dosing
+
+**Direction previously tried and rejected:** BCL-2/venetoclax (HIF-1α → BCL-2 upregulation hypothesis). PubMed search returned BNIP3 (PMID 10922063), BOK (PMID 24806027), and Mcl1 (PMID 20829524) papers, but no PubMed-verified direct HRE-binding evidence for BCL-2 itself. Direction rejected per "never pad" principle.
+
+**What was added:**
+
+*New seed data:*
+- **Pathway:** `sdh-abcb1-mdr1-silencing` (display_order: 64) — ABCB1/MDR1 Epigenetic Silencing → Selective ABCB1-Substrate Drug Accumulation
+- **Target:** `ABCB1` (UniProt P08183; synthetic_lethal; pathway: sdh-abcb1-mdr1-silencing)
+- **Drug:** Vincristine (ChEMBL CHEMBL1232; PubChem 5978; evidence_score 42; status preclinical; tumor_type_applicability: ppgl, gist, rcc)
+
+*Papers added to papers.ts:*
+1. **PMID 43060400** (Schönberger M et al., bioRxiv preprint Nov 3, 2026, DOI 10.64898/2026.10.29.761968) — primary anchor for vincristine/ABCB1 direction; in-window
+2. **PMID 42762005** (Rijken JA et al., Endocr Oncol Sep 2026, DOI 10.1530/EO-26-0048) — SDHA carrier cohort (n=106); 15% penetrance, 47% malignant, 10-year surveillance shows zero new tumors; in-window
+
+**Papers evaluated today (5 PMIDs total; 2 added, 3 rejected):** See tracker.md rows dated 2026-11-20.
+
+**Evidence score rationale:** 42 (preclinical). Score reflects: (1) strong isogenic cell-line data (10–20x sensitivity differential); (2) ChIP-seq mechanistic confirmation (H3K9me3 at ABCB1 locus); (3) KDM4A rescue experiment confirming causal chain; (4) patient-derived tissue IHC (ABCB1/P-gp near-absent in SDHB-mutant PPGL); (5) retrospective CVD clinical correlate in SDHB PPGL. Capped at preclinical/42 because: anchor paper is a preprint (not yet peer-reviewed); no prospective clinical trial; CVD clinical data are retrospective and potentially confounded.
+
+**Engine state after:** 86 drugs, 64 pathways (display_order 64), targets +1 (ABCB1)
+
+**PR:** `[Morning] Add vincristine/ABCB1-MDR1 silencing direction; 2 new papers`
