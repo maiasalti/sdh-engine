@@ -622,13 +622,39 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
+      "Genetic, cellular, and environmental factors influencing tumourigenesis in carriers of succinate dehydrogenase germline mutations",
+    authors: "Lim ES, Bayley JP, Gimenez-Roqueplo AP, Clifton-Bligh RJ, Richter S",
+    journal: "Endocr Relat Cancer",
+    year: 2026,
+    doi: "10.1530/ERC-26-0282",
+    topic: "Review / Overview",
+    description:
+      "Comprehensive review consolidating how genetic (genotype-phenotype relationships), cellular (haploinsufficiency vs. two-hit loss), and environmental factors interact in SDHx germline mutation carriers to determine tumour risk. Reviews the biology of non-tumoural haploinsufficient cells, the role of environmental stressors in tipping succinate and ROS above a tumourigenic threshold, and genotype-specific phenotype determinants across SDHA/B/C/D/SDHAF2 pathogenic variants.",
+    pmid: "42626917",
+    date: "2026-09",
+  },
+  {
+    title:
+      "A multistakeholder call for belzutifan biomarker data in advanced pheochromocytoma and paraganglioma",
+    authors: "Toledo RA, Arenillas C, Dahia PLM, et al.",
+    journal: "Trends Endocrinol Metab",
+    year: 2026,
+    doi: "10.1016/j.tem.2026.06.007",
+    topic: "Treatment & Trials",
+    description:
+      "Multistakeholder perspective calling for genomic correlate analysis and outcome data from the FDA-approved belzutifan (HIF-2α inhibitor) PPGL trial; argues that SDHx-driven pseudohypoxic (cluster 1) tumors are the most mechanistically rational subgroup for HIF-2α inhibition and that SDH-stratified biomarker data is an urgent scientific and clinical priority.",
+    pmid: "42481355",
+    date: "2026-09",
+  },
+  {
+    title:
       "Tim-3 Sustains Tumor Treg Stability and Function, Limiting Checkpoint Blockade Therapy Efficacy",
     authors:
       "Banerjee H, Onyekachi OV, Nieves-Rosado H, Murter BM, Kulkarni A, Pandey SP, Cardona E, Dougherty JE, Li H, Upadhyay P, Hinterleitner R, Ferris RL, Kane LP",
     journal: "Cancer Immunol Res",
     year: 2026,
     doi: "10.1158/2326-6066.CIR-25-0687",
-    topic: "Immunology",
+    topic: "Tumor Biology",
     description:
       "Establishes in syngeneic murine tumour models that Tim-3 on tumour-infiltrating Tregs is required for their stability and immunosuppressive function via Akt/FOXO1 signalling. Tim-3 deletion in Tregs (whole-body or Treg-specific, including delayed deletion post-inoculation) delays T-cell exhaustion and lowers tumour burden without altering peripheral homeostasis. Tim-3 Treg deletion cooperates with PD-1 blockade to sensitize immunotherapy-resistant tumour models. Human clinical trial correlation: decreased Tim-3+ tumour Tregs associated with responsiveness to PD-1/LAG-3 combination blockade. Directly anchors the Treg arm of Mechanism 77 (SDH loss → immunosuppressive TME → TIM-3+ Treg stabilisation → sabatolimab).",
     pmid: "42455126",
@@ -642,7 +668,7 @@ export const PAPERS: CuratedPaper[] = [
     journal: "Cancer Immunol Res",
     year: 2026,
     doi: "10.1158/2326-6066.CIR-26-0160",
-    topic: "Clinical Trials",
+    topic: "Treatment & Trials",
     description:
       "Phase Ib pharmacodynamic analysis of sabatolimab + decitabine (NCT03066648) in AML/MDS using scRNA-seq and TCR-seq. Establishes that TIM-3 is broadly expressed on NK cells, myeloid cells, and T cells — unlike CTLA-4/PD-1 which are T-cell-restricted. Sabatolimab treatment induced cytotoxic NK cell subset expansion and enhanced type I IFN signalling. Responders showed expansion of cytotoxic CD4+ T cells and B cells. Mechanistically distinct from anti-PD-1 and anti-CTLA-4. Anchors the NK cell and myeloid arm of Mechanism 77 (TIM-3 broadly expressed on NK/myeloid cells; sabatolimab restores NK cytotoxicity via TIM-3 blockade in immunosuppressive contexts).",
     pmid: "42599272",
@@ -656,7 +682,7 @@ export const PAPERS: CuratedPaper[] = [
     journal: "Cancers",
     year: 2026,
     doi: "10.3390/cancers18162704",
-    topic: "Clinical Trials",
+    topic: "Case Reports",
     description:
       "Retrospective multicenter series (n=12) of Y-90 yttrium SIRT for progressive unresectable SDH-deficient GIST hepatic metastases. ORR 66.7% by mRECIST (1 CR, 7 PR), DCR 100%. Median age 27 years, 66.7% female. Median follow-up 32 months; median OS not reached; 1 death. One Grade ≥3 AE (cholecystitis). Suggests SDH-deficient GIST is more radiosensitive than previously appreciated; SIRT may be a useful liver-directed approach for patients with limited systemic options. Context for locoregional treatment of SDH-GIST hepatic disease.",
     pmid: "42650014",
