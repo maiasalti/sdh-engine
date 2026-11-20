@@ -3889,3 +3889,48 @@ This mechanism completes the glycolytic triad in the engine:
 7. Bookkeeping note: this log and the PR body state "Papers added: 0", but the diff adds 2 reviews to papers.ts (PMIDs 42626917 and 42481355; both citations verified accurate against PubMed).
 
 Verified unchanged: anchor PMIDs 33295886 (Selnø, Aging 2020;12(23):23478-23496 — abstract supports HIF-1/AP-1 → TGF-β1 → Smad3 → galectin-9 in breast/colorectal/AML cells, not non-transformed cells), 35977513 (Gudgeon, Cell Rep 2022;40(7):111193), 41724335 (Pfefer, Immunol Lett 2026;279:107153 — abstract supports succinate → T-cell exhaustion), papers.ts additions 42626917 (Lim ES et al., ERC 2026;33(9), DOI 10.1530/ERC-26-0282) and 42481355 (Toledo RA et al., Trends Endocrinol Metab 2026;37(9):805-809, DOI 10.1016/j.tem.2026.06.007), tracker rejections 42544736/42923952/42489911/43037960/42820462/42590786/42986404/42620795 (all resolve; rejections sound), UniProt Q8TDQ0 = HAVCR2/TIM-3, Mechanism 52 = LAG-3/relatlimab cross-reference. Build passed after corrections. Counts: 85 drugs, display_order 63.
+
+---
+
+## 2026-11-19
+
+**Direction:** Extension of existing Mechanism 77 (TIM-3/sabatolimab, merged from PR #153 on 2026-11-20) with Treg and NK/myeloid evidence arms
+**Papers added:** 3 (PMIDs 42455126, 42599272, 42650014)
+**Papers rejected (logged to tracker.md):** 10 (PMIDs 39224022, 42959697, 42758527, 42611605, 42544736, 42923952, 42489911, 43017378, 42612932, 42447566)
+**Drugs added:** 0 (Sabatolimab / MBG453 already in engine from PR #153; NCT03066648 added to its clinical_trial_ids)
+**Mechanisms added:** 0 (existing Mechanism 77 extended with a third evidence arm; no new mechanism entry)
+
+**Dedup note (2026-11-20 review):** The original PR #154 branch proposed a second "Mechanism 77" (succinate-tim3-treg-nk, display_order 63), a second Sabatolimab drug entry, a duplicate pathway, and a duplicate pathway color, all colliding with the TIM-3 mechanism and sabatolimab entry merged from PR #153 earlier on 2026-11-20 (the routine's 2026-11-19 run predated that merge). The duplicate mechanism/pathway/drug/constants additions were removed before merge; the genuinely new verified content (2 anchor papers, 1 SIRT case series, 13 tracker rows, the Treg/NK mechanistic arm, NCT03066648) was folded into the existing Mechanism 77 and Sabatolimab entries.
+
+**PubMed scan (Aug 19 - Nov 19, 2026):** 13 PMIDs evaluated in total (3 added, 10 rejected).
+
+**New papers added to papers.ts:**
+1. **PMID 42455126** (Banerjee H et al., Cancer Immunol Res 2026;14(10):1620-1634, DOI 10.1158/2326-6066.CIR-25-0687): "Tim-3 Sustains Tumor Treg Stability and Function, Limiting Checkpoint Blockade Therapy Efficacy." Syngeneic murine tumour models + human trial correlation. Tim-3 on tumour Tregs required for their stability and immunosuppressive function via Akt/FOXO1; Treg-specific Tim-3 deletion delays T-cell exhaustion, reduces tumour burden, cooperates with PD-1 blockade; human trial: Tim-3+ Treg decrease correlated with PD-1/LAG-3 response. **Treg arm anchor for Mechanism 77.** Citation and abstract verified against PubMed.
+2. **PMID 42599272** (Huuhtanen J et al., Cancer Immunol Res 2026;14(11):1841-1858, DOI 10.1158/2326-6066.CIR-26-0160): "TIM3 Blockade with Hypomethylating Therapy Restores NK Cell and Cytotoxic CD4+ T-cell Activity in Patients with AML or MDS." Phase 1b of sabatolimab + decitabine (NCT03066648), scRNA-seq/TCR-seq pharmacodynamics (n=14 treated, n=6 sequenced). TIM-3 broadly expressed on NK, myeloid, and T cells (not T-cell-restricted like CTLA-4/PD-1); sabatolimab induced cytotoxic NK expansion, type I IFN signalling, cytotoxic CD4+ T-cell expansion in responders. **NK/myeloid arm anchor for Mechanism 77.** Citation and abstract verified against PubMed.
+3. **PMID 42650014** (Berman ZT et al., Cancers 2026;18(16), DOI 10.3390/cancers18162704): "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series." Y-90 SIRT for SDH-deficient GIST hepatic metastases; n=12, ORR 66.7% (1 CR, 7 PR), DCR 100%, median follow-up 32 months, median OS not reached, 1 grade >=3 AE (cholecystitis). Locoregional treatment context; not a drug direction, no new mechanism entry. Citation and abstract verified against PubMed.
+
+**Rejected papers (tracked in tracker.md):**
+- 39224022: Erratum notice for the Curigliano sabatolimab Phase 1 solid-tumour paper (PMID 33883177); pub 2024, outside scan window.
+- 42959697: GIST in Turner syndrome, case series (3+1 cases); 1 SDH-deficient; diagnostic/epidemiological, no drug advance.
+- 42758527: Plasma succinate as biomarker for SDHx germline variants; surveillance/diagnostic, not a drug direction.
+- 42611605: Pediatric SDHA-deficient GIST with false-negative SDHB IHC; diagnostic case report, no drug advance.
+- 42544736: 4-patient pediatric GIST clinical series (2 SDH-deficient); clinical outcomes, no mechanistic/drug advance.
+- 42923952: SDHB Carney-Stratakis syndrome with GIST and suspected paraganglioma; surgical management; no drug advance.
+- 42489911: German-language review of hereditary tumour syndrome histopathology; diagnostic/pathology review, no drug advance.
+- 43017378: Review of skin-resident Tregs in vitiligo vs melanoma; mentions TIM-3 on Tregs in melanoma; no SDH-specific content.
+- 42612932: Review of PD-1/PD-L1 resistance mechanisms; mentions TIM-3 as alternative checkpoint; no SDH-specific content.
+- 42447566: scRNA-seq of chemotherapy-resistant CRC; TIM-3 upregulation noted; CRC, not SDH-deficient; fails relevance gate.
+
+**Mechanism 77 extension rationale (non-redundancy with Mechanism 52 / LAG-3):**
+TIM-3 (HAVCR2) is expressed on immune compartments LAG-3 blockade does not reach: (a) Tregs - Tim-3 sustains Treg suppressive function via Akt/FOXO1, and Tim-3+ Treg abundance correlates with resistance to PD-1/LAG-3 combination blockade (Banerjee 2026), a residual resistance mechanism; (b) NK cells - TIM-3 is broadly expressed on NK cells (unlike T-cell-centric LAG-3/MHC-II), and sabatolimab restores NK cytotoxicity (Huuhtanen 2026); (c) myeloid cells. Different ligands (Galectin-9/PS/CEACAM-1/HMGB1 vs. MHC-II), different target cell populations, non-overlapping action with LAG-3 blockade.
+
+**Files changed:**
+- `src/data/seed/sdh-biology.ts`: Mechanism 77 extended with Arm 3 (Treg + NK/myeloid evidence), 2 sources added, NCT03066648 added to the drug table
+- `src/data/seed/drugs.ts`: NCT03066648 added to sabatolimab clinical_trial_ids + Clinical data bullet
+- `src/data/papers.ts`: PMIDs 42455126, 42599272, 42650014 added
+- `tracker.md`: 13 new PMID rows (3 added, 10 rejected)
+- `MORNING_LOG.md`: this entry
+
+**Engine state after:** 85 drugs, 77 mechanisms, display_order 63 (unchanged; extension only)
+
+**PR:** [Morning] Extend Mechanism 77 (TIM-3/sabatolimab) with Treg/NK arms + SIRT case series
