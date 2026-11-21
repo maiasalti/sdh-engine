@@ -3974,4 +3974,77 @@ TIM-3 (HAVCR2) is expressed on immune compartments LAG-3 blockade does not reach
 
 **Engine state after:** 86 drugs, 64 pathways (display_order 64), targets +1 (ABCB1)
 
+---
+
+## 2026-11-21 — Papers-Only Run: PPGL Genetics Cohort, Somatic SDHx Case, PPGL Precision Medicine Review
+
+**Branch:** `morning/2026-11-21-papers-ppgl-genetics-review`
+
+### Part A — Paper Scan
+
+**Search window:** Aug 21 – Nov 21, 2026
+
+Queries run (11 total):
+- SDH-deficient GIST gastrointestinal stromal tumor treatment
+- Pheochromocytoma paraganglioma SDH succinate dehydrogenase therapy
+- Succinate dehydrogenase deficient renal cell carcinoma cancer treatment
+- SDHB SDHA SDHC SDHD mutation cancer drug
+- Succinate oncometabolite pseudohypoxia HIF cancer drug
+- SDH synthetic lethality BRCAness homologous recombination
+- Succinate dehydrogenase tumor immunotherapy checkpoint
+- SDHx germline pathogenic variant paraganglioma genetics
+- SDHB SDHA mutation paraganglioma pheochromocytoma treatment clinical
+- Succinate dehydrogenase epigenetics methylation histone cancer
+- Paraganglioma pheochromocytoma GIST SDH novel therapy 2026
+
+**New PMIDs evaluated (not previously in tracker.md):**
+
+| PMID | Decision | Rationale |
+|------|----------|-----------|
+| 42925006 | **ADDED** | Awasty SS et al., Endocr Oncol 2026 Oct 23. "Germline Pathogenic Variants in SDH Genes: Single Institution Study." 156 SDHx PV carriers over 10 years; SDHB most common overall; SDHA predominates in non-PPGL panel-testing; <5% tumor-free carriers developed new lesion. Directly relevant to clinical management of SDH carriers. Topic: Genetics & Syndromes. |
+| 42732958 | **ADDED** | Kasahara K et al., Endocr J 2026 Sep 11. "Somatic-only SDHD variant with LOH in metastatic CBT." First reported metastatic carotid body tumor driven by somatic-only biallelic SDHD inactivation; negative germline testing. Shows germline-only testing misses somatic SDHx drivers. Topic: Genetics & Syndromes. |
+| 42626933 | **ADDED** | Almeida MQ, Dahia PLM, Robledo M. Endocr Relat Cancer 2026 Sep 1;33(9). "Molecular clusters and precision medicine in PPGLs." Comprehensive review: pseudohypoxic cluster (SDHx/FH/MDH2/VHL/EPAS1), kinase-signaling (RET/NF1/HRAS), Wnt-signaling (MAML3). FDA-approved agents by cluster, metastatic risk determinants (SDHB/ATRX/TERT/MAML3), emerging theranostics. Topic: Review / Overview. |
+| 42764100 | rejected | Troisi P et al., Crit Rev Oncol Hematol 2026. "Emerging patterns of kidney cancer in young adults." General RCC review; SDH-deficient RCC mentioned as one of several rare subtypes. Too broad — no SDH-specific mechanistic advance. |
+| 41985045 | rejected | Ornstead MJ et al., Int J Surg Pathol 2026 Oct (e-pub Apr 2026). "SDHB IHC in 57 SDHx tumors." Diagnostic pathology; 49% show aberrant retained staining. Possibly evaluated in earlier run (e-pub April 2026, outside primary window). No new drug or mechanism. |
+
+**Papers added to `src/data/papers.ts`:** 3 (PMIDs 42925006, 42732958, 42626933)
+
+---
+
+### Part B — Improvement Direction
+
+**Direction:** None — no direction passes the HARD RELEVANCE GATE today.
+
+**Directions evaluated and rejected:**
+
+| Direction | Why rejected |
+|-----------|-------------|
+| TIGIT/tiragolumab | Already Mechanism in engine (pathway `hif-cd155-tigit-exhaustion`) |
+| NAMPT/Daporinad FK866 | Already in engine (pathway `nad-metabolism`) |
+| MCT1/AZD3965 | Already in engine (pathway `succinate-immune-evasion`) |
+| CXCR2/AZD5069 | Already in engine (pathway `hif-cxcl8-cxcr2-neutrophil-immunosuppression`) |
+| CAIX/SLC-0111 | Already in engine (pathway `hif-ca9-ph-regulation`) |
+| ATR/ceralasertib | Already in engine (pathway `atrx-alt-replication-stress`) |
+| AURKA/alisertib | Already in engine (pathway `aurora-kinase-hif-feedback`) |
+| CPT1/FAO | Already in engine (pathway `sdh-fao-cpt1-dependency`) |
+| DLL4-Notch / nirogacestat | Already in engine (pathway `hif-nicd-notch-coactivation`) |
+| LILRB2/ILT4 | 0 PubMed hits for HIF→HLA-G→LILRB2 axis; no published mechanistic anchor |
+| NRF2 inhibition | No clinical-stage NRF2 inhibitor exists |
+| Alpha-KG supplementation | No clinical-stage cell-permeable 2-OG analog exists |
+| DLL4/navicixizumab | No published SDH-specific anchor; angiogenesis covered by VEGF-A/VEGFR entries |
+
+**Engine remains at:** 86 drugs, 78 mechanisms, 64 pathways (display_order 64). Papers-only is the correct outcome per the "never pad" principle.
+
+---
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/papers.ts` | +3 papers: PMIDs 42925006 (SDHx germline cohort), 42732958 (somatic SDHD CBT), 42626933 (PPGL molecular clusters review) |
+| `tracker.md` | +5 rows: 3 added, 2 rejected (see dates 2026-11-21) |
+| `MORNING_LOG.md` | This entry |
+
+**Engine state after:** 86 drugs, 78 mechanisms, 64 pathways (unchanged from 2026-11-20)
+
 **PR:** `[Morning] Add vincristine/ABCB1-MDR1 silencing direction; 2 new papers`
