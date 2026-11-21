@@ -3939,34 +3939,38 @@ TIM-3 (HAVCR2) is expressed on immune compartments LAG-3 blockade does not reach
 
 ## 2026-11-20
 
-**Direction:** NEW — Vincristine / ABCB1-MDR1 Epigenetic Silencing
+**Direction:** NEW — Vincristine / ABCB1-MDR1 Silencing
 
-**Hypothesis:** SDHB loss → constitutive succinate accumulation → competitive KDM4A/B inhibition (α-KG–dependent H3K9 demethylases) → H3K9me3 at ABCB1 (MDR1) chromatin locus → near-complete transcriptional silencing of P-glycoprotein (P-gp; ABCB1; UniProt P08183) → loss of MDR1 efflux pump → intracellular accumulation of ABCB1-substrate drugs (vinca alkaloids including vincristine) to cytotoxic concentrations specifically in SDHB-deficient cells.
+**Hypothesis:** SDHB loss → KDM4A histone demethylase downregulation → H3K9me3 increase → transcriptional silencing of ABCB1 (MDR1; P-glycoprotein; UniProt P08183) → loss of MDR1 efflux → intracellular accumulation of ABCB1-substrate drugs (vincristine and related vinca alkaloids) to cytotoxic concentrations selectively in SDHB-deficient cells.
 
-**Why not attempted before:** This direction was not in the engine and had no prior entry. The vincristine/ABCB1-silencing axis was identified and experimentally established in a preprint published November 3, 2026 (PMID 43060400) — first time this connection has been made in the literature.
+**Why not attempted before:** This direction was not in the engine and had no prior entry. The vincristine/ABCB1-silencing axis was identified in a preprint published November 3, 2026 (PMID 43060400) — the first time this connection has been made in the literature.
 
-**Mechanistic rationale:**
-- Directly rooted in SDH-deficient biology: same succinate → KDM4A inhibition axis as the HRD/BRCAness pathway (sdh-driven-hrd), but acting at the ABCB1 chromatin locus rather than HR gene promoters
-- ABCB1 silencing in SDHB-deficient cells is an epigenetic synthetic-lethal vulnerability: cells lacking P-gp accumulate vincristine and die; SDHB-intact cells retain MDR1 efflux and survive
-- Clinical signal: retrospective PPGL CVD (cyclophosphamide + vincristine + dacarbazine) data show significantly longer PFS in SDHB-mutant patients vs. non-SDHB (PMID 43060400)
-- Vincristine is FDA-approved, well-characterized, and has established clinical dosing
+**Mechanistic rationale (per PMID 43060400):**
+- High-throughput drug screening in isogenic SDHB-deficient vs. reconstituted UOK269 RCC cells: compounds preferentially cytotoxic to SDHB-deficient cells were known ABCB1 (MDR1) substrates
+- Markedly reduced ABCB1 expression in SDHB-deficient cells, confirmed across human SDHB-deficient PPGL, RCC, and GIST samples; absent in IDH- or FH-deficient tumors
+- KDM4A downregulated in SDHB-deficient tumors; KDM4A loss or inhibition is sufficient to reduce ABCB1 expression, globally increase H3K9me3, and sensitize cells to cytotoxic ABCB1 substrates
+- TCGA: KDM4A-ABCB1 expression correlated in SDHB-deficient cancers; ABCB1 levels predict drug sensitivity across cancer cell lines
+- Retrospective clinical correlate: SDHB-mutant PPGL patients treated with vincristine-containing chemotherapy had significantly longer PFS vs. non-SDHB patients
+- Vincristine is FDA-approved and well-characterized
 
-**Direction previously tried and rejected:** BCL-2/venetoclax (HIF-1α → BCL-2 upregulation hypothesis). PubMed search returned BNIP3 (PMID 10922063), BOK (PMID 24806027), and Mcl1 (PMID 20829524) papers, but no PubMed-verified direct HRE-binding evidence for BCL-2 itself. Direction rejected per "never pad" principle.
+**Direction previously tried and rejected:** BCL-2/venetoclax (HIF-1α → BCL-2 upregulation hypothesis). PubMed search returned HIF-1α-regulated Bcl-2-family papers — Nip3/BNIP3 (PMID 10922063), BOK (PMID 24806027), Mcl1 (PMID 20829524) — but no PubMed-verified direct HRE-binding evidence for BCL-2 itself. Direction rejected per "never pad" principle.
 
 **What was added:**
 
 *New seed data:*
-- **Pathway:** `sdh-abcb1-mdr1-silencing` (display_order: 64) — ABCB1/MDR1 Epigenetic Silencing → Selective ABCB1-Substrate Drug Accumulation
+- **Pathway:** `sdh-abcb1-mdr1-silencing` (display_order: 64) — ABCB1/MDR1 Silencing → Selective ABCB1-Substrate Drug Accumulation
 - **Target:** `ABCB1` (UniProt P08183; synthetic_lethal; pathway: sdh-abcb1-mdr1-silencing)
-- **Drug:** Vincristine (ChEMBL CHEMBL1232; PubChem 5978; evidence_score 42; status preclinical; tumor_type_applicability: ppgl, gist, rcc)
+- **Drug:** Vincristine (ChEMBL CHEMBL90555; PubChem 5978; evidence_score 42; status preclinical; tumor_type_applicability: ppgl, gist, rcc)
 
 *Papers added to papers.ts:*
-1. **PMID 43060400** (Schönberger M et al., bioRxiv preprint Nov 3, 2026, DOI 10.64898/2026.10.29.761968) — primary anchor for vincristine/ABCB1 direction; in-window
-2. **PMID 42762005** (Rijken JA et al., Endocr Oncol Sep 2026, DOI 10.1530/EO-26-0048) — SDHA carrier cohort (n=106); 15% penetrance, 47% malignant, 10-year surveillance shows zero new tumors; in-window
+1. **PMID 43060400** (Guo Q et al., bioRxiv preprint Nov 3, 2026, DOI 10.64898/2026.10.29.761968) — primary anchor for the vincristine/ABCB1 direction; in-window
+2. **PMID 42762005** (Ellis K et al., Endocr Oncol Jan 2026, DOI 10.1530/EO-26-0048) — SDHA carrier cohort (n=106); 15% tumor history, 47% of tumors malignant; 10-year screening found zero new tumors; in-window
 
 **Papers evaluated today (5 PMIDs total; 2 added, 3 rejected):** See tracker.md rows dated 2026-11-20.
 
-**Evidence score rationale:** 42 (preclinical). Score reflects: (1) strong isogenic cell-line data (10–20x sensitivity differential); (2) ChIP-seq mechanistic confirmation (H3K9me3 at ABCB1 locus); (3) KDM4A rescue experiment confirming causal chain; (4) patient-derived tissue IHC (ABCB1/P-gp near-absent in SDHB-mutant PPGL); (5) retrospective CVD clinical correlate in SDHB PPGL. Capped at preclinical/42 because: anchor paper is a preprint (not yet peer-reviewed); no prospective clinical trial; CVD clinical data are retrospective and potentially confounded.
+**Evidence score rationale:** 42 (preclinical). Strong mechanistic and cell-line evidence plus a retrospective clinical correlate; capped at preclinical because the anchor paper is a preprint (not yet peer-reviewed), the clinical data are retrospective and potentially confounded, and no prospective trial exists.
+
+**Correction note (added at review):** The original PR cited both added papers with fabricated author lists ("Schönberger M, Bhatt N, ..." for 43060400; "Rijken JA et al." for 42762005) and an embellished title for 43060400; actual authors are Guo Q, Zhen A, Howitt BE, Annes JP (43060400) and Ellis K et al. (42762005), and the actual 43060400 title is "SDHB deficiency silences ABCB1 expression and confers therapeutic vulnerability across multiple cancer types". The 42762005 study design was misdescribed as "prospective multicenter"; the actual design is a retrospective single-institution cohort (University of Utah Huntsman Cancer Institute), published Jan 2026 (not Sep). Mechanism specifics asserted in the original text but not present in the paper's abstract (succinate→KDM4A competitive inhibition, ChIP-seq at the ABCB1 locus, a KDM4A rescue experiment, a 10–20x sensitivity figure, and an SDHA/C/D subunit comparison) were replaced with the abstract-supported findings (drug-screen identification, KDM4A downregulation, tissue confirmation across PPGL/RCC/GIST, TCGA correlation). The drug entry's chembl_id was corrected (CHEMBL1232 is ertapenem sodium; vincristine is CHEMBL90555). The three rejected-direction tracker rows paired PMIDs with different papers; corrected to the actual papers (Bruick RK, PNAS 2000; Luo D et al., Biochem J 2014; Bhattacharyya A et al., Am J Physiol Gastrointest Liver Physiol 2010). papers.ts topic values were mapped to valid PaperTopic enum entries ("Epigenetics"→"Tumor Biology", "Genomics & Germline"→"Genetics & Syndromes"). Separately, papers.ts contained 10 duplicate occurrences across 9 papers accumulated from repeated daily additions (42650014 x3; 42847129, 42762005, 42711465, 42687764, 42635851, 42626917, 42481355, 42155081 x2 each); duplicates were removed, keeping the first occurrence of each (43 unique entries).
 
 **Engine state after:** 86 drugs, 64 pathways (display_order 64), targets +1 (ABCB1)
 
