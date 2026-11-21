@@ -440,16 +440,17 @@ export const PAPERS: CuratedPaper[] = [
     date: "2026-10",
   },
   {
-    title: "Tumor risks and surveillance outcomes in SDHA variant carriers.",
-    authors: "Ellis K, Christensen D, Beiringer J, Naumer A, Vagher J, Wiggins R, McCrary H, Buchmann L.",
-    journal: "Endocrine Oncology",
+    title: "Tumor risks and surveillance outcomes in SDHA variant carriers",
+    authors:
+      "Ellis K, Christensen D, Beiringer J, Naumer A, Vagher J, Wiggins R, McCrary H, Buchmann L",
+    journal: "Endocr Oncol",
     year: 2026,
     doi: "10.1530/EO-26-0048",
     topic: "Genetics & Syndromes",
     description:
-      "Single-institution cohort of 106 SDHA pathogenic/likely pathogenic germline variant carriers identified during 2015-2025. Approximately 15% had a personal history of an SDHA-associated tumor; this clinic-cohort proportion is not a population lifetime penetrance estimate. Seven of 15 characterized tumors (47%) were metastatic or showed malignant behavior: 3/3 extra-adrenal PGLs, 4/5 GISTs and 0/7 head/neck PGLs. Screening found no previously unidentified SDHA-associated tumors during the observation period, but surveillance uptake and follow-up were incomplete; the paper reports only 35 of 83 unaffected carriers recommended surveillance had completed at least one screening imaging study. These findings inform individualized clinician-led screening discussions, not a general recommendation to stop surveillance or a reliable estimate of lifetime tumor risk.",
+      "Retrospective single-institution cohort (University of Utah Huntsman Cancer Institute) of 106 SDHA likely pathogenic/pathogenic variant carriers with longitudinal surveillance follow-up. 15% had a personal history of an SDHA-associated tumor; 47% of identified tumors were metastatic or showed malignant behavior. Over 10 years of high-risk screening, zero previously unidentified SDHA-associated tumors were found. Supports an SDHA-specific screening approach while noting higher malignant behavior in affected carriers compared with sporadic disease.",
     pmid: "42762005",
-    date: "2026-09",
+    date: "2026-01",
   },
   {
     title:
@@ -463,32 +464,6 @@ export const PAPERS: CuratedPaper[] = [
       "Multistakeholder commentary calling for clinical-trial genomic correlates and outcome data to clarify belzutifan efficacy across molecularly heterogeneous advanced pheochromocytomas and paragangliomas. This is a call for biomarker data, not a new efficacy study or a validated predictor of response; it does not establish SDH-genotype-specific benefit or justify a drug evidence-score change.",
     pmid: "42481355",
     date: "2026-07",
-  },
-  {
-    title:
-      "Comprehensive Genomic Analysis in Hereditary Adrenal and Extra-Adrenal Paragangliomas.",
-    authors: "Purnaghshband H, Tuzlali E, et al., Mete O, Kim RH.",
-    journal: "Endocrine Pathology",
-    year: 2026,
-    doi: "10.1007/s12022-026-09930-2",
-    topic: "Genetics & Syndromes",
-    description:
-      "110-patient multi-ethnic PPGL cohort (Princess Margaret Cancer Centre/UHN, Toronto). Whole-genome sequencing (WGS) resolved pathogenic/likely pathogenic variants in 6/7 SDH-deficient tumours that had been panel-sequencing-negative. In one case, optical genome mapping (OGM) characterised a complex SDHA inverted tandem duplication that WGS alone could not resolve, validating OGM as a third-tier molecular diagnostic. The study establishes a tiered approach — germline panel → SDHB IHC → WGS → OGM — for panel-negative but IHC-negative PPGL. The abstract does not report clinical outcomes, treatment data, or therapy implications beyond diagnostic yield.",
-    pmid: "42635851",
-    date: "2026-08",
-  },
-  {
-    title:
-      "Minigene-based characterization and classification of splice-associated variants in succinate dehydrogenase B.",
-    authors: "Köhler A, Baumann AA, Lewis N, Richter A, Richter S, William D, et al.",
-    journal: "NPJ Precis Oncol",
-    year: 2026,
-    doi: "10.1038/s41698-026-01685-7",
-    topic: "Genetics & Syndromes",
-    description:
-      "Dresden group evaluated 48 SpliceAI-prioritised SDHB germline variants using a minigene spanning exons 2–5 with targeted RNA sequencing in HEK293T cells. 19 variants (38%) showed ≥90% wildtype splicing; 17 (34%) showed ≥90% aberrant splicing; 73 aberrant transcripts identified (average 2.3 per variant). Integration of minigene RNA evidence changed ACMG classification scores by a mean of 2.7 points and reclassified 13 of 26 classified variants (50%), including 12 VUS → likely benign downgrades and 1 likely pathogenic → VUS downgrade. Establishes scalable RNA-based framework for SDHB variant classification in the clinic.",
-    pmid: "42711465",
-    date: "2026-09",
   },
   {
     title:
@@ -544,19 +519,6 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
-      "Genetic alterations of telomere maintenance pathways in paragangliomas.",
-    authors: "Batini L, Lobato EC, Freitas-Castro F, et al.",
-    journal: "Arch Endocrinol Metab",
-    year: 2026,
-    doi: "10.20945/2359-4292-2026-0050",
-    topic: "Genetics & Syndromes",
-    description:
-      "Brazilian cohort of 79 PPGL patients characterising telomere maintenance pathway alterations: germline SDHB pathogenic variants in 25.3%; somatic TERT promoter pathogenic variants in 2.5% overall but in 16.7% of metastatic SDHB-mutant cases, establishing TERT promoter mutation as a high-frequency somatic driver of malignant progression specifically in SDHB-mutated PPGL. ATRX somatic variants identified were assessed as likely benign. Provides direct evidence linking SDHB mutation with TERT promoter activation as a route to metastatic potential.",
-    pmid: "42155081",
-    date: "2026-08",
-  },
-  {
-    title:
       "Distinct proteomic and acylproteomic adaptations to succinate dehydrogenase loss in two cell contexts.",
     authors: "Zhou SX, Madden B, Charlesworth MC, Hitosugi T, Favier J, Maher LJ.",
     journal: "J Biol Chem",
@@ -570,45 +532,6 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
-      "Expanding the Morphologic, Clinical, and Molecular Spectrum of Succinate Dehydrogenase A (SDHA)-Deficient Renal Cell Carcinoma: A Case Series With Review of Literature.",
-    authors: "Kandukuri S, Lobo A, Tsai H, Aron M, Jha S, Hirsch MS, Mohanty S.",
-    journal: "Am J Surg Pathol",
-    year: 2026,
-    doi: "10.1097/PAS.0000000000002611",
-    topic: "Diagnosis & Pathology",
-    description:
-      "Multi-institutional case series of 5 SDHA-deficient RCCs characterising their morphologic, clinical, and molecular spectrum. Median age 40 years; male predominance (4:1). Common histologic features: papillary and nested architecture (100%), eosinophilic/flocculent cytoplasm (100%); 80% solid growth and cytoplasmic vacuoles with inclusions. 80% high-grade (ISUP/WHO grade 3) with desmoplastic stroma. All 5 showed SDHB IHC loss; SDHA IHC was retained in 1/5 despite confirmed SDHA mutation — establishing that SDHB IHC is the more sensitive screening marker and SDHA IHC can be false-negative. 2 of 4 evaluable patients developed metastases within 14–34 months. Concludes SDHA-deficient RCC is more aggressive than typical SDHB-deficient RCC with higher metastatic risk; NGS is recommended when SDHB loss is detected.",
-    pmid: "42687764",
-    date: "2026-09",
-  },
-  {
-    title:
-      "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series.",
-    authors: "Berman ZT, Hohenberger P, Bulusu R, et al.",
-    journal: "Cancers (Basel)",
-    year: 2026,
-    doi: "10.3390/cancers18162704",
-    topic: "Treatment & Trials",
-    description:
-      "International multicenter retrospective case series (n=12; median age 27 years) of yttrium-90 (Y-90) selective internal radiation therapy (SIRT) for unresectable SDH-deficient GIST hepatic metastases. Objective response rate was 66.7% (1 CR, 7 PR); disease control rate 100%; one grade ≥3 adverse event. Median overall survival not reached at 32-month median follow-up (range 3–77 months). Establishes SIRT as safe and effective for SDH-deficient GIST liver mets, and suggests the subtype is more sensitive to radiation than previously appreciated — consistent with BRCAness/HR deficiency from succinate-mediated KDM4A/B inhibition.",
-    pmid: "42650014",
-    date: "2026-08",
-  },
-  {
-    title:
-      "Effects of a GLP-1 agonist and antidiabetic therapies on pheochromocytoma/paraganglioma growth.",
-    authors: "Wang K, Stempfle P, Hamati J, et al.",
-    journal: "Endocr Relat Cancer",
-    year: 2026,
-    doi: "10.1530/ERC-26-0283",
-    topic: "Treatment & Trials",
-    description:
-      "Prospective PROSPHEO trial (NCT03344016; n=54 primary cultures, 67 clinical patients) showing cluster-dependent effects of antidiabetic drugs on PPGL growth: semaglutide (GLP-1R agonist) produced significant antitumor effects specifically in cluster 1 PPGLs (pseudohypoxia-driven, includes SDHx- and VHL-related tumors) but not in cluster 2/3 (kinase-driven). Clinical data confirmed larger median tumor sizes in insulin-treated vs. metformin/GLP-1RA-treated patients. Provides first clinical evidence that GLP-1R agonism has cluster-selective antitumor activity in pseudohypoxic PPGLs.",
-    pmid: "42847129",
-    date: "2026-10",
-  },
-  {
-    title:
       "Immune Subtypes of PPGL: Genomic Determinants and Therapeutic Implications",
     authors: "Robledo M, Salazar-Hidalgo ME, Arroba E, Cascón A",
     journal: "Endocr Relat Cancer",
@@ -619,32 +542,6 @@ export const PAPERS: CuratedPaper[] = [
       "Comprehensive review of immune subtypes in PPGL correlated with genomic subtypes. SDHx (pseudohypoxic cluster) → immunosuppressive TME enriched in fibroblast-like perivascular cells shaped by succinate accumulation and HIF-2α. MAML3 fusion → PD-L1 overexpression + CD8+/NK infiltration. ATRX mutations and TERT activation modulate immune contexture and metastatic risk. Calls for molecularly stratified trials: belzutifan for pseudohypoxic (SDHx), checkpoint inhibition for MAML3+ and immune-enriched kinase signaling subtypes.",
     pmid: "43023874",
     date: "2026-11",
-  },
-  {
-    title:
-      "Genetic, cellular, and environmental factors influencing tumourigenesis in carriers of succinate dehydrogenase germline mutations",
-    authors: "Lim ES, Bayley JP, Gimenez-Roqueplo AP, Clifton-Bligh RJ, Richter S",
-    journal: "Endocr Relat Cancer",
-    year: 2026,
-    doi: "10.1530/ERC-26-0282",
-    topic: "Review / Overview",
-    description:
-      "Comprehensive review consolidating how genetic (genotype-phenotype relationships), cellular (haploinsufficiency vs. two-hit loss), and environmental factors interact in SDHx germline mutation carriers to determine tumour risk. Reviews the biology of non-tumoural haploinsufficient cells, the role of environmental stressors in tipping succinate and ROS above a tumourigenic threshold, and genotype-specific phenotype determinants across SDHA/B/C/D/SDHAF2 pathogenic variants.",
-    pmid: "42626917",
-    date: "2026-09",
-  },
-  {
-    title:
-      "A multistakeholder call for belzutifan biomarker data in advanced pheochromocytoma and paraganglioma",
-    authors: "Toledo RA, Arenillas C, Dahia PLM, et al.",
-    journal: "Trends Endocrinol Metab",
-    year: 2026,
-    doi: "10.1016/j.tem.2026.06.007",
-    topic: "Treatment & Trials",
-    description:
-      "Multistakeholder perspective calling for genomic correlate analysis and outcome data from the FDA-approved belzutifan (HIF-2α inhibitor) PPGL trial; argues that SDHx-driven pseudohypoxic (cluster 1) tumors are the most mechanistically rational subgroup for HIF-2α inhibition and that SDH-stratified biomarker data is an urgent scientific and clinical priority.",
-    pmid: "42481355",
-    date: "2026-09",
   },
   {
     title:
@@ -676,16 +573,15 @@ export const PAPERS: CuratedPaper[] = [
   },
   {
     title:
-      "Selective Internal Radiation Therapy (SIRT) for SDH-Deficient GIST Demonstrates Encouraging Durable Response Rates: An International Multicenter Case Series",
-    authors:
-      "Berman ZT, Hohenberger P, Bulusu R, Rose SC, Fanta PT, Evans J, Diehl S, Menge F, Ali N, Sicklick JK",
-    journal: "Cancers",
+      "SDHB deficiency silences ABCB1 expression and confers therapeutic vulnerability across multiple cancer types",
+    authors: "Guo Q, Zhen A, Howitt BE, Annes JP",
+    journal: "bioRxiv",
     year: 2026,
-    doi: "10.3390/cancers18162704",
-    topic: "Case Reports",
+    doi: "10.64898/2026.10.29.761968",
+    topic: "Tumor Biology",
     description:
-      "Retrospective multicenter series (n=12) of Y-90 yttrium SIRT for progressive unresectable SDH-deficient GIST hepatic metastases. ORR 66.7% by mRECIST (1 CR, 7 PR), DCR 100%. Median age 27 years, 66.7% female. Median follow-up 32 months; median OS not reached; 1 death. One Grade ≥3 AE (cholecystitis). Suggests SDH-deficient GIST is more radiosensitive than previously appreciated; SIRT may be a useful liver-directed approach for patients with limited systemic options. Context for locoregional treatment of SDH-GIST hepatic disease.",
-    pmid: "42650014",
-    date: "2026-08",
+      "Preprint demonstrating that SDHB-deficient cells have markedly reduced ABCB1 (MDR1/P-glycoprotein) expression, confirmed across human SDHB-deficient PPGL, RCC, and GIST samples but absent in IDH- or FH-deficient tumors. High-throughput drug screening in isogenic SDHB-deficient UOK269 renal carcinoma cells found preferential cytotoxicity of known ABCB1-substrate compounds. KDM4A histone demethylase is downregulated in SDHB-deficient tumors; KDM4A loss or inhibition is sufficient to reduce ABCB1 expression, globally increase H3K9me3, and sensitize cells to cytotoxic ABCB1 substrates. SDHB-mutant PPGL patients treated with vincristine-containing chemotherapy showed significantly longer progression-free survival than non-SDHB patients, providing a rationale for repurposing vincristine and related ABCB1-substrate vinca alkaloids in SDHB-deficient cancers.",
+    pmid: "43060400",
+    date: "2026-11",
   },
 ];

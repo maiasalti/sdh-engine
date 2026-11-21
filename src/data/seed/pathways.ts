@@ -1068,4 +1068,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 63,
   },
+  {
+    name: "ABCB1/MDR1 Silencing → Selective ABCB1-Substrate Drug Accumulation",
+    slug: "sdh-abcb1-mdr1-silencing",
+    description:
+      "SDHB-deficient cells show markedly reduced expression of ABCB1 (MDR1; P-glycoprotein; UniProt P08183), the principal ATP-driven efflux pump for a broad class of chemotherapy agents including vinca alkaloids. Guo Q et al. (bioRxiv preprint Nov 2026, PMID 43060400) identified this vulnerability through high-throughput drug screening in isogenic SDHB-deficient UOK269 renal carcinoma cells: the compounds preferentially cytotoxic to SDHB-deficient cells were known ABCB1 substrates. Reduced ABCB1 expression was confirmed across human SDHB-deficient PPGL, RCC, and GIST samples and was absent in IDH- or FH-deficient tumors. KDM4A histone demethylase is downregulated in SDHB-deficient tumors, and KDM4A loss or inhibition is sufficient to reduce ABCB1 expression, globally increase H3K9me3, and sensitize cells to cytotoxic ABCB1 substrates. Loss of P-gp efflux causes intracellular accumulation of ABCB1-substrate drugs (vincristine and related vinca alkaloids) to cytotoxic concentrations specifically in SDHB-deficient cells. This pathway is distinct from the HRD/BRCAness arm (sdh-driven-hrd): it links SDHB deficiency to loss of drug efflux rather than to DNA-repair defects.",
+    upstream_event:
+      "SDHB loss → KDM4A downregulation → H3K9me3 increase → ABCB1 (MDR1) transcriptional silencing → loss of P-glycoprotein (ABCB1; MDR1) efflux pump expression (Guo Q et al., bioRxiv 2026, PMID 43060400)",
+    downstream_effects: [
+      "ABCB1/MDR1 expression markedly reduced in SDHB-deficient cell lines and confirmed across human SDHB-deficient PPGL, RCC, and GIST samples; absent in IDH- or FH-deficient tumors (PMID 43060400)",
+      "Loss of P-gp efflux → intracellular accumulation of ABCB1-substrate drugs (vincristine, other vinca alkaloids) → preferential cytotoxicity in SDHB-deficient cells (PMID 43060400)",
+      "KDM4A downregulation in SDHB-deficient tumors; KDM4A loss or inhibition reduces ABCB1 expression, increases H3K9me3, and sensitizes cells to ABCB1 substrates (PMID 43060400)",
+      "TCGA: KDM4A and ABCB1 expression correlated in SDHB-deficient cancers; ABCB1 levels predict drug sensitivity across cancer cell lines (PMID 43060400)",
+      "Retrospective clinical correlate: SDHB-mutant PPGL patients receiving vincristine-containing chemotherapy had significantly longer PFS vs. non-SDHB cases (PMID 43060400)",
+      "Distinct from the HRD/BRCAness pathway (sdh-driven-hrd): links SDHB deficiency to drug-efflux loss (ABCB1) rather than DNA-repair defects",
+    ],
+    druggable: true,
+    display_order: 64,
+  },
 ];

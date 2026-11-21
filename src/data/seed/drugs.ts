@@ -1569,4 +1569,28 @@ export const SEED_DRUGS: SeedDrug[] = [
     tumor_type_applicability: ["all"],
     clinical_trial_ids: ["NCT02608268", "NCT03946670", "NCT03066648"],
   },
+  {
+    name: "Vincristine",
+    brand_names: ["Oncovin", "Vincasar PFS"],
+    chembl_id: "CHEMBL90555",
+    pubchem_cid: "5978",
+    drug_class: "Vinca alkaloid (microtubule depolymerizing agent; ABCB1-substrate chemotherapy)",
+    mechanism_of_action:
+      "Vincristine is an FDA-approved vinca alkaloid that binds beta-tubulin and prevents microtubule polymerisation, arresting cells in metaphase and triggering mitotic catastrophe/apoptosis. Its activity in many solid tumors is limited by ABCB1 (MDR1; P-glycoprotein), the ATP-driven efflux pump that actively exports vinca alkaloids from cells.\n\n**SDH-specific mechanistic rationale — ABCB1 silencing:**\n\nGuo Q et al. (bioRxiv preprint, Nov 3 2026, PMID 43060400, DOI 10.64898/2026.10.29.761968) demonstrated a mechanistic link between SDHB loss and selective vulnerability to ABCB1-substrate chemotherapy:\n\n1. In isogenic SDHB-deficient vs. SDHB-reconstituted UOK269 renal carcinoma cells, high-throughput drug screening found that the compounds with preferential cytotoxicity toward SDHB-deficient cells were known ABCB1 (MDR1) substrates\n2. SDHB-deficient cells show markedly reduced ABCB1 expression, confirmed across human SDHB-deficient PPGL, RCC, and GIST samples, and absent in IDH- or FH-deficient tumors\n3. KDM4A histone demethylase is downregulated in SDHB-deficient tumors; KDM4A loss or inhibition is sufficient to reduce ABCB1 expression, globally increase H3K9me3, and sensitize cells to cytotoxic ABCB1 substrates\n4. Loss of P-glycoprotein (ABCB1; UniProt P08183) efflux activity allows intracellular accumulation of ABCB1-substrate drugs including vincristine to cytotoxic concentrations selectively in SDHB-deficient cells\n5. TCGA analysis confirmed correlated KDM4A-ABCB1 expression in SDHB-deficient cancers, with ABCB1 levels predicting drug sensitivity across cancer cell lines\n6. Clinical correlate: SDHB-mutant PPGL patients treated with vincristine-containing chemotherapy showed significantly longer progression-free survival vs. non-SDHB patients\n\n**Mechanistic pathway:**\n- Pathway slug: sdh-abcb1-mdr1-silencing\n- Related to the epigenetic-dysregulation axis (KDM4A/H3K9me3) but with a distinct downstream locus: ABCB1 (drug efflux) rather than HR gene promoters (sdh-driven-hrd)\n\n**SDH-deficient tumor applicability:**\n- Supported across SDHB-deficient PPGL, RCC, and GIST samples in PMID 43060400\n\n**Limitations:**\n1. Preprint (not yet peer-reviewed); anchor paper is PMID 43060400 (bioRxiv, Nov 2026)\n2. Clinical data are retrospective and confounded by SDHB vs. non-SDHB prognostic differences\n3. No prospective clinical trial of vincristine in SDH-deficient solid tumors\n4. Vincristine neurotoxicity (peripheral neuropathy) limits dosing and long-term use\n\nSources: PMID 43060400 (DOI 10.64898/2026.10.29.761968).",
+    fda_approved: true,
+    approved_indications: [
+      "Acute lymphoblastic leukemia",
+      "Hodgkin lymphoma",
+      "Non-Hodgkin lymphoma",
+      "Wilms tumor",
+      "Neuroblastoma",
+      "Rhabdomyosarcoma",
+    ],
+    pathway_slugs: ["sdh-abcb1-mdr1-silencing", "epigenetic-dysregulation"],
+    target_gene_symbols: ["ABCB1"],
+    evidence_score: 42,
+    status: "preclinical",
+    tumor_type_applicability: ["ppgl", "gist", "rcc"],
+    clinical_trial_ids: [],
+  },
 ];
