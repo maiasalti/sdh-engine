@@ -26,45 +26,6 @@ export type CuratedPaper = {
 export const PAPERS: CuratedPaper[] = [
   {
     title:
-      "Germline Pathogenic Variants in Succinate Dehydrogenase Genes: Implications from a Single Institution Study",
-    authors: "Awasty SS, Fisher C, Brock PL, et al.",
-    journal: "Endocr Oncol",
-    year: 2026,
-    doi: "10.1530/EO-25-0113",
-    topic: "Genetics & Syndromes",
-    description:
-      "Natural history study of 156 patients with SDHx germline pathogenic variants at a single academic center found SDHB to be the most common variant overall, while SDHA variants predominated among patients identified through non-PPGL cancer panel testing. Notably, fewer than 5% of tumor-free SDHx carriers developed a new lesion during surveillance follow-up, raising questions about whether current intensive screening protocols are warranted in variant carriers without an index tumor.",
-    pmid: "42925006",
-    date: "2026-10",
-  },
-  {
-    title:
-      "Somatic-only SDHD variant with tumor-specific loss of heterozygosity in metastatic carotid body tumor: a case report with review of literature",
-    authors: "Kasahara K, Yoshihama K, Idei K, et al.",
-    journal: "Endocr J",
-    year: 2026,
-    doi: "10.1507/endocrj.EJ26-0224",
-    topic: "Genetics & Syndromes",
-    description:
-      "Case report of a metastatic carotid body paraganglioma harboring a somatic-only SDHD c.304C>G variant with tumor-specific loss of heterozygosity, in a patient with negative germline testing — the first reported metastatic CBT driven entirely by somatic biallelic SDHD inactivation. This case demonstrates that germline testing alone may miss SDHx-driven tumors and that comprehensive tumor genomic profiling is needed for complete molecular risk stratification.",
-    pmid: "42732958",
-    date: "2026-09",
-  },
-  {
-    title:
-      "Molecular clusters and precision medicine in pheochromocytomas and paragangliomas",
-    authors: "Almeida MQ, Dahia PLM, Robledo M",
-    journal: "Endocr Relat Cancer",
-    year: 2026,
-    doi: "10.1530/ERC-26-0258",
-    topic: "Review / Overview",
-    description:
-      "Comprehensive genomics review classifying PPGL into three molecular clusters — pseudohypoxic (SDHx, FH, MDH2, VHL, EPAS1), kinase-signaling (RET, NF1, HRAS), and Wnt-signaling (MAML3 fusions) — and mapping each cluster to actionable precision-medicine strategies. Reviews FDA-approved targeted agents for PPGL (belzutifan for HIF-2α, selpercatinib/pralsetinib for RET), genomic determinants of metastatic risk (SDHB, ATRX, TERT, MAML3), and emerging radionuclide theranostic approaches.",
-    pmid: "42626933",
-    date: "2026-09",
-  },
-  {
-    title:
       "Fibroblast growth factor receptor inhibition for succinate dehydrogenase-deficient gastrointestinal stromal tumors: a phase 2 trial",
     authors: "Merriam P, Morrow JJ, Mazzola E, et al.",
     journal: "Nat Med",
@@ -377,7 +338,7 @@ export const PAPERS: CuratedPaper[] = [
   {
     title:
       "Somatic-only SDHD variant with tumor-specific loss of heterozygosity in metastatic carotid body tumor: a case report with review of literature",
-    authors: "Kasahara K, Minagawa A, Sato Y, et al.",
+    authors: "Kasahara K, Yoshihama K, Idei K, et al.",
     journal: "Endocr J",
     year: 2026,
     doi: "10.1507/endocrj.EJ26-0224",
