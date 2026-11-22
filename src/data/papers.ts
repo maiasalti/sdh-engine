@@ -338,7 +338,7 @@ export const PAPERS: CuratedPaper[] = [
   {
     title:
       "Somatic-only SDHD variant with tumor-specific loss of heterozygosity in metastatic carotid body tumor: a case report with review of literature",
-    authors: "Kasahara K, Minagawa A, Sato Y, et al.",
+    authors: "Kasahara K, Yoshihama K, Idei K, et al.",
     journal: "Endocr J",
     year: 2026,
     doi: "10.1507/endocrj.EJ26-0224",

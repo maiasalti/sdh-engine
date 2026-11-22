@@ -3974,4 +3974,12 @@ TIM-3 (HAVCR2) is expressed on immune compartments LAG-3 blockade does not reach
 
 **Engine state after:** 86 drugs, 64 pathways (display_order 64), targets +1 (ABCB1)
 
-**PR:** `[Morning] Add vincristine/ABCB1-MDR1 silencing direction; 2 new papers`
+---
+
+## 2026-11-21 — Scan re-surfaced already-tracked papers; no engine changes
+
+**Branch:** `morning/2026-11-21-papers-ppgl-genetics-review`
+
+**Correction note (added at review):** The routine reported 3 papers as new ("not previously in tracker.md") and inserted duplicate entries into papers.ts plus 5 duplicate rows into tracker.md. All 5 PMIDs were already in the engine: 42925006 (Awasty et al., papers + 1 tracker row), 42732958 (Kasahara et al., papers + 2 tracker rows), 42626933 (Almeida et al., papers + 2 tracker rows), 41985045 (Ornstead et al., papers + 2 tracker rows, previously rejected), 42764100 (Troisi et al., 3 prior tracker rows, rejected). The duplicate papers.ts entries and tracker rows were removed before merge. Citations for all 5 PMIDs verified against PubMed (authors, titles, journals match). Part B conclusion stands: no new drug direction (13+ candidates already in the engine or lacking anchors). One surgical fix retained in papers.ts: the pre-existing entry for PMID 42732958 listed hallucinated authors "Kasahara K, Minagawa A, Sato Y, et al."; corrected to the actual authors "Kasahara K, Yoshihama K, Idei K, et al." (Endocr J 2026 Sep 11, DOI 10.1507/endocrj.EJ26-0224).
+
+**Engine state after:** unchanged — 86 drugs, 64 pathways, 43 unique papers
