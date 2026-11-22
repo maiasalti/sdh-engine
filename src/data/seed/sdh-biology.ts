@@ -1899,4 +1899,42 @@ Sabatolimab (Novartis) is an investigational fully humanized IgG4 monoclonal ant
 - Banerjee H, Onyekachi OV, Nieves-Rosado H et al. Tim-3 Sustains Tumor Treg Stability and Function, Limiting Checkpoint Blockade Therapy Efficacy. Cancer Immunol Res. 2026;14(10):1620-1634. PMID 42455126. DOI 10.1158/2326-6066.CIR-25-0687. (Treg arm anchor: Tim-3 on tumor Tregs required for stability/immunosuppressive function via Akt/FOXO1; Treg-specific deletion delays exhaustion and cooperates with PD-1 blockade; human trial correlation of Tim-3+ Treg decrease with PD-1/LAG-3 response.)
 - Huuhtanen J, Forstén S, Ford B et al. TIM3 Blockade with Hypomethylating Therapy Restores NK Cell and Cytotoxic CD4+ T-cell Activity in Patients with AML or MDS. Cancer Immunol Res. 2026;14(11):1841-1858. PMID 42599272. DOI 10.1158/2326-6066.CIR-26-0160. (NK/myeloid arm anchor: TIM-3 broadly expressed on NK/myeloid/T cells; sabatolimab + decitabine Phase 1b NCT03066648 induced cytotoxic NK expansion, type I IFN signaling, and cytotoxic CD4+ T-cell expansion; mechanism distinct from anti-PD-1/CTLA-4.)
 
+## Mechanism 78: SDH-Loss CIMP → LSD1/KDM1A-Mediated H3K4me2 Demethylation at Silenced Tumor Suppressor Promoters → Iadademstat
+
+**Pathway:** sdh-cimp-lsd1-h3k4-silencing (display_order 65)
+
+**Core SDH biology:**
+SDH loss → succinate accumulation → inhibition of TET family DNA demethylases (TET2/TET3; 2OG-dependent dioxygenases) → reduced 5-hydroxymethylcytosine → CpG island methylator phenotype (CIMP) → promoter hypermethylation of tumor suppressor genes. CIMP is established in SDH-deficient GIST (Killian JK et al., Cancer Discov 2013, PMID 23539154) and in SDH-deficient PPGL (Letouzé E et al., Cancer Cell 2013, PMID 23707781).
+
+At CIMP-silenced tumor suppressor promoters, the repressed chromatin state is maintained by a multi-layered machinery:
+- DNA methylation (5mC)
+- H3K27me3 (EZH1+EZH2/PRC2 complex — Mechanism 72)
+- Removal of the activating H3K4me2 mark by LSD1/KDM1A (lysine-specific demethylase 1; CoREST complex)
+
+LSD1/KDM1A is a FAD-dependent amine oxidase that demethylates H3K4me2→H3K4me1→H3K4me0 at gene promoters, eliminating this transcription-activating mark and contributing to the maintenance of gene silencing at CIMP-repressed loci. Huang Y, Greene E, Murray Stewart T, Goodwin AC, Baylin SB, Woster PM, and Casero RA (PNAS 2007, PMID 17463086, DOI 10.1073/pnas.0700720104) demonstrated in human colon carcinoma cells that LSD1 inhibition with polyamine analogues results in reexpression of multiple aberrantly silenced genes — including SFRP family members (SFRP1/2/4/5) and GATA family transcription factors — with concurrent restoration of H3K4me2 and H3K9ac marks and reduction of repressive H3K9me1/me2 marks at previously silenced promoters. This establishes LSD1 as a required co-repressor for maintaining the silenced state at CIMP-associated gene promoters; inhibiting LSD1 partially reactivates the epigenetically silenced tumor suppressor program.
+
+In SDH-deficient GIST and PPGL — which are fundamentally CIMP cancers driven by succinate-TET inhibition — the LSD1-mediated H3K4me2 demethylation arm contributes to maintaining CIMP-imposed silencing of tumor suppressor genes. Iadademstat inhibition of LSD1 would address the H3K4me2 component of this silencing, complementary to and mechanistically orthogonal from EZH2 inhibition (Mechanism 72, which addresses H3K27me3) and decitabine (Mechanism 10, which addresses DNA methylation directly).
+
+**Mechanistic distinction from EZH2 inhibition (Mechanism 72):**
+- EZH2/EZH1 (PRC2 complex) methylates H3K27 → H3K27me3 → polycomb silencing → valemetostat removes H3K27me3
+- LSD1/KDM1A (CoREST complex) demethylates H3K4me2 → H3K4me0 → removes activating mark → iadademstat prevents this demethylation, keeping H3K4me2
+- Different histone marks (H3K27 vs H3K4), different enzyme families (HMT vs FAD-dependent demethylase), different multi-subunit complexes (PRC2 vs CoREST/NuRD)
+- Non-redundant and potentially synergistic: simultaneous targeting of both H3K27me3 (EZH2) and H3K4me2 demethylation (LSD1) at CIMP-silenced loci would address two distinct reinforcing silencing mechanisms
+
+**Drug: Iadademstat (ORY-1001)**
+Iadademstat (Oryzon Genomics) is an orally bioavailable, potent, and selective LSD1/KDM1A inhibitor. In a first-in-human Phase I dose-escalation trial in relapsed/refractory AML (Salamero O et al., J Clin Oncol 2020, PMID 33052756, DOI 10.1200/JCO.19.03250), iadademstat showed acceptable tolerability, dose-dependent pharmacokinetics, and differentiation-inducing biologic activity (induction of blast cell differentiation biomarkers). The recommended Phase 2 dose was established at 140 µg/m²/d. A Phase II trial of iadademstat in combination with azacitidine is ongoing (EudraCT 2018-000482-36).
+
+**Key limitations:**
+1. No published data test iadademstat or any LSD1 inhibitor in SDH-deficient GIST, PPGL, or RCC models.
+2. The LSD1→CIMP silencing connection is established in colon carcinoma (PMID 17463086); the CIMP promoters in SDH-deficient GIST and PPGL may differ from colorectal CIMP promoters.
+3. No solid tumor Phase I clinical data for iadademstat; clinical development has focused on hematologic malignancies.
+4. LSD1 uses FAD (not 2OG) as a cofactor, so succinate does not directly inhibit LSD1 — the SDH→LSD1 link is indirect (via CIMP, not via direct enzyme inhibition).
+
+**Evidence score: 20 (theoretical).** Three-anchor chain: SDH→CIMP is established (in engine), CIMP silencing requires LSD1 activity and is reversed by LSD1 inhibition (PMID 17463086), iadademstat is a clinical-stage LSD1 inhibitor (PMID 33052756). Score limited by complete absence of SDH-deficient preclinical or clinical data for iadademstat and the indirect SDH→LSD1 mechanistic link.
+
+**Sources:**
+- Killian JK et al. Succinate dehydrogenase mutation underlies global epigenomic divergence in gastrointestinal stromal tumor. Cancer Discov 2013;3(6):648-57. PMID 23539154. (Already in engine: SDH loss → CIMP in SDH-deficient GIST.)
+- Huang Y, Greene E, Murray Stewart T, Goodwin AC, Baylin SB, Woster PM, Casero RA. Inhibition of lysine-specific demethylase 1 by polyamine analogues results in reexpression of aberrantly silenced genes. Proc Natl Acad Sci USA. 2007;104(19):8023-8. PMID 17463086. DOI 10.1073/pnas.0700720104. (Primary mechanism anchor: LSD1 inhibition → restoration of H3K4me2 → reactivation of CIMP-silenced tumor suppressor genes in colon carcinoma.)
+- Salamero O, Montesinos P, Willekens C, et al. First-in-Human Phase I Study of Iadademstat (ORY-1001): A First-in-Class Lysine-Specific Histone Demethylase 1A Inhibitor, in Relapsed or Refractory Acute Myeloid Leukemia. J Clin Oncol 2020;38(36):4260-4273. PMID 33052756. DOI 10.1200/JCO.19.03250. (Clinical anchor: Phase I safety/tolerability, RP2D 140 µg/m²/d, biologic differentiation activity in R/R AML.)
+
 `;

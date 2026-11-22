@@ -106,4 +106,6 @@ export const PATHWAY_COLORS: Record<string, string> = {
   "hdac6-hsp90-vhl-independent-hif": "bg-orange-400 text-orange-50 dark:bg-orange-600 dark:text-orange-50",
   "hk2-glycolytic-commitment": "bg-amber-400 text-amber-950 dark:bg-amber-600 dark:text-amber-50",
   "succinate-tim3-exhaustion": "bg-rose-300 text-rose-950 dark:bg-rose-700 dark:text-rose-50",
+  "sdh-abcb1-mdr1-silencing": "bg-purple-300 text-purple-950 dark:bg-purple-700 dark:text-purple-50",
+  "sdh-cimp-lsd1-h3k4-silencing": "bg-fuchsia-300 text-fuchsia-950 dark:bg-fuchsia-700 dark:text-fuchsia-50",
 };
