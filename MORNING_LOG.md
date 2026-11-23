@@ -4040,3 +4040,70 @@ Clinically-stage, orally bioavailable, potent and selective LSD1/KDM1A inhibitor
 **Engine state after:** 87 drugs, 65 pathways (display_order 65), targets +1 (KDM1A)
 
 **Correction note (added at review):** Three citation/cross-reference errors in the original additions were fixed before merge. (1) Wrong PMID for Killian JK et al. (Cancer Discov 2013;3(6):648-57): the routine cited 23539154 (a wobbler-mouse ALS review, Moser & Bigini) in sdh-biology.ts (x2), drugs.ts (x1 + Sources URL), targets.ts (x1), and this log (x1); the correct PMID is 23550148, which the rest of the engine already uses. (2) Wrong mechanism cross-reference: decitabine was cited as "Mechanism 10" (FGFR signaling) in sdh-biology.ts, pathways.ts (x2), drugs.ts, and this log; decitabine/DNMT1 is Mechanism 57. (3) drugs.ts said "1 CR/CRi in dose-escalation arm"; the Salamero abstract reports one CRi in the DE arm, so corrected to "1 CRi". All other citations verified against PubMed: 17463086 (Huang Y et al., PNAS 2007;104(19):8023-8, authors/title/DOI match), 33052756 (Salamero O et al., J Clin Oncol 2020;38(36):4260-4273, RP2D 140 ug/m2/d, EudraCT 2018-000482-36 match), 42635814 (Wang YY et al., J Mol Med 2026, CRC review, rejection correct). UniProt O60341 confirmed as KDM1A.
+
+---
+
+## 2026-11-23 — Papers-only scan; LAT1/SLC7A5 direction fails verification
+
+**Branch:** `morning/2026-11-23-papers-only`
+
+**Engine state at start:** 87 drugs, 65 pathways (display_order 65), 78 mechanisms
+
+### Part A — PubMed scan (Aug 23 – Nov 23, 2026)
+
+Queries run (10+ across SDH-deficient GIST, PPGL/pheochromocytoma, SDH-RCC, pseudohypoxia, succinate oncometabolite, BRCAness/DDR, CIMP epigenetics, immune microenvironment):
+
+All previously tracked PMIDs returned only. One targeted query ("paraganglioma pheochromocytoma treatment 2026") returned 6 new PMIDs — all evaluated and rejected:
+
+| PMID | Decision | Reason |
+|------|----------|--------|
+| 42927326 | rejected | Arrivi G et al., ESMO Gastrointest Oncol 2026;14:100428, DOI 10.1016/j.esmogo.2026.100428. Systematic review of PRRT hormonal crisis prevention in functioning NETs; general NET management; no SDH-specific biology or drug advance. |
+| 43067356 | rejected | Fellinger P et al., Eur J Endocrinol 2026, DOI 10.1093/ejendo/lvag223. Retrospective cohort (n=244 nonmetastatic PPGL) of 18F-DOPA PET/CT accuracy; diagnostic imaging; no SDH-genotype stratification; no drug direction. |
+| 43043502 | rejected | Knyazeva P et al., Langenbecks Arch Surg 2026;412(1), DOI 10.1007/s00423-026-04367-x. Alpha-blockade-free surgery for PCC (n=18); surgical technique; no SDH genotyping; no drug direction. |
+| 43061388 | rejected | Ahire V & Dai YH, Front Nucl Med 2026;6:1997379, DOI 10.3389/fnume.2026.1997379. Broad radiopharmaceutical therapy review; mentions MIBG and 177Lu-DOTATATE as established agents; no SDH-specific content. |
+| 43051712 | rejected | Savoie PH et al., Fr J Urol 2026;36(11):103227, DOI 10.1016/j.fjurol.2026.103227. French AFU guideline update for adrenal incidentalomas and malignant adrenal tumors; clinical management guidelines; no SDH-specific drug direction. |
+| 42965334 | rejected | Han Y et al., J Vis Exp 2026;(236), DOI 10.3791/71703. 18F-mFBG radiochemical synthesis methods video; 32 PCC patients; diagnostic imaging technique; no SDH genotyping; no drug direction. |
+
+**0 papers added to papers.ts.**
+
+### Part B — Direction: LAT1/SLC7A5/nanvuranlat — FAILED VERIFICATION
+
+**Proposed direction:** SDH loss → constitutive HIF-1α pseudohypoxia → SLC7A5/LAT1 upregulation (HRE-driven) → constitutive amino acid transport → sustained mTORC1 activation → nanvuranlat (JPH203, selective LAT1 inhibitor) as exploitable dependency. The mTOR kinase axis (everolimus/sapanisertib) is already in the engine; this would have been a mechanistically distinct upstream entry.
+
+**Verification failure — PubMed evidence contradicts the proposed mechanism:**
+
+PubMed query "SLC7A5 LAT1 HIF-1alpha hypoxia transcription" returned 2 results:
+
+- **PMID 39179631** (Ohgaki R et al., Sci Rep 2024;14(1):19635, DOI 10.1038/s41598-024-70603-3): **"LAT1 expression in colorectal cancer cells is UNRESPONSIVE to HIF-1/2α accumulation under experimental hypoxia."** Testing 8 CRC cell lines at 1% O2, neither LAT1 mRNA nor protein was induced despite prominent HIF-1/2α accumulation and HIF-dependent GLUT1 upregulation. VHL knockdown (which stabilizes HIF-2α) increased LAT1 in certain lines — a cell-context-specific effect. Directly contradicts the proposed HIF-1α → SLC7A5 mechanistic anchor in cancer cells.
+
+- **PMID 34983574** (Ozgür B et al., Fluids Barriers CNS 2022;19(1):1, DOI 10.1186/s12987-021-00297-6): Brain capillary endothelial cells (BBB model); SLC7A5 mRNA increases under chronic hypoxia in brain endothelial cells — a tissue-specific finding not applicable to SDH-deficient neuroendocrine/GIST/RCC tumor biology; functional LAT1 activity was unchanged despite mRNA increase; outside scan window (2022).
+
+**Verification failure — clinical trial NCT IDs were incorrect:**
+
+- NCT04375176: Returns a COVID-19 immune-mechanism observational study (Università degli Studi dell'Insubria), not a nanvuranlat trial.
+- NCT02029066: Returns a Phase 1 pharmacokinetic study of solamargine (SR-T100 gel) in actinic keratosis, not a nanvuranlat trial.
+
+No verified clinical trial NCT ID for nanvuranlat/JPH203 was established.
+
+**Conclusion:** Direction rejected on two independent grounds: (1) the proposed HIF-1α → SLC7A5/LAT1 mechanistic anchor is explicitly contradicted by primary literature in cancer cells; (2) no clinical trial ID for nanvuranlat was verified. Per the overriding principle ("Never pad. Adding a weakly-justified drug is worse than adding nothing"), this run makes no drug additions.
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Appended 8 new rows: 6 Part A rejected PMIDs (42927326, 43067356, 43043502, 43061388, 43051712, 42965334) + 2 Part B direction evaluation PMIDs (39179631, 34983574) |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**Engine state after:** 87 drugs (unchanged), 65 pathways (unchanged), 78 mechanisms (unchanged), display_order 65 (unchanged).
+
+**Key sources (all verified via PubMed):**
+- https://pubmed.ncbi.nlm.nih.gov/42927326/ — PMID 42927326 (PRRT crisis review; DOI 10.1016/j.esmogo.2026.100428)
+- https://pubmed.ncbi.nlm.nih.gov/43067356/ — PMID 43067356 (18F-DOPA PET/CT accuracy; DOI 10.1093/ejendo/lvag223)
+- https://pubmed.ncbi.nlm.nih.gov/43043502/ — PMID 43043502 (alpha-blockade-free surgery; DOI 10.1007/s00423-026-04367-x)
+- https://pubmed.ncbi.nlm.nih.gov/43061388/ — PMID 43061388 (RPT broad review; DOI 10.3389/fnume.2026.1997379)
+- https://pubmed.ncbi.nlm.nih.gov/43051712/ — PMID 43051712 (French AFU guideline; DOI 10.1016/j.fjurol.2026.103227)
+- https://pubmed.ncbi.nlm.nih.gov/42965334/ — PMID 42965334 (18F-mFBG synthesis; DOI 10.3791/71703)
+- https://pubmed.ncbi.nlm.nih.gov/39179631/ — PMID 39179631 (LAT1 unresponsive to HIF; DOI 10.1038/s41598-024-70603-3)
+- https://pubmed.ncbi.nlm.nih.gov/34983574/ — PMID 34983574 (BBB hypoxia SLC7A5 mRNA; DOI 10.1186/s12987-021-00297-6)
