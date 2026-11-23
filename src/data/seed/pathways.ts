@@ -1086,4 +1086,20 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 64,
   },
+  {
+    name: "SDH-CIMP → LSD1/KDM1A H3K4me2 Demethylation at Silenced Tumor Suppressor Promoters",
+    slug: "sdh-cimp-lsd1-h3k4-silencing",
+    description:
+      "SDH loss → succinate → TET2/TET3 inhibition → CIMP → hypermethylation of tumor suppressor gene promoters. At these silenced loci, LSD1/KDM1A (CoREST complex) demethylates the activating H3K4me2 mark → H3K4me0, reinforcing the repressed state. Iadademstat (LSD1 inhibitor) prevents H3K4me2 demethylation → partial reactivation of CIMP-silenced tumor suppressors. Mechanistically orthogonal to EZH2 inhibition (H3K27me3, Mechanism 72) and decitabine (DNA methylation, Mechanism 57).",
+    upstream_event:
+      "SDH loss → succinate → TET2 inhibition → CIMP → LSD1/KDM1A recruited to silenced promoters → H3K4me2 demethylation → H3K4me0 → reinforced repression of tumor suppressor genes",
+    downstream_effects: [
+      "LSD1 inhibition (iadademstat) → H3K4me2 retained at CIMP-silenced promoters → partial reactivation of aberrantly silenced tumor suppressor genes (SFRP family, GATA factors; PMID 17463086)",
+      "Restoration of H3K4me2 and H3K9ac activating marks at silenced loci concurrent with reduction of repressive H3K9me1/me2 (PMID 17463086)",
+      "Orthogonal to EZH2 inhibition (H3K27me3 removal, Mechanism 72): LSD1 operates at H3K4me2 not H3K27me3 — dual targeting may be synergistic at CIMP promoters",
+      "Orthogonal to decitabine (Mechanism 57): iadademstat targets the histone modification arm of CIMP silencing rather than the DNA methylation arm",
+    ],
+    druggable: true,
+    display_order: 65,
+  },
 ];

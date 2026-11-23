@@ -3983,3 +3983,60 @@ TIM-3 (HAVCR2) is expressed on immune compartments LAG-3 blockade does not reach
 **Correction note (added at review):** The routine reported 3 papers as new ("not previously in tracker.md") and inserted duplicate entries into papers.ts plus 5 duplicate rows into tracker.md. All 5 PMIDs were already in the engine: 42925006 (Awasty et al., papers + 1 tracker row), 42732958 (Kasahara et al., papers + 2 tracker rows), 42626933 (Almeida et al., papers + 2 tracker rows), 41985045 (Ornstead et al., papers + 2 tracker rows, previously rejected), 42764100 (Troisi et al., 3 prior tracker rows, rejected). The duplicate papers.ts entries and tracker rows were removed before merge. Citations for all 5 PMIDs verified against PubMed (authors, titles, journals match). Part B conclusion stands: no new drug direction (13+ candidates already in the engine or lacking anchors). One surgical fix retained in papers.ts: the pre-existing entry for PMID 42732958 listed hallucinated authors "Kasahara K, Minagawa A, Sato Y, et al."; corrected to the actual authors "Kasahara K, Yoshihama K, Idei K, et al." (Endocr J 2026 Sep 11, DOI 10.1507/endocrj.EJ26-0224).
 
 **Engine state after:** unchanged — 86 drugs, 64 pathways, 43 unique papers
+
+---
+
+## 2026-11-22 — Add Iadademstat (LSD1/KDM1A inhibitor) — CIMP-driven H3K4me2 silencing in SDH-deficient cancers
+
+**Branch:** `morning/2026-11-22-lsd1-iadademstat`
+
+**Part A — PubMed scan (Aug 22 – Nov 22, 2026):**
+
+Ran 10+ PubMed searches across SDH-deficient cancer topics (GIST, PPGL, PCC, pheochromocytoma, SDH-RCC, SDHB/SDHA/SDHC/SDHD, succinate dehydrogenase deficiency, succinate epigenetics, pseudohypoxia, BRCAness, CIMP, Carney triad). All returned PMIDs already present in tracker.md from prior runs.
+
+One new PMID within scan window: **42635814** (Wang YY et al., J Mol Med 2026, Aug 24 — LSD1/KDM1A dual roles in CRC tumor immune microenvironment). Rejected: CRC-focused review; mentions iadademstat and TCP as LSD1 inhibitors but contains no SDH-deficient cancer content; fails hard relevance gate.
+
+**Zero new papers added to papers.ts.**
+
+**Part B — New direction: Mechanism 78 — SDH-Loss CIMP → LSD1/KDM1A H3K4me2 demethylation → Iadademstat**
+
+**Mechanistic rationale:**
+
+SDH-deficient GIST and PPGL are fundamentally CIMP cancers: SDH loss → succinate accumulation → TET2/TET3 inhibition (2OG-dependent dioxygenases) → reduced 5-hydroxymethylcytosine → CpG island methylator phenotype (CIMP) with promoter hypermethylation of tumor suppressor genes. CIMP is established in SDH-deficient GIST (Killian JK et al., Cancer Discov 2013, PMID 23550148, in engine since day one) and in SDH-deficient PPGL (Letouzé E et al., Cancer Cell 2013, PMID 23707781, in engine).
+
+At CIMP-silenced promoters, the repressed chromatin state is maintained by overlapping mechanisms:
+- DNA methylation (5mC) — targeted by decitabine (Mechanism 57)
+- H3K27me3 (EZH1+EZH2/PRC2 complex) — targeted by valemetostat (Mechanism 72, added Nov 10)
+- Removal of the activating H3K4me2 mark by LSD1/KDM1A (CoREST complex) — **NEW: targeted by iadademstat**
+
+Huang Y et al. (PNAS 2007, PMID 17463086, DOI 10.1073/pnas.0700720104) demonstrated in human colon carcinoma cells that LSD1 inhibition with polyamine analogues causes reexpression of multiple aberrantly silenced genes (SFRP1/2/4/5, GATA4/5) with concurrent restoration of H3K4me2 and H3K9ac marks at previously silenced promoters — establishing LSD1 as a required co-repressor that must be active to maintain CIMP-associated gene silencing, and confirming that LSD1 inhibition can reverse this silencing.
+
+**Mechanistic distinction from prior entries:**
+- Distinct from EZH2/valemetostat (Mechanism 72): different histone mark (H3K4me2 vs H3K27me3), different enzyme family (FAD-dependent amine oxidase vs histone methyltransferase), different complex (CoREST vs PRC2). Non-redundant and potentially synergistic.
+- Distinct from decitabine (Mechanism 57): targets histone H3K4me2 demethylation arm, not the DNA methylation arm.
+- Distinct from all prior LSD1-adjacent entries: none exist in the engine (confirmed by grep).
+
+**Drug: Iadademstat (ORY-1001; Oryzon Genomics)**
+
+Clinically-stage, orally bioavailable, potent and selective LSD1/KDM1A inhibitor. First-in-human Phase I in R/R AML: Salamero O et al. (J Clin Oncol 2020, PMID 33052756, DOI 10.1200/JCO.19.03250) — RP2D 140 µg/m²/d; acceptable tolerability; biologic differentiation activity confirmed; Phase II with azacitidine ongoing (EudraCT 2018-000482-36).
+
+**Key limitations (documented in all seed entries):**
+1. No published data for iadademstat or any LSD1 inhibitor in SDH-deficient GIST, PPGL, or RCC models.
+2. LSD1→CIMP silencing established in colon carcinoma (PMID 17463086); may differ across CIMP promoter landscapes.
+3. No solid tumor Phase I data; clinical development has focused on hematologic malignancies.
+4. LSD1 uses FAD not 2OG as cofactor — SDH→LSD1 link is indirect (via CIMP), not direct enzyme inhibition by succinate.
+
+**Evidence score: 20 (theoretical).** Three-anchor chain: SDH→CIMP (established in engine), CIMP silencing requires LSD1 (PMID 17463086), iadademstat is a clinical-stage LSD1 inhibitor (PMID 33052756).
+
+**Changes made:**
+- `src/data/seed/sdh-biology.ts`: Added Mechanism 78 section (SDH-Loss CIMP → LSD1/KDM1A → Iadademstat)
+- `src/data/seed/pathways.ts`: Added pathway `sdh-cimp-lsd1-h3k4-silencing` (display_order 65)
+- `src/data/seed/targets.ts`: Added KDM1A/LSD1 target (UniProt O60341)
+- `src/data/seed/drugs.ts`: Added iadademstat (drug #87, evidence_score 20, status theoretical)
+- `src/lib/scoring/constants.ts`: Fixed missing `sdh-abcb1-mdr1-silencing` color (purple-300; pre-existing omission from Nov 20 vincristine commit); added `sdh-cimp-lsd1-h3k4-silencing` color (fuchsia-300)
+- `tracker.md`: Appended 3 new rows (42635814 rejected; 17463086 and 33052756 as Part B anchors)
+- `MORNING_LOG.md`: This entry
+
+**Engine state after:** 87 drugs, 65 pathways (display_order 65), targets +1 (KDM1A)
+
+**Correction note (added at review):** Three citation/cross-reference errors in the original additions were fixed before merge. (1) Wrong PMID for Killian JK et al. (Cancer Discov 2013;3(6):648-57): the routine cited 23539154 (a wobbler-mouse ALS review, Moser & Bigini) in sdh-biology.ts (x2), drugs.ts (x1 + Sources URL), targets.ts (x1), and this log (x1); the correct PMID is 23550148, which the rest of the engine already uses. (2) Wrong mechanism cross-reference: decitabine was cited as "Mechanism 10" (FGFR signaling) in sdh-biology.ts, pathways.ts (x2), drugs.ts, and this log; decitabine/DNMT1 is Mechanism 57. (3) drugs.ts said "1 CR/CRi in dose-escalation arm"; the Salamero abstract reports one CRi in the DE arm, so corrected to "1 CRi". All other citations verified against PubMed: 17463086 (Huang Y et al., PNAS 2007;104(19):8023-8, authors/title/DOI match), 33052756 (Salamero O et al., J Clin Oncol 2020;38(36):4260-4273, RP2D 140 ug/m2/d, EudraCT 2018-000482-36 match), 42635814 (Wang YY et al., J Mol Med 2026, CRC review, rejection correct). UniProt O60341 confirmed as KDM1A.
