@@ -4107,3 +4107,70 @@ No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/
 - https://pubmed.ncbi.nlm.nih.gov/42965334/ — PMID 42965334 (18F-mFBG synthesis; DOI 10.3791/71703)
 - https://pubmed.ncbi.nlm.nih.gov/39179631/ — PMID 39179631 (LAT1 unresponsive to HIF; DOI 10.1038/s41598-024-70603-3)
 - https://pubmed.ncbi.nlm.nih.gov/34983574/ — PMID 34983574 (BBB hypoxia SLC7A5 mRNA; DOI 10.1186/s12987-021-00297-6)
+
+---
+
+## 2026-11-24 — Papers-only scan; engine mature; no qualifying new direction
+
+**Branch:** `morning/2026-11-24-papers-only`
+
+**Engine state at start:** 87 drugs, 65 pathways (display_order 65), 78 mechanisms
+
+### Part A — PubMed scan (Aug 24 – Nov 24, 2026)
+
+Queries run (10+ across SDH-deficient GIST, PPGL/pheochromocytoma, SDH-RCC, pseudohypoxia/HIF targets, succinate oncometabolite epigenetics, BRCAness/DDR synthetic lethality, succinate dehydrogenase immunotherapy/checkpoint, GIST kinase inhibitor resistance, pituitary adenoma SDH, alpha-KG TET demethylation):
+
+| PMID | Decision | Reason |
+|------|----------|--------|
+| 42526974 | already tracked (×2) | Lab medicine review of SDH in PPGL; previously logged 2026-08-13 and 2026-10-03; no drug or mechanism advance |
+| 42982179 | already tracked | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42590786 | already tracked | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42758527 | already tracked | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42626917 | already tracked | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42642458 | already tracked | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42847129 | already tracked | Previously evaluated; added to papers.ts 2026-11-11 |
+| 42490294 | already tracked (×2) | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42481355 | already tracked (×3) | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42981503 | already tracked | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42872468 | already tracked | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42544736 | already tracked (×6) | Previously evaluated; no new SDH-specific drug or mechanism advance |
+| 42923239 | rejected | Rui J et al., Front Oncol 2026 — case report; KIT exon 17 N822Y-mutant GIST (KIT-driven); no SDH-deficient biology |
+| 42960570 | rejected | Gozzellino L et al., Per Med 2026 — editorial on GIST molecular characterization; general KIT/PDGFRA/SDH classification; no new SDH-specific drug direction |
+| 42691224 | rejected | Falkenhorst J et al., Oncologist 2026 — nilotinib after imatinib toxicity in KIT exon 11-mutant GIST; no SDH-deficient biology |
+| 42783422 | rejected | Frumin Edri HT et al., Med Sci (Basel) 2026 — ripretinib real-world cohort; exclusively KIT-mutant GIST; no SDH-deficient biology |
+| 42764990 | rejected | Li Z et al., Acta Pharm Sin B 2026 — SETD2-FTO-KIT axis in TKI-refractory GIST; entacapone (FTO inhibitor) + imatinib Phase I NCT04006769 showed 2/3 partial remissions; mechanism is KIT mRNA stabilization via m6A demethylation, specific to KIT-mutant disease; SDH-deficient GIST lacks KIT/PDGFRA mutations — this mechanism is not operative in the SDH-deficient subtype; fails hard relevance gate |
+| 42690334 | rejected | Italiano A, Expert Opin Pharmacother 2026 — bezuclastinib evaluation for KIT/PDGFRA-driven advanced GIST; PEAK trial; no SDH-specific content |
+
+**0 papers added to papers.ts.**
+
+### Part B — Direction evaluation
+
+The Aug 24–Nov 24, 2026 scan returned no actionable SDH-specific leads. All papers within the window that survived initial topic filtering were either previously tracked or were KIT/PDGFRA-mutant GIST papers (not SDH-deficient biology).
+
+**Candidates evaluated and declined:**
+
+- **FTO/m6A/entacapone (PMID 42764990):** Most interesting new paper of the scan. FTO (m6A RNA demethylase) → KIT mRNA stability via YTHDF2 degradation evasion; entacapone + imatinib Phase I shows 2/3 partial remissions in TKI-refractory GIST. However, this mechanism is entirely specific to KIT-mutant GIST: FTO overexpression maintains oncogenic KIT expression in cells driven by KIT mutations. SDH-deficient GIST is defined by the ABSENCE of KIT/PDGFRA mutations — KIT is not oncogenic in this subtype, so the SETD2-FTO-KIT axis has no leverage point. REJECTED: mechanism not operative in SDH-deficient biology.
+
+- **Trebananib/ANGPT2-TIE2:** Evaluated in prior sessions (pre-summary). Indirect mechanism (endothelial HIF-2α → ANGPT2 → TIE2 angiogenesis axis); no PubMed-verified direct HIF-1α → ANGPT2 HRE-driven transcription in SDH-deficient tumor cells; clinical track record mixed; would score ~18 (theoretical, indirect). Declined; would be padding.
+
+No direction today passes the hard relevance gate with a verifiable primary citation. This is appropriately a papers-only run.
+
+**Do NOT repeat:**
+- FTO/m6A/entacapone direction (applicable only to KIT-mutant GIST, not SDH-deficient subtype)
+- Trebananib/ANGPT2-TIE2 (indirect endothelial mechanism, no SDH-specific HRE anchor)
+- All directions declined in prior runs (see Nov 13, Nov 15, Nov 23 entries)
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Appended 6 new rejected rows (PMIDs 42923239, 42960570, 42691224, 42783422, 42764990, 42690334) |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**Engine state after:** 87 drugs (unchanged), 65 pathways (unchanged), 78 mechanisms (unchanged), display_order 65 (unchanged).
+
+**Summary:** PubMed scan across 10+ queries for Aug 24–Nov 24, 2026 returned 6 previously-untracked PMIDs, all KIT/PDGFRA-mutant GIST papers with no SDH-specific mechanistic relevance. The most interesting paper (PMID 42764990, SETD2-FTO-KIT axis + entacapone Phase I) is mechanistically specific to KIT-driven disease and not applicable to SDH-deficient GIST. The engine is now highly mature (87 drugs, 78 mechanisms); the mechanistic space for SDH-deficient biology that clears the hard relevance gate with a verifiable primary citation is near-exhausted. No-add is correct per the never-pad principle.
+
+**PR:** morning/2026-11-24-papers-only
