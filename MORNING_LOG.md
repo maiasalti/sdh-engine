@@ -4174,3 +4174,72 @@ No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/
 **Summary:** PubMed scan across 10+ queries for Aug 24–Nov 24, 2026 returned 6 previously-untracked PMIDs, all KIT/PDGFRA-mutant GIST papers with no SDH-specific mechanistic relevance. The most interesting paper (PMID 42764990, SETD2-FTO-KIT axis + entacapone Phase I) is mechanistically specific to KIT-driven disease and not applicable to SDH-deficient GIST. The engine is now highly mature (87 drugs, 78 mechanisms); the mechanistic space for SDH-deficient biology that clears the hard relevance gate with a verifiable primary citation is near-exhausted. No-add is correct per the never-pad principle.
 
 **PR:** morning/2026-11-24-papers-only
+
+---
+
+## 2026-11-25 — Papers-only scan; engine mechanistically mature; no qualifying new direction
+
+**Branch:** `morning/2026-11-25-papers-only`
+
+**Engine state at start:** 87 drugs, 65 pathways (display_order 65), 78 mechanisms
+
+### Part A — PubMed scan (Aug 25 – Nov 25, 2026)
+
+Queries run (10+ across SDH-deficient GIST, PPGL/pheochromocytoma, pseudohypoxia/HIF targets, succinate oncometabolite, BRCAness/DDR ATR signaling, ceralasertib/ATRi, SDH renal/pituitary, CIMP methylation paraganglioma, succinate dehydrogenase cancer treatment, paraganglioma clinical trial):
+
+| PMID | Decision | Reason |
+|------|----------|--------|
+| 42554827 | already tracked (×2) | SSTR-PET genotype-location study in PPGL; added 2026-08-05, rejected 2026-11-07 |
+| 42982179 | already tracked | Previously evaluated; no SDH-specific drug or mechanism advance |
+| 42969466 | rejected | Bhagwat P, Kirubakaran S. *Arch Pharm (Weinheim)* 2026;359(11):e70379, DOI 10.1002/ardp.70379. ATR drug-discovery review (synthetic chemistry, SAR, cryo-EM, PROTACs); no SDH-deficient cancer content. |
+| 42754753 | rejected | Wang L et al. *Nat Struct Mol Biol* 2026;33(11):1690-1703, DOI 10.1038/s41594-026-01887-4. Cryo-EM structures of ATR-ATRIP with ceralasertib, berzosertib, elimusertib, gartisertib; purely structural; no SDH content. |
+| 42952303 | rejected | Doherty ME et al. *Mol Cancer Ther* 2026, DOI 10.1158/1535-7163.MCT-26-0434. ATRi + gemcitabine in TP53-mutant/ATRX-wt uterine leiomyosarcoma; uLMS is not an SDH-deficient tumor type. |
+| 42816529 | rejected | Lopez JS et al. *Br J Cancer* 2026, DOI 10.1038/s41416-026-03601-z. Phase I ceralasertib + olaparib (NCT02264678), ORR 37.8% in BRCA1/2m breast cancer; no SDH-deficient cohort; ceralasertib already in engine. |
+| 42863582 | rejected | Chin HK et al. *Biochem Pharmacol* 2026;254(Pt 3):118541, DOI 10.1016/j.bcp.2026.118541. Heteronemin in OSCC; SDHB knockdown used as mechanistic tool in oral cancer cells — not SDH-deficient cancer; OSCC not in our tumor panel. |
+| 43013067 | rejected | Yang H et al. *J Am Chem Soc* 2026;148(44):48152-48167, DOI 10.1021/jacs.6c14840. CRISPR Sdhc knockout in B16-OVA melanoma and 4T1 breast models; CRISPR is the therapeutic strategy; melanoma/breast not in our panel; engineered SDH loss in non-SDH-deficient cell lines does not validate therapy for naturally SDH-deficient cancers. |
+
+**0 papers added to papers.ts.**
+
+### Part B — Direction evaluation
+
+The engine at 87 drugs, 65 pathways is at the boundary of mechanistic exhaustion for SDH-deficient biology. Systematic search across all remaining SDH-relevant mechanistic axes confirmed the following are already in the engine:
+
+**Previously unrecognized as covered (confirmed today):** CDK4/6 inhibitor (palbociclib), BET/BRD4 inhibitor (pan-BRD2/3/4), NAMPT inhibitor (daporinad), HSP90 inhibitor, TERT/telomerase inhibitor (imetelstat), IGF1R inhibitor (linsitinib), GLS1/glutaminolysis (telaglenastat), ATR kinase inhibitor (ceralasertib, via ATRX-ALT pathway), PARP inhibitor (olaparib, niraparib), MCT1 inhibitor (AZD3965), cGAS-STING agonist (cyclic dinucleotide), VEGF-A antibody (bevacizumab), IL-6/JAK-STAT3 (ruxolitinib + dedicated entry), CDK4/6 (palbociclib), pan-HDAC1/2 (panobinostat), metformin/Complex I, AXL (via cabozantinib multi-kinase).
+
+**Candidates evaluated and declined (Part B):**
+
+- **ATR inhibitor + SDH-driven HR deficiency (ceralasertib new pathway)**: Ceralasertib is in the engine for ATRX-ALT replication stress. The idea of a new ATR pathway for SDH-driven HR deficiency would add a pathway slug to an existing drug, not a new drug. Declined as insufficient novelty given ceralasertib is already in the engine.
+
+- **NLRP3/IL-1β (succinate → NLRP3 inflammasome → IL-1β → pro-tumorigenic TME)**: The direct NLRP3 succinylation mechanism in SDH-deficient cancer-associated macrophages (SDH loss in TAMs → succinate cannot be cleared → NLRP3 remains succinylated/activated) has no PubMed-verified primary citation in SDH-deficient cancer context. The Tannahill 2013 (PMID 23535595) succinate→HIF-1α→IL-1β connection is in LPS-activated macrophages. No clinical-stage NLRP3 inhibitor with oncology data. Declined: insufficient mechanistic anchor for SDH-deficient cancer specifically.
+
+- **MNK1/2 / eIF4E-S209 phosphorylation (tomivosertib)**: eIF4E phosphorylation enhances cap-dependent translation of HIF-1α, Myc, MCL1. HIF-1α → MNK1/2 upregulation under pseudohypoxia is not PubMed-verified with a primary citation. PubMed search for MKNK1/MKNK2 + eIF4E + HIF + cancer + inhibitor returned 0 results. Declined: no verified primary citation for MNK1/2 as SDH-pseudohypoxia-specific vulnerability.
+
+No direction today passes the hard relevance gate with a verified primary citation AND is absent from the engine. Per the never-pad principle, no drug or pathway additions are made.
+
+**Do NOT repeat:**
+- ATR inhibitor for SDH-driven HR deficiency (ceralasertib already in engine for ATRX-ALT; new pathway for same drug declined)
+- NLRP3/IL-1β canakinumab direction (no verified SDH-specific mechanistic anchor; no clinical NLRP3 inhibitor with oncology data)
+- MNK1/2 / tomivosertib (no verified primary citation for SDH-pseudohypoxia → MNK1/2)
+- Heteronemin (tool compound in OSCC, not SDH-deficient biology)
+- CRISPR Sdhc knockout / succinate MHC-I reprogramming strategy (engineered, not naturally SDH-deficient)
+
+### Part C — Files changed
+
+| File | Change |
+|------|--------|
+| `tracker.md` | Appended 6 new rejected rows (PMIDs 42969466, 42754753, 42952303, 42816529, 42863582, 43013067) |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/constants.ts`.
+
+**Engine state after:** 87 drugs (unchanged), 65 pathways (unchanged), 78 mechanisms (unchanged), display_order 65 (unchanged).
+
+**Key sources (all verified via PubMed):**
+- https://pubmed.ncbi.nlm.nih.gov/42969466/ — PMID 42969466 (ATR review; DOI 10.1002/ardp.70379)
+- https://pubmed.ncbi.nlm.nih.gov/42754753/ — PMID 42754753 (ATR-ATRIP cryo-EM; DOI 10.1038/s41594-026-01887-4)
+- https://pubmed.ncbi.nlm.nih.gov/42952303/ — PMID 42952303 (uLMS ATRi; DOI 10.1158/1535-7163.MCT-26-0434)
+- https://pubmed.ncbi.nlm.nih.gov/42816529/ — PMID 42816529 (ceralasertib + olaparib breast; DOI 10.1038/s41416-026-03601-z)
+- https://pubmed.ncbi.nlm.nih.gov/42863582/ — PMID 42863582 (heteronemin OSCC; DOI 10.1016/j.bcp.2026.118541)
+- https://pubmed.ncbi.nlm.nih.gov/43013067/ — PMID 43013067 (CRISPR Sdhc MHC-I; DOI 10.1021/jacs.6c14840)
+
+**PR:** morning/2026-11-25-papers-only
