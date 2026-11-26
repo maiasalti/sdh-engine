@@ -4243,3 +4243,53 @@ No changes to `src/data/papers.ts`, `src/data/seed/` files, or `src/lib/scoring/
 - https://pubmed.ncbi.nlm.nih.gov/43013067/ — PMID 43013067 (CRISPR Sdhc MHC-I; DOI 10.1021/jacs.6c14840)
 
 **PR:** morning/2026-11-25-papers-only
+
+---
+
+## 2026-11-26 — Papers-only scan; add Bayley 2026 SDH variant genotype-phenotype study
+
+**Engine state at start:** 87 drugs, 65 pathways, 78 mechanisms, display_order 65.
+
+### Part A — PubMed scan (2026-08-26 to 2026-11-26)
+
+Queries run: SDH-deficient cancer + succinate oncology + HIF-1α succinate + PPGL SDHB 2026 + epigenetic succinate cancer + GIST SDH-deficient + paraganglioma genetics 2026 + KDM4 SDH cancer + TET2 succinate oncology.
+
+**New PMIDs evaluated:**
+
+| PMID | Action | Reason |
+|------|--------|--------|
+| 42762362 | rejected | Broad GIST precision medicine review (Boikos SA et al., J Clin Oncol 2026); KIT/PDGFRA-centric; SDH-deficient GIST mentioned only as TKI-insensitive subtype; no actionable SDH-specific drug candidate |
+| 42813377 | **added** | Bayley JP, Fishbein L, Akker S et al. Largest SDH variant genotype-phenotype study (n=2,706 patients, 57 centers worldwide); Genet Med 2026; SDHB/C/D missense vs. PTV variant type differentially impacts thoracic-abdominal PPGL prognosis; pediatric HNPGL shows elevated metastasis risk; clinically essential for SDH-deficient PPGL characterization |
+
+All other returned PMIDs were already in tracker.md.
+
+### Part B — Direction evaluation
+
+**Candidate: PIM kinase → HIF-1α stabilization in SDH-deficient cancers**
+
+**Mechanism assessed:** PIM1 phosphorylates HIF-1α at T455 within the ODD domain → disrupts PHD-docking interface → constitutive HIF-1α stability independent of VHL (PMID 34211090, Xu D et al., PNAS 2021). PIM1 is overexpressed in many solid tumors and could theoretically amplify pseudohypoxia in SDH-deficient cells via a PHD-bypass pathway.
+
+**Rejection reasons:**
+1. **Mechanistic redundancy:** In SDH-deficient cells, PHD catalysis is already blocked upstream by succinate competitively displacing 2-OG as cofactor. PIM1-mediated PHD-docking disruption adds nothing on top of an already non-functional PHD.
+2. **Missing SDH-specific anchor:** The required link — HIF-1α → PIM1 transcription via HRE — has zero PubMed hits. The JAK2V617F-PIM1-HIF-1α axis in MPN (PMID 41629621) demonstrates PIM1 can be upstream of HIF-1α, not the other way around, and the MPN context is irrelevant to our tumor panel.
+3. **Never-pad principle applies:** With zero verifiable primary citations for the SDH → HIF-1α → PIM1 (transcriptional) leg, there is no mechanistic anchor; direction correctly rejected.
+
+**Conclusion: papers-only day.** Engine at 87 drugs / 78 mechanisms has covered the mechanistic space of SDH-deficient biology that clears the hard relevance gate with verifiable primary citations. This is the 4th consecutive papers-only or no-new-direction day, consistent with the Nov 25 assessment: "engine at boundary of mechanistic exhaustion."
+
+### Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/papers.ts` | Added PMID 42813377 (Bayley JP et al., Genet Med 2026, SDH variant genotype-phenotype) |
+| `tracker.md` | Appended 4 new rows (PMIDs 42762362, 42813377, 34211090, 41629621) |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/data/seed/` files or `src/lib/scoring/constants.ts`.
+
+**Engine state after:** 87 drugs (unchanged), 65 pathways (unchanged), 78 mechanisms (unchanged), display_order 65 (unchanged).
+
+**Key sources (all verified via PubMed):**
+- https://pubmed.ncbi.nlm.nih.gov/42813377/ — PMID 42813377 (Bayley JP et al., Genet Med 2026; DOI 10.1016/j.gim.2026.102725)
+- https://pubmed.ncbi.nlm.nih.gov/34211090/ — PMID 34211090 (Xu D et al., PIM1-HIF-1α T455, PNAS 2021; DOI 10.1073/pnas.2112465118)
+
+**PR:** morning/2026-11-26-papers-only
