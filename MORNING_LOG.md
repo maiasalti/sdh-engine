@@ -4335,7 +4335,7 @@ The abstract states: *"Oligonucleotide pull-down and chromatin immunoprecipitati
 4. This is a wholly new GPCR/cAMP immune suppression mechanism — the first prostaglandin axis in the engine
 
 **Why this is distinct from all 8 existing immune evasion mechanisms:**
-All other immune mechanisms in the engine operate via direct receptor ligation (PD-L1/PD-1, TIM-3, LAG-3, CD47/SIRPα), metabolite suppression (CD73/adenosine, IDO1/kynurenine, MCT1/succinate), or cytokine exclusion (TGF-β1, CXCL8/CXCR2). None operate through prostaglandin GPCR/cAMP signaling. EP4 (PTGER4) is mechanistically non-redundant with all existing targets. Additional synergy: PGE2/cAMP independently upregulates PD-L1 on tumor cells, so EP4 blockade + anti-PD-L1 (the design of NCT03087864) has mechanistic rationale.
+All other immune mechanisms in the engine operate via direct receptor ligation (PD-L1/PD-1, TIM-3, LAG-3, CD47/SIRPα), metabolite suppression (CD73/adenosine, IDO1/kynurenine, MCT1/succinate), or cytokine exclusion (TGF-β1, CXCL8/CXCR2). None operate through prostaglandin GPCR/cAMP signaling. EP4 (PTGER4) is mechanistically non-redundant with all existing targets. Additional synergy: PGE2/cAMP independently upregulates PD-L1 on tumor cells, so EP4 blockade + anti-PD-L1 has mechanistic rationale (no such combination trial is registered; see review corrections).
 
 **Direction evaluation PMIDs checked during Part B search:**
 - PMID 22948157 (Fujita N et al., J Biol Chem 2012): PHD3/NF-κB co-activation in nucleus pulposus disc disease → rejected as anchor (not cancer)
@@ -4347,7 +4347,7 @@ All other immune mechanisms in the engine operate via direct receptor ligation (
 - tumor_type_applicability: all
 - pathway_slugs: `hif-cox2-pge2-ep4-t-cell-suppression`, `hif-pseudohypoxia`
 - target_gene_symbols: PTGER4, PTGS2
-- clinical_trial_ids: NCT03087864 (Phase 1 E7046 + durvalumab in solid tumors)
+- clinical_trial_ids: NCT02540291 (Phase 1 first-in-human E7046 monotherapy in advanced malignancies; terminated 2018 after E7046 licensed to Adlai Nortye, now developed as AN0025)
 
 **Pathway added:** `hif-cox2-pge2-ep4-t-cell-suppression`, display_order 66
 
@@ -4356,7 +4356,8 @@ All other immune mechanisms in the engine operate via direct receptor ligation (
 | File | Change |
 |------|--------|
 | `src/data/seed/pathways.ts` | Added pathway `hif-cox2-pge2-ep4-t-cell-suppression` (display_order 66) |
-| `src/data/seed/drugs.ts` | Added E7046 (EP4 antagonist; evidence_score 22; theoretical; NCT03087864) |
+| `src/data/seed/drugs.ts` | Added E7046 (EP4 antagonist; evidence_score 22; theoretical; NCT02540291) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 79 section (omitted by routine; added in review) |
 | `tracker.md` | Appended 4 new rows (PMIDs 43087754, 43095004, 16818642, 22948157) |
 | `MORNING_LOG.md` | This entry |
 
@@ -4366,5 +4367,7 @@ No changes to `src/lib/scoring/constants.ts` or `src/data/papers.ts`.
 
 **Key sources (verified via PubMed):**
 - https://pubmed.ncbi.nlm.nih.gov/16818642/ — PMID 16818642 (Kaidi A et al., HIF-1α directly transcribes COX-2 via HRE, confirmed by ChIP, Cancer Res 2006; DOI 10.1158/0008-5472.CAN-06-0425)
+
+**Review corrections (2026-11-28):** (1) The PR cited NCT03087864 as "Phase 1 E7046 + durvalumab in solid tumors" — NCT03087864 is actually a completed AMC-UvA Phase 2 trial of atezolizumab + chemoradiation in resectable oesophageal cancer, and no E7046 + durvalumab trial is registered. Corrected to the real first-in-human E7046 trial NCT02540291 (Eisai Phase 1 monotherapy, terminated 2018 after licensing to Adlai Nortye; development continues as AN0025, e.g. NCT04432857 with pembrolizumab, NCT04975958 with atezolizumab; E7046 + radiotherapy rectal cancer NCT03152370). (2) tracker.md row for PMID 16818642 named the pathway slug with a wrong "sdh-" prefix; corrected to hif-cox2-pge2-ep4-t-cell-suppression. (3) The routine claimed "Mechanism 79" but did not add the section to src/data/seed/sdh-biology.ts (unlike the Mechanism 78 PR, which did); the Mechanism 79 section was added during review. (4) All four new PMIDs (43087754, 43095004, 16818642, 22948157) verified against PubMed: resolve with matching authors, titles, journals and DOIs; the Kaidi 2006 abstract directly supports the HIF-1α/COX-2 HRE anchor claim (oligonucleotide pull-down + ChIP; COX-2 a direct HIF-1 target). No duplicate PMIDs vs tracker.
 
 **PR:** morning/2026-11-27-hif-cox2-ep4-immunosuppression
