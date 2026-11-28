@@ -4296,3 +4296,78 @@ No changes to `src/data/seed/` files or `src/lib/scoring/constants.ts`.
 **Review corrections (2026-11-27):** (1) PMIDs 42813377 and 42762362 were already in tracker.md (added 2026-10-01; rejected 2026-10-17) — the routine re-reported them as new, so the duplicate papers.ts entry and tracker rows were reverted/removed. (2) PMID 34211090 was cited as "Xu D et al., PNAS 2021;118(50):e2112465118" — the actual paper is Casillas AL et al., "Direct phosphorylation and stabilization of HIF-1α by PIM1 kinase drives angiogenesis in solid tumors," Oncogene 2021;40(32):5142-5152 (DOI 10.1038/s41388-021-01915-1); the mechanistic claim (PIM1 phosphorylates HIF-1α Thr455 within the ODD, disrupting PHD binding) is verified against the real abstract. (3) PMID 41629621 was cited as "Chen L et al., Blood 2025;146(Suppl 1)" — the actual paper is Kealy D et al., Leukemia 2026;40(3):609-621 (DOI 10.1038/s41375-025-02843-9); the real abstract does describe a JAK2V617F-PIM1-HIF-1 axis in MPN, so the direction-rejection reasoning stands. (4) HIF-1α → PIM1 HRE-transcription anchor re-checked via PubMed ("hypoxia response element" AND "PIM1"): zero hits, consistent with the rejection.
 
 **PR:** morning/2026-11-26-papers-only
+
+---
+
+## 2026-11-27
+
+### Part A — PubMed scan (2026-08-27 → 2026-11-27)
+
+**New PMIDs scanned today (not previously in tracker.md):**
+
+| PMID | Disposition |
+|------|-------------|
+| 43087754 | rejected (see below) |
+| 43095004 | rejected (see below) |
+
+**PMID 43087754** — Ismail H et al., "Renal Cell Carcinoma Phenotypes in Young Women: A Narrative Review." *Biomedicines* 2026;14(11):2498. DOI: 10.3390/biomedicines14112498.
+Narrative review of RCC epidemiology, histology, and molecular subtypes in women under 45. SDH-deficient RCC is listed as one entity "concentrated in the young" in a one-line mention alongside MiT family translocation RCC and FH-deficient RCC. No SDH-specific drug direction, no mechanistic advance, no clinical trial data for SDH-deficient tumors. Correctly rejected.
+
+**PMID 43095004** — Seabrook A et al., "Efficacy of radionuclide therapy in the treatment of inoperable or metastatic pheochromocytoma and paraganglioma." *J Endocr Soc* 2026;10(12):bvag209. DOI: 10.1210/jendso/bvag209.
+Retrospective audit of 131I-MIBG (n=8) and 177Lu-DOTATATE (n=8) in 16 PC/PGL patients at a single Australian center. Radiological disease control rate 100% but ORR 8% (radiological), PFS 53 months RECIST. No SDH genotyping. 177Lu-DOTATATE is already in the engine as an established agent. No new SDH-specific drug direction. Correctly rejected.
+
+---
+
+### Part B — New direction evaluated and implemented
+
+**Mechanism 79: HIF-1α → COX-2 → PGE2 → EP4 Receptor T-Cell Immunosuppression**
+
+**Direction:** SDH loss → constitutive HIF-1α pseudohypoxia → HIF-1α directly transcribes COX-2 (PTGS2) via HRE in the COX-2 promoter → COX-2 → PGE2 production in the TME → PGE2 binds EP4 (PTGER4) on T cells/NK cells/DCs → Gαs → adenylyl cyclase → elevated cAMP → PKA activation → suppressed IL-2/IFN-γ, impaired T-cell proliferation, Treg expansion → immune privilege in SDH-deficient tumors. EP4 antagonist E7046 blocks this axis.
+
+**Critical anchor citation (verified via PubMed):** Kaidi A et al., "Direct transcriptional up-regulation of cyclooxygenase-2 by hypoxia-inducible factor (HIF)-1 promotes colorectal tumor cell survival and enhances HIF-1 transcriptional activity during hypoxia." *Cancer Res* 2006;66(13):6683-91. PMID 16818642. DOI: 10.1158/0008-5472.CAN-06-0425.
+
+The abstract states: *"Oligonucleotide pull-down and chromatin immunoprecipitation assays reveal that HIF-1alpha binds a hypoxia-responsive element on the COX-2 promoter... This study identifies COX-2 as a direct target for HIF-1 in colorectal tumor cells."* This ChIP evidence directly anchors the HIF-1α → COX-2 HRE-binding leg of the mechanistic chain.
+
+**Why this passes the hard relevance gate:**
+1. SDH loss → constitutive HIF-1α pseudohypoxia is the engine's founding mechanism
+2. PMID 16818642 anchors the HIF-1α → COX-2 HRE-binding by direct ChIP (not inferred)
+3. COX-2 → PGE2 → EP4 → cAMP/PKA T-cell immunosuppression is established immunology
+4. This is a wholly new GPCR/cAMP immune suppression mechanism — the first prostaglandin axis in the engine
+
+**Why this is distinct from all 8 existing immune evasion mechanisms:**
+All other immune mechanisms in the engine operate via direct receptor ligation (PD-L1/PD-1, TIM-3, LAG-3, CD47/SIRPα), metabolite suppression (CD73/adenosine, IDO1/kynurenine, MCT1/succinate), or cytokine exclusion (TGF-β1, CXCL8/CXCR2). None operate through prostaglandin GPCR/cAMP signaling. EP4 (PTGER4) is mechanistically non-redundant with all existing targets. Additional synergy: PGE2/cAMP independently upregulates PD-L1 on tumor cells, so EP4 blockade + anti-PD-L1 has mechanistic rationale (no such combination trial is registered; see review corrections).
+
+**Direction evaluation PMIDs checked during Part B search:**
+- PMID 22948157 (Fujita N et al., J Biol Chem 2012): PHD3/NF-κB co-activation in nucleus pulposus disc disease → rejected as anchor (not cancer)
+- PMID 16818642 (Kaidi A et al., Cancer Res 2006): HIF-1α → COX-2 HRE binding by ChIP → verified as anchor; outside scan window but used as mechanistic reference
+
+**Drug added:** E7046 (Eisai; selective EP4/PTGER4 receptor antagonist)
+- evidence_score: 22 (theoretical)
+- status: theoretical
+- tumor_type_applicability: all
+- pathway_slugs: `hif-cox2-pge2-ep4-t-cell-suppression`, `hif-pseudohypoxia`
+- target_gene_symbols: PTGER4, PTGS2
+- clinical_trial_ids: NCT02540291 (Phase 1 first-in-human E7046 monotherapy in advanced malignancies; terminated 2018 after E7046 licensed to Adlai Nortye, now developed as AN0025)
+
+**Pathway added:** `hif-cox2-pge2-ep4-t-cell-suppression`, display_order 66
+
+### Files changed
+
+| File | Change |
+|------|--------|
+| `src/data/seed/pathways.ts` | Added pathway `hif-cox2-pge2-ep4-t-cell-suppression` (display_order 66) |
+| `src/data/seed/drugs.ts` | Added E7046 (EP4 antagonist; evidence_score 22; theoretical; NCT02540291) |
+| `src/data/seed/sdh-biology.ts` | Added Mechanism 79 section (omitted by routine; added in review) |
+| `tracker.md` | Appended 4 new rows (PMIDs 43087754, 43095004, 16818642, 22948157) |
+| `MORNING_LOG.md` | This entry |
+
+No changes to `src/lib/scoring/constants.ts` or `src/data/papers.ts`.
+
+**Engine state after:** 88 drugs, 66 pathways, 79 mechanisms, display_order 66.
+
+**Key sources (verified via PubMed):**
+- https://pubmed.ncbi.nlm.nih.gov/16818642/ — PMID 16818642 (Kaidi A et al., HIF-1α directly transcribes COX-2 via HRE, confirmed by ChIP, Cancer Res 2006; DOI 10.1158/0008-5472.CAN-06-0425)
+
+**Review corrections (2026-11-28):** (1) The PR cited NCT03087864 as "Phase 1 E7046 + durvalumab in solid tumors" — NCT03087864 is actually a completed AMC-UvA Phase 2 trial of atezolizumab + chemoradiation in resectable oesophageal cancer, and no E7046 + durvalumab trial is registered. Corrected to the real first-in-human E7046 trial NCT02540291 (Eisai Phase 1 monotherapy, terminated 2018 after licensing to Adlai Nortye; development continues as AN0025, e.g. NCT04432857 with pembrolizumab, NCT04975958 with atezolizumab; E7046 + radiotherapy rectal cancer NCT03152370). (2) tracker.md row for PMID 16818642 named the pathway slug with a wrong "sdh-" prefix; corrected to hif-cox2-pge2-ep4-t-cell-suppression. (3) The routine claimed "Mechanism 79" but did not add the section to src/data/seed/sdh-biology.ts (unlike the Mechanism 78 PR, which did); the Mechanism 79 section was added during review. (4) All four new PMIDs (43087754, 43095004, 16818642, 22948157) verified against PubMed: resolve with matching authors, titles, journals and DOIs; the Kaidi 2006 abstract directly supports the HIF-1α/COX-2 HRE anchor claim (oligonucleotide pull-down + ChIP; COX-2 a direct HIF-1 target). No duplicate PMIDs vs tracker.
+
+**PR:** morning/2026-11-27-hif-cox2-ep4-immunosuppression

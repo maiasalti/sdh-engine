@@ -1937,4 +1937,32 @@ Iadademstat (Oryzon Genomics) is an orally bioavailable, potent, and selective L
 - Huang Y, Greene E, Murray Stewart T, Goodwin AC, Baylin SB, Woster PM, Casero RA. Inhibition of lysine-specific demethylase 1 by polyamine analogues results in reexpression of aberrantly silenced genes. Proc Natl Acad Sci USA. 2007;104(19):8023-8. PMID 17463086. DOI 10.1073/pnas.0700720104. (Primary mechanism anchor: LSD1 inhibition → restoration of H3K4me2 → reactivation of CIMP-silenced tumor suppressor genes in colon carcinoma.)
 - Salamero O, Montesinos P, Willekens C, et al. First-in-Human Phase I Study of Iadademstat (ORY-1001): A First-in-Class Lysine-Specific Histone Demethylase 1A Inhibitor, in Relapsed or Refractory Acute Myeloid Leukemia. J Clin Oncol 2020;38(36):4260-4273. PMID 33052756. DOI 10.1200/JCO.19.03250. (Clinical anchor: Phase I safety/tolerability, RP2D 140 µg/m²/d, biologic differentiation activity in R/R AML.)
 
+## Mechanism 79: HIF-1α → COX-2 → PGE2 → EP4 (PTGER4) T-Cell Immunosuppression — First Prostaglandin/GPCR/cAMP Immune Evasion Axis (E7046)
+
+**Pathway:** hif-cox2-pge2-ep4-t-cell-suppression (display_order 66)
+
+**Core SDH biology:**
+SDH loss → succinate accumulation → competitive PHD inhibition → constitutive HIF-1α stabilization (pseudohypoxia). Kaidi A, Qualtrough D, Williams AC, and Paraskeva C (Cancer Res 2006, PMID 16818642, DOI 10.1158/0008-5472.CAN-06-0425) established by oligonucleotide pull-down and chromatin immunoprecipitation (ChIP) in colorectal adenoma/carcinoma cells that HIF-1α directly binds a hypoxia-response element (HRE) on the COX-2 (PTGS2) promoter, driving COX-2 transcriptional upregulation and increased prostaglandin E2 (PGE2) production — identifying COX-2 as a direct HIF-1 target gene. In SDH-deficient tumors, constitutive pseudohypoxic HIF-1α is predicted to drive constitutive COX-2 expression and PGE2 overproduction in the tumor microenvironment (TME) through this validated HIF-1α/HRE/COX-2 axis.
+
+PGE2 binds the EP4 receptor (PTGER4; Gαs-coupled GPCR) on tumor-infiltrating T cells, NK cells, and dendritic cells → adenylyl cyclase activation → elevated intracellular cAMP → PKA activation → PKA phosphorylates CREB (immunosuppressive transcriptional program) and inhibits TCR/CD28 downstream signaling (NF-κB, PI3K, PLC-γ) → suppressed IL-2 and IFN-γ production, impaired T-cell proliferation, and reduced cytotoxic effector function. PGE2/EP4 also drives FOXP3+ Treg expansion and suppresses dendritic-cell IL-12 production, compounding the immunosuppressive TME. PGE2/EP4/cAMP independently upregulates PD-L1 (CD274) on tumor cells, adding a co-inhibitory layer that is mechanistically synergistic with PD-1/PD-L1 blockade (Mechanism 21).
+
+**Mechanistic distinction from all existing immune evasion mechanisms:**
+This is the first prostaglandin/GPCR/cAMP immune-suppression mechanism in the engine. The 8 prior immune evasion mechanisms operate through direct checkpoint ligation (PD-L1/PD-1 — Mechanism 21; TIM-3/galectin-9; LAG-3/MHC-II; CD47/SIRPα), metabolite suppression (CD73/adenosine; IDO1/kynurenine; MCT1/succinate import), or cytokine-mediated exclusion (TGF-β1/SMAD2-3; CXCL8/CXCR2). None operate through GPCR/cAMP signaling; EP4 (PTGER4) is non-redundant with all existing targets.
+
+**Drug: E7046 (EP4/PTGER4 antagonist)**
+E7046 (Eisai) is an investigational, selective, orally bioavailable small-molecule antagonist of the EP4 prostaglandin receptor. A first-in-human Phase 1 monotherapy study in selected advanced malignancies (NCT02540291) was terminated in 2018 after Eisai licensed E7046 to Adlai Nortye Biopharma; development continues under the name AN0025, including AN0025 + pembrolizumab (NCT04432857) and AN2025/AN0025 + atezolizumab (NCT04975958) combination studies, and E7046 completed a Phase 1 preoperative radiotherapy-combination study in rectal cancer (NCT03152370). EP4 blockade prevents cAMP/PKA-mediated T-cell suppression and is predicted to restore effector T-cell function in PGE2-rich SDH-deficient TME.
+
+**Key limitations:**
+1. No published data test E7046 or any EP4 antagonist in SDH-deficient GIST, PPGL, RCC, or pituitary adenoma.
+2. The HIF-1α → COX-2 HRE-binding anchor (PMID 16818642) was established in colorectal adenoma/carcinoma cells; whether the same HRE-driven induction occurs in SDH-deficient chromaffin-lineage (PPGL), mesenchymal (GIST), or renal (RCC) cells has not been tested in SDH-null isogenic models.
+3. COX-2 expression in SDH-deficient tumor tissue has not been systematically assessed by IHC or RNA-seq in SDH-deficient patient cohorts.
+4. NCT02540291 results have not been published in peer-reviewed literature as of November 2026.
+5. PGE2 is a pleiotropic lipid mediator; EP4 antagonism may have systemic effects on vascular tone, GI integrity, and wound healing.
+
+**Evidence score: 22 (theoretical).** Three-anchor chain: SDH-loss pseudohypoxia (established in engine), HIF-1α → COX-2 HRE-binding by direct ChIP (PMID 16818642), and a clinical-stage EP4 antagonist (NCT02540291). Score limited by absence of SDH-deficient preclinical or clinical data for E7046 and by termination of the first-in-human monotherapy trial.
+
+**Sources:**
+- Kaidi A, Qualtrough D, Williams AC, Paraskeva C. Direct transcriptional up-regulation of cyclooxygenase-2 by hypoxia-inducible factor (HIF)-1 promotes colorectal tumor cell survival and enhances HIF-1 transcriptional activity during hypoxia. Cancer Res 2006;66(13):6683-91. PMID 16818642. DOI 10.1158/0008-5472.CAN-06-0425. (Primary mechanism anchor: HIF-1α binds the COX-2 promoter HRE by oligonucleotide pull-down and ChIP; COX-2 is a direct HIF-1 target; hypoxic COX-2 up-regulation raises PGE2.)
+- ClinicalTrials.gov: NCT02540291 (E7046 first-in-human Phase 1, terminated post-licensing), NCT04432857 and NCT04975958 (AN0025/E7046 combinations), NCT03152370 (E7046 + radiotherapy, rectal cancer).
+
 `;

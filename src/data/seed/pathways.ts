@@ -1102,4 +1102,22 @@ export const SEED_PATHWAYS: Omit<Pathway, "id">[] = [
     druggable: true,
     display_order: 65,
   },
+  {
+    name: "HIF-1α → COX-2 → PGE2 → EP4 Receptor T-Cell Immunosuppression",
+    slug: "hif-cox2-pge2-ep4-t-cell-suppression",
+    description:
+      "SDH loss → constitutive HIF-1α pseudohypoxia → HIF-1α directly transcribes COX-2 (PTGS2) via a hypoxia-response element (HRE) in the COX-2 promoter. Kaidi A et al. (Cancer Res 2006, PMID 16818642, DOI 10.1158/0008-5472.CAN-06-0425) established by oligonucleotide pull-down and chromatin immunoprecipitation (ChIP) in colorectal adenoma/carcinoma cells that HIF-1α directly binds the COX-2 promoter HRE, driving COX-2 protein upregulation and increased PGE2 production — identifying COX-2 as a direct HIF-1 target gene. COX-2 overexpression → PGE2 production in the tumor microenvironment. PGE2 binds EP4 (PTGER4; Gαs-coupled GPCR) on T cells, NK cells, and dendritic cells → adenylyl cyclase → elevated cAMP → PKA activation → PKA phosphorylates CREB (activating immunosuppressive transcriptional program) and inhibits TCR/CD28 downstream signaling (NF-κB, PI3K, PLC-γ) → suppressed IL-2 and IFN-γ production, impaired T-cell proliferation, Treg expansion, and reduced dendritic cell IL-12 output. EP4 antagonism (E7046) blocks PTGER4, preventing cAMP/PKA-mediated T-cell suppression. This prostaglandin/GPCR/cAMP axis is mechanistically distinct from all other immune evasion pathways in the engine (PD-L1/PD-1, TIM-3, LAG-3, CD47, CD73/adenosine, IDO1/kynurenine, MCT1/succinate, TGF-β, CXCL8), which operate through direct receptor ligation, metabolite suppression, or cytokine-mediated exclusion — none through GPCR/cAMP signaling.",
+    upstream_event:
+      "SDH loss → succinate → PHD inhibition → constitutive HIF-1α stabilization → HIF-1α binds HRE in COX-2 (PTGS2) promoter (Kaidi A et al., Cancer Res 2006, PMID 16818642) → COX-2 transcriptional upregulation → PGE2 overproduction in TME",
+    downstream_effects: [
+      "PGE2 binds EP4 (PTGER4; Gαs-coupled receptor) on T cells and NK cells → adenylyl cyclase activation → elevated cAMP → PKA activation → suppressed IL-2 and IFN-γ production, impaired T-cell proliferation (classic cAMP/PKA immunosuppressive axis)",
+      "PGE2/EP4 → FOXP3 upregulation → Treg expansion → additional immunosuppressive positive feedback loop in SDH-deficient TME",
+      "PGE2/EP4/EP2 → PKA-mediated CD274 (PD-L1) upregulation on tumor cells → additional T-cell co-inhibitory layer synergizing with existing PD-1 checkpoint mechanisms",
+      "PGE2 → EP4 on dendritic cells → impaired IL-12 production → reduced type 1 T-helper cell priming and reduced CD8+ cytotoxic T-cell generation",
+      "EP4 antagonism (E7046) blocks PTGER4 → prevents cAMP elevation in TILs → restored TCR signaling → recovered T-cell effector function in PGE2-rich SDH-deficient TME",
+      "COX-2/PGE2 axis also promotes angiogenesis (PGE2 → EP2/EP4 → VEGF upregulation via MAPK), consistent with the vascular biology of SDH-deficient tumors and complementary to the HIF-1α/VEGF pseudohypoxia pathway",
+    ],
+    druggable: true,
+    display_order: 66,
+  },
 ];
